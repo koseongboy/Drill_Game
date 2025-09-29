@@ -3,6 +3,8 @@ using UnityEngine;
 
 using DrillGame.Entity.Engine;
 using System.Collections;
+using System.ComponentModel;
+using Unity.Collections;
 
 namespace DrillGame.Components.Engine
 {
@@ -15,7 +17,10 @@ namespace DrillGame.Components.Engine
 
         private Engine_Core core;
         private Coroutine coreTickCoroutine;
-        
+
+        [ReadOnly]
+        [SerializeField]
+        private long tickCount = 0;
 
         #endregion
 
@@ -50,6 +55,9 @@ namespace DrillGame.Components.Engine
             while (true)
             {
                 core.AddTickCount();        // Tick 카운트 증가
+                // test
+                // warning: ulong to long 변환시 데이터 손실 가능성 있음
+                tickCount = (long)core.totalTickCount; // 현재 Tick 카운트 가져오기 (디버그용)
                 core.ActivateCore();        // 코어(모든 엔진) 활성화
 
                 yield return new WaitForSeconds(TICK_INTERVAL); // Example: wait for 1 second between ticks
@@ -76,6 +84,11 @@ namespace DrillGame.Components.Engine
             }
 
             Initialize();
+        }
+
+        private void Start()
+        {
+            ActivateCoreTickCorutine();
         }
         #endregion
     }
