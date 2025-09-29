@@ -25,7 +25,7 @@ namespace DrillGame.UI
         public void CloseUI()
         {
             Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
-            UILoader.Instance.UnloadUI(addressableName);
+            UILoader.Instance.HideUI(addressableName);
         }
 
         public void LinkAddressable(string address)

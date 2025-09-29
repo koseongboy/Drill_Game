@@ -43,6 +43,54 @@ namespace DrillGame.UI
         #endregion
 
         #region public methods
+
+        public void ShowUI(string uiName)
+        {
+            if(loadedUIs.ContainsKey(uiName))
+            {
+                GameObject uiInstance = loadedUIs[uiName];
+                if(uiInstance != null)
+                {
+                    uiInstance.SetActive(true);
+                    Debug.Log($"UI 활성화: {uiName}");
+                }
+                else
+                {
+                    Debug.LogWarning($"UI {uiName} 인스턴스가 null 입니다. 다시 로드 시도합니다.");
+                    loadedUIs.Remove(uiName);
+                    LoadUI(uiName);
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 로드 시도합니다.");
+                LoadUI(uiName);
+            }
+        }
+
+        public void HideUI(string uiName)
+        {
+            if (loadedUIs.ContainsKey(uiName))
+            {
+                GameObject uiInstance = loadedUIs[uiName];
+                if (uiInstance != null)
+                {
+                    uiInstance.SetActive(false);
+                    Debug.Log($"UI 비활성화: {uiName}");
+                }
+                else
+                {
+                    Debug.LogWarning($"UI {uiName} 인스턴스가 null 입니다. 언로드 시도합니다. 상황 확인이 필요합니다.");
+                    loadedUIs.Remove(uiName);
+                    UnloadUI(uiName);
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 언로드 시도합니다.");
+            }
+        }
+
         public void LoadUI(string uiName)
         {
             // Implement UI loading logic here

@@ -42,7 +42,7 @@ namespace DrillGame
         private void OnJumpPerformed(InputAction.CallbackContext context)
         {
             Debug.Log("Jump Action (Spacebar) Performed! - Load UI");
-            UILoader.Instance.LoadUI("UI_Facility_Core");
+            UILoader.Instance.ShowUI("UI_Facility_Core");
         }
     }
 }
