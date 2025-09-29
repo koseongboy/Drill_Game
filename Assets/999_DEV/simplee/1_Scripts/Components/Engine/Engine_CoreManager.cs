@@ -41,8 +41,6 @@ namespace DrillGame.Components.Engine
                 Debug.LogWarning("코어 틱 코루틴이 이미 존재합니다. 원인을 찾아봐야합니다.");
             }
             coreTickCoroutine = StartCoroutine(CoreTickCoroutine());
-
-
         }
         #endregion
 
