@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public abstract class Facility_Base
+namespace DrillGame.Entity.Facility
 {
-    
+    public abstract class Facility_Base
+    {
+
+    }
 }

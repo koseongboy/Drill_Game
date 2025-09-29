@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public abstract class Engine_Base
+namespace DrillGame.Entity.Engine
 {
-    public abstract void Activate();
+    public abstract class Engine_Base
+    {
+        public abstract void Activate();
 
+    }
 }
