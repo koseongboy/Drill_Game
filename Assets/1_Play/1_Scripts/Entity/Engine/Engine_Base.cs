@@ -1,9 +1,10 @@
-using DrillGame.Components.Engine;
-using DrillGame.Managers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DrillGame.Components.Engine;
+using DrillGame.Data;
+using DrillGame.Managers;
 
 
 namespace DrillGame.Entity.Engine
@@ -59,6 +60,16 @@ namespace DrillGame.Entity.Engine
             UpDateEngineObjectInspector();
         }
 
+        async public void SetTileFormation(string id)
+        {
+            Engine_Data engineData;
+            engineData = await Engine_Data.CreateAsync();
+            Tuple<int, int>[] coordinates = engineData.GetCoordinate(id);
+            foreach (var coordinate in coordinates)
+            {
+                TileFormation.Add(new Vector2Int(coordinate.Item1, coordinate.Item2));
+            }
+        }
         #endregion
 
         #region public methods
@@ -80,8 +91,7 @@ namespace DrillGame.Entity.Engine
             engineController.ActivateEngineWithDelay(waitDelay, ActivateEngine);
         }
 
-
-        // todo(고성): 타일 포메이션 설정
+        
         public void SetTileFormation()
         {
             TileFormation = new List<Vector2Int>();
