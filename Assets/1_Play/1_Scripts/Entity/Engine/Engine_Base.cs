@@ -91,11 +91,6 @@ namespace DrillGame.Entity.Engine
             engineController.ActivateEngineWithDelay(waitDelay, ActivateEngine);
         }
 
-        
-        public void SetTileFormation()
-        {
-            TileFormation = new List<Vector2Int>();
-        }
         #endregion
 
         #region protected methods
