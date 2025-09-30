@@ -10,11 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: CSVData
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Default Local Group
+  m_GroupName: CSVData
   m_GUID: 9cf4d4a1514e4964186ccf096c729118
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 9dc37fc0aa9973f4f862a97e95e32d8a
+    m_Address: Assets/999_DEV/koseongboy/2_Materials/Engine_Data.CSV
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:
