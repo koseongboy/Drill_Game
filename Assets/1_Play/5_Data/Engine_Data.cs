@@ -20,6 +20,7 @@ namespace DrillGame.Data
     {
         #region Fields & Properties
         private Dictionary<string, Engine_Structure> engineTable = new Dictionary<string, Engine_Structure>();
+        int numCol = 5;
         #endregion
 
         #region Singleton & initialization
@@ -77,7 +78,7 @@ namespace DrillGame.Data
             {
                 string line = lines[i];
                 string[] fields = line.Split(',');
-                if (fields.Length >= 5)
+                if (fields.Length >= numCol)
                 {
                     Engine_Structure structure = new Engine_Structure
                     {
