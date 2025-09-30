@@ -77,12 +77,12 @@ namespace DrillGame.Entity.Engine
 
         public void ActivateCore()
         {
-            ActivateAllEngines();
+            RequestActivateAllEngines();
         }
 
         public void ActivateEngine(int index)
         {
-            ActivateEngineByIndex(index);
+            RequestActivateEngineByIndex(index);
         }
 
         public void AddTickCount()
@@ -93,22 +93,23 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region private methods
-        private void ActivateAllEngines()
+        private void RequestActivateAllEngines()
         {
+            
             foreach (var engine in _engines)
             {
-                engine.Activate();
+                engine.RequestActivate();
             }
         }
 
-        private void ActivateEngineByIndex(int index)
+        private void RequestActivateEngineByIndex(int index)
         {
             if (index < 0 || index >= _engines.Count)
             {
                 Debug.LogError("Index out of range.");
                 return;
             }
-            _engines[index].Activate();
+            _engines[index].RequestActivate();
         }
 
 

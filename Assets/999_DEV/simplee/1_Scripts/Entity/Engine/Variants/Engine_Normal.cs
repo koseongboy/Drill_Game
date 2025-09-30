@@ -1,3 +1,7 @@
+using DrillGame.Components.Engine;
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace DrillGame.Entity.Engine
@@ -5,12 +9,13 @@ namespace DrillGame.Entity.Engine
     public class Engine_Normal : Engine_Base
     {
         #region Fields & Properties
-        private string engineName;
+        //string engineName;    //상위 클래스에 있음
+        //float waitDelay;
 
         #endregion
 
         #region Singleton & initialization
-        public Engine_Normal()
+        public Engine_Normal(EngineController engineController, Vector2 position) : base(engineController, position)
         {
             Initialize();
         }
@@ -20,21 +25,26 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region public methods
-        public override void Activate()
-        {
-            Debug.Log($"{engineName} 활성화됨.");
-            OnActivated?.Invoke();
-        }
+        
         #endregion
 
         #region private methods
         private void Initialize()
         {
-            engineName = GetType().Name;
-            Engine_Core.Instance.AddEngine(this);
 
-            Debug.Log($"{engineName} 생성 및 코어 register.");
+            
         }
+
+        
+
+        protected override void ActivateEngine()
+        {
+            Debug.Log($"{engineName} 엔진 활성화!");
+            // 처리 로직
+            OnActivated?.Invoke();
+        }
+
+        
         #endregion
 
         #region Unity event methods

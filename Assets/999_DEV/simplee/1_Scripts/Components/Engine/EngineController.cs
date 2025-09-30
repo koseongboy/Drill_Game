@@ -1,5 +1,7 @@
 using DG.Tweening;
 using DrillGame.Entity.Engine;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace DrillGame.Components.Engine
@@ -8,9 +10,16 @@ namespace DrillGame.Components.Engine
     {
         #region Fields & Properties
         private Engine_Base engine;
+
         [SerializeField]
         [Tooltip("debug 용도로 엔진의 이름을 직접 작성할 수 있습니다. 실 사용시 비워두세요")]
         private string engineName;
+        [ReadOnly]
+        [SerializeField]
+        public Vector2 enginePosition;
+        [ReadOnly]
+        [SerializeField]
+        public float engineWaitDelay;
 
         #endregion
 
@@ -27,22 +36,44 @@ namespace DrillGame.Components.Engine
         #endregion
 
         #region public methods
-        
+        public void ActivateEngineWithDelay(float delay, Action action)
+        {
+            if(delay > 0)
+            {
+                StartCoroutine(WaitAndActivate(delay, action));
+            }
+            else
+            {
+                action?.Invoke();
+            }
+        }
+
         #endregion
 
         #region private methods
         private void HandleEngineActivated()
         {
             Debug.Log($"mono - {engineName} 엔진이 active 되었습니다.");
-            TempGraphicAction();
+            UpDateEngineObject();
+        }
+
+        private IEnumerator WaitAndActivate(float delay, Action action)
+        {
+            yield return new WaitForSeconds(delay);
+            action?.Invoke();
+        }
+
+        private void UpDateEngineObject()
+        {
+             TempGraphicAction();
         }
 
         private void TempGraphicAction()
         {
-            // Vector3.one * 0.2f는 모든 축으로 0.2만큼 펀치한다는 의미입니다.
+            // Vector3.one * 0.15f는 모든 축으로 0.15만큼 펀치한다는 의미입니다.
             transform.DOPunchScale(
                 punch: Vector3.one * 0.2f, // 현재 크기에서 20% 커짐
-                duration: 0.2f,             // 0.2초 동안 커졌다 돌아옴
+                duration: 0.15f,             // 0.15초 동안 커졌다 돌아옴
                 vibrato: 1,                 // 한 번만 튀어나왔다 돌아오도록 설정
                 elasticity: 1               // 탄성력 설정 (1이 일반적으로 부드러움)
             );
@@ -51,7 +82,7 @@ namespace DrillGame.Components.Engine
 
         #region Unity event methods
 
-        private void Start()
+        private void Awake()
         {
             if (engineName == null)
             {
@@ -61,7 +92,7 @@ namespace DrillGame.Components.Engine
             {
                 if (engineName == "Normal")
                 {
-                    Engine_Normal normalEngine = new Engine_Normal();
+                    Engine_Normal normalEngine = new Engine_Normal(this, (Vector2)transform.position);
                     Initialize(normalEngine);
                 }
                 else
@@ -72,6 +103,8 @@ namespace DrillGame.Components.Engine
         }
 
         
+
+
         #endregion
     }
 }
