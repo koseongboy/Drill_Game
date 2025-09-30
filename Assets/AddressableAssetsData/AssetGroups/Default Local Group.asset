@@ -10,19 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: UIPrefabs
+  m_Name: Default Local Group
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: UIPrefabs
-  m_GUID: 6ed671ce7d8f4a645b6f9385123ebe49
-  m_SerializeEntries:
-  - m_GUID: 955040d094b68d645993bf80dd2c0d48
-    m_Address: UI_Facility_Core
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_GroupName: Default Local Group
+  m_GUID: d03430363863e604b95264f023962ed7
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 492514b2132c8364baa76a23365e2762, type: 2}
-    - {fileID: 11400000, guid: ac49e03df83dc7545bec3c80c78678ff, type: 2}
+    - {fileID: 11400000, guid: c092ca5bb76b19b489fbfbef9d9fc78d, type: 2}
+    - {fileID: 11400000, guid: 1077fd556c099144a96db5af290eca6b, type: 2}

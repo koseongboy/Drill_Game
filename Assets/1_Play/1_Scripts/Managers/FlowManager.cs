@@ -26,7 +26,7 @@ namespace DrillGame.Managers
         #region public methods
         public void EngineAction(List<Vector2Int> targetPositions, string name)
         {
-            Debug.Log($"EngineAction called for {name} at positions: {string.Join(", ", targetPositions)}");
+            Debug.Log($"EngineAction called by {name} for positions: ");
         }
         #endregion
 

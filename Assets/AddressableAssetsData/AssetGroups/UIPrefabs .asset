@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: CSVData
+  m_Name: 'UIPrefabs '
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: CSVData
-  m_GUID: beb9b2787a4693348aa77132c596c65b
+  m_GroupName: 'UIPrefabs '
+  m_GUID: 5fabd6954ec50eb40919b75bc23ef7b0
   m_SerializeEntries:
-  - m_GUID: 9dc37fc0aa9973f4f862a97e95e32d8a
-    m_Address: Engine_Data
+  - m_GUID: 955040d094b68d645993bf80dd2c0d48
+    m_Address: UI_Facility_Core
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -24,5 +24,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 836827b84c10674489a7d0f4b1d1562c, type: 2}
-    - {fileID: 11400000, guid: 3d6b1e5e5a3e39441aa1e2fa3b21d484, type: 2}
+    - {fileID: 11400000, guid: e2638933c0ed71f49b5be2d9636636f2, type: 2}
+    - {fileID: 11400000, guid: 3a73067d34df3f94683f6c1eaf134163, type: 2}
