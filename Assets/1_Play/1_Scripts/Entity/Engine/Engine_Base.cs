@@ -1,6 +1,8 @@
 using DrillGame.Components.Engine;
+using DrillGame.Managers;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -9,7 +11,6 @@ namespace DrillGame.Entity.Engine
     public abstract class Engine_Base
     {
         #region Fields & Properties
-        public int testInt;
         [ReadOnly]
         [SerializeField]
         protected string engineName;
@@ -21,20 +22,24 @@ namespace DrillGame.Entity.Engine
 
         protected Action OnActivated;
 
-        public Vector2 position { get; private set; }
+        private List<Vector2Int> TileFormation;
+
+        public Vector2Int position { get; private set; }
         #endregion
 
         #region Singleton & initialization
-        public Engine_Base(EngineController engineController, Vector2 position)
+        public Engine_Base(EngineController engineController, Vector2Int position)
         {
             Initialize(engineController, position);
         }
 
-        private void Initialize(EngineController engineController, Vector2 position)
+        private void Initialize(EngineController engineController, Vector2Int position)
         {
             engineName = GetType().Name;
             Engine_Core.Instance.AddEngine(this);
-            Debug.Log($"{engineName} 생성 및 코어 register.");
+            FlowManager.Instance.RegisterEngine(this);
+
+            Debug.Log($"{engineName} 생성 및 코어, FlowController register.");
 
             this.engineController = engineController;
             this.position = position;
@@ -45,7 +50,7 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region getters & setters
-        public void UpdatePosition(Vector2 newPosition)
+        public void UpdatePosition(Vector2Int newPosition)
         {
             position = newPosition;
             Debug.Log($"{engineName} 위치 변경 {position}");
@@ -65,7 +70,7 @@ namespace DrillGame.Entity.Engine
 
         public void UpdateWaitDelay()
         {
-            waitDelay = Vector2.Distance(Engine_Core.Instance.position, position) * 0.1f;
+            waitDelay = Vector2Int.Distance(Engine_Core.Instance.position, position) * 0.1f;
             Debug.Log($"{engineName} 대기 시간 업데이트: {waitDelay}초");
         }
 
@@ -74,12 +79,30 @@ namespace DrillGame.Entity.Engine
             Debug.Log($"{engineName} 활성화 요청. 대기 시간: {waitDelay}초");
             engineController.ActivateEngineWithDelay(waitDelay, ActivateEngine);
         }
+
+
+        // todo(고성): 타일 포메이션 설정
+        public void SetTileFormation()
+        {
+            TileFormation = new List<Vector2Int>();
+        }
         #endregion
 
         #region protected methods
-        
 
-        protected abstract void ActivateEngine();
+
+        protected virtual void ActivateEngine()
+        {
+            Debug.Log($"{engineName} 엔진 활성화!");
+            // 처리 로직
+
+            FlowManager.Instance.EngineAction(TileFormation, engineName);
+
+
+
+            // engineController : monoBehaviour 의 함수 호출 현재 (HandleEngineActivated)
+            OnActivated?.Invoke();
+        }
         #endregion
         #region private methods
         // 디버그용 유니티 인스펙터 업데이트

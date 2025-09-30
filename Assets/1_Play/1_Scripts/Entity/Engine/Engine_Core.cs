@@ -7,7 +7,7 @@ namespace DrillGame.Entity.Engine
     public class Engine_Core
     {
         #region Fields & Properties
-        public Vector2 position { get; private set; }
+        public Vector2Int position { get; private set; }
         public ulong totalTickCount { get; private set; }
 
         private readonly List<Engine_Base> _engines = new List<Engine_Base>();

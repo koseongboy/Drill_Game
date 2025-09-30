@@ -15,7 +15,7 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region Singleton & initialization
-        public Engine_Normal(EngineController engineController, Vector2 position) : base(engineController, position)
+        public Engine_Normal(EngineController engineController, Vector2Int position) : base(engineController, position)
         {
             Initialize();
         }
@@ -39,9 +39,8 @@ namespace DrillGame.Entity.Engine
 
         protected override void ActivateEngine()
         {
-            Debug.Log($"{engineName} 엔진 활성화!");
-            // 처리 로직
-            OnActivated?.Invoke();
+            base.ActivateEngine();
+            // 개별 처리 로직 - 필요시
         }
 
         
