@@ -1,0 +1,9 @@
+ID,Type,Level,Relative_X,Relative_Y
+normal-1,normal,1,0,0
+normal-2,normal,2,0,1
+normal-3,normal,3,0,2
+normal-4,normal,4,1,2
+special-1,special,1,0,0
+special-2,special,2,1,0
+special-3,special,3,2,0
+special-4,special,4,3,0
