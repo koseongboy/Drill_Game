@@ -9,8 +9,8 @@ namespace DrillGame.Entity.Engine
 {
     public struct Engine_Structure
     {
-        public int id;
-        public int type;
+        public string id;
+        public string type;
         public int level;
         public int relative_x;
         public int relative_y;
@@ -19,7 +19,7 @@ namespace DrillGame.Entity.Engine
     public class Engine_Data
     {
         #region Fields & Properties
-        private Dictionary<int, Engine_Structure> engineTable = new Dictionary<int, Engine_Structure>();
+        private Dictionary<string, Engine_Structure> engineTable = new Dictionary<string, Engine_Structure>();
         #endregion
 
         #region Singleton & initialization
@@ -27,13 +27,17 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region getters & setters
-        public Tuple<int, int>[] GetCoordinate(int id)
+        public Tuple<int, int>[] GetCoordinate(string id)
         {
-            Tuple<int, int>[] coordinates = new Tuple<int, int>[id % 10];
-            for (int i = 1; i <= id % 10; i++)
+            string type = id.Split('-')[0];
+            int level = int.Parse(id.Split('-')[1]);
+            Tuple<int, int>[] coordinates = new Tuple<int, int>[level];
+            for (int i = 1; i <= level; i++)
             {
-                if (engineTable.TryGetValue(id / 10 * 10 + i, out Engine_Structure structure))
+                string stringForSearch = $"{type}-{i}";
+                if (engineTable.TryGetValue(stringForSearch, out Engine_Structure structure))
                 {
+
                     coordinates[i - 1] = new Tuple<int, int>(structure.relative_x, structure.relative_y);
                 }
                 else
@@ -77,8 +81,8 @@ namespace DrillGame.Entity.Engine
                 {
                     Engine_Structure structure = new Engine_Structure
                     {
-                        id = int.Parse(fields[0]),
-                        type = int.Parse(fields[1]),
+                        id = fields[0],
+                        type = fields[1],
                         level = int.Parse(fields[2]),
                         relative_x = int.Parse(fields[3]),
                         relative_y = int.Parse(fields[4])

@@ -11,20 +11,20 @@ namespace DrillGame.Components
         {
             Engine_Data engineData;
             engineData = await Engine_Data.CreateAsync();
-            Tuple<int, int>[] coords = engineData.GetCoordinate(12);
-            Debug.Log("Coordinates for Engine ID 12:");
+            Tuple<int, int>[] coords = engineData.GetCoordinate("normal-2");
+            Debug.Log("Coordinates for Engine ID normal-2:");
             foreach (var coord in coords)
             {
                 Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
             }
-            coords = engineData.GetCoordinate(14);
-            Debug.Log("Coordinates for Engine ID 14:");
+            coords = engineData.GetCoordinate("normal-4");
+            Debug.Log("Coordinates for Engine ID normal-4:");
             foreach (var coord in coords)
             {
                 Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
             }
-            coords = engineData.GetCoordinate(24);
-            Debug.Log("Coordinates for Engine ID 24:");
+            coords = engineData.GetCoordinate("special-4");
+            Debug.Log("Coordinates for Engine ID special-4:");
             foreach (var coord in coords)
             {
                 Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
