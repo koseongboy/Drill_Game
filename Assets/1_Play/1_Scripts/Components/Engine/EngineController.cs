@@ -16,7 +16,7 @@ namespace DrillGame.Components.Engine
         private string engineName;
         [ReadOnly]
         [SerializeField]
-        public Vector2 enginePosition;
+        public Vector2Int enginePosition;
         [ReadOnly]
         [SerializeField]
         public float engineWaitDelay;
@@ -70,13 +70,33 @@ namespace DrillGame.Components.Engine
 
         private void TempGraphicAction()
         {
-            // Vector3.one * 0.15f는 모든 축으로 0.15만큼 펀치한다는 의미입니다.
-            transform.DOPunchScale(
-                punch: Vector3.one * 0.2f, // 현재 크기에서 20% 커짐
-                duration: 0.15f,             // 0.15초 동안 커졌다 돌아옴
-                vibrato: 1,                 // 한 번만 튀어나왔다 돌아오도록 설정
-                elasticity: 1               // 탄성력 설정 (1이 일반적으로 부드러움)
+            Renderer targetRenderer = GetComponent<Renderer>();
+            Color flashColor = Color.lightSkyBlue; // 원하는 색상으로 변경 가능
+            float halfDuration = 0.1f; // 전체 지속 시간
+            Color originalColor = targetRenderer.material.color;
+
+            // 시퀀스 생성
+            Sequence colorSequence = DOTween.Sequence();
+
+            // 1단계: 새 색깔로 변경
+            colorSequence.Append(
+                targetRenderer.material.DOColor(flashColor, halfDuration)
             );
+
+            // 2단계: 원래 색깔로 복귀
+            colorSequence.Append(
+                targetRenderer.material.DOColor(originalColor, halfDuration)
+            );
+
+            colorSequence.Play();
+
+            // Vector3.one * 0.15f는 모든 축으로 0.15만큼 펀치한다는 의미입니다.
+            //transform.DOPunchScale(
+            //    punch: Vector3.one * 0.2f, // 현재 크기에서 20% 커짐
+            //    duration: 0.15f,             // 0.15초 동안 커졌다 돌아옴
+            //    vibrato: 1,                 // 한 번만 튀어나왔다 돌아오도록 설정
+            //    elasticity: 1               // 탄성력 설정 (1이 일반적으로 부드러움)
+            //);
         }
         #endregion
 
@@ -92,7 +112,8 @@ namespace DrillGame.Components.Engine
             {
                 if (engineName == "Normal")
                 {
-                    Engine_Normal normalEngine = new Engine_Normal(this, (Vector2)transform.position);
+                    Vector2Int vector2Int = Vector2Int.FloorToInt((Vector2)transform.position);
+                    Engine_Normal normalEngine = new Engine_Normal(this, vector2Int);
                     Initialize(normalEngine);
                 }
                 else
