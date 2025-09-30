@@ -1,5 +1,5 @@
 using UnityEngine;
-using DrillGame.Entity.Engine;
+using DrillGame.Data;
 using System;
 
 namespace DrillGame.Components
