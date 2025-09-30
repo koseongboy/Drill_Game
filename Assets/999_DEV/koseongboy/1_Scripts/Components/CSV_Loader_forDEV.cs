@@ -9,26 +9,13 @@ namespace DrillGame.Components
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         async void Start()
         {
-            Engine_Data engineData;
-            engineData = await Engine_Data.CreateAsync();
-            Tuple<int, int>[] coords = engineData.GetCoordinate("normal-2");
-            Debug.Log("Coordinates for Engine ID normal-2:");
-            foreach (var coord in coords)
-            {
-                Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
-            }
-            coords = engineData.GetCoordinate("normal-4");
-            Debug.Log("Coordinates for Engine ID normal-4:");
-            foreach (var coord in coords)
-            {
-                Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
-            }
-            coords = engineData.GetCoordinate("special-4");
-            Debug.Log("Coordinates for Engine ID special-4:");
-            foreach (var coord in coords)
-            {
-                Debug.Log($"Coordinate: ({coord.Item1}, {coord.Item2})");
-            }
+            Facility_Data facilityData;
+            facilityData = await Facility_Data.CreateAsync();
+            Tuple<int, int> size = facilityData.GetSize(1);
+            Debug.Log("Size for facility id 1: " + size);
+            Tuple<int, int> size2 = facilityData.GetSize(2);
+            Debug.Log("Size for facility id 1: " + size2);
+        
             
         }
 
