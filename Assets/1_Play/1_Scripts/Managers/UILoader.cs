@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-using DrillGame.UI.Interface;
+using DrillGame.UI .Interface;
 
 
 
@@ -16,6 +17,9 @@ namespace DrillGame.UI
         [SerializeField]
         private Transform uiParentTransform;
 
+        [SerializeField]
+        private List<string> awakeUIList = new List<string>();
+        
         private Dictionary<string, AsyncOperationHandle<GameObject>> loadUIHandles = new();
         private Dictionary<string, GameObject> loadedUIs = new();
 
@@ -52,18 +56,18 @@ namespace DrillGame.UI
                 if(uiInstance != null)
                 {
                     uiInstance.SetActive(true);
-                    Debug.Log($"UI х╟╪╨х╜: {uiName}");
+                    Debug.Log($"UI х╟О©╫О©╫х╜: {uiName}");
                 }
                 else
                 {
-                    Debug.LogWarning($"UI {uiName} юн╫╨ео╫╨╟║ null ют╢о╢ы. ╢ы╫ц ╥н╣Е ╫ц╣╣гу╢о╢ы.");
+                    Debug.LogWarning($"UI {uiName} О©╫н╫О©╫О©╫о╫О©╫О©╫О©╫ null О©╫т╢о╢О©╫. О©╫ы╫О©╫ О©╫н╣О©╫ О©╫ц╣О©╫О©╫у╢о╢О©╫.");
                     loadedUIs.Remove(uiName);
                     LoadUI(uiName);
                 }
             }
             else
             {
-                Debug.LogWarning($"UI {uiName} ╢б ╥н╣Е╣х ╩Себ╟║ ╬ф╢у╢о╢ы. ╥н╣Е ╫ц╣╣гу╢о╢ы.");
+                Debug.LogWarning($"UI {uiName} О©╫О©╫ О©╫н╣О©╫О©╫ О©╫О©╫О©╫б╟О©╫ О©╫ф╢у╢о╢О©╫. О©╫н╣О©╫ О©╫ц╣О©╫О©╫у╢о╢О©╫.");
                 LoadUI(uiName);
             }
         }
@@ -76,31 +80,31 @@ namespace DrillGame.UI
                 if (uiInstance != null)
                 {
                     uiInstance.SetActive(false);
-                    Debug.Log($"UI ╨Ях╟╪╨х╜: {uiName}");
+                    Debug.Log($"UI О©╫О©╫х╟О©╫О©╫х╜: {uiName}");
                 }
                 else
                 {
-                    Debug.LogWarning($"UI {uiName} юн╫╨ео╫╨╟║ null ют╢о╢ы. ╬П╥н╣Е ╫ц╣╣гу╢о╢ы. ╩Сх╡ х╝юнюл гй©Дгу╢о╢ы.");
+                    Debug.LogWarning($"UI {uiName} О©╫н╫О©╫О©╫о╫О©╫О©╫О©╫ null О©╫т╢о╢О©╫. О©╫О©╫н╣О©╫ О©╫ц╣О©╫О©╫у╢о╢О©╫. О©╫О©╫х╡ х╝О©╫О©╫О©╫О©╫ О©╫й©О©╫О©╫у╢о╢О©╫.");
                     loadedUIs.Remove(uiName);
                     UnloadUI(uiName);
                 }
             }
             else
             {
-                Debug.LogWarning($"UI {uiName} ╢б ╥н╣Е╣х ╩Себ╟║ ╬ф╢у╢о╢ы. ╬П╥н╣Е ╫ц╣╣гу╢о╢ы.");
+                Debug.LogWarning($"UI {uiName} О©╫О©╫ О©╫н╣О©╫О©╫ О©╫О©╫О©╫б╟О©╫ О©╫ф╢у╢о╢О©╫. О©╫О©╫н╣О©╫ О©╫ц╣О©╫О©╫у╢о╢О©╫.");
             }
         }
 
         public void LoadUI(string uiName)
         {
             // Implement UI loading logic here
-            Debug.Log($"UI ╥н╣Е ╫ц╣╣: {uiName}");
+            Debug.Log($"UI О©╫н╣О©╫ О©╫ц╣О©╫: {uiName}");
 
             if(loadUIHandles.ContainsKey(uiName))
             {
-                Debug.LogWarning($"UI {uiName} ╢б юл╧л ╥н╣Е╣х ╩Себют╢о╢ы");
+                Debug.LogWarning($"UI {uiName} О©╫О©╫ О©╫л╧О©╫ О©╫н╣О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫");
 
-                // хдцЁ╦╝╟║ гй©Д╫ц
+                // О©╫О©╫цЁО©╫О©╫О©╫О©╫ О©╫й©О©╫О©╫
                 return;
             }
 
@@ -111,7 +115,7 @@ namespace DrillGame.UI
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    Debug.Log($"UI ╥н╣Е ╪╨╟Ь: {uiName}");
+                    Debug.Log($"UI О©╫н╣О©╫ О©╫О©╫О©╫О©╫: {uiName}");
                     GameObject uiPrefab = handle.Result;
                     GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
 
@@ -122,10 +126,10 @@ namespace DrillGame.UI
                 }
                 else
                 {
-                    Debug.LogError($"UI ╥н╣Е ╫гфп: {uiName}");
+                    Debug.LogError($"UI О©╫н╣О©╫ О©╫О©╫О©╫О©╫: {uiName}");
                     loadUIHandles.Remove(uiName);
 
-                    Addressables.Release(handle);   //gemini ╪╠╩Щ╢т ©п╥н╢б ╥н╣Е ╫гфпгь╣╣ ╦ч╦П╦╝ гьа╕ ╬хюЭго╟т го╥║©Д
+                    Addressables.Release(handle);   //gemini О©╫О©╫О©╫О©╫О©╫О©╫ О©╫п╥н╢О©╫ О©╫н╣О©╫ О©╫О©╫О©╫О©╫О©╫ь╣О©╫ О©╫ч╦О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╟О©╫ О©╫о╥О©╫О©╫О©╫
                 }
             };
         }
@@ -133,11 +137,11 @@ namespace DrillGame.UI
         public void UnloadUI(string uiName)
         {
             // Implement UI unloading logic here
-            Debug.Log($"UI ╬П╥н╣Е ╫ц╣╣: {uiName}");
+            Debug.Log($"UI О©╫О©╫н╣О©╫ О©╫ц╣О©╫: {uiName}");
             if (!loadUIHandles.ContainsKey(uiName))
             {
-                Debug.LogWarning($"UI {uiName} ╢б ╥н╣Е╣х ╩Себ╟║ ╬ф╢у╢о╢ы");
-                // хдцЁ╦╝╟║ гй©Д╫ц
+                Debug.LogWarning($"UI {uiName} О©╫О©╫ О©╫н╣О©╫О©╫ О©╫О©╫О©╫б╟О©╫ О©╫ф╢у╢о╢О©╫");
+                // О©╫О©╫цЁО©╫О©╫О©╫О©╫ О©╫й©О©╫О©╫
                 return;
             }
 
@@ -148,21 +152,38 @@ namespace DrillGame.UI
                 if(uiInstance != null)
                     Destroy(uiInstance);
                 else
-                    Debug.LogWarning($"UI {uiName} юн╫╨ео╫╨╟║ юл╧л фд╠╚╣х ╩Себют╢о╢ы юг╣╣╣х ╩Ггвюн╟║©Д");
+                    Debug.LogWarning($"UI {uiName} О©╫н╫О©╫О©╫о╫О©╫О©╫О©╫ О©╫л╧О©╫ О©╫д╠О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫т╢о╢О©╫ О©╫г╣О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫н╟О©╫О©╫О©╫");
 
                 loadedUIs.Remove(uiName);
             }
             AsyncOperationHandle<GameObject> loadHandle = loadUIHandles[uiName];
             Addressables.Release(loadHandle);
             loadUIHandles.Remove(uiName);
-            Debug.Log($"UI ╬П╥н╣Е ©о╥А: {uiName}");
+            Debug.Log($"UI О©╫О©╫н╣О©╫ О©╫о╥О©╫: {uiName}");
         }
         #endregion
 
         #region private methods
+
+        /// <summary>
+        /// Л■╛Л²╢ Л▀°Л·▒К░═ К∙▄ ShowК░≤Л√╢Л∙╪М∙═ UIК⌠╓Л²└ Show
+        /// </summary>
+        private void ShowUIOnSceneStart()
+        {
+            foreach (var uiName in awakeUIList)
+            {
+                ShowUI(uiName);
+            }
+        }
+        
         #endregion
 
         #region Unity event methods
+
+        private void Start()
+        {
+            ShowUIOnSceneStart();
+        }
 
         #endregion
 
