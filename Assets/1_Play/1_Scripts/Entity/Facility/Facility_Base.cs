@@ -26,9 +26,10 @@ namespace DrillGame.Entity.Facility
 
         protected override void Initialize(ComponentBaseController baseController, Vector2Int position)
         {
+            base.Initialize(baseController, position);
             BoardManager.Instance.RegisterFacility(this);
 
-            Debug.Log($"{entityName} 积己 棺 BoardManager register.");
+            Debug.Log($"{entityName} 矫汲 积己 棺 BoardManager register.");
         }
         #endregion
 

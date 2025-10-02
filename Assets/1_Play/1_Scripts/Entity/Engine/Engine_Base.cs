@@ -32,7 +32,7 @@ namespace DrillGame.Entity.Engine
             base.Initialize(baseController, position);
             Engine_Core.Instance.AddEngine(this);
             BoardManager.Instance.RegisterEngine(this);
-            Debug.Log($"{entityName} 积己 棺 内绢, BoardManager register.");
+            Debug.Log($"{entityName} 浚柳 积己 棺 内绢, BoardManager register.");
 
 
 
@@ -93,7 +93,8 @@ namespace DrillGame.Entity.Engine
             Debug.Log($"{entityName} 浚柳 劝己拳!");
             // 贸府 肺流
 
-            BoardManager.Instance.EngineAction(TileFormation, entityName);
+            List<Vector2Int> affectedPositions = GetAllPositions();
+            BoardManager.Instance.EngineAction(affectedPositions, entityName);
 
 
 
