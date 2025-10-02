@@ -2,8 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
-using DrillGame.Components.Facility;
 using DrillGame.Managers;
+using DrillGame.Components;
+using DrillGame.Components.Facility;
 
 namespace DrillGame.Entity.Facility
 {
@@ -13,42 +14,26 @@ namespace DrillGame.Entity.Facility
 
         
 
-        private FacilityController facilityController;
+        
 
         #endregion
 
         #region initialization
-        public Facility_Base(FacilityController facilityController, Vector2Int position)
+        public Facility_Base(ComponentBaseController baseController, Vector2Int position) : base(baseController, position)
         {
-            Initialize(facilityController, position);
+
         }
 
-        private void Initialize(FacilityController facilityController, Vector2Int position)
+        protected override void Initialize(ComponentBaseController baseController, Vector2Int position)
         {
-            entityName = GetType().Name;
             BoardManager.Instance.RegisterFacility(this);
 
             Debug.Log($"{entityName} 생성 및 BoardManager register.");
-
-            this.facilityController = facilityController;
-            this.position = position;
         }
         #endregion
 
         #region getters & setters
-        public List<Vector2Int> GetAllPositions()
-        {
-            List<Vector2Int> positions = new List<Vector2Int>();
-            foreach (var offset in TileFormation)
-            {
-                positions.Add(position + offset);
-            }
-            return positions;
-        }
-        public string GetFacilityName()
-        {
-            return entityName;
-        }
+        
 
         public string GetFacilityUIName()
         {
@@ -62,6 +47,7 @@ namespace DrillGame.Entity.Facility
         public virtual void ActivateFacility()
         {
             Debug.Log($"{entityName} 시설이 활성화되었습니다.");
+            FacilityController facilityController = baseController as FacilityController;
             facilityController.UpDateFacilityObject();
         }
         #endregion

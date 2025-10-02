@@ -15,7 +15,7 @@ namespace DrillGame.Components.Facility
         #region Singleton & initialization
         public override void Initialize(Entity_Base facility)
         {
-
+            base.Initialize(facility);
 
         }
         #endregion
