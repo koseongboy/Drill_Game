@@ -10,7 +10,7 @@ namespace DrillGame.Components.Facility
     public class FacilityController : ComponentBaseController, IPointerClickHandler
     {
         #region Fields & Properties
-
+        private Facility_Base facilityEntity;
 
         #endregion
 
@@ -19,6 +19,14 @@ namespace DrillGame.Components.Facility
         {
             base.Initialize(facility);
 
+            
+
+            facilityEntity = entity as Facility_Base;
+            facilityEntity.OnActivated += HandleFacilityActivated;
+
+            facilityEntity.OnUpdated += HandleUpdated;
+
+            HandleUpdated(); // 초기값 세팅
         }
         #endregion
 
@@ -26,7 +34,7 @@ namespace DrillGame.Components.Facility
         #endregion
 
         #region public methods
-        public void UpDateFacilityObject()
+        private void UpDateFacilityObject()
         {
             Debug.Log($"mono - {entityName} 시설 오브젝트가 업데이트 되었습니다.");
             TempGrapicAction();
@@ -34,6 +42,11 @@ namespace DrillGame.Components.Facility
         #endregion
 
         #region private methods
+        private void HandleFacilityActivated()
+        {
+            UpDateFacilityObject();
+        }
+
         private void TempGrapicAction()
         {
             // Vector3.one * 0.15f는 모든 축으로 0.15만큼 펀치한다는 의미입니다.
@@ -43,6 +56,11 @@ namespace DrillGame.Components.Facility
                 vibrato: 1,                 // 한 번만 튀어나왔다 돌아오도록 설정
                 elasticity: 1               // 탄성력 설정 (1이 일반적으로 부드러움)
             );
+        }
+
+        protected override void HandleUpdated()
+        {
+            base.HandleUpdated();
         }
         #endregion
 
@@ -59,7 +77,7 @@ namespace DrillGame.Components.Facility
                 if (entityName == "Hello")
                 {
                     Vector2Int vector2Int = Vector2Int.FloorToInt((Vector2)transform.position);
-                    Facility_Hello normalFacility = new Facility_Hello(this, vector2Int);
+                    Facility_Hello normalFacility = new Facility_Hello(vector2Int);
                     Initialize(normalFacility);
                 }
                 else
@@ -69,11 +87,18 @@ namespace DrillGame.Components.Facility
             }
         }
 
+        private void OnDestroy()
+        {
+            if (facilityEntity != null)
+            {
+                facilityEntity.OnActivated -= HandleFacilityActivated;
+            }
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
             Debug.Log($"{entityName} 시설이 클릭되었습니다.");
-            Facility_Base facility = entity as Facility_Base;
-            UILoader.Instance.ShowUI(facility.GetFacilityUIName());
+            UILoader.Instance.ShowUI(facilityEntity.GetFacilityUIName());
         }
         #endregion
     }

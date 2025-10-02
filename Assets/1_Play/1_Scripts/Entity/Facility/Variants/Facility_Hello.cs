@@ -11,7 +11,7 @@ namespace DrillGame.Entity.Facility
         #endregion
 
         #region Singleton & initialization
-        public Facility_Hello(FacilityController facilityController, Vector2Int position) : base(facilityController, position)
+        public Facility_Hello(Vector2Int position) : base(position)
         {
             Debug.Log("Hello 시설이 생성되었습니다.");
         }

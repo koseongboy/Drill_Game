@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using DrillGame.Managers;
 using DrillGame.Components;
 using DrillGame.Components.Facility;
+using System;
 
 namespace DrillGame.Entity.Facility
 {
@@ -12,21 +13,21 @@ namespace DrillGame.Entity.Facility
     {
         #region Fields & Properties
 
-        
+        public event Action OnActivated;
+        public event Action OnUpdated;
 
-        
 
         #endregion
 
         #region initialization
-        public Facility_Base(ComponentBaseController baseController, Vector2Int position) : base(baseController, position)
+        public Facility_Base(Vector2Int position) : base(position)
         {
 
         }
 
-        protected override void Initialize(ComponentBaseController baseController, Vector2Int position)
+        protected override void Initialize(Vector2Int position)
         {
-            base.Initialize(baseController, position);
+            base.Initialize(position);
             BoardManager.Instance.RegisterFacility(this);
 
             Debug.Log($"{entityName} 시설 생성 및 BoardManager register.");
@@ -48,8 +49,9 @@ namespace DrillGame.Entity.Facility
         public virtual void ActivateFacility()
         {
             Debug.Log($"{entityName} 시설이 활성화되었습니다.");
-            FacilityController facilityController = baseController as FacilityController;
-            facilityController.UpDateFacilityObject();
+
+            
+            OnActivated?.Invoke();
         }
         #endregion
 

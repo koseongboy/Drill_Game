@@ -10,8 +10,8 @@ namespace DrillGame.Components.Engine
     public class EngineController : ComponentBaseController
     {
         #region Fields & Properties
+        private Engine_Base engineEntity;
 
-        
         [ReadOnly]
         [SerializeField]
         public float engineWaitDelay;
@@ -23,9 +23,15 @@ namespace DrillGame.Components.Engine
         {
             base.Initialize(entity);
 
-            Engine_Base engine = entity as Engine_Base;
+            
 
-            engine.OnActivatedEvent += HandleEngineActivated;
+            engineEntity = entity as Engine_Base;
+            engineEntity.OnEngineRequestActivated += HandleCoroutineRequest;
+            engineEntity.OnActivated+= HandleEngineActivated;
+
+            engineEntity.OnUpdated += HandleUpdated;
+
+            HandleUpdated(); // 초기값 세팅
         }
         #endregion
 
@@ -33,37 +39,39 @@ namespace DrillGame.Components.Engine
         #endregion
 
         #region public methods
-        public void ActivateEngineWithDelay(float delay, Action action)
-        {
-            if(delay > 0)
-            {
-                StartCoroutine(WaitAndActivate(delay, action));
-            }
-            else
-            {
-                action?.Invoke();
-            }
-        }
-
+        
         #endregion
 
         #region private methods
+        private void HandleCoroutineRequest(IEnumerator enumerator, Action callback)
+        {
+            StartCoroutine(WaitAndActivate(enumerator, callback));
+        }
         private void HandleEngineActivated()
         {
             Debug.Log($"mono - {entityName} 엔진이 active 되었습니다.");
             UpDateEngineObject();
         }
-
-        private IEnumerator WaitAndActivate(float delay, Action action)
-        {
-            yield return new WaitForSeconds(delay);
-            action?.Invoke();
-        }
-
         private void UpDateEngineObject()
         {
              TempGraphicAction();
         }
+
+        protected override void HandleUpdated()
+        {
+            base.HandleUpdated();
+            this.engineWaitDelay = engineEntity.waitDelay;
+        }
+
+        private IEnumerator WaitAndActivate(IEnumerator routine, Action callback)
+        {
+            // 1. 순수 C#에서 전달받은 코루틴을 실행하고 끝날 때까지 대기 (대기 시간)
+            yield return StartCoroutine(routine);
+
+            // 2. 코루틴이 완료되면 콜백 Action 실행 (엔진 작동)
+            callback?.Invoke();
+        }
+
 
         private void TempGraphicAction()
         {
@@ -110,7 +118,7 @@ namespace DrillGame.Components.Engine
                 if (entityName == "Normal")
                 {
                     Vector2Int vector2Int = Vector2Int.FloorToInt((Vector2)transform.position);
-                    Engine_Normal normalEngine = new Engine_Normal(this, vector2Int);
+                    Engine_Normal normalEngine = new Engine_Normal(vector2Int);
                     Initialize(normalEngine);
                 }
                 else

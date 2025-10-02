@@ -13,8 +13,8 @@ namespace DrillGame.Components
         [Tooltip("debug 용도로 엔진의 이름을 직접 작성할 수 있습니다. 실 사용시 비워두세요")]
         protected string entityName;
         [ReadOnly]
-        [SerializeField]    // todo position 이 public 일 필요가 있나?
-        public Vector2Int Position;
+        [SerializeField]    
+        protected Vector2Int position;
 
         #endregion
 
@@ -30,6 +30,14 @@ namespace DrillGame.Components
         #endregion
 
         #region public methods
+        #endregion
+
+        #region protectd methods
+        protected virtual void HandleUpdated()
+        {
+            this.position = entity.position;
+
+        }
         #endregion
 
         #region private methods

@@ -15,9 +15,9 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region Singleton & initialization
-        public Engine_Normal(EngineController engineController, Vector2Int position) : base(engineController, position)
+        public Engine_Normal(Vector2Int position) : base(position)
         {
-            Initialize();
+            
         }
         #endregion
 
@@ -29,10 +29,10 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region private methods
-        private void Initialize()
+        protected override void Initialize(Vector2Int position)
         {
+            base.Initialize(position);
 
-            
         }
 
         

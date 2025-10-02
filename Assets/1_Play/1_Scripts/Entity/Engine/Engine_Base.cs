@@ -14,22 +14,28 @@ namespace DrillGame.Entity.Engine
     public abstract class Engine_Base : Entity_Base
     {
         #region Fields & Properties
-        protected float waitDelay;
+        public event Action<IEnumerator, Action> OnEngineRequestActivated;
+        public event Action OnUpdated;
+        public event Action OnActivated;
 
-        protected Action OnActivated;
+        public float waitDelay { get; protected set; }
+
+
+
+
 
 
         #endregion
 
         #region Singleton & initialization
-        public Engine_Base(ComponentBaseController baseController, Vector2Int position) : base(baseController, position) 
+        public Engine_Base(Vector2Int position) : base(position) 
         {
             
         }
 
-        protected override void Initialize(ComponentBaseController baseController, Vector2Int position)
+        protected override void Initialize(Vector2Int position)
         {
-            base.Initialize(baseController, position);
+            base.Initialize(position);
             Engine_Core.Instance.AddEngine(this);
             BoardManager.Instance.RegisterEngine(this);
             Debug.Log($"{entityName} 엔진 생성 및 코어, BoardManager register.");
@@ -37,18 +43,19 @@ namespace DrillGame.Entity.Engine
 
 
             UpdateWaitDelay();
-            UpDateEngineObjectInspector();
+            // issue : 모노비헤비어 객체 생성후 initialize 전에 data 객체가 먼저 init 되기에 이벤트 체인이 되지 않음
+            //OnUpdated?.Invoke();
         }
         #endregion
 
         #region getters & setters
-        
+
         public override void UpdatePosition(Vector2Int newPosition)
         {
             base.UpdatePosition(newPosition);
 
             UpdateWaitDelay();
-            UpDateEngineObjectInspector();
+            OnUpdated?.Invoke();
         }
 
         async public void SetTileFormation(string id)
@@ -64,11 +71,7 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region public methods
-        public event Action OnActivatedEvent
-        {
-            add { OnActivated += value; }
-            remove { OnActivated -= value; }
-        }
+        
 
         public void UpdateWaitDelay()
         {
@@ -78,9 +81,11 @@ namespace DrillGame.Entity.Engine
 
         public void RequestActivate()
         {
-            Debug.Log($"{entityName} 활성화 요청. 대기 시간: {waitDelay}초");
-            EngineController engineController = baseController as EngineController;
-            engineController.ActivateEngineWithDelay(waitDelay, ActivateEngine);
+            IEnumerator enumerator = WaitAndActivate(waitDelay);
+            Action action = ActivateEngine;
+
+            
+            OnEngineRequestActivated?.Invoke(enumerator, action);
         }
 
         #endregion
@@ -104,16 +109,15 @@ namespace DrillGame.Entity.Engine
         #endregion
         #region private methods
         // 디버그용 유니티 인스펙터 업데이트
-        private void UpDateEngineObjectInspector()
+        
+
+        private IEnumerator WaitAndActivate(float delay)
         {
-            // 이름은 생성시 고정
-            baseController.Position = position;
-
-            EngineController engineController = baseController as EngineController;
-            engineController.engineWaitDelay = waitDelay;
+            yield return new WaitForSeconds(delay);
         }
-
 
         #endregion
     }
+
+    
 }

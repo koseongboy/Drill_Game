@@ -10,24 +10,23 @@ namespace DrillGame.Entity
         protected string entityName;
 
 
-        protected Vector2Int position;
+        public Vector2Int position { get; protected set; }
         protected List<Vector2Int> TileFormation = new() { new Vector2Int(0, 0) }; // default 1x1
 
-        protected ComponentBaseController baseController;
+        
 
         #endregion
 
         #region Singleton & initialization
-        public Entity_Base(ComponentBaseController baseController, Vector2Int position)
+        public Entity_Base(Vector2Int position)
         {
-            Initialize(baseController, position);
+            Initialize(position);
         }
 
-        protected virtual void Initialize(ComponentBaseController baseController, Vector2Int position)
+        protected virtual void Initialize(Vector2Int position)
         {
             entityName = GetType().Name;
             
-            this.baseController = baseController;
             this.position = position;
         }
         #endregion
@@ -42,6 +41,8 @@ namespace DrillGame.Entity
             }
             return positions;
         }
+
+        
 
         public string GetEntityName()
         {
