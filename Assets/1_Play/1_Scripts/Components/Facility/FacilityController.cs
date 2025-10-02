@@ -1,11 +1,13 @@
 using DG.Tweening;
 using DrillGame.Entity;
 using DrillGame.Entity.Facility;
+using DrillGame.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace DrillGame.Components.Facility
 {
-    public class FacilityController : ComponentBaseController
+    public class FacilityController : ComponentBaseController, IPointerClickHandler
     {
         #region Fields & Properties
 
@@ -65,6 +67,13 @@ namespace DrillGame.Components.Facility
                     Debug.LogError("잘못된 string 값을 입력해서 디버그용 시설 class를 불러올 수 없습니다");
                 }
             }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Debug.Log($"{entityName} 시설이 클릭되었습니다.");
+            Facility_Base facility = entity as Facility_Base;
+            UILoader.Instance.ShowUI(facility.GetFacilityUIName());
         }
         #endregion
     }
