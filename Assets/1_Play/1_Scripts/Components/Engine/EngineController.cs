@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DrillGame.Entity;
 using DrillGame.Entity.Engine;
 using System;
 using System.Collections;
@@ -6,17 +7,11 @@ using UnityEngine;
 
 namespace DrillGame.Components.Engine
 {
-    public class EngineController : MonoBehaviour
+    public class EngineController : ComponentBaseController
     {
         #region Fields & Properties
-        private Engine_Base engine;
 
-        [SerializeField]
-        [Tooltip("debug 용도로 엔진의 이름을 직접 작성할 수 있습니다. 실 사용시 비워두세요")]
-        private string engineName;
-        [ReadOnly]
-        [SerializeField]
-        public Vector2Int enginePosition;
+        
         [ReadOnly]
         [SerializeField]
         public float engineWaitDelay;
@@ -24,10 +19,12 @@ namespace DrillGame.Components.Engine
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Engine_Base engine)
+        public override void Initialize(Entity_Base entity)
         {
-            this.engine = engine;
-            engineName = engine.GetType().Name;
+            base.Initialize(entity);
+
+            Engine_Base engine = entity as Engine_Base;
+
             engine.OnActivatedEvent += HandleEngineActivated;
         }
         #endregion
@@ -53,7 +50,7 @@ namespace DrillGame.Components.Engine
         #region private methods
         private void HandleEngineActivated()
         {
-            Debug.Log($"mono - {engineName} 엔진이 active 되었습니다.");
+            Debug.Log($"mono - {entityName} 엔진이 active 되었습니다.");
             UpDateEngineObject();
         }
 
@@ -104,13 +101,13 @@ namespace DrillGame.Components.Engine
 
         private void Awake()
         {
-            if (engineName == null)
+            if (entityName == null)
             {
                 Debug.LogWarning("EngineController에 엔진이 할당되지 않았습니다. 디버그 중이라면 name을 채우시고, 실 개발 중이라면 생성 코드 뒤에 Initialize를 해주세요");
             }
             else
             {
-                if (engineName == "Normal")
+                if (entityName == "Normal")
                 {
                     Vector2Int vector2Int = Vector2Int.FloorToInt((Vector2)transform.position);
                     Engine_Normal normalEngine = new Engine_Normal(this, vector2Int);

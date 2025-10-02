@@ -1,13 +1,16 @@
-using DrillGame.Components.Engine;
-using DrillGame.Entity.Engine;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace DrillGame.Components.Facility
+namespace DrillGame.Entity
 {
-    public class Facility_CoreManager : MonoBehaviour
+    public abstract class Entity_Base
     {
         #region Fields & Properties
+        protected string entityName;
 
+
+        protected Vector2Int position;
+        protected List<Vector2Int> TileFormation = new() { new Vector2Int(0, 0) }; // default 1x1
 
         #endregion
 

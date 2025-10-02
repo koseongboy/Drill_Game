@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using DrillGame.Components.Engine;
 using DrillGame.Data;
 using DrillGame.Managers;
@@ -9,23 +10,16 @@ using DrillGame.Managers;
 
 namespace DrillGame.Entity.Engine
 {
-    public abstract class Engine_Base
+    public abstract class Engine_Base : Entity_Base
     {
         #region Fields & Properties
-        [ReadOnly]
-        [SerializeField]
-        protected string engineName;
-        [ReadOnly]
-        [SerializeField]
         protected float waitDelay;
 
         protected EngineController engineController;
 
         protected Action OnActivated;
 
-        private List<Vector2Int> TileFormation;
 
-        public Vector2Int position { get; private set; }
         #endregion
 
         #region Singleton & initialization
@@ -36,11 +30,11 @@ namespace DrillGame.Entity.Engine
 
         private void Initialize(EngineController engineController, Vector2Int position)
         {
-            engineName = GetType().Name;
+            entityName = GetType().Name;
             Engine_Core.Instance.AddEngine(this);
-            FlowManager.Instance.RegisterEngine(this);
+            BoardManager.Instance.RegisterEngine(this);
 
-            Debug.Log($"{engineName} 생성 및 코어, FlowController register.");
+            Debug.Log($"{entityName} 생성 및 코어, BoardManager register.");
 
             this.engineController = engineController;
             this.position = position;
@@ -51,10 +45,19 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region getters & setters
+        public List<Vector2Int> GetAllPositions()
+        {
+            List<Vector2Int> positions = new List<Vector2Int>();
+            foreach (var offset in TileFormation)
+            {
+                positions.Add(position + offset);
+            }
+            return positions;
+        }
         public void UpdatePosition(Vector2Int newPosition)
         {
             position = newPosition;
-            Debug.Log($"{engineName} 위치 변경 {position}");
+            Debug.Log($"{entityName} 위치 변경 {position}");
             UpdateWaitDelay();
 
             UpDateEngineObjectInspector();
@@ -82,12 +85,12 @@ namespace DrillGame.Entity.Engine
         public void UpdateWaitDelay()
         {
             waitDelay = Vector2Int.Distance(Engine_Core.Instance.position, position) * 0.1f;
-            Debug.Log($"{engineName} 대기 시간 업데이트: {waitDelay}초");
+            Debug.Log($"{entityName} 대기 시간 업데이트: {waitDelay}초");
         }
 
         public void RequestActivate()
         {
-            Debug.Log($"{engineName} 활성화 요청. 대기 시간: {waitDelay}초");
+            Debug.Log($"{entityName} 활성화 요청. 대기 시간: {waitDelay}초");
             engineController.ActivateEngineWithDelay(waitDelay, ActivateEngine);
         }
 
@@ -98,10 +101,10 @@ namespace DrillGame.Entity.Engine
 
         protected virtual void ActivateEngine()
         {
-            Debug.Log($"{engineName} 엔진 활성화!");
+            Debug.Log($"{entityName} 엔진 활성화!");
             // 처리 로직
 
-            FlowManager.Instance.EngineAction(TileFormation, engineName);
+            BoardManager.Instance.EngineAction(TileFormation, entityName);
 
 
 
@@ -114,7 +117,7 @@ namespace DrillGame.Entity.Engine
         private void UpDateEngineObjectInspector()
         {
             // 이름은 생성시 고정
-            engineController.enginePosition = position;
+            engineController.Position = position;
             engineController.engineWaitDelay = waitDelay;
         }
 
