@@ -20,15 +20,11 @@ namespace DrillGame.Entity
         #region Singleton & initialization
         public Entity_Base(Vector2Int position)
         {
-            Initialize(position);
-        }
-
-        protected virtual void Initialize(Vector2Int position)
-        {
             entityName = GetType().Name;
-            
+
             this.position = position;
         }
+
         #endregion
 
         #region getters & setters

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace DrillGame.Components.Engine
 {
-    public class EngineController : ComponentBaseController
+    public sealed class EngineController : ComponentBaseController
     {
         #region Fields & Properties
         private Engine_Base engineEntity;

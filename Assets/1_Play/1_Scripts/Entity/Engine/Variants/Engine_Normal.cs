@@ -29,11 +29,7 @@ namespace DrillGame.Entity.Engine
         #endregion
 
         #region private methods
-        protected override void Initialize(Vector2Int position)
-        {
-            base.Initialize(position);
-
-        }
+        
 
         
 

@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 namespace DrillGame.Components.Facility
 {
-    public class FacilityController : ComponentBaseController, IPointerClickHandler
+    public sealed class FacilityController : ComponentBaseController, IPointerClickHandler
     {
         #region Fields & Properties
         private Facility_Base facilityEntity;

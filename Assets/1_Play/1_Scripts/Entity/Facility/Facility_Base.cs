@@ -22,16 +22,11 @@ namespace DrillGame.Entity.Facility
         #region initialization
         public Facility_Base(Vector2Int position) : base(position)
         {
-
-        }
-
-        protected override void Initialize(Vector2Int position)
-        {
-            base.Initialize(position);
             BoardManager.Instance.RegisterFacility(this);
 
             Debug.Log($"{entityName} 시설 생성 및 BoardManager register.");
         }
+
         #endregion
 
         #region getters & setters
