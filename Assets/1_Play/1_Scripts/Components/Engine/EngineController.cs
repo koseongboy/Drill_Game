@@ -128,7 +128,16 @@ namespace DrillGame.Components.Engine
             }
         }
 
-        
+        private void OnDestroy()
+        {
+            if (engineEntity != null)
+            {
+                engineEntity.OnEngineRequestActivated -= HandleCoroutineRequest;
+                engineEntity.OnActivated -= HandleEngineActivated;
+                engineEntity.OnUpdated -= HandleUpdated;
+            }
+        }
+
 
 
         #endregion
