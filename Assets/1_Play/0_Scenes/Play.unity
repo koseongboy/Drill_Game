@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GridManager
   previewTilemap: {fileID: 1967305015}
-  occupiedTile: {fileID: 0}
+  previewTile: {fileID: 11400000, guid: c5691a07cb99fa34bbcb5b87301c9b3b, type: 2}
 --- !u!1 &475047027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,11 +1104,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051005280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d87795abb1a7298498d6e2c4a8610601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.PlacementManager
+  gridManager: {fileID: 357322640}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1069995563
 GameObject:
@@ -1632,7 +1633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619964048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5bd3f429f5ebe644b5d438a72ff686c, type: 3}
   m_Name: 

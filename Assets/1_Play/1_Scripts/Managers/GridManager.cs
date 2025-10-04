@@ -10,9 +10,11 @@ namespace DrillGame.Managers
         private Tilemap previewTilemap;
 
         [SerializeField]
-        private TileBase occupiedTile;
+        private TileBase previewTile;
 
         private Grid grid;
+
+        
 
         #endregion
 
@@ -37,21 +39,10 @@ namespace DrillGame.Managers
             return grid.CellToWorld(cellPosition);
         }
 
-        public bool IsCellOccupied(Vector3Int cellPosition)
+        public void SetPreviewTile(Vector3 worldPosition)
         {
-            return previewTilemap.GetTile(cellPosition) == occupiedTile;
-        }
-
-        public void SetCellOccupied(Vector3Int cellPosition, bool occupied)
-        {
-            if (occupied)
-            {
-                previewTilemap.SetTile(cellPosition, occupiedTile);
-            }
-            else
-            {
-                previewTilemap.SetTile(cellPosition, null);
-            }
+            Vector3Int cellPosition = WorldToCell(worldPosition);
+            previewTilemap.SetTile(cellPosition, previewTile);
         }
         #endregion
 
