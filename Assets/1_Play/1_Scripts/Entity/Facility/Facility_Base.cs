@@ -40,7 +40,11 @@ namespace DrillGame.Entity.Facility
 
         #region public methods
 
-
+        public override void UpdatePosition(Vector2Int newPosition)
+        {
+            base.UpdatePosition(newPosition);
+            OnUpdated?.Invoke();
+        }
         public virtual void ActivateFacility()
         {
             Debug.Log($"{entityName} 시설이 활성화되었습니다.");

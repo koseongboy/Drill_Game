@@ -13,7 +13,7 @@ namespace DrillGame.Entity.Facility
         #region Singleton & initialization
         public Facility_Hello(Vector2Int position) : base(position)
         {
-            Debug.Log("Hello ½Ã¼³ÀÌ »ý¼ºµÇ¾ú½À´Ï´Ù.");
+            Debug.Log("Hello ï¿½Ã¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
         }
         #endregion
 
@@ -24,7 +24,7 @@ namespace DrillGame.Entity.Facility
         public override void ActivateFacility()
         {
             base.ActivateFacility();
-            Debug.Log("Hello ½Ã¼³ÀÌ È°¼ºÈ­ : ¾È³ç ¼¼»ó¾Æ!");
+            Debug.Log("Hello ï¿½Ã¼ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ : ï¿½È³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½!");
         }
         #endregion
 
