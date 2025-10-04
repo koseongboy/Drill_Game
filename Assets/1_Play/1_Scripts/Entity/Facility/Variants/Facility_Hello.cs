@@ -13,7 +13,7 @@ namespace DrillGame.Entity.Facility
         #region Singleton & initialization
         public Facility_Hello(Vector2Int position) : base(position)
         {
-            Debug.Log("Hello �ü��� �����Ǿ����ϴ�.");
+            Debug.Log("Hello 시설이 생성되었습니다.");
         }
         #endregion
 
@@ -24,7 +24,7 @@ namespace DrillGame.Entity.Facility
         public override void ActivateFacility()
         {
             base.ActivateFacility();
-            Debug.Log("Hello �ü��� Ȱ��ȭ : �ȳ� �����!");
+            Debug.Log("Hello World! Hello 시설이 활성화되었습니다.");
         }
         #endregion
 
