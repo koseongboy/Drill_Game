@@ -101,7 +101,7 @@ namespace DrillGame.Data
                 }
                 else
                 {
-                    Debug.LogWarning($"Line {i + 1} is malformed: {line}");
+                    Debug.LogWarning($"numCol 수정했나요??");
                 }
             }
 
