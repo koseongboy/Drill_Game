@@ -104,11 +104,11 @@ namespace DrillGame.Data
                     Debug.LogWarning($"Line {i + 1} is malformed: {line}");
                 }
             }
-            #endregion
 
-            #region Unity event methods
-            #endregion
 
         }
+        #endregion
+        #region Unity event methods
+        #endregion
     }
 }
