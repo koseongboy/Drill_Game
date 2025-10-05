@@ -5,7 +5,7 @@ using DrillGame.Managers;
 
 namespace DrillGame
 {
-    public class DataLoadedChecker : MonoBehaviour
+    public class UserDataLoader_forDev : MonoBehaviour
     {
         #region Fields & Properties
         #endregion
@@ -30,14 +30,14 @@ namespace DrillGame
 
         private void Start()
         {
-            var engineTable = DataLoadManager.Instance.GetEngineTable();
-            var facilityTable = DataLoadManager.Instance.GetFacilityTable();
-            var groundTable = DataLoadManager.Instance.GetGroundTable();
-            var userData = DataLoadManager.Instance.GetUserData();
-            Debug.Log($"Engine Table Count: {engineTable.Count}");
-            Debug.Log($"Facility Table Count: {facilityTable.Count}");
-            Debug.Log($"Ground Table Count: {groundTable.Count}");
-            Debug.Log($"User Data Count: {userData.Count}");
+            Debug.Log("임시 유저 데이터 입력중..");
+            DataLoadManager.Instance.SetUserData(new Dictionary<string, List<string>>()
+            {
+                { "Engine", new List<string> { "normal-2", "special-1" } },
+                { "Facility", new List<string> { "iron-1", "gold-1" } },
+                { "Ground", new List<string> { "150", "50"} }
+            });
+            Debug.Log("임시 유저 데이터 입력 완료!");
         }
 
         private void Update()
