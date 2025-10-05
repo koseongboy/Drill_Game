@@ -32,12 +32,12 @@ namespace DrillGame.Entity.Engine
         {
             Engine_Core.Instance.AddEngine(this);
             BoardManager.Instance.RegisterEngine(this);
-            Debug.Log($"{entityName} ¿£Áø »ý¼º ¹× ÄÚ¾î, BoardManager register.");
+            Debug.Log($"{entityName} ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ú¾ï¿½, BoardManager register.");
 
 
 
             UpdateWaitDelay();
-            // issue : ¸ð³ëºñÇìºñ¾î °´Ã¼ »ý¼ºÈÄ initialize Àü¿¡ data °´Ã¼°¡ ¸ÕÀú init µÇ±â¿¡ ÀÌº¥Æ® Ã¼ÀÎÀÌ µÇÁö ¾ÊÀ½
+            // issue : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ initialize ï¿½ï¿½ï¿½ï¿½ data ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ init ï¿½Ç±â¿¡ ï¿½Ìºï¿½Æ® Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             //OnUpdated?.Invoke();
         }
 
@@ -58,7 +58,7 @@ namespace DrillGame.Entity.Engine
         {
             Engine_Data engineData;
             engineData = await Engine_Data.CreateAsync();
-            Tuple<int, int>[] coordinates = engineData.GetCoordinate(id);
+            List<Tuple<int, int>> coordinates = engineData.GetCoordinate(id);
             foreach (var coordinate in coordinates)
             {
                 TileFormation.Add(new Vector2Int(coordinate.Item1, coordinate.Item2));
@@ -72,7 +72,7 @@ namespace DrillGame.Entity.Engine
         public void UpdateWaitDelay()
         {
             waitDelay = Vector2Int.Distance(Engine_Core.Instance.position, position) * 0.1f;
-            Debug.Log($"{entityName} ´ë±â ½Ã°£ ¾÷µ¥ÀÌÆ®: {waitDelay}ÃÊ");
+            Debug.Log($"{entityName} ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®: {waitDelay}ï¿½ï¿½");
         }
 
         public void RequestActivate()
@@ -91,15 +91,15 @@ namespace DrillGame.Entity.Engine
 
         protected virtual void ActivateEngine()
         {
-            Debug.Log($"{entityName} ¿£Áø È°¼ºÈ­!");
-            // Ã³¸® ·ÎÁ÷
+            Debug.Log($"{entityName} ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­!");
+            // Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
             List<Vector2Int> affectedPositions = GetAllPositions();
             BoardManager.Instance.EngineAction(affectedPositions, entityName);
 
 
 
-            // baseController : monoBehaviour ÀÇ ÇÔ¼ö È£Ãâ ÇöÀç (HandleEngineActivated)
+            // baseController : monoBehaviour ï¿½ï¿½ ï¿½Ô¼ï¿½ È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (HandleEngineActivated)
             OnActivated?.Invoke();
         }
         #endregion

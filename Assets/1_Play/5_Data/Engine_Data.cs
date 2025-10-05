@@ -12,8 +12,7 @@ namespace DrillGame.Data
         public string id;
         public string type;
         public int level;
-        public int relative_x;
-        public int relative_y;
+        public List<Tuple<int, int>> coordinates;
     }
 
     public class Engine_Data
@@ -28,23 +27,21 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
-        public Tuple<int, int>[] GetCoordinate(string id)
+        public List<Tuple<int, int>> GetCoordinate(string id)
         {
             string type = id.Split('-')[0];
             int level = int.Parse(id.Split('-')[1]);
-            Tuple<int, int>[] coordinates = new Tuple<int, int>[level];
+            List<Tuple<int, int>> coordinates = new List<Tuple<int, int>>();
             for (int i = 1; i <= level; i++)
             {
                 string stringForSearch = $"{type}-{i}";
                 if (engineTable.TryGetValue(stringForSearch, out Engine_Structure structure))
                 {
-
-                    coordinates[i - 1] = new Tuple<int, int>(structure.relative_x, structure.relative_y);
+                    coordinates.AddRange(structure.coordinates);
                 }
                 else
                 {
                     Debug.LogWarning($"Engine ID {id + i} not found in the data.");
-                    coordinates[i - 1] = new Tuple<int, int>(0, 0); // Default value if not found
                 }
             }
             return coordinates;
@@ -73,11 +70,11 @@ namespace DrillGame.Data
         #region private methods
         private void Parse(string csvText)
         {
-            string[] lines = csvText.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 1; i <lines.Length; i++)
+            string[] lines = csvText.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 1; i < lines.Length; i++)
             {
                 string line = lines[i];
-                string[] fields = line.Split(',');
+                string[] fields = line.Split('|');
                 if (fields.Length >= numCol)
                 {
                     Engine_Structure structure = new Engine_Structure
@@ -85,16 +82,34 @@ namespace DrillGame.Data
                         id = fields[0],
                         type = fields[1],
                         level = int.Parse(fields[2]),
-                        relative_x = int.Parse(fields[3]),
-                        relative_y = int.Parse(fields[4])
                     };
-                    engineTable[structure.id] = structure;
+                    structure.coordinates = new List<Tuple<int, int>>();
+                    for (int j = 3; j < numCol; j++)
+                    {
+                        string[] coord = fields[j].Split(';');
+                        for (int k = 0; k < coord.Length; k++)
+                        {
+                            string[] xy = coord[k].Split(',');
+                            if (xy.Length == 2)
+                            {
+                                if (int.TryParse(xy[0], out int x) && int.TryParse(xy[1], out int y))
+                                {
+                                    structure.coordinates.Add(new Tuple<int, int>(x, y));
+                                }
+                                else
+                                {
+                                    Debug.LogWarning($"좌표가 이상해요~ at line {i + 1}, column {j + 1}.");
+                                }
+                            }
+                        }
+                        engineTable[structure.id] = structure;
+                    }
                 }
             }
-        }
-        #endregion
+            #endregion
 
-        #region Unity event methods
-        #endregion
+            #region Unity event methods
+            #endregion
+        }
     }
 }
