@@ -19,7 +19,7 @@ namespace DrillGame.Data
     {
         #region Fields & Properties
         private Dictionary<string, Engine_Structure> engineTable = new Dictionary<string, Engine_Structure>();
-        int numCol = 5;
+        int numCol = 4;
         #endregion
 
         #region Singleton & initialization
@@ -41,7 +41,7 @@ namespace DrillGame.Data
                 }
                 else
                 {
-                    Debug.LogWarning($"Engine ID {id + i} not found in the data.");
+                    Debug.LogError($"Engine ID {stringForSearch} not found in the data.");
                 }
             }
             return coordinates;
@@ -57,6 +57,7 @@ namespace DrillGame.Data
             {
                 parser.Parse(csvData.text);
                 Addressables.Release(csvData);
+                Debug.Log("Engine_Data CSV loaded and parsed successfully.");
             }
             else
             {
@@ -75,7 +76,7 @@ namespace DrillGame.Data
             {
                 string line = lines[i];
                 string[] fields = line.Split('|');
-                if (fields.Length >= numCol)
+                if (fields.Length == numCol)
                 {
                     Engine_Structure structure = new Engine_Structure
                     {
@@ -84,26 +85,28 @@ namespace DrillGame.Data
                         level = int.Parse(fields[2]),
                     };
                     structure.coordinates = new List<Tuple<int, int>>();
-                    for (int j = 3; j < numCol; j++)
+                    string[] coord = fields[3].Split(';');
+                    for (int k = 0; k < coord.Length; k++)
                     {
-                        string[] coord = fields[j].Split(';');
-                        for (int k = 0; k < coord.Length; k++)
+                        string[] xy = coord[k].Split(',');
+                        if (xy.Length == 2)
                         {
-                            string[] xy = coord[k].Split(',');
-                            if (xy.Length == 2)
+                            if (int.TryParse(xy[0], out int x) && int.TryParse(xy[1], out int y))
                             {
-                                if (int.TryParse(xy[0], out int x) && int.TryParse(xy[1], out int y))
-                                {
-                                    structure.coordinates.Add(new Tuple<int, int>(x, y));
-                                }
-                                else
-                                {
-                                    Debug.LogWarning($"좌표가 이상해요~ at line {i + 1}, column {j + 1}.");
-                                }
+                                structure.coordinates.Add(new Tuple<int, int>(x, y));
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"좌표가 이상해요~ at line {i + 1}.");
                             }
                         }
-                        engineTable[structure.id] = structure;
                     }
+                    engineTable[structure.id] = structure;
+
+                }
+                else
+                {
+                    Debug.LogWarning($"Line {i + 1} is malformed: {line}");
                 }
             }
             #endregion
