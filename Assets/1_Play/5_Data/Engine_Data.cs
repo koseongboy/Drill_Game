@@ -46,6 +46,7 @@ namespace DrillGame.Data
             }
             return coordinates;
         }
+        public Dictionary<string, Engine_Structure> GetEngineTable() { return engineTable; }
         #endregion
 
         #region public methods
@@ -106,13 +107,14 @@ namespace DrillGame.Data
                 }
                 else
                 {
-                    Debug.LogWarning($"Line {i + 1} is malformed: {line}");
+                    Debug.LogWarning($"numCol 수정했나요??");
                 }
             }
-            #endregion
+            
 
-            #region Unity event methods
-            #endregion
         }
+        #endregion
+        #region Unity event methods
+        #endregion
     }
 }

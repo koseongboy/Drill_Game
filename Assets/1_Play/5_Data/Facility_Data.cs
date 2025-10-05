@@ -39,6 +39,7 @@ namespace DrillGame.Data
         {
             return facilityTable[id];
         }
+        public Dictionary<string, Facility_Structure> GetFacilityTable() { return facilityTable; }
         #endregion
 
         #region public methods
@@ -50,6 +51,7 @@ namespace DrillGame.Data
             {
                 parser.Parse(csvData.text);
                 Addressables.Release(csvData);
+                Debug.Log("Facility_Data CSV loaded and parsed successfully.");
             }
             else
             {
@@ -101,14 +103,14 @@ namespace DrillGame.Data
                 }
                 else
                 {
-                    Debug.LogWarning($"Line {i + 1} is malformed: {line}");
+                    Debug.LogWarning($"numCol 수정했나요??");
                 }
             }
-            #endregion
 
-            #region Unity event methods
-            #endregion
 
         }
+        #endregion
+        #region Unity event methods
+        #endregion
     }
 }
