@@ -50,6 +50,7 @@ namespace DrillGame.Data
             {
                 parser.Parse(csvData.text);
                 Addressables.Release(csvData);
+                Debug.Log("Facility_Data CSV loaded and parsed successfully.");
             }
             else
             {
