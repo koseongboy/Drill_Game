@@ -1,9 +1,12 @@
 using NUnit.Framework;
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DrillGame.Core.Entity
+using DrillGame.Core.Managers;
+
+namespace DrillGame.Core.Facility
 {
     public class FacilityEntity
     {
@@ -11,6 +14,7 @@ namespace DrillGame.Core.Entity
         private Vector2Int position; // 시설의 위치 (중점)
         private List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
+        public event Action OnFacilityActivated;
         #endregion
 
         #region Singleton & initialization
@@ -26,6 +30,9 @@ namespace DrillGame.Core.Entity
             {
                 this.formations = formations;
             }
+
+            // register to BoardManager
+            BoardManager.Instance.AddFacility(this);
         }
         #endregion
 
@@ -45,6 +52,11 @@ namespace DrillGame.Core.Entity
         public void Run()
         {
             Debug.Log("Facility is running.");
+            OnFacilityActivated?.Invoke();
+        }
+        public void ShowFacilityInfo()
+        {
+            Debug.LogError("시설 UI를 띄워주세요!");
         }
         #endregion
 

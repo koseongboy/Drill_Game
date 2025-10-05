@@ -42,7 +42,7 @@ namespace DrillGame.Managers
         private void Awake()
         {
             controls = new InputSystem_Actions();
-            controls.Player.Click.performed += OnClicked;
+            controls.Player.Attack.performed += OnClicked;
             distanceToCamera = -Camera.main.transform.position.z;
         }
         private void OnEnable()

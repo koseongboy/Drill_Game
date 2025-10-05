@@ -1,10 +1,10 @@
+using System;
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 using DrillGame.Core.Managers;
-using System;
 
 namespace DrillGame.Core.Engine
 {

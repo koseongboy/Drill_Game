@@ -88,7 +88,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Click",
+                    "name": "SlowTick",
                     "type": "Button",
                     "id": "1e6c47b5-622c-46b6-b376-41cd4ec62837",
                     "expectedControlType": "",
@@ -486,11 +486,11 @@
                 {
                     "name": "",
                     "id": "d3f9da96-59fd-40a3-9821-4b226a6aff7f",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Click",
+                    "action": "SlowTick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

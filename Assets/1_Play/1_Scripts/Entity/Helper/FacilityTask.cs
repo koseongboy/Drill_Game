@@ -1,6 +1,6 @@
 using UnityEngine;
 
-using DrillGame.Core.Entity;
+using DrillGame.Core.Facility;
 
 namespace DrillGame.Core.Helper
 {
