@@ -1,4 +1,4 @@
-﻿id|level|name|coordinate
-1-iron|1|iron|0,0
-1-gold|1|gold|0,0
-2-gold|2|gold|0,0;0,1
+﻿id|name|level|coordinate
+iron-1|iron|1|0,0
+gold-1|gold|1|0,0
+gold-2|gold|2|0,0;0,1
