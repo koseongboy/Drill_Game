@@ -35,7 +35,7 @@ namespace DrillGame
             {
                 { "Engine", new List<string> { "normal-2", "special-1" } },
                 { "Facility", new List<string> { "iron-1", "gold-1" } },
-                { "Ground", new List<string> { "150", "50"} }
+                { "Ground", new List<string> { "150", "5"} } //depth, hp
             });
             Debug.Log("임시 유저 데이터 입력 완료!");
         }

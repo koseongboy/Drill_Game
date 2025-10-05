@@ -34,10 +34,12 @@ namespace DrillGame
             var facilityTable = DataLoadManager.Instance.GetFacilityTable();
             var groundTable = DataLoadManager.Instance.GetGroundTable();
             var userData = DataLoadManager.Instance.GetUserData();
+            var groundPrefab = DataLoadManager.Instance.GetGroundPrefab();
             Debug.Log($"Engine Table Count: {engineTable.Count}");
             Debug.Log($"Facility Table Count: {facilityTable.Count}");
             Debug.Log($"Ground Table Count: {groundTable.Count}");
             Debug.Log($"User Data Count: {userData.Count}");
+            Debug.Log($"Ground Prefab: {groundPrefab.name}");
         }
 
         private void Update()
