@@ -4,9 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 using DrillGame.Core.Managers;
+using System;
 
 namespace DrillGame.Core.Engine
 {
+    public enum EngineType
+    {
+        Core,
+        Normal
+    }
     public class EngineEntity
     {
         #region Fields & Properties
@@ -17,6 +23,7 @@ namespace DrillGame.Core.Engine
         private Vector2Int position; // 엔진의 위치 (중점)
         private List<Vector2Int> formations = new List<Vector2Int>(); // 엔진의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수  
 
+        public event Action OnEngineActivated;
 
         #endregion
 
@@ -32,6 +39,9 @@ namespace DrillGame.Core.Engine
             {
                 this.formations = formations;
             }
+
+            // register to BoardManager
+            BoardManager.Instance.AddEngine(this);
         }
         #endregion
 
@@ -70,7 +80,11 @@ namespace DrillGame.Core.Engine
             scheduleList.Add(distance);
         }
 
-        
+        public void ShowEngineInfo()
+        {
+
+            Debug.LogError("엔진 UI를 띄워주세요!");
+        }
 
         #endregion
 
@@ -93,7 +107,9 @@ namespace DrillGame.Core.Engine
         {
             Debug.Log($"Engine at {position} activated!");
             // 여기에 엔진이 활성화될 때의 동작을 구현합니다.
-            BoardManager.Instance.RegisterEngineRun(GetFormationPositions());
+            OnEngineActivated?.Invoke();
+            
+            BoardManager.Instance.RegisterRun(GetFormationPositions());
         }
         
         #endregion

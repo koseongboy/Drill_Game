@@ -50,9 +50,9 @@ namespace DrillGame.Core.Managers
             tickCount = TICK_INTERVAL - 1;
 
             // for test
-            AddEngine(new EngineEntity(new Vector2Int(0, 2)));
-            List<Vector2Int> formation = new List<Vector2Int>() { new Vector2Int(0, 0), new Vector2Int(-1, 0), new Vector2Int(0, -1) };
-            AddFacility(new FacilityEntity(new Vector2Int(0, 3), formation));
+            //AddEngine(new EngineEntity(new Vector2Int(0, 2)));
+            //List<Vector2Int> formation = new List<Vector2Int>() { new Vector2Int(0, 0), new Vector2Int(-1, 0), new Vector2Int(0, -1) };
+            //AddFacility(new FacilityEntity(new Vector2Int(0, 3), formation));
         }
         #endregion
 
@@ -67,8 +67,8 @@ namespace DrillGame.Core.Managers
         public void Tick()
         {
             Debug.Log("Engine Core Tick");
-            TickAllEngines();       // 모든 엔진의 틱을 선행
-            ProcessTickCycle();     // 이후 코어 틱 진행 -> 명령 실행 직후 1틱이 흘러가는 것을 방지
+            TickAllEngines();       // 모든 엔진의 틱을 선행     (여기서 시설의 등록이 이루어짐)
+            ProcessTickCycle();     // 이후 코어 틱 진행 -> 명령 실행 직후 1틱이 흘러가는 것을 방지 (주로 명령 단계)
             RunFacility();            // 모든 엔진에 명령 실행
         }
 
@@ -108,7 +108,7 @@ namespace DrillGame.Core.Managers
             }
         }
 
-        public void RegisterEngineRun(List<Vector2Int> positions) 
+        public void RegisterRun(List<Vector2Int> positions) 
         {
             foreach (var pos in positions)
             {

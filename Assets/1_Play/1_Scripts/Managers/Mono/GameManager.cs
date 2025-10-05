@@ -30,13 +30,18 @@ namespace DrillGame.Managers
         #region Unity event methods
         private void FixedUpdate()
         {
-            // 물리 연산 주기마다 코어 틱을 진행
+            // 점프를 누르고 있는 동안 틱 진행
+            if (control.Player.Jump.ReadValue<float>() > 0)
+            {
+                CoreTick();
+            }
         }
         private void Awake()
         {
             control = new InputSystem_Actions();
-            control.Player.Jump.performed += ctx => CoreTick();
+            //control.Player.Jump.performed += ctx => CoreTick();
         }
+
 
         private void OnEnable()
         {
