@@ -32,6 +32,7 @@ namespace DrillGame.Data
         {
             return groundTable[id];
         }
+        public Dictionary<int, Ground_Structure> GetGroundTable() { return groundTable; }
         #endregion
 
         #region public methods

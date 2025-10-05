@@ -39,6 +39,7 @@ namespace DrillGame.Data
         {
             return facilityTable[id];
         }
+        public Dictionary<string, Facility_Structure> GetFacilityTable() { return facilityTable; }
         #endregion
 
         #region public methods

@@ -46,6 +46,7 @@ namespace DrillGame.Data
             }
             return coordinates;
         }
+        public Dictionary<string, Engine_Structure> GetEngineTable() { return engineTable; }
         #endregion
 
         #region public methods
