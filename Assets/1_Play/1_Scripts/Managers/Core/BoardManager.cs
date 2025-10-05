@@ -19,7 +19,7 @@ namespace DrillGame.Core.Managers
         private List<FacilityEntity> facilities;
         private Dictionary<Vector2Int, FacilityEntity> facilityMap;
 
-        private List<FacilityEntity> ScheduledFacilities;
+        private Dictionary<FacilityEntity, int> ScheduledFacilities;
 
         private Vector2Int corePosition;
 
@@ -114,9 +114,13 @@ namespace DrillGame.Core.Managers
             {
                 if (facilityMap.TryGetValue(pos, out FacilityEntity facility))
                 {
-                    if (!ScheduledFacilities.Contains(facility))
+                    if (!ScheduledFacilities.ContainsKey(facility))
                     {
-                        ScheduledFacilities.Add(facility);
+                        ScheduledFacilities[facility] = 1;
+                    }
+                    else
+                    {
+                        ScheduledFacilities[facility]++;
                     }
                 }
             }
@@ -146,7 +150,7 @@ namespace DrillGame.Core.Managers
         {
             foreach (var facility in ScheduledFacilities)
             {
-                facility.Run();
+                facility.Key.Run(facility.Value);
             }
             ScheduledFacilities.Clear();
         }

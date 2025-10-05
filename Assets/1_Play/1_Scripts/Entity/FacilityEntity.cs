@@ -14,7 +14,7 @@ namespace DrillGame.Core.Facility
         private Vector2Int position; // 시설의 위치 (중점)
         private List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
-        public event Action OnFacilityActivated;
+        public event Action<int> OnFacilityActivated;
         #endregion
 
         #region Singleton & initialization
@@ -49,10 +49,10 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region public methods
-        public void Run()
+        public void Run(int intensity)
         {
-            Debug.Log("Facility is running.");
-            OnFacilityActivated?.Invoke();
+            Debug.Log("Facility is running. with Intensity : "  + intensity);
+            OnFacilityActivated?.Invoke(intensity);
         }
         public void ShowFacilityInfo()
         {

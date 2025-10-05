@@ -41,18 +41,18 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region public methods
-        public void RunFacilityComponent()
+        public void RunFacilityComponent(int intensity)
         {
             // 임시 그래픽 액션 실행
-            TempGraphicAction();
+            TempGraphicAction(intensity);
         }
         #endregion
 
         #region private methods
-        private void TempGraphicAction()
+        private void TempGraphicAction(int intensity)
         {
             // 임시 그래픽 액션
-            transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0), 0.2f, 10, 1);
+            transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0) * intensity, 0.2f, 10, 1);
         }
         #endregion
 

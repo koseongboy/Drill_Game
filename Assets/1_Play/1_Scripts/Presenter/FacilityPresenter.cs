@@ -41,9 +41,9 @@ namespace DrillGame.Core.Presenter
         #endregion
 
         #region private methods
-        private void OnFacilityEntityActivated()
+        private void OnFacilityEntityActivated(int intensity)
         {
-            facilityComponent.RunFacilityComponent();
+            facilityComponent.RunFacilityComponent(intensity);
         }
         #endregion
 
