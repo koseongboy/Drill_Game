@@ -10,23 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: CSVData
+  m_Name: ObjectPrefabs
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: CSVData
-  m_GUID: beb9b2787a4693348aa77132c596c65b
+  m_GroupName: ObjectPrefabs
+  m_GUID: 788c027c036dd33449520284f3365c61
   m_SerializeEntries:
-  - m_GUID: 9dc37fc0aa9973f4f862a97e95e32d8a
-    m_Address: Engine_Data
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bef13a18024ad9d4cb202eca3d6640bb
-    m_Address: Ground_Data
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f5bb981f04b4d634d95f762c2bf10cb5
-    m_Address: Facility_Data
+  - m_GUID: 39dabc536da5c0c4482899de89afd1b3
+    m_Address: Ground_Prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -34,5 +24,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 836827b84c10674489a7d0f4b1d1562c, type: 2}
-    - {fileID: 11400000, guid: 3d6b1e5e5a3e39441aa1e2fa3b21d484, type: 2}
+    - {fileID: 11400000, guid: 798406f7eb6f6784983f8db536fe22b2, type: 2}
+    - {fileID: 11400000, guid: ca009a96f8057e74fbd231e0aa615810, type: 2}

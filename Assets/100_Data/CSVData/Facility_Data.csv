@@ -1,3 +1,4 @@
-﻿index,name,length,height
-1,철을캐자,2,1
-2,금을캐자,2,2
+﻿id|name|level|coordinate
+iron-1|iron|1|0,0
+gold-1|gold|1|0,0
+gold-2|gold|2|0,0;0,1

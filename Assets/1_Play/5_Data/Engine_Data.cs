@@ -12,15 +12,14 @@ namespace DrillGame.Data
         public string id;
         public string type;
         public int level;
-        public int relative_x;
-        public int relative_y;
+        public List<Tuple<int, int>> coordinates;
     }
 
     public class Engine_Data
     {
         #region Fields & Properties
         private Dictionary<string, Engine_Structure> engineTable = new Dictionary<string, Engine_Structure>();
-        int numCol = 5;
+        int numCol = 4;
         #endregion
 
         #region Singleton & initialization
@@ -28,27 +27,26 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
-        public Tuple<int, int>[] GetCoordinate(string id)
+        public List<Tuple<int, int>> GetCoordinate(string id)
         {
             string type = id.Split('-')[0];
             int level = int.Parse(id.Split('-')[1]);
-            Tuple<int, int>[] coordinates = new Tuple<int, int>[level];
+            List<Tuple<int, int>> coordinates = new List<Tuple<int, int>>();
             for (int i = 1; i <= level; i++)
             {
                 string stringForSearch = $"{type}-{i}";
                 if (engineTable.TryGetValue(stringForSearch, out Engine_Structure structure))
                 {
-
-                    coordinates[i - 1] = new Tuple<int, int>(structure.relative_x, structure.relative_y);
+                    coordinates.AddRange(structure.coordinates);
                 }
                 else
                 {
-                    Debug.LogWarning($"Engine ID {id + i} not found in the data.");
-                    coordinates[i - 1] = new Tuple<int, int>(0, 0); // Default value if not found
+                    Debug.LogError($"Engine ID {stringForSearch} not found in the data.");
                 }
             }
             return coordinates;
         }
+        public Dictionary<string, Engine_Structure> GetEngineTable() { return engineTable; }
         #endregion
 
         #region public methods
@@ -60,6 +58,7 @@ namespace DrillGame.Data
             {
                 parser.Parse(csvData.text);
                 Addressables.Release(csvData);
+                Debug.Log("Engine_Data CSV loaded and parsed successfully.");
             }
             else
             {
@@ -73,27 +72,48 @@ namespace DrillGame.Data
         #region private methods
         private void Parse(string csvText)
         {
-            string[] lines = csvText.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 1; i <lines.Length; i++)
+            string[] lines = csvText.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 1; i < lines.Length; i++)
             {
                 string line = lines[i];
-                string[] fields = line.Split(',');
-                if (fields.Length >= numCol)
+                string[] fields = line.Split('|');
+                if (fields.Length == numCol)
                 {
                     Engine_Structure structure = new Engine_Structure
                     {
                         id = fields[0],
                         type = fields[1],
                         level = int.Parse(fields[2]),
-                        relative_x = int.Parse(fields[3]),
-                        relative_y = int.Parse(fields[4])
                     };
+                    structure.coordinates = new List<Tuple<int, int>>();
+                    string[] coord = fields[3].Split(';');
+                    for (int k = 0; k < coord.Length; k++)
+                    {
+                        string[] xy = coord[k].Split(',');
+                        if (xy.Length == 2)
+                        {
+                            if (int.TryParse(xy[0], out int x) && int.TryParse(xy[1], out int y))
+                            {
+                                structure.coordinates.Add(new Tuple<int, int>(x, y));
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"좌표가 이상해요~ at line {i + 1}.");
+                            }
+                        }
+                    }
                     engineTable[structure.id] = structure;
+
+                }
+                else
+                {
+                    Debug.LogWarning($"numCol 수정했나요??");
                 }
             }
+            
+
         }
         #endregion
-
         #region Unity event methods
         #endregion
     }
