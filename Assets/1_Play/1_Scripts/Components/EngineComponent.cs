@@ -14,7 +14,9 @@ namespace DrillGame.View.Engine
         [SerializeField]
         private Vector2Int debugPosition;
         [SerializeField]
-        List<Vector2Int> debugFormation = new();
+        private List<Vector2Int> debugFormation = new();
+        [SerializeField]
+        private EngineType engineType;
 
         private EnginePresenter presenter;
         public Action OnClickEngineDetail { get; set; }
@@ -84,7 +86,7 @@ namespace DrillGame.View.Engine
             if(presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 테스트용 기본 엔진을 생성합니다.");
-                Initialize(new EngineEntity(debugPosition, debugFormation));
+                Initialize(new EngineEntity(debugPosition, debugFormation, engineType));
             }
         }
 
