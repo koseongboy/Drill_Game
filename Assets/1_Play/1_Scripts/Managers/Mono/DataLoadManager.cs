@@ -7,12 +7,10 @@ namespace DrillGame.Managers
     public class DataLoadManager : MonoBehaviour
     {
         #region Fields & Properties
-        private Dictionary<string, Engine_Structure> engineTable;
-        private Dictionary<string, Facility_Structure> facilityTable;
-        private Dictionary<int, Ground_Structure> groundTable;
-        private Dictionary<string, List<string>> userData; //임시!!!
-
-
+        private Dictionary<string, Engine_Structure> EngineTable { get; set; }
+        private Dictionary<string, Facility_Structure> FacilityTable { get; set; }
+        private Dictionary<int, Ground_Structure> GroundTable { get; set; }
+        private Dictionary<string, List<string>> UserData {get; set;} //임시!!!'
 
         #endregion
 
@@ -21,18 +19,6 @@ namespace DrillGame.Managers
         #endregion
 
         #region getters & setters
-        public Dictionary<string, Engine_Structure> GetEngineTable() { return engineTable; }
-        public Dictionary<string, Facility_Structure> GetFacilityTable() { return facilityTable; }
-        public Dictionary<int, Ground_Structure> GetGroundTable() { return groundTable; }
-        public Dictionary<string, List<string>> GetUserData() { return userData; }
-
-
-        public void SetEngineTable(Dictionary<string, Engine_Structure> table) { engineTable = table; }
-        public void SetFacilityTable(Dictionary<string, Facility_Structure> table) { facilityTable = table; }
-        public void SetGroundTable(Dictionary<int, Ground_Structure> table) { groundTable = table; }
-        public void SetUserData(Dictionary<string, List<string>> data) { userData = data; }
-
-
         #endregion
 
         #region public methods
@@ -61,9 +47,9 @@ namespace DrillGame.Managers
             var facility_Data = await Facility_Data.CreateAsync();
             var ground_Data = await Ground_Data.CreateAsync();
             Debug.Log("All CSV_Data has been awaked.");
-            engineTable = engine_Data.GetEngineTable();
-            facilityTable = facility_Data.GetFacilityTable();
-            groundTable = ground_Data.GetGroundTable();
+            EngineTable = engine_Data.EngineTable;
+            FacilityTable = facility_Data.FacilityTable;
+            GroundTable = ground_Data.GroundTable;
             Debug.Log("DataLoadManager tables set.");
 
         }
