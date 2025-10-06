@@ -7,10 +7,10 @@ namespace DrillGame.Managers
     public class DataLoadManager : MonoBehaviour
     {
         #region Fields & Properties
-        private Dictionary<string, Engine_Structure> EngineTable { get; set; }
-        private Dictionary<string, Facility_Structure> FacilityTable { get; set; }
-        private Dictionary<int, Ground_Structure> GroundTable { get; set; }
-        private Dictionary<string, List<string>> UserData {get; set;} //임시!!!'
+        public Dictionary<string, Engine_Structure> EngineTable { get; set; }
+        public Dictionary<string, Facility_Structure> FacilityTable { get; set; }
+        public Dictionary<int, Ground_Structure> GroundTable { get; set; }
+        public Dictionary<string, List<string>> UserData {get; set;} //임시!!!'
 
         #endregion
 

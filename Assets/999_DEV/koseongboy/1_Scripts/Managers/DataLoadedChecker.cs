@@ -20,18 +20,9 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        IEnumerator DataCheckCoroutine()
-        {
-            yield return new WaitForSeconds(2.0f); //1초 대기
-            var engineTable = DataLoadManager.Instance.GetEngineTable();
-            var facilityTable = DataLoadManager.Instance.GetFacilityTable();
-            var groundTable = DataLoadManager.Instance.GetGroundTable();
-            var userData = DataLoadManager.Instance.GetUserData();
-            Debug.Log($"Engine Table Count: {engineTable.Count}");
-            Debug.Log($"Facility Table Count: {facilityTable.Count}");
-            Debug.Log($"Ground Table Count: {groundTable.Count}");
-            Debug.Log($"User Data Count: {userData.Count}");
-        }
+
+            
+
         #endregion
 
         #region Unity event methods
@@ -42,7 +33,14 @@ namespace DrillGame
 
         private void Start()
         {
-            StartCoroutine(DataCheckCoroutine());
+            var engineTable = DataLoadManager.Instance.EngineTable;
+            var facilityTable = DataLoadManager.Instance.FacilityTable;
+            var groundTable = DataLoadManager.Instance.GroundTable;
+            var userData = DataLoadManager.Instance.UserData;
+            Debug.Log($"Engine Table Count: {engineTable.Count}");
+            Debug.Log($"Facility Table Count: {facilityTable.Count}");
+            Debug.Log($"Ground Table Count: {groundTable.Count}");
+            Debug.Log($"User Data Count: {userData.Count}");
         }
 
         private void Update()
