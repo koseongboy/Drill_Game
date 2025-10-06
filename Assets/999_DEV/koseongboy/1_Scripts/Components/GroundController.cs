@@ -5,7 +5,7 @@ using DrillGame.Managers;
 
 namespace DrillGame.Components
 {
-    public class GroundController : ComponentBaseController
+    public class GroundController : MonoBehaviour
     {
 
 
