@@ -12,7 +12,7 @@ namespace DrillGame.Managers
         private Dictionary<int, Ground_Structure> groundTable;
         private Dictionary<string, List<string>> userData; //임시!!!
 
-        private GameObject groundPrefab;
+
 
         #endregion
 
@@ -25,13 +25,13 @@ namespace DrillGame.Managers
         public Dictionary<string, Facility_Structure> GetFacilityTable() { return facilityTable; }
         public Dictionary<int, Ground_Structure> GetGroundTable() { return groundTable; }
         public Dictionary<string, List<string>> GetUserData() { return userData; }
-        public GameObject GetGroundPrefab() { return groundPrefab; }
+
 
         public void SetEngineTable(Dictionary<string, Engine_Structure> table) { engineTable = table; }
         public void SetFacilityTable(Dictionary<string, Facility_Structure> table) { facilityTable = table; }
         public void SetGroundTable(Dictionary<int, Ground_Structure> table) { groundTable = table; }
         public void SetUserData(Dictionary<string, List<string>> data) { userData = data; }
-        public void SetGroundPrefab(GameObject prefab) { groundPrefab = prefab; }
+
 
         #endregion
 
@@ -54,6 +54,18 @@ namespace DrillGame.Managers
                 DontDestroyOnLoad(this.gameObject);
             }
             Debug.Log("DataLoadManager Awake completed.");
+        }
+        async void Start()
+        {
+            var engine_Data = await Engine_Data.CreateAsync();
+            var facility_Data = await Facility_Data.CreateAsync();
+            var ground_Data = await Ground_Data.CreateAsync();
+            Debug.Log("All CSV_Data has been awaked.");
+            engineTable = engine_Data.GetEngineTable();
+            facilityTable = facility_Data.GetFacilityTable();
+            groundTable = ground_Data.GetGroundTable();
+            Debug.Log("DataLoadManager tables set.");
+
         }
         #endregion
     }
