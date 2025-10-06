@@ -19,6 +19,7 @@ namespace DrillGame.Data
     {
         #region Fields & Properties
         private Dictionary<string, Engine_Structure> engineTable = new Dictionary<string, Engine_Structure>();
+
         int numCol = 4;
         #endregion
 
@@ -46,7 +47,7 @@ namespace DrillGame.Data
             }
             return coordinates;
         }
-        public Dictionary<string, Engine_Structure> GetEngineTable() { return engineTable; }
+        public Dictionary<string, Engine_Structure> EngineTable { get { return engineTable; } }
         #endregion
 
         #region public methods

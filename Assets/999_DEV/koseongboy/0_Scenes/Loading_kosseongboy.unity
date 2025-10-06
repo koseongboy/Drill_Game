@@ -294,12 +294,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 539928652}
   - {fileID: 73494662}
-  - {fileID: 1619964049}
-  - {fileID: 1132591983}
   - {fileID: 432212509}
   - {fileID: 563565413}
+  - {fileID: 2087611803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432212508
@@ -346,50 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5d8a5d31e228e48825bb926a4f6118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.DataLoadManager
---- !u!1 &539928651
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 539928652}
-  - component: {fileID: 539928653}
-  m_Layer: 0
-  m_Name: GroundPrefabLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &539928652
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539928651}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 146924362}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &539928653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539928651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52ec2318488b5f043b9914ea6ff1f4da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.GroundPrefabLoader
 --- !u!1 &563565412
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +450,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132591982
+--- !u!1 &2087611802
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,86 +458,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1132591983}
-  - component: {fileID: 1132591984}
+  - component: {fileID: 2087611803}
+  - component: {fileID: 2087611804}
   m_Layer: 0
-  m_Name: CSVLoader
+  m_Name: SceneCaller_forDev
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1132591983
+--- !u!4 &2087611803
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132591982}
+  m_GameObject: {fileID: 2087611802}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 146924362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1132591984
+--- !u!114 &2087611804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132591982}
+  m_GameObject: {fileID: 2087611802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bbed8cfb33e11540ad2a9bb6b2aaa9f, type: 3}
+  m_Script: {fileID: 11500000, guid: f30836b92da8014419e56a8fc4c60cbd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.CSVLoader
---- !u!1 &1619964048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1619964049}
-  - component: {fileID: 1619964050}
-  m_Layer: 0
-  m_Name: DebugInputTestManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1619964049
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619964048}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 146924362}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1619964050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619964048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5bd3f429f5ebe644b5d438a72ff686c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.DebugInputTestManager
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.SceneCaller_forDev
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

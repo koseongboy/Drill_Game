@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DrillGame.Managers;
 
 namespace DrillGame
 {
-    public class UserDataLoader_forDev : MonoBehaviour
+    public class SceneCaller_forDev : MonoBehaviour
     {
         #region Fields & Properties
+        IEnumerator sceneCallCoroutine()
+        {
+            yield return new WaitForSeconds(3.0f);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Play_koseongboy");
+        }
         #endregion
 
         #region Singleton & initialization
@@ -25,19 +29,12 @@ namespace DrillGame
         #region Unity event methods
         private void Awake()
         {
-        
+
         }
 
         private void Start()
         {
-            Debug.Log("임시 유저 데이터 입력중..");
-            DataLoadManager.Instance.UserData = new Dictionary<string, List<string>>()
-            {
-                { "Engine", new List<string> { "normal-2", "special-1" } },
-                { "Facility", new List<string> { "iron-1", "gold-1" } },
-                { "Ground", new List<string> { "100", "5"} } //depth, hp
-            };
-            Debug.Log("임시 유저 데이터 입력 완료!");
+            StartCoroutine(sceneCallCoroutine());
         }
 
         private void Update()
