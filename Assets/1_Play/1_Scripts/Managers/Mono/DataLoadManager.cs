@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DrillGame.Data;
 using UnityEngine;
 
@@ -25,6 +26,17 @@ namespace DrillGame.Managers
         #endregion
 
         #region private methods
+        private async Task<bool> LoadAllDataAsync()
+        {
+            var engine_Data = Engine_Data.CreateAsync();
+            var facility_Data = Facility_Data.CreateAsync();
+            var ground_Data = Ground_Data.CreateAsync();
+            await Task.WhenAll(engine_Data, facility_Data, ground_Data);
+            EngineTable = engine_Data.Result.EngineTable;
+            FacilityTable = facility_Data.Result.FacilityTable;
+            GroundTable = ground_Data.Result.GroundTable;
+            return EngineTable != null && FacilityTable != null && GroundTable != null;
+        }
         #endregion
 
         #region Unity event methods
@@ -43,15 +55,14 @@ namespace DrillGame.Managers
         }
         async void Start()
         {
-            var engine_Data = await Engine_Data.CreateAsync();
-            var facility_Data = await Facility_Data.CreateAsync();
-            var ground_Data = await Ground_Data.CreateAsync();
-            Debug.Log("All CSV_Data has been awaked.");
-            EngineTable = engine_Data.EngineTable;
-            FacilityTable = facility_Data.FacilityTable;
-            GroundTable = ground_Data.GroundTable;
-            Debug.Log("DataLoadManager tables set.");
-
+            if (await LoadAllDataAsync())
+            {
+                Debug.Log("All CSV_Data has been loaded successfully.");
+            }
+            else
+            {
+                Debug.LogError("Failed to load some CSV_Data.");
+            }
         }
         #endregion
     }
