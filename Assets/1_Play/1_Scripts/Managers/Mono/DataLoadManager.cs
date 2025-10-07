@@ -49,6 +49,7 @@ namespace DrillGame.Managers
             else
             {
                 Instance = this;
+                transform.parent = null;
                 DontDestroyOnLoad(this.gameObject);
             }
             Debug.Log("DataLoadManager Awake completed.");
