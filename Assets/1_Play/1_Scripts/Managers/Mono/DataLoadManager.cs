@@ -1,6 +1,12 @@
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Threading.Tasks;
 using DrillGame.Data;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace DrillGame.Managers
 {
@@ -10,7 +16,18 @@ namespace DrillGame.Managers
         public Dictionary<string, Engine_Structure> EngineTable { get; set; }
         public Dictionary<string, Facility_Structure> FacilityTable { get; set; }
         public Dictionary<int, Ground_Structure> GroundTable { get; set; }
-        public Dictionary<string, List<string>> UserData {get; set;} //임시!!!'
+        public Sprite CurrentGroundSprite { get; set; }
+        public Sprite NextGroundSprite { get; set; }
+        public List<int> DepthRanges { get; set; }
+        public Dictionary<string, List<string>> UserData { get; set; } = new Dictionary<string, List<string>>()
+            {
+                { "Engine", new List<string> { "normal-2", "special-1" } },
+                { "Facility", new List<string> { "iron-1", "gold-1" } },
+                { "Ground", new List<string> { "3", "5"} } //depth, hp
+            };//임시!!!'
+
+        private AsyncOperationHandle<Sprite> currentGroundHandle;
+        private AsyncOperationHandle<Sprite> nextGroundHandle;
 
         #endregion
 
@@ -22,9 +39,65 @@ namespace DrillGame.Managers
         #endregion
 
         #region public methods
+        //다음 땅 스프라이트만 로드
+        public async void LoadGroundSpriteAsync(string next)
+        {
+            Addressables.Release(currentGroundHandle);
+            currentGroundHandle = nextGroundHandle;
+            CurrentGroundSprite = NextGroundSprite;
+            nextGroundHandle = Addressables.LoadAssetAsync<Sprite>(next);
+            await Task.WhenAll(nextGroundHandle.Task);
+            NextGroundSprite = nextGroundHandle.Result;
+            Debug.Log("다음 땅 엑셀 정보: " + next);
+            Debug.Log("다음 땅 스프라이트: " + NextGroundSprite.name);
+        }
+        //초기 땅 스프라이트 로드
+        public async Task<bool> LoadGroundSpriteAsync(string current, string next)
+        {
+            currentGroundHandle = Addressables.LoadAssetAsync<Sprite>(current);
+            nextGroundHandle = Addressables.LoadAssetAsync<Sprite>(next);
+            await Task.WhenAll(currentGroundHandle.Task, nextGroundHandle.Task);
+            CurrentGroundSprite = currentGroundHandle.Result;
+            NextGroundSprite = nextGroundHandle.Result;
+  
+
+            return CurrentGroundSprite != null && NextGroundSprite != null;
+        }
+
+        //depth가 현재 속한 땅 구간의 start_depth, 다음 구간의 start_depth 반환
+        public List<int> GetRangeBounds(int depth)
+        {
+            foreach (var start_depth in DepthRanges.AsEnumerable().Reverse()) //역순으로 순회
+            {
+                if (depth < start_depth)
+                {
+                    continue;
+                }
+                return new List<int> { start_depth, GroundTable[start_depth].end_depth + 1 };
+            }
+            Debug.LogError("GetRangeInfo error: depth range not found");
+            return null;
+        }
         #endregion
 
         #region private methods
+
+        private async Task<bool> LoadAllDataAsync()
+        {
+            var engine_Data = Engine_Data.CreateAsync();
+            var facility_Data = Facility_Data.CreateAsync();
+            var ground_Data = Ground_Data.CreateAsync();
+            await Task.WhenAll(engine_Data, facility_Data, ground_Data);
+            EngineTable = engine_Data.Result.EngineTable;
+            FacilityTable = facility_Data.Result.FacilityTable;
+            GroundTable = ground_Data.Result.GroundTable;
+            DepthRanges = ground_Data.Result.DepthRanges;
+            List<int> range = GetRangeBounds(int.Parse(UserData["Ground"][0])); //임시 유저 데이터 불러옴
+            var result = await LoadGroundSpriteAsync(GroundTable[range[0]].sprite_addressable, GroundTable[range[1]].sprite_addressable);
+            return EngineTable != null && FacilityTable != null && GroundTable != null && result;
+        }
+
+
         #endregion
 
         #region Unity event methods
@@ -37,22 +110,29 @@ namespace DrillGame.Managers
             else
             {
                 Instance = this;
+                transform.parent = null;
                 DontDestroyOnLoad(this.gameObject);
             }
             Debug.Log("DataLoadManager Awake completed.");
         }
         async void Start()
         {
-            var engine_Data = await Engine_Data.CreateAsync();
-            var facility_Data = await Facility_Data.CreateAsync();
-            var ground_Data = await Ground_Data.CreateAsync();
-            Debug.Log("All CSV_Data has been awaked.");
-            EngineTable = engine_Data.EngineTable;
-            FacilityTable = facility_Data.FacilityTable;
-            GroundTable = ground_Data.GroundTable;
-            Debug.Log("DataLoadManager tables set.");
+            if (await LoadAllDataAsync())
+            {
+                Debug.Log("All CSV_Data has been loaded successfully.");
+            }
+            else
+            {
+                Debug.LogError("Failed to load some Data.");
+            }
+        }
 
+        private void OnDestroy()
+        {
+            Addressables.Release(currentGroundHandle);
+            Addressables.Release(nextGroundHandle);
+            Debug.Log("스프라이트 어드레서블 해제됨");
         }
         #endregion
-    }
+  }
 }

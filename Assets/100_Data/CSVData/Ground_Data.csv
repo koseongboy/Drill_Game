@@ -1,4 +1,5 @@
-ID|Start Depth|End Depth|HP|Drop Items|Color
-1|0|100|100|stone|brown
-2|101|200|200|stone;iron|deep_brown
-3|201|300|300|stone;iron;gold|black
+Start Depth|End Depth|HP|Drop Items|Sprite Addressable
+0|5|5|stone|Light_Brown[Light_Brown]
+6|10|5|stone;iron|Deep_Brown[Deep_Brown]
+11|15|5|stone;iron;gold|Lava_Earth[Lava_Earth]
+16|-1|5|diamond|Light_Brown[Light_Brown]

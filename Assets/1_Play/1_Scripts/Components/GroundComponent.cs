@@ -12,19 +12,20 @@ namespace DrillGame.View.Ground
         //test
         public void OnButtonClick()
         {
-            if (GroundEntity.GiveDamage(1))
+            GroundEntity.GiveDamage(1);
+            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
+            if (GroundEntity.IsDestroyed)
             {
                 Debug.Log("땅 파괴됨!");
-                setNewData(GroundEntity.GetNextDepth());
+                setNewData(GroundEntity.Depth + depthIncrement);
             }
-            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
         }
         #region Fields & Properties
         public GroundEntity GroundEntity { get; private set; }
-        public Dictionary<int, Ground_Structure> GroundTable => DataLoadManager.Instance.GroundTable;
+        public Dictionary<int, Ground_Structure> GroundTable;
         private SpriteRenderer spriteRenderer;
 
-        [SerializeField]private List<Sprite> groundSprites = new List<Sprite>();
+        public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
 
         //애니메이션 관련
         public float appearDuration = 0.3f;
@@ -57,20 +58,28 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region private methods
-        //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 <=> 새로운 땅 생성할 때, hp도 줬을 때 <=> 기존 유저 데이터 불러올 때)
-        private void setNewData(int depth, int hp = -1)
+        //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 = 새로운 땅 생성할 때, hp도 줬을 때 = 기존 유저 데이터 불러올 때)
+        private void setNewData(int depth)
         {
-            foreach (var groundIdx in GroundTable.Keys)
+            Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
+            var bounds = DataLoadManager.Instance.GetRangeBounds(depth);
+            GroundEntity.SetInformation(depth, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].drop_items);
+            StartCoroutine(AppearAnimation());
+            if (depth == bounds[0]) //처음 구간에 진입했을 경우
             {
-                if (depth >= GroundTable[groundIdx].start_depth && depth <= GroundTable[groundIdx].end_depth)
-                {
-                    GroundEntity.SetInformation(depth, hp != -1 ? hp : GroundTable[groundIdx].hp, GroundTable[groundIdx].hp, GroundTable[groundIdx].drop_items);
-                    spriteRenderer.sprite = groundSprites[groundIdx - 1];
-                    StartCoroutine(AppearAnimation());
-                    return;
-                }
+                DataLoadManager.Instance.LoadGroundSpriteAsync(GroundTable[bounds[1]].sprite_addressable);
             }
-            Debug.LogError("GroundComponent: 해당 depth에 맞는 땅 정보가 없습니다. depth:" + depth);
+            spriteRenderer.sprite = DataLoadManager.Instance.CurrentGroundSprite;
+            return;
+        }
+        private void setNewData(int depth, int hp)
+        {
+            Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
+            var bounds = DataLoadManager.Instance.GetRangeBounds(depth);
+            GroundEntity.SetInformation(depth, hp, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].drop_items);
+            spriteRenderer.sprite = DataLoadManager.Instance.CurrentGroundSprite;
+            StartCoroutine(AppearAnimation());
+            return;
         }
 
         #endregion
@@ -78,7 +87,7 @@ namespace DrillGame.View.Ground
         #region Unity event methods
         private void Awake()
         {
-
+            GroundTable = DataLoadManager.Instance.GroundTable;
         }
 
         private void Start()

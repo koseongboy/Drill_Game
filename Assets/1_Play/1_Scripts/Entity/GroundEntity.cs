@@ -25,14 +25,12 @@ namespace DrillGame.Core.Ground
             MaxHp = max_hp;
             DropItems = dropItems;
         }
-        public int GetNextDepth() { return Depth + 1; }
         #endregion
 
         #region public methods
-        public bool GiveDamage(int damage)
+        public void GiveDamage(int damage)
         {
             CurrentHp -= damage;
-            return IsDestroyed;
         }
         #endregion
 

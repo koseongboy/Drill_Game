@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -9,18 +10,19 @@ namespace DrillGame.Data
 {
     public struct Ground_Structure
     {
-        public int id;
+
         public int start_depth;
         public int end_depth;
         public int hp;
         public List<string> drop_items;
-        public string color;
+        public string sprite_addressable;
     }
     public class Ground_Data
     {
         #region Fields & Properties
-        private Dictionary<int, Ground_Structure> groundTable = new Dictionary<int, Ground_Structure>();
-        int numCol = 6;
+        public Dictionary<int, Ground_Structure> GroundTable { get; private set; } = new Dictionary<int, Ground_Structure>();
+        public List<int> DepthRanges {get; set;} = new List<int>();
+        int numCol = 5;
         #endregion
 
         #region Singleton & initialization
@@ -29,11 +31,7 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
-        public Ground_Structure GetGround_Structure(int id)
-        {
-            return groundTable[id];
-        }
-        public Dictionary<int, Ground_Structure> GroundTable { get { return groundTable; } }
+        
         #endregion
 
         #region public methods
@@ -41,6 +39,7 @@ namespace DrillGame.Data
         {
             var parser = new Ground_Data();
             TextAsset csvData = await Addressables.LoadAssetAsync<TextAsset>("Ground_Data").Task;
+
             if (csvData != null)
             {
                 parser.Parse(csvData.text);
@@ -71,19 +70,19 @@ namespace DrillGame.Data
                 {
                     Ground_Structure structure = new Ground_Structure
                     {
-                        id = int.Parse(fields[0]),
-                        start_depth = int.Parse(fields[1]),
-                        end_depth = int.Parse(fields[2]),
-                        hp = int.Parse(fields[3]),
-                        color = fields[5]
+                        start_depth = int.Parse(fields[0]),
+                        end_depth = int.Parse(fields[1]),
+                        hp = int.Parse(fields[2]),
+                        sprite_addressable = fields[4]
                     };
-                    string[] items = fields[4].Split(';');
+                    string[] items = fields[3].Split(';');
                     structure.drop_items = new List<string>();
                     foreach (var item in items)
                     {
                         structure.drop_items.Add(item);
                     }
-                    groundTable[structure.id] = structure;
+                    GroundTable[structure.start_depth] = structure;
+                    DepthRanges.Add(structure.start_depth);
                 }
                 else
                 {
