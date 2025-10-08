@@ -296,7 +296,6 @@ Transform:
   m_Children:
   - {fileID: 1619964049}
   - {fileID: 73494662}
-  - {fileID: 1051005281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357322637
@@ -338,7 +337,7 @@ Transform:
   m_GameObject: {fileID: 357322637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -360,8 +359,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4bd3d07b4cc4b438deeb7af6fc7e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GridManager
+  EngineTileamp: {fileID: 651814052}
+  FacilityTileamp: {fileID: 1069995566}
   previewTilemap: {fileID: 1967305015}
-  occupiedTile: {fileID: 0}
+  ableTile: {fileID: 11400000, guid: b18efd57c1d13ec44a3d97dca87dae10, type: 2}
+  TempFacility: {fileID: 11400000, guid: 8033266618a2cd94a9879ff35a007d0f, type: 2}
+  mouseWorldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &475047027
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +614,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 2.505, y: 2.88, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -656,51 +659,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1051005280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051005281}
-  - component: {fileID: 1051005282}
-  m_Layer: 0
-  m_Name: PlacementManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1051005281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051005280}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 146924362}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051005282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051005280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87795abb1a7298498d6e2c4a8610601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.PlacementManager
-  mouseWorldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1069995563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29c2b2bc8f27ec40978b1f282d0ef9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GameManager
+  gridManager: {fileID: 357322640}
+  batchMode: 0
 --- !u!1 &1807925076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1190,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: -1, y: 0}
   - {x: 1, y: 0}
+  engineType: 0
 --- !u!61 &1807925080
 BoxCollider2D:
   m_ObjectHideFlags: 0

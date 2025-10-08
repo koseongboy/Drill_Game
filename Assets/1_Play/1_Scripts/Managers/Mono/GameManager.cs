@@ -9,6 +9,16 @@ namespace DrillGame.Managers
         #region Fields & Properties
         private InputSystem_Actions control;
 
+        [SerializeField]
+        private GridManager gridManager;
+
+        [ReadOnly]
+        [SerializeField]
+        private bool batchMode = false;
+
+        
+
+
         private int Counter = 0;
         #endregion
 
@@ -42,12 +52,18 @@ namespace DrillGame.Managers
             {
                 CoreTick();
             }
+
+            
         }
         private void Awake()
         {
             control = new InputSystem_Actions();
             //control.Player.Jump.performed += ctx => CoreTick();
             control.Player.SlowTick.performed += ctx => SlowTick();
+
+            control.Player.Batch.performed += ctx => SwapBatchMode();
+
+            control.Player.Attack.performed += ctx => TryBatch();
         }
 
 
@@ -66,6 +82,17 @@ namespace DrillGame.Managers
             CoreTick();
         }
 
+        private void TryBatch()
+        {
+            if (!batchMode) return;
+            
+            gridManager.TryBatch();
+        }
+        private void SwapBatchMode()
+        {
+            batchMode = !batchMode;
+            gridManager.isBatchMode = batchMode;
+        }
         #endregion
     }
 }
