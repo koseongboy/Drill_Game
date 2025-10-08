@@ -15,12 +15,15 @@ namespace DrillGame.Core.Facility
         private List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
         public event Action<int> OnFacilityActivated;
+
+        private IFacilityAction facilityAction;
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
+        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction)
         {
-            position = startPosition;
+            this.position = startPosition;
+            this.facilityAction = facilityAction;
             // for test
             if (formations == null)
             {
@@ -52,11 +55,22 @@ namespace DrillGame.Core.Facility
         public void Run(int intensity)
         {
             Debug.Log("Facility is running. with Intensity : "  + intensity);
+
+            // 시설 고유의 액션 실행
+            facilityAction?.ActivateFacility(this, intensity);
+
+            // 이벤트 호출 (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);
         }
         public void ShowFacilityInfo()
         {
             Debug.LogError("시설 UI를 띄워주세요!");
+        }
+
+        // 여기서 부터 model 관련 메서드 추가 가능
+        public void Logger(string message)
+        {
+            Debug.Log(message);
         }
         #endregion
 

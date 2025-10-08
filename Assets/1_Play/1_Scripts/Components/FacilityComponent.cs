@@ -46,6 +46,8 @@ namespace DrillGame.View.Facility
             // 임시 그래픽 액션 실행
             TempGraphicAction(intensity);
         }
+
+        
         #endregion
 
         #region private methods
@@ -67,7 +69,7 @@ namespace DrillGame.View.Facility
             if (presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 FacilityComponent를 생성했습니다. 테스트용 기본 시설을 생성합니다.");
-                Initialize(new FacilityEntity(debugPosition, debugFormation));
+                Initialize(new FacilityEntity(debugPosition, debugFormation, new HelloFacilityAction()));
             }
         }
         public void OnPointerClick(PointerEventData eventData)
