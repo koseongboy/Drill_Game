@@ -183,9 +183,27 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Batch"",
+                    ""name"": ""EngineBatch"",
+                    ""type"": ""Button"",
+                    ""id"": ""068f3440-001a-4216-a692-4d01679ee2d6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FacilityBatch"",
                     ""type"": ""Button"",
                     ""id"": ""eb0af8ff-9ef7-40c0-a0f6-5b2bee81d088"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StopBatch"",
+                    ""type"": ""Button"",
+                    ""id"": ""3cf5a432-fb36-417a-be42-e927d9081e7c"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -592,11 +610,33 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""addde47d-584d-4152-adc8-9d0c8a7a2472"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Batch"",
+                    ""action"": ""FacilityBatch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""550168f7-b52f-4561-916f-6654b1e02858"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""StopBatch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""703670a7-e3b3-4825-bb69-f43fbbb9234b"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""EngineBatch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1194,7 +1234,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_SlowTick = m_Player.FindAction("SlowTick", throwIfNotFound: true);
-        m_Player_Batch = m_Player.FindAction("Batch", throwIfNotFound: true);
+        m_Player_EngineBatch = m_Player.FindAction("EngineBatch", throwIfNotFound: true);
+        m_Player_FacilityBatch = m_Player.FindAction("FacilityBatch", throwIfNotFound: true);
+        m_Player_StopBatch = m_Player.FindAction("StopBatch", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1298,7 +1340,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_SlowTick;
-    private readonly InputAction m_Player_Batch;
+    private readonly InputAction m_Player_EngineBatch;
+    private readonly InputAction m_Player_FacilityBatch;
+    private readonly InputAction m_Player_StopBatch;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1351,9 +1395,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SlowTick => m_Wrapper.m_Player_SlowTick;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Batch".
+        /// Provides access to the underlying input action "Player/EngineBatch".
         /// </summary>
-        public InputAction @Batch => m_Wrapper.m_Player_Batch;
+        public InputAction @EngineBatch => m_Wrapper.m_Player_EngineBatch;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/FacilityBatch".
+        /// </summary>
+        public InputAction @FacilityBatch => m_Wrapper.m_Player_FacilityBatch;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/StopBatch".
+        /// </summary>
+        public InputAction @StopBatch => m_Wrapper.m_Player_StopBatch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1410,9 +1462,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SlowTick.started += instance.OnSlowTick;
             @SlowTick.performed += instance.OnSlowTick;
             @SlowTick.canceled += instance.OnSlowTick;
-            @Batch.started += instance.OnBatch;
-            @Batch.performed += instance.OnBatch;
-            @Batch.canceled += instance.OnBatch;
+            @EngineBatch.started += instance.OnEngineBatch;
+            @EngineBatch.performed += instance.OnEngineBatch;
+            @EngineBatch.canceled += instance.OnEngineBatch;
+            @FacilityBatch.started += instance.OnFacilityBatch;
+            @FacilityBatch.performed += instance.OnFacilityBatch;
+            @FacilityBatch.canceled += instance.OnFacilityBatch;
+            @StopBatch.started += instance.OnStopBatch;
+            @StopBatch.performed += instance.OnStopBatch;
+            @StopBatch.canceled += instance.OnStopBatch;
         }
 
         /// <summary>
@@ -1454,9 +1512,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SlowTick.started -= instance.OnSlowTick;
             @SlowTick.performed -= instance.OnSlowTick;
             @SlowTick.canceled -= instance.OnSlowTick;
-            @Batch.started -= instance.OnBatch;
-            @Batch.performed -= instance.OnBatch;
-            @Batch.canceled -= instance.OnBatch;
+            @EngineBatch.started -= instance.OnEngineBatch;
+            @EngineBatch.performed -= instance.OnEngineBatch;
+            @EngineBatch.canceled -= instance.OnEngineBatch;
+            @FacilityBatch.started -= instance.OnFacilityBatch;
+            @FacilityBatch.performed -= instance.OnFacilityBatch;
+            @FacilityBatch.canceled -= instance.OnFacilityBatch;
+            @StopBatch.started -= instance.OnStopBatch;
+            @StopBatch.performed -= instance.OnStopBatch;
+            @StopBatch.canceled -= instance.OnStopBatch;
         }
 
         /// <summary>
@@ -1828,12 +1892,26 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSlowTick(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Batch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "EngineBatch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBatch(InputAction.CallbackContext context);
+        void OnEngineBatch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "FacilityBatch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFacilityBatch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "StopBatch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnStopBatch(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

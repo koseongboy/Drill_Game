@@ -1,6 +1,7 @@
-using UnityEngine;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
+using System.Diagnostics;
+using UnityEngine;
 
 namespace DrillGame.Managers
 {
@@ -42,7 +43,7 @@ namespace DrillGame.Managers
         #region Unity event methods
         private void FixedUpdate()
         {
-            if (Counter < 5)   // 주기를 늘려서 너무 빠르게 진행되지 않도록 함
+            if (Counter < 12)   // 주기를 늘려서 너무 빠르게 진행되지 않도록 함
             {
                 Counter++;
                 return;
@@ -62,7 +63,9 @@ namespace DrillGame.Managers
             //control.Player.Jump.performed += ctx => CoreTick();
             control.Player.SlowTick.performed += ctx => SlowTick();
 
-            control.Player.Batch.performed += ctx => SwapBatchMode();
+            control.Player.EngineBatch.performed += ctx => EngineBatch();
+            control.Player.FacilityBatch.performed += ctx => FacilityBatch();
+            control.Player.StopBatch.performed += ctx => StopBatch();
 
             control.Player.Attack.performed += ctx => TryBatch();
         }
@@ -89,17 +92,21 @@ namespace DrillGame.Managers
             
             gridManager.TryBatch();
         }
-        private void SwapBatchMode()
+        private void StopBatch()
+        { 
+            batchMode = false;
+            gridManager.ExitBatchMode();
+        }
+        private void FacilityBatch()
         {
-            batchMode = !batchMode;
-            if (batchMode)
-            {
-                gridManager.EnterBatchMode(tilemapType);
-            }
-            else
-            {
-                gridManager.ExitBatchMode();
-            }
+            batchMode = true;
+            gridManager.EnterBatchMode(TilemapType.Facility);
+        }
+
+        private void EngineBatch()
+        {
+            batchMode = true;
+            gridManager.EnterBatchMode(TilemapType.Engine);
         }
 
         #endregion

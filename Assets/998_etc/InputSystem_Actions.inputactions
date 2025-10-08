@@ -97,9 +97,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Batch",
+                    "name": "EngineBatch",
+                    "type": "Button",
+                    "id": "068f3440-001a-4216-a692-4d01679ee2d6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FacilityBatch",
                     "type": "Button",
                     "id": "eb0af8ff-9ef7-40c0-a0f6-5b2bee81d088",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StopBatch",
+                    "type": "Button",
+                    "id": "3cf5a432-fb36-417a-be42-e927d9081e7c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -506,11 +524,33 @@
                 {
                     "name": "",
                     "id": "addde47d-584d-4152-adc8-9d0c8a7a2472",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Batch",
+                    "action": "FacilityBatch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "550168f7-b52f-4561-916f-6654b1e02858",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "StopBatch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "703670a7-e3b3-4825-bb69-f43fbbb9234b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "EngineBatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

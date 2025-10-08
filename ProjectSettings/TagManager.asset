@@ -47,5 +47,11 @@ TagManager:
   - name: 2_Facility
     uniqueID: 2470205273
     locked: 0
+  - name: 3_PreviewTile
+    uniqueID: 2008213169
+    locked: 0
+  - name: 4_PreviewImage
+    uniqueID: 3559451033
+    locked: 0
   m_RenderingLayers:
   - Default

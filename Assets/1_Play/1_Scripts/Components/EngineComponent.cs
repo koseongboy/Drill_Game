@@ -13,7 +13,7 @@ namespace DrillGame.View.Engine
     {
         #region Fields & Properties
         [SerializeField]
-        private Vector2Int debugPosition;
+        private Vector2Int debugPosition;   // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
         [SerializeField]
         private List<Vector2Int> debugFormation = new();
         [SerializeField]
@@ -65,6 +65,9 @@ namespace DrillGame.View.Engine
             // 임시 그래픽 액션 실행
             TempGraphicAction();
         }
+
+        
+
         #endregion
 
         #region private methods
