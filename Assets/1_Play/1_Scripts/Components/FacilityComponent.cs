@@ -81,7 +81,7 @@ namespace DrillGame.View.Facility
         }
         public void OnPointerClick(PointerEventData eventData)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("FacilityComponent clicked : UI 필요해요");
         }
         #endregion
 

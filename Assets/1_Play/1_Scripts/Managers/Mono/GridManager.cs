@@ -16,9 +16,9 @@ namespace DrillGame.Managers
     {
         #region Fields & Properties
         [SerializeField]
-        private Tilemap EngineTileamp;
+        private Transform EngineTileamp;
         [SerializeField] 
-        private Tilemap FacilityTileamp;
+        private Transform FacilityTileamp;
         [SerializeField]    
         private Tilemap previewTilemap;
         [SerializeField] 
@@ -29,10 +29,15 @@ namespace DrillGame.Managers
         [SerializeField]
         private TileBase ableTile;
 
+        [Header("Temp : 후일 프리팹 동적 로더 제작 해주세요")]
         [SerializeField]
         private TileBase TempEngineImage;
         [SerializeField]
         private TileBase TempFacilityImage;
+        [SerializeField]
+        private GameObject TempEngine;
+        [SerializeField]
+        private GameObject TempFacility;
 
         private float distanceToCamera;
 
@@ -49,6 +54,8 @@ namespace DrillGame.Managers
         private bool isBatchMode;
         private TilemapType tilemapType;
         private TileBase imageTile;
+        private GameObject entityObject; 
+        private Transform entityParent;
 
         #endregion
 
@@ -74,26 +81,22 @@ namespace DrillGame.Managers
             return grid.CellToWorld(cellPosition);
         }
 
-        public bool IsCellOccupied(Vector3Int cellPosition)
-        {
-            return previewTilemap.GetTile(cellPosition) == ableTile;
-        }
 
-        public void SetCellOccupied(Vector3Int cellPosition, bool occupied)
-        {
-            if (occupied)
-            {
-                previewTilemap.SetTile(cellPosition, ableTile);
-            }
-            else
-            {
-                previewTilemap.SetTile(cellPosition, null);
-            }
-        }
+       
 
         public void TryBatch()
         {
-            //FacilityTileamp.SetTile(GetCellPosition(), TempFacilityImage);
+            if (!isBatchMode)
+            {
+                Debug.Log("분명 게임 매니저에서 막았다고 생각했는데 다시 확인해보자");
+                return;
+            }
+
+            Vector3Int cellPosition = GetCellPosition();
+            // 배치 가능하면 실제로 배치합니다
+
+            // Instantiate entity
+            Instantiate(entityObject, CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
 
         }
 
@@ -103,7 +106,18 @@ namespace DrillGame.Managers
             isBatchMode = true;
             
             // for test
-            imageTile = tilemapType == TilemapType.Engine ? TempEngineImage : TempFacilityImage;
+            if(tilemapType == TilemapType.Engine)
+            {
+                imageTile = TempEngineImage;
+                entityObject = TempEngine;
+                entityParent = EngineTileamp;
+            }
+            else
+            {
+                imageTile = TempFacilityImage;
+                entityObject = TempFacility;
+                entityParent = FacilityTileamp;
+            }
         }
         public void ExitBatchMode()
         {
@@ -153,7 +167,6 @@ namespace DrillGame.Managers
         private void SetPreviewTile(Vector3 mousePosition)
         {
             Vector3Int cellPosition = WorldToCell(mousePosition);
-            if (IsCellOccupied(cellPosition)) return;
             previewTilemap.SetTile(cellPosition, ableTile);
             // Set image tile
             imageTilemap.SetTile(cellPosition, imageTile);
