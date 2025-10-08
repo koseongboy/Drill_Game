@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -8,7 +10,6 @@ namespace DrillGame.Managers
     {
         Engine,
         Facility,
-        Preview,
     }
 
     public class GridManager : MonoBehaviour
@@ -20,12 +21,18 @@ namespace DrillGame.Managers
         private Tilemap FacilityTileamp;
         [SerializeField]    
         private Tilemap previewTilemap;
+        [SerializeField] 
+        private Tilemap imageTilemap;
 
+        [SerializeField]
+        private TileBase unableTile;
         [SerializeField]
         private TileBase ableTile;
 
         [SerializeField]
-        private TileBase TempFacility;
+        private TileBase TempEngineImage;
+        [SerializeField]
+        private TileBase TempFacilityImage;
 
         private float distanceToCamera;
 
@@ -36,8 +43,12 @@ namespace DrillGame.Managers
 
         [ReadOnly, SerializeField]
         private Vector3 mouseWorldPosition;
-        public bool isBatchMode { get; set; } = false;
-        public TilemapType tilemapType { get; set; } = TilemapType.Preview; 
+        [ReadOnly, SerializeField]
+        private List<Vector3Int> entityFormation;
+
+        private bool isBatchMode;
+        private TilemapType tilemapType;
+        private TileBase imageTile;
 
         #endregion
 
@@ -82,9 +93,24 @@ namespace DrillGame.Managers
 
         public void TryBatch()
         {
-            FacilityTileamp.SetTile(GetCellPosition(), TempFacility);
+            //FacilityTileamp.SetTile(GetCellPosition(), TempFacilityImage);
 
         }
+
+        public void EnterBatchMode(TilemapType type)
+        {
+            tilemapType = type;
+            isBatchMode = true;
+            
+            // for test
+            imageTile = tilemapType == TilemapType.Engine ? TempEngineImage : TempFacilityImage;
+        }
+        public void ExitBatchMode()
+        {
+            isBatchMode = false;
+        }
+
+
         #endregion
 
         #region private methods
@@ -113,7 +139,7 @@ namespace DrillGame.Managers
             }
 
         }
-
+        
         private Vector3Int GetCellPosition()
         {
             mouseWorldPosition = Mouse.current.position.ReadValue();
@@ -129,11 +155,14 @@ namespace DrillGame.Managers
             Vector3Int cellPosition = WorldToCell(mousePosition);
             if (IsCellOccupied(cellPosition)) return;
             previewTilemap.SetTile(cellPosition, ableTile);
+            // Set image tile
+            imageTilemap.SetTile(cellPosition, imageTile);
         }
 
         private void SetNullTile(Vector3Int cellPosition)
         {
             previewTilemap.SetTile(cellPosition, null);
+            imageTilemap.SetTile(cellPosition, null);
         }
 
         #endregion

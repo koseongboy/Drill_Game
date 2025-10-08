@@ -15,8 +15,9 @@ namespace DrillGame.Managers
         [ReadOnly]
         [SerializeField]
         private bool batchMode = false;
+        [SerializeField]
+        private TilemapType tilemapType = TilemapType.Engine;
 
-        
 
 
         private int Counter = 0;
@@ -91,8 +92,16 @@ namespace DrillGame.Managers
         private void SwapBatchMode()
         {
             batchMode = !batchMode;
-            gridManager.isBatchMode = batchMode;
+            if (batchMode)
+            {
+                gridManager.EnterBatchMode(tilemapType);
+            }
+            else
+            {
+                gridManager.ExitBatchMode();
+            }
         }
+
         #endregion
     }
 }

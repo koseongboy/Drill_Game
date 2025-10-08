@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 using DrillGame.Core.Engine;
 using DrillGame.Core.Facility;
-using DrillGame.Core.Helper;
 
 
 namespace DrillGame.Core.Managers

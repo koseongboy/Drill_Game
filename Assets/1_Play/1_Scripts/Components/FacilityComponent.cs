@@ -18,6 +18,8 @@ namespace DrillGame.View.Facility
         private Vector2Int debugPosition;
         [SerializeField]
         List<Vector2Int> debugFormation = new();
+        [SerializeField]
+        string debugActionClassName = "HelloFacilityAction";
 
         private FacilityPresenter presenter;
 
@@ -69,6 +71,11 @@ namespace DrillGame.View.Facility
             if (presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 FacilityComponent를 생성했습니다. 테스트용 기본 시설을 생성합니다.");
+                if(debugActionClassName != "HelloFacilityAction")
+                {
+                    Debug.LogWarning("현재는 HelloFacilityAction만 지원합니다. 기본값으로 설정합니다.");
+                    debugActionClassName = "HelloFacilityAction";
+                }
                 Initialize(new FacilityEntity(debugPosition, debugFormation, new HelloFacilityAction()));
             }
         }
