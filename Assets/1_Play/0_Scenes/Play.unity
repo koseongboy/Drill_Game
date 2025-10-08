@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GridManager
   EngineTileamp: {fileID: 651814050}
-  FacilityTileamp: {fileID: 651814050}
+  FacilityTileamp: {fileID: 1069995564}
   previewTilemap: {fileID: 1967305015}
   imageTilemap: {fileID: 1459232064}
   unableTile: {fileID: 11400000, guid: 2fee9253ca29f854385ee7f4d2296f62, type: 2}
@@ -617,8 +617,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1053353357
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 2.505, y: 2.88, z: 0}
@@ -743,8 +743,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1824762023
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   debugPosition: {x: 0, y: 0}
   debugFormation:
   - {x: 0, y: 0}
-  engineType: 0
+  engineType: 
 --- !u!61 &1807925080
 BoxCollider2D:
   m_ObjectHideFlags: 0

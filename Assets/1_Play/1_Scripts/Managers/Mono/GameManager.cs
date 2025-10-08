@@ -42,14 +42,14 @@ namespace DrillGame.Managers
         #region Unity event methods
         private void FixedUpdate()
         {
-            if (Counter < 10)   // 주기를 늘려서 너무 빠르게 진행되지 않도록 함
+            if (Counter < 5)   // 주기를 늘려서 너무 빠르게 진행되지 않도록 함
             {
                 Counter++;
                 return;
             }
             Counter = 0;
             // 점프를 누르고 있는 동안 틱 진행
-            if (control.Player.Jump.ReadValue<float>() > 0)
+            //if (control.Player.Jump.ReadValue<float>() > 0)
             {
                 CoreTick();
             }

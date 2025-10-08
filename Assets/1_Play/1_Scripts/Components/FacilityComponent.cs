@@ -8,10 +8,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
+using DrillGame.View.Helper;
 
 namespace DrillGame.View.Facility
 {
-    public class FacilityComponent : MonoBehaviour, IPointerClickHandler
+    public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit
     {
         #region Fields & Properties
         [SerializeField]
@@ -28,8 +29,18 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(FacilityEntity facilityEntity)
+        public void Initialize(Vector2Int startPosition)
         {
+
+            // for Test 후일 팩토리 패턴으로 분리 필요
+            if(debugActionClassName != "HelloFacilityAction")
+            {
+                Debug.LogWarning("현재는 HelloFacilityAction만 지원합니다. 기본값으로 설정합니다.");
+                debugActionClassName = "HelloFacilityAction";
+            }
+
+            IFacilityAction debugFormationAction = new HelloFacilityAction();
+            FacilityEntity facilityEntity = new FacilityEntity(startPosition, debugFormation, debugFormationAction);
             presenter = new FacilityPresenter(this, facilityEntity);
 
             OnClickFacilityDetail = () => {
@@ -76,7 +87,7 @@ namespace DrillGame.View.Facility
                     Debug.LogWarning("현재는 HelloFacilityAction만 지원합니다. 기본값으로 설정합니다.");
                     debugActionClassName = "HelloFacilityAction";
                 }
-                Initialize(new FacilityEntity(debugPosition, debugFormation, new HelloFacilityAction()));
+                Initialize(debugPosition);
             }
         }
         public void OnPointerClick(PointerEventData eventData)

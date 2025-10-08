@@ -1,6 +1,7 @@
 using DG.Tweening;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Presenter;
+using DrillGame.View.Helper;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine.EventSystems;
 
 namespace DrillGame.View.Engine
 {
-    public class EngineComponent : MonoBehaviour, IPointerClickHandler
+    public class EngineComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit
     {
         #region Fields & Properties
         [SerializeField]
@@ -16,7 +17,7 @@ namespace DrillGame.View.Engine
         [SerializeField]
         private List<Vector2Int> debugFormation = new();
         [SerializeField]
-        private EngineType engineType;
+        private string engineType = "BasicEngine";
 
         private EnginePresenter presenter;
         public Action OnClickEngineDetail { get; set; }
@@ -31,8 +32,17 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(EngineEntity engineEntity)
+        public void Initialize(Vector2Int startPosition)
         {
+            // for Test 후일 팩토리 패턴으로 분리 필요 -> 근데 아직 엔진 행동 패턴이 없는..
+            if (engineType != "BasicEngine")
+            {
+                Debug.LogWarning("현재는 BasicEngine만 지원합니다. 기본값으로 설정합니다.");
+                engineType = "BasicEngine";
+            }
+
+            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation);
+
             presenter = new EnginePresenter(this, engineEntity);
 
             OnClickEngineDetail = () => {
@@ -86,7 +96,7 @@ namespace DrillGame.View.Engine
             if(presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 테스트용 기본 엔진을 생성합니다.");
-                Initialize(new EngineEntity(debugPosition, debugFormation, engineType));
+                Initialize(debugPosition);
             }
         }
 

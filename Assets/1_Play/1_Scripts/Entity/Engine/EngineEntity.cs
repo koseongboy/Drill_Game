@@ -8,11 +8,6 @@ using DrillGame.Core.Managers;
 
 namespace DrillGame.Core.Engine
 {
-    public enum EngineType
-    {
-        Core,
-        Normal
-    }
     public class EngineEntity
     {
         #region Fields & Properties
@@ -23,17 +18,15 @@ namespace DrillGame.Core.Engine
         private Vector2Int position; // 엔진의 위치 (중점)
         private List<Vector2Int> formations = new List<Vector2Int>(); // 엔진의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수  
 
-        private EngineType engineType;
 
         public event Action OnEngineActivated;
 
         #endregion
 
         #region Singleton & initialization
-        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null, EngineType engineType = default)
+        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
         {
             this.position = startPosition;
-            this.engineType = engineType;
             if (formations == null)
             {
                 this.formations.Add(new Vector2Int(0, 0));
@@ -45,7 +38,6 @@ namespace DrillGame.Core.Engine
 
             // register to BoardManager
             BoardManager.Instance.AddEngine(this);
-            this.engineType = engineType;
         }
         #endregion
 

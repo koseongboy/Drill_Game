@@ -1,8 +1,11 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+
+using DrillGame.View.Helper;
 
 namespace DrillGame.Managers
 {
@@ -92,12 +95,23 @@ namespace DrillGame.Managers
                 return;
             }
 
+
             Vector3Int cellPosition = GetCellPosition();
+            
             // 배치 가능하면 실제로 배치합니다
 
             // Instantiate entity
-            Instantiate(entityObject, CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
-
+            GameObject gameObject = Instantiate(entityObject, CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
+            if(gameObject.TryGetComponent<IDrillGameObjectInit>(out var init))
+            {
+                init.Initialize((Vector2Int)cellPosition);
+                // set sorting layer in parent
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerID = entityParent.GetComponent<Tilemap>().GetComponent<TilemapRenderer>().sortingLayerID;
+            }
+            else
+            {
+                Debug.LogError("IDrillGameObjectInit 인터페이스를 구현하지 않은 오브젝트입니다.");
+            }
         }
 
         public void EnterBatchMode(TilemapType type)
@@ -121,6 +135,7 @@ namespace DrillGame.Managers
         }
         public void ExitBatchMode()
         {
+            ClearAllPreviewTile();
             isBatchMode = false;
         }
 
@@ -178,6 +193,12 @@ namespace DrillGame.Managers
             imageTilemap.SetTile(cellPosition, null);
         }
 
+        private void ClearAllPreviewTile()
+        {
+            previewTilemap.ClearAllTiles();
+            imageTilemap.ClearAllTiles();
+            previousCellPosition = new Vector3Int(int.MinValue, int.MinValue, int.MinValue);
+        }
         #endregion
     }
 }
