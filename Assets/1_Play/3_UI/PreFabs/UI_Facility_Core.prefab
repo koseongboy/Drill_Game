@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5db34d3eb07eb746bb61f3fa7ac0216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_Facility_Core
+  addressableName: UI_Facility_Core
 --- !u!1 &6250014621242354822
 GameObject:
   m_ObjectHideFlags: 0
