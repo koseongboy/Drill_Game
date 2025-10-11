@@ -366,10 +366,13 @@ MonoBehaviour:
   imageTilemap: {fileID: 1459232064}
   unableTile: {fileID: 11400000, guid: 2fee9253ca29f854385ee7f4d2296f62, type: 2}
   ableTile: {fileID: 11400000, guid: 64ba8ba2aa5bded48851664ed99716fb, type: 2}
+  GridBGImage: {fileID: 11400000, guid: c128b09cba2f8cb47b621a65b588f297, type: 2}
   TempEngineImage: {fileID: 11400000, guid: d9d5bbfe8f881384aa6fd99c3e385b78, type: 2}
   TempFacilityImage: {fileID: 11400000, guid: c8b2b0dcc4ca97f42945938eba0fbfe2, type: 2}
   TempEngine: {fileID: 2116369118879959848, guid: 274fd5f14fc48e144bc959f8f18867d4, type: 3}
   TempFacility: {fileID: 2858953249066847510, guid: e2fc0b25f3f871e4ca2884393dbb5275, type: 3}
+  AreaStart: {x: -5, y: -8}
+  AreaSize: {x: 9, y: 14}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &475047027
 GameObject:
@@ -435,7 +438,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -620,7 +623,7 @@ TilemapRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 2.505, y: 2.88, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -934,15 +937,39 @@ Tilemap:
   m_Enabled: 1
   m_Tiles: {}
   m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
+  m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileMatrixArray:
+  - m_RefCount: 0
+    m_Data:
+      e00: -1.8234841e+32
+      e01: 0
+      e02: 3.9669473e+37
+      e03: 3.9669554e+37
+      e10: 4.5907e-41
+      e11: 0
+      e12: 2.59e-43
+      e13: 2.59e-43
+      e20: -5.4413902e+32
+      e21: -244.39844
+      e22: -244.39844
+      e23: -8.5874293e-19
+      e30: 4.5907e-41
+      e31: 8.16e-43
+      e32: 8.16e-43
+      e33: 8.16e-43
+  m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: 3.9668905e+37, g: 3.9668905e+37, b: 3.9668905e+37, a: 3.9668905e+37}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
+  m_Origin: {x: -5, y: -8, z: 0}
+  m_Size: {x: 9, y: 14, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
