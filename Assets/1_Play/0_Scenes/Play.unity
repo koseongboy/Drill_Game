@@ -363,15 +363,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4bd3d07b4cc4b438deeb7af6fc7e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GridManager
-  BackGroundTilemap: {fileID: 1920675426}
+  FactoryBackGroundTilemap: {fileID: 1920675426}
   EngineTileamp: {fileID: 651814050}
   FacilityTileamp: {fileID: 1069995564}
   previewTilemap: {fileID: 1967305015}
   imageTilemap: {fileID: 1459232064}
   unableTile: {fileID: 11400000, guid: 2fee9253ca29f854385ee7f4d2296f62, type: 2}
   ableTile: {fileID: 11400000, guid: 64ba8ba2aa5bded48851664ed99716fb, type: 2}
-  FactoryGridImage: {fileID: 11400000, guid: 6927ccd066140f540b3581045666c8ba, type: 2}
-  FactoryBoundaryImage: {fileID: 11400000, guid: 56fddbaa305434a4b8ab3e91fc68641b, type: 2}
+  FactoryGridImage: {fileID: 11400000, guid: b86ed1cf049070f47bb6ff964b1d299a, type: 2}
+  FactoryBoundaryImage: {fileID: 11400000, guid: 6927ccd066140f540b3581045666c8ba, type: 2}
   TempEngineImage: {fileID: 11400000, guid: d9d5bbfe8f881384aa6fd99c3e385b78, type: 2}
   TempFacilityImage: {fileID: 11400000, guid: c8b2b0dcc4ca97f42945938eba0fbfe2, type: 2}
   TempEngine: {fileID: 2116369118879959848, guid: 274fd5f14fc48e144bc959f8f18867d4, type: 3}
@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 1405028142}
   - component: {fileID: 1405028144}
   - component: {fileID: 1405028143}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: BackGroundTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2839,7 +2839,7 @@ GameObject:
   - component: {fileID: 1966600772}
   - component: {fileID: 1966600774}
   - component: {fileID: 1966600773}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: BackGroundBaseTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
