@@ -66,9 +66,9 @@ namespace DrillGame.Core.Managers
         public void Tick()
         {
             Debug.Log("Engine Core Tick");
-            TickAllEngines();       // ¸ğµç ¿£ÁøÀÇ Æ½À» ¼±Çà     (¿©±â¼­ ½Ã¼³ÀÇ µî·ÏÀÌ ÀÌ·ç¾îÁü)
-            ProcessTickCycle();     // ÀÌÈÄ ÄÚ¾î Æ½ ÁøÇà -> ¸í·É ½ÇÇà Á÷ÈÄ 1Æ½ÀÌ Èê·¯°¡´Â °ÍÀ» ¹æÁö (ÁÖ·Î ¸í·É ´Ü°è)
-            RunFacility();            // ¸ğµç ¿£Áø¿¡ ¸í·É ½ÇÇà
+            TickAllEngines();       // ëª¨ë“  ì—”ì§„ì˜ í‹±ì„ ì„ í–‰     (ì—¬ê¸°ì„œ ì‹œì„¤ì˜ ë“±ë¡ì´ ì´ë£¨ì–´ì§)
+            ProcessTickCycle();     // ì´í›„ ì½”ì–´ í‹± ì§„í–‰ -> ëª…ë ¹ ì‹¤í–‰ ì§í›„ 1í‹±ì´ í˜ëŸ¬ê°€ëŠ” ê²ƒì„ ë°©ì§€ (ì£¼ë¡œ ëª…ë ¹ ë‹¨ê³„)
+            RunFacility();            // ëª¨ë“  ì—”ì§„ì— ëª…ë ¹ ì‹¤í–‰
         }
 
         public void AddEngine(EngineEntity engine)
@@ -85,10 +85,10 @@ namespace DrillGame.Core.Managers
         public void AddFacility(FacilityEntity facility)
         {
             facilities.Add(facility);
-            // facilityMap¿¡ Ãß°¡ÇÏ´Â ·ÎÁ÷ Ãß°¡ ÇÊ¿ä
+            // facilityMapì— ì¶”ê°€í•˜ëŠ” ë¡œì§ ì¶”ê°€ í•„ìš”
 
 
-            // Á¤»óÀûÀÎ ÀÔ·Â¸¸ µé¾î¿Â´Ù°í °¡Á¤
+            // ì •ìƒì ì¸ ì…ë ¥ë§Œ ë“¤ì–´ì˜¨ë‹¤ê³  ê°€ì •
             List<Vector2Int> positions = facility.GetFormationPositions();
             foreach (var pos in positions)
             {
@@ -98,7 +98,7 @@ namespace DrillGame.Core.Managers
         public void RemoveFacility(FacilityEntity facility)
         {
             facilities.Remove(facility);
-            // facilityMap¿¡¼­ Á¦°ÅÇÏ´Â ·ÎÁ÷ Ãß°¡ ÇÊ¿ä
+            // facilityMapì—ì„œ ì œê±°í•˜ëŠ” ë¡œì§ ì¶”ê°€ í•„ìš”
 
             List<Vector2Int> positions = facility.GetFormationPositions();
             foreach (var pos in positions)
@@ -154,7 +154,7 @@ namespace DrillGame.Core.Managers
             ScheduledFacilities.Clear();
         }
 
-        // ÄÚ¾î°¡ È°¼ºÈ­ µÇ¸é ¸ğµç ¿£Áø¿¡ ¸í·ÉÀ» ³»¸³´Ï´Ù.
+        // ì½”ì–´ê°€ í™œì„±í™” ë˜ë©´ ëª¨ë“  ì—”ì§„ì— ëª…ë ¹ì„ ë‚´ë¦½ë‹ˆë‹¤.
         private void ActivateCore()
         {
             Debug.Log($"Engine Core Activated : have {engines.Count} engines & {facilities.Count} facilities");

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Core/BoardManager.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GridManager.cs" charset="UTF-16" />
+  </component>
+</project>

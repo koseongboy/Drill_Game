@@ -43,13 +43,13 @@ namespace DrillGame.Managers
         #region Unity event methods
         private void FixedUpdate()
         {
-            if (Counter < 12)   // ÁÖ±â¸¦ ´Ã·Á¼­ ³Ê¹« ºü¸£°Ô ÁøÇàµÇÁö ¾Êµµ·Ï ÇÔ
+            if (Counter < 12)   // ì£¼ê¸°ë¥¼ ëŠ˜ë ¤ì„œ ë„ˆë¬´ ë¹ ë¥´ê²Œ ì§„í–‰ë˜ì§€ ì•Šë„ë¡ í•¨
             {
                 Counter++;
                 return;
             }
             Counter = 0;
-            // Á¡ÇÁ¸¦ ´©¸£°í ÀÖ´Â µ¿¾È Æ½ ÁøÇà
+            // ì í”„ë¥¼ ëˆ„ë¥´ê³  ìžˆëŠ” ë™ì•ˆ í‹± ì§„í–‰
             //if (control.Player.Jump.ReadValue<float>() > 0)
             {
                 CoreTick();
