@@ -22,7 +22,7 @@ namespace DrillGame.View.Ground
         }
         #region Fields & Properties
         public GroundEntity GroundEntity { get; private set; }
-        public Dictionary<int, Ground_Structure> GroundTable;
+        public Dictionary<int, Dictionary<string, string>> GroundTable;
         private SpriteRenderer spriteRenderer;
 
         public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
@@ -63,11 +63,11 @@ namespace DrillGame.View.Ground
         {
             Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
             var bounds = DataLoadManager.Instance.GetRangeBounds(depth);
-            GroundEntity.SetInformation(depth, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].drop_items);
+            GroundEntity.SetInformation(depth, int.Parse(GroundTable[bounds[0]]["HP"]), int.Parse(GroundTable[bounds[0]]["HP"]), GroundTable[bounds[0]]["Drop Items"]);
             StartCoroutine(AppearAnimation());
             if (depth == bounds[0]) //처음 구간에 진입했을 경우
             {
-                DataLoadManager.Instance.LoadGroundSpriteAsync(GroundTable[bounds[1]].sprite_addressable);
+                DataLoadManager.Instance.LoadGroundSpriteAsync(GroundTable[bounds[1]]["Sprite Addressable"]);
             }
             spriteRenderer.sprite = DataLoadManager.Instance.CurrentGroundSprite;
             return;
@@ -76,7 +76,7 @@ namespace DrillGame.View.Ground
         {
             Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
             var bounds = DataLoadManager.Instance.GetRangeBounds(depth);
-            GroundEntity.SetInformation(depth, hp, GroundTable[bounds[0]].hp, GroundTable[bounds[0]].drop_items);
+            GroundEntity.SetInformation(depth, hp, int.Parse(GroundTable[bounds[0]]["HP"]), GroundTable[bounds[0]]["Drop Items"]);
             spriteRenderer.sprite = DataLoadManager.Instance.CurrentGroundSprite;
             StartCoroutine(AppearAnimation());
             return;
@@ -87,7 +87,7 @@ namespace DrillGame.View.Ground
         #region Unity event methods
         private void Awake()
         {
-            GroundTable = DataLoadManager.Instance.GroundTable;
+            GroundTable = DataLoadManager.Instance.GroundData.Table;
         }
 
         private void Start()

@@ -18,12 +18,14 @@ namespace DrillGame.Core.Ground
         #endregion
 
         #region getters & setters
-        public void SetInformation(int depth, int current_hp, int max_hp, List<string> dropItems)
+        
+        public void SetInformation(int depth, int current_hp, int max_hp, string dropItems)
         {
+            
             Depth = depth;
             CurrentHp = current_hp;
             MaxHp = max_hp;
-            DropItems = dropItems;
+            // DropItems = dropItems; 수정해야할듯?
         }
         #endregion
 
