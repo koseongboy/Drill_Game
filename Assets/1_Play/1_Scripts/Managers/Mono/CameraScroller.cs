@@ -20,7 +20,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region Singleton & initialization
-        public static CameraScroller Instance;
+        public static CameraScroller Instance { get; private set; }
         #endregion
 
         #region getters & setters
@@ -75,7 +75,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
+            if (Instance != null)
             {
                 Destroy(gameObject);
             }
