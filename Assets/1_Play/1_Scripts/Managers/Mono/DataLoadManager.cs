@@ -3,7 +3,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 using DrillGame.Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -13,9 +12,9 @@ namespace DrillGame.Managers
     public class DataLoadManager : MonoBehaviour
     {
         #region Fields & Properties
-        public Dictionary<string, Engine_Structure> EngineTable { get; set; }
-        public Dictionary<string, Facility_Structure> FacilityTable { get; set; }
-        public Dictionary<int, Ground_Structure> GroundTable { get; set; }
+        public Engine_Data EngineData { get; set; }
+        public Facility_Data FacilityData { get; set; }
+        public Ground_Data GroundData { get; set; }
         public Sprite CurrentGroundSprite { get; set; }
         public Sprite NextGroundSprite { get; set; }
         public List<int> DepthRanges { get; set; }
@@ -67,15 +66,15 @@ namespace DrillGame.Managers
         //depth가 현재 속한 땅 구간의 start_depth, 다음 구간의 start_depth 반환
         public List<int> GetRangeBounds(int depth)
         {
-            foreach (var start_depth in DepthRanges.AsEnumerable().Reverse()) //역순으로 순회
+            foreach (int start_depth in DepthRanges.AsEnumerable().Reverse()) //역순으로 순회
             {
                 if (depth < start_depth)
                 {
                     continue;
                 }
-                return new List<int> { start_depth, GroundTable[start_depth].end_depth + 1 };
+                return new List<int> { start_depth, int.Parse(GroundData.Table[start_depth]["End Depth"]) + 1 };
             }
-            Debug.LogError("GetRangeInfo error: depth range not found");
+            Debug.LogError("GetRangeInfo error: depth range not found for depth " + depth + " in " + DepthRanges.Count());
             return null;
         }
         #endregion
@@ -88,13 +87,13 @@ namespace DrillGame.Managers
             var facility_Data = Facility_Data.CreateAsync();
             var ground_Data = Ground_Data.CreateAsync();
             await Task.WhenAll(engine_Data, facility_Data, ground_Data);
-            EngineTable = engine_Data.Result.EngineTable;
-            FacilityTable = facility_Data.Result.FacilityTable;
-            GroundTable = ground_Data.Result.GroundTable;
+            EngineData = engine_Data.Result;
+            FacilityData = facility_Data.Result;
+            GroundData = ground_Data.Result;
             DepthRanges = ground_Data.Result.DepthRanges;
             List<int> range = GetRangeBounds(int.Parse(UserData["Ground"][0])); //임시 유저 데이터 불러옴
-            var result = await LoadGroundSpriteAsync(GroundTable[range[0]].sprite_addressable, GroundTable[range[1]].sprite_addressable);
-            return EngineTable != null && FacilityTable != null && GroundTable != null && result;
+            var result = await LoadGroundSpriteAsync(GroundData.Table[range[0]]["Sprite Addressable"], GroundData.Table[range[1]]["Sprite Addressable"]);
+            return EngineData != null && FacilityData != null && GroundData != null && result;
         }
 
 
