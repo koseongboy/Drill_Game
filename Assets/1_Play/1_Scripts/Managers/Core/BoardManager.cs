@@ -65,7 +65,7 @@ namespace DrillGame.Core.Managers
         #region public methods
         public void Tick()
         {
-            Debug.Log("Engine Core Tick");
+            // Debug.Log("Engine Core Tick");
             TickAllEngines();       // 모든 엔진의 틱을 선행     (여기서 시설의 등록이 이루어짐)
             ProcessTickCycle();     // 이후 코어 틱 진행 -> 명령 실행 직후 1틱이 흘러가는 것을 방지 (주로 명령 단계)
             RunFacility();            // 모든 엔진에 명령 실행
