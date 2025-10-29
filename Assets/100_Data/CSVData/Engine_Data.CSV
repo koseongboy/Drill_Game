@@ -15,5 +15,9 @@ ID|EngineId|DisplayName|Type|Level|Coordinates
 204002|204|보라 엔진 Lv.2|normal|2|0,1
 204003|204|보라 엔진 Lv.3|normal|3|0,2
 204004|204|보라 엔진 Lv.4|normal|4|1,2
+205001|205|노랑 엔진 Lv.1|normal|1|0,0
+205002|205|노랑 엔진 Lv.2|normal|2|0,1
+205003|205|노랑 엔진 Lv.3|normal|3|0,2
+205004|205|노랑 엔진 Lv.4|normal|4|1,2
 211001|||special|1|0,0;0,1
 211002|||special|2|1,0;1,1
