@@ -1,4 +1,9 @@
-ï»¿id|name|level|coordinate
-iron-1|iron|1|0,0
-gold-1|gold|1|0,0
-gold-2|gold|2|0,0;0,1
+Id|Name|DisplayName|Type|Level|InputItemId|OutputItemId|Coordinate
+101011|stone_miner|µ¹ Ã¤±¼ ½Ã¼³ Lv.1|Miner|1|||0,0
+101012|stone_miner|µ¹ Ã¤±¼ ½Ã¼³ Lv.2|Miner|2|||0,1
+101013|stone_miner|µ¹ Ã¤±¼ ½Ã¼³ Lv.3|Miner|3|||0,2
+101021|stone_processor|µ¹ °¡°ø ½Ã¼³ Lv.1|Processor|1|||0,0
+101022|stone_processor|µ¹ °¡°ø ½Ã¼³ Lv.2|Processor|2|||0,1
+101023|stone_processor|µ¹ °¡°ø ½Ã¼³ Lv.3|Processor|3|||0,2
+102011|copper_miner|±¸¸® Ã¤±¼ ½Ã¼³ Lv.1|Miner|1|||0,0
+103011|iron_miner|Ã¶ Ã¤±¼ ½Ã¼³ Lv.1|Miner|1|||0,0;0,1
