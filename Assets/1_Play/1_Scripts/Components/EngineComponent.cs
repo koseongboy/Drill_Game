@@ -52,6 +52,10 @@ namespace DrillGame.View.Engine
 
             spriteRenderer = GetComponent<SpriteRenderer>();
             originalColor = spriteRenderer.material.color;
+
+
+            // set debug position
+            debugPosition = startPosition;
         }
         #endregion
 
@@ -112,6 +116,7 @@ namespace DrillGame.View.Engine
         {
             OnClickEngineDetail?.Invoke();
         }
+
 
 
         #endregion

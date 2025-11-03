@@ -122,6 +122,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EditBatch",
+                    "type": "Button",
+                    "id": "ff9bbda0-f626-4c8b-9dac-2296194d853c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -551,6 +560,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "EngineBatch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7a4efb1-c1a2-47ab-b65d-3ba60f385b0c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "EditBatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

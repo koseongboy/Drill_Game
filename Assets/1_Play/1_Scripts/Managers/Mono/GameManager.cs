@@ -66,6 +66,7 @@ namespace DrillGame.Managers
             control.Player.EngineBatch.performed += ctx => EngineBatch();
             control.Player.FacilityBatch.performed += ctx => FacilityBatch();
             control.Player.StopBatch.performed += ctx => StopBatch();
+            control.Player.EditBatch.performed += ctx => EditBatch();
 
             control.Player.Attack.performed += ctx => TryBatch();
         }
@@ -91,6 +92,12 @@ namespace DrillGame.Managers
             if (!batchMode) return;
             
             gridManager.TryBatch();
+        }
+        private void EditBatch()
+        {
+            if (!batchMode) return;
+
+            gridManager.EditBatch();
         }
         private void StopBatch()
         { 

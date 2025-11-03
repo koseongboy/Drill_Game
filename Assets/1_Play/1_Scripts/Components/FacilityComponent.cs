@@ -47,6 +47,9 @@ namespace DrillGame.View.Facility
                 presenter.RequestFacilityDetail();
                 // 확장성을 위해 람다식 사용
             };
+
+            // set debug position
+            debugPosition = startPosition;
         }
         #endregion
 

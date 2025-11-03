@@ -208,6 +208,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EditBatch"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff9bbda0-f626-4c8b-9dac-2296194d853c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -637,6 +646,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""EngineBatch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7a4efb1-c1a2-47ab-b65d-3ba60f385b0c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""EditBatch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1237,6 +1257,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_EngineBatch = m_Player.FindAction("EngineBatch", throwIfNotFound: true);
         m_Player_FacilityBatch = m_Player.FindAction("FacilityBatch", throwIfNotFound: true);
         m_Player_StopBatch = m_Player.FindAction("StopBatch", throwIfNotFound: true);
+        m_Player_EditBatch = m_Player.FindAction("EditBatch", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1343,6 +1364,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_EngineBatch;
     private readonly InputAction m_Player_FacilityBatch;
     private readonly InputAction m_Player_StopBatch;
+    private readonly InputAction m_Player_EditBatch;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1406,6 +1428,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/StopBatch".
         /// </summary>
         public InputAction @StopBatch => m_Wrapper.m_Player_StopBatch;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/EditBatch".
+        /// </summary>
+        public InputAction @EditBatch => m_Wrapper.m_Player_EditBatch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1471,6 +1497,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @StopBatch.started += instance.OnStopBatch;
             @StopBatch.performed += instance.OnStopBatch;
             @StopBatch.canceled += instance.OnStopBatch;
+            @EditBatch.started += instance.OnEditBatch;
+            @EditBatch.performed += instance.OnEditBatch;
+            @EditBatch.canceled += instance.OnEditBatch;
         }
 
         /// <summary>
@@ -1521,6 +1550,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @StopBatch.started -= instance.OnStopBatch;
             @StopBatch.performed -= instance.OnStopBatch;
             @StopBatch.canceled -= instance.OnStopBatch;
+            @EditBatch.started -= instance.OnEditBatch;
+            @EditBatch.performed -= instance.OnEditBatch;
+            @EditBatch.canceled -= instance.OnEditBatch;
         }
 
         /// <summary>
@@ -1912,6 +1944,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnStopBatch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "EditBatch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEditBatch(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
