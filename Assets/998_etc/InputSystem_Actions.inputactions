@@ -97,18 +97,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "EngineBatch",
+                    "name": "StartBatch",
                     "type": "Button",
                     "id": "068f3440-001a-4216-a692-4d01679ee2d6",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "FacilityBatch",
-                    "type": "Button",
-                    "id": "eb0af8ff-9ef7-40c0-a0f6-5b2bee81d088",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -127,6 +118,24 @@
                     "name": "EditBatch",
                     "type": "Button",
                     "id": "ff9bbda0-f626-4c8b-9dac-2296194d853c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BatchMode_1",
+                    "type": "Button",
+                    "id": "77b76ef1-5fe8-4fb9-b0f6-1b627bc8f875",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BatchMode_2",
+                    "type": "Button",
+                    "id": "20f74335-2e60-4c12-90a4-95db9612bccc",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -532,17 +541,6 @@
                 },
                 {
                     "name": "",
-                    "id": "addde47d-584d-4152-adc8-9d0c8a7a2472",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "FacilityBatch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "550168f7-b52f-4561-916f-6654b1e02858",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -559,7 +557,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "EngineBatch",
+                    "action": "StartBatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -571,6 +569,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "EditBatch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2f34057-5d15-495d-9eb9-9252f3472763",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatchMode_1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff281af7-610f-4e5c-bfb9-a61791da6181",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BatchMode_2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

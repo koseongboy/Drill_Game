@@ -1,6 +1,5 @@
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
-using System.Diagnostics;
 using UnityEngine;
 
 namespace DrillGame.Managers
@@ -16,8 +15,15 @@ namespace DrillGame.Managers
         [ReadOnly]
         [SerializeField]
         private bool batchMode = false;
+
+        [ReadOnly]
+        [SerializeField]
+        [Tooltip ("배치 모드에서 선택된 엔티티의 ID 값 -1 : 선택 안됨")]
+        private int idValue = -1;
+
         [SerializeField]
         private TilemapType tilemapType = TilemapType.Engine;
+
 
 
 
@@ -63,10 +69,12 @@ namespace DrillGame.Managers
             //control.Player.Jump.performed += ctx => CoreTick();
             control.Player.SlowTick.performed += ctx => SlowTick();
 
-            control.Player.EngineBatch.performed += ctx => EngineBatch();
-            control.Player.FacilityBatch.performed += ctx => FacilityBatch();
+            control.Player.StartBatch.performed += ctx => StartBatch();
             control.Player.StopBatch.performed += ctx => StopBatch();
             control.Player.EditBatch.performed += ctx => EditBatch();
+
+            control.Player.BatchMode_1.performed += ctx => SetBatchEntity(1);
+            control.Player.BatchMode_2.performed += ctx => SetBatchEntity(2);
 
             control.Player.Attack.performed += ctx => TryBatch();
         }
@@ -93,6 +101,18 @@ namespace DrillGame.Managers
             
             gridManager.TryBatch();
         }
+
+        private void StartBatch()
+        {
+            batchMode = true;
+            if(idValue == -1)
+            {
+                Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
+                return;
+            }
+            
+            gridManager.EnterBatchMode(tilemapType, idValue);
+        }
         private void EditBatch()
         {
             if (!batchMode) return;
@@ -101,19 +121,27 @@ namespace DrillGame.Managers
         }
         private void StopBatch()
         { 
+            idValue = -1;
             batchMode = false;
             gridManager.ExitBatchMode();
         }
-        private void FacilityBatch()
-        {
-            batchMode = true;
-            gridManager.EnterBatchMode(TilemapType.Facility);
-        }
 
-        private void EngineBatch()
+        private void SetBatchEntity(int idValue)
         {
-            batchMode = true;
-            gridManager.EnterBatchMode(TilemapType.Engine);
+            this.idValue = idValue;
+
+            // test
+            // todo 알맞은 value 처리 필요
+            if(idValue == 1)
+            {
+                this.tilemapType = TilemapType.Engine;
+                Debug.Log("배치 모드 엔티티 선택: 엔진");
+            }
+            else if(idValue == 2)
+            {
+                this.tilemapType = TilemapType.Facility;
+                Debug.Log("배치 모드 엔티티 선택: 시설");
+            }
         }
 
         #endregion
