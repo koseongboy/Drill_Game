@@ -82,6 +82,7 @@ namespace DrillGame.Core.Managers
         }
 
         
+
         public void AddFacility(FacilityEntity facility)
         {
             facilities.Add(facility);

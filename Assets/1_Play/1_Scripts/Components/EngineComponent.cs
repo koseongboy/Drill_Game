@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 namespace DrillGame.View.Engine
 {
-    public class EngineComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit
+    public class EngineComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic
     {
         #region Fields & Properties
         [SerializeField]
@@ -70,7 +70,15 @@ namespace DrillGame.View.Engine
             TempGraphicAction();
         }
 
-        
+        public void ChosenGraphic()
+        {
+            spriteRenderer.material.color = Color.green;
+        }
+
+        public void DefaultGraphic()
+        {
+            spriteRenderer.material.color = originalColor;
+        }
 
         #endregion
 
@@ -89,6 +97,8 @@ namespace DrillGame.View.Engine
 
 
         }
+
+        
         #endregion
 
         #region Unity event methods
@@ -116,6 +126,7 @@ namespace DrillGame.View.Engine
         {
             OnClickEngineDetail?.Invoke();
         }
+
 
 
 

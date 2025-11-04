@@ -124,7 +124,25 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BatchMode_1",
+                    "name": "DeleteBatch",
+                    "type": "Button",
+                    "id": "ac388dbb-fa1c-404b-a1ea-2aac5da1e070",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "f29abd90-ddee-4f60-b9cd-03853421f8eb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BatchID_1",
                     "type": "Button",
                     "id": "77b76ef1-5fe8-4fb9-b0f6-1b627bc8f875",
                     "expectedControlType": "",
@@ -133,7 +151,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "BatchMode_2",
+                    "name": "BatchID_2",
                     "type": "Button",
                     "id": "20f74335-2e60-4c12-90a4-95db9612bccc",
                     "expectedControlType": "",
@@ -579,7 +597,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BatchMode_1",
+                    "action": "BatchID_1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -590,7 +608,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "BatchMode_2",
+                    "action": "BatchID_2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "80ef7f9b-b87c-4cde-b24f-7c4d63b81044",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "936f5c45-6c84-4893-ba19-505b061e17c0",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "DeleteBatch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

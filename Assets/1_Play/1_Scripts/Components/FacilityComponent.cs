@@ -12,7 +12,7 @@ using DrillGame.View.Helper;
 
 namespace DrillGame.View.Facility
 {
-    public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit
+    public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic
     {
         #region Fields & Properties
         [SerializeField]
@@ -25,6 +25,10 @@ namespace DrillGame.View.Facility
         private FacilityPresenter presenter;
 
         public Action OnClickFacilityDetail { get; set; }
+
+        // graphic action 관련 임시 필드
+        private SpriteRenderer spriteRenderer;
+        private Color originalColor;
 
         #endregion
 
@@ -48,6 +52,9 @@ namespace DrillGame.View.Facility
                 // 확장성을 위해 람다식 사용
             };
 
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            originalColor = spriteRenderer.material.color;
+
             // set debug position
             debugPosition = startPosition;
         }
@@ -62,7 +69,15 @@ namespace DrillGame.View.Facility
             // 임시 그래픽 액션 실행
             TempGraphicAction(intensity);
         }
-        
+        public void ChosenGraphic()
+        {
+            spriteRenderer.material.color = Color.green;
+        }
+
+        public void DefaultGraphic()
+        {
+            spriteRenderer.material.color = originalColor;
+        }
 
         #endregion
 

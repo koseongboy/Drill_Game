@@ -14,7 +14,7 @@ namespace DrillGame.Managers
 
         [ReadOnly]
         [SerializeField]
-        private bool batchMode = false;
+        private BatchMode batchMode = BatchMode.None;
 
         [ReadOnly]
         [SerializeField]
@@ -73,10 +73,10 @@ namespace DrillGame.Managers
             control.Player.StopBatch.performed += ctx => StopBatch();
             control.Player.EditBatch.performed += ctx => EditBatch();
 
-            control.Player.BatchMode_1.performed += ctx => SetBatchEntity(1);
-            control.Player.BatchMode_2.performed += ctx => SetBatchEntity(2);
+            control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
+            control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
 
-            control.Player.Attack.performed += ctx => TryBatch();
+            control.Player.Click.performed += ctx => ClickAction();
         }
 
 
@@ -95,17 +95,22 @@ namespace DrillGame.Managers
             CoreTick();
         }
 
-        private void TryBatch()
+        // REFACTOR : 후일 click에 할당되는 게 많다면 구독 변경을 통해서 클릭 액션을 관리해야함, 현재는 하나의 함수에서 분기 처리함
+        private void ClickAction()
         {
-            if (!batchMode) return;
-            
-            gridManager.TryBatch();
+            if(batchMode == BatchMode.None) return;
+            else if(batchMode == BatchMode.PlaceBatch)
+                gridManager.TryPlaceBatch();
+            else if(batchMode == BatchMode.EditBatch)
+                gridManager.TryEditBatch();
+            else if(batchMode == BatchMode.DeleteBatch)
+                gridManager.TryDeleteBatch();
         }
 
         private void StartBatch()
         {
-            batchMode = true;
-            if(idValue == -1)
+            batchMode = BatchMode.PlaceBatch;
+            if (idValue == -1)
             {
                 Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
                 return;
@@ -115,14 +120,12 @@ namespace DrillGame.Managers
         }
         private void EditBatch()
         {
-            if (!batchMode) return;
-
-            gridManager.EditBatch();
+            gridManager.TryEditBatch();
         }
         private void StopBatch()
         { 
             idValue = -1;
-            batchMode = false;
+            batchMode = BatchMode.None;
             gridManager.ExitBatchMode();
         }
 
@@ -145,5 +148,13 @@ namespace DrillGame.Managers
         }
 
         #endregion
+    }
+
+    enum BatchMode
+    {
+        None,
+        PlaceBatch,
+        EditBatch,
+        DeleteBatch,
     }
 }

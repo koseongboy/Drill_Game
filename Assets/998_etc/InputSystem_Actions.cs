@@ -210,7 +210,25 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""BatchMode_1"",
+                    ""name"": ""DeleteBatch"",
+                    ""type"": ""Button"",
+                    ""id"": ""ac388dbb-fa1c-404b-a1ea-2aac5da1e070"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""f29abd90-ddee-4f60-b9cd-03853421f8eb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BatchID_1"",
                     ""type"": ""Button"",
                     ""id"": ""77b76ef1-5fe8-4fb9-b0f6-1b627bc8f875"",
                     ""expectedControlType"": """",
@@ -219,7 +237,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""BatchMode_2"",
+                    ""name"": ""BatchID_2"",
                     ""type"": ""Button"",
                     ""id"": ""20f74335-2e60-4c12-90a4-95db9612bccc"",
                     ""expectedControlType"": """",
@@ -665,7 +683,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""BatchMode_1"",
+                    ""action"": ""BatchID_1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -676,7 +694,29 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""BatchMode_2"",
+                    ""action"": ""BatchID_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80ef7f9b-b87c-4cde-b24f-7c4d63b81044"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""936f5c45-6c84-4893-ba19-505b061e17c0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""DeleteBatch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1277,8 +1317,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_StartBatch = m_Player.FindAction("StartBatch", throwIfNotFound: true);
         m_Player_StopBatch = m_Player.FindAction("StopBatch", throwIfNotFound: true);
         m_Player_EditBatch = m_Player.FindAction("EditBatch", throwIfNotFound: true);
-        m_Player_BatchMode_1 = m_Player.FindAction("BatchMode_1", throwIfNotFound: true);
-        m_Player_BatchMode_2 = m_Player.FindAction("BatchMode_2", throwIfNotFound: true);
+        m_Player_DeleteBatch = m_Player.FindAction("DeleteBatch", throwIfNotFound: true);
+        m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
+        m_Player_BatchID_1 = m_Player.FindAction("BatchID_1", throwIfNotFound: true);
+        m_Player_BatchID_2 = m_Player.FindAction("BatchID_2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1385,8 +1427,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_StartBatch;
     private readonly InputAction m_Player_StopBatch;
     private readonly InputAction m_Player_EditBatch;
-    private readonly InputAction m_Player_BatchMode_1;
-    private readonly InputAction m_Player_BatchMode_2;
+    private readonly InputAction m_Player_DeleteBatch;
+    private readonly InputAction m_Player_Click;
+    private readonly InputAction m_Player_BatchID_1;
+    private readonly InputAction m_Player_BatchID_2;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1451,13 +1495,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @EditBatch => m_Wrapper.m_Player_EditBatch;
         /// <summary>
-        /// Provides access to the underlying input action "Player/BatchMode_1".
+        /// Provides access to the underlying input action "Player/DeleteBatch".
         /// </summary>
-        public InputAction @BatchMode_1 => m_Wrapper.m_Player_BatchMode_1;
+        public InputAction @DeleteBatch => m_Wrapper.m_Player_DeleteBatch;
         /// <summary>
-        /// Provides access to the underlying input action "Player/BatchMode_2".
+        /// Provides access to the underlying input action "Player/Click".
         /// </summary>
-        public InputAction @BatchMode_2 => m_Wrapper.m_Player_BatchMode_2;
+        public InputAction @Click => m_Wrapper.m_Player_Click;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/BatchID_1".
+        /// </summary>
+        public InputAction @BatchID_1 => m_Wrapper.m_Player_BatchID_1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/BatchID_2".
+        /// </summary>
+        public InputAction @BatchID_2 => m_Wrapper.m_Player_BatchID_2;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1523,12 +1575,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @EditBatch.started += instance.OnEditBatch;
             @EditBatch.performed += instance.OnEditBatch;
             @EditBatch.canceled += instance.OnEditBatch;
-            @BatchMode_1.started += instance.OnBatchMode_1;
-            @BatchMode_1.performed += instance.OnBatchMode_1;
-            @BatchMode_1.canceled += instance.OnBatchMode_1;
-            @BatchMode_2.started += instance.OnBatchMode_2;
-            @BatchMode_2.performed += instance.OnBatchMode_2;
-            @BatchMode_2.canceled += instance.OnBatchMode_2;
+            @DeleteBatch.started += instance.OnDeleteBatch;
+            @DeleteBatch.performed += instance.OnDeleteBatch;
+            @DeleteBatch.canceled += instance.OnDeleteBatch;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @BatchID_1.started += instance.OnBatchID_1;
+            @BatchID_1.performed += instance.OnBatchID_1;
+            @BatchID_1.canceled += instance.OnBatchID_1;
+            @BatchID_2.started += instance.OnBatchID_2;
+            @BatchID_2.performed += instance.OnBatchID_2;
+            @BatchID_2.canceled += instance.OnBatchID_2;
         }
 
         /// <summary>
@@ -1579,12 +1637,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @EditBatch.started -= instance.OnEditBatch;
             @EditBatch.performed -= instance.OnEditBatch;
             @EditBatch.canceled -= instance.OnEditBatch;
-            @BatchMode_1.started -= instance.OnBatchMode_1;
-            @BatchMode_1.performed -= instance.OnBatchMode_1;
-            @BatchMode_1.canceled -= instance.OnBatchMode_1;
-            @BatchMode_2.started -= instance.OnBatchMode_2;
-            @BatchMode_2.performed -= instance.OnBatchMode_2;
-            @BatchMode_2.canceled -= instance.OnBatchMode_2;
+            @DeleteBatch.started -= instance.OnDeleteBatch;
+            @DeleteBatch.performed -= instance.OnDeleteBatch;
+            @DeleteBatch.canceled -= instance.OnDeleteBatch;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @BatchID_1.started -= instance.OnBatchID_1;
+            @BatchID_1.performed -= instance.OnBatchID_1;
+            @BatchID_1.canceled -= instance.OnBatchID_1;
+            @BatchID_2.started -= instance.OnBatchID_2;
+            @BatchID_2.performed -= instance.OnBatchID_2;
+            @BatchID_2.canceled -= instance.OnBatchID_2;
         }
 
         /// <summary>
@@ -1977,19 +2041,33 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEditBatch(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "BatchMode_1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "DeleteBatch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBatchMode_1(InputAction.CallbackContext context);
+        void OnDeleteBatch(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "BatchMode_2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Click" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBatchMode_2(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "BatchID_1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBatchID_1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "BatchID_2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBatchID_2(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
