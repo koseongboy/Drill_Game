@@ -15,7 +15,10 @@ namespace DrillGame.UI
     {
         #region Fields & Properties
         [SerializeField]
-        private Transform uiParentTransform;
+        private Transform uiParentTransform;    
+        
+        [SerializeField]
+        private Transform floatingBarUIParentTransform;
 
         [SerializeField]
         private List<string> awakeUIList = new List<string>();
@@ -56,18 +59,18 @@ namespace DrillGame.UI
                 if(uiInstance != null)
                 {
                     uiInstance.SetActive(true);
-                    Debug.Log($"UI Ȱ��ȭ: {uiName}");
+                    Debug.Log($"UI 활성화: {uiName}");
                 }
                 else
                 {
-                    Debug.LogWarning($"UI {uiName} �ν��Ͻ��� null �Դϴ�. �ٽ� �ε� �õ��մϴ�.");
+                    Debug.LogWarning($"UI {uiName} 인스턴스가 null 입니다. 다시 로드 시도합니다.");
                     loadedUIs.Remove(uiName);
                     LoadUI(uiName);
                 }
             }
             else
             {
-                Debug.LogWarning($"UI {uiName} �� �ε�� ���°� �ƴմϴ�. �ε� �õ��մϴ�.");
+                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 로드 시도합니다.");
                 LoadUI(uiName);
             }
         }
@@ -80,31 +83,31 @@ namespace DrillGame.UI
                 if (uiInstance != null)
                 {
                     uiInstance.SetActive(false);
-                    Debug.Log($"UI ��Ȱ��ȭ: {uiName}");
+                    Debug.Log($"UI 비활성화: {uiName}");
                 }
                 else
                 {
-                    Debug.LogWarning($"UI {uiName} �ν��Ͻ��� null �Դϴ�. ��ε� �õ��մϴ�. ��Ȳ Ȯ���� �ʿ��մϴ�.");
+                    Debug.LogWarning($"UI {uiName} 인스턴스가 null 입니다. 언로드 시도합니다. 상황 확인이 필요합니다.");
                     loadedUIs.Remove(uiName);
                     UnloadUI(uiName);
                 }
             }
             else
             {
-                Debug.LogWarning($"UI {uiName} �� �ε�� ���°� �ƴմϴ�. ��ε� �õ��մϴ�.");
+                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 언로드 시도합니다.");
             }
         }
 
         public void LoadUI(string uiName)
         {
             // Implement UI loading logic here
-            Debug.Log($"UI �ε� �õ�: {uiName}");
+            Debug.Log($"UI 로드 시도: {uiName}");
 
             if(loadUIHandles.ContainsKey(uiName))
             {
-                Debug.LogWarning($"UI {uiName} �� �̹� �ε�� �����Դϴ�");
+                Debug.LogWarning($"UI {uiName} 는 이미 로드된 상태입니다");
 
-                // ��ó���� �ʿ��
+                // 후처리가 필요시
                 return;
             }
 
@@ -115,7 +118,7 @@ namespace DrillGame.UI
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    Debug.Log($"UI �ε� ����: {uiName}");
+                    Debug.Log($"UI 로드 성공: {uiName}");
                     GameObject uiPrefab = handle.Result;
                     GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
 
@@ -126,10 +129,10 @@ namespace DrillGame.UI
                 }
                 else
                 {
-                    Debug.LogError($"UI �ε� ����: {uiName}");
+                    Debug.LogError($"UI 로드 실패: {uiName}");
                     loadUIHandles.Remove(uiName);
 
-                    Addressables.Release(handle);   //gemini ������ �зδ� �ε� �����ص� �޸� ���� �����ϰ� �Ϸ���
+                    Addressables.Release(handle);   //gemini 선생님 왈로는 로드 실패해도 메모리 해제 안전하게 하래요
                 }
             };
         }
@@ -137,11 +140,11 @@ namespace DrillGame.UI
         public void UnloadUI(string uiName)
         {
             // Implement UI unloading logic here
-            Debug.Log($"UI ��ε� �õ�: {uiName}");
+            Debug.Log($"UI 언로드 시도: {uiName}");
             if (!loadUIHandles.ContainsKey(uiName))
             {
-                Debug.LogWarning($"UI {uiName} �� �ε�� ���°� �ƴմϴ�");
-                // ��ó���� �ʿ��
+                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다");
+                // 후처리가 필요시
                 return;
             }
 
@@ -152,14 +155,15 @@ namespace DrillGame.UI
                 if(uiInstance != null)
                     Destroy(uiInstance);
                 else
-                    Debug.LogWarning($"UI {uiName} �ν��Ͻ��� �̹� �ı��� �����Դϴ� �ǵ��� �����ΰ���");
-
+                    Debug.LogWarning($"UI {uiName} 인스턴스가 이미 파괴된 상태입니다 의도된 사항인가요");
+                
                 loadedUIs.Remove(uiName);
             }
             AsyncOperationHandle<GameObject> loadHandle = loadUIHandles[uiName];
             Addressables.Release(loadHandle);
             loadUIHandles.Remove(uiName);
-            Debug.Log($"UI ��ε� �Ϸ�: {uiName}");
+
+            Debug.Log($"UI 언로드 완료: {uiName}");
         }
         #endregion
 

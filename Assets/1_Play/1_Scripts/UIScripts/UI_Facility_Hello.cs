@@ -24,13 +24,13 @@ namespace DrillGame.UI
         #region public methods
         public void CloseUI()
         {
-            Debug.Log($"{gameObject.name}: UI Á¾·á ½Ãµµ, addressable ÁÖ¼Ò : {addressableName}");
+            Debug.Log($"{gameObject.name}: UI ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½, addressable ï¿½Ö¼ï¿½ : {addressableName}");
             UILoader.Instance.HideUI(addressableName);
         }
 
         public void LinkAddressable(string address)
         {
-            Debug.Log($"{gameObject.name}: addressable ÁÖ¼Ò ¼³Á¤ : {address}");
+            Debug.Log($"{gameObject.name}: addressable ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ : {address}");
             addressableName = address;
         }
         #endregion
@@ -41,7 +41,7 @@ namespace DrillGame.UI
         #region Unity event methods
         private void Awake()
         {
-            Debug.Log($"{gameObject.name}: Awake È£Ãâ");
+            Debug.Log($"{gameObject.name}: Awake È£ï¿½ï¿½");
         }
         #endregion
 
