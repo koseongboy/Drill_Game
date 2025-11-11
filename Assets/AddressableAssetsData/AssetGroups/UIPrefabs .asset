@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 982ade595eac2f042b942f145075d433
+    m_Address: UI_GameStatus
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5ce26aeb6a49bb4089f321536aa52f0
     m_Address: UI_Facility_Hello
     m_ReadOnly: 0
