@@ -11,9 +11,9 @@ namespace DrillGame.WindowControl
 {
   public class WindowController : MonoBehaviour
     {
+        
 // ------------------------------------------------------------------------------------------
-// 📌 Windows Only Code Block
-// 이 섹션의 모든 코드는 Windows 빌드 환경에서만 컴파일됩니다.
+// Windows 빌드 환경에서만 컴파일
 // ------------------------------------------------------------------------------------------
 #if UNITY_STANDALONE_WIN
         // C#에서 Windows API 함수를 호출하기 위해 DllImport 사용
@@ -185,27 +185,9 @@ namespace DrillGame.WindowControl
                 Debug.Log("Global Keyboard Hook unregistered.");
             }
         }
-
-#else
-        // Windows 환경이 아닐 경우 더미 변수를 사용하여 컴파일 오류를 방지합니다.
-        public IntPtr windowHandle;
-        
-        void SetWindowPositionInternal(bool expand) 
-        { 
-            Debug.LogWarning("Window control is only active on Windows Standalone builds."); 
-        }
-
-        void InitializeWindowAndHook() 
-        { 
-            Debug.LogWarning("Hook initialization skipped. Only available on Windows."); 
-        }
-        
-        void UninitializeWindowAndHook() { }
-
 #endif
 // ------------------------------------------------------------------------------------------
-// 📌 Universal Code Block
-// 이 섹션의 코드는 모든 플랫폼에서 컴파일 및 실행됩니다.
+// 모든 플랫폼에서 컴파일 및 실행됨.
 // ------------------------------------------------------------------------------------------
         public bool isExpanded = true;
         private const string WindowTitle = "Drill Game"; 
@@ -239,6 +221,7 @@ namespace DrillGame.WindowControl
         /// </summary>
         public void SetWindowPosition(bool expand)
         {
+            Debug.Log("Window Toggle 호출");
             isExpanded = expand;
             SetWindowPositionInternal(expand); // 내부 함수 호출
         }

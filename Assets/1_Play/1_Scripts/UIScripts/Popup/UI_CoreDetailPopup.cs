@@ -46,10 +46,10 @@ namespace DrillGame
             Vector2 targetPos = new Vector2(startPos.x, startPos.y + 100f);
             rt.anchoredPosition = startPos;
             rt.DOAnchorPos(targetPos, 0.1f)
-                .SetEase(Ease.OutBounce);
+                .SetEase(Ease.OutBack);
             
-            rt.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-            rt.DOScale(Vector2.one, 0.2f)
+            rt.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+            rt.DOScale(Vector2.one, 0.1f)
                 .SetEase(Ease.OutBack);
         }
 
@@ -62,7 +62,7 @@ namespace DrillGame
             rt.DOAnchorPos(targetPos, 0.1f)
                 .SetEase(Ease.Linear);
             
-            Vector3 targetScale = new Vector3(0.7f, 0.7f, 0.7f);
+            Vector3 targetScale = new Vector3(0.8f, 0.8f, 0.8f);
             rt.DOScale(targetScale, 0.1f)
                 .SetEase(Ease.Linear)
                 .OnComplete(() => {
