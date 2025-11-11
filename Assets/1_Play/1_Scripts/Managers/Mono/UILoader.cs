@@ -123,12 +123,24 @@ namespace DrillGame.UI
                 {
                     Debug.Log($"UI 로드 성공: {uiName}");
                     GameObject uiPrefab = handle.Result;
-                    GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
+                    if (uiName == "UI_FloatingBar") {
+                        GameObject uiInstance = Instantiate(uiPrefab, floatingBarUIParentTransform);
+                        
+                        UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
+                        addressableComponent?.LinkAddressable(uiName);
 
-                    UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
-                    addressableComponent?.LinkAddressable(uiName);
+                        loadedUIs.Add(uiName, uiInstance);
+                    }
+                    else { // 하씨 이게 맞나
+                        GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
 
-                    loadedUIs.Add(uiName, uiInstance);
+                        UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
+                        addressableComponent?.LinkAddressable(uiName);
+
+                        loadedUIs.Add(uiName, uiInstance);
+                    }
+                    
+
                 }
                 else
                 {

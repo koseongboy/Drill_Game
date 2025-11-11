@@ -24,13 +24,13 @@ namespace DrillGame
         
         public void CloseUI()
         {
-            Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
+            // Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
             UILoader.Instance.HideUI(addressableName);
         }
 
         public void LinkAddressable(string address)
         {
-            Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
+            // Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
             addressableName = address;
         }
         #endregion

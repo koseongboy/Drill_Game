@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: 'UIPrefabs '
   m_GUID: 5fabd6954ec50eb40919b75bc23ef7b0
   m_SerializeEntries:
+  - m_GUID: 85f0fbd1f9b80df4281ff5e2cca6e91e
+    m_Address: UI_FloatingBar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 955040d094b68d645993bf80dd2c0d48
     m_Address: UI_Facility_Core
     m_ReadOnly: 0
