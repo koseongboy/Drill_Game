@@ -20,6 +20,9 @@ namespace DrillGame.UI
         [SerializeField]
         private Transform floatingBarUIParentTransform;
 
+        [SerializeField] 
+        private GameObject devGrid;
+
         [SerializeField]
         private List<string> awakeUIList = new List<string>();
         
@@ -164,6 +167,11 @@ namespace DrillGame.UI
             loadUIHandles.Remove(uiName);
 
             Debug.Log($"UI 언로드 완료: {uiName}");
+        }
+
+
+        public void ToggleDevGrid() { //TODO : F1 누르면 Dev Grid 활성화 토글
+            devGrid.SetActive(!devGrid.activeSelf);
         }
         #endregion
 

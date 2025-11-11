@@ -15,18 +15,19 @@ namespace DrillGame
         private string addressableName;
         #endregion
 
-        #region Singleton & initialization
-        #endregion
-
         #region getters & setters
         #endregion
 
         #region public methods
         public void CloseUI()
         {
-            Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
+            // Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
             CloseAction();
         }
+        
+        public void OpenFacilityCraft(){}
+        
+        public void OpenCoreUpgrade(){}
 
         public void LinkAddressable(string address)
         {
@@ -36,21 +37,7 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        #endregion
-
-        #region Unity event methods
-        private void Awake()
-        {
-            Debug.Log($"{gameObject.name}: Awake 호출");
-        }
-        #endregion
-
-        private void OnEnable()
-        {
-            Debug.Log("UI_CoreDetailPopup : OnEnable");
-            OpenAction();
-        }
-
+        
         private void OpenAction()
         {
             RectTransform rt = GetComponent<RectTransform>();
@@ -82,5 +69,15 @@ namespace DrillGame
                     UILoader.Instance.HideUI(addressableName);
                 });
         }
+        #endregion
+
+        #region Unity event methods
+
+        private void OnEnable()
+        {
+            OpenAction();
+        }
+        #endregion
+
     }
 }

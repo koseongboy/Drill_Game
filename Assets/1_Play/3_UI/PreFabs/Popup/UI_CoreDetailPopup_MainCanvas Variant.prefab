@@ -116,6 +116,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenFacilityCraft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
       value: UI_CoreDetailPopup_MainCanvas Variant
@@ -135,6 +163,34 @@ PrefabInstance:
     - target: {fileID: 8585156695818591271, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
       value: CoreDetailPopup_Button2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenCoreUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
