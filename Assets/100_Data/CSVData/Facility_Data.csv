@@ -1,9 +1,29 @@
-Id|Name|DisplayName|Type|Level|InputItemId|OutputItemId|Coordinate
-101011|stone_miner|돌 채굴 시설 Lv.1|Miner|1|||0,0
-101012|stone_miner|돌 채굴 시설 Lv.2|Miner|2|||0,1
-101013|stone_miner|돌 채굴 시설 Lv.3|Miner|3|||0,2
-101021|stone_processor|돌 가공 시설 Lv.1|Processor|1|||0,0
-101022|stone_processor|돌 가공 시설 Lv.2|Processor|2|||0,1
-101023|stone_processor|돌 가공 시설 Lv.3|Processor|3|||0,2
-102011|copper_miner|구리 채굴 시설 Lv.1|Miner|1|||0,0
-103011|iron_miner|철 채굴 시설 Lv.1|Miner|1|||0,0;0,1
+Id|Name|DisplayName|Type|Level|BuildResourceId|BuildResourceCount|InputItemId|InputItemCount|OutputItemId|OutputItemCount|Coordinate
+101011|stone_miner1|돌 채굴 시설 Lv.1|Miner|1|||||1001|1|0,0
+101012|stone_miner2|돌 채굴 시설 Lv.2|Miner|2|||||1001|10|0,1
+101013|stone_miner3|돌 채굴 시설 Lv.3|Miner|3|||||1001|100|0,2
+101021|stone_processor1|돌 가공 시설 Lv.1|Processor|1|||1001|1|1002|1|0,0
+101022|stone_processor2|돌 가공 시설 Lv.2|Processor|2|||1001|10|1002|10|0,1
+101023|stone_processor3|돌 가공 시설 Lv.3|Processor|3|||1001|100|1002|100|0,2
+102011|copper_miner1|구리 채굴 시설 Lv.1|Miner|1|||||1003|1|0,0
+102012|copper_miner2|구리 채굴 시설 Lv.2|Miner|2|||||1003|10|0,1
+102013|copper_miner3|구리 채굴 시설 Lv.3|Miner|3|||||1003|100|0,2
+102021|copper_processor1|구리 가공 시설 Lv.1|Processor|1|||1003|1|1004|1|0,0
+102022|copper_processor2|구리 가공 시설 Lv.2|Processor|2|||1003|10|1004|10|0,1
+102023|copper_processor3|구리 가공 시설 Lv.3|Processor|3|||1003|100|1004|100|0,2
+103011|iron_miner1|철 채굴 시설 Lv.1|Miner|1|||||1005|1|0,0
+103012|iron_miner2|철 채굴 시설 Lv.2|Miner|2|||||1005|10|0,1
+103013|iron_miner3|철 채굴 시설 Lv.3|Miner|3|||||1005|100|0,2
+103021|iron_processor1|철 가공 시설 Lv.1|Processor|1|||1004|1|1006|1|0,0
+103022|iron_processor2|철 가공 시설 Lv.2|Processor|2|||1004|10|1005|10|0,1
+103023|iron_processor3|철 가공 시설 Lv.3|Processor|3|||1004|100|1005|100|0,2
+110001|laboratory1|연구소 Lv.1|Laboratory|1|||||||0,0;0,1;1,0;1,1
+110002|laboratory2|연구소 Lv.2|Laboratory|2|||||||0,0;0,1;1,0;1,1
+110003|laboratory3|연구소 Lv.3|Laboratory|3|||||||0,0;0,1;1,0;1,1
+110004|laboratory4|연구소 Lv.4|Laboratory|4|||||||0,0;0,1;1,0;1,1
+110005|laboratory5|연구소 Lv.5|Laboratory|5|||||||0,0;0,1;1,0;1,1
+111001|engine_merger1|엔진 합성기 Lv.1|EngineMerger|1|||||||0,0;0,1;1,0;1,1
+111002|engine_merger2|엔진 합성기 Lv.2|EngineMerger|2|||||||0,0;0,1;1,0;1,1
+111003|engine_merger3|엔진 합성기 Lv.3|EngineMerger|3|||||||0,0;0,1;1,0;1,1
+111004|engine_merger4|엔진 합성기 Lv.4|EngineMerger|4|||||||0,0;0,1;1,0;1,1
+111005|engine_merger5|엔진 합성기 Lv.5|EngineMerger|5|||||||0,0;0,1;1,0;1,1

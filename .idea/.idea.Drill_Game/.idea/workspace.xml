@@ -7,7 +7,19 @@
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Core/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Core/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/WindowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/WindowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_CoreDetailPopup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_CoreDetailPopup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_FloatingBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_FloatingBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_GameStatus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_GameStatus.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_GridEditButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_GridEditButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_UpperLowerToggle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_UpperLowerToggle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_FloatingBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_FloatingBar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +30,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_DevGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_FloatingBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_GridEditButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@633105437483/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -26,21 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop__croco&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/캡스톤 빌드파일\Drill Game.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\HOME2\Desktop\캡스톤 빌드파일" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2019.1.14f1\Editor\6000.2.5f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Coding\Drill_Game -debugCodeOptimization" />
@@ -99,6 +125,10 @@
       <workItem from="1760239810860" duration="4832000" />
       <workItem from="1760586965454" duration="2142000" />
       <workItem from="1761661816767" duration="397000" />
+      <workItem from="1762498417592" duration="1683000" />
+      <workItem from="1762501762517" duration="628000" />
+      <workItem from="1762845832324" duration="6772000" />
+      <workItem from="1762856221428" duration="720000" />
     </task>
     <servers />
   </component>
