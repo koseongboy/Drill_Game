@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eedfdc8d518e6f4a8321b0771d69ee6
+    m_Address: UI_CoreDetailPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d6ff14fa864e77740a51fe288243bcb9
     m_Address: UI_UpperLowerToggleButton
     m_ReadOnly: 0
