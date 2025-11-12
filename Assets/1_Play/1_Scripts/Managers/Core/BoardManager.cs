@@ -157,12 +157,25 @@ namespace DrillGame.Core.Managers
         // 코어가 활성화 되면 모든 엔진에 명령을 내립니다.
         private void ActivateCore()
         {
+            // 명준 : 코드를 보다가 든 생각인데,
+            // 인풋이 3번 들어오면 코어가 발동되잖슴?
+            // 그럼 이 함수 (ActivateCore) 호출하면 되는 거임?
+            
+            // 참고 : 지금 InputCountManager에서 Input의 횟수를 세는 중.
+            // InputCountManager가 BoardManager의 함수를 호출해서, 코어를 발동시키는 구조면 될 것 같은데?
+            // 그럴려면 이 함수가 public이 되어주거나, public으로 감싼 다른 함수가 있어줘야함.
+            
+            
             Debug.Log($"Engine Core Activated : have {engines.Count} engines & {facilities.Count} facilities");
             foreach (var engine in engines)
             {
                 engine.ScheduleEngineRun(corePosition);
             }
                         
+            
+            
+            UI_FloatingBar.Instance.AlertCoreActive(); // 명준 : UI 표시 해주고요.
+            
             InputCountManager.Instance.addTickCount(); 
             // 명준 : 코어가 작동된 횟수를, InputCountManager가 가지고 있을게요.
             // 명준 : 왜냐구요? 지금 이 BoardManager에게 '너 숫자도 세!' 라고 하기에는, 얘가 하는 일이 많아보여서요.
