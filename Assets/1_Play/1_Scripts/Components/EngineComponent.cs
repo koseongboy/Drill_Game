@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 namespace DrillGame.View.Engine
 {
-    public class EngineComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic
+    public class EngineComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields & Properties
         [SerializeField]
@@ -28,6 +28,8 @@ namespace DrillGame.View.Engine
         private Color originalColor;
         private Color flashColor = Color.yellow;
         private float flashDuration = 0.15f;
+
+        private Color onMouseColor = Color.cyan;
 
         #endregion
 
@@ -127,7 +129,16 @@ namespace DrillGame.View.Engine
             OnClickEngineDetail?.Invoke();
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material.color = onMouseColor;
+        }
 
+        // IPointerExitHandler의 필수 메서드 구현
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;
+        }
 
 
         #endregion

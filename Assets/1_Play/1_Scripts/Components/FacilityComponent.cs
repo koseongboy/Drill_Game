@@ -12,7 +12,7 @@ using DrillGame.View.Helper;
 
 namespace DrillGame.View.Facility
 {
-    public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic
+    public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields & Properties
         [SerializeField]
@@ -29,6 +29,8 @@ namespace DrillGame.View.Facility
         // graphic action 관련 임시 필드
         private SpriteRenderer spriteRenderer;
         private Color originalColor;
+
+        private Color onMouseColor = Color.cyan;
 
         #endregion
 
@@ -112,6 +114,17 @@ namespace DrillGame.View.Facility
         public void OnPointerClick(PointerEventData eventData)
         {
             Debug.Log("FacilityComponent clicked : UI 필요해요");
+        }
+        
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material.color = onMouseColor;
+        }
+
+        // IPointerExitHandler의 필수 메서드 구현
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;
         }
         #endregion
 
