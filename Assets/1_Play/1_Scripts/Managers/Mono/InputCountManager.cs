@@ -7,6 +7,7 @@ namespace DrillGame
     {
         #region Fields & Properties
         private int inputCount = 0;
+        private int tickCount = 0;
         private List<IInputCountObserver> observers = new List<IInputCountObserver>();
         #endregion
 
@@ -32,6 +33,12 @@ namespace DrillGame
             inputCount++;
             InputCountChanged();
         }
+
+        public void addTickCount()
+        {
+            tickCount++;
+            TickCountChanged();
+        }
         #endregion
 
         #region public methods
@@ -53,6 +60,14 @@ namespace DrillGame
             }
         }
 
+        private void TickCountChanged()
+        {
+            foreach (var observer in observers)
+            {
+                observer.OnTickCountChanged(tickCount);
+            }
+        }
+
         #endregion
 
         #region Unity event methods
@@ -62,5 +77,6 @@ namespace DrillGame
     public interface IInputCountObserver
     {
         public void OnInputCountChanged(int count);
+        public void OnTickCountChanged(int count);
     }
 }

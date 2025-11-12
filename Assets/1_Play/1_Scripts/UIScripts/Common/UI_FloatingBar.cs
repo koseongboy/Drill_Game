@@ -96,6 +96,11 @@ namespace DrillGame
         // InputCount 옵저빙
         public void OnInputCountChanged(int count)
         {
+            inputCountTxt.text = count.ToString();
+        }
+
+        public void OnTickCountChanged(int count)
+        {
             tickCountTxt.text = count.ToString();
         }
         #endregion

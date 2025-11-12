@@ -162,6 +162,11 @@ namespace DrillGame.Core.Managers
             {
                 engine.ScheduleEngineRun(corePosition);
             }
+                        
+            InputCountManager.Instance.addTickCount(); 
+            // 명준 : 코어가 작동된 횟수를, InputCountManager가 가지고 있을게요.
+            // 명준 : 왜냐구요? 지금 이 BoardManager에게 '너 숫자도 세!' 라고 하기에는, 얘가 하는 일이 많아보여서요.
+            // 명준 : 단일 책임 원칙! SRP! Single Responsibility Principle!
         }
         #endregion
 
