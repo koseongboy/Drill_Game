@@ -7,7 +7,7 @@ using TMPro;
 
 namespace DrillGame
 {
-    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable
+    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver
     {
         #region Fields & Properties
 
@@ -51,6 +51,9 @@ namespace DrillGame
             // UILoader.Instance.HideUI(addressableName);
         }
         
+        /// <summary>
+        /// 코어 작동하면, 우측에 빨간 알림에서 파티클이 퍼벙-
+        /// </summary>
         public void AlertCoreActive()
         {
             if (alertTween != null && alertTween.IsActive())
@@ -89,6 +92,12 @@ namespace DrillGame
             // Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
             addressableName = address;
         }
+        
+        // InputCount 옵저빙
+        public void OnInputCountChanged(int count)
+        {
+            tickCountTxt.text = count.ToString();
+        }
         #endregion
 
         #region private methods
@@ -105,8 +114,12 @@ namespace DrillGame
         #endregion
 
         #region Unity event methods
+
+        private void Start()
+        {
+            InputCountManager.Instance.AddInputCountObserver(this);
+        }
+
         #endregion
-
-
     }
 }
