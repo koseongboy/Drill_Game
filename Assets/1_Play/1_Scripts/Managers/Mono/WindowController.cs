@@ -254,7 +254,8 @@ namespace DrillGame.WindowControl
                 while (keyEventQueue.Count > 0)
                 {
                     int vkCode = keyEventQueue.Dequeue();
-                    totalKeyPresses++;
+                    // totalKeyPresses++; 명준 : 아래의 매니저를 호출하는 것으로 바꿨습니다.
+                    InputCountManager.Instance.addInputCount();
                     Debug.Log($"Key Pressed Globally: {vkCode}. Total Score: {totalKeyPresses}");
 
                     // 🚨 여기에 점수 증가 같은 게임 로직을 구현하면 됩니다.
