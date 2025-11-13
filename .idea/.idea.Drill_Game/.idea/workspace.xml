@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/WindowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/WindowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Engine/EngineEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Engine/EngineEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/Template_DetailPopup_MainCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/Template_DetailPopup_MainCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +21,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/InputCountManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineDetailPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_DevGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@633105437483/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -118,6 +121,7 @@
       <workItem from="1762958204157" duration="2089000" />
       <workItem from="1763001229510" duration="9130000" />
       <workItem from="1763026544244" duration="2312000" />
+      <workItem from="1763029256748" duration="2290000" />
     </task>
     <servers />
   </component>

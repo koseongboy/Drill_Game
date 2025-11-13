@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DrillGame.Core.Engine;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -181,6 +182,15 @@ namespace DrillGame.UI
             Debug.Log($"UI 언로드 완료: {uiName}");
         }
 
+        public void ShowUI_FacilityDetail()
+        {
+            ShowUI("FacilityDetail");
+        }
+        
+        public void ShowUI_EngineDetail(EngineEntity engine)
+        {
+
+        }
 
         public void ToggleDevGrid() { //TODO : F1 누르면 Dev Grid 활성화 토글
             devGrid.SetActive(!devGrid.activeSelf);
