@@ -72,6 +72,13 @@ namespace DrillGame.View.Engine
             TempGraphicAction();
         }
 
+        public void DeleteEngineComponent()
+        {
+            // 엔진 컴포넌트 삭제 처리
+            Destroy(this.gameObject);
+            // onDestroy에서 presenter.Dispose() 호출
+        }
+
         public void ChosenGraphic()
         {
             spriteRenderer.material.color = Color.green;
@@ -126,6 +133,11 @@ namespace DrillGame.View.Engine
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            // 지금 테스트 용도라서 삭제를 여기다가 걸어두었는데 그러면 배치하자마자 눌려서 가운데 클릭으로 바꿨어요
+            if(eventData.button != PointerEventData.InputButton.Middle)
+            {
+                return; 
+            }
             OnClickEngineDetail?.Invoke();
         }
 
@@ -139,6 +151,7 @@ namespace DrillGame.View.Engine
         {
             gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;
         }
+
 
 
         #endregion

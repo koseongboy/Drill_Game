@@ -5,10 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 using DrillGame.Core.Managers;
+using DrillGame.Managers;
 
 namespace DrillGame.Core.Engine
 {
-    public class EngineEntity
+    public class EngineEntity : IEntityHandler
     {
         #region Fields & Properties
 
@@ -20,6 +21,8 @@ namespace DrillGame.Core.Engine
 
 
         public event Action OnEngineActivated;
+
+        public event Action OnEngineDeleted;
 
         #endregion
 
@@ -54,6 +57,14 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region public methods
+        public void DeleteEntity()
+        {
+            // presentor에게 알림
+            OnEngineDeleted?.Invoke();
+            // BoardManager에서 자신을 제거
+            BoardManager.Instance.RemoveEngine(this);
+            
+        }
         public void Tick()
         {
             if (!isRunning) return;  // 엔진이 멈춰있다면 틱을 진행하지 않음
@@ -78,6 +89,8 @@ namespace DrillGame.Core.Engine
 
         public void ShowEngineInfo()
         {
+            // 임시로 삭제 구현
+            DeleteEntity();
 
             Debug.LogError("엔진 UI를 띄워주세요!");
         }

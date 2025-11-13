@@ -71,6 +71,12 @@ namespace DrillGame.View.Facility
             // 임시 그래픽 액션 실행
             TempGraphicAction(intensity);
         }
+
+        public void DeleteFacilityComponent()
+        {
+            Destroy(this.gameObject);
+        }
+
         public void ChosenGraphic()
         {
             spriteRenderer.material.color = Color.green;
@@ -111,8 +117,20 @@ namespace DrillGame.View.Facility
                 Initialize(debugPosition);
             }
         }
+        private void OnDestroy()
+        {
+            presenter.Dispose();
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (eventData.button != PointerEventData.InputButton.Middle)
+            {
+                return;
+            }
+
+            OnClickFacilityDetail?.Invoke();
+
             Debug.Log("FacilityComponent clicked : UI 필요해요");
         }
         

@@ -1,10 +1,12 @@
 using UnityEngine;
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 using DrillGame.Core.Engine;
 using DrillGame.Core.Facility;
+using DrillGame.Managers;
 
 
 namespace DrillGame.Core.Managers
@@ -24,6 +26,9 @@ namespace DrillGame.Core.Managers
 
         private int tickCount;
         private const int TICK_INTERVAL = 10;
+
+        public event Action<List<Vector2Int>, TilemapType> OnEntityDeleted;
+
         #endregion
 
         #region Singleton & initialization
@@ -78,10 +83,9 @@ namespace DrillGame.Core.Managers
 
         public void RemoveEngine(EngineEntity engine)
         {
+            OnEntityDeleted?.Invoke(engine.GetFormationPositions(), TilemapType.Engine);
             engines.Remove(engine);
         }
-
-        
 
         public void AddFacility(FacilityEntity facility)
         {
@@ -106,6 +110,8 @@ namespace DrillGame.Core.Managers
             {
                 facilityMap.Remove(pos);
             }
+
+            OnEntityDeleted?.Invoke(positions, TilemapType.Facility);
         }
 
         public void RegisterRun(List<Vector2Int> positions) 

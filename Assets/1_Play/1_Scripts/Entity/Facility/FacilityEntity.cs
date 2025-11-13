@@ -16,6 +16,8 @@ namespace DrillGame.Core.Facility
 
         public event Action<int> OnFacilityActivated;
 
+        public event Action OnFacilityDeleted;
+
         private IFacilityAction facilityAction;
         #endregion
 
@@ -64,7 +66,20 @@ namespace DrillGame.Core.Facility
         }
         public void ShowFacilityInfo()
         {
+            // 임시로 삭제 구현
+            DeleteEntity();
+
+
             Debug.LogError("시설 UI를 띄워주세요!");
+        }
+
+        public void DeleteEntity()
+        {
+            // presentor에게 알림
+            OnFacilityDeleted?.Invoke();
+
+            // BoardManager에서 제거
+            BoardManager.Instance.RemoveFacility(this);
         }
 
         // 여기서 부터 model 관련 메서드 추가 가능

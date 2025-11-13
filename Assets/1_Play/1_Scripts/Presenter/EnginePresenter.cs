@@ -21,6 +21,7 @@ namespace DrillGame.Core.Presenter
             this.engineEntity = engineEntity;
 
             engineEntity.OnEngineActivated += OnEngineEntityActivated;
+            engineEntity.OnEngineDeleted += OnEngineEntityDeleted;
         }
         #endregion
 
@@ -31,6 +32,7 @@ namespace DrillGame.Core.Presenter
         public void Dispose()
         {
             engineEntity.OnEngineActivated -= OnEngineEntityActivated;
+            engineEntity.OnEngineDeleted -= OnEngineEntityDeleted;
         }
         public void RequestEngineDetail()
         {
@@ -44,6 +46,12 @@ namespace DrillGame.Core.Presenter
         {
             engineComponent.RunEngineComponent();
 
+        }
+
+        private void OnEngineEntityDeleted()
+        {
+            engineComponent.DeleteEngineComponent();
+            
         }
         #endregion
 

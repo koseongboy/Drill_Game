@@ -22,6 +22,7 @@ namespace DrillGame.Core.Presenter
             this.facilityEntity = facilityEntity;
 
             facilityEntity.OnFacilityActivated += OnFacilityEntityActivated;
+            facilityEntity.OnFacilityDeleted += OnFacilityEntityDeleted;
         }
 
         #endregion
@@ -33,6 +34,7 @@ namespace DrillGame.Core.Presenter
         public void Dispose()
         {
             facilityEntity.OnFacilityActivated -= OnFacilityEntityActivated;
+            facilityEntity.OnFacilityDeleted -= OnFacilityEntityDeleted;
         }
         public void RequestFacilityDetail()
         {
@@ -44,6 +46,11 @@ namespace DrillGame.Core.Presenter
         private void OnFacilityEntityActivated(int intensity)
         {
             facilityComponent.RunFacilityComponent(intensity);
+        }
+
+        private void OnFacilityEntityDeleted()
+        {
+            facilityComponent.DeleteFacilityComponent();
         }
         #endregion
 
