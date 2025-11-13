@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 using DrillGame.Core.Managers;
 using DrillGame.Managers;
+using DrillGame.UI;
 
 namespace DrillGame.Core.Engine
 {
@@ -13,11 +14,11 @@ namespace DrillGame.Core.Engine
     {
         #region Fields & Properties
 
-        private bool isRunning = true; // ¿£ÁøÀ» ÀÌµ¿½ÃÅ³¶© false·Î º¯°æ
-        private List<int> scheduleList = new List<int>(); // ³²Àº Æ½ ¼ö¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®
+        private bool isRunning = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å³ï¿½ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        private List<int> scheduleList = new List<int>(); // ï¿½ï¿½ï¿½ï¿½ Æ½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 
-        private Vector2Int position; // ¿£ÁøÀÇ À§Ä¡ (ÁßÁ¡)
-        private List<Vector2Int> formations = new List<Vector2Int>(); // ¿£ÁøÀÇ ÇüÅÂ (ÁßÁ¡ ±âÁØ »ó´ë ÁÂÇ¥ ¸®½ºÆ®) , 0,0 ÇÊ¼ö  
+        private Vector2Int position; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ (ï¿½ï¿½ï¿½ï¿½)
+        private List<Vector2Int> formations = new List<Vector2Int>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿? ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½Æ®) , 0,0 ï¿½Ê¼ï¿½  
 
 
         public event Action OnEngineActivated;
@@ -67,7 +68,7 @@ namespace DrillGame.Core.Engine
         }
         public void Tick()
         {
-            if (!isRunning) return;  // ¿£ÁøÀÌ ¸ØÃçÀÖ´Ù¸é Æ½À» ÁøÇàÇÏÁö ¾ÊÀ½
+            if (!isRunning) return;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Ù¸ï¿½ Æ½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
             ScheduleTick();
         }
@@ -81,7 +82,7 @@ namespace DrillGame.Core.Engine
 
         public void ScheduleEngineRun(Vector2Int corePosition)
         {
-            // ¸ÇÇãÆ° °Å¸® ¸¸Å­ÀÇ Æ½À» »ç¿ëÇÕ´Ï´Ù.
+            // ï¿½ï¿½ï¿½ï¿½Æ° ï¿½Å¸ï¿½ ï¿½ï¿½Å­ï¿½ï¿½ Æ½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿?.
             int distance = Mathf.Abs(corePosition.x - position.x) + Mathf.Abs(corePosition.y - position.y);
 
             scheduleList.Add(distance);
@@ -105,7 +106,7 @@ namespace DrillGame.Core.Engine
                 scheduleList[i] -= 1;
                 if (scheduleList[i] <= 0)
                 {
-                    // ¸í·É ½ÇÇà
+                    // ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½
                     ActivateEngine();
                     scheduleList.RemoveAt(i);
                 }
@@ -115,7 +116,7 @@ namespace DrillGame.Core.Engine
         private void ActivateEngine()
         {
             Debug.Log($"Engine at {position} activated!");
-            // ¿©±â¿¡ ¿£ÁøÀÌ È°¼ºÈ­µÉ ¶§ÀÇ µ¿ÀÛÀ» ±¸ÇöÇÕ´Ï´Ù.
+            // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
             OnEngineActivated?.Invoke();
             
             BoardManager.Instance.RegisterRun(GetFormationPositions());

@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4809231316471956142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 340281265069704482, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_Button1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052068231383393315, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_Desc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442568316889171512, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_text
+      value: "\uCF54\uC5B4 \uAC15\uD654\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -104.68262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 412.7145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -560
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenFacilityCraft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: UI_CoreDetailPopup_MainCanvas Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5722408328187180786, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_CloseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772374807248152365, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601188357447995911, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585156695818591271, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: CoreDetailPopup_Button2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenCoreUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083208013302290771}
+  m_SourcePrefab: {fileID: 100100000, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+--- !u!1 &1064583714900093448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4809231316471956142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2083208013302290771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064583714900093448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752eb21fdd44838419a54f76bfc33b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_CoreDetailPopup
+  addressableName: UI_CoreDetailPopup

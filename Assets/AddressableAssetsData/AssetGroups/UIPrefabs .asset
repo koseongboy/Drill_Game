@@ -15,13 +15,38 @@ MonoBehaviour:
   m_GroupName: 'UIPrefabs '
   m_GUID: 5fabd6954ec50eb40919b75bc23ef7b0
   m_SerializeEntries:
+  - m_GUID: 85f0fbd1f9b80df4281ff5e2cca6e91e
+    m_Address: UI_FloatingBar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 955040d094b68d645993bf80dd2c0d48
     m_Address: UI_Facility_Core
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 982ade595eac2f042b942f145075d433
+    m_Address: UI_GameStatus
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eedfdc8d518e6f4a8321b0771d69ee6
+    m_Address: UI_CoreDetailPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6ff14fa864e77740a51fe288243bcb9
+    m_Address: UI_UpperLowerToggleButton
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5ce26aeb6a49bb4089f321536aa52f0
     m_Address: UI_Facility_Hello
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb00425f7a58c2d4bb217fe43d061a4b
+    m_Address: UI_GridEditButton
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
