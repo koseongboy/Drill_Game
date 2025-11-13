@@ -3261,7 +3261,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.888889
+  orthographic size: 8.881356
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6823,7 +6823,7 @@ MonoBehaviour:
   ExpandedWidthPercent: 0.2
   ExpandedHeightPercent: 1
   CollapsedWidthPercent: 0.2
-  CollapsedHeightPercent: 0.1
+  CollapsedHeight: 30
   totalKeyPresses: 0
 --- !u!1 &1372489630
 GameObject:
@@ -10137,6 +10137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GameManager
   gridManager: {fileID: 357322640}
   batchMode: 0
+  idValue: -1
   tilemapType: 1
 --- !u!1 &1672351223
 GameObject:
