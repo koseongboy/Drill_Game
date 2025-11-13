@@ -3261,7 +3261,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.881356
+  orthographic size: 8.884759
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uB545\uC5D0 \uB370\uBBF8\uC9C0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}

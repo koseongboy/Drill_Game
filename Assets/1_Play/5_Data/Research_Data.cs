@@ -17,7 +17,7 @@ namespace DrillGame.Data
         #region public methods
         public static async Task<Research_Data> CreateAsync()
         {
-            var parser = await CreateAsync("Item_Data");
+            var parser = await CreateAsync("Research_Data");
             var researchdata = new Research_Data();
             researchdata.Table = parser.Table;
             return researchdata;

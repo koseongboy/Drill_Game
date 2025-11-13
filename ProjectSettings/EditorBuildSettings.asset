@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/999_DEV/koseongboy/0_Scenes/Play_koseongboy.unity
     guid: a886a0ae0c0a5b04a9df6e3adaf3ac82
   - enabled: 1
+    path: Assets/0_Loading/0_Scenes/Loading.unity
+    guid: ca64fec1cef7c8e4ba512f3f9478a675
+  - enabled: 1
     path: Assets/1_Play/0_Scenes/Play.unity
     guid: b07ba9cb26d981f4cb362a3a29b198b4
   m_configObjects:

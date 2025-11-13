@@ -57,7 +57,7 @@ namespace DrillGame.Data
             }
             else
             {
-                Debug.LogError("Failed to load Engine_Data CSV.");
+                Debug.LogError($"Failed to load {addressableName} CSV.");
             }
             return parser;
         }
