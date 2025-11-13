@@ -418,7 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5F0\uAD6C\n\uC9C4\uCC99"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -717,6 +717,7 @@ Transform:
   - {fileID: 73494662}
   - {fileID: 1358628109}
   - {fileID: 1870104847}
+  - {fileID: 423201415}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147131776
@@ -1129,49 +1130,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1301394347}
     m_Modifications:
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: ShapeModule.arc.value
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: ShapeModule.m_Position.y
-      value: -0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: ShapeModule.m_Rotation.z
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 12250196751824974, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 10
+    - target: {fileID: 2425506054684135268, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_text
+      value: 100.0%
       objectReference: {fileID: 0}
     - target: {fileID: 3055690176595676735, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Pivot.x
@@ -1253,9 +1214,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3501711385812146181, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
+    - target: {fileID: 6404959530233648078, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_text
+      value: 88888888
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152022504256177314, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152022504256177314, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 504.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588529031852256293, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_text
+      value: 88888888
       objectReference: {fileID: 0}
     - target: {fileID: 8077804952556509027, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3176,6 +3149,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415906655}
   m_CullTransparentMesh: 1
+--- !u!1 &423201414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 423201415}
+  - component: {fileID: 423201416}
+  m_Layer: 0
+  m_Name: ResearchManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &423201415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423201414}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.89568, y: -8.80094, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 146924362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &423201416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423201414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e4ef97ace448a4789b2153f43f2295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResearchManager
+  selectedResearchId: 
+  progressValue: 1
 --- !u!1 &475047027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,7 +3483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC9C4\uCC99\uB3C4 0%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -4923,7 +4942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC9C4\uCC99\uB3C4\nprint"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -5474,7 +5493,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055666032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423201416}
+        m_TargetAssemblyTypeName: DrillGame.ResearchManager, Assembly-CSharp
+        m_MethodName: PrintResearchProgress_Test
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1055666032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9738,13 +9769,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 423201416}
+        m_TargetAssemblyTypeName: DrillGame.ResearchManager, Assembly-CSharp
+        m_MethodName: AddResearchProgress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21422,7 +21453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2004429849}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423201416}
+        m_TargetAssemblyTypeName: DrillGame.ResearchManager, Assembly-CSharp
+        m_MethodName: ResetResearchProgress_Test
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2004429849
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -73,7 +73,7 @@ namespace DrillGame.UI
             }
             else
             {
-                Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 로드 시도합니다.");
+                // Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 로드 시도합니다.");
                 LoadUI(uiName);
             }
         }
@@ -104,7 +104,7 @@ namespace DrillGame.UI
         public void LoadUI(string uiName)
         {
             // Implement UI loading logic here
-            Debug.Log($"UI 로드 시도: {uiName}");
+            // Debug.Log($"UI 로드 시도: {uiName}");
 
             if(loadUIHandles.ContainsKey(uiName))
             {
@@ -121,7 +121,7 @@ namespace DrillGame.UI
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    Debug.Log($"UI 로드 성공: {uiName}");
+                    // Debug.Log($"UI 로드 성공: {uiName}");
                     GameObject uiPrefab = handle.Result;
                     if (uiName == "UI_FloatingBar") {
                         GameObject uiInstance = Instantiate(uiPrefab, floatingBarUIParentTransform);
@@ -155,7 +155,7 @@ namespace DrillGame.UI
         public void UnloadUI(string uiName)
         {
             // Implement UI unloading logic here
-            Debug.Log($"UI 언로드 시도: {uiName}");
+            // Debug.Log($"UI 언로드 시도: {uiName}");
             if (!loadUIHandles.ContainsKey(uiName))
             {
                 Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다");

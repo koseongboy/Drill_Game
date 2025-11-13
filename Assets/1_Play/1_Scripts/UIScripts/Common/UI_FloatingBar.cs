@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
@@ -7,7 +8,7 @@ using TMPro;
 
 namespace DrillGame
 {
-    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver
+    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver, IResearchObserver
     {
         #region Fields & Properties
 
@@ -22,6 +23,10 @@ namespace DrillGame
         
         [SerializeField]
         private TextMeshProUGUI researchTxt;
+        
+        [SerializeField]
+        private TextMeshProUGUI playTimeTxt;
+        private float totalPlayTime;
         
         [SerializeField]
         private TextMeshProUGUI inputCountTxt;
@@ -97,6 +102,31 @@ namespace DrillGame
                 });
         }
 
+        private void UpdateTime()
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(totalPlayTime);
+            int totalDays = (int)timeSpan.TotalDays;
+            string timeString = string.Format(
+                "{0:00}:{1:00}:{2:00}:{3:00}",
+                totalDays,                           // DD (일)
+                timeSpan.Hours,                      // HH (시)
+                timeSpan.Minutes,                    // MM (분)
+                timeSpan.Seconds                     // SS (초)
+            );
+            
+            playTimeTxt.text = timeString;
+        }
+        
+        private IEnumerator UpdatePlayTimeTxt()
+        {
+            while (true)
+            {
+                totalPlayTime = Time.time;
+                UpdateTime();
+                yield return new WaitForSeconds(1f); // 1초 대기
+            }
+        }
+        
         public void UpdateTest() {
             Debug.Log("Updated UI 테스트 호출");
             UpdateUITxt();
@@ -108,7 +138,7 @@ namespace DrillGame
             addressableName = address;
         }
         
-        // InputCount 옵저빙
+        #region Observing
         public void OnInputCountChanged(int count)
         {
             inputCountTxt.text = count.ToString();
@@ -118,6 +148,11 @@ namespace DrillGame
         {
             tickCountTxt.text = count.ToString();
         }
+        public void OnResearchProgressChanged(float progress)
+        {
+            researchTxt.text = progress.ToString("F1") + "%";
+        }
+        #endregion
         #endregion
 
         #region private methods
@@ -138,8 +173,15 @@ namespace DrillGame
         private void Start()
         {
             InputCountManager.Instance.AddInputCountObserver(this);
+            
+            // PlayTime 타이머
+            StartCoroutine(UpdatePlayTimeTxt());
+            
+            var researchProgress = ResearchManager.Instance.AddResearchObserver(this);
+            OnResearchProgressChanged(researchProgress);
         }
-
         #endregion
+
+
     }
 }
