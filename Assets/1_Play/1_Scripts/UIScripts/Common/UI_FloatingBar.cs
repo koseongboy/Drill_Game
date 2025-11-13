@@ -7,7 +7,7 @@ using TMPro;
 
 namespace DrillGame
 {
-    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver
+    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver, IResearchObserver
     {
         #region Fields & Properties
 
@@ -108,7 +108,7 @@ namespace DrillGame
             addressableName = address;
         }
         
-        // InputCount 옵저빙
+        #region Observing
         public void OnInputCountChanged(int count)
         {
             inputCountTxt.text = count.ToString();
@@ -118,6 +118,11 @@ namespace DrillGame
         {
             tickCountTxt.text = count.ToString();
         }
+        public void OnResearchProgressChanged(float progress)
+        {
+            researchTxt.text = progress.ToString("F1") + "%";
+        }
+        #endregion
         #endregion
 
         #region private methods
@@ -138,8 +143,13 @@ namespace DrillGame
         private void Start()
         {
             InputCountManager.Instance.AddInputCountObserver(this);
+            
+            var researchProgress = ResearchManager.Instance.AddResearchObserver(this);
+            OnResearchProgressChanged(researchProgress);
         }
 
         #endregion
+
+
     }
 }

@@ -1,4 +1,6 @@
+using System;
 using DrillGame.UI.Interface;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -32,20 +34,7 @@ namespace DrillGame
         #endregion
 
         #region Unity event methods
-        private void Awake()
-        {
-        }
 
-        private void OnEnable()
-        {
-            Debug.Log(addressableName+": OnEnable");
-            OpenAction();
-        }
         #endregion
-
-        private void OpenAction()
-        {
-            // 여기서 UI 열릴 때 연출.
-        }
     }
 }

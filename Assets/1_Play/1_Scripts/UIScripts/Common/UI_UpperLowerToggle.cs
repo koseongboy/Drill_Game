@@ -39,15 +39,10 @@ namespace DrillGame
         #endregion
 
         #region Unity event methods
-        private void Awake()
-        {
-            Debug.Log($"{gameObject.name}: Awake 호출");
-        }
         #endregion
 
         private void OnEnable()
         {
-            Debug.Log("UI_Facility_Core: OnEnable");
             OpenAction();
         }
 
