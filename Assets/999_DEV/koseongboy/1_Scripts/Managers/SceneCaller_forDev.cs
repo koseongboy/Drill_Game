@@ -10,7 +10,7 @@ namespace DrillGame
         IEnumerator sceneCallCoroutine()
         {
             yield return new WaitForSeconds(3.0f);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Play_koseongboy");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
         }
         #endregion
 
