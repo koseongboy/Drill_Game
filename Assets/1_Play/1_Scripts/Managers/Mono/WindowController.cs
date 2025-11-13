@@ -149,7 +149,7 @@ namespace DrillGame.WindowControl
             windowHandle = FindWindow(null, WindowTitle);
             if (windowHandle == IntPtr.Zero)
             {
-                Debug.LogError("Window handle not found. Is 'Product Name' correct in Build Settings?");
+                Debug.LogError("창 이름 변수 수정할 것. 유니티 에디터일 경우 무시해도 됨.");
                 return;
             }
 
