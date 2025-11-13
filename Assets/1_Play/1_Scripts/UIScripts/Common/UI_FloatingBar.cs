@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
@@ -22,6 +23,10 @@ namespace DrillGame
         
         [SerializeField]
         private TextMeshProUGUI researchTxt;
+        
+        [SerializeField]
+        private TextMeshProUGUI playTimeTxt;
+        private float totalPlayTime;
         
         [SerializeField]
         private TextMeshProUGUI inputCountTxt;
@@ -97,6 +102,31 @@ namespace DrillGame
                 });
         }
 
+        private void UpdateTime()
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(totalPlayTime);
+            int totalDays = (int)timeSpan.TotalDays;
+            string timeString = string.Format(
+                "{0:00}:{1:00}:{2:00}:{3:00}",
+                totalDays,                           // DD (일)
+                timeSpan.Hours,                      // HH (시)
+                timeSpan.Minutes,                    // MM (분)
+                timeSpan.Seconds                     // SS (초)
+            );
+            
+            playTimeTxt.text = timeString;
+        }
+        
+        private IEnumerator UpdatePlayTimeTxt()
+        {
+            while (true)
+            {
+                totalPlayTime = Time.time;
+                UpdateTime();
+                yield return new WaitForSeconds(1f); // 1초 대기
+            }
+        }
+        
         public void UpdateTest() {
             Debug.Log("Updated UI 테스트 호출");
             UpdateUITxt();
@@ -144,10 +174,12 @@ namespace DrillGame
         {
             InputCountManager.Instance.AddInputCountObserver(this);
             
+            // PlayTime 타이머
+            StartCoroutine(UpdatePlayTimeTxt());
+            
             var researchProgress = ResearchManager.Instance.AddResearchObserver(this);
             OnResearchProgressChanged(researchProgress);
         }
-
         #endregion
 
 

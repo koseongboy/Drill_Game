@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/MiniJSON.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/MiniJSON.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_FloatingBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_FloatingBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_GameStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_GameStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_GridEditButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_GridEditButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_UpperLowerToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_UpperLowerToggle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_GameStatus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_GameStatus.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_FloatingBar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Common/UI_FloatingBar.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Crocobob",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,7 +118,7 @@
       <workItem from="1762845832324" duration="6772000" />
       <workItem from="1762856221428" duration="720000" />
       <workItem from="1762958204157" duration="2089000" />
-      <workItem from="1763001229510" duration="7714000" />
+      <workItem from="1763001229510" duration="8760000" />
     </task>
     <servers />
   </component>
