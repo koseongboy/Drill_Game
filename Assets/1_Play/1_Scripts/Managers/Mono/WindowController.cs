@@ -236,29 +236,11 @@ namespace DrillGame.WindowControl
 
         void Update()
         {
-            
-            // 명준 : UI 버튼 누르면 발동되게 바꿀게여
-            //
-            // 에디터에서도 테스트할 수 있도록 Alt+T 입력은 유지합니다.
-            // if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
-            // {
-            //     if (Input.GetKeyDown(KeyCode.T))
-            //     {
-            //         ToggleWindowSize();
-            //     }
-            // }
-
-            // 💡 큐에서 키 입력 이벤트 처리 (메인 스레드 안전)
             lock (queueLock)
             {
                 while (keyEventQueue.Count > 0)
                 {
-                    int vkCode = keyEventQueue.Dequeue();
-                    // totalKeyPresses++; 명준 : 아래의 매니저를 호출하는 것으로 바꿨습니다.
                     InputCountManager.Instance.addInputCount();
-                    Debug.Log($"Key Pressed Globally: {vkCode}. Total Score: {totalKeyPresses}");
-
-                    // 🚨 여기에 점수 증가 같은 게임 로직을 구현하면 됩니다.
                 }
             }
         }
