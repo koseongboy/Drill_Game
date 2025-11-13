@@ -21,7 +21,26 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
-        // 데이터를 가져오는 방식도 동적으로 변경
+        public string Get(string id, string columnName)
+        {
+            if (Table.TryGetValue(id, out var rowData))
+            {
+                if (rowData.TryGetValue(columnName, out var value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Debug.LogError($"Column '{columnName}' not found for ID '{id}'.");
+                    return null;
+                }
+            }
+            else
+            {
+                Debug.LogError($"ID '{id}' not found in the data.");
+                return null;
+            }
+        }
         
         #endregion
 

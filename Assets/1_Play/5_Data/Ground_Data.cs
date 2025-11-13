@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace DrillGame.Data
 {
@@ -16,7 +17,7 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
-        
+
         #endregion
 
         #region public methods
@@ -30,6 +31,27 @@ namespace DrillGame.Data
             }
             foreach (var key in parser.Table.Keys) { groundData.Table[int.Parse(key)] = parser.Table[key]; }
             return groundData;
+        }
+        
+        public string Get(int id, string columnName)
+        {
+            if (Table.TryGetValue(id, out var rowData))
+            {
+                if (rowData.TryGetValue(columnName, out var value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Debug.LogError($"Column '{columnName}' not found for ID '{id}'.");
+                    return null;
+                }
+            }
+            else
+            {
+                Debug.LogError($"ID '{id}' not found in the data.");
+                return null;
+            }
         }
         #endregion
 

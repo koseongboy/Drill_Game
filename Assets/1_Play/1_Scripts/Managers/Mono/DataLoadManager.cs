@@ -15,6 +15,8 @@ namespace DrillGame.Managers
         public Engine_Data EngineData { get; set; }
         public Facility_Data FacilityData { get; set; }
         public Ground_Data GroundData { get; set; }
+        public Item_Data ItemData { get; set; }
+        public Research_Data ResearchData { get; set; }
         public Sprite CurrentGroundSprite { get; set; }
         public Sprite NextGroundSprite { get; set; }
         public List<int> DepthRanges { get; set; }
@@ -86,14 +88,18 @@ namespace DrillGame.Managers
             var engine_Data = Engine_Data.CreateAsync();
             var facility_Data = Facility_Data.CreateAsync();
             var ground_Data = Ground_Data.CreateAsync();
+            var item_Data = Item_Data.CreateAsync();
+            var research_Data = Research_Data.CreateAsync();
             await Task.WhenAll(engine_Data, facility_Data, ground_Data);
             EngineData = engine_Data.Result;
             FacilityData = facility_Data.Result;
+            ItemData = item_Data.Result;
+            ResearchData = research_Data.Result;
             GroundData = ground_Data.Result;
             DepthRanges = ground_Data.Result.DepthRanges;
             List<int> range = GetRangeBounds(int.Parse(UserData["Ground"][0])); //임시 유저 데이터 불러옴
             var result = await LoadGroundSpriteAsync(GroundData.Table[range[0]]["Sprite Addressable"], GroundData.Table[range[1]]["Sprite Addressable"]);
-            return EngineData != null && FacilityData != null && GroundData != null && result;
+            return EngineData != null && FacilityData != null && GroundData != null && ItemData != null && ResearchData != null && result;
         }
 
 
