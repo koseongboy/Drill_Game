@@ -13,16 +13,17 @@ namespace DrillGame.Core.Engine
     public class EngineEntity : IEntityHandler
     {
         #region Fields & Properties
+        
+        [SerializeField]
+        private string engineId; // UI í‘œì‹œìš© Data Idê°’
+        
+        private bool isRunning = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å³ï¿½ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        private List<int> scheduleList = new List<int>(); // ï¿½ï¿½ï¿½ï¿½ Æ½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 
-        private bool isRunning = true; // ¿£ÁøÀ» ÀÌµ¿½ÃÅ³¶© false·Î º¯°æ
-        private List<int> scheduleList = new List<int>(); // ³²Àº Æ½ ¼ö¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®
-
-        private Vector2Int position; // ¿£ÁøÀÇ À§Ä¡ (ÁßÁ¡)
-        private List<Vector2Int> formations = new List<Vector2Int>(); // ¿£ÁøÀÇ ÇüÅÂ (ÁßÁ¡ ±âÁØ »ó´ë ÁÂÇ¥ ¸®½ºÆ®) , 0,0 ÇÊ¼ö  
-
-
+        private Vector2Int position; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ (ï¿½ï¿½ï¿½ï¿½)
+        private List<Vector2Int> formations = new List<Vector2Int>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½Æ®) , 0,0 ï¿½Ê¼ï¿½  
+        
         public event Action OnEngineActivated;
-
         public event Action OnEngineDeleted;
 
         #endregion
@@ -30,7 +31,7 @@ namespace DrillGame.Core.Engine
         #region Singleton & initialization
         public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
         {
-            this.position = startPosition;
+            position = startPosition;
             if (formations == null)
             {
                 this.formations.Add(new Vector2Int(0, 0));
@@ -46,6 +47,18 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region getters & setters
+
+        public void SetEngineId(string Id)
+        {
+            engineId = Id;
+        }
+
+        public string GetEngineId()
+        {
+            return engineId;
+        }
+        
+        
         public List<Vector2Int> GetFormationPositions()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();
@@ -60,15 +73,15 @@ namespace DrillGame.Core.Engine
         #region public methods
         public void DeleteEntity()
         {
-            // presentor¿¡°Ô ¾Ë¸²
+            // presentorï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½
             OnEngineDeleted?.Invoke();
-            // BoardManager¿¡¼­ ÀÚ½ÅÀ» Á¦°Å
+            // BoardManagerï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             BoardManager.Instance.RemoveEngine(this);
             
         }
         public void Tick()
         {
-            if (!isRunning) return;  // ¿£ÁøÀÌ ¸ØÃçÀÖ´Ù¸é Æ½À» ÁøÇàÇÏÁö ¾ÊÀ½
+            if (!isRunning) return;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Ù¸ï¿½ Æ½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
             ScheduleTick();
         }
@@ -77,12 +90,11 @@ namespace DrillGame.Core.Engine
         public void ScheduleEngineRun(int tickCount)
         {
             scheduleList.Add(tickCount);
-
         }
 
         public void ScheduleEngineRun(Vector2Int corePosition)
         {
-            // ¸ÇÇãÆ° °Å¸® ¸¸Å­ÀÇ Æ½À» »ç¿ëÇÕ´Ï´Ù.
+            // ï¿½ï¿½ï¿½ï¿½Æ° ï¿½Å¸ï¿½ ï¿½ï¿½Å­ï¿½ï¿½ Æ½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
             int distance = Mathf.Abs(corePosition.x - position.x) + Mathf.Abs(corePosition.y - position.y);
 
             scheduleList.Add(distance);
@@ -90,10 +102,10 @@ namespace DrillGame.Core.Engine
 
         public void ShowEngineInfo()
         {
-            // ÀÓ½Ã·Î »èÁ¦ ±¸Çö
-            DeleteEntity();
+            // ìž„ì‹œë¡œ ì‚­ì œ êµ¬í˜„
+            // DeleteEntity();
 
-            Debug.LogError("¿£Áø UI¸¦ ¶ç¿öÁÖ¼¼¿ä!");
+            UILoader.Instance.ShowUI_EngineDetail(this);
         }
 
         #endregion
@@ -106,7 +118,7 @@ namespace DrillGame.Core.Engine
                 scheduleList[i] -= 1;
                 if (scheduleList[i] <= 0)
                 {
-                    // ¸í·É ½ÇÇà
+                    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                     ActivateEngine();
                     scheduleList.RemoveAt(i);
                 }
@@ -116,7 +128,7 @@ namespace DrillGame.Core.Engine
         private void ActivateEngine()
         {
             Debug.Log($"Engine at {position} activated!");
-            // ¿©±â¿¡ ¿£ÁøÀÌ È°¼ºÈ­µÉ ¶§ÀÇ µ¿ÀÛÀ» ±¸ÇöÇÕ´Ï´Ù.
+            // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
             OnEngineActivated?.Invoke();
             
             BoardManager.Instance.RegisterRun(GetFormationPositions());

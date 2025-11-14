@@ -37,7 +37,6 @@ namespace DrillGame.Core.Presenter
         public void RequestEngineDetail()
         {
             engineEntity.ShowEngineInfo();
-
         }
         #endregion
 

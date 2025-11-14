@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4809231316471956142
+--- !u!1001 &9218977505426013731
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 340281265069704482, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_Button1
+      value: UI_EngineDetailPopup_Button1
       objectReference: {fileID: 0}
     - target: {fileID: 1052068231383393315, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_Desc
+      value: UI_EngineDetailPopupDesc
       objectReference: {fileID: 0}
     - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2083208013302290771}
+      objectReference: {fileID: 6532931116105573821}
     - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseUI
       objectReference: {fileID: 0}
     - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      value: DrillGame.UI_EngineDetailPopup, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442568316889171512, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_text
-      value: "\uCF54\uC5B4 \uAC15\uD654\n"
+      value: "\uCCA0\uAC70"
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Pivot.x
@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3833800164790158778, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_text
+      value: "\uC774\uB3D9"
+      objectReference: {fileID: 0}
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -127,18 +131,18 @@ PrefabInstance:
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2083208013302290771}
+      objectReference: {fileID: 6532931116105573821}
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenFacilityCraft
+      value: MoveEngineOnBoard
       objectReference: {fileID: 0}
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      value: DrillGame.UI_EngineDetailPopup, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -146,23 +150,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: UI_CoreDetailPopup
+      value: UI_EngineDetailPopup
       objectReference: {fileID: 0}
     - target: {fileID: 5722408328187180786, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_CloseButton
+      value: UI_EngineDetailPopup_CloseButton
       objectReference: {fileID: 0}
     - target: {fileID: 5772374807248152365, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_Icon
+      value: UI_EngineDetailPopup_Icon
       objectReference: {fileID: 0}
     - target: {fileID: 6601188357447995911, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_Title
+      value: UI_EngineDetailPopupTitle
       objectReference: {fileID: 0}
     - target: {fileID: 8585156695818591271, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: CoreDetailPopup_Button2
+      value: UI_EngineDetailPopup_Button2
       objectReference: {fileID: 0}
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -175,18 +179,18 @@ PrefabInstance:
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2083208013302290771}
+      objectReference: {fileID: 6532931116105573821}
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenCoreUpgrade
+      value: DeleteEngineOnBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      value: DrillGame.UI_EngineDetailPopup, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -198,23 +202,47 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2083208013302290771}
+      addedObject: {fileID: 6532931116105573821}
   m_SourcePrefab: {fileID: 100100000, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
---- !u!1 &1064583714900093448 stripped
+--- !u!114 &863467925685913923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8361993404112451424, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 9218977505426013731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &2826264648007761900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6397516701046718927, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 9218977505426013731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &3714229903555303045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
-  m_PrefabInstance: {fileID: 4809231316471956142}
+  m_PrefabInstance: {fileID: 9218977505426013731}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2083208013302290771
+--- !u!114 &6532931116105573821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064583714900093448}
+  m_GameObject: {fileID: 3714229903555303045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752eb21fdd44838419a54f76bfc33b2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 413c90b0621b7654398dbd05bd729a25, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_CoreDetailPopup
-  addressableName: UI_CoreDetailPopup
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_EngineDetailPopup
+  addressableName: UI_EngineDetailPopup
+  titleTxt: {fileID: 863467925685913923}
+  descTxt: {fileID: 2826264648007761900}
