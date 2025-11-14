@@ -22,6 +22,12 @@ namespace DrillGame.Data
 
         #region getters & setters
         // 데이터를 가져오는 방식도 동적으로 변경
+
+        public Dictionary<string, string> GetDataById(string id)
+        {
+            Table.TryGetValue(id, out Dictionary<string, string> data);
+            return data;
+        }
         
         #endregion
 
@@ -34,7 +40,7 @@ namespace DrillGame.Data
             {
                 parser.Parse(csvData.text);
                 Addressables.Release(csvData);
-                Debug.Log("Engine_Data CSV loaded and parsed successfully.");
+                // Debug.Log("Engine_Data CSV loaded and parsed successfully.");
             }
             else
             {

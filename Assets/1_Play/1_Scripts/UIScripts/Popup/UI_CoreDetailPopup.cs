@@ -23,6 +23,7 @@ namespace DrillGame
         {
             // Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
             CloseAction();
+            // UiLoader.HideUI()는 위의 CloseAction내에서, 애니메이션 다 끝나면 호출함.
         }
         
         public void OpenFacilityCraft(){}

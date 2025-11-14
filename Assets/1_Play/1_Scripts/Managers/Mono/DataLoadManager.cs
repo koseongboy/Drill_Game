@@ -95,8 +95,7 @@ namespace DrillGame.Managers
             var result = await LoadGroundSpriteAsync(GroundData.Table[range[0]]["Sprite Addressable"], GroundData.Table[range[1]]["Sprite Addressable"]);
             return EngineData != null && FacilityData != null && GroundData != null && result;
         }
-
-
+        
         #endregion
 
         #region Unity event methods
@@ -112,17 +111,17 @@ namespace DrillGame.Managers
                 transform.parent = null;
                 DontDestroyOnLoad(this.gameObject);
             }
-            Debug.Log("DataLoadManager Awake completed.");
+            // Debug.Log("DataLoadManager Awake completed.");
         }
         async void Start()
         {
             if (await LoadAllDataAsync())
             {
-                Debug.Log("All CSV_Data has been loaded successfully.");
+                Debug.Log("[DataLoadManager] All CSV_Data has been loaded successfully.");
             }
             else
             {
-                Debug.LogError("Failed to load some Data.");
+                Debug.LogError("[DataLoadManager] Failed to load Data.");
             }
         }
 

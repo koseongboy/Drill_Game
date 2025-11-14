@@ -15,6 +15,7 @@ namespace DrillGame.Data
         #endregion
 
         #region getters & setters
+        
         public List<Tuple<int, int>> GetCoordinate(string id)
         {
             var coordinates = new List<Tuple<int, int>>();

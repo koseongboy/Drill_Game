@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DrillGame.Core.Engine;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
@@ -17,9 +18,6 @@ namespace DrillGame.UI
         #region Fields & Properties
         [SerializeField]
         private Transform uiParentTransform;    
-        
-        [SerializeField]
-        private Transform floatingBarUIParentTransform;
 
         [SerializeField] 
         private GameObject devGrid;
@@ -57,13 +55,13 @@ namespace DrillGame.UI
 
         public void ShowUI(string uiName)
         {
-            if(loadedUIs.ContainsKey(uiName))
+            if(loadedUIs.ContainsKey(uiName)) // dictionay에 Key가 있는가?
             {
                 GameObject uiInstance = loadedUIs[uiName];
-                if(uiInstance != null)
+                if(uiInstance != null) // 인스턴스가 null은 아닌가?
                 {
                     uiInstance.SetActive(true);
-                    Debug.Log($"UI 활성화: {uiName}");
+                    // Debug.Log($"UI 활성화: {uiName}");
                 }
                 else
                 {
@@ -74,7 +72,6 @@ namespace DrillGame.UI
             }
             else
             {
-                // Debug.LogWarning($"UI {uiName} 는 로드된 상태가 아닙니다. 로드 시도합니다.");
                 LoadUI(uiName);
             }
         }
@@ -87,7 +84,7 @@ namespace DrillGame.UI
                 if (uiInstance != null)
                 {
                     uiInstance.SetActive(false);
-                    Debug.Log($"UI 비활성화: {uiName}");
+                    // Debug.Log($"UI 비활성화: {uiName}");
                 }
                 else
                 {
@@ -102,16 +99,13 @@ namespace DrillGame.UI
             }
         }
 
-        public void LoadUI(string uiName)
+        public void LoadUI(string uiName, Action<GameObject> onInstanceCreated = null)
         {
-            // Implement UI loading logic here
             // Debug.Log($"UI 로드 시도: {uiName}");
 
             if(loadUIHandles.ContainsKey(uiName))
             {
-                Debug.LogWarning($"UI {uiName} 는 이미 로드된 상태입니다");
-
-                // 후처리가 필요시
+                // load 요청이 이미 진행중이면, return.
                 return;
             }
 
@@ -124,30 +118,20 @@ namespace DrillGame.UI
                 {
                     // Debug.Log($"UI 로드 성공: {uiName}");
                     GameObject uiPrefab = handle.Result;
-                    if (uiName == "UI_FloatingBar") {
-                        GameObject uiInstance = Instantiate(uiPrefab, floatingBarUIParentTransform);
-                        
-                        UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
-                        addressableComponent?.LinkAddressable(uiName);
-
-                        loadedUIs.Add(uiName, uiInstance);
-                    }
-                    else { // 하씨 이게 맞나
-                        GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
-
-                        UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
-                        addressableComponent?.LinkAddressable(uiName);
-
-                        loadedUIs.Add(uiName, uiInstance);
-                    }
                     
+                    GameObject uiInstance = Instantiate(uiPrefab, uiParentTransform);
+                    
+                    onInstanceCreated?.Invoke(uiInstance); // 콜백 호출 (있다면)
 
+                    UI_IAddressable addressableComponent = uiInstance.GetComponent<UI_IAddressable>();
+                    addressableComponent?.LinkAddressable(uiName);
+
+                    loadedUIs.Add(uiName, uiInstance);
                 }
                 else
                 {
                     Debug.LogError($"UI 로드 실패: {uiName}");
                     loadUIHandles.Remove(uiName);
-
                     Addressables.Release(handle);   //gemini 선생님 왈로는 로드 실패해도 메모리 해제 안전하게 하래요
                 }
             };
@@ -189,7 +173,35 @@ namespace DrillGame.UI
         
         public void ShowUI_EngineDetail(EngineEntity engine)
         {
+            const string uiName = "UI_EngineDetailPopup";
+            
+            // 1. 이미 로드되어 있는 경우 (기존 ShowUI 로직 재활용)
+            if (loadedUIs.TryGetValue(uiName, out var uiInstance) && uiInstance != null)
+            {
+                uiInstance.SetActive(true);
 
+                // 데이터 전달 (동기적)
+                if (uiInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                {
+                    detailUI.SetEngineEntity(engine);
+                }
+                return;
+            }
+
+            // 2. 로드 요청이 필요한 경우 -> 함수를 LoadUI의 인자로 전달
+            void DataInitializer(GameObject newInstance)
+            {
+                if (newInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                {
+                    detailUI.SetEngineEntity(engine);
+                    newInstance.SetActive(true); // 로드 후 바로 활성화
+                }
+                else
+                {
+                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 EngineDetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
+                }
+            }
+            LoadUI(uiName, DataInitializer);
         }
 
         public void ToggleDevGrid() { //TODO : F1 누르면 Dev Grid 활성화 토글

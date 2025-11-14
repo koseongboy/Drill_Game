@@ -13,16 +13,17 @@ namespace DrillGame.Core.Engine
     public class EngineEntity : IEntityHandler
     {
         #region Fields & Properties
-
+        
+        [SerializeField]
+        private string engineId; // UI 표시용 Data Id값
+        
         private bool isRunning = true; // ������ �̵���ų�� false�� ����
         private List<int> scheduleList = new List<int>(); // ���� ƽ ���� �����ϴ� ����Ʈ
 
         private Vector2Int position; // ������ ��ġ (����)
         private List<Vector2Int> formations = new List<Vector2Int>(); // ������ ���� (���� ���� ��� ��ǥ ����Ʈ) , 0,0 �ʼ�  
-
-
+        
         public event Action OnEngineActivated;
-
         public event Action OnEngineDeleted;
 
         #endregion
@@ -30,7 +31,7 @@ namespace DrillGame.Core.Engine
         #region Singleton & initialization
         public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
         {
-            this.position = startPosition;
+            position = startPosition;
             if (formations == null)
             {
                 this.formations.Add(new Vector2Int(0, 0));
@@ -46,6 +47,18 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region getters & setters
+
+        public void SetEngineId(string Id)
+        {
+            engineId = Id;
+        }
+
+        public string GetEngineId()
+        {
+            return engineId;
+        }
+        
+        
         public List<Vector2Int> GetFormationPositions()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();

@@ -62,11 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -104.68262
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 412.7145
+      value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: UI_CoreDetailPopup_MainCanvas Variant
+      value: UI_CoreDetailPopup
       objectReference: {fileID: 0}
     - target: {fileID: 5722408328187180786, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
