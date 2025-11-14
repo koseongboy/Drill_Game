@@ -6864,6 +6864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowController
   isExpanded: 1
+  mainCanvas: {fileID: 706274366}
   ExpandedWidthPercent: 0.2
   ExpandedHeightPercent: 1
   CollapsedWidthPercent: 0.2

@@ -126,11 +126,6 @@ namespace DrillGame
                 yield return new WaitForSeconds(1f); // 1초 대기
             }
         }
-        
-        public void UpdateTest() {
-            Debug.Log("Updated UI 테스트 호출");
-            UpdateUITxt();
-        }
 
         public void LinkAddressable(string address)
         {
@@ -156,16 +151,6 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        
-        private void UpdateUITxt() {
-            lvlText.text = "77"; //TODO
-            depthTxt.text = "777"; //TODO
-            researchTxt.text = "77%"; //TODO
-            inputCountTxt.text = "77777777"; //TODO
-            tickCountTxt.text = "7777777"; //TODO
-        }
-
-
         #endregion
 
         #region Unity event methods
