@@ -31,12 +31,55 @@ namespace DrillGame.Managers
         #endregion
 
         #region Singleton & initialization
+        public static GameManager Instance { get; private set; }
+        private void Start()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Debug.LogWarning("GameManager Instance already exists, destroying duplicate!");
+                Destroy(gameObject);
+            }
+        }
+
         #endregion
 
         #region getters & setters
         #endregion
 
         #region public methods
+        public void SetBatchEntity(int idValue)
+        {
+            this.idValue = idValue;
+
+            // test
+            // todo 알맞은 value 처리 필요
+            if (idValue == 1)
+            {
+                this.tilemapType = TilemapType.Engine;
+                Debug.Log("배치 모드 엔티티 선택: 엔진");
+            }
+            else if (idValue == 2)
+            {
+                this.tilemapType = TilemapType.Facility;
+                Debug.Log("배치 모드 엔티티 선택: 시설");
+            }
+        }
+
+        public void StartBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            if (idValue == -1)
+            {
+                Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
+                return;
+            }
+
+            gridManager.EnterBatchMode(tilemapType, idValue);
+        }
         #endregion
 
         #region private methods
@@ -107,17 +150,7 @@ namespace DrillGame.Managers
                 gridManager.TryDeleteBatch();
         }
 
-        private void StartBatch()
-        {
-            batchMode = BatchMode.PlaceBatch;
-            if (idValue == -1)
-            {
-                Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
-                return;
-            }
-            
-            gridManager.EnterBatchMode(tilemapType, idValue);
-        }
+        
         private void EditBatch()
         {
             gridManager.TryEditBatch();
@@ -129,23 +162,7 @@ namespace DrillGame.Managers
             gridManager.ExitBatchMode();
         }
 
-        private void SetBatchEntity(int idValue)
-        {
-            this.idValue = idValue;
-
-            // test
-            // todo 알맞은 value 처리 필요
-            if(idValue == 1)
-            {
-                this.tilemapType = TilemapType.Engine;
-                Debug.Log("배치 모드 엔티티 선택: 엔진");
-            }
-            else if(idValue == 2)
-            {
-                this.tilemapType = TilemapType.Facility;
-                Debug.Log("배치 모드 엔티티 선택: 시설");
-            }
-        }
+        
 
         #endregion
     }
