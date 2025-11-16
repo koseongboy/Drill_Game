@@ -1,7 +1,7 @@
-using UnityEngine;
-
-using DrillGame.View.Facility;
 using DrillGame.Core.Facility;
+using DrillGame.UI;
+using DrillGame.View.Facility;
+using UnityEngine;
 
 namespace DrillGame.Core.Presenter
 {
@@ -38,7 +38,8 @@ namespace DrillGame.Core.Presenter
         }
         public void RequestFacilityDetail()
         {
-            facilityEntity.ShowFacilityInfo();
+            UILoader.Instance.ShowUI_FacilityDetail(facilityEntity);
+
         }
         #endregion
 

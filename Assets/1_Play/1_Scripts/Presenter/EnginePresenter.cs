@@ -1,7 +1,8 @@
-using UnityEngine;
-
-using DrillGame.View.Engine;
 using DrillGame.Core.Engine;
+using DrillGame.Core.Facility;
+using DrillGame.UI;
+using DrillGame.View.Engine;
+using UnityEngine;
 
 
 namespace DrillGame.Core.Presenter
@@ -36,7 +37,7 @@ namespace DrillGame.Core.Presenter
         }
         public void RequestEngineDetail()
         {
-            engineEntity.ShowEngineInfo();
+            UILoader.Instance.ShowUI_EngineDetail(engineEntity);
         }
         #endregion
 

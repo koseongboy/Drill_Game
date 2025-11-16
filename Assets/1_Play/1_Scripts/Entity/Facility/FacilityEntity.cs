@@ -64,14 +64,7 @@ namespace DrillGame.Core.Facility
             // 이벤트 호출 (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);
         }
-        public void ShowFacilityInfo()
-        {
-            // 임시로 삭제 구현
-            DeleteEntity();
-
-
-            Debug.LogError("시설 UI를 띄워주세요!");
-        }
+        
 
         public void DeleteEntity()
         {

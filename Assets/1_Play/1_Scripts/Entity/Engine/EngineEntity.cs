@@ -13,7 +13,8 @@ namespace DrillGame.Core.Engine
     public class EngineEntity : IEntityHandler
     {
         #region Fields & Properties
-        
+
+        [ReadOnly]
         [SerializeField]
         private string engineId; // UI 표시용 Data Id값
         
@@ -100,13 +101,7 @@ namespace DrillGame.Core.Engine
             scheduleList.Add(distance);
         }
 
-        public void ShowEngineInfo()
-        {
-            // 임시로 삭제 구현
-            // DeleteEntity();
-
-            UILoader.Instance.ShowUI_EngineDetail(this);
-        }
+        
 
         #endregion
 

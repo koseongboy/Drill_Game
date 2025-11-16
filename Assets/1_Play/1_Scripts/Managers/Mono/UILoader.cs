@@ -1,13 +1,14 @@
+using DrillGame.Core.Engine;
+using DrillGame.Core.Facility;
+using DrillGame.UI .Interface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DrillGame.Core.Engine;
+using System.Xml.Linq;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-
-using DrillGame.UI .Interface;
 
 
 
@@ -166,11 +167,12 @@ namespace DrillGame.UI
             Debug.Log($"UI 언로드 완료: {uiName}");
         }
 
-        public void ShowUI_FacilityDetail()
+        public void ShowUI_FacilityDetail(FacilityEntity facility)
         {
             ShowUI("FacilityDetail");
         }
-        
+       
+
         public void ShowUI_EngineDetail(EngineEntity engine)
         {
             const string uiName = "UI_EngineDetailPopup";
