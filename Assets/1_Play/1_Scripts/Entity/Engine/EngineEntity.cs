@@ -74,15 +74,29 @@ namespace DrillGame.Core.Engine
         #region public methods
         public void DeleteEntity()
         {
-            // presentor���� �˸�
+            // presentor 호출
             OnEngineDeleted?.Invoke();
-            // BoardManager���� �ڽ��� ����
+            // BoardManager 에서 제거
             BoardManager.Instance.RemoveEngine(this);
             
+            // TODO : 인벤토리에 아이템 추가
         }
+
+        public void MoveEntity()
+        {
+            // delete 코드 사용후 다시 집어드는 판정입니다.
+            OnEngineDeleted?.Invoke();
+            BoardManager.Instance.RemoveEngine(this);
+            
+            // Todo : 적합한 id 필요
+            GameManager.Instance.SetBatchEntity(1);
+
+            GameManager.Instance.StartBatch();
+        }
+
         public void Tick()
         {
-            if (!isRunning) return;  // ������ �����ִٸ� ƽ�� �������� ����
+            if (!isRunning) return;  // 실행 중이 아니라면 무시
 
             ScheduleTick();
         }
