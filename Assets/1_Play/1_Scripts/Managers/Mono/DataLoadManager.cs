@@ -58,7 +58,6 @@ namespace DrillGame.Managers
             await Task.WhenAll(currentGroundHandle.Task, nextGroundHandle.Task);
             CurrentGroundSprite = currentGroundHandle.Result;
             NextGroundSprite = nextGroundHandle.Result;
-  
 
             return CurrentGroundSprite != null && NextGroundSprite != null;
         }

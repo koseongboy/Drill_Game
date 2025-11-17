@@ -6,24 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/ItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ItemDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ItemDataManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Copper_Material.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Copper_Material.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Copper_Resource.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Copper_Resource.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Gold_Material.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Gold_Material.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Gold_Resource.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Gold_Resource.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Iron_Material.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Iron_Material.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Iron_Resource.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Iron_Resource.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Rock_Material.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Rock_Material.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Rock_Resource.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/Rock_Resource.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Facility_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Facility_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Research_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Research_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/~$Engine_Data.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/~$Engine_Data.xlsx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/DataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/CSVManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/DataManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/CSVManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/ItemData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Data/ItemData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/DataLoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/DataLoadManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/GreenEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/GreenEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/GreenEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/GreenEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/ItemData/EngineItem/RedEngine_3.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Crocobob",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -138,7 +141,7 @@
       <workItem from="1763026544244" duration="2312000" />
       <workItem from="1763029256748" duration="2330000" />
       <workItem from="1763111298583" duration="8082000" />
-      <workItem from="1763353033794" duration="2477000" />
+      <workItem from="1763353033794" duration="6812000" />
     </task>
     <servers />
   </component>

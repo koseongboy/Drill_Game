@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ce889ec759b70429d2033002dc51e2, type: 3}
   m_Name: RedEngine_3
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ItemData
-  itemId: 1101
-  displayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.1"
+  itemId: 1113
+  displayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.3"
   itemType: Engine
-  engineId: 201001
+  engineId: 202003
   itemIcon: {fileID: 0}

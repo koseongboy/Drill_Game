@@ -1,9 +1,9 @@
-Id|DisplayName|ResearchAmount|InputItemPerTickId|InputItemPerTickCount|RequireResearchId
-30001|구리 테크|750|1002|2|
-30002|구리 생산량 증가|3000|1004|2|30001
-30003|구리 효율 증가|3000|1004|2|30001
-30004|구리 드릴|3000|1004|2|30001
-30005|철 테크|4500|1004|2|30001
-30006|철 생산량 증가|3000|1006|2|30002
-30007|철 효율 증가|3000|1006|2|30002
-30008|철 드릴|3000|1006|2|30002
+﻿Id	Name	DisplayName	ResearchAmount	InputItemPerTickId	InputItemPerTickCount	RequireResearchId
+30001	Copper_Tech	구리 테크	750	1002	2	
+30002	Copper_UpProduce	구리 생산량 증가	3000	1004	2	30001
+30003	Copper_Discount	구리 효율 증가	3000	1004	2	30001
+30004	Copper_Drill	구리 드릴	3000	1004	2	30001
+30005	Iron_Tech	철 테크	4500	1004	2	30001
+30006	Iron_UpProduce	철 생산량 증가	3000	1006	2	30002
+30007	Iron_Discount	철 효율 증가	3000	1006	2	30002
+30008	Iron_Drill	철 드릴	3000	1006	2	30002

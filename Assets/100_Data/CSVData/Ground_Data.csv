@@ -1,5 +1,5 @@
-Start Depth|End Depth|HP|Drop Items|Sprite Addressable
-0|5|5|stone|Light_Brown[Light_Brown]
-6|10|5|stone;iron|Deep_Brown[Deep_Brown]
-11|15|5|stone;iron;gold|Lava_Earth[Lava_Earth]
-16|-1|5|diamond|Light_Brown[Light_Brown]
+﻿Id	Name	StartDepth	EndDepth	HP	DropItems	SpriteAddressable
+5001	Ground_1	0	5	5	stone	Light_Brown[Light_Brown]
+5002	Ground_2	6	10	5	stone;iron	Deep_Brown[Deep_Brown]
+5003	Ground_3	11	15	5	stone;iron;gold	Lava_Earth[Lava_Earth]
+5004	Ground_4	16	-1	5	diamond	Light_Brown[Light_Brown]
