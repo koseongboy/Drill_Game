@@ -23,4 +23,5 @@ MonoBehaviour:
   InputItemCount: 
   OutputItemId: 1003
   OutputItemCount: 1
-  Coordinate: 0
+  Coordinate:
+  - 0,0

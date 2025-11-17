@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Facility_Data_", menuName = "GameData/Facility_Data_")]
@@ -14,5 +15,5 @@ public class Facility_Data_ : ScriptableObject
     public string InputItemCount;
     public int OutputItemId;
     public int OutputItemCount;
-    public float Coordinate;
+    public List<string> Coordinate;
 }

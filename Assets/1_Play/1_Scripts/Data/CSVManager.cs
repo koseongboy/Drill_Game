@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -199,9 +200,37 @@ namespace DrillGame.Managers
                     {
                         try
                         {
-                            // CSV 값을 필드의 실제 타입에 맞게 변환하여 할당합니다.
-                            object convertedValue = Convert.ChangeType(values[j], field.FieldType);
-                            field.SetValue(soInstance, convertedValue);
+                            string csvValue = values[j];
+
+                            // 💡 1. 필드 타입이 List<string>인지 확인
+                            if (field.FieldType == typeof(List<string>))
+                            {
+                                // 리스트 구분자(세미콜론)로 값을 분리
+                                // 빈 문자열이거나 값이 없으면 빈 리스트를 할당
+                                if (string.IsNullOrWhiteSpace(csvValue))
+                                {
+                                    field.SetValue(soInstance, new List<string>());
+                                }
+                                else
+                                {
+                                    // 세미콜론(;)을 기준으로 분리하고, 각 항목의 앞뒤 공백을 제거하여 리스트로 만듦
+                                    List<string> listValues = csvValue
+                                        .Split(';')
+                                        .Select(s => s.Trim())
+                                        // 빈 문자열이 생기는 경우를 제거 (예: "item1;;item3")
+                                        .Where(s => !string.IsNullOrEmpty(s))
+                                        .ToList(); 
+                    
+                                    field.SetValue(soInstance, listValues);
+                                }
+                            }
+                            // 💡 2. List<string>이 아니라면, 기존의 단일 값 변환 로직을 사용
+                            else
+                            {
+                                // CSV 값을 필드의 실제 타입에 맞게 변환하여 할당합니다.
+                                object convertedValue = Convert.ChangeType(csvValue, field.FieldType);
+                                field.SetValue(soInstance, convertedValue);
+                            }
                         }
                         catch (Exception e)
                         {

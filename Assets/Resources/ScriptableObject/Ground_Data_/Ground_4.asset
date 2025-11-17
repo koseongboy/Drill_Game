@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13834b6ab6125df479860b0588c5ff47, type: 3}
   m_Name: Ground_4
   m_EditorClassIdentifier: Assembly-CSharp::Ground_Data_
-  Id: 0
-  Name: 
-  StartDepth: 0
-  EndDepth: 0
-  HP: 0
-  DropItems: 
-  SpriteAddressable: 
+  Id: 5004
+  Name: Ground_4
+  StartDepth: 16
+  EndDepth: -1
+  HP: 5
+  DropItems:
+  - diamond
+  SpriteAddressable: 'Light_Brown[Light_Brown]'
