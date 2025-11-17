@@ -13,10 +13,16 @@ namespace DrillGame
     
         [Tooltip("게임 내에서 표시될 이름")]
         public string displayName;     
+        
+        [Tooltip("아이템의 종류 { Resource, Engine, Facility }")]
+        public string itemType;  
+        
+        [Tooltip("해당 아이템의 Engine 정보 Id값")]
+        public string engineId;  
 
         [Header("Visuals")]
         [Tooltip("UI 인벤토리에 사용될 아이콘")]
-        public Sprite itemIcon;             
+        public Sprite itemIcon;         
 
         // 가공 단계 정의 등 추가 속성
         // public int processingTier;

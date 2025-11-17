@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39ce889ec759b70429d2033002dc51e2, type: 3}
-  m_Name: Rock_Material
+  m_Name: Copper_Resource
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResourceData
-  resourceID: 1001
-  displayName: "\uB3CC \uAD11\uBB3C"
+  itemId: 1004
+  displayName: "\uAD6C\uB9AC \uC790\uC7AC"
+  itemType: Resource
+  engineId: 
   itemIcon: {fileID: 0}

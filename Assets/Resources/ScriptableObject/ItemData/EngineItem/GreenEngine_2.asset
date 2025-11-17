@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39ce889ec759b70429d2033002dc51e2, type: 3}
-  m_Name: Copper_Material
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResourceData
-  resourceID: 1003
-  displayName: "\uAD6C\uB9AC \uAD11\uBB3C"
+  m_Name: GreenEngine_2
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ItemData
+  itemId: 1101
+  displayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.1"
+  itemType: Engine
+  engineId: 201001
   itemIcon: {fileID: 0}
