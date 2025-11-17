@@ -17,5 +17,7 @@ MonoBehaviour:
   DisplayName: 
   Type: special
   Level: 2
-  Coordinates: 0
+  Coordinates:
+  - 1,0
+  - 1,1
   Desc: 

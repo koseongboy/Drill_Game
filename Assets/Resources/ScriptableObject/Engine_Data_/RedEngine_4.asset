@@ -17,5 +17,9 @@ MonoBehaviour:
   DisplayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.4"
   Type: normal
   Level: 4
-  Coordinates: 12
+  Coordinates:
+  - 0,0
+  - 0,1
+  - 0,2
+  - 1,2
   Desc: "\uC5D4\uC9C4 \uC704\uCE58\uC758 \uC0C1\uBD80 \uC2DC\uC124\uC744 \uC791\uB3D9\uC2DC\uD0B5\uB2C8\uB2E4."
