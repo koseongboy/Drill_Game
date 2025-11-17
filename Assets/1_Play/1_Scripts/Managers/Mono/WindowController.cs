@@ -126,11 +126,11 @@ namespace DrillGame.WindowControl
             int screenHeight = Screen.currentResolution.height;
 
             float widthPercent = expand ? ExpandedWidthPercent : CollapsedWidthPercent;
-            float heightPercent = expand ? ExpandedHeightPercent : CollapsedHeightPercent;
+            float heightPercent = expand ? ExpandedHeightPercent : CollapsedHeight;
 
             int newWidth = (int)(screenWidth * widthPercent);
             // 확장 시 상하단 45픽셀씩 여유를 두거나 60px 크기로 설정
-            int newHeight = expand ? (int)(screenHeight * heightPercent) - 90 : 60; 
+            int newHeight = expand ? (int)(screenHeight * heightPercent) - 90 : CollapsedHeight; 
 
             // X 계산: (화면 오른쪽 끝) - (새로운 창 너비)
             int newX = screenWidth - newWidth;
@@ -149,7 +149,7 @@ namespace DrillGame.WindowControl
             windowHandle = FindWindow(null, WindowTitle);
             if (windowHandle == IntPtr.Zero)
             {
-                Debug.LogError("Window handle not found. Is 'Product Name' correct in Build Settings?");
+                Debug.LogError("창 이름 변수 수정할 것. 유니티 에디터일 경우 무시해도 됨.");
                 return;
             }
 
@@ -200,8 +200,8 @@ namespace DrillGame.WindowControl
 
         [Range(0.01f, 1.0f)]
         public float CollapsedWidthPercent = 0.2f;
-        [Range(0.01f, 1.0f)]
-        public float CollapsedHeightPercent = 0.1f;
+        [Range(10, 100)]
+        public int CollapsedHeight = 90;
         
         // 💡 메인 스레드로 데이터를 전달하기 위한 큐 (모든 플랫폼에서 사용)
         private static Queue<int> keyEventQueue = new Queue<int>();
