@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: CSVData
   m_GUID: beb9b2787a4693348aa77132c596c65b
   m_SerializeEntries:
+  - m_GUID: 114a29273f8f89e47912b7503446ff81
+    m_Address: Research_Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9dc37fc0aa9973f4f862a97e95e32d8a
     m_Address: Engine_Data
     m_ReadOnly: 0
@@ -27,6 +32,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5bb981f04b4d634d95f762c2bf10cb5
     m_Address: Facility_Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbbfb2bc7659d024486110acb74e938a
+    m_Address: Item_Data
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

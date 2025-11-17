@@ -29,6 +29,27 @@ namespace DrillGame.Data
             return data;
         }
         
+        public string Get(string id, string columnName)
+        {
+            if (Table.TryGetValue(id, out var rowData))
+            {
+                if (rowData.TryGetValue(columnName, out var value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Debug.LogError($"Column '{columnName}' not found for ID '{id}'.");
+                    return null;
+                }
+            }
+            else
+            {
+                Debug.LogError($"ID '{id}' not found in the data.");
+                return null;
+            }
+        }
+        
         #endregion
 
         #region public methods
@@ -44,7 +65,7 @@ namespace DrillGame.Data
             }
             else
             {
-                Debug.LogError("Failed to load Engine_Data CSV.");
+                Debug.LogError($"Failed to load {addressableName} CSV.");
             }
             return parser;
         }
