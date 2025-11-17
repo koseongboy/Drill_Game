@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d64f8b519c484b9dd8047dfb763f6, type: 3}
+  m_Name: copper_processor1
+  m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
+  Id: 102021
+  Name: copper_processor1
+  DisplayName: "\uAD6C\uB9AC \uAC00\uACF5 \uC2DC\uC124 Lv.1"
+  Type: Processor
+  Level: 1
+  BuildResourceId: 
+  BuildResourceCount: 
+  InputItemId: 1003
+  InputItemCount: 1
+  OutputItemId: 1004
+  OutputItemCount: 1
+  Coordinates: []

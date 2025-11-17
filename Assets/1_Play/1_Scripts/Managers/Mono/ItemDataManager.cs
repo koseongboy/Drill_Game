@@ -51,7 +51,7 @@ namespace DrillGame
         private void LoadItemDictionary()
         {
             itemDataDict.Clear();
-            ItemData[] allResources = Resources.LoadAll<ItemData>("ScriptableObject/ItemData");
+            ItemData[] allResources = Resources.LoadAll<ItemData>("ScriptableObject/ItemData/Resource");
         
             foreach (var resource in allResources)
             {

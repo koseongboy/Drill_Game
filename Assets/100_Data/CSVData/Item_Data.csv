@@ -1,9 +1,15 @@
-Id|DisplayName|ItemIcon
-1001|돌 광물|
-1002|돌 자재|
-1003|구리 광물|
-1004|구리 자재|
-1005|철 광물|
-1006|철 자재|
-1007|금 광물|
-1008|금 자재|
+﻿Id	Name	DisplayName	ItemType	EngineId	ItemIcon
+1001	Stone_Material	돌 광물	Resource		
+1002	Stone_Resource	돌 자재	Resource		
+1003	Copper_Material	구리 광물	Resource		
+1004	Copper_Resource	구리 자재	Resource		
+1005	Iron_Material	철 광물	Resource		
+1006	Iron_Resource	철 자재	Resource		
+1007	Gold_Material	금 광물	Resource		
+1008	Gold_Resource	금 자재	Resource		
+1101	GreenEngine_1	초록 엔진 Lv.1	Engine	201001	
+1102	GreenEngine_2	초록 엔진 Lv.2	Engine	201002	
+1103	GreenEngine_3	초록 엔진 Lv.3	Engine	201003	
+1104	RedEngine_1	빨강 엔진 Lv.1	Engine	202001	
+1105	RedEngine_2	빨강 엔진 Lv.2	Engine	202002	
+1106	RedEngine_3	빨강 엔진 Lv.3	Engine	202003	

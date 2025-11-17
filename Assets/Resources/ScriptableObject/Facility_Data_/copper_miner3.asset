@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d64f8b519c484b9dd8047dfb763f6, type: 3}
+  m_Name: copper_miner3
+  m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
+  Id: 102013
+  Name: copper_miner3
+  DisplayName: "\uAD6C\uB9AC \uCC44\uAD74 \uC2DC\uC124 Lv.3"
+  Type: Miner
+  Level: 3
+  BuildResourceId: 
+  BuildResourceCount: 
+  InputItemId: 
+  InputItemCount: 
+  OutputItemId: 1003
+  OutputItemCount: 100
+  Coordinates: []
