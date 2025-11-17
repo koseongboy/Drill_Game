@@ -190,7 +190,9 @@ namespace DrillGame.WindowControl
 // 모든 플랫폼에서 컴파일 및 실행됨.
 // ------------------------------------------------------------------------------------------
         public bool isExpanded = true;
-        private const string WindowTitle = "Drill Game"; 
+        private const string WindowTitle = "Drill Game";
+
+        [SerializeField] private Canvas mainCanvas;
 
         [Header("Window Size (Percentage of Screen)")]
         [Range(0.01f, 1.0f)]
@@ -219,19 +221,11 @@ namespace DrillGame.WindowControl
         /// <summary>
         /// 창 위치와 크기를 설정하는 Public 함수
         /// </summary>
-        public void SetWindowPosition(bool expand)
-        {
-            Debug.Log("Window Toggle 호출");
-            isExpanded = expand;
-            SetWindowPositionInternal(expand); // 내부 함수 호출
-        }
-
-        /// <summary>
-        /// 토글 버튼에 연결될 함수
-        /// </summary>
         public void ToggleWindowSize()
         {
-            SetWindowPosition(!isExpanded);
+            isExpanded = !isExpanded;
+            mainCanvas.enabled = isExpanded;
+            SetWindowPositionInternal(isExpanded); // 내부 함수 호출
         }
 
         void Update()
