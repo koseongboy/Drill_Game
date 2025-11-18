@@ -32,17 +32,38 @@ namespace DrillGame.Managers
 
         #region Singleton & initialization
         public static GameManager Instance { get; private set; }
-        private void Start()
+        private void Awake()
         {
             if (Instance == null)
             {
                 Instance = this;
+                GameInitiate();
             }
             else
             {
                 Debug.LogWarning("GameManager Instance already exists, destroying duplicate!");
                 Destroy(gameObject);
+                return;
             }
+
+            control = new InputSystem_Actions();
+            //control.Player.Jump.performed += ctx => CoreTick();
+            control.Player.SlowTick.performed += ctx => SlowTick();
+
+            control.Player.StartBatch.performed += ctx => StartBatch();
+            control.Player.StopBatch.performed += ctx => StopBatch();
+            control.Player.EditBatch.performed += ctx => EditBatch();
+
+            control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
+            control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
+
+            control.Player.Click.performed += ctx => ClickAction();
+        }
+        
+        // 초기 실행시에만 적용될 함수입니다. 현재는 매 실행시에 실행되도록 해뒀습니다.
+        private void GameInitiate()
+        {
+
         }
 
         #endregion
@@ -105,21 +126,6 @@ namespace DrillGame.Managers
             }
 
             
-        }
-        private void Awake()
-        {
-            control = new InputSystem_Actions();
-            //control.Player.Jump.performed += ctx => CoreTick();
-            control.Player.SlowTick.performed += ctx => SlowTick();
-
-            control.Player.StartBatch.performed += ctx => StartBatch();
-            control.Player.StopBatch.performed += ctx => StopBatch();
-            control.Player.EditBatch.performed += ctx => EditBatch();
-
-            control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
-            control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
-
-            control.Player.Click.performed += ctx => ClickAction();
         }
 
 
