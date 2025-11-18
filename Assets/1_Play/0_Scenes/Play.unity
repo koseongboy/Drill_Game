@@ -322,7 +322,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 19038785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1743866595}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameViewManager, Assembly-CSharp
+        m_MethodName: SetViewState
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19038785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5D4\uC9C4\nview\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -719,6 +731,7 @@ Transform:
   - {fileID: 423201415}
   - {fileID: 649645171}
   - {fileID: 562000901}
+  - {fileID: 1743866594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147131776
@@ -911,7 +924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uBAA8\uB450\nview"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -3125,7 +3138,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 415906658}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1743866595}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameViewManager, Assembly-CSharp
+        m_MethodName: SetViewState
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415906658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3276,7 +3301,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.8925085
+  orthographic size: 11.111112
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4486,7 +4511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752506088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1743866595}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameViewManager, Assembly-CSharp
+        m_MethodName: SetViewState
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &752506088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7041,11 +7078,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowController
   isExpanded: 1
-  mainCanvas: {fileID: 706274366}
+  mainCanvas: {fileID: 0}
   ExpandedWidthPercent: 0.2
   ExpandedHeightPercent: 1
   CollapsedWidthPercent: 0.2
-  CollapsedHeight: 30
+  CollapsedHeight: 90
   totalKeyPresses: 0
 --- !u!1 &1372489630
 GameObject:
@@ -10845,6 +10882,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708358570}
   m_CullTransparentMesh: 1
+--- !u!1 &1743866593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743866594}
+  - component: {fileID: 1743866595}
+  m_Layer: 0
+  m_Name: GameViewManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1743866594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743866593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 146924362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1743866595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743866593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d04b8c7a0861d45ab32f3468a4cb3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.GameViewManager
+  engineViewParent: {fileID: 651814050}
+  facilityViewParent: {fileID: 1069995564}
 --- !u!1 &1761447474
 GameObject:
   m_ObjectHideFlags: 0
@@ -22369,7 +22452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC2DC\uC124\nview"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}

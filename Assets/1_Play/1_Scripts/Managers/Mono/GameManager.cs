@@ -63,6 +63,7 @@ namespace DrillGame.Managers
         // 초기 실행시에만 적용될 함수입니다. 현재는 매 실행시에 실행되도록 해뒀습니다.
         private void GameInitiate()
         {
+            GameViewManager.Instance.SetViewState(GameViewManager.ViewState.All);
 
         }
 
