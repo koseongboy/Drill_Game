@@ -33,15 +33,15 @@ namespace DrillGame
 
             LoadData();
         }
-
         #endregion
 
         #region getters & setters
 
-        public Dictionary<int, ICSVData> GetAllData<T>()
-        {
-            return allDatas[typeof(T).Name];
-        }
+        // 쓰으읍 아 얘 쓰지 말아봐요.
+        // public Dictionary<int, ICSVData> GetAllData<T>()
+        // {
+        //     return allDatas[typeof(T).Name];
+        // }
 
         /// <summary>
         /// <param name="id">int입니다! string이 아니어요.</param>
