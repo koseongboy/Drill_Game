@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4ec524dd02b9548a0ed11e72836a61, type: 3}
   m_Name: PurpleEngine_4
   m_EditorClassIdentifier: Assembly-CSharp::Engine_Data_
-  ID: 204004
+  Id: 204004
   EngineId: 204
   DisplayName: "\uBCF4\uB77C \uC5D4\uC9C4 Lv.4"
   Type: normal

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Iron_Material
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1005
+  Name: Iron_Material
   DisplayName: "\uCCA0 \uAD11\uBB3C"
+  ItemType: Resource
+  EngineId: 
   ItemIcon: 

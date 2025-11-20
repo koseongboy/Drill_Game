@@ -1,4 +1,4 @@
-﻿ID	Name	EngineId	DisplayName	Type	Level	Coordinates	Desc
+﻿Id	Name	EngineId	DisplayName	Type	Level	Coordinates	Desc
 201001	GreenEngine_1	201	초록 엔진 Lv.1	normal	1	0,0	엔진 위치의 상부 시설을 작동시킵니다. 
 201002	GreenEngine_2	201	초록 엔진 Lv.2	normal	2	0,0;0,1	엔진 위치의 상부 시설을 작동시킵니다. 
 201003	GreenEngine_3	201	초록 엔진 Lv.3	normal	3	0,0;0,1;0,2	엔진 위치의 상부 시설을 작동시킵니다. 

@@ -11,12 +11,12 @@ namespace DrillGame.Core.Facility
     {
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
         {
-            // ½Ã¼³ °íÀ¯ÀÇ ¾×¼Ç ±¸Çö
+            // ì‹œì„¤ ê³ ìœ ì˜ ì•¡ì…˜ êµ¬í˜„
             for (int i = 0; i < intensity; i++)
             {
                 facilityEntity.Logger("Hello from Facility! Intensity: " + intensity);
             }
-            // ¿¹: ÀÚ¿ø »ı»ê, ¹æ¾î °­È­ µî
+            // ì˜ˆ: ìì› ìƒì‚°, ë°©ì–´ ê°•í™” ë“±
         }
     }
 }

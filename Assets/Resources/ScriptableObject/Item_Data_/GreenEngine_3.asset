@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: GreenEngine_3
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1103
+  Name: GreenEngine_3
   DisplayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.3"
+  ItemType: Engine
+  EngineId: 201003
   ItemIcon: 

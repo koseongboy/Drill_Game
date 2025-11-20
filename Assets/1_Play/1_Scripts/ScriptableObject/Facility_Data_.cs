@@ -1,10 +1,17 @@
 using System;
 using System.Collections.Generic;
+using DrillGame;
+using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Facility_Data_", menuName = "GameData/Facility_Data_")]
-public class Facility_Data_ : ScriptableObject
+public class Facility_Data_ : ScriptableObject, ICSVData
 {
+    public int GetId()
+    {
+        return Id;
+    }
+
     public int Id;
     public string Name;
     public string DisplayName;
@@ -38,4 +45,5 @@ public class Facility_Data_ : ScriptableObject
             Debug.Log(tuple.ToString());
         }
     }
+
 }
