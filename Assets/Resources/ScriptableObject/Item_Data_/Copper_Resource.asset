@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Copper_Resource
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1004
+  Name: Copper_Resource
   DisplayName: "\uAD6C\uB9AC \uC790\uC7AC"
+  ItemType: Resource
+  EngineId: 
   ItemIcon: 

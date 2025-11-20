@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DrillGame.Data;
 using UnityEngine;
 
 namespace DrillGame
@@ -6,7 +7,7 @@ namespace DrillGame
     public class ItemDataManager : MonoBehaviour
     {
         #region Fields & Properties
-        private Dictionary<string, ItemData> itemDataDict = new Dictionary<string, ItemData>();
+        private Dictionary<int, Item_Data_> itemDataDict = new Dictionary<int, Item_Data_>();
         #endregion
     
         #region Singleton & initialization 
@@ -27,9 +28,9 @@ namespace DrillGame
         #endregion
     
         #region getters & setters
-        public ItemData GetItemData(string itemId)
+        public Item_Data_ GetItemData(int itemId)
         {
-            if (itemDataDict.TryGetValue(itemId, out ItemData itemData))
+            if (itemDataDict.TryGetValue(itemId, out Item_Data_ itemData))
             {
                 return itemData;
             }
@@ -39,7 +40,7 @@ namespace DrillGame
         #endregion
     
         #region public methods
-        public void PrintItemData_Test(string id)
+        public void PrintItemData_Test(int id)
         {
             var itemData = GetItemData(id);
             Debug.Log(itemData.ToString());
@@ -51,17 +52,17 @@ namespace DrillGame
         private void LoadItemDictionary()
         {
             itemDataDict.Clear();
-            ItemData[] allResources = Resources.LoadAll<ItemData>("ScriptableObject/ItemData/Resource");
+            Item_Data_[] allResources = Resources.LoadAll<Item_Data_>("ScriptableObject/ItemData/Resource");
         
             foreach (var resource in allResources)
             {
-                if (itemDataDict.ContainsKey(resource.itemId))
+                if (itemDataDict.ContainsKey(resource.Id))
                 {
-                    Debug.LogError($"[ERROR] 자원 ID가 중복되었습니다: {resource.itemId} : {resource.displayName}");
+                    Debug.LogError($"[ERROR] 자원 ID가 중복되었습니다: {resource.Id} : {resource.DisplayName}");
                     continue;
                 }
             
-                itemDataDict.Add(resource.itemId, resource);
+                itemDataDict.Add(resource.Id, resource);
             }
         }
         #endregion

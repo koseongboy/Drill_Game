@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Iron_Resource
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1006
+  Name: Iron_Resource
   DisplayName: "\uCCA0 \uC790\uC7AC"
+  ItemType: Resource
+  EngineId: 
   ItemIcon: 

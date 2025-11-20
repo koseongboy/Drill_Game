@@ -11,8 +11,8 @@ namespace DrillGame.Core.Facility
     public class FacilityEntity
     {
         #region Fields & Properties
-        private Vector2Int position; // ½Ã¼³ÀÇ À§Ä¡ (ÁßÁ¡)
-        private List<Vector2Int> formations = new List<Vector2Int>(); // ½Ã¼³ÀÇ ÇüÅÂ (ÁßÁ¡ ±âÁØ »ó´ë ÁÂÇ¥ ¸®½ºÆ®) , 0,0 ÇÊ¼ö
+        private Vector2Int position; // ì‹œì„¤ì˜ ìœ„ì¹˜ (ì¤‘ì )
+        private List<Vector2Int> formations = new List<Vector2Int>(); // ì‹œì„¤ì˜ í˜•íƒœ (ì¤‘ì  ê¸°ì¤€ ìƒëŒ€ ì¢Œí‘œ ë¦¬ìŠ¤íŠ¸) , 0,0 í•„ìˆ˜
 
         public event Action<int> OnFacilityActivated;
 
@@ -58,24 +58,24 @@ namespace DrillGame.Core.Facility
         {
             Debug.Log("Facility is running. with Intensity : "  + intensity);
 
-            // ½Ã¼³ °íÀ¯ÀÇ ¾×¼Ç ½ÇÇà
+            // ì‹œì„¤ ê³ ìœ ì˜ ì•¡ì…˜ ì‹¤í–‰
             facilityAction?.ActivateFacility(this, intensity);
 
-            // ÀÌº¥Æ® È£Ãâ (presenter -> component)
+            // ì´ë²¤íŠ¸ í˜¸ì¶œ (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);
         }
         
 
         public void DeleteEntity()
         {
-            // presentor¿¡°Ô ¾Ë¸²
+            // presentorì—ê²Œ ì•Œë¦¼
             OnFacilityDeleted?.Invoke();
 
-            // BoardManager¿¡¼­ Á¦°Å
+            // BoardManagerì—ì„œ ì œê±°
             BoardManager.Instance.RemoveFacility(this);
         }
 
-        // ¿©±â¼­ ºÎÅÍ model °ü·Ã ¸Ş¼­µå Ãß°¡ °¡´É
+        // ì—¬ê¸°ì„œ ë¶€í„° model ê´€ë ¨ ë©”ì„œë“œ ì¶”ê°€ ê°€ëŠ¥
         public void Logger(string message)
         {
             Debug.Log(message);

@@ -1,11 +1,18 @@
 using System;
 using System.Collections.Generic;
+using DrillGame;
+using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Engine_Data_", menuName = "GameData/Engine_Data_")]
-public class Engine_Data_ : ScriptableObject
+public class Engine_Data_ : ScriptableObject, ICSVData
 {
-    public int ID;
+    public int GetId()
+    {
+        return Id;
+    }
+    
+    public int Id;
     public int EngineId;
     public string DisplayName;
     public string Type;
@@ -13,7 +20,7 @@ public class Engine_Data_ : ScriptableObject
     public List<string> Coordinates;
     public string Desc;
     
-
+    
     public List<Tuple<int, int>> GetCoordinates()
     {
         List<Tuple<int, int>> coordinates = new List<Tuple<int, int>>();
@@ -34,4 +41,5 @@ public class Engine_Data_ : ScriptableObject
             Debug.Log(tuple.ToString());
         }
     }
+
 }

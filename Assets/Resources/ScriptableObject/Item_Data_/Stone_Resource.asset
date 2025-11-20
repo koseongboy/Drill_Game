@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Stone_Resource
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1002
+  Name: Stone_Resource
   DisplayName: "\uB3CC \uC790\uC7AC"
+  ItemType: Resource
+  EngineId: 
   ItemIcon: 

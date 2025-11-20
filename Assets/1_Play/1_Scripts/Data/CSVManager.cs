@@ -47,7 +47,7 @@ namespace DrillGame.Managers
             {
                 // CSV 파일 이름(확장자 제외)을 가져옵니다. 이 이름을 바탕으로 클래스 및 에셋을 생성합니다.
                 string fileName = Path.GetFileNameWithoutExtension(filePath)+"_";
-                Debug.Log("[CSVManager] CSV FileName : "+fileName);
+                // Debug.Log("[CSVManager] CSV FileName : "+fileName);
 
                 // 1. CSV 파일의 헤더와 첫 번째 데이터 행을 읽습니다.
                 string[] lines = File.ReadAllLines(filePath);
@@ -80,8 +80,7 @@ namespace DrillGame.Managers
         
             // 클래스 폴더가 없으면, 새로 생성
             if (!Directory.Exists(soScriptPath))    Directory.CreateDirectory(soScriptPath);
-
-
+            
             // 이미 클래스 파일이 존재하면, 경고를 띄우고 생성 과정을 건너뜀
             if (!File.Exists(classFilePath)) {
                 Debug.Log($"새로운 클래스 {soClassName}를 생성합니다.");            
@@ -89,8 +88,7 @@ namespace DrillGame.Managers
             else {
                 return;
             }
-
-
+            
             // 데이터 타입 추론
             string[] dataTypes = InferDataTypes(firstDataRow);
 
@@ -202,7 +200,6 @@ namespace DrillGame.Managers
                         {
                             string csvValue = values[j];
 
-                            // 💡 1. 필드 타입이 List<string>인지 확인
                             if (field.FieldType == typeof(List<string>))
                             {
                                 // 리스트 구분자(세미콜론)로 값을 분리
@@ -224,9 +221,13 @@ namespace DrillGame.Managers
                                     field.SetValue(soInstance, listValues);
                                 }
                             }
-                            // 💡 2. List<string>이 아니라면, 기존의 단일 값 변환 로직을 사용
+                            // 2. List<string>이 아니라면, 기존의 단일 값 변환 로직을 사용
                             else
                             {
+                                if (string.IsNullOrEmpty(csvValue)) // 비어있는 컬럼
+                                {
+                                    continue;
+                                }
                                 // CSV 값을 필드의 실제 타입에 맞게 변환하여 할당합니다.
                                 object convertedValue = Convert.ChangeType(csvValue, field.FieldType);
                                 field.SetValue(soInstance, convertedValue);

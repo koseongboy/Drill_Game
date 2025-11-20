@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4ec524dd02b9548a0ed11e72836a61, type: 3}
   m_Name: BlueEngine_1
   m_EditorClassIdentifier: Assembly-CSharp::Engine_Data_
-  ID: 203001
+  Id: 203001
   EngineId: 203
   DisplayName: "\uD30C\uB791 \uC5D4\uC9C4 Lv.1"
   Type: normal

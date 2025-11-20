@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: RedEngine_3
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1106
+  Name: RedEngine_3
   DisplayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.3"
+  ItemType: Engine
+  EngineId: 202003
   ItemIcon: 

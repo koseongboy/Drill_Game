@@ -57,6 +57,9 @@ namespace DrillGame
             }
             AlertObservers();
         }
+        
+        
+        
 
         public float AddResearchObserver(IResearchObserver observer)
         {
