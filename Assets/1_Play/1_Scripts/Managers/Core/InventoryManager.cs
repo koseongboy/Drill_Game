@@ -9,7 +9,7 @@ namespace DrillGame.Core.Managers
     public class InventoryManager
     {
         #region Fields & Properties
-        private List<ItemData> inventoryItems = new List<ItemData>();
+        private List<Item_Data_> inventoryItems = new List<Item_Data_>();
 
         public Action OnInventoryUpdated;
 
@@ -38,34 +38,34 @@ namespace DrillGame.Core.Managers
         #endregion
 
         #region public methods
-        public void AddItem(ItemData item)
+        public void AddItem(Item_Data_ item)
         {
             inventoryItems.Add(item);
-            Debug.Log($"Item added: {item.displayName}");
+            Debug.Log($"Item added: {item.DisplayName}");
             OnInventoryUpdated?.Invoke();
         }
 
-        public void RemoveItem(ItemData item)
+        public void RemoveItem(Item_Data_ item)
         {
             if (inventoryItems.Remove(item))
             {
-                Debug.Log($"Item removed: {item.displayName}");
+                Debug.Log($"Item removed: {item.DisplayName}");
             }
             else
             {
-                Debug.LogWarning($"Item not found in inventory: {item.displayName}");
+                Debug.LogWarning($"Item not found in inventory: {item.DisplayName}");
             }
             OnInventoryUpdated?.Invoke();
         }
 
-        public List<ItemData> GetInventoryItemAll()
+        public List<Item_Data_> GetInventoryItemAll()
         {
-            return new List<ItemData>(inventoryItems);
+            return new List<Item_Data_>(inventoryItems);
         }
 
-        public List<ItemData> GetItemsByType(string itemType)
+        public List<Item_Data_> GetItemsByType(string itemType)
         {
-            return inventoryItems.FindAll(item => item.itemType == itemType);
+            return inventoryItems.FindAll(item => item.ItemType == itemType);
         }
         #endregion
 

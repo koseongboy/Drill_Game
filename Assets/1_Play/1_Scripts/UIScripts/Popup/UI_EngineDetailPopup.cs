@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using DrillGame.Core.Engine;
-using DrillGame.Data;
 using DrillGame.Managers;
 using DrillGame.UI;
 using UnityEngine;
@@ -78,11 +77,11 @@ namespace DrillGame
         private void UpdateDetail(EngineEntity entity)
         {
             // var id = entity.GetEngineId();
-            var id = "201003";  // Test
-            var data = DataLoadManager.Instance.EngineData.GetDataById(id);
+            var id = 201003;  // Test
+            var data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(id);
 
-            titleTxt.text = data["DisplayName"];
-            descTxt.text = data["Desc"];
+            titleTxt.text = data.DisplayName;
+            descTxt.text = data.Desc;
             // TODO : 파일명으로 이미지 불러오는 로직
         }
         
