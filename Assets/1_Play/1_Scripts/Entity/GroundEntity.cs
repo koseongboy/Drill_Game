@@ -11,7 +11,7 @@ namespace DrillGame.Core.Ground
         public int CurrentHp { get; private set; }
         public bool IsDestroyed => CurrentHp <= 0;
 
-        public List<string> DropItems { get; private set; }
+        public List<int> DropItemIds { get; private set; }
         #endregion
 
         #region Singleton & initialization
@@ -19,13 +19,16 @@ namespace DrillGame.Core.Ground
 
         #region getters & setters
         
-        public void SetInformation(int depth, int current_hp, int max_hp, string dropItems)
+        public void SetInformation(int depth, int current_hp, int max_hp, List<string> dropItemIds)
         {
-            
             Depth = depth;
             CurrentHp = current_hp;
             MaxHp = max_hp;
-            // DropItems = dropItems; 수정해야할듯?
+            DropItemIds = new List<int>();
+            foreach (var dropItemId in dropItemIds)
+            {
+                DropItemIds.Add( int.Parse(dropItemId) );
+            }
         }
         #endregion
 

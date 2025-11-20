@@ -17,6 +17,5 @@ MonoBehaviour:
   StartDepth: 0
   EndDepth: 5
   HP: 5
-  DropItems:
-  - stone
+  DropItems: 00000000
   SpriteAddressable: 'Light_Brown[Light_Brown]'

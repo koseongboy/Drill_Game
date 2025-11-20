@@ -17,7 +17,5 @@ MonoBehaviour:
   StartDepth: 6
   EndDepth: 10
   HP: 5
-  DropItems:
-  - stone
-  - iron
+  DropItems: 0000000000000000
   SpriteAddressable: 'Deep_Brown[Deep_Brown]'

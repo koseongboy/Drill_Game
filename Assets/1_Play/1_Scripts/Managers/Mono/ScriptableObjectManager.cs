@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using DrillGame._1_Play._1_Scripts.ScriptableObject;
-using DrillGame.Data;
 using UnityEditor;
 using UnityEngine;
 
@@ -39,20 +38,24 @@ namespace DrillGame
 
         #region getters & setters
 
+        public Dictionary<int, ICSVData> GetAllData<T>()
+        {
+            return allDatas[typeof(T).Name];
+        }
+
         /// <summary>
         /// <param name="id">int입니다! string이 아니어요.</param>
         /// <typeparam name="T">꼬리에 _를 꼭 붙여줘야합니다!!</typeparam>
         /// <returns>id값이 잘못될 경우, null을 return합니다.</returns>
         /// </summary>
-        public ICSVData GetData<T>(int id)
+        public T GetData<T>(int id)
         {
             Type t = typeof(T);
             if (allDatas[t.Name].TryGetValue(id, out var value))
             {
-                return value;
+                return (T)value;
             }
-            Debug.LogError($"No Data with id : {id}, in "+t.Name+". Return NULL.");
-            return null;
+            throw new Exception($"No Data with id : {id}, in "+t.Name);
         }
         #endregion
 
@@ -89,7 +92,6 @@ namespace DrillGame
                         {
                             Debug.LogError($"[Data Error] Type: {dataType.Name}의 ID {data.GetId()}가 중복되었습니다.");
                         }
-                        Debug.Log(currentDB[data.GetId()]);
                     }
                 }
             }

@@ -1,3 +1,4 @@
+using System;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
 using UnityEngine;
@@ -37,7 +38,6 @@ namespace DrillGame.Managers
             if (Instance == null)
             {
                 Instance = this;
-                GameInitiate();
             }
             else
             {
@@ -64,7 +64,6 @@ namespace DrillGame.Managers
         private void GameInitiate()
         {
             GameViewManager.Instance.SetViewState(GameViewManager.ViewState.All);
-
         }
 
         #endregion
@@ -112,6 +111,12 @@ namespace DrillGame.Managers
         #endregion
 
         #region Unity event methods
+
+        private void Start()
+        {
+            GameInitiate();
+        }
+
         private void FixedUpdate()
         {
             if (Counter < 12)   // 주기를 늘려서 너무 빠르게 진행되지 않도록 함
