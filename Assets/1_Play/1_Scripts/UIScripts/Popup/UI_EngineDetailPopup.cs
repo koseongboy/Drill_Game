@@ -43,19 +43,22 @@ namespace DrillGame
         {
             Debug.Log("MoveEngineOnBoard 진입.");
             // 영욱 여기야
-
+            
+            CloseUI();
             engineEntity.MoveEntity();
         }
         
         public void DeleteEngineOnBoard()
         {
             // TODO : 진짜로 철거할 거냐고 물어보기 (Confirm UI)
-            // 굳이 필요할까? 철거의 리스크가 전혀 없는 구조 아닌가? 그리고 이동도 저거 철거 후 인벤에서 다시 꺼내오기랑 같은 구조임 ㅋㅋ
+            // 영욱 : 굳이 필요할까? 철거의 리스크가 전혀 없는 구조 아닌가? 그리고 이동도 저거 철거 후 인벤에서 다시 꺼내오기랑 같은 구조임 ㅋㅋ
+            // 명준 : 잘못 눌러서 지워버리면, 다시 깔기 귀찮잖아.
             Debug.Log("DeleteEngineOnBoard 진입.");
 
             // 영욱 여기야
             // 확인
-
+            
+            CloseUI();
             engineEntity.DeleteEntity();
         }
 
