@@ -1,3 +1,4 @@
+using DrillGame.View.Ground;
 using UnityEngine;
 
 namespace DrillGame.Core.Facility
@@ -11,12 +12,26 @@ namespace DrillGame.Core.Facility
     {
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
         {
-            // ½Ã¼³ °íÀ¯ÀÇ ¾×¼Ç ±¸Çö
+            // ï¿½Ã¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ ï¿½ï¿½ï¿½ï¿½
             for (int i = 0; i < intensity; i++)
             {
                 facilityEntity.Logger("Hello from Facility! Intensity: " + intensity);
             }
-            // ¿¹: ÀÚ¿ø »ý»ê, ¹æ¾î °­È­ µî
+            // ï¿½ï¿½: ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½? ï¿½ï¿½È­ ï¿½ï¿½
         }
     }
+
+    public class DrillFacilityAction : IFacilityAction
+    {
+        GroundComponent GroundComponent;
+        public void SetGroundComponent(GroundComponent groundComponent)
+        {
+            GroundComponent = groundComponent;
+        }
+        public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
+        {
+            GroundComponent.GroundEntity.GiveDamage(intensity);
+        }
+    }
+    
 }
