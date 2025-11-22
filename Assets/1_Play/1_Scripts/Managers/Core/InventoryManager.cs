@@ -1,13 +1,24 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
 namespace DrillGame.Core.Managers
 {
+
+    
     public class InventoryManager
     {
+        public enum ItemType
+        {
+            Resource,
+            Facility,
+            Engine,
+            None
+        }
+        
         #region Fields & Properties
         private List<Item_Data_> inventoryItems = new List<Item_Data_>();
 
@@ -38,11 +49,17 @@ namespace DrillGame.Core.Managers
         #endregion
 
         #region public methods
-        public void AddItem(Item_Data_ item)
+        public void AddItem(Item_Data_ item, int count = 1)
         {
             inventoryItems.Add(item);
             Debug.Log($"Item added: {item.DisplayName}");
             OnInventoryUpdated?.Invoke();
+        }
+
+        public void AddItemById(int itemId, int count = 1)
+        {
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(itemId);
+            AddItem(itemData, count);
         }
 
         public void RemoveItem(Item_Data_ item)
@@ -63,9 +80,9 @@ namespace DrillGame.Core.Managers
             return new List<Item_Data_>(inventoryItems);
         }
 
-        public List<Item_Data_> GetItemsByType(string itemType)
+        public List<Item_Data_> GetItemsByType(ItemType itemType)
         {
-            return inventoryItems.FindAll(item => item.ItemType == itemType);
+            return inventoryItems.FindAll(item => item.GetItemType_Enum() == itemType);
         }
         #endregion
 
@@ -74,9 +91,6 @@ namespace DrillGame.Core.Managers
 
         #region Unity event methods
         #endregion
-
-
-
 
     }
 }

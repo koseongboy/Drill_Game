@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using DrillGame.Core.Managers;
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -206,9 +208,6 @@ namespace DrillGame.UI
             LoadUI(uiName, DataInitializer);
         }
 
-        public void ToggleDevGrid() { //TODO : F1 누르면 Dev Grid 활성화 토글
-            devGrid.SetActive(!devGrid.activeSelf);
-        }
         #endregion
 
         #region private methods
@@ -234,7 +233,7 @@ namespace DrillGame.UI
         }
 
         #endregion
-
+        
 
     }
 }

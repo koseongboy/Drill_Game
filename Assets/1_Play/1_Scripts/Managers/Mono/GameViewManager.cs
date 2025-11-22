@@ -15,6 +15,8 @@ namespace DrillGame.Managers
         public Transform engineViewParent;
         public Transform facilityViewParent;
 
+        private ViewState viewState = ViewState.All;
+
         #endregion
 
         #region Singleton & initialization
@@ -35,6 +37,11 @@ namespace DrillGame.Managers
         #endregion
 
         #region getters & setters
+
+        public ViewState GetViewState()
+        {
+            return viewState;
+        }
         #endregion
 
         #region public methods
@@ -42,6 +49,8 @@ namespace DrillGame.Managers
         {
             // Implement view state change logic here
             Debug.Log($"View state changed to: {state}");
+            
+            viewState = state;
 
             switch (state)
             {
