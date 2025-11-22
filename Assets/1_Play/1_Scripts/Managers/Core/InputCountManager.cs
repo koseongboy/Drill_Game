@@ -3,29 +3,38 @@ using UnityEngine;
 
 namespace DrillGame
 {
-    public class InputCountManager : MonoBehaviour
+    public class InputCountManager
     {
         #region Fields & Properties
-        private int inputCount = 0;
-        private int tickCount = 0;
-        private List<IInputCountObserver> observers = new List<IInputCountObserver>();
+        private static InputCountManager instance;
+        
+        private int inputCount;
+        private int tickCount;
+        private List<IInputCountObserver> observers;
         #endregion
-
+        
         #region Singleton & initialization
-        public static InputCountManager Instance { get; private set; }
-        private void Awake()
+        public static InputCountManager Instance
         {
-            if (Instance != null && Instance != this)
+            get
             {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Instance = this;
+                if (instance == null)
+                {
+                    instance = new InputCountManager();
+                }
+                return instance;
             }
         }
+        private InputCountManager()
+        {
+            inputCount = 0;
+            tickCount = 0;
+            observers = new List<IInputCountObserver>();
+        }
+        
         #endregion
-
+        
+        
         #region getters & setters
 
         public void addInputCount()

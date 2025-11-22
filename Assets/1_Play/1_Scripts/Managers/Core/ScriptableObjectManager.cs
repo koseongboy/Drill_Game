@@ -8,40 +8,46 @@ using UnityEngine;
 
 namespace DrillGame
 {
-    public class ScriptableObjectManager : MonoBehaviour
+    public class ScriptableObjectManager
     {
         #region Fields & Properties
         private readonly string rootPath = "ScriptableObject";
-        private Dictionary<string, Dictionary<int, ICSVData>> allDatas = new Dictionary<string, Dictionary<int, ICSVData>>();
-        
+        private Dictionary<string, Dictionary<int, ICSVData>> allDatas;
         #endregion
 
         #region Singleton & initialization
-
-        public static ScriptableObjectManager Instance { get; private set; }
-
-        private void Awake()
+        private static ScriptableObjectManager instance;
+        public static ScriptableObjectManager Instance
         {
-            if (Instance != null && Instance != this)
+            get
             {
-                Destroy(this.gameObject);
+                if (instance == null)
+                {
+                    instance = new ScriptableObjectManager();
+                }
+                return instance;
             }
-            else
-            {
-                Instance = this;
-            }
-
-            LoadData();
         }
         #endregion
 
+        public ScriptableObjectManager()
+        {
+            allDatas = new Dictionary<string, Dictionary<int, ICSVData>>();
+            LoadData();
+        }
+
         #region getters & setters
 
+        
+        // #####################################
         // 쓰으읍 아 얘 쓰지 말아봐요.
         // public Dictionary<int, ICSVData> GetAllData<T>()
         // {
         //     return allDatas[typeof(T).Name];
         // }
+        // 쓰으읍 아 얘 쓰지 말아봐요.
+        // #####################################
+        
 
         /// <summary>
         /// <param name="id">int입니다! string이 아니어요.</param>
