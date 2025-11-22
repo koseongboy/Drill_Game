@@ -136,7 +136,7 @@ namespace DrillGame.Core.Engine
         }
         private void ActivateEngine()
         {
-            Debug.Log($"Engine at {position} activated!");
+            // Debug.Log($"Engine at {position} activated!");
             // ���⿡ ������ Ȱ��ȭ�� ���� ������ �����մϴ�.
             OnEngineActivated?.Invoke();
             

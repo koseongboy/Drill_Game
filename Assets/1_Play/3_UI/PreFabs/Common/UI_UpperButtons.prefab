@@ -935,6 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_UpperButtons
   addressableName: UI_UpperButtons
+  ui_Inventory: {fileID: 3875601258468412749, guid: 832d0a7c8558d594abecd975b01b8148, type: 3}
   editingHighlight: {fileID: 2095968248036691497}
   viewStateIcon: {fileID: 1032561876934319292}
   viewStateTxt: {fileID: 4307798763425637551}

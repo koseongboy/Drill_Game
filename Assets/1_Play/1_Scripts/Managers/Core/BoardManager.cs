@@ -173,7 +173,7 @@ namespace DrillGame.Core.Managers
             // 그럴려면 이 함수가 public이 되어주거나, public으로 감싼 다른 함수가 있어줘야함.
             
             
-            Debug.Log($"Engine Core Activated : have {engines.Count} engines & {facilities.Count} facilities");
+            // Debug.Log($"Engine Core Activated : have {engines.Count} engines & {facilities.Count} facilities");
             foreach (var engine in engines)
             {
                 engine.ScheduleEngineRun(corePosition);
