@@ -177,6 +177,7 @@ namespace DrillGame.Managers
                 // 에셋의 이름을 두 번째 컬럼의 값으로 설정합니다.
                 string assetName = values[1];
                 string assetPath = $"{assetFolderPath}{assetName}.asset";
+                Debug.Log(assetName);
 
                 // 해당 경로에 이미 SO 에셋이 있는지 확인합니다.
                 ScriptableObject soInstance = AssetDatabase.LoadAssetAtPath(assetPath, soType) as ScriptableObject;
@@ -194,49 +195,38 @@ namespace DrillGame.Managers
                     // 헤더(컬럼 이름)를 통해 해당 필드를 찾습니다.
                     FieldInfo field = soType.GetField(headers[j]);
 
-                    if (field != null)
-                    {
-                        try
-                        {
-                            string csvValue = values[j];
-
-                            if (field.FieldType == typeof(List<string>))
-                            {
-                                // 리스트 구분자(세미콜론)로 값을 분리
-                                // 빈 문자열이거나 값이 없으면 빈 리스트를 할당
-                                if (string.IsNullOrWhiteSpace(csvValue))
-                                {
-                                    field.SetValue(soInstance, new List<string>());
-                                }
-                                else
-                                {
-                                    // 세미콜론(;)을 기준으로 분리하고, 각 항목의 앞뒤 공백을 제거하여 리스트로 만듦
-                                    List<string> listValues = csvValue
-                                        .Split(';')
-                                        .Select(s => s.Trim())
-                                        // 빈 문자열이 생기는 경우를 제거 (예: "item1;;item3")
-                                        .Where(s => !string.IsNullOrEmpty(s))
-                                        .ToList(); 
+                    if (field == null) continue;
                     
-                                    field.SetValue(soInstance, listValues);
-                                }
-                            }
-                            // 2. List<string>이 아니라면, 기존의 단일 값 변환 로직을 사용
-                            else
-                            {
-                                if (string.IsNullOrEmpty(csvValue)) // 비어있는 컬럼
-                                {
-                                    continue;
-                                }
-                                // CSV 값을 필드의 실제 타입에 맞게 변환하여 할당합니다.
-                                object convertedValue = Convert.ChangeType(csvValue, field.FieldType);
-                                field.SetValue(soInstance, convertedValue);
-                            }
-                        }
-                        catch (Exception e)
+                    try
+                    {
+                        string csvValue = values[j];
+
+                        if (field.FieldType == typeof(List<string>))
                         {
-                            Debug.LogError($"데이터 변환 오류 발생! CSV 값: '{values[j]}', 대상 필드: '{field.Name}', 오류: {e.Message}");
+                            // 세미콜론(;)을 기준으로 분리하고, 각 항목의 앞뒤 공백을 제거하여 리스트로 만듦
+                            List<string> listValues = csvValue
+                                .Split(';')
+                                .Select(s => s.Trim())
+                                // 빈 문자열이 생기는 경우를 제거 (예: "item1;;item3")
+                                .Where(s => !string.IsNullOrEmpty(s))
+                                .ToList(); 
+                            field.SetValue(soInstance, listValues);
                         }
+                        // 2. List<string>이 아니라면, 기존의 단일 값 변환 로직을 사용
+                        else
+                        {
+                            if (string.IsNullOrEmpty(csvValue)) // 비어있는 컬럼
+                            {
+                                continue;
+                            }
+                            // CSV 값을 필드의 실제 타입에 맞게 변환하여 할당합니다.
+                            object convertedValue = Convert.ChangeType(csvValue, field.FieldType);
+                            field.SetValue(soInstance, convertedValue);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"데이터 변환 오류 발생! CSV 값: '{values[j]}', 대상 필드: '{field.Name}', 오류: {e.Message}");
                     }
                 }
 
