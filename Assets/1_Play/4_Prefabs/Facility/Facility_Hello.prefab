@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a70aac74e85648bc2796dc9e0c910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
-  debugId: 110001
+  debugId: 111001
   debugPosition: {x: 1, y: 0}
   ActionClassName: HelloFacilityAction
   Name: 

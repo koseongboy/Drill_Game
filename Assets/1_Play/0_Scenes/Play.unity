@@ -2142,6 +2142,7 @@ MonoBehaviour:
   TempFacilityImage: {fileID: 11400000, guid: c8b2b0dcc4ca97f42945938eba0fbfe2, type: 2}
   TempEngine: {fileID: 2116369118879959848, guid: 274fd5f14fc48e144bc959f8f18867d4, type: 3}
   TempFacility: {fileID: 2858953249066847510, guid: e2fc0b25f3f871e4ca2884393dbb5275, type: 3}
+  TempDrill: {fileID: 2858953249066847510, guid: d33b9f6a0ba5dc94e8406996440f9b88, type: 3}
   AreaStart: {x: -4, y: -6}
   AreaSize: {x: 7, y: 12}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
@@ -3229,7 +3230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e4ef97ace448a4789b2153f43f2295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResearchManager
-  selectedResearchId: 
+  selectedResearchId: 0
   progressValue: 1
 --- !u!1 &475047027
 GameObject:
@@ -3297,7 +3298,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.888889
+  orthographic size: 8.876222
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10306,6 +10307,7 @@ MonoBehaviour:
   batchMode: 0
   idValue: -1
   tilemapType: 1
+  dataIndex: 111001
 --- !u!1 &1672351223
 GameObject:
   m_ObjectHideFlags: 0

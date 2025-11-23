@@ -28,7 +28,7 @@ namespace DrillGame.Core.Facility
     {
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
         {
-            Debug.LogError("드릴은 오버로드한 다른 ActivateFacility 메서드를 사용해야 합니다.");
+            Debug.Log("드릴이 작동되었습니다.");
         }
 
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity, GroundComponent groundComponent, int drillDamage)

@@ -21,7 +21,7 @@ namespace DrillGame.View.Facility
         public int debugId = 101011;
         [SerializeField]
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
-        
+
         List<Vector2Int> formation = new();
         public string ActionClassName = "HelloFacilityAction";
         public string Name;
@@ -68,6 +68,7 @@ namespace DrillGame.View.Facility
             // 스트링으로 받은 클래스 네임을 통해 facility action 인스턴스 생성
             string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
             Type type = System.Type.GetType(fullActionClassName);
+            Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {
                 Debug.LogError($"Facility action class '{fullActionClassName}' not found. Using default action.");
