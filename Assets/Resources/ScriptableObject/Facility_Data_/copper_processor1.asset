@@ -17,6 +17,7 @@ MonoBehaviour:
   DisplayName: "\uAD6C\uB9AC \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   Type: Processor
   Level: 1
+  ActionClassName: HelloFacilityAction
   BuildResourceId: 
   BuildResourceCount: 
   InputItemId: 1003

@@ -10,6 +10,7 @@ public class Facility_Data_ : ScriptableObject
     public string DisplayName;
     public string Type;
     public int Level;
+    public string ActionClassName;
     public string BuildResourceId;
     public string BuildResourceCount;
     public string InputItemId;
