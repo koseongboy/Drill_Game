@@ -15,14 +15,26 @@ namespace DrillGame.View.Facility
     public class FacilityComponent : MonoBehaviour, IPointerClickHandler, IDrillGameObjectInit, IDrillGameDefaultGrapic, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields & Properties
-        [SerializeField]
-        private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
-        [SerializeField]
-        List<Vector2Int> formation = new();
-        [SerializeField]
-        public string ActionClassName = "HelloFacilityAction";
+
+        //내부 정보
         [SerializeField]
         public int debugId = 101011;
+        [SerializeField]
+        private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
+        
+        List<Vector2Int> formation = new();
+        public string ActionClassName = "HelloFacilityAction";
+        public string Name;
+        public string DisplayName;
+        public string Type;
+        public int Level;
+        public string BuildResourceId;
+        public string BuildResourceCount;
+        public string InputItemId;
+        public string InputItemCount;
+        public int OutputItemId;
+        public int OutputItemCount;
+        
 
         private FacilityPresenter presenter;
 
@@ -40,9 +52,22 @@ namespace DrillGame.View.Facility
         public void Initialize(Vector2Int startPosition)
         {
             Facility_Data_ data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(debugId);
+            formation = data.GetCoordinates();
+            ActionClassName = data.ActionClassName;
+            Name = data.Name;
+            DisplayName = data.DisplayName;
+            Type = data.Type;
+            Level = data.Level;
+            BuildResourceId = data.BuildResourceId;
+            BuildResourceCount = data.BuildResourceCount;
+            InputItemId = data.InputItemId;
+            InputItemCount = data.InputItemCount;
+            OutputItemId = data.OutputItemId;
+            OutputItemCount = data.OutputItemCount;
+
             // 스트링으로 받은 클래스 네임을 통해 facility action 인스턴스 생성
             string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
-            Type type = Type.GetType(fullActionClassName);
+            Type type = System.Type.GetType(fullActionClassName);
             if (type == null)
             {
                 Debug.LogError($"Facility action class '{fullActionClassName}' not found. Using default action.");

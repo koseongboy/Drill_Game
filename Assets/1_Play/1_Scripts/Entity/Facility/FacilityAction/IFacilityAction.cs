@@ -28,7 +28,7 @@ namespace DrillGame.Core.Facility
     {
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
         {
-            Debug.LogError("µå¸±Àº ¿À¹ö·ÎµåµÈ ´Ù¸¥ ¸Ş¼Òµå¸¦ È£ÃâÇÏ¼¼¿ä.");
+            Debug.LogError("ë“œë¦´ì€ ì˜¤ë²„ë¡œë“œí•œ ë‹¤ë¥¸ ActivateFacility ë©”ì„œë“œë¥¼ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.");
         }
 
         public void ActivateFacility(FacilityEntity facilityEntity, int intensity, GroundComponent groundComponent, int drillDamage)
@@ -36,10 +36,10 @@ namespace DrillGame.Core.Facility
             for (int i = 0; i < intensity; i++)
             {
                 groundComponent.GroundEntity.GiveDamage(drillDamage);
-                Debug.Log("µå¸±ÀÌ ¶¥¿¡ " + drillDamage + " µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù. (³²Àº Ã¼·Â: " + groundComponent.GroundEntity.CurrentHp + ")");
+                Debug.Log("ë•…ì— " + drillDamage + " ë§Œí¼ ë°ë¯¸ì§€ë¥¼ ì¤Œ (ë‚¨ì€ ë•…ì˜ ì²´ë ¥: " + groundComponent.GroundEntity.CurrentHp + ")");
                 if (groundComponent.GroundEntity.IsDestroyed)
                 {
-                    Debug.Log("¶¥ÀÌ ÆÄ±«µÇ¾ú½À´Ï´Ù!");
+                    Debug.Log("ë•…ì´ íŒŒê´´ë¨!");
                 }
             }
         }
