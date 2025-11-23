@@ -25,6 +25,11 @@ namespace DrillGame.Managers
         [SerializeField]
         private TilemapType tilemapType = TilemapType.Engine;
 
+        [ReadOnly]
+        [SerializeField]
+        [Tooltip("csv데이터 찾아오기용 index")]
+        private int dataIndex = 111001;
+
 
 
 
@@ -99,7 +104,7 @@ namespace DrillGame.Managers
                 return;
             }
 
-            gridManager.EnterBatchMode(tilemapType, idValue);
+            gridManager.EnterBatchMode(tilemapType, dataIndex);
         }
         #endregion
 
