@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using DrillGame.Core.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
 using UnityEngine;
@@ -8,7 +9,7 @@ using TMPro;
 
 namespace DrillGame
 {
-    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable, IInputCountObserver, IResearchObserver
+    public class UI_FloatingBar : MonoBehaviour, UI_IAddressable
     {
         #region Fields & Properties
 
@@ -44,17 +45,11 @@ namespace DrillGame
         #endregion
 
         #region Singleton & initialization
-        public static UI_FloatingBar Instance { get; private set; }
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
+            InputCountManager.Instance.OnInputCountChanged += OnInputCountChanged;
+            InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
+            ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressChanged;
         }
         #endregion
         
@@ -66,15 +61,37 @@ namespace DrillGame
         {
             return;
             // 얘는 안 꺼요.
+        }
+        
+        public void LinkAddressable(string address)
+        {
+            // Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
+            addressableName = address;
+        }
+        #endregion
 
-            // Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
-            // UILoader.Instance.HideUI(addressableName);
+        #region private methods
+        #region Observing
+        private void OnInputCountChanged(int count)
+        {
+            inputCountTxt.text = count.ToString();
+        }
+
+        private void OnTickCountChanged(int count)
+        {
+            tickCountTxt.text = count.ToString();
+            PlayCoreActiveEffect();
+        }
+        
+        private void OnResearchProgressChanged(int researchId, float progress)
+        {
+            researchTxt.text = progress.ToString("F1") + "%";
         }
         
         /// <summary>
         /// 코어 작동하면, 우측에 빨간 알림에서 파티클이 퍼벙-
         /// </summary>
-        public void AlertCoreActive()
+        public void PlayCoreActiveEffect()
         {
             if (alertTween != null && alertTween.IsActive())
             {
@@ -102,6 +119,8 @@ namespace DrillGame
                 });
         }
 
+        #endregion
+        
         private void UpdateTime()
         {
             TimeSpan timeSpan = TimeSpan.FromSeconds(totalPlayTime);
@@ -126,44 +145,14 @@ namespace DrillGame
                 yield return new WaitForSeconds(1f); // 1초 대기
             }
         }
-
-        public void LinkAddressable(string address)
-        {
-            // Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
-            addressableName = address;
-        }
-        
-        #region Observing
-        public void OnInputCountChanged(int count)
-        {
-            inputCountTxt.text = count.ToString();
-        }
-
-        public void OnTickCountChanged(int count)
-        {
-            tickCountTxt.text = count.ToString();
-        }
-        public void OnResearchProgressChanged(float progress)
-        {
-            researchTxt.text = progress.ToString("F1") + "%";
-        }
-        #endregion
-        #endregion
-
-        #region private methods
         #endregion
 
         #region Unity event methods
-
+        
         private void Start()
         {
-            InputCountManager.Instance.AddInputCountObserver(this);
-            
             // PlayTime 타이머
             StartCoroutine(UpdatePlayTimeTxt());
-            
-            var researchProgress = ResearchManager.Instance.AddResearchObserver(this);
-            OnResearchProgressChanged(researchProgress);
         }
         #endregion
 
