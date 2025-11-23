@@ -17,6 +17,7 @@ MonoBehaviour:
   DisplayName: "\uC5F0\uAD6C\uC18C Lv.2"
   Type: Laboratory
   Level: 2
+  ActionClassName: HelloFacilityAction
   BuildResourceId: 
   BuildResourceCount: 
   InputItemId: 
