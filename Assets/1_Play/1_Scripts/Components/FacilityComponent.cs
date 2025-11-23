@@ -39,6 +39,7 @@ namespace DrillGame.View.Facility
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition)
         {
+            Facility_Data_ data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(debugId);
             // 스트링으로 받은 클래스 네임을 통해 facility action 인스턴스 생성
             string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
             Type type = Type.GetType(fullActionClassName);
