@@ -17,7 +17,6 @@ namespace DrillGame
         [SerializeField]
         private Transform slotObjectParent;
         
-        private List<GameObject> slotObjects = new List<GameObject>();
         [SerializeField] private List<Item_Data_> showingItems = new List<Item_Data_>();
         
         // Slot Object Pooling
@@ -45,7 +44,7 @@ namespace DrillGame
                 GameViewManager.ViewState.FacilityOnly => InventoryManager.ItemType.Facility,
                 _ => InventoryManager.ItemType.None
             };
-            Debug.Log(itemType);
+            Debug.Log( itemType );
             LoadInventory( itemType );
             UpdateUI();
         }
@@ -71,15 +70,19 @@ namespace DrillGame
         // 보이는 UI를 변경하기만 함.
         private void UpdateUI()
         {
+            Debug.Log("진입");
             foreach (var activeSlotObject in activeSlotObjects)
             {
                 slotPool.Release(activeSlotObject);
             }
-            slotObjects.Clear();
             activeSlotObjects.Clear();
             
             foreach (var itemData in showingItems)
             {
+                if (slotPool == null)
+                {
+                    Debug.Log($"slotPool is null");
+                }
                 var slotObject = slotPool.Get();
                 var count = 1; // TODO
                 
@@ -133,7 +136,7 @@ namespace DrillGame
                 OnReturnToPool, // 3. Release Action
                 OnDestroyPoolObject, // 4. Destroy Action
                 // PoolSize 설정
-                collectionCheck: false, // 풀에서 빼고 넣는 과정의 에러 체크 (프로덕션에서는 false로 성능 개선)
+                collectionCheck: false,
                 defaultPoolSize, 
                 maxPoolSize
             );

@@ -48,7 +48,7 @@ namespace DrillGame.Managers
         public void SetViewState(ViewState state)
         {
             // Implement view state change logic here
-            Debug.Log($"View state changed to: {state}");
+            // Debug.Log($"View state changed to: {state}");
             
             viewState = state;
 

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using DrillGame.Core.Managers;
 using UnityEngine;
 
 namespace DrillGame
@@ -10,7 +12,10 @@ namespace DrillGame
         
         private int inputCount;
         private int tickCount;
-        private List<IInputCountObserver> observers;
+
+        public event Action<int> OnInputCountChanged;
+        public event Action<int> OnTickCountChanged;
+        
         #endregion
         
         #region Singleton & initialization
@@ -29,7 +34,6 @@ namespace DrillGame
         {
             inputCount = 0;
             tickCount = 0;
-            observers = new List<IInputCountObserver>();
         }
         
         #endregion
@@ -40,52 +44,23 @@ namespace DrillGame
         public void addInputCount()
         {
             inputCount++;
-            InputCountChanged();
+            OnInputCountChanged?.Invoke(inputCount);
         }
 
         public void addTickCount()
         {
             tickCount++;
-            TickCountChanged();
+            OnTickCountChanged?.Invoke(tickCount);
         }
         #endregion
 
         #region public methods
-        // InputCount 옵저빙
-        public void AddInputCountObserver(IInputCountObserver observer)
-        {
-            // Debug.Log(observer + " : Observer added.");
-            observers.Add(observer);
-        }
         #endregion
 
         #region private methods
-
-        private void InputCountChanged()
-        {
-            foreach (var observer in observers)
-            {
-                observer.OnInputCountChanged(inputCount);
-            }
-        }
-
-        private void TickCountChanged()
-        {
-            foreach (var observer in observers)
-            {
-                observer.OnTickCountChanged(tickCount);
-            }
-        }
-
         #endregion
 
         #region Unity event methods
         #endregion
-    }
-
-    public interface IInputCountObserver
-    {
-        public void OnInputCountChanged(int count);
-        public void OnTickCountChanged(int count);
     }
 }
