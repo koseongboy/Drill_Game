@@ -18,9 +18,11 @@ namespace DrillGame.View.Facility
         [SerializeField]
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
         [SerializeField]
-        List<Vector2Int> debugFormation = new();
+        List<Vector2Int> formation = new();
         [SerializeField]
-        string debugActionClassName = "HelloFacilityAction";
+        public string ActionClassName = "HelloFacilityAction";
+        [SerializeField]
+        public int debugId = 101011;
 
         private FacilityPresenter presenter;
 
@@ -37,16 +39,17 @@ namespace DrillGame.View.Facility
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition)
         {
-
-            // for Test 후일 팩토리 패턴으로 분리 필요
-            if(debugActionClassName != "HelloFacilityAction")
+            // 스트링으로 받은 클래스 네임을 통해 facility action 인스턴스 생성
+            string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
+            Type type = Type.GetType(fullActionClassName);
+            if (type == null)
             {
-                Debug.LogWarning("현재는 HelloFacilityAction만 지원합니다. 기본값으로 설정합니다.");
-                debugActionClassName = "HelloFacilityAction";
+                Debug.LogError($"Facility action class '{fullActionClassName}' not found. Using default action.");
+                type = typeof(HelloFacilityAction); // 기본 액션으로 대체
             }
+            IFacilityAction facilityAction = Activator.CreateInstance(type) as IFacilityAction;
 
-            IFacilityAction debugFormationAction = new HelloFacilityAction();
-            FacilityEntity facilityEntity = new FacilityEntity(startPosition, debugFormation, debugFormationAction);
+            FacilityEntity facilityEntity = new FacilityEntity(startPosition, formation, facilityAction);
             presenter = new FacilityPresenter(this, facilityEntity);
 
             OnClickFacilityDetail = () => {
@@ -108,12 +111,6 @@ namespace DrillGame.View.Facility
         {
             if (presenter == null)
             {
-                Debug.LogWarning("씬에서 직접 FacilityComponent를 생성했습니다. 테스트용 기본 시설을 생성합니다.");
-                if(debugActionClassName != "HelloFacilityAction")
-                {
-                    Debug.LogWarning("현재는 HelloFacilityAction만 지원합니다. 기본값으로 설정합니다.");
-                    debugActionClassName = "HelloFacilityAction";
-                }
                 Initialize(debugPosition);
             }
         }
