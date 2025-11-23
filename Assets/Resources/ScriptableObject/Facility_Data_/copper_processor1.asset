@@ -24,4 +24,5 @@ MonoBehaviour:
   InputItemCount: 1
   OutputItemId: 1004
   OutputItemCount: 1
-  Coordinates: []
+  Coordinates:
+  - 0,0
