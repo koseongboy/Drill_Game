@@ -17,5 +17,8 @@ MonoBehaviour:
   StartDepth: 11
   EndDepth: 15
   HP: 5
-  DropItems: 000000000000000000000000
+  DropItems:
+  - 1001
+  - 1003
+  - 1005
   SpriteAddressable: 'Lava_Earth[Lava_Earth]'

@@ -806,7 +806,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1351108388}
         m_TargetAssemblyTypeName: DrillGame.UI_FloatingBar, Assembly-CSharp
-        m_MethodName: AlertCoreActive
+        m_MethodName: PlayCoreActiveEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
