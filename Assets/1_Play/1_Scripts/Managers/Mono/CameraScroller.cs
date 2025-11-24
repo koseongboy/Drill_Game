@@ -1,11 +1,10 @@
-﻿using DrillGame._1_Play._1_Scripts.Components;
-using DrillGame.Managers;
+﻿using DrillGame.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace DrillGame._1_Play._1_Scripts.Managers.Mono
 {
-    public class CameraScroller : Monobehavior_Singleton<CameraScroller>
+    public class CameraScroller : MonoBehaviour
     {
         #region Fields & Properties
         [SerializeField]
@@ -25,6 +24,20 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region Singleton & initialization
+        public static CameraScroller Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+                transform.parent = null;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
         #endregion
 
         #region getters & setters

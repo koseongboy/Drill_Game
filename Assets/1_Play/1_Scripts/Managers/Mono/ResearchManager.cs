@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DrillGame._1_Play._1_Scripts.Components;
 using UnityEngine;
 using MiniJSON;
 using UnityEngine.InputSystem;
 
 namespace DrillGame
 {
-    public class ResearchManager : Monobehavior_Singleton<ResearchManager>
+    public class ResearchManager : MonoBehaviour
     {
         [SerializeField]
         private int selectedResearchId = 0;
@@ -22,6 +21,18 @@ namespace DrillGame
         public event Action<int, float> OnResearchProgressChanged;
 
         #region Singleton & initialization
+        public static ResearchManager Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
         #endregion
         
         #region public methods
@@ -65,6 +76,7 @@ namespace DrillGame
             // Debug.Log("연구 진척도를 저장했습니다.");
         }
 
+        [ContextMenu("Initialize Progress Dict")]
         private void InitializeProgressDict()
         {
             var researchDatas = ScriptableObjectManager.Instance.GetAllData<Research_Data_>();
@@ -105,7 +117,6 @@ namespace DrillGame
             LoadResearchKey();
             LoadProgressDict();
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
-            // AlertObservers();
         }
         
         private void OnApplicationQuit()

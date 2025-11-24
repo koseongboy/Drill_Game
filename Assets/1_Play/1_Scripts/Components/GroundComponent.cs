@@ -1,17 +1,14 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using DrillGame._1_Play._1_Scripts.Components;
 using DrillGame.Core.Ground;
-using DrillGame.Core.Facility;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace DrillGame.View.Ground
 {
-    public class GroundComponent : Monobehavior_Singleton<GroundComponent>
+    public class GroundComponent : MonoBehaviour
     {
         #region Fields & Properties
         public GroundEntity GroundEntity { get; private set; }
@@ -54,9 +51,22 @@ namespace DrillGame.View.Ground
 
         #region Singleton & initialization
 
-        protected override void Awake()
+        private static GroundComponent instance;
+        public static GroundComponent Instance
         {
-            base.Awake();
+            get
+            {
+                // 아직 인스턴스가 없다면, 씬에서 찾아 초기화 시도
+                if (instance == null)
+                {
+                    instance = FindAnyObjectByType<GroundComponent>();
+                }
+                return instance;
+            }
+        }
+
+        private void Awake()
+        {
             Init();
         }
 

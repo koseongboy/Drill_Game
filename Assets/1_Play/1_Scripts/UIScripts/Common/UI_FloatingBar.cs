@@ -161,7 +161,8 @@ namespace DrillGame
 
         private void OnDisable()
         {
-            GroundComponent.Instance.OnDepthChanged += OnDepthChanged;
+            // 여기서 NullReferenceException 발생할텐데, 무시해도 됨. (아마도)
+            GroundComponent.Instance.OnDepthChanged -= OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressChanged;
