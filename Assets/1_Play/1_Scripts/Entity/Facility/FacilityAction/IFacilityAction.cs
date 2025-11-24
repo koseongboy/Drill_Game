@@ -31,27 +31,11 @@ namespace DrillGame.Core.Facility
             
             for (int i = 0; i < intensity; i++)
             {
-                GroundComponent.Instance.GroundEntity.GiveDamage(level * 10);
-                Debug.Log("level: " + level);
-                Debug.Log("땅에 " + (intensity * 10) + " 만큼 데미지를 줌 (남은 땅의 체력: " + GroundComponent.Instance.GroundEntity.CurrentHp + ")");
+                GroundComponent.Instance.GiveDamage(level);
+                Debug.Log("땅에 " + level + " 만큼 데미지를 줌 (남은 땅의 체력: " + GroundComponent.Instance.GroundEntity.CurrentHp + ")");
             }
             
             
         }
-
-        public void ActivateFacility(FacilityEntity facilityEntity, int intensity, GroundComponent groundComponent, int drillDamage)
-        {
-            for (int i = 0; i < intensity; i++)
-            {
-                groundComponent.GroundEntity.GiveDamage(drillDamage);
-                Debug.Log("땅에 " + drillDamage + " 만큼 데미지를 줌 (남은 땅의 체력: " + groundComponent.GroundEntity.CurrentHp + ")");
-                if (groundComponent.GroundEntity.IsDestroyed)
-                {
-                    Debug.Log("땅이 파괴됨!");
-                }
-            }
-        }
-
-
     }
 }

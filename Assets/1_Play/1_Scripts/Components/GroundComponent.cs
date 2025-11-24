@@ -78,6 +78,16 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region public methods
+        public void GiveDamage(int damage)
+        {
+            GroundEntity.GiveEntityDamage(damage);
+            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
+            if (GroundEntity.IsDestroyed)
+            {
+                Debug.Log("땅 파괴됨!");
+                setNewData(GroundEntity.Depth + depthIncrement);
+            }
+        }
 
         #endregion
 
@@ -143,16 +153,7 @@ namespace DrillGame.View.Ground
         #endregion
         
         #region DEV
-        public void OnButtonClick()
-        {
-            GroundEntity.GiveDamage(1);
-            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
-            if (GroundEntity.IsDestroyed)
-            {
-                Debug.Log("땅 파괴됨!");
-                setNewData(GroundEntity.Depth + depthIncrement);
-            }
-        }
+        
         #endregion
     }
 }

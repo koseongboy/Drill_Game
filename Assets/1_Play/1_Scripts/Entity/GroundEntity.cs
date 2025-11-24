@@ -33,7 +33,7 @@ namespace DrillGame.Core.Ground
         #endregion
 
         #region public methods
-        public void GiveDamage(int damage)
+        public void GiveEntityDamage(int damage)
         {
             CurrentHp -= damage;
         }
