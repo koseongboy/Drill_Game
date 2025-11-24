@@ -6,7 +6,7 @@ namespace DrillGame.View.Helper
 {
     public interface IDrillGameObjectInit
     {
-        void Initialize(Vector2Int startPosition);
+        void Initialize(Vector2Int startPosition, int itemId, int unitId);
 
     }
 }

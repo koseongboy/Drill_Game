@@ -75,6 +75,12 @@ namespace DrillGame.Core.Managers
             OnInventoryUpdated?.Invoke();
         }
 
+        public void RemoveItemById(int itemId)
+        {
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(itemId);
+            RemoveItem(itemData);
+        }
+
         public List<Item_Data_> GetInventoryItemAll()
         {
             return new List<Item_Data_>(inventoryItems);

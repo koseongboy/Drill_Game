@@ -30,6 +30,7 @@ namespace DrillGame
                 return instance;
             }
         }
+
         private InputCountManager()
         {
             inputCount = 0;

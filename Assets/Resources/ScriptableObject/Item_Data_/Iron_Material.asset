@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Iron_Material
   DisplayName: "\uCCA0 \uAD11\uBB3C"
   ItemType: Resource
-  EngineId: 
+  UnitId: 0
   ItemIcon: stone

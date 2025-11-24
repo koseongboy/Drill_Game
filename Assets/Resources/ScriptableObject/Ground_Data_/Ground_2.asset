@@ -20,4 +20,4 @@ MonoBehaviour:
   DropItems:
   - 1001
   - 1003
-  SpriteAddressable: 'Deep_Brown[Deep_Brown]'
+  SpriteAddressable: Ground1

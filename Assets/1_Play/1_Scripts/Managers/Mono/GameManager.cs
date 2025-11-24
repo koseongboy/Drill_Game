@@ -1,7 +1,9 @@
 using System;
+using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DrillGame.Managers
 {
@@ -17,19 +19,16 @@ namespace DrillGame.Managers
         [SerializeField]
         private BatchMode batchMode = BatchMode.None;
 
-        [ReadOnly]
-        [SerializeField]
-        [Tooltip ("배치 모드에서 선택된 엔티티의 ID 값 -1 : 선택 안됨")]
-        private int idValue = -1;
-
         [SerializeField]
         private TilemapType tilemapType = TilemapType.Engine;
 
+
+        private int placingItemId = 0;
+        [FormerlySerializedAs("dataIndex")]
         [ReadOnly]
         [SerializeField]
         [Tooltip("csv데이터 찾아오기용 index")]
-        private int dataIndex = 111001;
-
+        private int dataId = 111001;
 
 
 
@@ -59,8 +58,8 @@ namespace DrillGame.Managers
             control.Player.StopBatch.performed += ctx => StopBatch();
             control.Player.EditBatch.performed += ctx => EditBatch();
 
-            control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
-            control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
+            // control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
+            // control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
 
             control.Player.Click.performed += ctx => ClickAction();
         }
@@ -77,34 +76,54 @@ namespace DrillGame.Managers
         #endregion
 
         #region public methods
-        public void SetBatchEntity(int idValue)
-        {
-            this.idValue = idValue;
 
-            // test
-            // todo 알맞은 value 처리 필요
-            if (idValue == 1)
+        public void BatchEntity(int itemId)
+        {
+            placingItemId = itemId;
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( itemId );
+            if (!itemData)
             {
-                this.tilemapType = TilemapType.Engine;
+                Debug.LogWarning($"전달된 ItemID 값이 이상합니다. : {itemId}");
+                return;
+            }
+
+            var type = itemData.GetItemType_Enum();
+            if (type != InventoryManager.ItemType.Engine
+                && type != InventoryManager.ItemType.Facility)
+            {
+                Debug.LogWarning("엔진 or 시설이 아닌 Item이 전달되었습니다.");
+                return;
+            }
+            
+            SetBatchEntity( itemData );
+            StartBatch();
+        }
+        
+        public void SetBatchEntity(Item_Data_ itemData)
+        {
+            if (itemData.GetItemType_Enum() == InventoryManager.ItemType.Engine)
+            {
+                tilemapType = TilemapType.Engine;
                 Debug.Log("배치 모드 엔티티 선택: 엔진");
             }
-            else if (idValue == 2)
+            else if(itemData.GetItemType_Enum() == InventoryManager.ItemType.Facility)
             {
-                this.tilemapType = TilemapType.Facility;
+                tilemapType = TilemapType.Facility;
                 Debug.Log("배치 모드 엔티티 선택: 시설");
             }
+            dataId = itemData.UnitId;
         }
 
         public void StartBatch()
         {
             batchMode = BatchMode.PlaceBatch;
-            if (idValue == -1)
+            if (dataId == 0)
             {
                 Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
                 return;
             }
-
-            gridManager.EnterBatchMode(tilemapType, dataIndex);
+            gridManager.AfterUnitPlaced += DeleteItemAfterPlaced;
+            gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
         }
         #endregion
 
@@ -112,6 +131,11 @@ namespace DrillGame.Managers
         private void CoreTick()
         {
             BoardManager.Instance.Tick();
+        }
+
+        private void DeleteItemAfterPlaced()
+        {
+            InventoryManager.Instance.RemoveItemById( placingItemId );
         }
         #endregion
 
@@ -173,14 +197,14 @@ namespace DrillGame.Managers
             gridManager.TryEditBatch();
         }
         private void StopBatch()
-        { 
-            idValue = -1;
+        {
+            Debug.Log("진입");
+            placingItemId = 0;
+            dataId = 0;
             batchMode = BatchMode.None;
+            gridManager.AfterUnitPlaced -= DeleteItemAfterPlaced;
             gridManager.ExitBatchMode();
         }
-
-        
-
         #endregion
     }
 

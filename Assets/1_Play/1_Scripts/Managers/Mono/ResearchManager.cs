@@ -58,7 +58,7 @@ namespace DrillGame
             }
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
         }
-        
+        #endregion
         
         #region private methods
 
@@ -76,6 +76,7 @@ namespace DrillGame
             // Debug.Log("연구 진척도를 저장했습니다.");
         }
 
+        [ContextMenu("Initialize Progress Dict")]
         private void InitializeProgressDict()
         {
             var researchDatas = ScriptableObjectManager.Instance.GetAllData<Research_Data_>();
@@ -116,7 +117,6 @@ namespace DrillGame
             LoadResearchKey();
             LoadProgressDict();
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
-            // AlertObservers();
         }
         
         private void OnApplicationQuit()
@@ -124,7 +124,6 @@ namespace DrillGame
             SaveResearchProgressData();
         }
         #endregion
-
 
         #region DEV
 
@@ -174,8 +173,6 @@ namespace DrillGame
         {
             SelectResearch(30002);
         }
-        #endregion
-        
         #endregion
     }
 }

@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using DrillGame.Core.Ground;
 using DrillGame.Core.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
+using DrillGame.View.Ground;
 using UnityEngine;
 using TMPro;
 
@@ -45,12 +47,6 @@ namespace DrillGame
         #endregion
 
         #region Singleton & initialization
-        private void Awake()
-        {
-            InputCountManager.Instance.OnInputCountChanged += OnInputCountChanged;
-            InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
-            ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressChanged;
-        }
         #endregion
         
         #region getters & setters
@@ -72,6 +68,12 @@ namespace DrillGame
 
         #region private methods
         #region Observing
+
+        private void OnDepthChanged(int depth)
+        {
+            depthTxt.text = depth.ToString();
+        }
+        
         private void OnInputCountChanged(int count)
         {
             inputCountTxt.text = count.ToString();
@@ -148,6 +150,23 @@ namespace DrillGame
         #endregion
 
         #region Unity event methods
+
+        private void OnEnable()
+        {
+            GroundComponent.Instance.OnDepthChanged += OnDepthChanged;
+            InputCountManager.Instance.OnInputCountChanged += OnInputCountChanged;
+            InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
+            ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressChanged; 
+        }
+
+        private void OnDisable()
+        {
+            // 여기서 NullReferenceException 발생할텐데, 무시해도 됨. (아마도)
+            GroundComponent.Instance.OnDepthChanged -= OnDepthChanged;
+            InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
+            InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
+            ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressChanged;
+        }
         
         private void Start()
         {

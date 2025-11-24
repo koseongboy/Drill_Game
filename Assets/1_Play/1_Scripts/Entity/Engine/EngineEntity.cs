@@ -14,9 +14,11 @@ namespace DrillGame.Core.Engine
     {
         #region Fields & Properties
 
-        [ReadOnly]
-        [SerializeField]
-        private string engineId; // UI 표시용 Data Id값
+        [ReadOnly]    
+        private int itemId; // 철거할 때 인벤토리에 넣기 위한 ItemId값
+        
+        [ReadOnly]    
+        private int engineId; // UI 표시용 Data Id값
         
         private bool isRunning = true; // ������ �̵���ų�� false�� ����
         private List<int> scheduleList = new List<int>(); // ���� ƽ ���� �����ϴ� ����Ʈ
@@ -30,7 +32,7 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region Singleton & initialization
-        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
+        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null, int itemId = -1, int engineId = -1)
         {
             position = startPosition;
             if (formations == null)
@@ -41,6 +43,9 @@ namespace DrillGame.Core.Engine
             {
                 this.formations = formations;
             }
+            
+            this.itemId = itemId;
+            this.engineId = engineId;
 
             // register to BoardManager
             BoardManager.Instance.AddEngine(this);
@@ -48,13 +53,22 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region getters & setters
+        public void SetEngineItemId(int Id)
+        {
+            itemId = Id;
+        }
 
-        public void SetEngineId(string Id)
+        public int GetEngineItemId()
+        {
+            return itemId;
+        }
+        
+        public void SetEngineId(int Id)
         {
             engineId = Id;
         }
 
-        public string GetEngineId()
+        public int GetEngineId()
         {
             return engineId;
         }
@@ -78,8 +92,8 @@ namespace DrillGame.Core.Engine
             OnEngineDeleted?.Invoke();
             // BoardManager 에서 제거
             BoardManager.Instance.RemoveEngine(this);
-            
-            // TODO : 인벤토리에 아이템 추가
+            // 인벤토리에 아이템 추가
+            InventoryManager.Instance.AddItemById(itemId);
         }
 
         public void MoveEntity()
@@ -87,11 +101,7 @@ namespace DrillGame.Core.Engine
             // delete 코드 사용후 다시 집어드는 판정입니다.
             OnEngineDeleted?.Invoke();
             BoardManager.Instance.RemoveEngine(this);
-            
-            // Todo : 적합한 id 필요
-            GameManager.Instance.SetBatchEntity(1);
-
-            GameManager.Instance.StartBatch();
+            GameManager.Instance.BatchEntity(itemId);
         }
 
         public void Tick()

@@ -16,6 +16,7 @@ namespace DrillGame
         #endregion
 
         #region Singleton & initialization
+        
         private static ScriptableObjectManager instance;
         public static ScriptableObjectManager Instance
         {
@@ -28,17 +29,15 @@ namespace DrillGame
                 return instance;
             }
         }
-        #endregion
 
-        public ScriptableObjectManager()
+        private ScriptableObjectManager()
         {
             allDatas = new Dictionary<string, Dictionary<int, ICSVData>>();
             LoadData();
         }
-
-        #region getters & setters
-
+        #endregion
         
+        #region getters & setters
         public Dictionary<int, ICSVData> GetAllData<T>()
         {
             return allDatas[typeof(T).Name];

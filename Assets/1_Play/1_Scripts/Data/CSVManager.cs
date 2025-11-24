@@ -177,7 +177,6 @@ namespace DrillGame.Managers
                 // 에셋의 이름을 두 번째 컬럼의 값으로 설정합니다.
                 string assetName = values[1];
                 string assetPath = $"{assetFolderPath}{assetName}.asset";
-                Debug.Log(assetName);
 
                 // 해당 경로에 이미 SO 에셋이 있는지 확인합니다.
                 ScriptableObject soInstance = AssetDatabase.LoadAssetAtPath(assetPath, soType) as ScriptableObject;

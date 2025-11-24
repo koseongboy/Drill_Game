@@ -70,7 +70,6 @@ namespace DrillGame
         // 보이는 UI를 변경하기만 함.
         private void UpdateUI()
         {
-            Debug.Log("진입");
             foreach (var activeSlotObject in activeSlotObjects)
             {
                 slotPool.Release(activeSlotObject);
@@ -177,6 +176,21 @@ namespace DrillGame
             showingItems.Add( ScriptableObjectManager.Instance.GetData<Item_Data_>(1005) );
             
             UpdateUI();
+        }
+        
+        [ContextMenu("AddUnitItems_DEV")]
+        public void AddUnitItems_DEV()
+        {
+            AddFacilityItems_DEV();
+            AddEngineItems_DEV();
+        }
+        
+        [ContextMenu("AddFacilityItems_DEV")]
+        public void AddFacilityItems_DEV()
+        {
+            InventoryManager.Instance.AddItemById( 1201 );
+            InventoryManager.Instance.AddItemById( 1201 );
+            InventoryManager.Instance.AddItemById( 1201 );
         }
         
         [ContextMenu("AddEngineItems_DEV")]

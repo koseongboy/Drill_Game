@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Copper_Resource
   DisplayName: "\uAD6C\uB9AC \uC790\uC7AC"
   ItemType: Resource
-  EngineId: 
+  UnitId: 0
   ItemIcon: ironIngot
