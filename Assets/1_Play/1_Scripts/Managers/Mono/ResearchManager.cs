@@ -15,6 +15,7 @@ namespace DrillGame
         private float progressValue = 1f;
         
         private Dictionary<int, float> researchProgresses;
+        
         private const string RESEARCH_SELECTED_ID_KEY = "ResearchId";
         private const string RESEARCH_PROGRESS_KEY = "ResearchProgressData";
         public event Action<int, float> OnResearchProgressChanged;
@@ -63,17 +64,14 @@ namespace DrillGame
 
         private void SaveResearchId()
         {
-            PlayerPrefs.SetInt(RESEARCH_SELECTED_ID_KEY, selectedResearchId);
-            PlayerPrefs.Save();
+            ES3.Save(RESEARCH_SELECTED_ID_KEY, selectedResearchId);
         }
         
         private void SaveResearchProgressData()
         {
             // TODO : 주기적으로 (10 코어틱?) 이거 호출해서 저장해줘야하지 않을까?
-            string jsonString = Json.Serialize(researchProgresses);
             
-            PlayerPrefs.SetString(RESEARCH_PROGRESS_KEY, jsonString);
-            PlayerPrefs.Save(); 
+            ES3.Save(RESEARCH_PROGRESS_KEY, researchProgresses);
             
             // Debug.Log("연구 진척도를 저장했습니다.");
         }
@@ -93,31 +91,21 @@ namespace DrillGame
         
         private void LoadResearchKey()
         {
-            selectedResearchId = PlayerPrefs.GetInt(RESEARCH_SELECTED_ID_KEY, 1);
+            selectedResearchId = ES3.Load(RESEARCH_SELECTED_ID_KEY, 1);
         }
         
         [ContextMenu("Load Progress Dict - ScriptableData 추가되면 실행")]
         private void LoadProgressDict()
         {
-            string jsonString = PlayerPrefs.GetString(RESEARCH_PROGRESS_KEY, null);
-            
-            if (jsonString is null or "null")
+            if (ES3.KeyExists(RESEARCH_PROGRESS_KEY))
             {
-                Debug.Log("Json이 Null임. Dictionary를 새로 생성합니다.");
-                InitializeProgressDict(); // 저장된 데이터가 없으니, Init
-                return;
+                researchProgresses = ES3.Load(RESEARCH_PROGRESS_KEY, new Dictionary<int, float>());
             }
-            
-            var data = Json.Deserialize(jsonString);
-            if (data is Dictionary<string, object> rawDict) {
-                researchProgresses = new Dictionary<int, float>();
-                foreach (var kvPair in rawDict)
-                {
-                    // 2. 값 타입을 float으로 강제 변환
-                    researchProgresses.Add(int.Parse(kvPair.Key), Convert.ToSingle(kvPair.Value));
-                }
+            else
+            {
+                Debug.Log("[ResearchManager] Easy Save에 저장된 데이터가 없습니다. Dictionary를 새로 생성합니다.");
+                InitializeProgressDict(); 
             }
-            else { Debug.LogError("Json 저장 형식에 문제가 있나봅니다. 로드 중 오류가 발생했습니다"); }
         }
         
         #endregion
@@ -140,11 +128,10 @@ namespace DrillGame
 
         #region DEV
 
-        [ContextMenu("PlayerPref 키 삭제")]
-        public void DeleteResearchDataInPlayerPref()
+        [ContextMenu("ES3 키 삭제")]
+        public void DeleteResearchDataInES3()
         {
-            PlayerPrefs.DeleteKey(RESEARCH_PROGRESS_KEY);
-            PlayerPrefs.Save();
+            ES3.DeleteKey(RESEARCH_PROGRESS_KEY);
         }
                 
         /// <summary>
