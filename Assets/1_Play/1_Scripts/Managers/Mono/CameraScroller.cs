@@ -7,15 +7,19 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
     public class CameraScroller : MonoBehaviour
     {
         #region Fields & Properties
-            [SerializeField]
-            private float scrollSensitivity = 240f;
-            [SerializeField]
-            private GridManager gridManager;
+        [SerializeField]
+        private float minCamOffset = 3f;
+        [SerializeField]
+        private float maxCamOffset = 3f;
+        [SerializeField]
+        private float scrollSensitivity = 240f;
+        [SerializeField]
+        private GridManager gridManager;
 
-            private float scrollDelta;
-            
-            private Vector2Int areaStart;
-            private Vector2Int areaSize; 
+        private float scrollDelta;
+        
+        private Vector2Int areaStart;
+        private Vector2Int areaSize; 
 
         #endregion
 
@@ -62,8 +66,8 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
             float targetY = transform.position.y + moveAmount;
             
             // 제한 범위 계산
-            float mapMinY = 0; // 아래로 뭔가 확장될 일은 없겠지?
-            float mapMaxY = areaStart.y + areaSize.y - 3f;
+            float mapMinY = - minCamOffset;
+            float mapMaxY = areaStart.y + areaSize.y - maxCamOffset;
             targetY = Mathf.Clamp(targetY, mapMinY, mapMaxY);
             
             // 6. 카메라 위치 업데이트

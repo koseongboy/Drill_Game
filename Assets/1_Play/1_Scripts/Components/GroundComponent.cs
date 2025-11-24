@@ -138,16 +138,29 @@ namespace DrillGame.View.Ground
             Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
-            spriteRenderer.sprite = CurrentGroundSprite;
+            if (CurrentGroundSprite == null)
+            {
+                LoadGroundSpriteAsync_OnGameStart(
+                    CurrentGroundData.SpriteAddressable,
+                    ScriptableObjectManager.Instance.GetData<Ground_Data_>(getGroundDataKey_ByDepth(depth + 1))
+                        .SpriteAddressable);
+            }
             StartCoroutine(AppearAnimation()); // TODO : DOTween으로 바꾸기
+        }
+
+        private async void LoadGroundSpriteAsync_OnGameStart(string currentSpriteName, string nextSpriteName)
+        {
+            CurrentGroundHandle = Addressables.LoadAssetAsync<Sprite>(currentSpriteName);
+            NextGroundHandle = Addressables.LoadAssetAsync<Sprite>(nextSpriteName);
+            
+            CurrentGroundSprite = (Sprite)await CurrentGroundHandle.Task;
+            NextGroundSprite = (Sprite)await NextGroundHandle.Task;
+            
+            spriteRenderer.sprite = CurrentGroundSprite;
         }
 
         private async void LoadGroundSpriteAsync(string nextSpriteName)
         {
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-            
             Addressables.Release(CurrentGroundHandle);
             CurrentGroundHandle = NextGroundHandle;
             NextGroundHandle = Addressables.LoadAssetAsync<Sprite>(nextSpriteName);
