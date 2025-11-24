@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DrillGame._1_Play._1_Scripts.Components;
 using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using UnityEditor;
 using UnityEngine;
 
 namespace DrillGame
 {
-    public class ScriptableObjectManager
+    public class ScriptableObjectManager : Singleton_CSharp<ScriptableObjectManager>
     {
         #region Fields & Properties
         private readonly string rootPath = "ScriptableObject";
@@ -16,29 +17,14 @@ namespace DrillGame
         #endregion
 
         #region Singleton & initialization
-        private static ScriptableObjectManager instance;
-        public static ScriptableObjectManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new ScriptableObjectManager();
-                }
-                return instance;
-            }
-        }
-        #endregion
-
-        public ScriptableObjectManager()
+        protected override void Init()
         {
             allDatas = new Dictionary<string, Dictionary<int, ICSVData>>();
             LoadData();
         }
-
-        #region getters & setters
-
+        #endregion
         
+        #region getters & setters
         public Dictionary<int, ICSVData> GetAllData<T>()
         {
             return allDatas[typeof(T).Name];

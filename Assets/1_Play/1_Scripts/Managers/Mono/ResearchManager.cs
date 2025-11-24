@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DrillGame._1_Play._1_Scripts.Components;
 using UnityEngine;
 using MiniJSON;
 using UnityEngine.InputSystem;
 
 namespace DrillGame
 {
-    public class ResearchManager : MonoBehaviour
+    public class ResearchManager : Monobehavior_Singleton<ResearchManager>
     {
         [SerializeField]
         private int selectedResearchId = 0;
@@ -21,18 +22,6 @@ namespace DrillGame
         public event Action<int, float> OnResearchProgressChanged;
 
         #region Singleton & initialization
-        public static ResearchManager Instance { get; private set; }
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
-        }
         #endregion
         
         #region public methods
@@ -58,7 +47,7 @@ namespace DrillGame
             }
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
         }
-        
+        #endregion
         
         #region private methods
 
@@ -125,7 +114,6 @@ namespace DrillGame
         }
         #endregion
 
-
         #region DEV
 
         [ContextMenu("ES3 키 삭제")]
@@ -174,8 +162,6 @@ namespace DrillGame
         {
             SelectResearch(30002);
         }
-        #endregion
-        
         #endregion
     }
 }

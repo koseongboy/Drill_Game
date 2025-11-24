@@ -19,12 +19,12 @@ namespace DrillGame.View.Facility
     {
         #region Fields & Properties
 
-        //³»ºÎ Á¤º¸
+        //ë‚´ë¶€ ì •ë³´
 
         [SerializeField]
         public int debugId = 101011;
         [SerializeField]
-        private Vector2Int debugPosition; // -> ÀÌ°Å µğ¹ö±ë ÀÌÈÄ¿¡µµ À¯Áö°¡´ÉÇÒ°Å °°Áö ¾Ê³ª? Æ÷¸ŞÀÌ¼ÇÀº static ÇÑ data´Ï±î
+        private Vector2Int debugPosition; // -> ì´ê±° ë””ë²„ê¹… ì´í›„ì—ë„ ìœ ì§€ê°€ëŠ¥í• ê±° ê°™ì§€ ì•Šë‚˜? í¬ë©”ì´ì…˜ì€ static í•œ dataë‹ˆê¹Œ
 
         
         List<Vector2Int> formation = new();
@@ -45,7 +45,7 @@ namespace DrillGame.View.Facility
 
         public Action OnClickFacilityDetail { get; set; }
 
-        // graphic action °ü·Ã ÀÓ½Ã ÇÊµå
+        // graphic action ê´€ë ¨ ì„ì‹œ í•„ë“œ
         private SpriteRenderer spriteRenderer;
         private Color originalColor;
 
@@ -72,14 +72,14 @@ namespace DrillGame.View.Facility
 
             
 
-            // ½ºÆ®¸µÀ¸·Î ¹ŞÀº Å¬·¡½º ³×ÀÓÀ» ÅëÇØ facility action ÀÎ½ºÅÏ½º »ı¼º
+            // ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°›ì€ í´ë˜ìŠ¤ ë„¤ì„ì„ í†µí•´ facility action ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
             string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
             Type type = System.Type.GetType(fullActionClassName);
             Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {
                 Debug.LogError($"Facility action class '{fullActionClassName}' not found. Using default action.");
-                type = typeof(HelloFacilityAction); // ±âº» ¾×¼ÇÀ¸·Î ´ëÃ¼
+                type = typeof(HelloFacilityAction); // ê¸°ë³¸ ì•¡ì…˜ìœ¼ë¡œ ëŒ€ì²´
             }
             IFacilityAction facilityAction = Activator.CreateInstance(type) as IFacilityAction;
 
@@ -88,7 +88,7 @@ namespace DrillGame.View.Facility
 
             OnClickFacilityDetail = () => {
                 presenter.RequestFacilityDetail();
-                // È®Àå¼ºÀ» À§ÇØ ¶÷´Ù½Ä »ç¿ë
+                // í™•ì¥ì„±ì„ ìœ„í•´ ëŒë‹¤ì‹ ì‚¬ìš©
             };
 
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -105,7 +105,7 @@ namespace DrillGame.View.Facility
         #region public methods
         public void RunFacilityComponent(int intensity)
         {
-            // ÀÓ½Ã ±×·¡ÇÈ ¾×¼Ç ½ÇÇà
+            // ì„ì‹œ ê·¸ë˜í”½ ì•¡ì…˜ ì‹¤í–‰
             TempGraphicAction(intensity);
         }
 
@@ -129,7 +129,7 @@ namespace DrillGame.View.Facility
         #region private methods
         private void TempGraphicAction(int intensity)
         {
-            // ÀÓ½Ã ±×·¡ÇÈ ¾×¼Ç
+            // ì„ì‹œ ê·¸ë˜í”½ ì•¡ì…˜
             transform.DOKill(true);
             transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0) * intensity, 0.1f, 10, 1);
         }
@@ -138,7 +138,7 @@ namespace DrillGame.View.Facility
         #region Unity event methods
         private void Awake()
         {
-            // init »ç¿ëÀ» ±ÇÀå
+            // init ì‚¬ìš©ì„ ê¶Œì¥
 
         }
         private void Start()
@@ -162,7 +162,7 @@ namespace DrillGame.View.Facility
 
             OnClickFacilityDetail?.Invoke();
 
-            Debug.Log("FacilityComponent clicked : UI ÇÊ¿äÇØ¿ä");
+            Debug.Log("FacilityComponent clicked : UI í•„ìš”í•´ìš”");
         }
         
         public void OnPointerEnter(PointerEventData eventData)
@@ -170,7 +170,7 @@ namespace DrillGame.View.Facility
             gameObject.GetComponent<SpriteRenderer>().material.color = onMouseColor;
         }
 
-        // IPointerExitHandlerÀÇ ÇÊ¼ö ¸Ş¼­µå ±¸Çö
+        // IPointerExitHandlerì˜ í•„ìˆ˜ ë©”ì„œë“œ êµ¬í˜„
         public void OnPointerExit(PointerEventData eventData)
         {
             gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;

@@ -70,7 +70,6 @@ namespace DrillGame
         // 보이는 UI를 변경하기만 함.
         private void UpdateUI()
         {
-            Debug.Log("진입");
             foreach (var activeSlotObject in activeSlotObjects)
             {
                 slotPool.Release(activeSlotObject);

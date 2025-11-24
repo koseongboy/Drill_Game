@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using DrillGame._1_Play._1_Scripts.Components;
 using DrillGame.Core.Managers;
 using UnityEngine;
 
 namespace DrillGame
 {
-    public class InputCountManager
+    public class InputCountManager : Singleton_CSharp<InputCountManager>
     {
         #region Fields & Properties
         private static InputCountManager instance;
@@ -19,18 +20,7 @@ namespace DrillGame
         #endregion
         
         #region Singleton & initialization
-        public static InputCountManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new InputCountManager();
-                }
-                return instance;
-            }
-        }
-        private InputCountManager()
+        protected override void Init()
         {
             inputCount = 0;
             tickCount = 0;

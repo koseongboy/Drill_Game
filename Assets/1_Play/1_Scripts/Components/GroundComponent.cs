@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DrillGame._1_Play._1_Scripts.Components;
 using DrillGame.Core.Ground;
 using DrillGame.Core.Facility;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace DrillGame.View.Ground
 {
-    public class GroundComponent : MonoBehaviour
+    public class GroundComponent : Monobehavior_Singleton<GroundComponent>
     {
         #region Fields & Properties
         public GroundEntity GroundEntity { get; private set; }
@@ -25,7 +26,8 @@ namespace DrillGame.View.Ground
         private AsyncOperationHandle NextGroundHandle;
         private Sprite CurrentGroundSprite;
         private Sprite NextGroundSprite;
-
+        
+        public event Action<int> OnDepthChanged;
         public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
 
         //애니메이션 관련
@@ -49,21 +51,10 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region Singleton & initialization
-        public static GroundComponent Instance;
-        private void Awake()
+
+        protected override void Awake()
         {
-            //싱글톤 할당
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Debug.LogWarning("GroundComponent Instance already exists, destroying duplicate!");
-                Destroy(gameObject);
-                return;
-            }
-            
+            base.Awake();
             Init();
         }
 
@@ -78,6 +69,7 @@ namespace DrillGame.View.Ground
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(userDepth) );
             
             //기존 데이터로 엔티티 및 땅 색(재질) 초기화
+            OnDepthChanged?.Invoke( userDepth ); // 옵저버 호출
             setNewData(userDepth, userHp);
         }
 
@@ -95,6 +87,7 @@ namespace DrillGame.View.Ground
             {
                 Debug.Log("땅 파괴됨!");
                 setNewData(GroundEntity.Depth + depthIncrement);
+                OnDepthChanged?.Invoke( GroundEntity.Depth + depthIncrement ); // 옵저버 호출
             }
         }
         #endregion
@@ -136,6 +129,7 @@ namespace DrillGame.View.Ground
             // 여기 문제 생기면 김명준 잘못임
             
             Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
+            OnDepthChanged?.Invoke( depth ); // 옵저버 호출
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
             if (CurrentGroundSprite == null)

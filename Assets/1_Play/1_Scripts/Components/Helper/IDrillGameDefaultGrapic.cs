@@ -4,10 +4,10 @@ namespace DrillGame.View.Helper
 {
     public interface IDrillGameDefaultGrapic
     {
-        // ¼±ÅÃµÇ¾úÀ» ¶§ ±×·¡ÇÈ º¯È­
+        // ì„ íƒë˜ì—ˆì„ ë•Œ ê·¸ë˜í”½ ë³€í™”
         void ChosenGraphic();
 
-        // ÃÊ±â »óÅÂ·Î ¸®¼Â
+        // ì´ˆê¸° ìƒíƒœë¡œ ë¦¬ì…‹
         void DefaultGraphic();
     }
 }

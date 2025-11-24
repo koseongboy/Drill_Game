@@ -1,10 +1,11 @@
-﻿using DrillGame.Managers;
+﻿using DrillGame._1_Play._1_Scripts.Components;
+using DrillGame.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace DrillGame._1_Play._1_Scripts.Managers.Mono
 {
-    public class CameraScroller : MonoBehaviour
+    public class CameraScroller : Monobehavior_Singleton<CameraScroller>
     {
         #region Fields & Properties
         [SerializeField]
@@ -24,7 +25,6 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region Singleton & initialization
-        public static CameraScroller Instance { get; private set; }
         #endregion
 
         #region getters & setters
@@ -76,21 +76,6 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region Unity event methods
-
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                transform.parent = null;
-                DontDestroyOnLoad(gameObject);
-            }
-        }
-        
         private void Update()
         {
             ChangeCamPositon();
