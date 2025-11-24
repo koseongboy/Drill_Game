@@ -54,7 +54,7 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Vector2Int startPosition)
+        public void Initialize(Vector2Int startPosition, int itemId = 0, int unitId = 0)
         {
             Facility_Data_ data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(debugId);
             formation = data.GetCoordinates();
@@ -83,7 +83,7 @@ namespace DrillGame.View.Facility
             }
             IFacilityAction facilityAction = Activator.CreateInstance(type) as IFacilityAction;
 
-            FacilityEntity facilityEntity = new FacilityEntity(startPosition, formation, facilityAction, Level);
+            FacilityEntity facilityEntity = new FacilityEntity(startPosition, formation, facilityAction, Level, itemId, unitId);
             presenter = new FacilityPresenter(this, facilityEntity);
 
             OnClickFacilityDetail = () => {

@@ -13,6 +13,9 @@ namespace DrillGame.Core.Facility
     public class FacilityEntity
     {
         #region Fields & Properties
+
+        private int itemId;
+        private int unitId;
         protected Vector2Int position; // 시설의 위치 (중점)
         protected List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
@@ -26,8 +29,10 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction, int level)
+        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction, int level, int itemId, int unitId)
         {
+            this.itemId = itemId;
+            this.unitId = unitId;
             this.position = startPosition;
             this.facilityAction = facilityAction;
             this.level = level;

@@ -15,11 +15,9 @@ namespace DrillGame.Core.Engine
         #region Fields & Properties
 
         [ReadOnly]    
-        [SerializeField]
-        private int itemId;    
+        private int itemId; // 철거할 때 인벤토리에 넣기 위한 ItemId값
         
         [ReadOnly]    
-        [SerializeField]
         private int engineId; // UI 표시용 Data Id값
         
         private bool isRunning = true; // ������ �̵���ų�� false�� ����
@@ -34,7 +32,7 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region Singleton & initialization
-        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null)
+        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null, int itemId = -1, int engineId = -1)
         {
             position = startPosition;
             if (formations == null)
@@ -45,6 +43,9 @@ namespace DrillGame.Core.Engine
             {
                 this.formations = formations;
             }
+            
+            this.itemId = itemId;
+            this.engineId = engineId;
 
             // register to BoardManager
             BoardManager.Instance.AddEngine(this);
@@ -52,7 +53,16 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region getters & setters
+        public void SetEngineItemId(int Id)
+        {
+            itemId = Id;
+        }
 
+        public int GetEngineItemId()
+        {
+            return itemId;
+        }
+        
         public void SetEngineId(int Id)
         {
             engineId = Id;

@@ -13,7 +13,7 @@ namespace DrillGame.View.Engine
     {
         #region Fields & Properties
         [SerializeField]
-        private Vector2Int debugPosition;   // -> ÀÌ°Å µð¹ö±ë ÀÌÈÄ¿¡µµ À¯Áö°¡´ÉÇÒ°Å °°Áö ¾Ê³ª? Æ÷¸ÞÀÌ¼ÇÀº static ÇÑ data´Ï±î
+        private Vector2Int debugPosition;   // -> ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê³ï¿½? ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ static ï¿½ï¿½ dataï¿½Ï±ï¿½
         [SerializeField]
         private List<Vector2Int> debugFormation = new();
         [SerializeField]
@@ -34,22 +34,22 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Vector2Int startPosition)
+        public void Initialize(Vector2Int startPosition, int itemId=0, int unitId=0)
         {
-            // for Test ÈÄÀÏ ÆÑÅä¸® ÆÐÅÏÀ¸·Î ºÐ¸® ÇÊ¿ä -> ±Ùµ¥ ¾ÆÁ÷ ¿£Áø Çàµ¿ ÆÐÅÏÀÌ ¾ø´Â..
+            // for Test ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¸ï¿½ ï¿½Ê¿ï¿½ -> ï¿½Ùµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½..
             if (engineType != "BasicEngine")
             {
-                Debug.LogWarning("ÇöÀç´Â BasicEngine¸¸ Áö¿øÇÕ´Ï´Ù. ±âº»°ªÀ¸·Î ¼³Á¤ÇÕ´Ï´Ù.");
+                Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ BasicEngineï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
                 engineType = "BasicEngine";
             }
 
-            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation);
+            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation, itemId, unitId);
 
             presenter = new EnginePresenter(this, engineEntity);
 
             OnClickEngineDetail = () => {
                 presenter.RequestEngineDetail();
-                // È®Àå¼ºÀ» À§ÇØ ¶÷´Ù½Ä »ç¿ë
+                // È®ï¿½å¼ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½
             };
 
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -65,18 +65,18 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region public methods
-        // ¿£Áø ÄÄÆ÷³ÍÆ® °ü·Ã ±â´É ½ÇÇà
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         public void RunEngineComponent()
         {
-            // ÀÓ½Ã ±×·¡ÇÈ ¾×¼Ç ½ÇÇà
+            // ï¿½Ó½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ ï¿½ï¿½ï¿½ï¿½
             TempGraphicAction();
         }
 
         public void DeleteEngineComponent()
         {
-            // ¿£Áø ÄÄÆ÷³ÍÆ® »èÁ¦ Ã³¸®
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
             Destroy(this.gameObject);
-            // onDestroy¿¡¼­ presenter.Dispose() È£Ãâ
+            // onDestroyï¿½ï¿½ï¿½ï¿½ presenter.Dispose() È£ï¿½ï¿½
         }
 
         public void ChosenGraphic()
@@ -94,12 +94,12 @@ namespace DrillGame.View.Engine
         #region private methods
         private void TempGraphicAction()
         {
-            // ÀÓ½Ã ±×·¡ÇÈ ¾×¼Ç : »ö±òÀ»  Àá±ñ ¹Ù²å´Ù°¡ ¿ø·¡´ë·Î
+            // ï¿½Ó½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½×¼ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             spriteRenderer.material.DOColor(flashColor, flashDuration)
-            // 2. º¯°æÀÌ ¿Ï·áµÈ ÈÄ ½ÇÇàµÉ ÄÝ¹é ÁöÁ¤
+            // 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¹ï¿½ ï¿½ï¿½ï¿½ï¿½
             .OnComplete(() =>
             {
-                // ÄÝ¹é¿¡¼­ ¿ø·¡ »ö»óÀ¸·Î º¹±Í
+                // ï¿½Ý¹é¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 spriteRenderer.material.DOColor(originalColor, flashDuration);
             });
 
@@ -113,7 +113,7 @@ namespace DrillGame.View.Engine
         #region Unity event methods
         private void Awake()
         {
-            // init »ç¿ëÀ» ±ÇÀå
+            // init ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             
         }
 
@@ -121,7 +121,7 @@ namespace DrillGame.View.Engine
         {
             if(presenter == null)
             {
-                Debug.LogWarning("¾À¿¡¼­ Á÷Á¢ EngineComponent¸¦ »ý¼ºÇß½À´Ï´Ù. Å×½ºÆ®¿ë ±âº» ¿£ÁøÀ» »ý¼ºÇÕ´Ï´Ù.");
+                Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ EngineComponentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
                 Initialize(debugPosition);
             }
         }
@@ -133,7 +133,7 @@ namespace DrillGame.View.Engine
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // Áö±Ý Å×½ºÆ® ¿ëµµ¶ó¼­ »èÁ¦¸¦ ¿©±â´Ù°¡ °É¾îµÎ¾ú´Âµ¥ ±×·¯¸é ¹èÄ¡ÇÏÀÚ¸¶ÀÚ ´­·Á¼­ °¡¿îµ¥ Å¬¸¯À¸·Î ¹Ù²å¾î¿ä
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ® ï¿½ëµµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ù°ï¿½ ï¿½É¾ï¿½Î¾ï¿½ï¿½Âµï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½
             if(eventData.button != PointerEventData.InputButton.Middle)
             {
                 return; 
@@ -146,7 +146,7 @@ namespace DrillGame.View.Engine
             gameObject.GetComponent<SpriteRenderer>().material.color = onMouseColor;
         }
 
-        // IPointerExitHandlerÀÇ ÇÊ¼ö ¸Þ¼­µå ±¸Çö
+        // IPointerExitHandlerï¿½ï¿½ ï¿½Ê¼ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         public void OnPointerExit(PointerEventData eventData)
         {
             gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;

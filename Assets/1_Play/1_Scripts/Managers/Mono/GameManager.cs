@@ -3,6 +3,7 @@ using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DrillGame.Managers
 {
@@ -18,17 +19,16 @@ namespace DrillGame.Managers
         [SerializeField]
         private BatchMode batchMode = BatchMode.None;
 
-        [ReadOnly]
-        private ICSVData csvData; // 설치하려는 장치의 CSV Data
-
         [SerializeField]
         private TilemapType tilemapType = TilemapType.Engine;
 
+
+        private int placingItemId = 0;
+        [FormerlySerializedAs("dataIndex")]
         [ReadOnly]
         [SerializeField]
         [Tooltip("csv데이터 찾아오기용 index")]
-        private int dataIndex = 111001;
-
+        private int dataId = 111001;
 
 
 
@@ -79,6 +79,7 @@ namespace DrillGame.Managers
 
         public void BatchEntity(int itemId)
         {
+            placingItemId = itemId;
             var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( itemId );
             if (!itemData)
             {
@@ -103,29 +104,26 @@ namespace DrillGame.Managers
             if (itemData.GetItemType_Enum() == InventoryManager.ItemType.Engine)
             {
                 tilemapType = TilemapType.Engine;
-                csvData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(
-                    itemData.UnitId);
                 Debug.Log("배치 모드 엔티티 선택: 엔진");
             }
             else if(itemData.GetItemType_Enum() == InventoryManager.ItemType.Facility)
             {
                 tilemapType = TilemapType.Facility;
-                csvData = ScriptableObjectManager.Instance.GetData<Facility_Data_>(
-                    itemData.UnitId);
                 Debug.Log("배치 모드 엔티티 선택: 시설");
             }
+            dataId = itemData.UnitId;
         }
 
         public void StartBatch()
         {
             batchMode = BatchMode.PlaceBatch;
-            if (csvData == null)
+            if (dataId == 0)
             {
                 Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
                 return;
             }
-
-            gridManager.EnterBatchMode(tilemapType, dataIndex);
+            gridManager.AfterUnitPlaced += DeleteItemAfterPlaced;
+            gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
         }
         #endregion
 
@@ -133,6 +131,11 @@ namespace DrillGame.Managers
         private void CoreTick()
         {
             BoardManager.Instance.Tick();
+        }
+
+        private void DeleteItemAfterPlaced()
+        {
+            InventoryManager.Instance.RemoveItemById( placingItemId );
         }
         #endregion
 
@@ -194,9 +197,12 @@ namespace DrillGame.Managers
             gridManager.TryEditBatch();
         }
         private void StopBatch()
-        { 
-            csvData = null;
+        {
+            Debug.Log("진입");
+            placingItemId = 0;
+            dataId = 0;
             batchMode = BatchMode.None;
+            gridManager.AfterUnitPlaced -= DeleteItemAfterPlaced;
             gridManager.ExitBatchMode();
         }
         #endregion
