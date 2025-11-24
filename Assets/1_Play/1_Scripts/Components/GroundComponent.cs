@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,11 +14,13 @@ namespace DrillGame.View.Ground
     {
         #region Fields & Properties
         public GroundEntity GroundEntity { get; private set; }
-        public Dictionary<int, Dictionary<string, string>> GroundTable;
         private SpriteRenderer spriteRenderer;
+
+        private const string ES3FILENAME = "GroundUserData.es3";
+        private const string GROUND_DEPTH = "GroundDepth";
+        private const string GROUND_HP = "GroundHP";
         
         private Ground_Data_ CurrentGroundData;
-        
         private AsyncOperationHandle CurrentGroundHandle;
         private AsyncOperationHandle NextGroundHandle;
         private Sprite CurrentGroundSprite;
@@ -49,16 +52,6 @@ namespace DrillGame.View.Ground
         public static GroundComponent Instance;
         private void Awake()
         {
-            //엔티티 생성
-            GroundEntity = new GroundEntity();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            int user_depth = 3; // TODO
-            int user_hp = 5; // TODO            
-            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(user_depth) );
-            
-            //기존 데이터로 엔티티 및 땅 색(재질) 초기화
-            setNewData(user_depth, user_hp);
-
             //싱글톤 할당
             if (Instance == null)
             {
@@ -70,6 +63,22 @@ namespace DrillGame.View.Ground
                 Destroy(gameObject);
                 return;
             }
+            
+            Init();
+        }
+
+        private void Init()
+        {
+            //엔티티 생성
+            GroundEntity = new GroundEntity();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            ES3File es3File = new ES3File(ES3FILENAME);
+            int userDepth = es3File.Load(GROUND_DEPTH, 1);
+            int userHp = es3File.Load(GROUND_DEPTH, ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
+            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(userDepth) );
+            
+            //기존 데이터로 엔티티 및 땅 색(재질) 초기화
+            setNewData(userDepth, userHp);
         }
 
         #endregion
@@ -88,7 +97,6 @@ namespace DrillGame.View.Ground
                 setNewData(GroundEntity.Depth + depthIncrement);
             }
         }
-
         #endregion
 
         #region private methods
@@ -96,11 +104,11 @@ namespace DrillGame.View.Ground
         private int getGroundDataKey_ByDepth(int depth)
         {
             // GroundData는 5001에서 시작해서, 5단계마다 1씩 증가함.
-            int range = depth % 5;
+            int range = depth / 5;
             return 5001 + range;
         }
         
-        //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 = 새로운 땅 생성할 때, hp도 줬을 때 = 기존 유저 데이터 불러올 때)
+        //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 = 새로운 땅 생성할 때)
         private void setNewData(int depth)
         {
             // 여기 문제 생기면 김명준 잘못임
@@ -120,6 +128,7 @@ namespace DrillGame.View.Ground
 
             spriteRenderer.sprite = CurrentGroundSprite;
         }
+        //입력받는 값에 따라 엔티티 세팅 (hp도 줬을 때 = 기존 유저 데이터 불러올 때)
         private void setNewData(int depth, int hp)
         {
             // 여기 문제 생기면 김명준 잘못임
@@ -146,14 +155,33 @@ namespace DrillGame.View.Ground
             await Task.WhenAll(NextGroundHandle.Task);
             NextGroundSprite = (Sprite)NextGroundHandle.Result;
         }
+        
+        private void SaveCurrentGroundData(int depth, int hp)
+        {
+            ES3File es3File = new ES3File(ES3FILENAME);
+            es3File.Save(GROUND_DEPTH, depth);
+            es3File.Save(GROUND_HP, hp);
+            es3File.Sync();
+        }
 
         #endregion
 
         #region Unity event methods
+        private void OnApplicationQuit()
+        {
+            SaveCurrentGroundData(GroundEntity.Depth, GroundEntity.CurrentHp);
+        }
         #endregion
         
         #region DEV
-        
+
+        [ContextMenu("Reset Saved Depth & HP")]
+        private void ResetSavedDepth_DEV()
+        {
+            ES3.DeleteFile(ES3FILENAME);
+            Init();
+            Debug.Log("Ground UserData가 성공적으로 초기화되었습니다.");
+        }
         #endregion
     }
 }
