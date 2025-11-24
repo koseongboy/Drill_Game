@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Gold_Material
   DisplayName: "\uAE08 \uAD11\uBB3C"
   ItemType: Resource
-  EngineId: 
+  UnitId: 0
   ItemIcon: stone

@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Iron_Resource
   DisplayName: "\uCCA0 \uC790\uC7AC"
   ItemType: Resource
-  EngineId: 
+  UnitId: 0
   ItemIcon: ironIngot

@@ -1,3 +1,4 @@
+using DrillGame.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,12 +7,15 @@ namespace DrillGame
 {
     public class UI_ItemSlot : MonoBehaviour
     {
-        
+        [SerializeField] private int itemId;
         [SerializeField] private Image Icon;
         [SerializeField] private TextMeshProUGUI Count;
 
         public void SetItemData(Item_Data_ itemData, int count)
         {
+            // Id
+            itemId = itemData.GetId();
+            
             // Count
             // Count.text = count == 1 
             //     ? "" 
@@ -30,8 +34,14 @@ namespace DrillGame
             Icon.sprite = icon;
         }
 
+        public void OnClick()
+        {
+            GameManager.Instance.BatchEntity( itemId );
+        }
+
         public void ClearItemData()
         {
+            itemId = 0;
             Icon.sprite = null;
             Count.text = "";
         }

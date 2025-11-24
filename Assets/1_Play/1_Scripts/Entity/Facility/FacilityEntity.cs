@@ -78,6 +78,8 @@ namespace DrillGame.Core.Facility
 
             // BoardManager에서 제거
             BoardManager.Instance.RemoveFacility(this);
+            
+            // TODO : 설치에 필요했던 재료를 인벤토리에 반환해주기
         }
 
         // 여기서 부터 model 관련 메서드 추가 가능

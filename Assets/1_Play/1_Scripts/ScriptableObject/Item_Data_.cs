@@ -3,6 +3,7 @@ using DrillGame;
 using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "New Item_Data_", menuName = "GameData/Item_Data_")]
 public class Item_Data_ : ScriptableObject, ICSVData
@@ -16,7 +17,7 @@ public class Item_Data_ : ScriptableObject, ICSVData
     public string Name;
     public string DisplayName;
     public string ItemType;
-    public string EngineId;
+    public int UnitId;
     public string ItemIcon;
 
     public InventoryManager.ItemType GetItemType_Enum()

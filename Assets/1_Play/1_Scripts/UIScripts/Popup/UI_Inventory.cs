@@ -178,6 +178,21 @@ namespace DrillGame
             UpdateUI();
         }
         
+        [ContextMenu("AddUnitItems_DEV")]
+        public void AddUnitItems_DEV()
+        {
+            AddFacilityItems_DEV();
+            AddEngineItems_DEV();
+        }
+        
+        [ContextMenu("AddFacilityItems_DEV")]
+        public void AddFacilityItems_DEV()
+        {
+            InventoryManager.Instance.AddItemById( 1201 );
+            InventoryManager.Instance.AddItemById( 1201 );
+            InventoryManager.Instance.AddItemById( 1201 );
+        }
+        
         [ContextMenu("AddEngineItems_DEV")]
         public void AddEngineItems_DEV()
         {

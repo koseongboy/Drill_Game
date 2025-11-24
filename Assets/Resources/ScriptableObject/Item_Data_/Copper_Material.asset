@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Copper_Material
   DisplayName: "\uAD6C\uB9AC \uAD11\uBB3C"
   ItemType: Resource
-  EngineId: 
+  UnitId: 0
   ItemIcon: stone

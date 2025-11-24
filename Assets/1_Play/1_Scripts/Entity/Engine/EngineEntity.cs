@@ -14,9 +14,13 @@ namespace DrillGame.Core.Engine
     {
         #region Fields & Properties
 
-        [ReadOnly]
+        [ReadOnly]    
         [SerializeField]
-        private string engineId; // UI 표시용 Data Id값
+        private int itemId;    
+        
+        [ReadOnly]    
+        [SerializeField]
+        private int engineId; // UI 표시용 Data Id값
         
         private bool isRunning = true; // ������ �̵���ų�� false�� ����
         private List<int> scheduleList = new List<int>(); // ���� ƽ ���� �����ϴ� ����Ʈ
@@ -49,12 +53,12 @@ namespace DrillGame.Core.Engine
 
         #region getters & setters
 
-        public void SetEngineId(string Id)
+        public void SetEngineId(int Id)
         {
             engineId = Id;
         }
 
-        public string GetEngineId()
+        public int GetEngineId()
         {
             return engineId;
         }
@@ -78,8 +82,8 @@ namespace DrillGame.Core.Engine
             OnEngineDeleted?.Invoke();
             // BoardManager 에서 제거
             BoardManager.Instance.RemoveEngine(this);
-            
-            // TODO : 인벤토리에 아이템 추가
+            // 인벤토리에 아이템 추가
+            InventoryManager.Instance.AddItemById(itemId);
         }
 
         public void MoveEntity()
@@ -87,11 +91,7 @@ namespace DrillGame.Core.Engine
             // delete 코드 사용후 다시 집어드는 판정입니다.
             OnEngineDeleted?.Invoke();
             BoardManager.Instance.RemoveEngine(this);
-            
-            // Todo : 적합한 id 필요
-            GameManager.Instance.SetBatchEntity(1);
-
-            GameManager.Instance.StartBatch();
+            GameManager.Instance.BatchEntity(itemId);
         }
 
         public void Tick()

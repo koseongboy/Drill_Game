@@ -1,4 +1,5 @@
 using System;
+using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
 using UnityEngine;
@@ -18,9 +19,7 @@ namespace DrillGame.Managers
         private BatchMode batchMode = BatchMode.None;
 
         [ReadOnly]
-        [SerializeField]
-        [Tooltip ("배치 모드에서 선택된 엔티티의 ID 값 -1 : 선택 안됨")]
-        private int idValue = -1;
+        private ICSVData csvData; // 설치하려는 장치의 CSV Data
 
         [SerializeField]
         private TilemapType tilemapType = TilemapType.Engine;
@@ -59,8 +58,8 @@ namespace DrillGame.Managers
             control.Player.StopBatch.performed += ctx => StopBatch();
             control.Player.EditBatch.performed += ctx => EditBatch();
 
-            control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
-            control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
+            // control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
+            // control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
 
             control.Player.Click.performed += ctx => ClickAction();
         }
@@ -77,20 +76,42 @@ namespace DrillGame.Managers
         #endregion
 
         #region public methods
-        public void SetBatchEntity(int idValue)
-        {
-            this.idValue = idValue;
 
-            // test
-            // todo 알맞은 value 처리 필요
-            if (idValue == 1)
+        public void BatchEntity(int itemId)
+        {
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( itemId );
+            if (!itemData)
             {
-                this.tilemapType = TilemapType.Engine;
+                Debug.LogWarning($"전달된 ItemID 값이 이상합니다. : {itemId}");
+                return;
+            }
+
+            var type = itemData.GetItemType_Enum();
+            if (type != InventoryManager.ItemType.Engine
+                && type != InventoryManager.ItemType.Facility)
+            {
+                Debug.LogWarning("엔진 or 시설이 아닌 Item이 전달되었습니다.");
+                return;
+            }
+            
+            SetBatchEntity( itemData );
+            StartBatch();
+        }
+        
+        public void SetBatchEntity(Item_Data_ itemData)
+        {
+            if (itemData.GetItemType_Enum() == InventoryManager.ItemType.Engine)
+            {
+                tilemapType = TilemapType.Engine;
+                csvData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(
+                    itemData.UnitId);
                 Debug.Log("배치 모드 엔티티 선택: 엔진");
             }
-            else if (idValue == 2)
+            else if(itemData.GetItemType_Enum() == InventoryManager.ItemType.Facility)
             {
-                this.tilemapType = TilemapType.Facility;
+                tilemapType = TilemapType.Facility;
+                csvData = ScriptableObjectManager.Instance.GetData<Facility_Data_>(
+                    itemData.UnitId);
                 Debug.Log("배치 모드 엔티티 선택: 시설");
             }
         }
@@ -98,7 +119,7 @@ namespace DrillGame.Managers
         public void StartBatch()
         {
             batchMode = BatchMode.PlaceBatch;
-            if (idValue == -1)
+            if (csvData == null)
             {
                 Debug.LogWarning("배치 모드 진입 실패: 선택된 엔티티가 없습니다.");
                 return;
@@ -174,13 +195,10 @@ namespace DrillGame.Managers
         }
         private void StopBatch()
         { 
-            idValue = -1;
+            csvData = null;
             batchMode = BatchMode.None;
             gridManager.ExitBatchMode();
         }
-
-        
-
         #endregion
     }
 
