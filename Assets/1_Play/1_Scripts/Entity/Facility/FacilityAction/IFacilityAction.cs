@@ -31,9 +31,9 @@ namespace DrillGame.Core.Facility
             
             for (int i = 0; i < intensity; i++)
             {
-                facilityEntity.GroundEntity.GiveDamage(level * 10);
+                GroundComponent.Instance.GroundEntity.GiveDamage(level * 10);
                 Debug.Log("level: " + level);
-                Debug.Log("땅에 " + (intensity * 10) + " 만큼 데미지를 줌 (남은 땅의 체력: " + facilityEntity.GroundEntity.CurrentHp + ")");
+                Debug.Log("땅에 " + (intensity * 10) + " 만큼 데미지를 줌 (남은 땅의 체력: " + GroundComponent.Instance.GroundEntity.CurrentHp + ")");
             }
             
             

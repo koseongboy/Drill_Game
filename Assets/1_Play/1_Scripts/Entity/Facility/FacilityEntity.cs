@@ -22,10 +22,6 @@ namespace DrillGame.Core.Facility
 
         protected IFacilityAction facilityAction;
 
-        public GameObject GroundObject;
-        public GroundComponent GroundComponent;
-        public GroundEntity GroundEntity;
-
         private int level;
         #endregion
 
@@ -44,12 +40,9 @@ namespace DrillGame.Core.Facility
             {
                 this.formations = formations;
             }
-            GroundObject = GameObject.FindGameObjectWithTag("Ground");
-            GroundComponent = GroundObject.GetComponent<GroundComponent>();
-            GroundEntity = GroundComponent.GroundEntity;
-
             // register to BoardManager
             BoardManager.Instance.AddFacility(this);
+            
         }
         #endregion
 
