@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DrillGame.Core.Ground;
-using DrillGame.Managers;
+using DrillGame.Core.Facility;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -46,12 +46,48 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region Singleton & initialization
+        public static GroundComponent Instance;
+        private void Awake()
+        {
+            //엔티티 생성
+            GroundEntity = new GroundEntity();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            int user_depth = 3; // TODO
+            int user_hp = 5; // TODO            
+            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(user_depth) );
+            
+            //기존 데이터로 엔티티 및 땅 색(재질) 초기화
+            setNewData(user_depth, user_hp);
+
+            //싱글톤 할당
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Debug.LogWarning("GroundComponent Instance already exists, destroying duplicate!");
+                Destroy(gameObject);
+                return;
+            }
+        }
+
         #endregion
 
         #region getters & setters
         #endregion
 
         #region public methods
+        public void GiveDamage(int damage)
+        {
+            GroundEntity.GiveEntityDamage(damage);
+            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
+            if (GroundEntity.IsDestroyed)
+            {
+                Debug.Log("땅 파괴됨!");
+                setNewData(GroundEntity.Depth + depthIncrement);
+            }
+        }
 
         #endregion
 
@@ -114,32 +150,10 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region Unity event methods
-        private void Start()
-        {
-            //엔티티 생성
-            GroundEntity = new GroundEntity();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            int user_depth = 3; // TODO
-            int user_hp = 5; // TODO
-            
-            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(user_depth) );
-            
-            //기존 데이터로 엔티티 및 땅 색(재질) 초기화
-            setNewData(user_depth, user_hp);
-        }
         #endregion
         
         #region DEV
-        public void OnButtonClick()
-        {
-            GroundEntity.GiveDamage(1);
-            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
-            if (GroundEntity.IsDestroyed)
-            {
-                Debug.Log("땅 파괴됨!");
-                setNewData(GroundEntity.Depth + depthIncrement);
-            }
-        }
+        
         #endregion
     }
 }

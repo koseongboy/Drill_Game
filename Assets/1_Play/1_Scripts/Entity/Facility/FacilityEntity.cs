@@ -3,6 +3,8 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DrillGame.Core.Ground;
+using DrillGame.View.Ground;
 
 using DrillGame.Core.Managers;
 
@@ -11,21 +13,24 @@ namespace DrillGame.Core.Facility
     public class FacilityEntity
     {
         #region Fields & Properties
-        private Vector2Int position; // 시설의 위치 (중점)
-        private List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
+        protected Vector2Int position; // 시설의 위치 (중점)
+        protected List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
         public event Action<int> OnFacilityActivated;
 
         public event Action OnFacilityDeleted;
 
-        private IFacilityAction facilityAction;
+        protected IFacilityAction facilityAction;
+
+        private int level;
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction)
+        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction, int level)
         {
             this.position = startPosition;
             this.facilityAction = facilityAction;
+            this.level = level;
             // for test
             if (formations == null)
             {
@@ -35,9 +40,9 @@ namespace DrillGame.Core.Facility
             {
                 this.formations = formations;
             }
-
             // register to BoardManager
             BoardManager.Instance.AddFacility(this);
+            
         }
         #endregion
 
@@ -59,7 +64,7 @@ namespace DrillGame.Core.Facility
             Debug.Log("Facility is running. with Intensity : "  + intensity);
 
             // 시설 고유의 액션 실행
-            facilityAction?.ActivateFacility(this, intensity);
+            facilityAction?.ActivateFacility(this, intensity, level);
 
             // 이벤트 호출 (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);

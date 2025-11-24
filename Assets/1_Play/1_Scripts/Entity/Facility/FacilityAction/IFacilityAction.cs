@@ -8,12 +8,12 @@ namespace DrillGame.Core.Facility
     
     public interface IFacilityAction
     {
-        void ActivateFacility(FacilityEntity facilityEntity , int intensity);
+        void ActivateFacility(FacilityEntity facilityEntity, int intensity, int level);
     }
 
     public class HelloFacilityAction : IFacilityAction
     {
-        public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
+        public void ActivateFacility(FacilityEntity facilityEntity, int intensity, int level)
         {
             // 시설 고유의 액션 구현
             for (int i = 0; i < intensity; i++)
@@ -26,24 +26,16 @@ namespace DrillGame.Core.Facility
 
     public class DrillAction : IFacilityAction
     {
-        public void ActivateFacility(FacilityEntity facilityEntity, int intensity)
+        public void ActivateFacility(FacilityEntity facilityEntity, int intensity, int level)
         {
-            Debug.Log("드릴이 작동되었습니다.");
-        }
-
-        public void ActivateFacility(FacilityEntity facilityEntity, int intensity, GroundComponent groundComponent, int drillDamage)
-        {
+            
             for (int i = 0; i < intensity; i++)
             {
-                groundComponent.GroundEntity.GiveDamage(drillDamage);
-                Debug.Log("땅에 " + drillDamage + " 만큼 데미지를 줌 (남은 땅의 체력: " + groundComponent.GroundEntity.CurrentHp + ")");
-                if (groundComponent.GroundEntity.IsDestroyed)
-                {
-                    Debug.Log("땅이 파괴됨!");
-                }
+                GroundComponent.Instance.GiveDamage(level);
+                Debug.Log("땅에 " + level + " 만큼 데미지를 줌 (남은 땅의 체력: " + GroundComponent.Instance.GroundEntity.CurrentHp + ")");
             }
+            
+            
         }
-
-
     }
 }
