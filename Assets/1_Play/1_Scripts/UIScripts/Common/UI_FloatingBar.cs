@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using DrillGame.Core.Ground;
 using DrillGame.Core.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
@@ -160,7 +161,7 @@ namespace DrillGame
 
         private void OnDisable()
         {
-            GroundComponent.Instance.OnDepthChanged -= OnDepthChanged;
+            GroundComponent.Instance.OnDepthChanged += OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressChanged;

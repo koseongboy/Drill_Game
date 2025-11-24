@@ -52,6 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_GameStatus
   addressableName: UI_GameStatus
+  drillDamageText: {fileID: 6113748316610289418}
+  groundHpText: {fileID: 7455573664992156403}
 --- !u!114 &5062954041447601270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +90,7 @@ GameObject:
   - component: {fileID: 8345061253343386114}
   - component: {fileID: 7455573664992156403}
   m_Layer: 5
-  m_Name: UI_NeedTimeTxt
+  m_Name: UI_GroundHpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +226,7 @@ GameObject:
   - component: {fileID: 3228015335791505563}
   - component: {fileID: 1765965686417582881}
   m_Layer: 5
-  m_Name: UI_CurrentDepthIcon
+  m_Name: UI_DrillDamageIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6409667506125409193, guid: 7a0a054ffbc567148891741195daa908, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -297,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4073055755770927991}
   m_Layer: 5
-  m_Name: UI_NeedTimeTxtCanvas
+  m_Name: UI_GroundHpTxtCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +338,7 @@ GameObject:
   - component: {fileID: 7865594521623820027}
   - component: {fileID: 6113748316610289418}
   m_Layer: 5
-  m_Name: UI_CurrentDepthTxt
+  m_Name: UI_DrillDamageTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3509083396307688967}
   m_Layer: 5
-  m_Name: UI_CurrentDepthCanvas
+  m_Name: UI_DrillDamageCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +511,7 @@ GameObject:
   - component: {fileID: 6083186819860546081}
   - component: {fileID: 1832709977461773330}
   m_Layer: 5
-  m_Name: UI_NeedTimeTxtIcon
+  m_Name: UI_GroundHpIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +534,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -150, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6083186819860546081
 CanvasRenderer:
@@ -562,7 +564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2599369745857493789, guid: 392e1ba827ce385409fce16ec668b8b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

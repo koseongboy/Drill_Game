@@ -27,9 +27,11 @@ namespace DrillGame.View.Ground
         private Sprite CurrentGroundSprite;
         private Sprite NextGroundSprite;
         
-        public event Action<int> OnDepthChanged;
         public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
 
+        public event Action<int> OnDepthChanged;
+        public event Action<int> OnHpChanged;
+        
         //애니메이션 관련
         public float appearDuration = 0.3f;
         public float appearOffset = 1.0f;
@@ -62,14 +64,14 @@ namespace DrillGame.View.Ground
         {
             //엔티티 생성
             GroundEntity = new GroundEntity();
+            
             spriteRenderer = GetComponent<SpriteRenderer>();
             ES3File es3File = new ES3File(ES3FILENAME);
             int userDepth = es3File.Load(GROUND_DEPTH, 1);
-            int userHp = es3File.Load(GROUND_DEPTH, ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
+            int userHp = es3File.Load(GROUND_HP, ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(userDepth) );
             
             //기존 데이터로 엔티티 및 땅 색(재질) 초기화
-            OnDepthChanged?.Invoke( userDepth ); // 옵저버 호출
             setNewData(userDepth, userHp);
         }
 
@@ -82,12 +84,12 @@ namespace DrillGame.View.Ground
         public void GiveDamage(int damage)
         {
             GroundEntity.GiveEntityDamage(damage);
+            OnHpChanged?.Invoke( GroundEntity.CurrentHp );
             Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
             if (GroundEntity.IsDestroyed)
             {
                 Debug.Log("땅 파괴됨!");
                 setNewData(GroundEntity.Depth + depthIncrement);
-                OnDepthChanged?.Invoke( GroundEntity.Depth + depthIncrement ); // 옵저버 호출
             }
         }
         #endregion
@@ -104,34 +106,28 @@ namespace DrillGame.View.Ground
         //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 = 새로운 땅 생성할 때)
         private void setNewData(int depth)
         {
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-
             Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             
             GroundEntity.SetInformation(depth, CurrentGroundData.HP, CurrentGroundData.HP, CurrentGroundData.DropItems);
+            OnDepthChanged?.Invoke( GroundEntity.Depth );
+            OnHpChanged?.Invoke( GroundEntity.CurrentHp );
             StartCoroutine(AppearAnimation());
             if (depth == CurrentGroundData.StartDepth) //구간에 처음 진입했을 경우
             {
                 CurrentGroundSprite = NextGroundSprite; // 땅의 스프라이트를 갈아끼워줌.
                 LoadGroundSpriteAsync(CurrentGroundData.SpriteAddressable);
             }
-
             spriteRenderer.sprite = CurrentGroundSprite;
         }
         //입력받는 값에 따라 엔티티 세팅 (hp도 줬을 때 = 기존 유저 데이터 불러올 때)
         private void setNewData(int depth, int hp)
         {
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-            // 여기 문제 생기면 김명준 잘못임
-            
             Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
-            OnDepthChanged?.Invoke( depth ); // 옵저버 호출
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
+            OnDepthChanged?.Invoke( GroundEntity.Depth );
+            OnHpChanged?.Invoke( GroundEntity.CurrentHp );
             if (CurrentGroundSprite == null)
             {
                 LoadGroundSpriteAsync_OnGameStart(

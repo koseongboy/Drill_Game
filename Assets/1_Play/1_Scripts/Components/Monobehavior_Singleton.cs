@@ -12,8 +12,7 @@ namespace DrillGame._1_Play._1_Scripts.Components
             {
                 if (!instance)
                 {
-                    // 1. 씬에서 인스턴스를 찾아봄
-                    instance = FindObjectOfType<T>();
+                    instance = FindAnyObjectByType<T>();
 
                     // 2. 만약 씬에 없다면 새로 생성 (옵션)
                     if (!instance)
