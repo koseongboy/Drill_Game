@@ -125,6 +125,34 @@ namespace DrillGame.Managers
             gridManager.AfterUnitPlaced += DeleteItemAfterPlaced;
             gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
         }
+
+        //test 테스트 dev
+        public void MinerBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 101011;
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
+
+        public void ProcessorBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 101021;
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
+        
+        public void LabBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 110001;
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
+        public void EngineBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 201001;
+            gridManager.EnterBatchMode(TilemapType.Engine, dataId, placingItemId);
+        }
         #endregion
 
         #region private methods

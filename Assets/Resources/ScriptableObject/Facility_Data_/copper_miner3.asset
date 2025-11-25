@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uAD6C\uB9AC \uCC44\uAD74 \uC2DC\uC124 Lv.3"
   Type: Miner
   Level: 3
-  EntityClassName: FacilityEntity
+  EntityClassName: MinerEntity
   Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
   BuildResourceId: 
   BuildResourceCount: 

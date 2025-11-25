@@ -1,18 +1,17 @@
-using System.Collections.Generic;
 using UnityEngine;
-using DrillGame.View.Ground;
+using DrillGame.Core.Managers;
 
 namespace DrillGame.Core.Facility
 {
-  public class DrillEntity : FacilityEntity
+  public class MinerEntity : FacilityEntity
   {
     #region Fields & Properties
     #endregion
 
     #region Singleton & initialization
-    public DrillEntity(Vector2Int startPosition, int level) : base(startPosition, level)
+    public MinerEntity(Vector2Int startPosition, int id) : base(startPosition, id)
     {
-      Debug.Log("드릴 생성됨.");
+        Debug.Log("채굴시설 생성됨.");
     }
     #endregion
 
@@ -22,10 +21,10 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity)
     {
-        for (int i = 0; i < intensity; i++)
-            {
-                GroundComponent.Instance.GiveDamage(data.Level);
-            }
+      for (int i = 0; i < intensity; i++)
+      {
+        InventoryManager.Instance.AddItemById( data.OutputItemId ); //이렇게 인벤에 추가하는거 맞는 지 확인
+      }
     }
     #endregion
 
@@ -34,8 +33,6 @@ namespace DrillGame.Core.Facility
 
     #region Unity event methods
     #endregion
-    
-
     
   }
 }

@@ -21,7 +21,6 @@ namespace DrillGame.View.Facility
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
 
         [SerializeField]
-        List<Vector2Int> formation = new();
         public string EntityClassName = "FacilityEntity";
         
 
@@ -38,10 +37,8 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Vector2Int startPosition, int itemId = 0, int unitId = 0)
+        public void Initialize(Vector2Int startPosition, int itemId = 1, int entityId = 101011)
         {
-           
-
             // 각 장치 속성에 맞는 엔티티 동적 생성
             string fullEntityClassName = "DrillGame.Core.Facility." + EntityClassName;
             Type type = System.Type.GetType(fullEntityClassName);
@@ -51,7 +48,7 @@ namespace DrillGame.View.Facility
                 Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
                 type = typeof(FacilityEntity);
             }
-            object[] parameters = new object[] { startPosition, formation, debugId };
+            object[] parameters = new object[] { startPosition, debugId };
             FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 

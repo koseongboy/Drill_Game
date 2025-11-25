@@ -27,9 +27,8 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, int id)
+        public FacilityEntity(Vector2Int startPosition, int id)
         {
-            Debug.Log("Facility Entity Created with id : " + id);
             data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
             this.position = startPosition;
             // for test
@@ -39,7 +38,7 @@ namespace DrillGame.Core.Facility
             }
             else
             {
-                this.formations = formations;
+                this.formations = data.GetCoordinates();
             }
             // register to BoardManager
             BoardManager.Instance.AddFacility(this);
@@ -58,6 +57,11 @@ namespace DrillGame.Core.Facility
             return absolutePositions;
         }
 
+        public List<Vector2Int> GetFormations()
+        {
+            return formations;
+        }
+
         public int GetFacilityId()
         {
             return facilityId;
@@ -65,7 +69,7 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region public methods
-        public void Run(int intensity)
+        public virtual void Run(int intensity)
         {
             Debug.Log("Facility is running. with Intensity : "  + intensity);
 

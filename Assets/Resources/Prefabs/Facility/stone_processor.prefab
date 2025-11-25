@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8654675133225399025}
   - component: {fileID: 1747553068106249990}
   m_Layer: 0
-  m_Name: Facillity_Drill
+  m_Name: stone_processor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -5816532425499827717, guid: 8a8eea2cdd5c90345bdb75e601541125, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.22552037, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,8 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a70aac74e85648bc2796dc9e0c910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
-  debugId: 112001
+  debugId: 101021
   debugPosition: {x: -1, y: -6}
-  formation:
-  - {x: 1, y: 1}
-  EntityClassName: DrillEntity
+  EntityClassName: ProcessEntity
