@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Gold_Resource
   DisplayName: "\uAE08 \uC790\uC7AC"
   ItemType: Resource
-  UnitId: 0
+  EntityId: 0
   ItemIcon: ironIngot

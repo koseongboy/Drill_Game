@@ -39,7 +39,6 @@ namespace DrillGame.Core.Presenter
         public void RequestFacilityDetail()
         {
             UILoader.Instance.ShowUI_FacilityDetail(facilityEntity);
-
         }
         #endregion
 

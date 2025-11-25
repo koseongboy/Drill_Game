@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: GreenEngine_1
   DisplayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.1"
   ItemType: Engine
-  UnitId: 201001
+  EntityId: 201001
   ItemIcon: engine_test

@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Iron_Resource
   DisplayName: "\uCCA0 \uC790\uC7AC"
   ItemType: Resource
-  UnitId: 0
+  EntityId: 0
   ItemIcon: ironIngot

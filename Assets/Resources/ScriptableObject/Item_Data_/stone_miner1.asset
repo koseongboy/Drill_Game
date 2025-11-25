@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: stone_miner1
   DisplayName: "\uB3CC \uCC44\uAD74 \uC2DC\uC124 Lv.1"
   ItemType: Facility
-  UnitId: 101011
+  EntityId: 101011
   ItemIcon: engine_test
