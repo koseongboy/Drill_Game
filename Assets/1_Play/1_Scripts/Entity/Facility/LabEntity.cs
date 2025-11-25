@@ -18,9 +18,12 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity)
+    public override void Run(int intensity) // todo: 레벨에 따른 연구 진척도 증가량 조절
     {
-      base.Run(intensity);
+      for (int i = 0; i < intensity; i++)
+      {
+        ResearchManager.Instance.AddResearchProgress();
+      }
     }
     #endregion
 

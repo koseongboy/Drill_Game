@@ -131,21 +131,27 @@ namespace DrillGame.Managers
         {
             batchMode = BatchMode.PlaceBatch;
             dataId = 101011;
-            gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
         }
 
         public void ProcessorBatch()
         {
             batchMode = BatchMode.PlaceBatch;
             dataId = 101021;
-            gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
         }
         
         public void LabBatch()
         {
             batchMode = BatchMode.PlaceBatch;
             dataId = 110001;
-            gridManager.EnterBatchMode(tilemapType, dataId, placingItemId);
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
+        public void EngineBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 201001;
+            gridManager.EnterBatchMode(TilemapType.Engine, dataId, placingItemId);
         }
         #endregion
 
