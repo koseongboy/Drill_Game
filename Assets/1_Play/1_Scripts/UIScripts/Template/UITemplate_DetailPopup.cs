@@ -55,7 +55,7 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected virtual void UpdateDetail<T>(T data)
+        protected virtual void UpdateDetail()
         {
         }
         

@@ -104,9 +104,9 @@ namespace DrillGame
         {
             viewStateIcon.sprite = next switch
             {
-                GameViewManager.ViewState.All => Resources.Load<Sprite>("UI/Button/AllView"),
-                GameViewManager.ViewState.FacilityOnly => Resources.Load<Sprite>("UI/Button/UpperView_Facility"),
-                GameViewManager.ViewState.EngineOnly => Resources.Load<Sprite>("UI/Button/LowerView_Engine")
+                GameViewManager.ViewState.All => Resources.Load<Sprite>("UISprite/Button/AllView"),
+                GameViewManager.ViewState.FacilityOnly => Resources.Load<Sprite>("UISprite/Button/UpperView_Facility"),
+                GameViewManager.ViewState.EngineOnly => Resources.Load<Sprite>("UISprite/Button/LowerView_Engine")
             };
         }
 

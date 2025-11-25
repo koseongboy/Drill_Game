@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5722408328187180786, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
@@ -377,10 +377,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LabDetailPopup_Icon
       objectReference: {fileID: 0}
+    - target: {fileID: 6086889204017447042, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086889204017447042, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6601188357447995911, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
       value: LabDetailPopup_Title
       objectReference: {fileID: 0}
+    - target: {fileID: 7669616095706981419, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5152306381664834401, guid: 9f901a94b40b85042abcc95f9a2be61a, type: 3}
     - target: {fileID: 8585156695818591271, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
       value: LabDetailPopup_Button2

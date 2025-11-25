@@ -17,7 +17,7 @@ public class Item_Data_ : ScriptableObject, ICSVData
     public string Name;
     public string DisplayName;
     public string ItemType;
-    public int UnitId;
+    public int EntityId;
     public string ItemIcon;
 
     public InventoryManager.ItemType GetItemType_Enum()

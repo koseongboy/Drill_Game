@@ -111,7 +111,7 @@ namespace DrillGame.Managers
                 tilemapType = TilemapType.Facility;
                 Debug.Log("배치 모드 엔티티 선택: 시설");
             }
-            dataId = itemData.UnitId;
+            dataId = itemData.EntityId;
         }
 
         public void StartBatch()

@@ -18,6 +18,7 @@ MonoBehaviour:
   Type: Miner
   Level: 2
   ActionClassName: HelloFacilityAction
+  Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
   BuildResourceId: 
   BuildResourceCount: 
   InputItemId: 

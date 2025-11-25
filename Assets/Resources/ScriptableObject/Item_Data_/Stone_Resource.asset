@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Stone_Resource
   DisplayName: "\uB3CC \uC790\uC7AC"
   ItemType: Resource
-  UnitId: 0
+  EntityId: 0
   ItemIcon: ironIngot

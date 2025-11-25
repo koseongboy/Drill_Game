@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Stone_Material
   DisplayName: "\uB3CC \uAD11\uBB3C"
   ItemType: Resource
-  UnitId: 0
+  EntityId: 0
   ItemIcon: stone

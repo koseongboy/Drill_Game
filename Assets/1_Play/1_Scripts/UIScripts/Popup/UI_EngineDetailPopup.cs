@@ -22,7 +22,7 @@ namespace DrillGame
         public override void SetData(object entity)
         {
             engineEntity = (EngineEntity)entity;
-            UpdateDetail(engineEntity);
+            UpdateDetail();
         }
         #endregion
 
@@ -46,14 +46,14 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected override void UpdateDetail<T>( T entity )
+        protected override void UpdateDetail()
         {
-            // var id = entity.GetEngineId();
-            var id = 201003;  // Test
+            var id = engineEntity.GetEngineId(); 
             var data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(id);
 
             titleTxt.text = data.DisplayName;
             descTxt.text = data.Desc;
+            
             // TODO : 파일명으로 이미지 불러오는 로직
         }
         #endregion

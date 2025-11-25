@@ -18,6 +18,8 @@ MonoBehaviour:
   Type: Laboratory
   Level: 3
   ActionClassName: HelloFacilityAction
+  Desc: "\uC5F0\uAD6C\uB97C \uC9C4\uD589\uD558\uC5EC \uACF5\uC7A5\uC744 \uAC15\uD654\uD560
+    \uC218 \uC788\uB2E4."
   BuildResourceId: 
   BuildResourceCount: 
   InputItemId: 

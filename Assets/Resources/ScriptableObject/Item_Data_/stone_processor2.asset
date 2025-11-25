@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: stone_processor2
   DisplayName: "\uB3CC \uAC00\uACF5 \uC2DC\uC124 Lv.2"
   ItemType: Facility
-  UnitId: 101022
+  EntityId: 101022
   ItemIcon: engine_test
