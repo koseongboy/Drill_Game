@@ -93,7 +93,7 @@ namespace DrillGame.Core.Engine
             // BoardManager 에서 제거
             BoardManager.Instance.RemoveEngine(this);
             // 인벤토리에 아이템 추가
-            InventoryManager.Instance.AddItemById(itemId);
+            InventoryManager.Instance.AddItem(itemId);
         }
 
         public void MoveEntity()

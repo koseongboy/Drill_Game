@@ -163,7 +163,11 @@ namespace DrillGame.Managers
 
         private void DeleteItemAfterPlaced()
         {
-            InventoryManager.Instance.RemoveItemById( placingItemId );
+            bool rv = InventoryManager.Instance.TryRemoveItem( placingItemId );
+            if (!rv)
+            {
+                Debug.LogWarning("아이템 제거 실패: 인벤토리에 아이템이 없습니다.");
+            }
         }
         #endregion
 

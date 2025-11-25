@@ -23,7 +23,7 @@ namespace DrillGame.Core.Facility
     {
       for (int i = 0; i < intensity; i++)
       {
-        InventoryManager.Instance.AddItemById( data.OutputItemId ); //이렇게 인벤에 추가하는거 맞는 지 확인
+        InventoryManager.Instance.AddItem( data.OutputItemId ); //이렇게 인벤에 추가하는거 맞는 지 확인
       }
     }
     #endregion

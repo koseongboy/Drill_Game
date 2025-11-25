@@ -114,7 +114,7 @@ namespace DrillGame.Core.Facility
             BoardManager.Instance.RemoveFacility(this);
             
             // 인벤토리에 아이템 추가
-            InventoryManager.Instance.AddItemById(itemId);
+            InventoryManager.Instance.AddItem(itemId);
         }
 
         // 여기서 부터 model 관련 메서드 추가 가능
