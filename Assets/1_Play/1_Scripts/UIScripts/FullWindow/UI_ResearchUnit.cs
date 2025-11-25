@@ -1,5 +1,6 @@
 using System;
 using DrillGame._1_Play._1_Scripts.UIScripts.FullWindow;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,10 @@ namespace DrillGame
     {
         [SerializeField]
         private int researchID;
+        [SerializeField]
+        private TextMeshProUGUI nameText;
+        [SerializeField]
+        private Image progressBar;
 
         public int GetResearchID() {
             return researchID;
@@ -21,14 +26,20 @@ namespace DrillGame
         private void OnEnable() {
             if (ResearchManager.Instance.IsResearchUnLocked(researchID)) {
                 var color = GetComponent<Image>().color;
-                color.a = 1;
+                color = Color.white;
                 GetComponent<Image>().color = color;
+                
+                nameText.color = Color.black;
             }
             else {
                 var color = GetComponent<Image>().color;
-                color.a = 0.5f;
+                color = Color.black;
                 GetComponent<Image>().color = color;
+                
+                nameText.color = Color.white;
             }
+            
+            progressBar.fillAmount = ResearchManager.Instance.GetResearchProgressRate( researchID );
         }
     }
 }
