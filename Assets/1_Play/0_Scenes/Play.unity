@@ -10299,9 +10299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.GameManager
   gridManager: {fileID: 357322640}
   batchMode: 0
-  idValue: -1
   tilemapType: 1
-  dataIndex: 111001
+  dataId: 111001
 --- !u!1 &1672351223
 GameObject:
   m_ObjectHideFlags: 0

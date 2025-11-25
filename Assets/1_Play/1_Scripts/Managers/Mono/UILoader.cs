@@ -185,9 +185,9 @@ namespace DrillGame.UI
                 uiInstance.SetActive(true);
 
                 // 데이터 전달 (동기적)
-                if (uiInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                if (uiInstance.TryGetComponent<UITemplate_DetailPopup>(out var detailUI))
                 {
-                    detailUI.SetEngineEntity(engine);
+                    detailUI.SetData(engine);
                 }
                 return;
             }
@@ -197,7 +197,7 @@ namespace DrillGame.UI
             {
                 if (newInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
                 {
-                    detailUI.SetEngineEntity(engine);
+                    detailUI.SetData(engine);
                     newInstance.SetActive(true); // 로드 후 바로 활성화
                 }
                 else
