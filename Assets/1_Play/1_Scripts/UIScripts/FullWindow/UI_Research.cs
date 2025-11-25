@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
 using TMPro;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 {
-    public class UI_Research : MonoBehaviour ,UI_IAddressable
+    public class UI_Research : MonoBehaviour, UI_IAddressable
     {
         #region UI_Addressable
         [SerializeField]
@@ -43,6 +44,11 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         #region public methods
 
+        public virtual void CloseUI()
+        {
+            CloseAction();
+        }
+
         public void OpenDetail(int researchId)
         {
             Research_Data_ data = ScriptableObjectManager.Instance.GetData<Research_Data_>( researchId );
@@ -72,23 +78,37 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         public void CloseDetail()
         {
-            researchNameTxt.text = string.Empty;
-            progressBar.gameObject.SetActive(false);
-            progressTxt.text = string.Empty;
-            researchDescTxt.text = string.Empty;
-            researchInputItemTxt.text = string.Empty;
+            DetailWindowInit();
             DetailWindowCloseAction();
         }
         #endregion
 
         #region private methods
 
+        private void OpenAction()
+        {
+            
+        }
+        private void CloseAction()
+        {
+            UILoader.Instance.HideUI(addressableName);
+        }
+
+        private void DetailWindowInit()
+        {
+            researchNameTxt.text = string.Empty;
+            progressBar.gameObject.SetActive(false);
+            progressTxt.text = string.Empty;
+            researchDescTxt.text = string.Empty;
+            researchInputItemTxt.text = string.Empty;
+        }
+
         private void DetailWindowOpenAction()
         {
             detailWindow.SetActive(true);
             RectTransform rt = detailWindow.GetComponent<RectTransform>();
             
-            Vector2 startPos = rt.anchoredPosition;
+            Vector2 startPos = new Vector2(0, -500f);
             Vector2 targetPos = new Vector2(startPos.x, startPos.y + 100f);
             rt.anchoredPosition = startPos;
             rt.DOAnchorPos(targetPos, 0.1f)
@@ -118,6 +138,14 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         #endregion
 
         #region Unity event methods
+
+        private void OnEnable()
+        {
+            OpenAction();
+            DetailWindowInit();
+            detailWindow.SetActive(false);
+        }
+
         #endregion
     }
 }
