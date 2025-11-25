@@ -8,7 +8,7 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region Singleton & initialization
-    public ProcessEntity(Vector2Int startPosition, int id) : base(startPosition, id)
+    public ProcessEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 101021) : base(startPosition, level, itemId, entityId)
     {
         Debug.Log("가공시설 생성됨.");
     }

@@ -8,7 +8,7 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region Singleton & initialization
-    public LabEntity(Vector2Int startPosition, int id) : base(startPosition, id)
+    public LabEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 110001) : base(startPosition, level, itemId, entityId)
     {
       Debug.Log("연구소 생성됨.");
     }

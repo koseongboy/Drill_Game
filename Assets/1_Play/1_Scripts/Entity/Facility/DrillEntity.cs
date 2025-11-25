@@ -10,7 +10,7 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region Singleton & initialization
-    public DrillEntity(Vector2Int startPosition, int level) : base(startPosition, level)
+    public DrillEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 112001) : base(startPosition, level, itemId, entityId)
     {
       Debug.Log("드릴 생성됨.");
     }
