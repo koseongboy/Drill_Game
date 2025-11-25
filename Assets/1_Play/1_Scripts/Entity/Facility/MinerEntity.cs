@@ -9,7 +9,7 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region Singleton & initialization
-    public MinerEntity(Vector2Int startPosition, int id) : base(startPosition, id)
+    public MinerEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 101011) : base(startPosition, level, itemId, entityId)
     {
         Debug.Log("채굴시설 생성됨.");
     }

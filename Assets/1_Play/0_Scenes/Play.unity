@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5F0\uAD6C\uC18C \uC124\uCE58"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -2130,7 +2130,6 @@ MonoBehaviour:
   TempFacilityImage: {fileID: 11400000, guid: c8b2b0dcc4ca97f42945938eba0fbfe2, type: 2}
   TempEngine: {fileID: 2116369118879959848, guid: 274fd5f14fc48e144bc959f8f18867d4, type: 3}
   TempFacility: {fileID: 2858953249066847510, guid: e2fc0b25f3f871e4ca2884393dbb5275, type: 3}
-  TempDrill: {fileID: 2858953249066847510, guid: d33b9f6a0ba5dc94e8406996440f9b88, type: 3}
   AreaStart: {x: -4, y: -6}
   AreaSize: {x: 7, y: 12}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
@@ -2216,7 +2215,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 357708416}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: LabBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &357708416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3286,7 +3297,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.888889
+  orthographic size: 8.876222
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3807,7 +3818,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612671421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: ProcessorBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &612671421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10174,7 +10197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uCC44\uAD74\uAE30 \uC124\uCE58"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -10504,7 +10527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1682712471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: MinerBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1682712471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11034,7 +11069,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793577216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: EngineBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1793577216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11420,7 +11467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5D4\uC9C4 \uC124\uCE58\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -11692,7 +11739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uAC00\uACF5\uAE30 \uC124\uCE58"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
