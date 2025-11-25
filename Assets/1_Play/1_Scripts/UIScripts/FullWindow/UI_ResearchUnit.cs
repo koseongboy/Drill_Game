@@ -23,23 +23,34 @@ namespace DrillGame
             UI_Research.Instance.OpenDetailWindow( researchID );
         }
 
-        private void OnEnable() {
-            if (ResearchManager.Instance.IsResearchUnLocked(researchID)) {
-                var color = GetComponent<Image>().color;
-                color = Color.white;
-                GetComponent<Image>().color = color;
-                
+        public void UpdateUI()
+        {
+            var image = GetComponent<Image>();
+            
+            if (ResearchManager.Instance.IsResearchUnLocked(researchID)) { // Unlock
+                image.color = new Color(0.87f, 0.87f, 0.87f); //LightGray
                 nameText.color = Color.black;
-            }
-            else {
-                var color = GetComponent<Image>().color;
-                color = Color.black;
-                GetComponent<Image>().color = color;
-                
+            }else if (researchID == ResearchManager.Instance.GetSelectedResearchId()) // Selected
+            {
+                image.color = new Color(0.87f, 0.4f, 0f); //Orange
+                nameText.color = Color.white;
+            }else {
+                image.color = new Color(0.18f, 0.18f, 0.18f); //DarkGray
                 nameText.color = Color.white;
             }
             
+            // Research Progress
             progressBar.fillAmount = ResearchManager.Instance.GetResearchProgressRate( researchID );
+        }
+
+        private void Awake()
+        {
+            UI_Research.Instance.AddResearchUnitToDict( this );
+        }
+        
+        private void OnEnable()
+        {
+            UpdateUI();
         }
     }
 }

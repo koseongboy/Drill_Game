@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
@@ -54,6 +55,7 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         private Action<int> SelectButtonPressedAction;
 
         private int showingResearchId;
+        private Dictionary<int, UI_ResearchUnit> researchUnits = new Dictionary<int, UI_ResearchUnit>();
         #endregion
 
         #region getters & setters
@@ -69,22 +71,26 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         public void OpenDetailWindow(int researchId)
         {
             showingResearchId = researchId;
-            ResearchManager.Instance.OnResearchProgressChanged += OnUpdateResearchProgress;
+            ResearchManager.Instance.OnResearchProgressChanged += UpdateDetailWindow_OnUpdateResearchProgress;
             UpdateDetailWindow( researchId );
             DetailWindowOpenAnimation();
         }
 
         public void CloseDetailWindow()
         {
-            ResearchManager.Instance.OnResearchProgressChanged += OnUpdateResearchProgress;
+            ResearchManager.Instance.OnResearchProgressChanged += UpdateDetailWindow_OnUpdateResearchProgress;
             DetailWindowInit();
             DetailWindowCloseAnimation();
         }
 
         public void SelectButtonPressed() {
-            Debug.Log($"SelectButtonPressed : { showingResearchId }");
             SelectButtonPressedAction?.Invoke( showingResearchId );
             UpdateDetailWindow( showingResearchId );
+        }
+
+        public void AddResearchUnitToDict(UI_ResearchUnit researchUnit)
+        {
+            researchUnits.Add( researchUnit.GetResearchID(), researchUnit );
         }
         #endregion
 
@@ -143,14 +149,20 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
             }
         }
 
-        private void OnUpdateResearchProgress(int researchId, float progress,float progressRate) {
+        private void UpdateDetailWindow_OnUpdateResearchProgress(int researchId, float progress, float progressRate) {
+
             if (showingResearchId != researchId) {
                 return;
             }
-            
+            // Detail Window
             Research_Data_ data = ScriptableObjectManager.Instance.GetData<Research_Data_>( researchId );
             progressBar.fillAmount = progressRate;
             progressTxt.text = $"현재 진척도 : {progress:F1}/{data.ResearchAmount} ({(progressRate * 100):F1}%)";
+        }
+
+        private void UpdateUnitUI_OnUpdateResearchProgress(int researchId, float progress, float progressRate)
+        {
+            researchUnits[ researchId ].UpdateUI();
         }
 
         private void DetailWindowOpenAnimation()
@@ -188,10 +200,12 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         private void SelectResearch(int researchId) {
             ResearchManager.Instance.SelectResearch( researchId );
+            researchUnits[ researchId ].UpdateUI();
         }
 
         private void UnSelectResearch(int researchId) {
             ResearchManager.Instance.UnSelectResearch();
+            researchUnits[ researchId ].UpdateUI();
         }
 
         private bool IsResearchSelected(int researchId) {
@@ -208,9 +222,15 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         private void OnEnable()
         {
+            ResearchManager.Instance.OnResearchProgressChanged += UpdateUnitUI_OnUpdateResearchProgress;
             OpenAction();
             DetailWindowInit();
             detailWindow.SetActive(false);
+        }
+
+        private void OnDisable()
+        {
+            ResearchManager.Instance.OnResearchProgressChanged -= UpdateUnitUI_OnUpdateResearchProgress;
         }
 
         #endregion
