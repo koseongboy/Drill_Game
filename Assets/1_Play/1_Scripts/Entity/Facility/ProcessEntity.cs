@@ -1,18 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
-using DrillGame.View.Ground;
 
 namespace DrillGame.Core.Facility
 {
-  public class DrillEntity : FacilityEntity
+  public class ProcessEntity : FacilityEntity
   {
     #region Fields & Properties
     #endregion
 
     #region Singleton & initialization
-    public DrillEntity(Vector2Int startPosition, int level) : base(startPosition, level)
+    public ProcessEntity(Vector2Int startPosition, int id) : base(startPosition, id)
     {
-      Debug.Log("드릴 생성됨.");
+        Debug.Log("가공시설 생성됨.");
     }
     #endregion
 
@@ -22,10 +20,7 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity)
     {
-        for (int i = 0; i < intensity; i++)
-            {
-                GroundComponent.Instance.GiveDamage(data.Level);
-            }
+      base.Run(intensity);
     }
     #endregion
 
@@ -34,8 +29,6 @@ namespace DrillGame.Core.Facility
 
     #region Unity event methods
     #endregion
-    
-
     
   }
 }
