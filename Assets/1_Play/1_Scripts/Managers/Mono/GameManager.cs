@@ -159,8 +159,6 @@ namespace DrillGame.Managers
             {
                 CoreTick();
             }
-
-            
         }
 
 

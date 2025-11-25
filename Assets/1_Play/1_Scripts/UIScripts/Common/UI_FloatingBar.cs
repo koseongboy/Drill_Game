@@ -85,7 +85,7 @@ namespace DrillGame
             PlayCoreActiveEffect();
         }
         
-        private void OnResearchProgressRateChanged(int researchId, float progressRate)
+        private void OnResearchProgressRateChanged(int researchId, float progress, float progressRate)
         {
             researchTxt.text = (progressRate * 100).ToString("F1") + "%";
         }

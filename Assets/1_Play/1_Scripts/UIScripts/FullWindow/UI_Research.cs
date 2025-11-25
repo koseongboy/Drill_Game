@@ -51,17 +51,19 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
             CloseAction();
         }
 
-        public void OpenDetail(int researchId)
+        public void OpenDetailWindow(int researchId)
         {
             showingResearchId = researchId;
+            ResearchManager.Instance.OnResearchProgressChanged += OnUpdateResearchProgress;
             UpdateDetailWindow( researchId );
-            DetailWindowOpenAction();
+            DetailWindowOpenAnimation();
         }
 
-        public void CloseDetail()
+        public void CloseDetailWindow()
         {
+            ResearchManager.Instance.OnResearchProgressChanged += OnUpdateResearchProgress;
             DetailWindowInit();
-            DetailWindowCloseAction();
+            DetailWindowCloseAnimation();
         }
 
         public void SelectButtonPressed() {
@@ -126,7 +128,17 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
             }
         }
 
-        private void DetailWindowOpenAction()
+        private void OnUpdateResearchProgress(int researchId, float progress,float progressRate) {
+            if (showingResearchId != researchId) {
+                return;
+            }
+            
+            Research_Data_ data = ScriptableObjectManager.Instance.GetData<Research_Data_>( researchId );
+            progressBar.fillAmount = progressRate;
+            progressTxt.text = $"현재 진척도 : {progress:F1}/{data.ResearchAmount} ({(progressRate * 100):F1}%)";
+        }
+
+        private void DetailWindowOpenAnimation()
         {
             detailWindow.SetActive(true);
             RectTransform rt = detailWindow.GetComponent<RectTransform>();
@@ -141,7 +153,7 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
             rt.DOScale(Vector2.one, 0.1f)
                 .SetEase(Ease.OutBack);
         }
-        private void DetailWindowCloseAction()
+        private void DetailWindowCloseAnimation()
         {
             RectTransform rt = detailWindow.GetComponent<RectTransform>();
             

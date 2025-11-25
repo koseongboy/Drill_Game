@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResearchManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResearchManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/ScriptableObject/Research_Data_.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/ScriptableObject/Research_Data_.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_FloatingBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_FloatingBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_Research.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_Research.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_Research.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_Research.prefab" afterDir="false" />
@@ -136,7 +136,7 @@
       <workItem from="1763959001903" duration="7312000" />
       <workItem from="1763979446545" duration="13137000" />
       <workItem from="1764035595357" duration="3555000" />
-      <workItem from="1764050975936" duration="3138000" />
+      <workItem from="1764050975936" duration="5169000" />
     </task>
     <servers />
   </component>

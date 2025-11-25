@@ -124,7 +124,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: CloseDetail
+        m_MethodName: CloseDetailWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -525,7 +525,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -659,7 +659,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1068,7 +1068,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1610,7 +1610,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1744,7 +1744,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2361,7 +2361,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3039,7 +3039,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3307,7 +3307,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3616,7 +3616,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4136,7 +4136,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4717,7 +4717,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5244,7 +5244,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5378,7 +5378,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5512,7 +5512,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6161,7 +6161,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6431,7 +6431,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6698,7 +6698,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7185,7 +7185,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7093502072679945237}
         m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
           Assembly-CSharp
-        m_MethodName: OpenDetail
+        m_MethodName: OpenDetailWindow
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

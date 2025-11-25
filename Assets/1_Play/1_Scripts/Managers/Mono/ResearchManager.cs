@@ -18,7 +18,7 @@ namespace DrillGame
         
         private const string RESEARCH_SELECTED_ID_KEY = "ResearchId";
         private const string RESEARCH_PROGRESS_KEY = "ResearchProgressData";
-        public event Action<int, float> OnResearchProgressChanged;
+        public event Action<int, float, float> OnResearchProgressChanged;
 
         #region Singleton & initialization
         public static ResearchManager Instance { get; private set; }
@@ -69,16 +69,17 @@ namespace DrillGame
         {
             selectedResearchId = researchId;
             SaveResearchId();
-            OnResearchProgressChanged?.Invoke( selectedResearchId, GetResearchProgressRate( selectedResearchId ) );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
             // AlertObservers();
         }
 
         public void UnSelectResearch() {
             selectedResearchId = 0;
             SaveResearchId();
-            OnResearchProgressChanged?.Invoke( 0, 0);
+            OnResearchProgressChanged?.Invoke( 0, 0f, 0f);
         }
         
+        [ContextMenu("Add Research Progress")]
         public void AddResearchProgress()
         {
             if (!researchProgresses.ContainsKey(selectedResearchId))
@@ -86,12 +87,15 @@ namespace DrillGame
                 Debug.Log("올바르지 않은 ResearchKey입니다. : "+ selectedResearchId);
                 return;
             }
+            
+            // TODO : Input 재료 부족하면 return하기
+            
             researchProgresses[selectedResearchId] += progressValue;
-            if (researchProgresses.Count > 100)
-            {
-                researchProgresses[selectedResearchId] = 100f;
+            if (IsResearchDone(selectedResearchId)) {
+                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+                return;
             }
-            OnResearchProgressChanged?.Invoke( selectedResearchId, GetResearchProgressRate( selectedResearchId ) );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
         }
 
 
@@ -153,7 +157,7 @@ namespace DrillGame
         {
             LoadResearchKey();
             LoadProgressDict();
-            OnResearchProgressChanged?.Invoke( selectedResearchId, GetResearchProgressRate( selectedResearchId ) );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
         }
         
         private void OnApplicationQuit()
@@ -183,7 +187,7 @@ namespace DrillGame
                 researchProgresses[key] = 0.0f;
             }
             Debug.Log("모든 연구 진척도가 0%로 초기화되었습니다.");
-            OnResearchProgressChanged?.Invoke( selectedResearchId, GetResearchProgressRate( selectedResearchId ) );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
             SaveResearchProgressData();
         }
 
