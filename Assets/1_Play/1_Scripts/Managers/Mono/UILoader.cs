@@ -171,7 +171,43 @@ namespace DrillGame.UI
 
         public void ShowUI_FacilityDetail(FacilityEntity facility)
         {
-            ShowUI("FacilityDetail");
+            var facilityId = facility.GetFacilityId();
+            var facilityData = ScriptableObjectManager.Instance.GetData<Facility_Data_>(facilityId);
+
+            var uiName = facilityData.Type switch
+            {
+                "Laboratory" => "UI_LabDetailPopup",
+                "EngineMerger" => "UI_EngineMergerDetailPopup",
+                _ => "UI_FacilityDetailPopup"
+            };
+            
+            // 1. 이미 로드되어 있는 경우 (기존 ShowUI 로직 재활용)
+            if (loadedUIs.TryGetValue(uiName, out var uiInstance) && uiInstance != null)
+            {
+                uiInstance.SetActive(true);
+
+                // 데이터 전달 (동기적)
+                if (uiInstance.TryGetComponent<UITemplate_DetailPopup>(out var detailUI))
+                {
+                    detailUI.SetData(facility);
+                }
+                return;
+            }
+
+            // 2. 로드 요청이 필요한 경우 -> 함수를 LoadUI의 인자로 전달
+            void DataInitializer(GameObject newInstance)
+            {
+                if (newInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                {
+                    detailUI.SetData(facility);
+                    newInstance.SetActive(true); // 로드 후 바로 활성화
+                }
+                else
+                {
+                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 EngineDetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
+                }
+            }
+            LoadUI(uiName, DataInitializer);
         }
        
 

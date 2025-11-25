@@ -18,7 +18,7 @@ namespace DrillGame
         
         private const string RESEARCH_SELECTED_ID_KEY = "ResearchId";
         private const string RESEARCH_PROGRESS_KEY = "ResearchProgressData";
-        public event Action<int, float> OnResearchProgressChanged;
+        public event Action<int, float, float> OnResearchProgressChanged;
 
         #region Singleton & initialization
         public static ResearchManager Instance { get; private set; }
@@ -34,16 +34,51 @@ namespace DrillGame
             }
         }
         #endregion
+
+        #region Get & Set
+        public float GetResearchProgress(int researchId)
+        {
+            return researchProgresses[researchId];
+        }
+
+        public float GetResearchProgressRate(int researchId) {
+            var data = ScriptableObjectManager.Instance.GetData<Research_Data_>(researchId);
+            var maxResearchAmount = data.ResearchAmount;
+            return GetResearchProgress(researchId) / maxResearchAmount;
+        }
+
+        public int GetSelectedResearchId() {
+            return selectedResearchId;
+        }
+
+        public bool IsResearchDone(int researchId) {
+            return researchProgresses[researchId] >=
+                   ScriptableObjectManager.Instance.GetData<Research_Data_>(researchId).ResearchAmount;
+        }
+
+        public bool IsResearchUnLocked(int researchId) {
+            var data = ScriptableObjectManager.Instance.GetData<Research_Data_>(researchId);
+            var requiredResearchId = data.RequireResearchId;
+            return requiredResearchId == 0 || IsResearchDone(requiredResearchId);
+        }
+
+        #endregion
         
         #region public methods
         public void SelectResearch(int researchId)
         {
             selectedResearchId = researchId;
             SaveResearchId();
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
-            // AlertObservers();
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
+        }
+
+        public void UnSelectResearch() {
+            selectedResearchId = 0;
+            SaveResearchId();
+            OnResearchProgressChanged?.Invoke( 0, 0f, 0f);
         }
         
+        [ContextMenu("Add Research Progress")]
         public void AddResearchProgress()
         {
             if (!researchProgresses.ContainsKey(selectedResearchId))
@@ -51,13 +86,18 @@ namespace DrillGame
                 Debug.Log("올바르지 않은 ResearchKey입니다. : "+ selectedResearchId);
                 return;
             }
+            
+            // TODO : Input 재료 부족하면 연구 진척 안 하기
+            
             researchProgresses[selectedResearchId] += progressValue;
-            if (researchProgresses.Count > 100)
-            {
-                researchProgresses[selectedResearchId] = 100f;
+            if (IsResearchDone(selectedResearchId)) {
+                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+                return;
             }
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
         }
+
+
         #endregion
         
         #region private methods
@@ -116,7 +156,7 @@ namespace DrillGame
         {
             LoadResearchKey();
             LoadProgressDict();
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
         }
         
         private void OnApplicationQuit()
@@ -146,7 +186,7 @@ namespace DrillGame
                 researchProgresses[key] = 0.0f;
             }
             Debug.Log("모든 연구 진척도가 0%로 초기화되었습니다.");
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
             SaveResearchProgressData();
         }
 
