@@ -62,7 +62,23 @@ namespace DrillGame
         private void LoadInventory(InventoryManager.ItemType itemType = InventoryManager.ItemType.Facility)
         {
             showingItems.Clear();
-            showingItems = InventoryManager.Instance.GetItemsByType(itemType);
+            Dictionary<int, int> inventoryItems = InventoryManager.Instance.GetItemsByType(itemType);
+            
+
+            //showingItems = InventoryManager.Instance.GetItemsByType(itemType);
+            foreach (var itemEntry in inventoryItems)
+            {
+                var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( itemEntry.Key );
+                if (itemData == null)
+                {
+                    Debug.LogWarning($"ItemData is null for ItemID: {itemEntry.Key}");
+                    continue;
+                }
+                if (itemData.GetItemType_Enum() == itemType)
+                {
+                    showingItems.Add( itemData );
+                }
+            }
             Debug.Log($"LoadInventory : {itemType}, Count: {showingItems.Count}");
         }
         
@@ -188,18 +204,18 @@ namespace DrillGame
         [ContextMenu("AddFacilityItems_DEV")]
         public void AddFacilityItems_DEV()
         {
-            InventoryManager.Instance.AddItemById( 1201 );
-            InventoryManager.Instance.AddItemById( 1201 );
-            InventoryManager.Instance.AddItemById( 1301 );
-            InventoryManager.Instance.AddItemById( 1301 );
+            InventoryManager.Instance.AddItem( 1201 );
+            InventoryManager.Instance.AddItem( 1201 );
+            InventoryManager.Instance.AddItem( 1301 );
+            InventoryManager.Instance.AddItem( 1301 );
         }
         
         [ContextMenu("AddEngineItems_DEV")]
         public void AddEngineItems_DEV()
         {
-            InventoryManager.Instance.AddItemById( 1104 );
-            InventoryManager.Instance.AddItemById( 1104 );
-            InventoryManager.Instance.AddItemById( 1104 );
+            InventoryManager.Instance.AddItem( 1104 );
+            InventoryManager.Instance.AddItem( 1104 );
+            InventoryManager.Instance.AddItem( 1104 );
         }
         #endregion
     }
