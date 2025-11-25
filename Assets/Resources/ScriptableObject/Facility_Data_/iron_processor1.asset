@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uCCA0 \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   Type: Processor
   Level: 1
-  ActionClassName: HelloFacilityAction
+  EntityClassName: 
   Desc: "\uCCA0 \uAD11\uC11D\uC744 \uCCA0 \uC790\uC7AC\uB85C \uAC00\uACF5\uD560 \uC218
     \uC788\uB2E4."
   BuildResourceId: 

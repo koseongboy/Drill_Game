@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uC5D4\uC9C4 \uD569\uC131\uAE30 Lv.3"
   Type: EngineMerger
   Level: 3
-  ActionClassName: HelloFacilityAction
+  EntityClassName: 
   Desc: "\uC0C8\uB85C\uC6B4 \uC5D4\uC9C4\uC744 \uAC1C\uBC1C\uD558\uAC70\uB098, \uAE30\uC874\uC758
     \uC5D4\uC9C4\uB4E4\uC744 \uD569\uC131\uD560 \uC218 \uC788\uB2E4."
   BuildResourceId: 

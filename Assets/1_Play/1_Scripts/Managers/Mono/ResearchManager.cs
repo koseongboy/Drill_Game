@@ -58,6 +58,11 @@ namespace DrillGame
             }
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId] );
         }
+
+        public float GetResearchProgress(int researchId)
+        {
+            return researchProgresses[researchId];
+        }
         #endregion
         
         #region private methods

@@ -12,6 +12,7 @@ public class Research_Data_ : ScriptableObject, ICSVData
     
     public int Id;
     public string DisplayName;
+    public string Desc;
     public int ResearchAmount;
     public int InputItemPerTickId;
     public int InputItemPerTickCount;
