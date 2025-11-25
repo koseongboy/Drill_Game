@@ -25,13 +25,18 @@ namespace DrillGame.Core.Facility
         public event Action OnFacilityDeleted;
 
         protected int Level;
-        #endregion
+    private Vector2Int startPosition;
+    #endregion
 
-        #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, int id)
+    #region Singleton & initialization
+    public FacilityEntity(Vector2Int startPosition, int level, int itemId, int entityId)
         {
-            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
+            this.facilityId = entityId;
+            this.itemId = itemId;
+
+            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
             this.position = startPosition;
+            this.Level = data.Level;
             // for test
             if (formations == null)
             {
@@ -45,10 +50,16 @@ namespace DrillGame.Core.Facility
             BoardManager.Instance.AddFacility(this);
             
         }
-        #endregion
 
-        #region getters & setters
-        public List<Vector2Int> GetFormationPositions()
+    public FacilityEntity(Vector2Int startPosition, int level)
+    {
+      this.startPosition = startPosition;
+      Level = level;
+    }
+    #endregion
+
+    #region getters & setters
+    public List<Vector2Int> GetFormationPositions()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();
             foreach (var formation in formations)

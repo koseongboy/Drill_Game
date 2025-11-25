@@ -37,7 +37,7 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Vector2Int startPosition, int itemId = 1, int entityId = 101011)
+        public void Initialize(Vector2Int startPosition, int itemId = 0, int entityId = 0)
         {
             // 각 장치 속성에 맞는 엔티티 동적 생성
             string fullEntityClassName = "DrillGame.Core.Facility." + EntityClassName;
@@ -48,7 +48,7 @@ namespace DrillGame.View.Facility
                 Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
                 type = typeof(FacilityEntity);
             }
-            object[] parameters = new object[] { startPosition, debugId };
+            object[] parameters = new object[] { startPosition, 0, itemId, debugId };
             FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 
