@@ -82,8 +82,9 @@ namespace DrillGame.Core.Managers
 
         public void RemoveEngine(EngineEntity engine)
         {
-            OnEntityDeleted?.Invoke(engine.GetFormationPositions(), TilemapType.Engine);
+
             engines.Remove(engine);
+            OnEntityDeleted?.Invoke(engine.GetFormationPositions(), TilemapType.Engine);
         }
 
         public void AddFacility(FacilityEntity facility)
@@ -102,7 +103,6 @@ namespace DrillGame.Core.Managers
         public void RemoveFacility(FacilityEntity facility)
         {
             facilities.Remove(facility);
-            // facilityMap에서 제거하는 로직 추가 필요
 
             List<Vector2Int> positions = facility.GetFormationPositions();
             foreach (var pos in positions)

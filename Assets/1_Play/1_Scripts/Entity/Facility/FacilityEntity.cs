@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using DrillGame.Core.Ground;
 using DrillGame.View.Ground;
 using DrillGame.Core.Managers;
+using DrillGame.Managers;
 
 namespace DrillGame.Core.Facility
 {
@@ -69,6 +70,25 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region public methods
+
+        public void DeleteEntity()
+        {
+            // presentor 호출
+            OnFacilityDeleted?.Invoke();
+            // BoardManager 에서 제거
+            BoardManager.Instance.RemoveFacility(this);
+            // 인벤토리에 아이템 추가
+            InventoryManager.Instance.AddItemById(itemId);
+        }
+
+        public void MoveEntity()
+        {
+            // delete 코드 사용후 다시 집어드는 판정입니다.
+            OnFacilityDeleted?.Invoke();
+            BoardManager.Instance.RemoveFacility(this);
+            GameManager.Instance.BatchEntity(itemId);
+        }
+
         public virtual void Run(int intensity)
         {
             Debug.Log("Facility is running. with Intensity : "  + intensity);
