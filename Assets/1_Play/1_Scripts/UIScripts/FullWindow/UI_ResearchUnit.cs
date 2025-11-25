@@ -25,17 +25,11 @@ namespace DrillGame
 
         private void OnEnable() {
             if (ResearchManager.Instance.IsResearchUnLocked(researchID)) {
-                var color = GetComponent<Image>().color;
-                color = Color.white;
-                GetComponent<Image>().color = color;
-                
+                GetComponent<Image>().color = new Color(0.87f, 0.87f, 0.87f); //LightGray
                 nameText.color = Color.black;
             }
             else {
-                var color = GetComponent<Image>().color;
-                color = Color.black;
-                GetComponent<Image>().color = color;
-                
+                GetComponent<Image>().color = new Color(0.18f, 0.18f, 0.18f); //DarkGray
                 nameText.color = Color.white;
             }
             
