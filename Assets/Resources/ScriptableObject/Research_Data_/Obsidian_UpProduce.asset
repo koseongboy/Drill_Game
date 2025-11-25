@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df497819299b3b42bfce6c5c8f71779, type: 3}
-  m_Name: Iron_Tech
+  m_Name: Obsidian_UpProduce
   m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
-  Id: 30005
-  DisplayName: "\uCCA0 \uD14C\uD06C"
-  Desc: "\uAD6C\uB9AC \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C \uB429\uB2C8\uB2E4."
-  ResearchAmount: 150
-  InputItemPerTickId: 1004
+  Id: 30014
+  DisplayName: "\uC635\uC2DC\uB514\uC5B8 \uC0DD\uC0B0\uB7C9 \uC99D\uAC00"
+  Desc: "\uC635\uC2DC\uB514\uC5B8 \uC790\uC6D0\uB4E4\uC758 \uC0DD\uC0B0\uB7C9\uC774
+    \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  ResearchAmount: 400
+  InputItemPerTickId: 1010
   InputItemPerTickCount: 2
-  RequireResearchId: 30001
+  RequireResearchId: 30013

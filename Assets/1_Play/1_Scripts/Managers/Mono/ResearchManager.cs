@@ -70,7 +70,6 @@ namespace DrillGame
             selectedResearchId = researchId;
             SaveResearchId();
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
-            // AlertObservers();
         }
 
         public void UnSelectResearch() {
@@ -88,7 +87,7 @@ namespace DrillGame
                 return;
             }
             
-            // TODO : Input 재료 부족하면 return하기
+            // TODO : Input 재료 부족하면 연구 진척 안 하기
             
             researchProgresses[selectedResearchId] += progressValue;
             if (IsResearchDone(selectedResearchId)) {

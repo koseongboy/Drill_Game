@@ -10,6 +10,21 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 {
     public class UI_Research : MonoBehaviour, UI_IAddressable
     {
+        #region Singleton & initialization
+        public static UI_Research Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
+        #endregion
+        
         #region UI_Addressable
         [SerializeField]
         private string addressableName;
