@@ -17,7 +17,7 @@ public class Facility_Data_ : ScriptableObject, ICSVData
     public string DisplayName;
     public string Type;
     public int Level;
-    public string ActionClassName;
+    public string EntityClassName;
     public string Desc;
     public string BuildResourceId;
     public string BuildResourceCount;

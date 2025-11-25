@@ -1,17 +1,11 @@
 using DG.Tweening;
-using DrillGame.Core.Engine;
 using DrillGame.Core.Facility;
 using DrillGame.Core.Presenter;
-using NUnit.Framework;
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 using System.Collections.Generic;
 using DrillGame.View.Helper;
-using System.Security.Cryptography;
-using DrillGame.View.Ground;
-using DrillGame.Core.Ground;
 
 namespace DrillGame.View.Facility
 {
@@ -26,19 +20,9 @@ namespace DrillGame.View.Facility
         [SerializeField]
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
 
-        
+        [SerializeField]
         List<Vector2Int> formation = new();
         public string EntityClassName = "FacilityEntity";
-        public string Name;
-        public string DisplayName;
-        public string Type;
-        public int Level;
-        public string BuildResourceId;
-        public string BuildResourceCount;
-        public string InputItemId;
-        public string InputItemCount;
-        public int OutputItemId;
-        public int OutputItemCount;
         
 
         private FacilityPresenter presenter;
@@ -56,32 +40,18 @@ namespace DrillGame.View.Facility
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition, int itemId = 0, int unitId = 0)
         {
-            Facility_Data_ data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(debugId);
-            formation = data.GetCoordinates();
-            EntityClassName = data.EntityClassName;
-            Name = data.Name;
-            DisplayName = data.DisplayName;
-            Type = data.Type;
-            Level = data.Level;
-            BuildResourceId = data.BuildResourceId;
-            BuildResourceCount = data.BuildResourceCount;
-            InputItemId = data.InputItemId;
-            InputItemCount = data.InputItemCount;
-            OutputItemId = data.OutputItemId;
-            OutputItemCount = data.OutputItemCount;
+           
 
-            
-
-            // ��Ʈ������ ���� Ŭ���� ������ ���� facility action �ν��Ͻ� ����
+            // 각 장치 속성에 맞는 엔티티 동적 생성
             string fullEntityClassName = "DrillGame.Core.Facility." + EntityClassName;
             Type type = System.Type.GetType(fullEntityClassName);
             Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {
                 Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
-                type = typeof(FacilityEntity); // �⺻ �׼����� ��ü
+                type = typeof(FacilityEntity);
             }
-            object[] parameters = new object[] { startPosition, formation, Level };
+            object[] parameters = new object[] { startPosition, formation, debugId };
             FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 
