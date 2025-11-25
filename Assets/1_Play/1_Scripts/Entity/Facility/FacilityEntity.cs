@@ -23,19 +23,16 @@ namespace DrillGame.Core.Facility
 
         public event Action OnFacilityDeleted;
 
-        protected IFacilityAction facilityAction;
-
-        private int level;
+        protected int Level;
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, IFacilityAction facilityAction, int level, int itemId, int facilityId)
+        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, int level)
         {
             this.itemId = itemId;
             this.facilityId = facilityId;
             this.position = startPosition;
-            this.facilityAction = facilityAction;
-            this.level = level;
+            this.Level = level;
             // for test
             if (formations == null)
             {
@@ -74,7 +71,10 @@ namespace DrillGame.Core.Facility
             Debug.Log("Facility is running. with Intensity : "  + intensity);
 
             // 시설 고유의 액션 실행
-            facilityAction?.ActivateFacility(this, intensity, level);
+            for (int i = 0; i < intensity; i++)
+            {
+                Logger("Hello from Facility! Intensity: " + intensity);
+            }
 
             // 이벤트 호출 (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);

@@ -28,7 +28,7 @@ namespace DrillGame.View.Facility
 
         
         List<Vector2Int> formation = new();
-        public string ActionClassName = "HelloFacilityAction";
+        public string EntityClassName = "FacilityEntity";
         public string Name;
         public string DisplayName;
         public string Type;
@@ -58,7 +58,7 @@ namespace DrillGame.View.Facility
         {
             Facility_Data_ data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(debugId);
             formation = data.GetCoordinates();
-            ActionClassName = data.ActionClassName;
+            EntityClassName = data.EntityClassName;
             Name = data.Name;
             DisplayName = data.DisplayName;
             Type = data.Type;
@@ -72,18 +72,17 @@ namespace DrillGame.View.Facility
 
             
 
-            // 스트링으로 받은 클래스 네임을 통해 facility action 인스턴스 생성
-            string fullActionClassName = "DrillGame.Core.Facility." + ActionClassName;
-            Type type = System.Type.GetType(fullActionClassName);
+            // ��Ʈ������ ���� Ŭ���� ������ ���� facility action �ν��Ͻ� ����
+            string fullEntityClassName = "DrillGame.Core.Facility." + EntityClassName;
+            Type type = System.Type.GetType(fullEntityClassName);
             Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {
-                Debug.LogError($"Facility action class '{fullActionClassName}' not found. Using default action.");
-                type = typeof(HelloFacilityAction); // 기본 액션으로 대체
+                Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
+                type = typeof(FacilityEntity); // �⺻ �׼����� ��ü
             }
-            IFacilityAction facilityAction = Activator.CreateInstance(type) as IFacilityAction;
-
-            FacilityEntity facilityEntity = new FacilityEntity(startPosition, formation, facilityAction, Level, itemId, unitId);
+            object[] parameters = new object[] { startPosition, formation, Level };
+            FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 
             OnClickFacilityDetail = () => {
