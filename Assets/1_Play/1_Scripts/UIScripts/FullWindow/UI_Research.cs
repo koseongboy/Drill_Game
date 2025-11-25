@@ -25,18 +25,20 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         
         [SerializeField]
         private TextMeshProUGUI researchNameTxt;
-        
         [SerializeField]
         private Image progressBar;
-        
         [SerializeField]
         private TextMeshProUGUI progressTxt;
-        
         [SerializeField]
         private TextMeshProUGUI researchDescTxt;
-        
         [SerializeField]
         private TextMeshProUGUI researchInputItemTxt;
+        [SerializeField]
+        private TextMeshProUGUI selectButtonTxt;
+        
+        private Action<int> SelectButtonPressedAction;
+
+        private int showingResearchId;
         #endregion
 
         #region getters & setters
@@ -51,28 +53,8 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         public void OpenDetail(int researchId)
         {
-            Research_Data_ data = ScriptableObjectManager.Instance.GetData<Research_Data_>( researchId );
-            float progress = ResearchManager.Instance.GetResearchProgress( researchId );
-            
-            // Name
-            researchNameTxt.text = data.DisplayName;
-            
-            // Progress
-            float progressRate = progress / data.ResearchAmount;
-            progressBar.fillAmount = progressRate;
-            progressTxt.text = $"현재 진척도 : {progress}/{data.ResearchAmount} ({progressRate}%)";
-            
-            // Desc
-            researchDescTxt.text = data.Desc;
-            
-            // Input Item
-            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(
-                data.InputItemPerTickId);
-            researchInputItemTxt.text = $"필요 자원 : 틱 당 {itemData.DisplayName} {data.InputItemPerTickCount}개";
-            
-            // Button Update
-            // TODO
-
+            showingResearchId = researchId;
+            UpdateDetailWindow( researchId );
             DetailWindowOpenAction();
         }
 
@@ -80,6 +62,12 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         {
             DetailWindowInit();
             DetailWindowCloseAction();
+        }
+
+        public void SelectButtonPressed() {
+            Debug.Log($"SelectButtonPressed : { showingResearchId }");
+            SelectButtonPressedAction?.Invoke( showingResearchId );
+            UpdateDetailWindow( showingResearchId );
         }
         #endregion
 
@@ -94,13 +82,48 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
             UILoader.Instance.HideUI(addressableName);
         }
 
-        private void DetailWindowInit()
-        {
+        private void DetailWindowInit() {
+            showingResearchId = 0;
             researchNameTxt.text = string.Empty;
-            progressBar.gameObject.SetActive(false);
+            progressBar.fillAmount = 0;
             progressTxt.text = string.Empty;
             researchDescTxt.text = string.Empty;
             researchInputItemTxt.text = string.Empty;
+            SelectButtonPressedAction = null;
+        }
+
+        private void UpdateDetailWindow( int researchId ) {
+            Research_Data_ data = ScriptableObjectManager.Instance.GetData<Research_Data_>( researchId );
+            float progress = ResearchManager.Instance.GetResearchProgress( researchId );
+            
+            // Name
+            researchNameTxt.text = data.DisplayName;
+            
+            // Progress
+            float progressRate = progress / data.ResearchAmount;
+            progressBar.fillAmount = progressRate;
+            progressTxt.text = $"현재 진척도 : {progress}/{data.ResearchAmount} ({(progressRate * 100):F1}%)";
+            
+            // Desc
+            researchDescTxt.text = data.Desc;
+            
+            // Input Item
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(
+                data.InputItemPerTickId);
+            researchInputItemTxt.text = $"필요 자원 : 틱 당 {itemData.DisplayName} {data.InputItemPerTickCount}개";
+
+            // Button Update
+            SelectButtonPressedAction = null;
+            if (!IsResearchUnLocked( researchId )) {
+                selectButtonTxt.text = "잠김";
+            }else if (!IsResearchSelected( researchId )) {
+                selectButtonTxt.text = "선택";
+                SelectButtonPressedAction += SelectResearch;
+            }
+            else {
+                selectButtonTxt.text = "선택 해제";
+                SelectButtonPressedAction += UnSelectResearch;
+            }
         }
 
         private void DetailWindowOpenAction()
@@ -134,6 +157,23 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
                 .OnComplete(() => {
                     detailWindow.SetActive(false);
                 });
+        }
+
+        private void SelectResearch(int researchId) {
+            ResearchManager.Instance.SelectResearch( researchId );
+        }
+
+        private void UnSelectResearch(int researchId) {
+            ResearchManager.Instance.UnSelectResearch();
+        }
+
+        private bool IsResearchSelected(int researchId) {
+            var selectedResearchId = ResearchManager.Instance.GetSelectedResearchId();
+            return selectedResearchId == researchId;
+        }
+        
+        private bool IsResearchUnLocked( int researchId ) {
+            return ResearchManager.Instance.IsResearchUnLocked(researchId);
         }
         #endregion
 

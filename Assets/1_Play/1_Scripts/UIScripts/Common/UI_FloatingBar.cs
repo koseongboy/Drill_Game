@@ -85,9 +85,9 @@ namespace DrillGame
             PlayCoreActiveEffect();
         }
         
-        private void OnResearchProgressChanged(int researchId, float progress)
+        private void OnResearchProgressRateChanged(int researchId, float progressRate)
         {
-            researchTxt.text = progress.ToString("F1") + "%";
+            researchTxt.text = (progressRate * 100).ToString("F1") + "%";
         }
         
         /// <summary>
@@ -156,7 +156,7 @@ namespace DrillGame
             GroundComponent.Instance.OnDepthChanged += OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged += OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
-            ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressChanged; 
+            ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressRateChanged; 
         }
 
         private void OnDisable()
@@ -165,7 +165,7 @@ namespace DrillGame
             GroundComponent.Instance.OnDepthChanged -= OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
-            ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressChanged;
+            ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressRateChanged;
         }
         
         private void Start()

@@ -943,6 +943,7 @@ MonoBehaviour:
   progressTxt: {fileID: 491377443062029694}
   researchDescTxt: {fileID: 9171860324219217946}
   researchInputItemTxt: {fileID: 1453863807805261561}
+  selectButtonTxt: {fileID: 299193388571470576}
 --- !u!1 &1378233891419551111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,8 +2135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.5246582, y: -418}
-  m_SizeDelta: {x: -69.726, y: 54.1}
+  m_AnchoredPosition: {x: -110.76, y: -425.57}
+  m_SizeDelta: {x: -292.29, y: 69.234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3215295505151249959
 CanvasRenderer:
@@ -3061,7 +3062,7 @@ GameObject:
   - component: {fileID: 7603959517817185760}
   - component: {fileID: 248284935230371408}
   m_Layer: 5
-  m_Name: UI_Research_DetailButton1
+  m_Name: UI_Research_DetailButton_Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3169,9 +3170,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DrillGame.UI_EngineDetailPopup, Assembly-CSharp
-        m_MethodName: DeleteOnBoard
+      - m_Target: {fileID: 7093502072679945237}
+        m_TargetAssemblyTypeName: DrillGame._1_Play._1_Scripts.UIScripts.FullWindow.UI_Research,
+          Assembly-CSharp
+        m_MethodName: SelectButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

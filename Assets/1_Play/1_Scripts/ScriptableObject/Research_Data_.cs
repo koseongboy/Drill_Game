@@ -16,5 +16,5 @@ public class Research_Data_ : ScriptableObject, ICSVData
     public int ResearchAmount;
     public int InputItemPerTickId;
     public int InputItemPerTickCount;
-    public string RequireResearchId;
+    public int RequireResearchId;
 }
