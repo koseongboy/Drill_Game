@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using DrillGame.Core.Ground;
 using DrillGame.View.Ground;
-
 using DrillGame.Core.Managers;
 
 namespace DrillGame.Core.Facility
@@ -14,8 +13,9 @@ namespace DrillGame.Core.Facility
     {
         #region Fields & Properties
 
-        private int itemId;
-        private int facilityId;
+        public Facility_Data_ data;
+        protected int facilityId;
+        protected int itemId;
         protected Vector2Int position; // 시설의 위치 (중점)
         protected List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
@@ -27,12 +27,11 @@ namespace DrillGame.Core.Facility
         #endregion
 
         #region Singleton & initialization
-        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, int level)
+        public FacilityEntity(Vector2Int startPosition, List<Vector2Int> formations, int id)
         {
-            this.itemId = itemId;
-            this.facilityId = facilityId;
+            Debug.Log("Facility Entity Created with id : " + id);
+            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
             this.position = startPosition;
-            this.Level = level;
             // for test
             if (formations == null)
             {

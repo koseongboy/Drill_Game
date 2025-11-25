@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uB3CC \uCC44\uAD74 \uC2DC\uC124 Lv.1"
   Type: Miner
   Level: 1
-  ActionClassName: HelloFacilityAction
+  EntityClassName: FacilityEntity
   Desc: "\uB3CC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
   BuildResourceId: 
   BuildResourceCount: 
