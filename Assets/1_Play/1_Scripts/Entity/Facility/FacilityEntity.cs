@@ -71,16 +71,6 @@ namespace DrillGame.Core.Facility
 
         #region public methods
 
-        public void DeleteEntity()
-        {
-            // presentor 호출
-            OnFacilityDeleted?.Invoke();
-            // BoardManager 에서 제거
-            BoardManager.Instance.RemoveFacility(this);
-            // 인벤토리에 아이템 추가
-            InventoryManager.Instance.AddItemById(itemId);
-        }
-
         public void MoveEntity()
         {
             // delete 코드 사용후 다시 집어드는 판정입니다.

@@ -90,6 +90,12 @@ namespace DrillGame.Core.Managers
         {
             return inventoryItems.FindAll(item => item.GetItemType_Enum() == itemType);
         }
+
+        public int GetItemCountById(int itemId)
+        {
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(itemId);
+            return inventoryItems.FindAll(item => item == itemData).Count;
+        }
         #endregion
 
         #region private methods
