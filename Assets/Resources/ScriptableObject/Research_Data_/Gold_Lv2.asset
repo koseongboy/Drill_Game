@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df497819299b3b42bfce6c5c8f71779, type: 3}
+  m_Name: Gold_Lv2
+  m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
+  Id: 30012
+  Name: Gold_Lv2
+  DisplayName: "\uAE08 \uD14C\uD06C Lv.2"
+  Desc: "Lv.2\uC758 \uAE08 \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C
+    \uB429\uB2C8\uB2E4."
+  ResearchAmount: 400
+  InputItemPerTickId: 1008
+  InputItemPerTickCount: 2
+  RequireResearchId: 30011
