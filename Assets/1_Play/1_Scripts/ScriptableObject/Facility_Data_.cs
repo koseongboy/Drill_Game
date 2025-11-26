@@ -7,6 +7,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Facility_Data_", menuName = "GameData/Facility_Data_")]
 public class Facility_Data_ : ScriptableObject, ICSVData
 {
+    public enum FacilityType
+    {
+        None = -1,
+        Miner = 0,
+        Processor = 1,
+        Laboratory = 2,
+        EngineMerger = 3,
+        ResourceMerger = 4,
+        Drill = 5
+    }
+    
     public int GetId()
     {
         return Id;
@@ -39,6 +50,13 @@ public class Facility_Data_ : ScriptableObject, ICSVData
             coordinates.Add(new Vector2Int(int.Parse(str[0]), int.Parse(str[1])));
         }
         return coordinates;
+    }
+    
+    public FacilityType GetFacilityType_Enum()
+    {
+        FacilityType returnType = FacilityType.Miner;
+        Enum.TryParse(Type, true, out returnType);
+        return returnType;
     }
     
     [ContextMenu("Get Coordinates")]

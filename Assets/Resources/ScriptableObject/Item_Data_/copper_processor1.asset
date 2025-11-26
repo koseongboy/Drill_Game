@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c247933895ff140b056b5e917142f0, type: 3}
   m_Name: copper_processor1
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
-  Id: 1210
+  Id: 1206
   Name: copper_processor1
   DisplayName: "\uAD6C\uB9AC \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   ItemType: Facility

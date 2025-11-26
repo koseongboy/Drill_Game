@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: resource_merger7
   DisplayName: "\uC790\uC6D0 \uD569\uC131\uAE30 Lv.7"
   Type: ResourceMerger
-  Icon: 
+  Icon: resourceMergerIcon
   Level: 7
   EntityClassName: FacilityEntity
   Desc: "\uC789\uC5EC \uC790\uC6D0\uC744 \uC7AC\uD65C\uC6A9\uD558\uAE30 \uC704\uD55C

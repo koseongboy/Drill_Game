@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c247933895ff140b056b5e917142f0, type: 3}
   m_Name: obsidian_processor1
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
-  Id: 1228
+  Id: 1224
   Name: obsidian_processor1
   DisplayName: "\uD751\uC694\uC11D \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   ItemType: Facility

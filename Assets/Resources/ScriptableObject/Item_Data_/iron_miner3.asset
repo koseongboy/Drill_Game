@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c247933895ff140b056b5e917142f0, type: 3}
   m_Name: iron_miner3
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
-  Id: 1215
+  Id: 1211
   Name: iron_miner3
   DisplayName: "\uCCA0 \uCC44\uAD74 \uC2DC\uC124 Lv.3"
   ItemType: Facility

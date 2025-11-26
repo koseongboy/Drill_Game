@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uC790\uC6D0 \uD569\uC131\uAE30 Lv.5"
   ItemType: Facility
   EntityId: 113005
-  ItemIcon: 
+  ItemIcon: resourceMergerIcon
