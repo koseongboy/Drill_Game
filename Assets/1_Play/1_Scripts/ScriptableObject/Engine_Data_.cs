@@ -15,6 +15,7 @@ public class Engine_Data_ : ScriptableObject, ICSVData
     public int Id;
     public int EngineId;
     public string DisplayName;
+    public string Icon;
     public string Type;
     public int Level;
     public List<string> Coordinates;

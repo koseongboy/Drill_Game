@@ -197,14 +197,14 @@ namespace DrillGame.UI
             // 2. 로드 요청이 필요한 경우 -> 함수를 LoadUI의 인자로 전달
             void DataInitializer(GameObject newInstance)
             {
-                if (newInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                if (newInstance.TryGetComponent<UITemplate_DetailPopup>(out var detailUI))
                 {
                     detailUI.SetData(facility);
                     newInstance.SetActive(true); // 로드 후 바로 활성화
                 }
                 else
                 {
-                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 EngineDetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
+                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 FacilityDetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
                 }
             }
             LoadUI(uiName, DataInitializer);
@@ -231,7 +231,7 @@ namespace DrillGame.UI
             // 2. 로드 요청이 필요한 경우 -> 함수를 LoadUI의 인자로 전달
             void DataInitializer(GameObject newInstance)
             {
-                if (newInstance.TryGetComponent<UI_EngineDetailPopup>(out var detailUI))
+                if (newInstance.TryGetComponent<UITemplate_DetailPopup>(out var detailUI))
                 {
                     detailUI.SetData(engine);
                     newInstance.SetActive(true); // 로드 후 바로 활성화

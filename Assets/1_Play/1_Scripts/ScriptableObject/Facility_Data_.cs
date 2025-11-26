@@ -16,6 +16,7 @@ public class Facility_Data_ : ScriptableObject, ICSVData
     public string Name;
     public string DisplayName;
     public string Type;
+    public string Icon;
     public int Level;
     public string EntityClassName;
     public string Desc;

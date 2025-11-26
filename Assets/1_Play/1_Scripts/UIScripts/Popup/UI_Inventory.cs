@@ -44,7 +44,6 @@ namespace DrillGame
                 GameViewManager.ViewState.FacilityOnly => InventoryManager.ItemType.Facility,
                 _ => InventoryManager.ItemType.None
             };
-            Debug.Log(itemType);
             LoadInventory(itemType);
             UpdateUI();
         }
@@ -64,7 +63,6 @@ namespace DrillGame
         {
             showingItems.Clear();
             showingItemsCountDict = InventoryManager.Instance.GetItemsByType(itemType);
-            PrintAll_Dict(showingItemsCountDict);
 
             foreach (var kvp in showingItemsCountDict)
             {
@@ -84,7 +82,7 @@ namespace DrillGame
                 }
             }
 
-            Debug.Log($"LoadInventory : {itemType}, Count: {showingItems.Count}");
+            // Debug.Log($"LoadInventory : {itemType}, Count: {showingItems.Count}");
         }
 
         // NOTE : showingItems는 사전에 Update 되어있어야 함.

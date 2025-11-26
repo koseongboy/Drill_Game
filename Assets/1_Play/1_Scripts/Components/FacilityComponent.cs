@@ -127,8 +127,6 @@ namespace DrillGame.View.Facility
             }
 
             OnClickFacilityDetail?.Invoke();
-
-            Debug.Log("FacilityComponent clicked : UI 필요해요");
         }
         
         public void OnPointerEnter(PointerEventData eventData)

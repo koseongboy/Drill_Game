@@ -116,7 +116,7 @@ namespace DrillGame.View.Ground
         //입력받는 값에 따라 엔티티 세팅 (깊이만 줬을 때 = 새로운 땅 생성할 때)
         private void setNewData(int depth)
         {
-            Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
+            // Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             
             GroundEntity.SetInformation(depth, CurrentGroundData.HP, CurrentGroundData.HP, CurrentGroundData.DropItems);
@@ -133,7 +133,7 @@ namespace DrillGame.View.Ground
         //입력받는 값에 따라 엔티티 세팅 (hp도 줬을 때 = 기존 유저 데이터 불러올 때)
         private void setNewData(int depth, int hp)
         {
-            Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
+            // Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
             OnDepthChanged?.Invoke( GroundEntity.Depth );

@@ -1,19 +1,28 @@
+using System.Collections.Generic;
+using DG.Tweening;
+using DrillGame.Core.Engine;
 using DrillGame.Core.Facility;
+using DrillGame.Managers;
+using DrillGame.UI;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+using DrillGame.UI.Interface;
+using TMPro;
 
 namespace DrillGame
 {
-    public class UI_LabDetailPopup : UITemplate_DetailPopup
+    public class UI_FacilityDetailPopup : UITemplate_DetailPopup
     {
         #region Fields & Properties
-        private FacilityEntity labFacilityEntity;
+        private FacilityEntity facilityEntity;
         #endregion
-        
+
         #region getters & setters
+
         public override void SetData(object entity)
         {
-            Debug.Log(entity.ToString());
-            labFacilityEntity = (FacilityEntity)entity;
+            facilityEntity = (FacilityEntity)entity;
             UpdateDetail();
         }
         #endregion
@@ -21,12 +30,8 @@ namespace DrillGame
         #region public methods
         public override void MoveOnBoard()
         {
-            Debug.Log("MoveEngineOnBoard 진입.");
-            
             CloseUI();
-            
-            // 이거 어디있지
-            // labFacilityEntity.MoveEntity(); 
+            facilityEntity.MoveEntity();
         }
         
         public override void DeleteOnBoard()
@@ -35,18 +40,19 @@ namespace DrillGame
             // Debug.Log("DeleteEngineOnBoard 진입.");
             
             CloseUI();
-            labFacilityEntity.DeleteEntity();
+            facilityEntity.DeleteEntity();
         }
         #endregion
 
         #region private methods
         protected override void UpdateDetail()
         {
-            var id = labFacilityEntity.GetFacilityId();
+            var id = facilityEntity.GetFacilityId(); 
             var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
 
             titleTxt.text = data.DisplayName;
             descTxt.text = data.Desc;
+            
             // Sprite
             Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + data.Icon);
             if (icon == null)
@@ -55,6 +61,9 @@ namespace DrillGame
             }
             iconImg.sprite = icon;
         }
+        #endregion
+
+        #region Unity event methods
         #endregion
     }
 }

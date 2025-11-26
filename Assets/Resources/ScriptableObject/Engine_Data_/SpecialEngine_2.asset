@@ -15,6 +15,7 @@ MonoBehaviour:
   Id: 211002
   EngineId: 0
   DisplayName: 
+  Icon: engine_test
   Type: special
   Level: 2
   Coordinates:

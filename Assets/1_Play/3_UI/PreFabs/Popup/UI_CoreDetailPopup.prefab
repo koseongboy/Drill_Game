@@ -16,6 +16,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreDetailPopup_Desc
       objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2083208013302290771}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_CoreDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560847824356869787, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: UI_CoreDetailPopup_BG
+      objectReference: {fileID: 0}
     - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

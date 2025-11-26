@@ -13,7 +13,7 @@ namespace DrillGame.View.Engine
     {
         #region Fields & Properties
         [SerializeField]
-        private Vector2Int debugPosition;   // -> �̰� ����� ���Ŀ��� ���������Ұ� ���� �ʳ�? �����̼��� static �� data�ϱ�
+        private Vector2Int debugPosition;   // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
         [SerializeField]
         private List<Vector2Int> debugFormation = new();
         [SerializeField]
@@ -36,10 +36,10 @@ namespace DrillGame.View.Engine
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition, int itemId=0, int unitId=0)
         {
-            // for Test ���� ���丮 �������� �и� �ʿ� -> �ٵ� ���� ���� �ൿ ������ ����..
+            // for Test 후일 팩토리 패턴으로 분리 필요 -> 근데 아직 엔진 행동 패턴이 없는..
             if (engineType != "BasicEngine")
             {
-                Debug.LogWarning("����� BasicEngine�� �����մϴ�. �⺻������ �����մϴ�.");
+                Debug.LogWarning("현재는 BasicEngine만 지원합니다. 기본값으로 설정합니다.");
                 engineType = "BasicEngine";
             }
 
@@ -49,7 +49,7 @@ namespace DrillGame.View.Engine
 
             OnClickEngineDetail = () => {
                 presenter.RequestEngineDetail();
-                // Ȯ�强�� ���� ���ٽ� ���
+                // 확장성을 위해 람다식 사용
             };
 
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -65,18 +65,18 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region public methods
-        // ���� ������Ʈ ���� ��� ����
+        // 엔진 컴포넌트 관련 기능 실행
         public void RunEngineComponent()
         {
-            // �ӽ� �׷��� �׼� ����
+            // 임시 그래픽 액션 실행
             TempGraphicAction();
         }
 
         public void DeleteEngineComponent()
         {
-            // ���� ������Ʈ ���� ó��
+            // 엔진 컴포넌트 삭제 처리
             Destroy(this.gameObject);
-            // onDestroy���� presenter.Dispose() ȣ��
+            // onDestroy에서 presenter.Dispose() 호출
         }
 
         public void ChosenGraphic()
@@ -94,12 +94,12 @@ namespace DrillGame.View.Engine
         #region private methods
         private void TempGraphicAction()
         {
-            // �ӽ� �׷��� �׼� : ������  ��� �ٲ�ٰ� �������
-            spriteRenderer.material.DOColor(flashColor, flashDuration)
-            // 2. ������ �Ϸ�� �� ����� �ݹ� ����
+            // 임시 그래픽 액션 : 색깔을  잠깐 바꿨다가 원래대로
+            spriteRenderer.material.DOColor(flashColor, flashDuration) 
+                // 2. 변경이 완료된 후 실행될 콜백 지정
             .OnComplete(() =>
             {
-                // �ݹ鿡�� ���� �������� ����
+                // 콜백에서 원래 색상으로 복귀
                 spriteRenderer.material.DOColor(originalColor, flashDuration);
             });
 
@@ -121,7 +121,7 @@ namespace DrillGame.View.Engine
         {
             if(presenter == null)
             {
-                Debug.LogWarning("������ ���� EngineComponent�� �����߽��ϴ�. �׽�Ʈ�� �⺻ ������ �����մϴ�.");
+                Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 테스트용 기본 엔진을 생성합니다.");
                 Initialize(debugPosition);
             }
         }
@@ -133,7 +133,7 @@ namespace DrillGame.View.Engine
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // ���� �׽�Ʈ �뵵�� ������ ����ٰ� �ɾ�ξ��µ� �׷��� ��ġ���ڸ��� ������ ��� Ŭ������ �ٲ���
+            // 지금 테스트 용도라서 삭제를 여기다가 걸어두었는데 그러면 배치하자마자 눌려서 가운데 클릭으로 바꿨어요
             if(eventData.button != PointerEventData.InputButton.Middle)
             {
                 return; 
@@ -146,7 +146,7 @@ namespace DrillGame.View.Engine
             gameObject.GetComponent<SpriteRenderer>().material.color = onMouseColor;
         }
 
-        // IPointerExitHandler�� �ʼ� �޼��� ����
+        // IPointerExitHandler의 필수 메서드 구현
         public void OnPointerExit(PointerEventData eventData)
         {
             gameObject.GetComponent<SpriteRenderer>().material.color = originalColor;
