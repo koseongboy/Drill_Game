@@ -162,6 +162,10 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
 
         private void UpdateUnitUI_OnUpdateResearchProgress(int researchId, float progress, float progressRate)
         {
+            if (researchId == 0)
+            {
+                return;
+            }
             researchUnits[ researchId ].UpdateUI();
         }
 
@@ -204,8 +208,13 @@ namespace DrillGame._1_Play._1_Scripts.UIScripts.FullWindow
         }
 
         private void UnSelectResearch(int researchId) {
+            researchUnits[ researchId ].UpdateUI_UnSelect();
+            
+            selectButtonTxt.text = "선택";
+            SelectButtonPressedAction -= UnSelectResearch;
+            SelectButtonPressedAction += SelectResearch;
+            
             ResearchManager.Instance.UnSelectResearch();
-            researchUnits[ researchId ].UpdateUI();
         }
 
         private bool IsResearchSelected(int researchId) {

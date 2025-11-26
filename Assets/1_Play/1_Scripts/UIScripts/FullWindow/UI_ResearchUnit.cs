@@ -36,13 +36,13 @@ namespace DrillGame
         {
             var image = GetComponent<Image>();
             
-            if (ResearchManager.Instance.IsResearchUnLocked(researchID)) { // Unlock
-                image.color = new Color(0.87f, 0.87f, 0.87f); //LightGray
-                ui_nameText.color = Color.black;
-            }else if (researchID == ResearchManager.Instance.GetSelectedResearchId()) // Selected
+            if (researchID == ResearchManager.Instance.GetSelectedResearchId()) // Selected
             {
                 image.color = new Color(0.87f, 0.4f, 0f); //Orange
                 ui_nameText.color = Color.white;
+            }else if (ResearchManager.Instance.IsResearchUnLocked(researchID)) { // Unlock
+                image.color = new Color(0.87f, 0.87f, 0.87f); //LightGray
+                ui_nameText.color = Color.black;
             }else {
                 image.color = new Color(0.18f, 0.18f, 0.18f); //DarkGray
                 ui_nameText.color = Color.white;
@@ -50,6 +50,13 @@ namespace DrillGame
             
             // Research Progress
             progressBar.fillAmount = ResearchManager.Instance.GetResearchProgressRate( researchID );
+        }
+
+        public void UpdateUI_UnSelect()
+        {
+            var image = GetComponent<Image>();
+            image.color = new Color(0.87f, 0.87f, 0.87f); //LightGray
+            ui_nameText.color = Color.black;
         }
 
         private void Awake()
