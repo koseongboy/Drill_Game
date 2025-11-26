@@ -11,16 +11,14 @@ namespace DrillGame
         [SerializeField] private Image Icon;
         [SerializeField] private TextMeshProUGUI Count;
 
-        public void SetItemData(Item_Data_ itemData, int count)
+        public void SetItemData(Item_Data_ itemData, int count = 0)
         {
             // Id
             itemId = itemData.GetId();
             
-            // Count
-            // Count.text = count == 1 
-            //     ? "" 
-            //     : count.ToString();
-            Count.text = count.ToString();
+            Count.text = count == 0
+                ? "" 
+                : count.ToString();
             
             // Sprite
             var path = "Icon/ItemIcon/" + itemData.ItemIcon;
