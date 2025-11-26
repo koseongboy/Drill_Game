@@ -15,6 +15,7 @@ MonoBehaviour:
   Id: 202001
   EngineId: 202
   DisplayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.1"
+  Icon: engine_test
   Type: normal
   Level: 1
   Coordinates:

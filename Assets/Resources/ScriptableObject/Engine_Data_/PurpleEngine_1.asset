@@ -15,6 +15,7 @@ MonoBehaviour:
   Id: 204001
   EngineId: 204
   DisplayName: "\uBCF4\uB77C \uC5D4\uC9C4 Lv.1"
+  Icon: engine_test
   Type: normal
   Level: 1
   Coordinates:

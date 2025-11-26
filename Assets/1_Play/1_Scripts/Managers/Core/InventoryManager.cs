@@ -14,12 +14,11 @@ namespace DrillGame.Core.Managers
     {
         public const int resourceKeyStart = 1001;
         public const int resourceKeyEnd = 1099;
-        public const int facilityKeyStart = 1101;
-        public const int facilityKeyEnd = 1199;
-        public const int engineKeyStart = 1201;
-        public const int engineKeyEnd = 1299;
-        public const int facility2KeyStart = 1301;
-        public const int facility2KeyEnd = 1500;
+        public const int engineKeyStart = 1101;
+        public const int engineKeyEnd = 1199;
+        public const int facilityKeyStart = 1201;
+        public const int facilityKeyEnd = 1500;
+
 
         public enum ItemType
         {
@@ -67,6 +66,7 @@ namespace DrillGame.Core.Managers
 
         public void AddItem(int itemId, int count = 1)
         {
+            Debug.Log("Adding item : " + itemId + " : " + count);
             if (inventoryItems.ContainsKey(itemId))
             {
                 inventoryItems[itemId] += count;
@@ -140,8 +140,7 @@ namespace DrillGame.Core.Managers
 
                 case ItemType.Facility:
                     Dictionary<int, int> facilityItems = inventoryItems
-                    .Where(kvp => (kvp.Key >= facilityKeyStart && kvp.Key <= facilityKeyEnd) 
-                                 || (kvp.Key >= facility2KeyStart && kvp.Key <= facility2KeyEnd))
+                    .Where(kvp => kvp.Key is >= facilityKeyStart and <= facilityKeyEnd)
                     .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
                     return facilityItems;
                 case ItemType.Engine:

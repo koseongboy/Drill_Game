@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: copper_processor3
   DisplayName: "\uAD6C\uB9AC \uAC00\uACF5 \uC2DC\uC124 Lv.3"
   Type: Processor
+  Icon: engine_test
   Level: 3
   EntityClassName: ProcessEntity
   Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uAD6C\uB9AC \uC790\uC7AC\uB85C \uAC00\uACF5\uD560

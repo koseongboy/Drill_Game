@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df497819299b3b42bfce6c5c8f71779, type: 3}
   m_Name: Copper_Drill
   m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
-  Id: 30004
+  Id: 30005
+  Name: Copper_Drill
   DisplayName: "\uAD6C\uB9AC \uB4DC\uB9B4"
   Desc: "\uAD6C\uB9AC \uB4DC\uB9B4\uB85C \uC5C5\uADF8\uB808\uC774\uB4DC \uD569\uB2C8\uB2E4."
   ResearchAmount: 100

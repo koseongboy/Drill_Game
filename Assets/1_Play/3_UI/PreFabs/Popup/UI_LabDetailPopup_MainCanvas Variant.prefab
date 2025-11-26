@@ -273,6 +273,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: LabDetailPopup_Desc
       objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6322329459222374735}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_LabDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234500250179232012, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560847824356869787, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_Name
+      value: UI_LabDetailPopup_BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6322329459222374735}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_LabDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146554736955976367, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2442568316889171512, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_text
       value: "\uCCA0\uAC70"
@@ -339,11 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.8546753
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -730.6803
+      value: -560
       objectReference: {fileID: 0}
     - target: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -383,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086889204017447042, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 6601188357447995911, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
@@ -403,10 +439,67 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7493192512803200204}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6322329459222374735}
   m_SourcePrefab: {fileID: 100100000, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
 --- !u!224 &873191443482012377 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3786750536839354859, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
   m_PrefabInstance: {fileID: 4076619065856340786}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5519385384049149010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8361993404112451424, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4076619065856340786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &5979931779275429657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7669616095706981419, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4076619065856340786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &6943289460913566461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6397516701046718927, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4076619065856340786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &8424251557717236628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4076619065856340786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6322329459222374735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8424251557717236628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfe3b59fd6d09c4da65246854c6677b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_LabDetailPopup
+  addressableName: UI_LabDetailPopup
+  titleTxt: {fileID: 5519385384049149010}
+  descTxt: {fileID: 6943289460913566461}
+  iconImg: {fileID: 5979931779275429657}

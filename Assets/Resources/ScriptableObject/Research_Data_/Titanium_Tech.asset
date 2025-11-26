@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df497819299b3b42bfce6c5c8f71779, type: 3}
   m_Name: Titanium_Tech
   m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
-  Id: 30021
+  Id: 30026
+  Name: Titanium_Tech
   DisplayName: "\uD2F0\uD0C0\uB284 \uD14C\uD06C"
   Desc: "\uD2F0\uD0C0\uB284 \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C
     \uB429\uB2C8\uB2E4."
   ResearchAmount: 6000
   InputItemPerTickId: 1012
   InputItemPerTickCount: 2
-  RequireResearchId: 30017
+  RequireResearchId: 30021

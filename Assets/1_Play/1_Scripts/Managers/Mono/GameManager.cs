@@ -228,7 +228,6 @@ namespace DrillGame.Managers
         }
         private void StopBatch()
         {
-            Debug.Log("진입");
             placingItemId = 0;
             dataId = 0;
             batchMode = BatchMode.None;

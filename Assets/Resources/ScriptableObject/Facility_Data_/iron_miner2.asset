@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: iron_miner2
   DisplayName: "\uCCA0 \uCC44\uAD74 \uC2DC\uC124 Lv.2"
   Type: Miner
+  Icon: engine_test
   Level: 2
   EntityClassName: MinerEntity
   Desc: "\uCCA0 \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."

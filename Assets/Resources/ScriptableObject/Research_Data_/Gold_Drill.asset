@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df497819299b3b42bfce6c5c8f71779, type: 3}
   m_Name: Gold_Drill
   m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
-  Id: 30012
+  Id: 30015
+  Name: Gold_Drill
   DisplayName: "\uAE08 \uB4DC\uB9B4"
   Desc: "\uAE08 \uB4DC\uB9B4\uB85C \uC5C5\uADF8\uB808\uC774\uB4DC \uD569\uB2C8\uB2E4."
   ResearchAmount: 400
   InputItemPerTickId: 1008
   InputItemPerTickCount: 2
-  RequireResearchId: 30009
+  RequireResearchId: 30011
