@@ -226,7 +226,7 @@ namespace DrillGame.Managers
         {
             gridManager.TryEditBatch();
         }
-        private void StopBatch()
+        public void StopBatch()
         {
             placingItemId = 0;
             dataId = 0;
