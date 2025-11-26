@@ -99,6 +99,11 @@ namespace DrillGame.Managers
 
             // 엔티티 삭제관련 구독처리
             BoardManager.Instance.OnEntityDeleted += ClearOccupiedPositions;
+
+            // 코어 배치
+            CoreBatch();
+
+
             DrillBatch();
 
         }
@@ -335,6 +340,17 @@ namespace DrillGame.Managers
         #endregion
 
         #region private methods
+        private void CoreBatch()
+        {
+            //return;
+            // 실제 배치는 이루어지지 않고, 타일 점유만 해준다. 배치는 씬에서 이루어짐
+            List<Vector2Int> coreFormation = CoreManager.Instance.GetCoreFormations();
+            EngineOccupiedPositions.UnionWith(coreFormation);
+            FacilityOccupiedPositions.UnionWith(coreFormation);
+
+        }
+
+
         private void SwitchUpdateAction(BatchMode mode)
         {
             switch (mode)
