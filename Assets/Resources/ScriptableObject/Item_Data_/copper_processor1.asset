@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: copper_processor1
   DisplayName: "\uAD6C\uB9AC \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   ItemType: Facility
-  EntityId: 0
+  EntityId: 102021
   ItemIcon: engine_test

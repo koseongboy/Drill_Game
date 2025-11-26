@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d64f8b519c484b9dd8047dfb763f6, type: 3}
+  m_Name: gold_processor1
+  m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
+  Id: 104021
+  Name: gold_processor1
+  DisplayName: "\uAE08 \uAC00\uACF5 \uC2DC\uC124 Lv.1"
+  Type: Processor
+  Icon: engine_test
+  Level: 1
+  EntityClassName: ProcessEntity
+  Desc: "\uAE08 \uAD11\uC11D\uC744 \uAE08 \uC790\uC7AC\uB85C \uAC00\uACF5\uD560 \uC218
+    \uC788\uB2E4."
+  RequireResearchId: 30011
+  RequireCoreLevel: 0
+  BuildResourceId: 
+  BuildResourceCount: 
+  InputItemId: 1007
+  InputItemCount: 1
+  OutputItemId: 1008
+  OutputItemCount: 1
+  Coordinates:
+  - 0,0

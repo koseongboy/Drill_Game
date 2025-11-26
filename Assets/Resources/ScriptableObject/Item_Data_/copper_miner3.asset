@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: copper_miner3
   DisplayName: "\uAD6C\uB9AC \uCC44\uAD74 \uC2DC\uC124 Lv.3"
   ItemType: Facility
-  EntityId: 0
+  EntityId: 102013
   ItemIcon: engine_test

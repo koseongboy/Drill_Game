@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: iron_processor3
   DisplayName: "\uCCA0 \uAC00\uACF5 \uC2DC\uC124 Lv.3"
   ItemType: Facility
-  EntityId: 0
+  EntityId: 103023
   ItemIcon: engine_test

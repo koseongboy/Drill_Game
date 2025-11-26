@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
   Id: 1009
   Name: Obsidian_Material
-  DisplayName: "\uC635\uC2DC\uB514\uC5B8 \uAD11\uBB3C"
+  DisplayName: "\uD751\uC694\uC11D \uAD11\uBB3C"
   ItemType: Resource
   EntityId: 0
   ItemIcon: stone

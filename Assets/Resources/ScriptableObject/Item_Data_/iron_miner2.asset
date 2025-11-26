@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: iron_miner2
   DisplayName: "\uCCA0 \uCC44\uAD74 \uC2DC\uC124 Lv.2"
   ItemType: Facility
-  EntityId: 0
+  EntityId: 103012
   ItemIcon: engine_test

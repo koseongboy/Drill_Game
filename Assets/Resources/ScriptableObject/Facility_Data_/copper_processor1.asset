@@ -21,6 +21,8 @@ MonoBehaviour:
   EntityClassName: ProcessEntity
   Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uAD6C\uB9AC \uC790\uC7AC\uB85C \uAC00\uACF5\uD560
     \uC218 \uC788\uB2E4."
+  RequireResearchId: 30001
+  RequireCoreLevel: 0
   BuildResourceId: 
   BuildResourceCount: 
   InputItemId: 1003

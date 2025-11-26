@@ -20,6 +20,8 @@ public class Facility_Data_ : ScriptableObject, ICSVData
     public int Level;
     public string EntityClassName;
     public string Desc;
+    public int RequireResearchId;
+    public int RequireCoreLevel;
     public string BuildResourceId;
     public string BuildResourceCount;
     public string InputItemId;
