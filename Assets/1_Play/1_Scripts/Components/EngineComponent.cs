@@ -138,6 +138,7 @@ namespace DrillGame.View.Engine
             {
                 return; 
             }
+            
             OnClickEngineDetail?.Invoke();
         }
 
