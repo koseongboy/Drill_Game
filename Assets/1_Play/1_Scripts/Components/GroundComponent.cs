@@ -95,7 +95,7 @@ namespace DrillGame.View.Ground
         {
             GroundEntity.GiveEntityDamage(damage);
             OnHpChanged?.Invoke( GroundEntity.CurrentHp );
-            Debug.Log("땅에 1 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
+            Debug.Log("땅에 "+ damage +" 데미지 입힘 (남은 체력: " + GroundEntity.CurrentHp + ")");
             if (GroundEntity.IsDestroyed)
             {
                 Debug.Log("땅 파괴됨!");
