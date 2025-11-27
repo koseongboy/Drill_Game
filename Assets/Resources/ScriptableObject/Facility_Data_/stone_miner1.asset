@@ -20,10 +20,12 @@ MonoBehaviour:
   Level: 1
   EntityClassName: MinerEntity
   Desc: "\uB3CC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
-  BuildResourceId: 
-  BuildResourceCount: 
-  InputItemId: 
-  InputItemCount: 
+  RequireResearchId: 0
+  RequireCoreLevel: 0
+  BuildResourceId: 1002
+  BuildResourceCount: 10000
+  InputItemId: 0
+  InputItemCount: 0
   OutputItemId: 1001
   OutputItemCount: 1
   Coordinates:

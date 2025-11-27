@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d64f8b519c484b9dd8047dfb763f6, type: 3}
+  m_Name: laboratory7
+  m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
+  Id: 110007
+  Name: laboratory7
+  DisplayName: "\uC5F0\uAD6C\uC18C Lv.7"
+  Type: Laboratory
+  Icon: labIcon
+  Level: 7
+  EntityClassName: LabEntity
+  Desc: "\uC5F0\uAD6C\uB97C \uC9C4\uD589\uD558\uC5EC \uACF5\uC7A5\uC744 \uAC15\uD654\uD560
+    \uC218 \uC788\uB2E4."
+  RequireResearchId: 0
+  RequireCoreLevel: 7
+  BuildResourceId: 1014
+  BuildResourceCount: 20000
+  InputItemId: 0
+  InputItemCount: 0
+  OutputItemId: 0
+  OutputItemCount: 0
+  Coordinates:
+  - 0,0
+  - 0,1
+  - 1,0
+  - 1,1

@@ -7,6 +7,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Facility_Data_", menuName = "GameData/Facility_Data_")]
 public class Facility_Data_ : ScriptableObject, ICSVData
 {
+    public enum FacilityType
+    {
+        None = -1,
+        Miner = 0,
+        Processor = 1,
+        Laboratory = 2,
+        EngineMerger = 3,
+        ResourceMerger = 4,
+        Drill = 5
+    }
+    
     public int GetId()
     {
         return Id;
@@ -20,10 +31,12 @@ public class Facility_Data_ : ScriptableObject, ICSVData
     public int Level;
     public string EntityClassName;
     public string Desc;
-    public string BuildResourceId;
-    public string BuildResourceCount;
-    public string InputItemId;
-    public string InputItemCount;
+    public int RequireResearchId;
+    public int RequireCoreLevel;
+    public int BuildResourceId;
+    public int BuildResourceCount;
+    public int InputItemId;
+    public int InputItemCount;
     public int OutputItemId;
     public int OutputItemCount;
     public List<string> Coordinates;
@@ -37,6 +50,30 @@ public class Facility_Data_ : ScriptableObject, ICSVData
             coordinates.Add(new Vector2Int(int.Parse(str[0]), int.Parse(str[1])));
         }
         return coordinates;
+    }
+    
+    public FacilityType GetFacilityType_Enum()
+    {
+        FacilityType returnType = FacilityType.Miner;
+        Enum.TryParse(Type, true, out returnType);
+        return returnType;
+    }
+
+    public string GetFacilityDesc()
+    {
+        var str = Desc;
+        if (OutputItemId != 0)
+        {
+            str += "\n틱마다 ";
+            if (InputItemId != 0)
+            {
+                var inputItemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(InputItemId);
+                str += $"{inputItemData.DisplayName} {InputItemCount}개를 소모해 ";
+            }
+            var outputItemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(OutputItemId);
+            str += $"{outputItemData.DisplayName} {OutputItemCount}개를 생산합니다.";
+        }
+        return str;
     }
     
     [ContextMenu("Get Coordinates")]

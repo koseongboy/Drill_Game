@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Research_Data_
   Id: 30017
   Name: Obsidian_Lv2
-  DisplayName: "\uC635\uC2DC\uB514\uC5B8 \uD14C\uD06C Lv.2"
-  Desc: "Lv.2\uC758 \uC635\uC2DC\uB514\uC5B8 \uC2DC\uC124\uC744 \uC124\uCE58\uD560
-    \uC218 \uC788\uAC8C \uB429\uB2C8\uB2E4."
+  DisplayName: "\uD751\uC694\uC11D \uD14C\uD06C Lv.2"
+  Desc: "Lv.2\uC758 \uD751\uC694\uC11D \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218
+    \uC788\uAC8C \uB429\uB2C8\uB2E4."
   ResearchAmount: 400
   InputItemPerTickId: 1010
   InputItemPerTickCount: 2

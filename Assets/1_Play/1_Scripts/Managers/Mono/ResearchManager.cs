@@ -91,6 +91,7 @@ namespace DrillGame
             
             researchProgresses[selectedResearchId] += progressValue;
             if (IsResearchDone(selectedResearchId)) {
+                researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
                 Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
                 return;
             }
@@ -166,6 +167,24 @@ namespace DrillGame
         #endregion
 
         #region DEV
+
+        [ContextMenu("현재 연구 완료")]
+        public void CompleteCurrentResearch()
+        {
+            if (!researchProgresses.ContainsKey(selectedResearchId))
+            {
+                Debug.Log("올바르지 않은 ResearchKey입니다. : "+ selectedResearchId);
+                return;
+            }
+            
+            researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
+            if (IsResearchDone(selectedResearchId)) {
+                researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
+                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+                return;
+            }
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
+        }
 
         [ContextMenu("ES3 키 삭제")]
         public void DeleteResearchDataInES3()

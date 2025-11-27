@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
   Id: 112001
   Name: drill1
-  DisplayName: "\uB4DC\uB9B4 Lv.1"
+  DisplayName: "\uB3CC \uB4DC\uB9B4"
   Type: Drill
   Icon: drillIcon
   Level: 1
   EntityClassName: DrillEntity
-  Desc: "\uAC70\uB300 \uB4DC\uB9B4\uC744 \uC791\uB3D9\uD558\uAE30 \uC704\uD55C \uBAA8\uD130
-    \uC2DC\uC124\uC774\uB2E4."
-  BuildResourceId: 
-  BuildResourceCount: 
-  InputItemId: 
-  InputItemCount: 
+  Desc: "\uAC70\uB300 \uB3CC \uB4DC\uB9B4\uC744 \uC791\uB3D9\uD558\uAE30 \uC704\uD55C
+    \uBAA8\uD130 \uC2DC\uC124\uC774\uB2E4."
+  RequireResearchId: 0
+  RequireCoreLevel: 0
+  BuildResourceId: 0
+  BuildResourceCount: 0
+  InputItemId: 0
+  InputItemCount: 0
   OutputItemId: 0
   OutputItemCount: 0
   Coordinates:

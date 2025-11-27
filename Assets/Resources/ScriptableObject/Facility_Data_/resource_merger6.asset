@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d64f8b519c484b9dd8047dfb763f6, type: 3}
+  m_Name: resource_merger6
+  m_EditorClassIdentifier: Assembly-CSharp::Facility_Data_
+  Id: 113006
+  Name: resource_merger6
+  DisplayName: "\uC790\uC6D0 \uD569\uC131\uAE30 Lv.6"
+  Type: ResourceMerger
+  Icon: resourceMergerIcon
+  Level: 6
+  EntityClassName: FacilityEntity
+  Desc: "\uC789\uC5EC \uC790\uC6D0\uC744 \uC7AC\uD65C\uC6A9\uD558\uAE30 \uC704\uD55C
+    \uC2DC\uC124\uC774\uB2E4."
+  RequireResearchId: 0
+  RequireCoreLevel: 6
+  BuildResourceId: 1012
+  BuildResourceCount: 20000
+  InputItemId: 0
+  InputItemCount: 0
+  OutputItemId: 0
+  OutputItemCount: 0
+  Coordinates:
+  - 0,0
+  - 0,1

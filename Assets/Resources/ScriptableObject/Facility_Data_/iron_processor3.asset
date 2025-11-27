@@ -21,11 +21,15 @@ MonoBehaviour:
   EntityClassName: ProcessEntity
   Desc: "\uCCA0 \uAD11\uC11D\uC744 \uCCA0 \uC790\uC7AC\uB85C \uAC00\uACF5\uD560 \uC218
     \uC788\uB2E4."
-  BuildResourceId: 
-  BuildResourceCount: 
+  RequireResearchId: 30008
+  RequireCoreLevel: 0
+  BuildResourceId: 1006
+  BuildResourceCount: 30000
   InputItemId: 1004
   InputItemCount: 100
   OutputItemId: 1005
   OutputItemCount: 100
   Coordinates:
+  - 0,0
+  - 0,1
   - 0,2

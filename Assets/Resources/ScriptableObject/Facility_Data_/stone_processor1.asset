@@ -21,8 +21,10 @@ MonoBehaviour:
   EntityClassName: ProcessEntity
   Desc: "\uB3CC \uAD11\uC11D\uC744 \uB3CC \uC790\uC7AC\uB85C \uAC00\uACF5\uD560 \uC218
     \uC788\uB2E4."
-  BuildResourceId: 
-  BuildResourceCount: 
+  RequireResearchId: 0
+  RequireCoreLevel: 0
+  BuildResourceId: 1002
+  BuildResourceCount: 10000
   InputItemId: 1001
   InputItemCount: 1
   OutputItemId: 1002

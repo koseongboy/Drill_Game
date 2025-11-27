@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c247933895ff140b056b5e917142f0, type: 3}
   m_Name: iron_processor1
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
-  Id: 1216
+  Id: 1212
   Name: iron_processor1
   DisplayName: "\uCCA0 \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   ItemType: Facility
-  EntityId: 0
+  EntityId: 103021
   ItemIcon: engine_test
