@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: Drill1
   DisplayName: "\uB3CC \uB4DC\uB9B4"
   Damage: 1
-  DrillSprite: 
+  DrillSprite: stone_drill
