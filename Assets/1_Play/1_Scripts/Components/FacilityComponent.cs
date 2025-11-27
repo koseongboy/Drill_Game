@@ -121,7 +121,7 @@ namespace DrillGame.View.Facility
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (eventData.button != PointerEventData.InputButton.Middle)
+            if (eventData.button != PointerEventData.InputButton.Left)
             {
                 return;
             }

@@ -61,7 +61,7 @@ namespace DrillGame.Managers
             // control.Player.BatchID_1.performed += ctx => SetBatchEntity(1);
             // control.Player.BatchID_2.performed += ctx => SetBatchEntity(2);
 
-            control.Player.Click.performed += ctx => ClickAction();
+            control.Player.Click.canceled += ctx => ClickAction();
         }
         
         // 초기 실행시에만 적용될 함수입니다. 현재는 매 실행시에 실행되도록 해뒀습니다.
@@ -224,7 +224,8 @@ namespace DrillGame.Managers
         // REFACTOR : 후일 click에 할당되는 게 많다면 구독 변경을 통해서 클릭 액션을 관리해야함, 현재는 하나의 함수에서 분기 처리함
         private void ClickAction()
         {
-            if(batchMode == BatchMode.None) return;
+            Debug.Log("GameManager ClickAction 호출");
+            if (batchMode == BatchMode.None) return;
             else if(batchMode == BatchMode.PlaceBatch)
                 gridManager.TryPlaceBatch();
             else if(batchMode == BatchMode.EditBatch)

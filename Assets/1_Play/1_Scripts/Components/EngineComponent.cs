@@ -133,8 +133,7 @@ namespace DrillGame.View.Engine
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // 지금 테스트 용도라서 삭제를 여기다가 걸어두었는데 그러면 배치하자마자 눌려서 가운데 클릭으로 바꿨어요
-            if(eventData.button != PointerEventData.InputButton.Middle)
+            if(eventData.button != PointerEventData.InputButton.Left)
             {
                 return; 
             }
