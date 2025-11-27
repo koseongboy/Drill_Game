@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8654675133225399025}
   - component: {fileID: 1747553068106249990}
   m_Layer: 0
-  m_Name: drill
+  m_Name: Drill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
