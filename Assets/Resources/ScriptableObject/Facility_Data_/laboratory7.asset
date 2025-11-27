@@ -23,10 +23,10 @@ MonoBehaviour:
     \uC218 \uC788\uB2E4."
   RequireResearchId: 0
   RequireCoreLevel: 7
-  BuildResourceId: 
-  BuildResourceCount: 
-  InputItemId: 
-  InputItemCount: 
+  BuildResourceId: 1014
+  BuildResourceCount: 20000
+  InputItemId: 0
+  InputItemCount: 0
   OutputItemId: 0
   OutputItemCount: 0
   Coordinates:

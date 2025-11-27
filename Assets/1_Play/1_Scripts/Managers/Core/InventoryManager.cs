@@ -163,6 +163,11 @@ namespace DrillGame.Core.Managers
             }
             return 0;
         }
+
+        public bool IsContainsItem( int itemId, int count )
+        {
+            return count == GetItemCountById(itemId);
+        }
         #endregion
 
         #region private methods

@@ -23,10 +23,10 @@ MonoBehaviour:
     \uC5D4\uC9C4\uB4E4\uC744 \uD569\uC131\uD560 \uC218 \uC788\uB2E4."
   RequireResearchId: 0
   RequireCoreLevel: 5
-  BuildResourceId: 
-  BuildResourceCount: 
-  InputItemId: 
-  InputItemCount: 
+  BuildResourceId: 1010
+  BuildResourceCount: 20000
+  InputItemId: 0
+  InputItemCount: 0
   OutputItemId: 0
   OutputItemCount: 0
   Coordinates:

@@ -51,7 +51,7 @@ namespace DrillGame
             var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
 
             titleTxt.text = data.DisplayName;
-            descTxt.text = data.Desc;
+            descTxt.text = data.GetFacilityDesc();
             
             // Sprite
             Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + data.Icon);

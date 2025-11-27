@@ -23,8 +23,8 @@ MonoBehaviour:
     \uC218 \uC788\uB2E4."
   RequireResearchId: 30001
   RequireCoreLevel: 0
-  BuildResourceId: 
-  BuildResourceCount: 
+  BuildResourceId: 1002
+  BuildResourceCount: 200
   InputItemId: 1003
   InputItemCount: 1
   OutputItemId: 1004

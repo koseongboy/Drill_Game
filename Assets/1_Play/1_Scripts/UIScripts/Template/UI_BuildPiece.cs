@@ -32,7 +32,7 @@ namespace DrillGame
 
         public void OnButtonPressed()
         {
-            Debug.Log($"OnButtonPressed : {itemId}");
+            UI_FacilityBuild.Instance.OpenDetailWindow( itemId );
         }
     }
 }

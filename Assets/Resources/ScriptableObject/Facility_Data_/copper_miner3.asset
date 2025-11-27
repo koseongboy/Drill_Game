@@ -22,10 +22,10 @@ MonoBehaviour:
   Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
   RequireResearchId: 30003
   RequireCoreLevel: 0
-  BuildResourceId: 
-  BuildResourceCount: 
-  InputItemId: 
-  InputItemCount: 
+  BuildResourceId: 1004
+  BuildResourceCount: 30000
+  InputItemId: 0
+  InputItemCount: 0
   OutputItemId: 1003
   OutputItemCount: 100
   Coordinates:
