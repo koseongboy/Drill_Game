@@ -49,7 +49,8 @@ namespace DrillGame.Core.Managers
             facilityMap = new();
             ScheduledFacilities = new();
 
-            corePosition = Vector2Int.zero;
+            // 하드코딩이에요 어쩔수 없어요 너무 늦었어요.
+            corePosition = Vector2Int.left;
             tickCount = TICK_INTERVAL - 1;
 
             // for test

@@ -119,7 +119,7 @@ namespace DrillGame.Core.Engine
 
         public void ScheduleEngineRun(Vector2Int corePosition)
         {
-            // ����ư �Ÿ� ��ŭ�� ƽ�� ����մϴ�.
+            // 맨해튼 거리 계산
             int distance = Mathf.Abs(corePosition.x - position.x) + Mathf.Abs(corePosition.y - position.y);
 
             scheduleList.Add(distance);
