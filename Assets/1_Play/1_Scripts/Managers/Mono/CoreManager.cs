@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using DrillGame.Core.Managers;
+using DrillGame.View.Ground;
 
 namespace DrillGame
 {
@@ -16,7 +18,8 @@ namespace DrillGame
             new Vector2Int(-1, -1), new Vector2Int(0, -1), new Vector2Int(1, -1),
         };
 
-        private int coreLevel = 1;
+        private Core_Data_ core_Data;
+        private const int CORE_DATA_START_ID = 2000;
 
         #endregion
 
@@ -32,6 +35,14 @@ namespace DrillGame
             {
                 Instance = this;
             }
+
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            int tempCoreDataId = CORE_DATA_START_ID + 1;
+            core_Data = ScriptableObjectManager.Instance.GetData<Core_Data_>(tempCoreDataId);
         }
         #endregion
 
@@ -45,9 +56,56 @@ namespace DrillGame
             }
             return absolutePositions;
         }
+
+        public int GetMaxFacilityCount()
+        {
+            return core_Data.FacilityCount;
+        }
+
+        public int GetMaxEngineCount()
+        {
+            return core_Data.EngineCount;
+        }
         #endregion
 
         #region public methods
+        public bool TryCoreUpgrade()
+        {
+            int nextCoreDataId = core_Data.GetId() + 1;
+            Core_Data_ nextCoreData = ScriptableObjectManager.Instance.GetData<Core_Data_>(nextCoreDataId);
+            if (nextCoreData == null)
+            {
+                Debug.Log("최고 레벨 코어에 도달했습니다.");
+                return false;
+            }
+
+            // 깊이 체크
+            int requiredDepth = core_Data.UpgradeRequiredDepth;
+            if(GroundComponent.Instance.GetDepth() < requiredDepth)
+            {
+                Debug.Log("코어 업그레이드에 필요한 깊이에 도달하지 못했습니다.");
+                return false;
+            }
+
+
+
+            // 자원 체크
+            int requiredResourceId = core_Data.UpgradeRequiredItemId;
+            int requiredResourceCount = core_Data.UpgradeRequiredItemCount;
+            if (!InventoryManager.Instance.HasItem(requiredResourceId, requiredResourceCount))
+            {
+                Debug.Log("코어 업그레이드에 필요한 자원이 부족합니다.");
+                return false;
+            }
+
+            // 자원 차감
+            InventoryManager.Instance.TryRemoveItem(requiredResourceId, requiredResourceCount);
+
+            // 업그레이드 적용
+            core_Data = nextCoreData;
+            Debug.Log("코어 업그레이드가 완료되었습니다. 새로운 코어 레벨: " + core_Data.Level);
+            return true;
+        }
         #endregion
 
         #region private methods

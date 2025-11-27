@@ -23,9 +23,10 @@ namespace DrillGame.View.Ground
         private AsyncOperationHandle NextGroundHandle;
         private Sprite CurrentGroundSprite;
         private Sprite NextGroundSprite;
-        
-        public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
 
+        private int currentDepth = 0;
+        public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
+        
         public event Action<int> OnDepthChanged;
         public event Action<int> OnHpChanged;
         
@@ -77,17 +78,22 @@ namespace DrillGame.View.Ground
             
             spriteRenderer = GetComponent<SpriteRenderer>();
             ES3File es3File = new ES3File(ES3FILENAME);
-            int userDepth = es3File.Load(GROUND_DEPTH, 1);
+            currentDepth = es3File.Load(GROUND_DEPTH, 1);
             int userHp = es3File.Load(GROUND_HP, ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
-            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(userDepth) );
+            CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(currentDepth) );
             
             //기존 데이터로 엔티티 및 땅 색(재질) 초기화
-            setNewData(userDepth, userHp);
+            setNewData(currentDepth, userHp);
         }
 
         #endregion
 
         #region getters & setters
+
+        public int GetDepth()
+        {
+            return currentDepth;
+        }
         #endregion
 
         #region public methods
@@ -117,6 +123,7 @@ namespace DrillGame.View.Ground
         private void setNewData(int depth)
         {
             // Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
+            currentDepth = depth;
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             
             GroundEntity.SetInformation(depth, CurrentGroundData.HP, CurrentGroundData.HP, CurrentGroundData.DropItems);
@@ -134,6 +141,7 @@ namespace DrillGame.View.Ground
         private void setNewData(int depth, int hp)
         {
             // Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
+            currentDepth = depth;
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
             OnDepthChanged?.Invoke( GroundEntity.Depth );

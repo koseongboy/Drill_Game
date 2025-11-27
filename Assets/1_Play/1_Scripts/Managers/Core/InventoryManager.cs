@@ -168,6 +168,11 @@ namespace DrillGame.Core.Managers
         {
             return count == GetItemCountById(itemId);
         }
+
+        public bool HasItem(int itemId, int requiredCount = 1)
+        {
+            return GetItemCountById(itemId) >= requiredCount;
+        }
         #endregion
 
         #region private methods
