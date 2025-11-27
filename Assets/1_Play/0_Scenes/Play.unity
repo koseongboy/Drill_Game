@@ -773,6 +773,7 @@ Transform:
   - {fileID: 423201415}
   - {fileID: 1743866594}
   - {fileID: 328731946}
+  - {fileID: 136998909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147131776
@@ -2064,7 +2065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5D4\uC9C4\uD569\uC131\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -2670,7 +2671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC790\uC6D0\uD569\uBCD1\uAE30 \uC124\uCE58"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
@@ -3387,7 +3388,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 8.876222
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10875,7 +10876,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1696346565}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: EngineMergerBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1696346565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11163,7 +11176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1761447477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1619964050}
+        m_TargetAssemblyTypeName: DrillGame.Managers.GameManager, Assembly-CSharp
+        m_MethodName: ResourceMergerBatch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761447477
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ namespace DrillGame.Core.Facility
       for (int i = 0; i < intensity; i++)
       {
         ResearchManager.Instance.AddResearchProgress();
+        Debug.Log("연구소 가동 중. 연구 진척도 증가." + intensity);
       }
     }
     #endregion

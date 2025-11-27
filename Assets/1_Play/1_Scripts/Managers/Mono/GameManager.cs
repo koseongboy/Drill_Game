@@ -153,6 +153,18 @@ namespace DrillGame.Managers
             dataId = 201001;
             gridManager.EnterBatchMode(TilemapType.Engine, dataId, placingItemId);
         }
+        public void ResourceMergerBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 113001;
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
+        public void EngineMergerBatch()
+        {
+            batchMode = BatchMode.PlaceBatch;
+            dataId = 111001;
+            gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
+        }
         #endregion
 
         #region private methods
