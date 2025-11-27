@@ -116,6 +116,18 @@ namespace DrillGame.Managers
 
         public void StartBatch()
         {
+            if (BoardManager.Instance.FailityCount >= CoreManager.Instance.GetMaxFacilityCount())
+            {
+                Debug.LogWarning("배치 모드 진입 실패: 시설 최대 개수에 도달했습니다.");
+                return;
+            }
+            else if (BoardManager.Instance.EngineCount >= CoreManager.Instance.GetMaxEngineCount())
+            {
+                Debug.LogWarning("배치 모드 진입 실패: 엔진 최대 개수에 도달했습니다.");
+                return;
+            }
+
+
             batchMode = BatchMode.PlaceBatch;
             if (dataId == 0)
             {
