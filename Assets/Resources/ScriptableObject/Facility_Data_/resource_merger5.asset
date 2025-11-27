@@ -18,7 +18,7 @@ MonoBehaviour:
   Type: ResourceMerger
   Icon: resourceMergerIcon
   Level: 5
-  EntityClassName: FacilityEntity
+  EntityClassName: ResourceMergerEntity
   Desc: "\uC789\uC5EC \uC790\uC6D0\uC744 \uC7AC\uD65C\uC6A9\uD558\uAE30 \uC704\uD55C
     \uC2DC\uC124\uC774\uB2E4."
   RequireResearchId: 0

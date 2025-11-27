@@ -266,8 +266,7 @@ namespace DrillGame.Managers
             }
             else
             {
-                prefabName = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId).Name;
-                prefabName = prefabName.Substring(0, prefabName.Length - 1); // 숫자 제거
+                prefabName = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId).Type;
                 imageTile = TempFacilityImage;
                 entityObject = Resources.Load<GameObject>($"Prefabs/Facility/{prefabName}");
                 entityParent = FacilityTileamp;

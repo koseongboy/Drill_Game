@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3211116201091524176}
   - component: {fileID: 4412297789020534650}
-  - component: {fileID: 8654675133225399025}
-  - component: {fileID: 1747553068106249990}
+  - component: {fileID: 1737260934535783848}
+  - component: {fileID: 8465384572236978968}
   m_Layer: 0
-  m_Name: stone_miner
+  m_Name: EngineMerger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5816532425499827717, guid: 8a8eea2cdd5c90345bdb75e601541125, type: 3}
-  m_Color: {r: 0, g: 0.39231205, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e034437c963466f43b76db527f4d56ee, type: 3}
+  m_Color: {r: 0.28248486, g: 0.802771, b: 0.8679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,7 +92,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8654675133225399025
+--- !u!114 &1737260934535783848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2858953249066847510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364a70aac74e85648bc2796dc9e0c910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
+  debugId: 111001
+  debugPosition: {x: 1, y: 0}
+  formation:
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 1, y: 0}
+  - {x: 1, y: 1}
+  EntityClassName: FacilityEntity
+  Name: 
+  DisplayName: 
+  Type: 
+  Level: 0
+  BuildResourceId: 
+  BuildResourceCount: 
+  InputItemId: 
+  InputItemCount: 
+  OutputItemId: 0
+  OutputItemCount: 0
+--- !u!61 &8465384572236978968
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,30 +156,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.25, y: 0.25}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &1747553068106249990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2858953249066847510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364a70aac74e85648bc2796dc9e0c910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
-  debugId: 101011
-  debugPosition: {x: -1, y: -6}
-  EntityClassName: MinerEntity
