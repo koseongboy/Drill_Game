@@ -65,6 +65,16 @@ namespace DrillGame.Core.Managers
         {
             corePosition = position;
         }
+
+        public int FailityCount
+        {
+            get { return facilities.Count; }
+        }
+
+        public int EngineCount
+        {
+            get { return engines.Count; }
+        }
         #endregion
 
         #region public methods
