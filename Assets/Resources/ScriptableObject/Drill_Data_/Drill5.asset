@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: Drill5
   DisplayName: "\uC635\uC2DC\uB514\uC5B8 \uB4DC\uB9B4"
   Damage: 8
-  DrillSprite: 
+  DrillSprite: copper_drill
