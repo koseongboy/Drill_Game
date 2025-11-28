@@ -59,6 +59,7 @@ namespace DrillGame
             if (icon == null)
             {
                 Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {data.Icon}");
+                return;
             }
             iconImg.sprite = icon;
         }
