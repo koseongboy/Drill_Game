@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceMerger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceMerger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +44,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Crocobob",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
