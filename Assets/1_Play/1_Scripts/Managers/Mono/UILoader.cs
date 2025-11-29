@@ -53,6 +53,7 @@ namespace DrillGame.UI
 
         public void ShowUI(string uiName)
         {
+            Debug.Log($"showUI : {uiName}");
             if(loadedUIs.ContainsKey(uiName)) // dictionay에 Key가 있는가?
             {
                 GameObject uiInstance = loadedUIs[uiName];
@@ -73,9 +74,11 @@ namespace DrillGame.UI
                 LoadUI(uiName);
             }
         }
-
+        // hello
         public void HideUI(string uiName)
         {
+            Debug.Log($"hideUI : {uiName}");
+
             if (loadedUIs.ContainsKey(uiName))
             {
                 GameObject uiInstance = loadedUIs[uiName];
@@ -99,6 +102,8 @@ namespace DrillGame.UI
 
         public void LoadUI(string uiName, Action<GameObject> onInstanceCreated = null)
         {
+            Debug.Log($"loadUI : {uiName}");
+
             // Debug.Log($"UI 로드 시도: {uiName}");
 
             if(loadUIHandles.ContainsKey(uiName))
@@ -137,6 +142,8 @@ namespace DrillGame.UI
 
         public void UnloadUI(string uiName)
         {
+            Debug.Log($"unloadUI : {uiName}");
+
             // Implement UI unloading logic here
             // Debug.Log($"UI 언로드 시도: {uiName}");
             if (!loadUIHandles.ContainsKey(uiName))
