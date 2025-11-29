@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,13 @@ namespace DrillGame
     public class CoreManager : MonoBehaviour
     {
         #region Fields & Properties
+
+        private int coreLevel;
+        
         private Vector2Int CORE_POSITION = new Vector2Int(-1, 0);
         private List<Vector2Int> CORE_FORMATIONS = new List<Vector2Int>()
         {
-            // 3*3
+            // 3*3   -  와우; 미친 상남자의 하드코딩
             new Vector2Int(-1, 1), new Vector2Int(0, 1), new Vector2Int(1, 1),
             new Vector2Int(-1, 0), new Vector2Int(0, 0), new Vector2Int(1, 0),
             new Vector2Int(-1, -1), new Vector2Int(0, -1), new Vector2Int(1, -1),
@@ -20,6 +24,9 @@ namespace DrillGame
 
         private Core_Data_ core_Data;
         private const int CORE_DATA_START_ID = 2000;
+
+
+        public event Action<int> OnCoreLevelChanged;
 
         #endregion
 
@@ -43,10 +50,23 @@ namespace DrillGame
         {
             int tempCoreDataId = CORE_DATA_START_ID + 1;
             core_Data = ScriptableObjectManager.Instance.GetData<Core_Data_>(tempCoreDataId);
+            SetCoreLevel( core_Data.Level );
         }
         #endregion
 
         #region getters & setters
+
+        private void SetCoreLevel(int level)
+        {
+            coreLevel = level;
+            OnCoreLevelChanged?.Invoke(coreLevel);
+        }
+
+        public int GetCoreLevel()
+        {
+            return coreLevel;
+        }
+        
         public List<Vector2Int> GetCoreFormations()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();
@@ -103,7 +123,8 @@ namespace DrillGame
 
             // 업그레이드 적용
             core_Data = nextCoreData;
-            Debug.Log("코어 업그레이드가 완료되었습니다. 새로운 코어 레벨: " + core_Data.Level);
+            SetCoreLevel( core_Data.Level );
+            Debug.Log("코어 업그레이드가 완료되었습니다. 새로운 코어 레벨: " + coreLevel);
             return true;
         }
         #endregion
