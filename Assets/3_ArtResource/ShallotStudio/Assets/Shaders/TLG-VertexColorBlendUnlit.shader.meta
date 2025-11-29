@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4dc02439f88934fde9f8d0511f450f1e
+timeCreated: 1499665689
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 124226
+  packageName: Pixel And Voxel Cartoon Particle FX Pack
+  packageVersion: 1.02
+  assetPath: Assets/4Tudio/ShallotStudio/Assets/Shaders/TLG-VertexColorBlendUnlit.shader
+  uploadId: 269569

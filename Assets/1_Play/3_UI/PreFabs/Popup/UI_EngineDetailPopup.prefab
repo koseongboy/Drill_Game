@@ -235,6 +235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1558122352863107592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7669616095706981419, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 9218977505426013731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &2826264648007761900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6397516701046718927, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
@@ -266,4 +277,4 @@ MonoBehaviour:
   addressableName: UI_EngineDetailPopup
   titleTxt: {fileID: 863467925685913923}
   descTxt: {fileID: 2826264648007761900}
-  iconImg: {fileID: 0}
+  iconImg: {fileID: 1558122352863107592}

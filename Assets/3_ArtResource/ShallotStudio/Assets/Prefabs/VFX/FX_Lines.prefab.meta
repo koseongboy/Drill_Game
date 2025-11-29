@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 32e6e62674c168b448f3426c8556a427
+timeCreated: 1532235976
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 124226
+  packageName: Pixel And Voxel Cartoon Particle FX Pack
+  packageVersion: 1.02
+  assetPath: Assets/4Tudio/ShallotStudio/Assets/Prefabs/VFX/FX_Lines.prefab
+  uploadId: 269569

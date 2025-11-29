@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f71a0fd08a6694156b2e2b9445e19169
+timeCreated: 1505289198
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 124226
+  packageName: Pixel And Voxel Cartoon Particle FX Pack
+  packageVersion: 1.02
+  assetPath: Assets/4Tudio/ShallotStudio/Assets/Shaders/ShieldShader_UI.shader
+  uploadId: 269569

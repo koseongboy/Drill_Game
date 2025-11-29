@@ -48,7 +48,12 @@ namespace DrillGame
         #region private methods
         protected override void UpdateDetail()
         {
-            var id = engineEntity.GetEngineId(); 
+            var id = engineEntity.GetEngineId();
+            if (id == 0)
+            {
+                Debug.LogError("Engine에 지정된 EngineId가 없습니다. UI를 업데이트할 수 없습니다.");
+                return;
+            }
             var data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(id);
 
             titleTxt.text = data.DisplayName;
@@ -59,6 +64,7 @@ namespace DrillGame
             if (icon == null)
             {
                 Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {data.Icon}");
+                return;
             }
             iconImg.sprite = icon;
         }
