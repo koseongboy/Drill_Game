@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 653cde1ac9741e34cb8b428276528fe2
+timeCreated: 1531669108
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 124226
+  packageName: Pixel And Voxel Cartoon Particle FX Pack
+  packageVersion: 1.02
+  assetPath: Assets/4Tudio/ShallotStudio/Assets/Prefabs/VFX/FX_Explosion_01.prefab
+  uploadId: 269569
