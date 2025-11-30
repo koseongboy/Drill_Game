@@ -24,6 +24,7 @@ namespace DrillGame.View.Engine
         #region Singleton & initialization
         private void Awake()
         {
+            Debug.Log("0");
             wirePrefab = Resources.Load<GameObject>("Prefabs/etc/Wire");
 
             Debug.Log("1");
@@ -49,8 +50,8 @@ namespace DrillGame.View.Engine
                 wireList.Add(wire);
 
                 wire.transform.position = new Vector2(enginePos.x + i, enginePos.y);
-                //var sr = wire.GetComponent<SpriteRenderer>();
-                //sr.color = wireColor;
+                SpriteRenderer sr = wire.GetComponent<SpriteRenderer>();
+                sr.color = wireColor;
             }
             for (int j = 0; j < width; j++)
             {
@@ -58,7 +59,7 @@ namespace DrillGame.View.Engine
                 wireList.Add(wire);
 
                 wire.transform.position = new Vector2(corePos.x, enginePos.y + j);
-                //var sr = wire.GetComponent<SpriteRenderer>();
+                SpriteRenderer sr = wire.GetComponent<SpriteRenderer>();
                 //sr.color = wireColor;
 
 
