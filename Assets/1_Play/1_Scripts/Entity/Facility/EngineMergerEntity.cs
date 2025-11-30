@@ -1,4 +1,5 @@
 using UnityEngine;
+using DrillGame._1_Play._1_Scripts.Managers.Mono;
 
 namespace DrillGame.Core.Facility
 {
@@ -19,7 +20,11 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity)
     {
-      base.Run(intensity);  //todo: 로직 구현 해야함.
+      for (int i = 0; i < intensity; i++)
+      {
+        EngineMergerManager.Instance.RunEngineMergeProcess();
+      }
+      
     }
     #endregion
 
@@ -28,6 +33,6 @@ namespace DrillGame.Core.Facility
 
     #region Unity event methods
     #endregion
-    
+
   }
 }

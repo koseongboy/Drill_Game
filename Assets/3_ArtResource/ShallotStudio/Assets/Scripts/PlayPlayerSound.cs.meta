@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 46de803a963de4408afcaecf8513ba7b
+timeCreated: 1491746643
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 124226
+  packageName: Pixel And Voxel Cartoon Particle FX Pack
+  packageVersion: 1.02
+  assetPath: Assets/4Tudio/ShallotStudio/Assets/Scripts/PlayPlayerSound.cs
+  uploadId: 269569

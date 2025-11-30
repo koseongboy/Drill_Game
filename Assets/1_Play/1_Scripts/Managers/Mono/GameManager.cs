@@ -1,4 +1,5 @@
 using System;
+using DrillGame._1_Play._1_Scripts.Managers.Mono;
 using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
@@ -236,7 +237,7 @@ namespace DrillGame.Managers
         // REFACTOR : 후일 click에 할당되는 게 많다면 구독 변경을 통해서 클릭 액션을 관리해야함, 현재는 하나의 함수에서 분기 처리함
         private void ClickAction()
         {
-            Debug.Log("GameManager ClickAction 호출");
+            // Debug.Log("GameManager ClickAction 호출");
             if (batchMode == BatchMode.None) return;
             else if(batchMode == BatchMode.PlaceBatch)
                 gridManager.TryPlaceBatch();

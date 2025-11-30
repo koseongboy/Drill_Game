@@ -48,6 +48,11 @@ namespace DrillGame
         protected override void UpdateDetail()
         {
             var id = facilityEntity.GetFacilityId(); 
+            if (id == 0)
+            {
+                Debug.LogError("Facility에 지정된 Facility Id가 없습니다. UI를 업데이트할 수 없습니다.");
+                return;
+            }
             var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
 
             titleTxt.text = data.DisplayName;

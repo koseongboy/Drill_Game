@@ -69,6 +69,11 @@ namespace DrillGame
         #region private methods
         #region Observing
 
+        private void OnLevelChanged(int level)
+        {
+            lvlText.text = level.ToString();
+        }
+
         private void OnDepthChanged(int depth)
         {
             depthTxt.text = depth.ToString();
@@ -153,10 +158,12 @@ namespace DrillGame
 
         private void OnEnable()
         {
+            OnLevelChanged( CoreManager.Instance.GetCoreLevel() );
             GroundComponent.Instance.OnDepthChanged += OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged += OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressRateChanged; 
+            CoreManager.Instance.OnCoreLevelChanged += OnLevelChanged;
         }
 
         private void OnDisable()
@@ -166,6 +173,7 @@ namespace DrillGame
             InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressRateChanged;
+            CoreManager.Instance.OnCoreLevelChanged -= OnLevelChanged;
         }
         
         private void Start()
