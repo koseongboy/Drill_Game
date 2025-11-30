@@ -95,10 +95,12 @@ namespace DrillGame.Core.Facility
             Debug.Log("Facility is running. with Intensity : "  + intensity);
 
             // 시설 고유의 액션 실행
-            for (int i = 0; i < intensity; i++)
-            {
-                Logger("Hello from Facility! Intensity: " + intensity);
-            }
+            //for (int i = 0; i < intensity; i++)
+            //{
+            //    Logger("Hello from Facility! Intensity: " + intensity);
+            //}
+
+            //시설 고유 액션 실행은 상속으로 넘어갔습니다.
 
             // 이벤트 호출 (presenter -> component)
             OnFacilityActivated?.Invoke(intensity);

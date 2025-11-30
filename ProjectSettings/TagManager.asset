@@ -57,5 +57,8 @@ TagManager:
   - name: 5_TopUI
     uniqueID: 4246501309
     locked: 0
+  - name: 6_ParticleSystem
+    uniqueID: 27549315
+    locked: 0
   m_RenderingLayers:
   - Default

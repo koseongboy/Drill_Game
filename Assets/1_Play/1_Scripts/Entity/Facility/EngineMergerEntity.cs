@@ -20,6 +20,8 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity)
     {
+      base.Run(intensity);
+
       for (int i = 0; i < intensity; i++)
       {
         EngineMergerManager.Instance.RunEngineMergeProcess();

@@ -21,6 +21,8 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity)
     {
+      base.Run(intensity);
+
       for (int i = 0; i < intensity; i++)
       {
         InventoryManager.Instance.AddItem( data.OutputItemId ); //이렇게 인벤에 추가하는거 맞는 지 확인
