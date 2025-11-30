@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6675688229896058020}
   - component: {fileID: 3915156896331788702}
   - component: {fileID: 6332201135481889262}
+  - component: {fileID: -5692939752524338096}
   m_Layer: 0
   m_Name: Engine_NomalBlue
   m_TagString: Untagged
@@ -156,3 +157,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5692939752524338096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116369118879959848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4044c21e45d236f46a4416a4fcdf2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Engine.WireComponent
+  wireColor: {r: 0.3025988, g: 0.4747539, b: 0.754717, a: 1}
+  wirePrefab: {fileID: 0}

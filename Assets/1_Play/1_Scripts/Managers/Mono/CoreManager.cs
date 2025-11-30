@@ -16,7 +16,7 @@ namespace DrillGame
         private Vector2Int CORE_POSITION = new Vector2Int(-1, 0);
         private List<Vector2Int> CORE_FORMATIONS = new List<Vector2Int>()
         {
-            // 3*3   -  와우; 미친 상남자의 하드코딩
+            // 3*3   -  와우; 미친 상남자의 하드코딩 - 눈치...
             new Vector2Int(-1, 1), new Vector2Int(0, 1), new Vector2Int(1, 1),
             new Vector2Int(-1, 0), new Vector2Int(0, 0), new Vector2Int(1, 0),
             new Vector2Int(-1, -1), new Vector2Int(0, -1), new Vector2Int(1, -1),
@@ -66,7 +66,17 @@ namespace DrillGame
         {
             return coreLevel;
         }
-        
+
+        public Vector2Int GetCorePosition()
+        {
+            return CORE_POSITION;
+        }
+
+        public Vector2 GetCoreWorldPosition()
+        {
+            return transform.position;
+        }
+
         public List<Vector2Int> GetCoreFormations()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();

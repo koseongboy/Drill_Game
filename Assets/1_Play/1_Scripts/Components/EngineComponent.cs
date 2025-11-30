@@ -55,6 +55,8 @@ namespace DrillGame.View.Engine
             spriteRenderer = GetComponent<SpriteRenderer>();
             originalColor = spriteRenderer.material.color;
 
+            WireComponent wireComp = this.gameObject.AddComponent<WireComponent>();
+            wireComp.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
 
             // set debug position
             debugPosition = startPosition;
