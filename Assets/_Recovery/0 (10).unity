@@ -1266,25 +1266,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051692548675649943, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051692548675649943, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1358628110}
-    - target: {fileID: 4051692548675649943, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleWindowSize
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051692548675649943, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DrillGame.WindowControl.WindowController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051692548675649943, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8365942453335953496, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Name
       value: UI_FloatingBar
@@ -3657,7 +3641,7 @@ Camera:
   m_GameObject: {fileID: 475047027}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -7498,7 +7482,7 @@ Canvas:
   m_GameObject: {fileID: 1301394346}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 475047029}
   m_PlaneDistance: 0.4
   m_PixelPerfect: 0
@@ -7704,11 +7688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowController
   isExpanded: 1
-  mainCanvas: {fileID: 706274366}
+  mainCanvas: {fileID: 0}
   ExpandedWidthPercent: 0.2
-  ExpandedHeightPercent: 1
+  ExpandedHeightPercent: 0.95
   CollapsedWidthPercent: 0.2
-  CollapsedHeight: 32
+  CollapsedHeight: 90
   totalKeyPresses: 0
 --- !u!1 &1372489630
 GameObject:
