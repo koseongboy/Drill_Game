@@ -108,6 +108,10 @@ namespace DrillGame.View.Ground
                 setNewData(GroundEntity.Depth + depthIncrement);
             }
         }
+        public bool CanGetDropItem(int itemId)
+        {
+            return CurrentGroundData.DropItems.Contains(itemId.ToString());
+        }
         #endregion
 
         #region private methods
