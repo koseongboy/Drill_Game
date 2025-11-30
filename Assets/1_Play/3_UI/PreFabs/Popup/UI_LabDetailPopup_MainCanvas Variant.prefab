@@ -256,7 +256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4543819081868734064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6322329459222374735}
+        m_TargetAssemblyTypeName: DrillGame.UI_LabDetailPopup, Assembly-CSharp
+        m_MethodName: OpenLabUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4076619065856340786
 PrefabInstance:
   m_ObjectHideFlags: 0

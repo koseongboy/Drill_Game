@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResearchManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResearchManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_LabDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_LabDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_LabDetailPopup_MainCanvas Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_LabDetailPopup_MainCanvas Variant.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +160,7 @@
       <workItem from="1764417076362" duration="1195000" />
       <workItem from="1764418361386" duration="2677000" />
       <workItem from="1764471912000" duration="7684000" />
-      <workItem from="1764522130337" duration="135000" />
+      <workItem from="1764522130337" duration="494000" />
     </task>
     <servers />
   </component>

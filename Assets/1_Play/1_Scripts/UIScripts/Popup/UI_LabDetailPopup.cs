@@ -1,4 +1,5 @@
 using DrillGame.Core.Facility;
+using DrillGame.UI;
 using UnityEngine;
 
 namespace DrillGame
@@ -36,6 +37,11 @@ namespace DrillGame
             
             CloseUI();
             labFacilityEntity.DeleteEntity();
+        }
+
+        public void OpenLabUI()
+        {
+            UILoader.Instance.ShowUI("UI_Research");
         }
         #endregion
 
