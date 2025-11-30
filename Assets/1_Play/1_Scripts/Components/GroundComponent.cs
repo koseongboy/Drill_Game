@@ -116,6 +116,7 @@ namespace DrillGame.View.Ground
         {
             // GroundData는 5001에서 시작해서, 5단계마다 1씩 증가함.
             int range = depth / 5;
+            if (range > 3) range = 3; //개발용 최대 4까지만. (최대깊이 -1로 설정했을 때 로직이 망가져있음 todo.)
             return 5001 + range;
         }
         
