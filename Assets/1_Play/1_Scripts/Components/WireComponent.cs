@@ -26,7 +26,7 @@ namespace DrillGame.View.Engine
         {
             wirePrefab = Resources.Load<GameObject>("Prefabs/etc/Wire");
 
-            
+            Debug.Log("1");
         }
         #endregion
 
@@ -34,8 +34,9 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region public methods
-        public void SetWire(Vector2 corePos, Vector2 enginePos)
+        public void SetWire(Vector2 enginePos, Vector2 corePos)
         {
+            Debug.Log("2");
             // test 직선 설치
             Debug.Log("도비가 와이어를 설치합니다.");
 
@@ -48,16 +49,17 @@ namespace DrillGame.View.Engine
                 wireList.Add(wire);
 
                 wire.transform.position = new Vector2(enginePos.x + i, enginePos.y);
-                var sr = wire.GetComponent<SpriteRenderer>();
-                sr.color = wireColor;
+                //var sr = wire.GetComponent<SpriteRenderer>();
+                //sr.color = wireColor;
             }
             for (int j = 0; j < width; j++)
             {
                 GameObject wire = Instantiate(wirePrefab, transform);
                 wireList.Add(wire);
+
                 wire.transform.position = new Vector2(corePos.x, enginePos.y + j);
-                var sr = wire.GetComponent<SpriteRenderer>();
-                sr.color = wireColor;
+                //var sr = wire.GetComponent<SpriteRenderer>();
+                //sr.color = wireColor;
 
 
             }
