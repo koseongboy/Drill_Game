@@ -81,6 +81,11 @@ namespace DrillGame
         [ContextMenu("Add Research Progress")]
         public void AddResearchProgress()
         {
+            if (selectedResearchId == 0)
+            {
+                // TODO : 놀고있다고 알려주기?
+                return;
+            }
             if (!researchProgresses.ContainsKey(selectedResearchId))
             {
                 Debug.Log("올바르지 않은 ResearchKey입니다. : "+ selectedResearchId);
@@ -93,6 +98,7 @@ namespace DrillGame
             if (IsResearchDone(selectedResearchId)) {
                 researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
                 Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+                UnSelectResearch();
                 return;
             }
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );

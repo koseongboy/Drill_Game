@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -207.00008}
+  m_AnchoredPosition: {x: 0, y: -134.92493}
   m_SizeDelta: {x: 950, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4809850067430632922
@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 5654300477195519150}
   - component: {fileID: 965212961469323340}
   - component: {fileID: 1904815955167222035}
+  - component: {fileID: 8434575744089530890}
   - component: {fileID: 3875601258468412749}
   m_Layer: 0
   m_Name: UI_Inventory
@@ -237,6 +238,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8434575744089530890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473116312420107174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f3ab56c8d4db3a436af58de75a086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame._1_Play._1_Scripts.Managers.Mono.ItemSlotPoolManager
+  slotPrefab: {fileID: 8674952265119646972, guid: da264eac977244643aef38e10bc41bac, type: 3}
+  slotObjectParent: {fileID: 7540410290641015475}
 --- !u!114 &3875601258468412749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,5 +265,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_Inventory
   addressableName: UI_Inventory
-  slotPrefab: {fileID: 8674952265119646972, guid: da264eac977244643aef38e10bc41bac, type: 3}
-  slotObjectParent: {fileID: 7540410290641015475}
+  inventoryContent: {fileID: 7540410290641015475}
+  showingItems: []
+  activeSlotObjects: []
