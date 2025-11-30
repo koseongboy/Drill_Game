@@ -34,6 +34,9 @@ namespace DrillGame.View.Facility
 
         private Color onMouseColor = Color.cyan;
 
+        // graphic action 관련
+        private ParticleSystem runEffect;
+
         #endregion
 
         #region Singleton & initialization
@@ -60,6 +63,8 @@ namespace DrillGame.View.Facility
             spriteRenderer = GetComponent<SpriteRenderer>();
             originalColor = spriteRenderer.material.color;
 
+            runEffect = GetComponent<ParticleSystem>();
+
             // set debug position
             debugPosition = startPosition;
         }
@@ -73,6 +78,12 @@ namespace DrillGame.View.Facility
         {
             // 임시 그래픽 액션 실행
             TempGraphicAction(intensity);
+            // 이펙트 재생
+            Debug.Log("Facility run effect play");
+            if (runEffect != null)
+            {
+                runEffect.Play();
+            }
         }
 
         public void DeleteFacilityComponent()
