@@ -172,7 +172,7 @@ namespace DrillGame.Core.Managers
         }
 
         // 코어가 활성화 되면 모든 엔진에 명령을 내립니다.
-        private void ActivateCore()
+        public void ActivateCore()
         {
             // Debug.Log($"Engine Core Activated : have {engines.Count} engines & {facilities.Count} facilities");
             foreach (var engine in engines)

@@ -60,6 +60,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4d1d12d118e51546ad531987245bf38
+    m_Address: UI_ResourceInventory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9b6c9051451185488725218105bd860
     m_Address: UI_FacilityDetailPopup
     m_ReadOnly: 0

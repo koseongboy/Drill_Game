@@ -37,6 +37,12 @@ namespace DrillGame
         {
             Init();
         }
+                
+        public void ChangeInventoryTypeByViewState(GameViewManager.ViewState viewState)
+        {
+            GameViewManager.Instance.SetViewState(viewState);
+            OnInventoryUpdated();
+        }
         
         // Inventory Manager 옵저빙
         private void OnInventoryUpdated()
@@ -49,17 +55,7 @@ namespace DrillGame
             };
             UpdateUI(itemType);
         }
-        
-        public void ChangeInventoryTypeByViewState(GameViewManager.ViewState viewState)
-        {
-            var itemType = viewState switch
-            {
-                GameViewManager.ViewState.EngineOnly => InventoryManager.ItemType.Engine,
-                GameViewManager.ViewState.FacilityOnly => InventoryManager.ItemType.Facility,
-                _ => InventoryManager.ItemType.None
-            };
-            UpdateUI(itemType);
-        }
+
         
         private void UpdateUI(InventoryManager.ItemType itemType)
         {
@@ -72,11 +68,19 @@ namespace DrillGame
         {
             showingItemsCountDict = new Dictionary<int, int>();
             showingItems = new List<Item_Data_>();
+            Debug.Log(activeSlotObjects.Count);
             foreach (var obj in activeSlotObjects)
             {
-                ItemSlotPoolManager.Instance.Return(obj);
+                if (obj != null)
+                {
+                    ItemSlotPoolManager.Instance.Return(obj);
+                }
+                else
+                {
+                    Debug.LogWarning("Object is null");
+                }
             }
-            activeSlotObjects = new List<GameObject>();
+            activeSlotObjects.Clear();
         }
 
         private void LoadInventory(InventoryManager.ItemType itemType = InventoryManager.ItemType.Facility)
@@ -109,6 +113,10 @@ namespace DrillGame
             foreach (var itemData in showingItems)
             {
                 var slotObject = ItemSlotPoolManager.Instance.Get();
+                if (slotObject == null)
+                {
+                    continue;
+                }
 
                 UI_ItemSlot uiItemSlot = slotObject.GetComponent<UI_ItemSlot>();
                 uiItemSlot.SetItemData(itemData);
@@ -116,6 +124,12 @@ namespace DrillGame
             }
         }
 
+        private void Awake()
+        {
+            showingItemsCountDict = new Dictionary<int, int>();
+            showingItems = new List<Item_Data_>();
+            activeSlotObjects = new List<GameObject>();
+        }
 
         private void OnEnable()
         {
@@ -151,7 +165,7 @@ namespace DrillGame
         }
         
         [ContextMenu("AddUnitItems_DEV")]
-        public void AddUnitItems_DEV()
+        public void AddEntityItems_DEV()
         {
             AddFacilityItems_DEV();
             AddEngineItems_DEV();
