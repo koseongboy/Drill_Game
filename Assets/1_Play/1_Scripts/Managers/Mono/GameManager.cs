@@ -74,6 +74,10 @@ namespace DrillGame.Managers
         #endregion
 
         #region getters & setters
+        public bool isInBatchMode()
+        {
+            return gridManager.IsInBatchMode;
+        }
         #endregion
 
         #region public methods

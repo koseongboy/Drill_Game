@@ -74,6 +74,8 @@ namespace DrillGame.Managers
         [ReadOnly, SerializeField]
         private Vector3 mouseWorldPosition;
         private BatchMode batchMode;
+        public bool IsInBatchMode => batchMode != BatchMode.None;
+
         private TilemapType tilemapType;
         private TileBase imageTile;
         private GameObject entityObject; 

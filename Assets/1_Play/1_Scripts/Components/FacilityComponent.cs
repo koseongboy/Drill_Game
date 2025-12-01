@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using DrillGame.View.Helper;
 using UnityEngine.Serialization;
+using DrillGame.Managers;
 
 namespace DrillGame.View.Facility
 {
@@ -182,6 +183,12 @@ namespace DrillGame.View.Facility
         {
             if (eventData.button != PointerEventData.InputButton.Left)
             {
+                return;
+            }
+
+            if (GameManager.Instance.isInBatchMode())
+            {
+                Debug.Log("배치 모드 중에는 시설 상세 정보를 볼 수 없습니다.");
                 return;
             }
 
