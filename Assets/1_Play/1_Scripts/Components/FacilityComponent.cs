@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using DrillGame.View.Helper;
+using UnityEngine.Serialization;
 
 namespace DrillGame.View.Facility
 {
@@ -13,21 +14,23 @@ namespace DrillGame.View.Facility
     {
         #region Fields & Properties
 
-        //내부 정보
-
-        [SerializeField]
-        public int debugId = 101011;
-        [SerializeField]
+        [FormerlySerializedAs("InnerInformation")]
+        [Header("디버그용 내부 정보")]
+        [SerializeField] 
+        [ReadOnly] 
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
+        [SerializeField] 
+        [ReadOnly] 
+        private Vector2 pivot;
 
-        [SerializeField]
-        public string EntityClassName = "FacilityEntity";
         
 
         private FacilityPresenter presenter;
 
         public Action OnClickFacilityDetail { get; set; }
 
+
+        private Facility_Data_ data;
         // graphic action 관련 임시 필드
         private SpriteRenderer spriteRenderer;
         private Color originalColor;
@@ -42,16 +45,17 @@ namespace DrillGame.View.Facility
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition, int itemId = 0, int entityId = 0)
         {
-            // 각 장치 속성에 맞는 엔티티 동적 생성
-            string fullEntityClassName = "DrillGame.Core.Facility." + EntityClassName;
+            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
+            string fullEntityClassName = "DrillGame.Core.Facility." + data.EntityClassName;
             Type type = System.Type.GetType(fullEntityClassName);
             Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {
-                Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
+                Debug.LogError($"엔티티 클래스 '{fullEntityClassName}'는 없는 엔티티입니다.");
                 type = typeof(FacilityEntity);
             }
-            object[] parameters = new object[] { startPosition, 0, itemId, debugId };
+
+            object[] parameters = new object[] { startPosition, 0, itemId, entityId };
             FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 
@@ -59,8 +63,29 @@ namespace DrillGame.View.Facility
                 presenter.RequestFacilityDetail();
                 // 확장성을 위해 람다식 사용
             };
+            
 
+            //여기서부턴 그래픽
             spriteRenderer = GetComponent<SpriteRenderer>();
+            //pivot 설정
+            pivot = GetPivot(data.GetLength());
+            //스프라이트 가져오기
+            string spritePath = "Koseongboy/" + data.Name;
+            Sprite originSprite = Resources.Load<Sprite>(spritePath);
+            if(originSprite != null)
+            {
+                Texture2D texture = originSprite.texture;
+                Rect rect = new Rect(0, 0, texture.width, texture.height);
+                float pixelsPerUnit = texture.width / data.GetLength().x; // 가로 길이를 기준으로 픽셀 퍼 유닛 설정
+                Sprite facilitySprite = Sprite.Create(texture, rect, pivot, pixelsPerUnit);
+                spriteRenderer.sprite = facilitySprite;
+            }
+            else
+            {
+                Debug.LogError("Facility sprite load failed at path: " + spritePath);
+            }
+            
+
             originalColor = spriteRenderer.material.color;
 
             runEffect = GetComponent<ParticleSystem>();
@@ -109,6 +134,29 @@ namespace DrillGame.View.Facility
             // 임시 그래픽 액션
             transform.DOKill(true);
             transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0) * intensity, 0.1f, 10, 1);
+        }
+
+        private Vector2 GetPivot(Vector2Int length)
+        {
+            float newx, newy;
+            if (length.x % 2 == 0)
+            {
+                newx = 1f / (length.x * 2); //짝수 개면 1/(길이*2)
+            }
+            else
+            {
+                newx = 0.5f; //홀수 개면 중앙이 중심
+            }
+            if (length.y % 2 == 0)
+            {
+                newy = 1f / (length.y * 2);
+            }
+            else
+            {
+                newy = 0.5f;
+            }
+
+            return new Vector2(newx, newy);
         }
         #endregion
 

@@ -73,12 +73,11 @@ namespace DrillGame.Managers
 
         [ReadOnly, SerializeField]
         private Vector3 mouseWorldPosition;
-
-        private string prefabName;
         private BatchMode batchMode;
         private TilemapType tilemapType;
         private TileBase imageTile;
         private GameObject entityObject; 
+        [SerializeField] private GameObject facilityObject;
         private Transform entityParent;
         private List<Vector2Int> formationPositions;
 
@@ -86,6 +85,8 @@ namespace DrillGame.Managers
         private int placingEntityId;
         
         public event Action AfterUnitPlaced;
+
+        int level = 1; //todo 레벨 저장 구현 필요
 
         #endregion
 
@@ -102,8 +103,6 @@ namespace DrillGame.Managers
 
             // 코어 배치
             CoreBatch();
-
-
             DrillBatch();
 
         }
@@ -220,13 +219,13 @@ namespace DrillGame.Managers
             HashSet<Vector2Int> occupiedPositions = FacilityOccupiedPositions;
             occupiedPositions.Add(cellPos2D);
 
-            EnterBatchMode(TilemapType.Facility, 112001);
+            EnterBatchMode(TilemapType.Facility, 112000 + level);
             
             // Instantiate entity
             GameObject gameObject = Instantiate(entityObject, grid.CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
             if(gameObject.TryGetComponent<IDrillGameObjectInit>(out var init))
             {
-                init.Initialize(cellPos2D, 0, 0); // TODO : 레벨에 맞는 드릴 설치해줘야.
+                init.Initialize(cellPos2D, 0, 112000 + level); // TODO : 레벨에 맞는 드릴 설치해줘야.
                 // set sorting layer in parent
                 gameObject.GetComponent<SpriteRenderer>().sortingLayerID = entityParent.GetComponent<Tilemap>().GetComponent<TilemapRenderer>().sortingLayerID;
             }
@@ -266,11 +265,9 @@ namespace DrillGame.Managers
             }
             else
             {
-                prefabName = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId).Type;
                 imageTile = TempFacilityImage;
-                entityObject = Resources.Load<GameObject>($"Prefabs/Facility/{prefabName}");
+                entityObject = TempFacility;
                 entityParent = FacilityTileamp;
-
                 formationPositions = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId).GetCoordinates();
             }
 
