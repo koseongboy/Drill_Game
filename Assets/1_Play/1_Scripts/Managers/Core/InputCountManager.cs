@@ -9,7 +9,8 @@ namespace DrillGame
     {
         #region Fields & Properties
         private static InputCountManager instance;
-        
+
+        private int coreActiveCount;
         private int inputCount;
         private int tickCount;
 
@@ -42,9 +43,21 @@ namespace DrillGame
         
         #region getters & setters
 
+        public void AddCoreActiveCount()
+        {
+            coreActiveCount++;
+            if (coreActiveCount >= 3)
+            {
+                coreActiveCount = 0;
+                BoardManager.Instance.Tick();
+            }
+            // Debug.Log("Core Active Count: " + coreActiveCount);
+        }
+
         public void addInputCount()
         {
             inputCount++;
+            AddCoreActiveCount();
             OnInputCountChanged?.Invoke(inputCount);
         }
 
