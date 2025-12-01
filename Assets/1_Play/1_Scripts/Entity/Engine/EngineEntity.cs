@@ -15,16 +15,16 @@ namespace DrillGame.Core.Engine
         #region Fields & Properties
 
         [ReadOnly]    
-        private int itemId; // ì² ê±°í•  ë•Œ ì¸ë²¤í† ë¦¬ì— ë„£ê¸° ìœ„í•œ ItemIdê°’
+        private int itemId; // Ã¶°ÅÇÒ ¶§ ÀÎº¥Åä¸®¿¡ ³Ö±â À§ÇÑ ItemId°ª
         
         [ReadOnly]    
-        private int engineId; // UI í‘œì‹œìš© Data Idê°’
+        private int engineId; // UI Ç¥½Ã¿ë Data Id°ª
         
-        private bool isRunning = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½Å³ï¿½ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-        private List<int> scheduleList = new List<int>(); // ï¿½ï¿½ï¿½ï¿½ Æ½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+        private bool isRunning = true; // ?????? ???????? false?? ????
+        private List<int> scheduleList = new List<int>(); // ???? ? ???? ??????? ?????
 
-        private Vector2Int position; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ (ï¿½ï¿½ï¿½ï¿½)
-        private List<Vector2Int> formations = new List<Vector2Int>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½Æ®) , 0,0 ï¿½Ê¼ï¿½  
+        private Vector2Int position; // ?????? ??? (????)
+        private List<Vector2Int> formations = new List<Vector2Int>(); // ?????? ???? (???? ???? ??? ??? ?????) , 0,0 ???  
         
         public event Action OnEngineActivated;
         public event Action OnEngineDeleted;
@@ -33,7 +33,7 @@ namespace DrillGame.Core.Engine
         #endregion
 
         #region Singleton & initialization
-        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations = null, int itemId = -1, int engineId = -1)
+        public EngineEntity(Vector2Int startPosition, List<Vector2Int> formations, int itemId, int engineId, string type)
         {
             position = startPosition;
             if (formations == null)
@@ -89,17 +89,17 @@ namespace DrillGame.Core.Engine
         #region public methods
         public void DeleteEntity()
         {
-            // presentor í˜¸ì¶œ
+            // presentor È£Ãâ
             OnEngineDeleted?.Invoke();
-            // BoardManager ì—ì„œ ì œê±°
+            // BoardManager ¿¡¼­ Á¦°Å
             BoardManager.Instance.RemoveEngine(this);
-            // ì¸ë²¤í† ë¦¬ì— ì•„ì´í…œ ì¶”ê°€
+            // ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛ Ãß°¡
             InventoryManager.Instance.AddItem(itemId);
         }
 
         public void MoveEntity()
         {
-            // delete ì½”ë“œ ì‚¬ìš©í›„ ë‹¤ì‹œ ì§‘ì–´ë“œëŠ” íŒì •ì…ë‹ˆë‹¤.
+            // delete ÄÚµå »ç¿ëÈÄ ´Ù½Ã Áı¾îµå´Â ÆÇÁ¤ÀÔ´Ï´Ù.
             OnEngineDeleted?.Invoke();
             BoardManager.Instance.RemoveEngine(this);
             GameManager.Instance.BatchEntity(itemId);
@@ -107,8 +107,8 @@ namespace DrillGame.Core.Engine
 
         public void Tick()
         {
-            if (!isRunning) return;  // ì‹¤í–‰ ì¤‘ì´ ì•„ë‹ˆë¼ë©´ ë¬´ì‹œ
-            //if (engineId == 210001) Debug.Log("ì €ëŠ” ì½”ì–´ì—ìš”");
+            if (!isRunning) return;  // ½ÇÇà ÁßÀÌ ¾Æ´Ï¶ó¸é ¹«½Ã
+            //if (engineId == 210001) Debug.Log("Àú´Â ÄÚ¾î¿¡¿ä");
             ScheduleTick();
         }
 
@@ -120,7 +120,7 @@ namespace DrillGame.Core.Engine
 
         public void ScheduleEngineRun(Vector2Int corePosition)
         {
-            // ë§¨í•´íŠ¼ ê±°ë¦¬ ê³„ì‚°
+            // ¸ÇÇØÆ° °Å¸® °è»ê
             int distance = Mathf.Abs(corePosition.x - position.x) + Mathf.Abs(corePosition.y - position.y);
 
             scheduleList.Add(distance);
@@ -139,7 +139,7 @@ namespace DrillGame.Core.Engine
                 OnEngineTickScheduled?.Invoke(scheduleList[i]);
                 if (scheduleList[i] <= 0)
                 {
-                    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    // ??? ????
                     ActivateEngine();
                     scheduleList.RemoveAt(i);
                 }
@@ -149,7 +149,7 @@ namespace DrillGame.Core.Engine
         private void ActivateEngine()
         {
             // Debug.Log($"Engine at {position} activated!");
-            // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+            // ???? ?????? ?????? ???? ?????? ????????.
             OnEngineActivated?.Invoke();
             
             BoardManager.Instance.RegisterRun(GetFormationPositions());

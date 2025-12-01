@@ -20,17 +20,30 @@ public class Engine_Data_ : ScriptableObject, ICSVData
     public int Level;
     public List<string> Coordinates;
     public string Desc;
+    public string Length;
+    public string MainCoordinate;
     
     
-    public List<Tuple<int, int>> GetCoordinates()
+    public List<Vector2Int> GetCoordinates()
     {
-        List<Tuple<int, int>> coordinates = new List<Tuple<int, int>>();
+        List<Vector2Int> coordinates = new List<Vector2Int>();
         foreach (string tuple in Coordinates)
         {
             var str = tuple.Split(',');
-            coordinates.Add(new Tuple<int, int>(int.Parse(str[0]), int.Parse(str[1])));
+            coordinates.Add(new Vector2Int(int.Parse(str[0]), int.Parse(str[1])));
         }
         return coordinates;
+    }
+    public Vector2Int GetLength()
+    {
+        var str = Length.Split(',');
+        return new Vector2Int(int.Parse(str[0]), int.Parse(str[1]));
+    }
+
+    public Vector2Int GetMainCoordinate()
+    {
+        var str = MainCoordinate.Split(',');
+        return new Vector2Int(int.Parse(str[0]), int.Parse(str[1]));
     }
 
     [ContextMenu("Get Coordinates")]
