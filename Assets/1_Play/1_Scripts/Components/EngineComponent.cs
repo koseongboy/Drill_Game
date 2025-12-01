@@ -51,7 +51,9 @@ namespace DrillGame.View.Engine
             data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId);
             engineType = data.Type;
             formations = data.GetCoordinates();
-            EngineEntity engineEntity = new EngineEntity(startPosition, formations, itemId, entityId, engineType);
+            List<Vector2Int> entityFormations = new();
+            foreach(var coord in data.GetCoordinates()) entityFormations.Add(coord - data.GetMainCoordinate());
+            EngineEntity engineEntity = new EngineEntity(startPosition, entityFormations, itemId, entityId, engineType);
 
             presenter = new EnginePresenter(this, engineEntity);
 
@@ -99,7 +101,7 @@ namespace DrillGame.View.Engine
 
             spriteRenderer.sprite = combinedSprite;
 
-            //색상 설정
+            //색상 설정 
             if(ColorUtility.TryParseHtmlString(data.Type, out originalColor))
             {
                 spriteRenderer.color = originalColor;

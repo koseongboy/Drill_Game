@@ -3696,7 +3696,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.876222
+  orthographic size: 8.900001
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11277,6 +11277,7 @@ MonoBehaviour:
   batchMode: 0
   tilemapType: 1
   dataId: 111001
+  enginId: 201004
 --- !u!1 &1672351223
 GameObject:
   m_ObjectHideFlags: 0
@@ -12392,9 +12393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Engine.EngineComponent
   debugPosition: {x: 0, y: 0}
-  debugFormation:
-  - {x: 0, y: 0}
   engineType: 
+  MainTile: {fileID: 0}
+  NormalTile: {fileID: 0}
 --- !u!61 &1807925080
 BoxCollider2D:
   m_ObjectHideFlags: 0
