@@ -103,15 +103,34 @@ namespace DrillGame.View.Drill
             Debug.Log("드릴 레벨 업! 현재 레벨: " + drillLevel);
         }
 
+        
+
+        public void resetData()
+        {
+            if (ES3.FileExists(ES3FILENAME))
+            {
+                // 2. 파일이 존재하면 ES3.DeleteFile()로 삭제합니다.
+                ES3.DeleteFile(ES3FILENAME);
+
+                Debug.Log($"[ES3 Reset] 세이브 파일 '{ES3FILENAME}'이 성공적으로 삭제되었습니다.");
+                
+                // 3. (선택 사항) 삭제 후 초기 상태로 게임을 재시작하거나 로드할 수 있습니다.
+                // SceneManager.LoadScene(0);
+            }
+            else
+            {
+                Debug.LogWarning($"[ES3 Reset] 삭제할 세이브 파일 '{ES3FILENAME}'이 존재하지 않습니다. 이미 초기화된 상태일 수 있습니다.");
+            }
+        }
+        #endregion
+
+        #region private methods
         private void SaveDrillData(int level)
         {
             ES3File es3File = new ES3File(ES3FILENAME);
             es3File.Save(DRILL_LEVEL, level);
             es3File.Sync();
         }
-        #endregion
-
-        #region private methods
         #endregion
 
         #region Unity event methods
