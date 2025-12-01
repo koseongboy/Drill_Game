@@ -23,6 +23,8 @@ namespace DrillGame.Core.Presenter
 
             engineEntity.OnEngineActivated += OnEngineEntityActivated;
             engineEntity.OnEngineDeleted += OnEngineEntityDeleted;
+            if(engineEntity.GetEngineId() != EngineComponent.CORE_ENTITY_ID)
+                engineEntity.OnEngineTickScheduled += OnEngineEntityTickScheduled;
         }
         #endregion
 
@@ -34,6 +36,8 @@ namespace DrillGame.Core.Presenter
         {
             engineEntity.OnEngineActivated -= OnEngineEntityActivated;
             engineEntity.OnEngineDeleted -= OnEngineEntityDeleted;
+            if (engineEntity.GetEngineId() != EngineComponent.CORE_ENTITY_ID)
+                engineEntity.OnEngineTickScheduled -= OnEngineEntityTickScheduled;
         }
         public void RequestEngineDetail()
         {
@@ -45,13 +49,16 @@ namespace DrillGame.Core.Presenter
         private void OnEngineEntityActivated()
         {
             engineComponent.RunEngineComponent();
-
         }
 
         private void OnEngineEntityDeleted()
         {
             engineComponent.DeleteEngineComponent();
-            
+        }
+
+        private void OnEngineEntityTickScheduled(int index)
+        {
+            engineComponent.WireGraphic(index);
         }
         #endregion
 
