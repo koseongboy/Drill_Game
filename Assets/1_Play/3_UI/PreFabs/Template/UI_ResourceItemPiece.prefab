@@ -32,9 +32,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5513310204293206264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 37.5, y: -36.2143}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 37.5, y: -0.21429825}
   m_SizeDelta: {x: 55, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1750603505380535264
@@ -107,9 +107,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5513310204293206264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 313, y: -36.2143}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -113, y: -0.21429825}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6254302409958062315
@@ -142,8 +142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
+  m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 181140280634843721}
   - component: {fileID: 8368946447260622616}
   - component: {fileID: -5596346257375472845}
+  - component: {fileID: 71765984092852067}
   m_Layer: 0
   m_Name: UI_ResourceItemPiece
   m_TagString: Untagged
@@ -249,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -540, y: -960}
-  m_SizeDelta: {x: -646.41003, y: 72.42859}
+  m_AnchoredPosition: {x: -161.60254, y: -960}
+  m_SizeDelta: {x: -323.20508, y: 72.42859}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &181140280634843721
 CanvasRenderer:
@@ -310,6 +311,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &71765984092852067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735704433116989936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c35eabdbb54d259e69220a5aa68d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_ResourceItemPiece
+  ui_icon: {fileID: 5684604932013174883}
+  ui_name: {fileID: 2562788339763849484}
+  ui_count: {fileID: 5037947658890502002}
 --- !u!1 &9131291069525325125
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,9 +358,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5513310204293206264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 173, y: -36.2143}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 173, y: -0.21429825}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8047525051032418056
@@ -377,8 +393,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
+  m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

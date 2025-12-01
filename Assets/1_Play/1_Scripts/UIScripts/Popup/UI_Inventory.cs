@@ -167,8 +167,22 @@ namespace DrillGame
         [ContextMenu("AddUnitItems_DEV")]
         public void AddEntityItems_DEV()
         {
+            AddResourceItems_DEV();
             AddFacilityItems_DEV();
             AddEngineItems_DEV();
+        }
+
+        [ContextMenu("AddResourceItems_DEV")]
+        public void AddResourceItems_DEV()
+        {
+            InventoryManager.Instance.AddItem( 1001 );
+            InventoryManager.Instance.AddItem( 1002 );
+            InventoryManager.Instance.AddItem( 1003 );
+            InventoryManager.Instance.AddItem( 1003 );
+            InventoryManager.Instance.AddItem( 1003 );
+            InventoryManager.Instance.AddItem( 1006 );
+            InventoryManager.Instance.AddItem( 1007 );
+            InventoryManager.Instance.AddItem( 1008 );
         }
         
         [ContextMenu("AddFacilityItems_DEV")]
