@@ -123,8 +123,8 @@ namespace DrillGame.View.Engine
         {
             if(presenter == null)
             {
-                Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 테스트용 기본 엔진을 생성합니다.");
-                Initialize(debugPosition);
+                Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 코어로 간주합니다.");
+                Initialize(debugPosition, 0, 210001);
             }
         }
 

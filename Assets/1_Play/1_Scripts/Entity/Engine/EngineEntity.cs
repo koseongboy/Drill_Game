@@ -107,7 +107,7 @@ namespace DrillGame.Core.Engine
         public void Tick()
         {
             if (!isRunning) return;  // 실행 중이 아니라면 무시
-
+            //if (engineId == 210001) Debug.Log("저는 코어에요");
             ScheduleTick();
         }
 
