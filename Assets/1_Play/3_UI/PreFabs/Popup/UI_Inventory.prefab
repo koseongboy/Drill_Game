@@ -266,4 +266,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_Inventory
   addressableName: UI_Inventory
   inventoryContent: {fileID: 7540410290641015475}
-  activeSlotObjects: []

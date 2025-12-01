@@ -21,6 +21,7 @@ namespace DrillGame
         [SerializeField] private TextMeshProUGUI viewStateTxt;
 
         private bool isEditing = false;
+        private bool isInventoryOpen = false;
         
         public void LinkAddressable(string address)
         {
@@ -29,9 +30,15 @@ namespace DrillGame
 
         public void InventoryButtonPressed()
         {
-            Debug.Log("Inventory Button 눌림.");
-
-            // UILoader.Instance.ShowUI("UI_Inventory");
+            if (isInventoryOpen)
+            {
+                UI_ResourceInventory.Instance.CloseUI();
+            }
+            else
+            {
+                UILoader.Instance.ShowUI("UI_ResourceInventory");
+            }
+            isInventoryOpen = !isInventoryOpen;
         }
 
         public void EditButtonPressed()
