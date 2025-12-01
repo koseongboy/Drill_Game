@@ -1,7 +1,9 @@
-﻿using DrillGame.Core.Managers;
+﻿using System;
+using DrillGame.Core.Managers;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-namespace DrillGame._1_Play._1_Scripts.Managers.Mono
+namespace DrillGame.Managers
 {
     public class EngineMergerData
     {
@@ -60,7 +62,8 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         private int targetEngineItemId;
         private int inputEngineItemId1;
         private int inputEngineItemId2;
-        
+
+        public Action OnProcessChanged;
         
         private const string ENGINE_MERGER_KEY = "EngineMergerData";
         #endregion
@@ -70,6 +73,16 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         public int GetProgress()
         {
             return progress;
+        }
+
+        public MergeProcessingType GetCurrentType()
+        {
+            return currentType;
+        }
+
+        public int GetTargetEngineItemId()
+        {
+            return targetEngineItemId;
         }
         #endregion
 
@@ -87,19 +100,39 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
             }
             
             progress += progressDelta;
-            if (progress > progressMax)
+            if (progress >= progressMax)
             {
                 progress = progressMax;
                 OnCompleteProcess();
             }
         }
+        
+        public void StopEngineMergeProcess()
+        {
+            if (currentType == MergeProcessingType.Create)
+            {
+                targetEngineItemId = 0;
+            }else if (currentType == MergeProcessingType.Combine)
+            {
+                RollbackInputEngineItems();
+                
+                targetEngineItemId = 0;
+                inputEngineItemId1 = 0;
+                inputEngineItemId2 = 0;
+            }
+
+            progress = 0;
+            currentType = MergeProcessingType.None;
+            OnProcessChanged?.Invoke();
+        }
 
         // 엔진 생산 : 랜덤한 엔진을 뽑기
-        public void RegisterEngineToCreate(int targetEngineItemId)
+        public void RegisterEngineToCreate(int level)
         {
             currentType = MergeProcessingType.Create;
-            
-            this.targetEngineItemId = targetEngineItemId;
+            var engineType = Random.Range(0, 5);
+            targetEngineItemId = 1100 + engineType*10 + level;
+            OnProcessChanged?.Invoke();
         }
 
         // 엔진 조합 : 두 엔진을 합쳐서 높은 레벨의 엔진 제작
@@ -122,6 +155,8 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
             this.targetEngineItemId = targetEngineItemId;
             this.inputEngineItemId1 = inputEngineItemId1;
             this.inputEngineItemId2 = inputEngineItemId2;
+            
+            OnProcessChanged?.Invoke();
         }
 
         public void RollbackInputEngineItems()
@@ -137,6 +172,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         private void Init()
         {
             currentType = MergeProcessingType.None;
+            progress = 0;
             targetEngineItemId = 0;
             inputEngineItemId1 = 0;
             inputEngineItemId2 = 0;

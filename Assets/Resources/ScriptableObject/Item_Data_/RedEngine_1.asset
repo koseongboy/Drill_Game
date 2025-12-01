@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c247933895ff140b056b5e917142f0, type: 3}
   m_Name: RedEngine_1
   m_EditorClassIdentifier: Assembly-CSharp::Item_Data_
-  Id: 1104
+  Id: 1111
   Name: RedEngine_1
   DisplayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.1"
   ItemType: Engine
