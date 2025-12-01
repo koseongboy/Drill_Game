@@ -49,7 +49,7 @@ namespace DrillGame
             if (coreActiveCount >= 3)
             {
                 coreActiveCount = 0;
-                BoardManager.Instance.Tick();
+                BoardManager.Instance.ActivateCore();
             }
             // Debug.Log("Core Active Count: " + coreActiveCount);
         }
