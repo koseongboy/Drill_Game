@@ -197,7 +197,13 @@ namespace DrillGame.WindowControl
         private const string WindowTitle = "Drill Game";
 
         [SerializeField] private Canvas mainCanvas;
-        [SerializeField] private GameObject floatingBar;
+        RectTransform canvasRectTransform;
+        [SerializeField] private RectTransform targetRect;
+
+    // 평상시(축소 상태)의 여백/오프셋 값
+        [Header("축소 상태 오프셋")]
+        [SerializeField] private float normalTop = 100f; 
+        [SerializeField] private float normalBottom = 100f;
 
         [Header("Window Size (Percentage of Screen)")]
         [Range(0.01f, 1.0f)]
@@ -227,9 +233,8 @@ namespace DrillGame.WindowControl
         }
 
         void Awake()
-        {
-            originalSizetMax = floatingBar.GetComponent<RectTransform>().sizeDelta;
-            originalSizeMin = floatingBar.GetComponent<RectTransform>().sizeDelta;
+        {          
+            canvasRectTransform = targetRect.root.GetComponent<RectTransform>();
             InitializeWindowAndHook();
         }
         /// <summary>
@@ -242,14 +247,27 @@ namespace DrillGame.WindowControl
             SetWindowPositionInternal(isExpanded); // 내부 함수 호출
             if (isExpanded)
             {
-                floatingBar.GetComponent<RectTransform>().sizeDelta = originalSizetMax;
-                floatingBar.GetComponent<RectTransform>().sizeDelta = originalSizeMin;
+                targetRect.anchorMin = new Vector2(0f, 0f);
+                targetRect.anchorMax = new Vector2(1f, 0f);
+                targetRect.anchoredPosition = new Vector2(0f, 45f);
+                targetRect.sizeDelta = new Vector2(0f, 90f);
                 
             }
             else
             {
+                targetRect.anchorMin = new Vector2(0f, 0f);
+                targetRect.anchorMax = new Vector2(1f, 1f);
+
+                targetRect.anchoredPosition = Vector2.zero;
+                targetRect.sizeDelta = Vector2.zero;
 
             }
+        }
+        private void SetOffsets(float top, float bottom, float left, float right)
+        {
+            targetRect.offsetMin = new Vector2(left, bottom);
+
+            targetRect.offsetMax = new Vector2(-right, -top);
         }
 
         void Update()

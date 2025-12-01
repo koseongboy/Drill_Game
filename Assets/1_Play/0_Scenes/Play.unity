@@ -3239,11 +3239,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387433265}
   m_CullTransparentMesh: 1
---- !u!1 &409166214 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8365942453335953496, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-  m_PrefabInstance: {fileID: 207637803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &415906003
 GameObject:
   m_ObjectHideFlags: 0
@@ -7670,7 +7665,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3779547548778048868, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
   m_PrefabInstance: {fileID: 207637803}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409166214}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd64b2026ab75e0478c78edfa41b1216, type: 3}
@@ -7722,7 +7717,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindowController
   isExpanded: 1
   mainCanvas: {fileID: 706274366}
-  floatingBar: {fileID: 409166214}
+  targetRect: {fileID: 800476831}
+  normalTop: 2700
+  normalBottom: -1.316406
   ExpandedWidthPercent: 0.2
   ExpandedHeightPercent: 1
   CollapsedWidthPercent: 0.2
