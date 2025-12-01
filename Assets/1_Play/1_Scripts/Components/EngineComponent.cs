@@ -3,10 +3,12 @@ using DrillGame.Core.Engine;
 using DrillGame.Core.Presenter;
 using DrillGame.Managers;
 using DrillGame.View.Helper;
+using Mono.Cecil.Cil;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEditor.Progress;
 
 namespace DrillGame.View.Engine
 {
@@ -46,6 +48,25 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region Singleton & initialization
+        public void InitializeCore(Vector2Int startPosition)
+        {
+            EngineEntity engineEntity = new EngineEntity(startPosition, new List<Vector2Int>(), 0, CORE_ENTITY_ID, "Core");
+
+            presenter = new EnginePresenter(this, engineEntity);
+
+            OnClickEngineDetail = () => {
+                presenter.RequestEngineDetail();
+                // 확장성을 위해 람다식 사용
+            };
+
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            originalColor = spriteRenderer.material.color;
+
+
+            // set debug position
+            debugPosition = startPosition;
+        }
+
         public void Initialize(Vector2Int startPosition, int itemId=0, int entityId=0)
         {
             data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId);
@@ -190,7 +211,7 @@ namespace DrillGame.View.Engine
             if(presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 코어로 간주합니다.");
-                Initialize(debugPosition, 0, CORE_ENTITY_ID);
+                InitializeCore(debugPosition);
             }
         }
 
