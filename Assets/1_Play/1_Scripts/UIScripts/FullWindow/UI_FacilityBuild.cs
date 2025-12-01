@@ -236,7 +236,7 @@ namespace DrillGame
             // 1. 자원을 소모해주고...
             // if (!InventoryManager.Instance.TryRemoveItem(resourceCount, resourceCount))
             // {
-            //     Debug.LogWarning("아이템이 부족합니다. 엥? 어떻게 정상적으로 여기까지 진입했어요?");
+            //     Debug.LogWarning("아이템이 부족합니다. 엥? 근데 어떻게 정상적으로 여기까지 진입했어요?");
             //     return;
             // }
             

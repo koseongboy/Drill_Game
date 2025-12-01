@@ -3955,7 +3955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame._1_Play._1_Scripts.Managers.Mono.EngineMergerManager
   progress: 0
-  progressMax: 0
+  progressMax: 50
   progressDelta: 1
 --- !u!114 &504104043
 MonoBehaviour:
@@ -5577,7 +5577,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 910233470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73494663}
+        m_TargetAssemblyTypeName: DrillGame.UI.UILoader, Assembly-CSharp
+        m_MethodName: ShowUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UI_EngineMerger
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &910233470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9925,7 +9937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TEST
+  m_text: "\uC5D4\uC9C4 \uD569\uC131"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
   m_sharedMaterial: {fileID: -8137635878098148789, guid: 75ea89fae9ac7cb49995a513cd4994be, type: 2}
