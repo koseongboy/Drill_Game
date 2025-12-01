@@ -132,15 +132,17 @@ namespace DrillGame.WindowControl
 
             int newWidth = (int)(screenWidth * widthPercent);
             // 확장 시 상하단 45픽셀씩 여유를 두거나 60px 크기로 설정
-            int newHeight = expand ? (int)(screenHeight * heightPercent * 0.9)  : CollapsedHeight; 
+            int newHeight = expand ? (int)(screenHeight * heightPercent * 0.91)  : CollapsedHeight; 
 
             // X 계산: (화면 오른쪽 끝) - (새로운 창 너비)
             int newX = screenWidth - newWidth;
 
             // Y 좌표 (오른쪽 상단 고정: Y=0)
-            int newY = (int)(screenHeight * 0.95) - newHeight;
+            int newY = (int)(screenHeight * 0.955) - newHeight;
 
             SetWindowPos(windowHandle, HWND_TOPMOST, newX, newY, newWidth, newHeight, SWP_SHOWWINDOW);
+
+            
         }
 
         /// <summary>
@@ -195,6 +197,7 @@ namespace DrillGame.WindowControl
         private const string WindowTitle = "Drill Game";
 
         [SerializeField] private Canvas mainCanvas;
+        [SerializeField] private GameObject floatingBar;
 
         [Header("Window Size (Percentage of Screen)")]
         [Range(0.01f, 1.0f)]
@@ -206,6 +209,9 @@ namespace DrillGame.WindowControl
         public float CollapsedWidthPercent = 0.2f;
         [Range(10, 100)]
         public int CollapsedHeight = 40;
+
+        Vector2 originalSizetMax;
+        Vector2 originalSizeMin;
         
         // 💡 메인 스레드로 데이터를 전달하기 위한 큐 (모든 플랫폼에서 사용)
         private static Queue<int> keyEventQueue = new Queue<int>();
@@ -222,6 +228,8 @@ namespace DrillGame.WindowControl
 
         void Awake()
         {
+            originalSizetMax = floatingBar.GetComponent<RectTransform>().sizeDelta;
+            originalSizeMin = floatingBar.GetComponent<RectTransform>().sizeDelta;
             InitializeWindowAndHook();
         }
         /// <summary>
@@ -232,6 +240,16 @@ namespace DrillGame.WindowControl
             isExpanded = !isExpanded;
             mainCanvas.enabled = isExpanded;
             SetWindowPositionInternal(isExpanded); // 내부 함수 호출
+            if (isExpanded)
+            {
+                floatingBar.GetComponent<RectTransform>().sizeDelta = originalSizetMax;
+                floatingBar.GetComponent<RectTransform>().sizeDelta = originalSizeMin;
+                
+            }
+            else
+            {
+
+            }
         }
 
         void Update()
