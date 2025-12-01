@@ -31,6 +31,9 @@ namespace DrillGame.Managers
         [Tooltip("csv데이터 찾아오기용 index")]
         private int dataId = 111001;
 
+        [SerializeField]
+        public int enginId = 201001;
+
 
 
         private int Counter = 0;
@@ -167,7 +170,7 @@ namespace DrillGame.Managers
         public void EngineBatch()
         {
             batchMode = BatchMode.PlaceBatch;
-            dataId = 201001;
+            dataId = enginId;
             gridManager.EnterBatchMode(TilemapType.Engine, dataId, placingItemId);
         }
         public void ResourceMergerBatch()

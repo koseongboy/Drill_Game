@@ -258,12 +258,12 @@ namespace DrillGame.Managers
                 imageTile = TempEngineImage;
                 entityObject = TempEngine;
                 entityParent = EngineTileamp;
-
-                formationPositions = new() {
-                    new Vector2Int(0, 0),
-                    new Vector2Int(-1, 0),
-                    new Vector2Int(1, 0)
-                };
+                List<Vector2Int> newCoordinates = new();
+                foreach (var coord in ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId).GetCoordinates())
+                {
+                    newCoordinates.Add(coord - ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId).GetMainCoordinate());
+                }
+                formationPositions = newCoordinates;
             }
             else
             {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6332201135481889262}
   - component: {fileID: -5692939752524338096}
   m_Layer: 0
-  m_Name: Engine_NomalBlue
+  m_Name: Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,11 +106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Engine.EngineComponent
   debugPosition: {x: 0, y: 0}
-  debugFormation:
-  - {x: 0, y: 0}
-  - {x: -1, y: 0}
-  - {x: 1, y: 0}
   engineType: 0
+  MainTile: {fileID: 3017366831401090874, guid: 1b7acc9a220c2f8478633000e706b16c, type: 3}
+  NormalTile: {fileID: 6248786165460737916, guid: a94513af3d182e74c999437599d43231, type: 3}
 --- !u!61 &6332201135481889262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,5 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4044c21e45d236f46a4416a4fcdf2aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Engine.WireComponent
-  wireColor: {r: 0.3025988, g: 0.4747539, b: 0.754717, a: 1}
   wirePrefab: {fileID: 0}

@@ -14,14 +14,22 @@ namespace DrillGame.View.Engine
     {
         #region Fields & Properties
         [SerializeField]
+        [ReadOnly]
         private Vector2Int debugPosition;   // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
         [SerializeField]
-        private List<Vector2Int> debugFormation = new();
+        [ReadOnly]
+        private string engineType;
         [SerializeField]
-        private string engineType = "BasicEngine";
+        Sprite MainTile;
+        [SerializeField]
+        Sprite NormalTile;
+        List<Vector2Int> formations;
+
 
         private EnginePresenter presenter;
         public Action OnClickEngineDetail { get; set; }
+
+        Engine_Data_ data;
 
         public const int CORE_ENTITY_ID = 210001;
 
@@ -40,14 +48,10 @@ namespace DrillGame.View.Engine
         #region Singleton & initialization
         public void Initialize(Vector2Int startPosition, int itemId=0, int entityId=0)
         {
-            // for Test 후일 팩토리 패턴으로 분리 필요 -> 근데 아직 엔진 행동 패턴이 없는..
-            if (engineType != "BasicEngine")
-            {
-                Debug.LogWarning("현재는 BasicEngine만 지원합니다. 기본값으로 설정합니다.");
-                engineType = "BasicEngine";
-            }
-
-            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation, itemId, entityId);
+            data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId);
+            engineType = data.Type;
+            formations = data.GetCoordinates();
+            EngineEntity engineEntity = new EngineEntity(startPosition, formations, itemId, entityId, engineType);
 
             presenter = new EnginePresenter(this, engineEntity);
 
@@ -57,13 +61,54 @@ namespace DrillGame.View.Engine
             };
 
             spriteRenderer = GetComponent<SpriteRenderer>();
-            originalColor = spriteRenderer.material.color;
 
             if(entityId != CORE_ENTITY_ID)
             {
                 wireComponent = this.gameObject.AddComponent<WireComponent>();
                 wireComponent.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
             }
+
+            // 스프라이트 설정
+            int finalWidth = data.GetLength().x * (int)NormalTile.rect.width;
+            int finalHeight = data.GetLength().y * (int)NormalTile.rect.height;
+            Texture2D texture = new Texture2D(finalWidth, finalHeight, TextureFormat.RGBA32, false);
+            Color[] clearPixels = new Color[finalWidth * finalHeight];
+            for (int i = 0; i < clearPixels.Length; i++) clearPixels[i] = new Color(0f, 0f, 0f, 0f);
+            texture.SetPixels(clearPixels);
+            texture.Apply();
+            foreach(var formation in formations)
+            {
+                int xOffset = formation.x * (int)NormalTile.rect.width;
+                int yOffset = formation.y * (int)NormalTile.rect.height;
+                if(formation == data.GetMainCoordinate())
+                {
+                    // MainTile 그리기
+                    Color[] mainPixels = MainTile.texture.GetPixels((int)MainTile.rect.x, (int)MainTile.rect.y, (int)MainTile.rect.width, (int)MainTile.rect.height);
+                    texture.SetPixels(xOffset, yOffset, (int)MainTile.rect.width, (int)MainTile.rect.height, mainPixels);
+                }
+                else
+                {
+                    // NormalTile 그리기
+                    Color[] normalPixels = NormalTile.texture.GetPixels((int)NormalTile.rect.x, (int)NormalTile.rect.y, (int)NormalTile.rect.width, (int)NormalTile.rect.height);
+                    texture.SetPixels(xOffset, yOffset, (int)NormalTile.rect.width, (int)NormalTile.rect.height, normalPixels);
+                }
+            }
+            texture.Apply();
+            // 텍스쳐, 크기, 피벗, ppu
+            Sprite combinedSprite = Sprite.Create(texture, new Rect(0, 0, finalWidth, finalHeight), GetPivot(data.GetMainCoordinate(), data.GetLength()), (int)NormalTile.rect.width);
+
+            spriteRenderer.sprite = combinedSprite;
+
+            //색상 설정
+            if(ColorUtility.TryParseHtmlString(data.Type, out originalColor))
+            {
+                spriteRenderer.color = originalColor;
+                Debug.Log($"색상 '{data.Type}'이(가) 성공적으로 적용되었습니다.");
+            } else
+            {
+                Debug.LogWarning($"색상 '{data.Type}'을 찾을 수 없습니다.");
+            }
+
 
             // set debug position
             debugPosition = startPosition;
@@ -117,8 +162,15 @@ namespace DrillGame.View.Engine
                 spriteRenderer.material.DOColor(originalColor, flashDuration);
             });
 
+        }
 
+        private Vector2 GetPivot(Vector2Int main, Vector2Int length)
+        {
+            float pivotX, pivotY;
+            pivotX = (2 * main.x + 1f) / (2 * length.x);
+            pivotY = (2 * main.y + 1f) / (2 * length.y);
 
+            return new Vector2(pivotX, pivotY);
         }
 
         

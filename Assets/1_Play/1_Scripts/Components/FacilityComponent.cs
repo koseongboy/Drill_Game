@@ -71,7 +71,7 @@ namespace DrillGame.View.Facility
             //pivot 설정
             pivot = GetPivot(data.GetLength());
             //스프라이트 가져오기
-            string spritePath = "Koseongboy/" + data.Name;
+            string spritePath = "Koseongboy/Facility/" + data.Name;
             Sprite originSprite = Resources.Load<Sprite>(spritePath);
             if(originSprite != null)
             {
