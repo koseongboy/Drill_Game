@@ -22,6 +22,7 @@ namespace DrillGame.View.Engine
         private EnginePresenter presenter;
         public Action OnClickEngineDetail { get; set; }
 
+        private const int CORE_ENTITY_ID = 210001;
 
         // for temp graphic action
         private SpriteRenderer spriteRenderer;
@@ -55,8 +56,11 @@ namespace DrillGame.View.Engine
             spriteRenderer = GetComponent<SpriteRenderer>();
             originalColor = spriteRenderer.material.color;
 
-            WireComponent wireComp = this.gameObject.AddComponent<WireComponent>();
-            wireComp.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
+            if(entityId != CORE_ENTITY_ID)
+            {
+                WireComponent wireComp = this.gameObject.AddComponent<WireComponent>();
+                wireComp.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
+            }
 
             // set debug position
             debugPosition = startPosition;
@@ -124,7 +128,7 @@ namespace DrillGame.View.Engine
             if(presenter == null)
             {
                 Debug.LogWarning("씬에서 직접 EngineComponent를 생성했습니다. 코어로 간주합니다.");
-                Initialize(debugPosition, 0, 210001);
+                Initialize(debugPosition, 0, CORE_ENTITY_ID);
             }
         }
 
