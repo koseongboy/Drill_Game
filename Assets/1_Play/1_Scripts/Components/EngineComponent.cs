@@ -34,7 +34,7 @@ namespace DrillGame.View.Engine
         #endregion
 
         #region Singleton & initialization
-        public void Initialize(Vector2Int startPosition, int itemId=0, int unitId=0)
+        public void Initialize(Vector2Int startPosition, int itemId=0, int entityId=0)
         {
             // for Test 후일 팩토리 패턴으로 분리 필요 -> 근데 아직 엔진 행동 패턴이 없는..
             if (engineType != "BasicEngine")
@@ -43,7 +43,7 @@ namespace DrillGame.View.Engine
                 engineType = "BasicEngine";
             }
 
-            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation, itemId, unitId);
+            EngineEntity engineEntity = new EngineEntity(startPosition, debugFormation, itemId, entityId);
 
             presenter = new EnginePresenter(this, engineEntity);
 
