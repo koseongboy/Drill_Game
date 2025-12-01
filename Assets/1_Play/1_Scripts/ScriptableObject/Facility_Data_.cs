@@ -40,6 +40,7 @@ public class Facility_Data_ : ScriptableObject, ICSVData
     public int OutputItemId;
     public int OutputItemCount;
     public List<string> Coordinates;
+    public string Length;
     
     public List<Vector2Int> GetCoordinates()
     {
@@ -50,6 +51,11 @@ public class Facility_Data_ : ScriptableObject, ICSVData
             coordinates.Add(new Vector2Int(int.Parse(str[0]), int.Parse(str[1])));
         }
         return coordinates;
+    }
+    public Vector2Int GetLength()
+    {
+        var str = Length.Split(',');
+        return new Vector2Int(int.Parse(str[0]), int.Parse(str[1]));
     }
     
     public FacilityType GetFacilityType_Enum()

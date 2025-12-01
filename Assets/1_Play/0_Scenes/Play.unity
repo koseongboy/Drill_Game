@@ -2437,10 +2437,11 @@ MonoBehaviour:
   TempEngineImage: {fileID: 11400000, guid: d9d5bbfe8f881384aa6fd99c3e385b78, type: 2}
   TempFacilityImage: {fileID: 11400000, guid: c8b2b0dcc4ca97f42945938eba0fbfe2, type: 2}
   TempEngine: {fileID: 2116369118879959848, guid: 274fd5f14fc48e144bc959f8f18867d4, type: 3}
-  TempFacility: {fileID: 2858953249066847510, guid: e2fc0b25f3f871e4ca2884393dbb5275, type: 3}
+  TempFacility: {fileID: 2858953249066847510, guid: 1ebc7c74fadafc0478840e5c9fe34ed3, type: 3}
   AreaStart: {x: -4, y: -6}
   AreaSize: {x: 7, y: 12}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
+  facilityObject: {fileID: 2858953249066847510, guid: 1ebc7c74fadafc0478840e5c9fe34ed3, type: 3}
 --- !u!1 &357708413
 GameObject:
   m_ObjectHideFlags: 0
