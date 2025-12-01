@@ -1,5 +1,5 @@
 using UnityEngine;
-using DrillGame._1_Play._1_Scripts.Managers.Mono;
+using DrillGame.Managers;
 
 namespace DrillGame.Core.Facility
 {

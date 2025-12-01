@@ -6,56 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/RedEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/engineMerger6.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/engineMerger6.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/engineMerger7.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/engineMerger7.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_miner3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/gold_processor3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/lab6.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/lab6.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/lab7.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/lab7.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_miner3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/obsidian_processor3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger5.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger5.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger6.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger6.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger7.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/resource_merger7.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_miner3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/titanium_processor3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_miner3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/tunstein_processor3.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/EngineMergerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/EngineMergerEntity.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +51,7 @@
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Crocobob",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
