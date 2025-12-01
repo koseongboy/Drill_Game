@@ -28,6 +28,7 @@ namespace DrillGame.Core.Engine
         
         public event Action OnEngineActivated;
         public event Action OnEngineDeleted;
+        public event Action<int> OnEngineTickScheduled;
 
         #endregion
 
@@ -135,6 +136,7 @@ namespace DrillGame.Core.Engine
             for (int i = scheduleList.Count - 1; i >= 0; i--)
             {
                 scheduleList[i] -= 1;
+                OnEngineTickScheduled?.Invoke(scheduleList[i]);
                 if (scheduleList[i] <= 0)
                 {
                     // ��� ����

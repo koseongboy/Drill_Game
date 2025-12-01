@@ -22,7 +22,7 @@ namespace DrillGame.View.Engine
         private EnginePresenter presenter;
         public Action OnClickEngineDetail { get; set; }
 
-        private const int CORE_ENTITY_ID = 210001;
+        public const int CORE_ENTITY_ID = 210001;
 
         // for temp graphic action
         private SpriteRenderer spriteRenderer;
@@ -31,6 +31,8 @@ namespace DrillGame.View.Engine
         private float flashDuration = 0.15f;
 
         private Color onMouseColor = Color.cyan;
+
+        private WireComponent wireComponent;
 
         #endregion
 
@@ -58,8 +60,8 @@ namespace DrillGame.View.Engine
 
             if(entityId != CORE_ENTITY_ID)
             {
-                WireComponent wireComp = this.gameObject.AddComponent<WireComponent>();
-                wireComp.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
+                wireComponent = this.gameObject.AddComponent<WireComponent>();
+                wireComponent.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
             }
 
             // set debug position
@@ -95,9 +97,14 @@ namespace DrillGame.View.Engine
             spriteRenderer.material.color = originalColor;
         }
 
+        public void WireGraphic(int index)
+        {
+            wireComponent.ActivateWire(index);
+        }
+
         #endregion
 
-        #region private methods
+            #region private methods
         private void TempGraphicAction()
         {
             // 임시 그래픽 액션 : 색깔을  잠깐 바꿨다가 원래대로
