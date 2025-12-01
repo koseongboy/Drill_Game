@@ -216,11 +216,14 @@ namespace DrillGame.WindowControl
 
         void Start()
         {
-            // Windows 빌드에서만 네이티브 초기화 함수를 호출합니다.
-            InitializeWindowAndHook();
+            
             SetWindowPositionInternal(isExpanded);
         }
 
+        void Awake()
+        {
+            InitializeWindowAndHook();
+        }
         /// <summary>
         /// 창 위치와 크기를 설정하는 Public 함수
         /// </summary>
