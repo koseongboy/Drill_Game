@@ -46,7 +46,7 @@ namespace DrillGame
         public void AddCoreActiveCount()
         {
             coreActiveCount++;
-            if (coreActiveCount >= 3)
+            if (coreActiveCount >= 8)
             {
                 coreActiveCount = 0;
                 BoardManager.Instance.ActivateCore();
