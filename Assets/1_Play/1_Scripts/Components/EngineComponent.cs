@@ -1,6 +1,7 @@
 using DG.Tweening;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Presenter;
+using DrillGame.Managers;
 using DrillGame.View.Helper;
 using System;
 using System.Collections.Generic;
@@ -150,7 +151,13 @@ namespace DrillGame.View.Engine
             {
                 return; 
             }
-            
+
+            if(GameManager.Instance.isInBatchMode())
+            {
+                Debug.Log("Batch Mode에서는 엔진 상세정보를 볼 수 없습니다.");
+                return;
+            }
+
             OnClickEngineDetail?.Invoke();
         }
 
