@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: 'UIPrefabs '
   m_GUID: 5fabd6954ec50eb40919b75bc23ef7b0
   m_SerializeEntries:
+  - m_GUID: 15d5443ade8feb64abe5615c016a693b
+    m_Address: UI_ResourceConverterDetailPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d86401ceecacef42a373d3418b666a3
     m_Address: UI_EngineMergerDetailPopup
     m_ReadOnly: 0

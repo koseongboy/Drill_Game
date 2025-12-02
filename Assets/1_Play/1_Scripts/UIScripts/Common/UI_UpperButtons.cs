@@ -71,14 +71,7 @@ namespace DrillGame
             
             if (isEditing) // 배치 모드 -> 상부 / 하부 2개로만 토글
             {
-                next = currentState switch
-                {
-                    GameViewManager.ViewState.FacilityOnly => GameViewManager.ViewState.EngineOnly,
-                    GameViewManager.ViewState.EngineOnly => GameViewManager.ViewState.FacilityOnly,
-                    _ => GameViewManager.ViewState.FacilityOnly
-                };
-                
-                ui_Inventory.ChangeInventoryTypeByViewState( next );
+                return;
             }else // 일반 모드 -> 전체 / 상부 / 하부 3개로 토글
             {
                 next = currentState switch

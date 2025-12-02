@@ -7,7 +7,7 @@ using DrillGame.UI.Interface;
 
 namespace DrillGame
 {
-    public class UI_CoreDetailPopup : MonoBehaviour, UI_IAddressable
+    public class UI_CoreDetailPopup : UITemplate_DetailPopup
     {
         #region Fields & Properties
 
@@ -21,64 +21,50 @@ namespace DrillGame
         #region public methods
         public void CloseUI()
         {
-            // Debug.Log($"{gameObject.name}: UI 종료 시도, addressable 주소 : {addressableName}");
             CloseAction();
-            // UiLoader.HideUI()는 위의 CloseAction내에서, 애니메이션 다 끝나면 호출함.
         }
-        
-        public void OpenFacilityCraft(){}
-        
-        public void OpenCoreUpgrade(){}
 
-        public void LinkAddressable(string address)
+        public void OpenFacilityCraft()
         {
-            Debug.Log($"{gameObject.name}: addressable 주소 설정 : {address}");
-            addressableName = address;
+            UILoader.Instance.ShowUI("UI_FacilityBuild");
+        }
+
+        public void TryCoreUpgrade()
+        {
+            if (CoreManager.Instance.TryCoreUpgrade())
+            {
+                CloseUI();
+            }
         }
         #endregion
 
         #region private methods
+        protected override void UpdateDetail()
+        {
+            Debug.Log("진입");
+            var coreLevel = CoreManager.Instance.GetCoreLevel();
+
+            titleTxt.text = $"코어 Lv.{coreLevel}";
+            descTxt.text = "공장의 모든 엔진을 가동하기 위한 코어이다.\n이곳에서 시설을 새로 지을 수 있다.";
+            // Sprite
+            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + "coreIcon");
+            if (icon == null)
+            {
+                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : coreIcon");
+            }
+            iconImg.sprite = icon;
+        }
+        #endregion
         
-        private void OpenAction()
+        #region Unity Event
+
+        protected override void OnEnable()
         {
-            RectTransform rt = GetComponent<RectTransform>();
-            
-            Vector2 startPos = rt.anchoredPosition;
-            Vector2 targetPos = new Vector2(startPos.x, startPos.y + 100f);
-            rt.anchoredPosition = startPos;
-            rt.DOAnchorPos(targetPos, 0.1f)
-                .SetEase(Ease.OutBack);
-            
-            rt.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-            rt.DOScale(Vector2.one, 0.1f)
-                .SetEase(Ease.OutBack);
+            base.OnEnable();
+            UpdateDetail();
         }
+        
 
-        private void CloseAction() {
-            RectTransform rt = GetComponent<RectTransform>();
-            
-            Vector2 startPos = rt.anchoredPosition;
-            Vector2 targetPos = new Vector2(startPos.x, startPos.y - 100f);
-            rt.anchoredPosition = startPos;
-            rt.DOAnchorPos(targetPos, 0.1f)
-                .SetEase(Ease.Linear);
-            
-            Vector3 targetScale = new Vector3(0.8f, 0.8f, 0.8f);
-            rt.DOScale(targetScale, 0.1f)
-                .SetEase(Ease.Linear)
-                .OnComplete(() => {
-                    UILoader.Instance.HideUI(addressableName);
-                });
-        }
         #endregion
-
-        #region Unity event methods
-
-        private void OnEnable()
-        {
-            OpenAction();
-        }
-        #endregion
-
     }
 }

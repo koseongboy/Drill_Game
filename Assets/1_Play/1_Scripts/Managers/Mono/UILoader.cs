@@ -173,6 +173,7 @@ namespace DrillGame.UI
             {
                 "Laboratory" => "UI_LabDetailPopup",
                 "EngineMerger" => "UI_EngineMergerDetailPopup",
+                "ResourceConverter" => "UI_ResourceConverterDetailPopup",
                 _ => "UI_FacilityDetailPopup"
             };
             
@@ -208,7 +209,13 @@ namespace DrillGame.UI
 
         public void ShowUI_EngineDetail(EngineEntity engine)
         {
-            const string uiName = "UI_EngineDetailPopup";
+            var engineId = engine.GetEngineId();
+            var engineData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(engineId);
+            var uiName = engineData.Type switch
+            {
+                "core" => "UI_CoreDetailPopup",
+                _ => "UI_EngineDetailPopup"
+            };
             
             // 1. 이미 로드되어 있는 경우 (기존 ShowUI 로직 재활용)
             if (loadedUIs.TryGetValue(uiName, out var uiInstance) && uiInstance != null)
@@ -233,7 +240,7 @@ namespace DrillGame.UI
                 }
                 else
                 {
-                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 EngineDetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
+                    Debug.LogError($"{uiName} 로드 완료 인스턴스에 DetailPopup 컴포넌트가 없어 데이터를 설정할 수 없습니다.");
                 }
             }
             LoadUI(uiName, DataInitializer);
