@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13834b6ab6125df479860b0588c5ff47, type: 3}
-  m_Name: Ground_4
+  m_Name: Ground_8
   m_EditorClassIdentifier: Assembly-CSharp::Ground_Data_
-  Id: 5004
-  Name: Ground_4
-  StartDepth: 18
-  EndDepth: 20
-  HP: 500
+  Id: 5008
+  Name: Ground_8
+  StartDepth: 42
+  EndDepth: 40
+  HP: 30000
   DropItems:
-  - 1003
-  - 1005
-  - 1007
+  - 1011
+  - 1013
+  - 1015
   SpriteAddressable: Ground1

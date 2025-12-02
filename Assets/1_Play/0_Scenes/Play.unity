@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3875601258468412749, guid: 832d0a7c8558d594abecd975b01b8148, type: 3}
         m_TargetAssemblyTypeName: DrillGame.UI_Inventory, Assembly-CSharp
-        m_MethodName: AddEntityItems_DEV
+        m_MethodName: AddItems_GameStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11030,6 +11030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7df8e1f967d3049871a9db9083a3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Ground.GroundComponent
+  currentDepth: 0
   depthIncrement: 1
   appearDuration: 0.3
   appearOffset: 1

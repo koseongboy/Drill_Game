@@ -24,7 +24,7 @@ namespace DrillGame.View.Ground
         private Sprite CurrentGroundSprite;
         private Sprite NextGroundSprite;
 
-        private int currentDepth = 0;
+        [SerializeField] private int currentDepth = 0;
         public int depthIncrement = 1; //땅 파괴 시 증가하는 깊이 (임시)
         
         public event Action<int> OnDepthChanged;

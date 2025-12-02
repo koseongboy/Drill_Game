@@ -137,6 +137,11 @@ namespace DrillGame
             OpenAction();
         }
 
+        private void OnDisable()
+        {
+            InventoryManager.Instance.OnInventoryUpdated -= OnInventoryUpdated;
+        }
+
         #region DEV
 
         public static void PrintAll_Dict<T, S>(Dictionary<T, S> dict)
@@ -162,6 +167,20 @@ namespace DrillGame
             
             UpdateUI_ItemSlotPieces();
         }
+
+        [ContextMenu("AddItems_GameStart")]
+        public void AddItems_GameStart()
+        {
+            InventoryManager.Instance.AddItem( 1101 );
+            InventoryManager.Instance.AddItem( 1101 );
+            InventoryManager.Instance.AddItem( 1101 );
+            InventoryManager.Instance.AddItem( 1101 );
+            InventoryManager.Instance.AddItem( 1201 );
+            InventoryManager.Instance.AddItem( 1202 );
+            InventoryManager.Instance.AddItem( 1301 );
+            InventoryManager.Instance.AddItem( 1401 );
+        }
+        
         
         [ContextMenu("AddUnitItems_DEV")]
         public void AddEntityItems_DEV()

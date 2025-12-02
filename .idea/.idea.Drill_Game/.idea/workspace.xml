@@ -5,73 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ItemDetailPopup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ItemDetailPopup.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Engine_Data.CSV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Engine_Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/ScriptableObject/Engine_Data_.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/ScriptableObject/Engine_Data_.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_CoreDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_CoreDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/GroundComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/GroundComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/MinerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/MinerEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ItemSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger6.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Facility_Data_/resource_merger7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_4.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/UI_DevGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@633105437483/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@633105437483/Runtime/ResourceManager/ResourceProviders/AssetDatabaseProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@38c58105e446/Runtime/TMP/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@38c58105e446/Runtime/UGUI/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
@@ -231,7 +175,7 @@
       <workItem from="1764585021003" duration="12412000" />
       <workItem from="1764641395913" duration="7864000" />
       <workItem from="1764665142765" duration="9983000" />
-      <workItem from="1764683063031" duration="387000" />
+      <workItem from="1764683063031" duration="2928000" />
     </task>
     <servers />
   </component>
