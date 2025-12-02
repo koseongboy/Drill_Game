@@ -48,7 +48,7 @@ namespace DrillGame.View.Facility
         {
             data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
             string fullEntityClassName = "DrillGame.Core.Facility." + data.EntityClassName;
-            Type type = System.Type.GetType(fullEntityClassName);
+            Type type = Type.GetType(fullEntityClassName);
             Debug.Log("Facility Action Type : " + type);
             if (type == null)
             {

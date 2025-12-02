@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using DrillGame.Core.Managers;
+using DrillGame.UI;
 using DrillGame.View.Ground;
 
 namespace DrillGame
@@ -11,7 +12,7 @@ namespace DrillGame
     {
         #region Fields & Properties
 
-        private int coreLevel;
+        [SerializeField] private int coreLevel;
         
         private Vector2Int CORE_POSITION = new Vector2Int(-1, 0);
         private List<Vector2Int> CORE_FORMATIONS = new List<Vector2Int>()
@@ -105,7 +106,7 @@ namespace DrillGame
             Core_Data_ nextCoreData = ScriptableObjectManager.Instance.GetData<Core_Data_>(nextCoreDataId);
             if (nextCoreData == null)
             {
-                Debug.Log("최고 레벨 코어에 도달했습니다.");
+                UILoader.Instance.ShowAlert("최고 레벨 코어에 도달했습니다.");
                 return false;
             }
 
@@ -113,7 +114,7 @@ namespace DrillGame
             int requiredDepth = core_Data.UpgradeRequiredDepth;
             if(GroundComponent.Instance.GetDepth() < requiredDepth)
             {
-                Debug.Log("코어 업그레이드에 필요한 깊이에 도달하지 못했습니다.");
+                UILoader.Instance.ShowAlert("코어 업그레이드에 필요한 깊이에 도달하지 못했습니다.");
                 return false;
             }
 
@@ -124,7 +125,8 @@ namespace DrillGame
             int requiredResourceCount = core_Data.UpgradeRequiredItemCount;
             if (!InventoryManager.Instance.HasItem(requiredResourceId, requiredResourceCount))
             {
-                Debug.Log("코어 업그레이드에 필요한 자원이 부족합니다.");
+                var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(requiredResourceId);
+                UILoader.Instance.ShowAlert($"코어 업그레이드에 필요한 자원이 부족합니다.\n필요 자원 : {itemData.DisplayName} {requiredResourceCount}개");
                 return false;
             }
 
@@ -134,7 +136,7 @@ namespace DrillGame
             // 업그레이드 적용
             core_Data = nextCoreData;
             SetCoreLevel( core_Data.Level );
-            Debug.Log("코어 업그레이드가 완료되었습니다. 새로운 코어 레벨: " + coreLevel);
+            UILoader.Instance.ShowAlert($"코어 업그레이드가 완료되었습니다. 새로운 코어 레벨: {coreLevel}");
             return true;
         }
         #endregion
