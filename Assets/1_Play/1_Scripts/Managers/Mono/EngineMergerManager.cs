@@ -13,17 +13,18 @@ namespace DrillGame.Managers
         public int progress;
         
         public int targetEngineItemId;
-        public int inputEngineItemId1;
-        public int inputEngineItemId2;
+        public int inputEngineItemId;
+        public int inputEngineItemCount;
 
         public EngineMergerData(EngineMergerManager.MergeProcessingType _type,
-            int _progress, int _targetEngineItemId = 0, int _inputEngineItemId1 = 0, int _inputEngineItemId2 = 0)
+            int _progress, int _targetEngineItemId = 0, int _inputEngineItemId1 = 0, int _inputEngineItemCount = 0)
         {
             type = _type;
             progress = _progress;
             targetEngineItemId = _targetEngineItemId;
-            inputEngineItemId1 = _inputEngineItemId1;
-            inputEngineItemId2 = _inputEngineItemId2;
+            inputEngineItemId = _inputEngineItemId1;
+            inputEngineItemCount = _inputEngineItemCount;
+
         }
     }
     
@@ -61,8 +62,8 @@ namespace DrillGame.Managers
         [SerializeField] private int progressDelta = 1;
         
         private int targetEngineItemId;
-        private int inputEngineItemId1;
-        private int inputEngineItemId2;
+        private int inputEngineItemId;
+        private int inputEngineItemCount;
 
         public Action OnProcessChanged;
         
@@ -118,8 +119,7 @@ namespace DrillGame.Managers
                 RollbackInputEngineItems();
                 
                 targetEngineItemId = 0;
-                inputEngineItemId1 = 0;
-                inputEngineItemId2 = 0;
+                inputEngineItemId = 0;
             }
 
             progress = 0;
@@ -133,6 +133,12 @@ namespace DrillGame.Managers
             currentType = MergeProcessingType.Create;
             var engineType = Random.Range(0, 5);
             targetEngineItemId = 1100 + engineType*10 + level;
+            
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(targetEngineItemId);
+            var engineData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(itemData.EntityId);
+            inputEngineItemId = engineData.ResourceItemId;
+            inputEngineItemCount = engineData.ResourceItemCount;
+            
             OnProcessChanged?.Invoke();
         }
 
@@ -152,16 +158,14 @@ namespace DrillGame.Managers
             }
             
             this.targetEngineItemId = targetEngineItemId;
-            inputEngineItemId2 = inputEngineItemId;
-            inputEngineItemId1 = inputEngineItemId;
+            this.inputEngineItemId = inputEngineItemId;
 
             OnProcessChanged?.Invoke();
         }
 
         public void RollbackInputEngineItems()
         {
-            InventoryManager.Instance.AddItem(inputEngineItemId1, 1);
-            InventoryManager.Instance.AddItem(inputEngineItemId2, 1);
+            InventoryManager.Instance.AddItem(inputEngineItemId, 2);
             Init();
         }
         #endregion
@@ -173,12 +177,17 @@ namespace DrillGame.Managers
             currentType = MergeProcessingType.None;
             progress = 0;
             targetEngineItemId = 0;
-            inputEngineItemId1 = 0;
-            inputEngineItemId2 = 0;
+            inputEngineItemId = 0;
         }
         
         private void OnCompleteProcess()
         {
+            Debug.Log($"{inputEngineItemId} : {inputEngineItemCount}");
+            if (!InventoryManager.Instance.TryRemoveItem(inputEngineItemId, inputEngineItemCount))
+            {
+                return;
+            }
+            
             Debug.Log($"엔진 합성 끝! : {targetEngineItemId}");
             InventoryManager.Instance.AddItem(targetEngineItemId, 1);
             if (currentType == MergeProcessingType.Create)
@@ -193,17 +202,17 @@ namespace DrillGame.Managers
         
         private void LoadEngineMergerDataFromES3()
         {
-            var data = ES3.Load(ENGINE_MERGER_KEY, new EngineMergerData(0,0,0,0, 0));
+            var data = ES3.Load(ENGINE_MERGER_KEY, new EngineMergerData(0,0,0,0));
             currentType = data.type;
             progress = data.progress;
             targetEngineItemId = data.targetEngineItemId;
-            inputEngineItemId1 = data.inputEngineItemId1;
-            inputEngineItemId2 = data.inputEngineItemId2;
+            inputEngineItemId = data.inputEngineItemId;
+            inputEngineItemCount = data.inputEngineItemCount;
         }
         
         private void SaveEngineMergerData()
         {
-            var data = new EngineMergerData( currentType, progress, targetEngineItemId, inputEngineItemId1, inputEngineItemId2 );
+            var data = new EngineMergerData( currentType, progress, targetEngineItemId, inputEngineItemId);
             ES3.Save(ENGINE_MERGER_KEY, data);
         }
         #endregion

@@ -41,7 +41,6 @@ namespace DrillGame
         #region private methods
         protected override void UpdateDetail()
         {
-            Debug.Log("진입");
             var coreLevel = CoreManager.Instance.GetCoreLevel();
 
             titleTxt.text = $"코어 Lv.{coreLevel}";

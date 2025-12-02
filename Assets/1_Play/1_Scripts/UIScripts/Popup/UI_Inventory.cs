@@ -68,7 +68,6 @@ namespace DrillGame
         {
             showingItemsCountDict = new Dictionary<int, int>();
             showingItems = new List<Item_Data_>();
-            Debug.Log(activeSlotObjects.Count);
             foreach (var obj in activeSlotObjects)
             {
                 if (obj != null)

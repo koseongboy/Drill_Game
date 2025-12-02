@@ -20,6 +20,8 @@ public class Engine_Data_ : ScriptableObject, ICSVData
     public int Level;
     public List<string> Coordinates;
     public string Desc;
+    public int ResourceItemId;
+    public int ResourceItemCount;
     public string Length;
     public string MainCoordinate;
     
