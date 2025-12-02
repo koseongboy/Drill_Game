@@ -44,8 +44,7 @@ namespace DrillGame
         }
 
         public void TryUpgradeEngineMergerLevel()
-        {
-            
+        { 
             // 1. 레벨업 가능한지 체크
             var coreLevel = CoreManager.Instance.GetCoreLevel();
             var targetEMLevel = engineMergerFacilityEntity.data.Level + 1;

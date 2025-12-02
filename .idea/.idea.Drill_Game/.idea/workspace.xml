@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Alert.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Alert.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,7 @@
       <workItem from="1764522130337" duration="1272000" />
       <workItem from="1764559674525" duration="8177000" />
       <workItem from="1764585021003" duration="12412000" />
-      <workItem from="1764641395913" duration="7236000" />
+      <workItem from="1764641395913" duration="7864000" />
     </task>
     <servers />
   </component>
