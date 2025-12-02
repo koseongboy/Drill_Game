@@ -28,15 +28,19 @@ namespace DrillGame.Managers
         private Transform EngineTileamp;
         [SerializeField] 
         private Transform FacilityTileamp;
-        [SerializeField]    
+        [SerializeField]
         private Tilemap previewTilemap;
         [SerializeField] 
         private Tilemap imageTilemap;
+        [SerializeField]
+        private Tilemap synergyTilemap;
 
         [SerializeField]
         private TileBase unableTile;
         [SerializeField]
         private TileBase ableTile;
+        [SerializeField]
+        private TileBase synergyTile;
 
         [FormerlySerializedAs("GridBGImage")]
         [Header("Temp : 후일 프리팹 동적 로더 제작 해주세요")]
@@ -222,6 +226,7 @@ namespace DrillGame.Managers
             occupiedPositions.Add(cellPos2D);
 
             EnterBatchMode(TilemapType.Facility, 112000 + level);
+            Debug.Log(112000 + level);
             
             // Instantiate entity
             GameObject gameObject = Instantiate(entityObject, grid.CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
@@ -276,8 +281,16 @@ namespace DrillGame.Managers
             // 진입 직후    미리보기 설정을 위한 previousCellPosition 초기화
             previousCellPosition = new Vector3Int(int.MinValue, int.MinValue, int.MinValue);
 
+            
+
             batchMode = BatchMode.PlaceBatch;
+         
             SwitchUpdateAction(batchMode);
+            if (tilemapType == TilemapType.Facility)
+            {
+                string tp = ScriptableObjectManager.Instance.GetData<Facility_Data_>(placingEntityId).Type;
+                SetSynergyTile(tp);
+            }
         }
 
         
@@ -289,6 +302,7 @@ namespace DrillGame.Managers
 
             batchMode = BatchMode.None;
             SwitchUpdateAction(batchMode);
+            synergyTilemap.ClearAllTiles();
         }
 
 
@@ -410,9 +424,7 @@ namespace DrillGame.Managers
             if (cellPosition != previousCellPosition)
             {
                 SetNullTile(previousCellPosition);
-                SetPreviewTile(mouseWorldPosition);
-
-
+                SetPreviewTile(mouseWorldPosition);                
                 previousCellPosition = cellPosition;
             }
 
@@ -509,6 +521,64 @@ namespace DrillGame.Managers
 
         }
 
+        private void SetSynergyTile(string type)
+        {
+
+            // Set preview tile
+            Vector3Int[] synergyPositions;
+            Vector3Int[] disablePositions;
+            List<Vector2Int> synergyFormations = new();
+            TileBase[] synergyTiles;
+            BoundsInt bounds = previewTilemap.cellBounds;
+            switch (type)
+            {
+                case "Miner":
+                    foreach(var cellPos in bounds.allPositionsWithin)
+                    {
+                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add((Vector2Int)cellPos);
+                    }
+                    break;
+                case "Processor":
+                    foreach(var cellPos in bounds.allPositionsWithin)
+                    {
+                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add((Vector2Int)cellPos);
+                    }
+                    break;
+                case "Laboratory":
+                    foreach(var cellPos in bounds.allPositionsWithin)
+                    {
+                        if(cellPos.y < -1) synergyFormations.Add((Vector2Int)cellPos);
+                    }
+                    break;
+                case "EngineMerger":
+                    foreach(var cellPos in bounds.allPositionsWithin)
+                    {
+                        if(cellPos.y >= -1 && cellPos.y <= 1) synergyFormations.Add((Vector2Int)cellPos);
+                    }
+                    break;
+                case "ResourceConverter":
+                    foreach(var cellPos in bounds.allPositionsWithin)
+                    {
+                        if(cellPos.y < -1) synergyFormations.Add((Vector2Int)cellPos);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            CanPlaceTile(
+                FacilityOccupiedPositions,
+                new Vector2Int(0, 0),
+                synergyFormations,
+                out synergyPositions,
+                out disablePositions
+            );
+            synergyTiles = Enumerable.Repeat(synergyTile, synergyPositions.Length).ToArray();
+            synergyTilemap.SetTiles(synergyPositions, synergyTiles);
+            
+
+        }
+
         private void SetNullTile(Vector3Int cellPosition)
         {
             imageTilemap.SetTile(cellPosition, null);
@@ -532,6 +602,32 @@ namespace DrillGame.Managers
             nullTiles = new TileBase[allPositions.Length];
 
             previewTilemap.SetTiles(allPositions, nullTiles);
+            
+        }
+        private void SetNullSynergyTile(Vector3Int cellPosition)
+        {
+            imageTilemap.SetTile(cellPosition, null);
+
+            Vector3Int[] ablePositions;
+            Vector3Int[] disablePositions;
+            Vector3Int[] allPositions;
+            TileBase[] nullTiles;
+            CanPlaceTile(
+                tilemapType == TilemapType.Engine ? EngineOccupiedPositions : FacilityOccupiedPositions,
+                (Vector2Int)cellPosition,
+                formationPositions,
+                out ablePositions,
+                out disablePositions
+            );
+            
+            allPositions = new Vector3Int[ablePositions.Length + disablePositions.Length];
+            ablePositions.CopyTo(allPositions, 0);
+            disablePositions.CopyTo(allPositions, ablePositions.Length);
+
+            nullTiles = new TileBase[allPositions.Length];
+
+            previewTilemap.SetTiles(allPositions, nullTiles);
+            
         }
 
         private void ClearAllPreviewTile()

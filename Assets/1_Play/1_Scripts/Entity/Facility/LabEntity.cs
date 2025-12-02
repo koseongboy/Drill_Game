@@ -5,12 +5,20 @@ namespace DrillGame.Core.Facility
   public class LabEntity : FacilityEntity
   {
     #region Fields & Properties
+  
     #endregion
 
     #region Singleton & initialization
     public LabEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 110001) : base(startPosition, level, itemId, entityId)
     {
       Debug.Log("연구소 생성됨.");
+      foreach(var formation in GetFormationPositions())
+      {
+          if(formation.y < -1) synergyCount++;
+      }
+      
+      synergyText = $"연구소는 코어 아래쪽에 배치하면 시너지를 받습니다. 시너지 활성화됨 ({synergyCount}/{formCount})";
+      Debug.Log(synergyText);
     }
     #endregion
 
@@ -23,8 +31,11 @@ namespace DrillGame.Core.Facility
       base.Run(intensity);
       for (int i = 0; i < intensity; i++)
       {
+        runCount++;
+        if(runCount % formCount < synergyCount) {
+          ResearchManager.Instance.AddResearchProgress();
+        }
         ResearchManager.Instance.AddResearchProgress();
-        Debug.Log("연구소 가동 중. 연구 진척도 증가." + intensity);
       }
     }
     #endregion

@@ -17,6 +17,11 @@ namespace DrillGame.Core.Facility
     {
         Debug.Log("채굴시설 생성됨.");
         gc = GroundComponent.Instance;
+        foreach(var formation in GetFormationPositions())
+        {
+            if(formation.x == -4 || formation.x == 2) synergyCount++;
+        }
+        synergyText = $"채굴 시설은 좌우 가장자리에 놓으면 시너지를 받습니다. 시너지 활성화됨 ({synergyCount}/{formCount})";
     }
     #endregion
 
@@ -36,7 +41,11 @@ namespace DrillGame.Core.Facility
       {
         for (int i = 0; i < intensity; i++)
         {
-          InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount );
+          runCount++;
+          if(runCount % formCount < synergyCount) {
+            InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount );
+          }
+          InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount ); //이렇게 인벤에 추가하는거 맞는 지 확인
         }
       }
       

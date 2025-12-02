@@ -15,13 +15,10 @@ namespace DrillGame.View.Facility
     {
         #region Fields & Properties
 
-        [FormerlySerializedAs("InnerInformation")]
-        [Header("디버그용 내부 정보")]
+
         [SerializeField] 
         [ReadOnly] 
         private Vector2Int debugPosition; // -> 이거 디버깅 이후에도 유지가능할거 같지 않나? 포메이션은 static 한 data니까
-        [SerializeField] 
-        [ReadOnly] 
         private Vector2 pivot;
 
         

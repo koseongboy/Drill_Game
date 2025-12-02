@@ -24,112 +24,112 @@ namespace DrillGame.Core.Facility
 
         public event Action OnFacilityDeleted;
 
+        public string synergyText;
+        public List<Vector2Int> synergyAreas = new();
+        public int synergyCount = 0;
         protected int Level;
-    private Vector2Int startPosition;
-    #endregion
+        private Vector2Int startPosition;
 
-    #region Singleton & initialization
-    public FacilityEntity(Vector2Int startPosition, int level, int itemId, int entityId)
-        {
-            this.facilityId = entityId;
-            this.itemId = itemId;
+        protected int formCount;
+        protected int runCount = 0;
 
-            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
-            this.position = startPosition;
-            this.Level = data.Level;
-            // for test
-            if (formations == null)
+        #endregion
+
+        #region Singleton & initialization
+        public FacilityEntity(Vector2Int startPosition, int level, int itemId, int entityId)
             {
-                this.formations.Add(new Vector2Int(0, 0));
-            }
-            else
-            {
+                this.facilityId = entityId;
+                this.itemId = itemId;
+
+                data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
+                this.position = startPosition;
+                this.Level = data.Level;
                 this.formations = data.GetCoordinates();
+                
+                // register to BoardManager
+                BoardManager.Instance.AddFacility(this);
+                formCount = formations.Count;
             }
-            // register to BoardManager
-            BoardManager.Instance.AddFacility(this);
-            
-        }
 
-    public FacilityEntity(Vector2Int startPosition, int level)
-    {
-      this.startPosition = startPosition;
-      Level = level;
-    }
-    #endregion
-
-    #region getters & setters
-    public List<Vector2Int> GetFormationPositions()
+        public FacilityEntity(Vector2Int startPosition, int level)
         {
-            List<Vector2Int> absolutePositions = new List<Vector2Int>();
-            foreach (var formation in formations)
+        this.startPosition = startPosition;
+        Level = level;
+        }
+        #endregion
+
+        #region getters & setters
+        public List<Vector2Int> GetFormationPositions()
             {
-                absolutePositions.Add(new Vector2Int(position.x + formation.x, position.y + formation.y));
+                List<Vector2Int> absolutePositions = new List<Vector2Int>();
+                foreach (var formation in formations)
+                {
+                    absolutePositions.Add(new Vector2Int(position.x + formation.x, position.y + formation.y));
+                }
+                return absolutePositions;
             }
-            return absolutePositions;
-        }
 
-        public List<Vector2Int> GetFormations()
-        {
-            return formations;
-        }
+            public List<Vector2Int> GetFormations()
+            {
+                return formations;
+            }
 
-        public int GetFacilityId()
-        {
-            return facilityId;
-        }
-        #endregion
+            public int GetFacilityId()
+            {
+                return facilityId;
+            }
+            #endregion
 
-        #region public methods
+            #region public methods
 
-        public void MoveEntity()
-        {
-            // delete 코드 사용후 다시 집어드는 판정입니다.
-            OnFacilityDeleted?.Invoke();
-            BoardManager.Instance.RemoveFacility(this);
-            GameManager.Instance.BatchEntity(itemId);
-        }
+            public void MoveEntity()
+            {
+                // delete 코드 사용후 다시 집어드는 판정입니다.
+                OnFacilityDeleted?.Invoke();
+                BoardManager.Instance.RemoveFacility(this);
+                GameManager.Instance.BatchEntity(itemId);
+            }
 
-        public virtual void Run(int intensity)
-        {
-            Debug.Log("Facility is running. with Intensity : "  + intensity);
+            public virtual void Run(int intensity)
+            {
+                Debug.Log("Facility is running. with Intensity : "  + intensity);
 
-            // 시설 고유의 액션 실행
-            //for (int i = 0; i < intensity; i++)
-            //{
-            //    Logger("Hello from Facility! Intensity: " + intensity);
-            //}
+                // 시설 고유의 액션 실행
+                //for (int i = 0; i < intensity; i++)
+                //{
+                //    Logger("Hello from Facility! Intensity: " + intensity);
+                //}
 
-            //시설 고유 액션 실행은 상속으로 넘어갔습니다.
+                //시설 고유 액션 실행은 상속으로 넘어갔습니다.
 
-            // 이벤트 호출 (presenter -> component)
-            OnFacilityActivated?.Invoke(intensity);
-        }
-        
-
-        public void DeleteEntity()
-        {
-            // presentor에게 알림
-            OnFacilityDeleted?.Invoke();
-
-            // BoardManager에서 제거
-            BoardManager.Instance.RemoveFacility(this);
+                // 이벤트 호출 (presenter -> component)
+                OnFacilityActivated?.Invoke(intensity);
+            }
             
-            // 인벤토리에 아이템 추가
-            InventoryManager.Instance.AddItem(itemId);
-        }
 
-        // 여기서 부터 model 관련 메서드 추가 가능
-        public void Logger(string message)
-        {
-            Debug.Log(message);
-        }
-        #endregion
+            public void DeleteEntity()
+            {
+                // presentor에게 알림
+                OnFacilityDeleted?.Invoke();
 
-        #region private methods
-        #endregion
+                // BoardManager에서 제거
+                BoardManager.Instance.RemoveFacility(this);
+                
+                // 인벤토리에 아이템 추가
+                InventoryManager.Instance.AddItem(itemId);
+            }
 
-        #region Unity event methods
-        #endregion
+            // 여기서 부터 model 관련 메서드 추가 가능
+            public void Logger(string message)
+            {
+                Debug.Log(message);
+            }
+            #endregion
+
+            #region private methods
+            #endregion
+
+            #region Unity event methods
+            #endregion
     }
 }
