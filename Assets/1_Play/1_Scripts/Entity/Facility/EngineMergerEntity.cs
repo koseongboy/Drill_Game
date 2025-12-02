@@ -28,6 +28,12 @@ namespace DrillGame.Core.Facility
       }
       
     }
+
+    public void UpgradeLevel()
+    {
+      itemId += 1;
+      facilityId += 1;
+    }
     #endregion
 
     #region private methods
