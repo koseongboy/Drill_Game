@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 553212926163511663}
   - component: {fileID: 794020188578889238}
   - component: {fileID: 6224895809869504983}
-  - component: {fileID: 1669532765757109041}
+  - component: {fileID: 260205523864498898}
   m_Layer: 5
-  m_Name: UI_BuildPiece
+  m_Name: UI_ContentPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1669532765757109041}
-        m_TargetAssemblyTypeName: DrillGame.UI_BuildPiece, Assembly-CSharp
-        m_MethodName: OnButtonPressed
+      - m_Target: {fileID: 260205523864498898}
+        m_TargetAssemblyTypeName: DrillGame.UI_ContentPiece, Assembly-CSharp
+        m_MethodName: ButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1669532765757109041
+--- !u!114 &260205523864498898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2301787855076071188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137e11a3d85dfbd4eadce0ea1cbf18ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 8278edf953dac2c49b70611548ef2e51, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_BuildPiece
-  ui_name: {fileID: 4418584718918635561}
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_ContentPiece
   ui_icon: {fileID: 7411542514904557678}
+  ui_name: {fileID: 4418584718918635561}
 --- !u!1 &8699793502612460657
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 2029118255571807141}
   - component: {fileID: 4418584718918635561}
   m_Layer: 5
-  m_Name: Ui_BuildPiece_Name
+  m_Name: UI_ContentPiece_Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 1579874691860215081}
   - component: {fileID: 7411542514904557678}
   m_Layer: 5
-  m_Name: UI_BuildPiece_Icon
+  m_Name: UI_ContentPiece_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

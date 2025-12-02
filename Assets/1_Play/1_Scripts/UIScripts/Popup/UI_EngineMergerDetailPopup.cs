@@ -40,7 +40,7 @@ namespace DrillGame
  
         public void OpenEngineMergerUI()
         {
-            UILoader.Instance.ShowUI("UI_EngineMerger");
+            UILoader.Instance.ShowUI_EngineMerger( engineMergerFacilityEntity.data.Level );
         }
 
         public void TryUpgradeEngineMergerLevel()

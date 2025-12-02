@@ -70,6 +70,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0f67c61722e38744a64a9cfd609e1a1
+    m_Address: UI_ResourceConverter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d4d1d12d118e51546ad531987245bf38
     m_Address: UI_ResourceInventory
     m_ReadOnly: 0
