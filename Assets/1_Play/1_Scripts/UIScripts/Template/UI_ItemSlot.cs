@@ -1,4 +1,5 @@
 using DrillGame.Managers;
+using DrillGame.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +35,7 @@ namespace DrillGame
 
         public void OnClick()
         {
-            GameManager.Instance.BatchEntity( itemId );
+            UILoader.Instance.ShowUI_ItemDetail( itemId );
         }
 
         public void ClearItemData()

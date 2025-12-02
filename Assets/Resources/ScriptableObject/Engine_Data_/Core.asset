@@ -21,5 +21,7 @@ MonoBehaviour:
   Coordinates:
   - 0,0
   Desc: "\uCF54\uC5B4."
+  ResourceItemId: 0
+  ResourceItemCount: 0
   Length: 1,1
   MainCoordinate: 0,0

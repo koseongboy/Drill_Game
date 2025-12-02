@@ -186,6 +186,12 @@ namespace DrillGame.Managers
             dataId = 111001;
             gridManager.EnterBatchMode(TilemapType.Facility, dataId, placingItemId);
         }
+
+
+        public void ExpandFactory(int newLength)
+        {
+            gridManager.ExpandPlaceableArea( newLength );
+        }
         #endregion
 
         #region private methods

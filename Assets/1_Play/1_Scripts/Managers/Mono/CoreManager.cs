@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using DrillGame.Core.Managers;
+using DrillGame.Managers;
 using DrillGame.UI;
 using DrillGame.View.Ground;
 
@@ -60,7 +61,11 @@ namespace DrillGame
         private void SetCoreLevel(int level)
         {
             coreLevel = level;
+            
             OnCoreLevelChanged?.Invoke(coreLevel);
+            
+            int newLength = 4 + level * 8;
+            GameManager.Instance.ExpandFactory( newLength );
         }
 
         public int GetCoreLevel()

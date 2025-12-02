@@ -1,5 +1,6 @@
 using UnityEngine;
 using DrillGame.Core.Managers;
+using DrillGame.UI;
 using DrillGame.View.Drill;
 using DrillGame.View.Ground;
 
@@ -28,13 +29,14 @@ namespace DrillGame.Core.Facility
       base.Run(intensity);
       if (!gc.CanGetDropItem( data.OutputItemId ))
       {
-        Debug.Log("현재 땅에서 이 아이템을 얻을 수 없습니다."); //ui에 출력되도록 하면 좋을듯 TODO
-        return;
+        var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(data.OutputItemId);
+        UILoader.Instance.ShowAlert($"현재 땅에서 채굴할 수 없는 자원입니다.\n자원 : {itemData.DisplayName}");
+        Debug.Log($"현재 땅에서 채굴할 수 없는 자원입니다.\n자원 : {itemData.DisplayName}");
       } else
       {
         for (int i = 0; i < intensity; i++)
         {
-          InventoryManager.Instance.AddItem( data.OutputItemId ); //이렇게 인벤에 추가하는거 맞는 지 확인
+          InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount );
         }
       }
       
