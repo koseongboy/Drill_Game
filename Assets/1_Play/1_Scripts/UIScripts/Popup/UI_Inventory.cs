@@ -192,6 +192,8 @@ namespace DrillGame
             InventoryManager.Instance.AddItem( 1201 );
             InventoryManager.Instance.AddItem( 1301 );
             InventoryManager.Instance.AddItem( 1301 );
+            InventoryManager.Instance.AddItem( 1401 );
+            InventoryManager.Instance.AddItem( 1402 );
         }
         
         [ContextMenu("AddEngineItems_DEV")]

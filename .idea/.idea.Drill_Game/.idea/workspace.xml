@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/FacilityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/FacilityComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/EngineMergerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/EngineMergerEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UIPrefabs .asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59bd7c40c082431db25e1e728ab6278946ae00/a0/f5975446/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Core/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Alert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineDetailPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_FacilityDetailPopup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_LabDetailPopup.cs" root0="FORCE_HIGHLIGHTING" />
@@ -164,6 +173,7 @@
       <workItem from="1764522130337" duration="1272000" />
       <workItem from="1764559674525" duration="8177000" />
       <workItem from="1764585021003" duration="12412000" />
+      <workItem from="1764641395913" duration="4147000" />
     </task>
     <servers />
   </component>

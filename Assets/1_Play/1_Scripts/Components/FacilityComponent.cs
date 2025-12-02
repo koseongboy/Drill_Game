@@ -51,7 +51,7 @@ namespace DrillGame.View.Facility
                 Debug.LogError($"Facility action class '{fullEntityClassName}' not found. Using default action.");
                 type = typeof(FacilityEntity);
             }
-            object[] parameters = new object[] { startPosition, 0, itemId, debugId };
+            object[] parameters = new object[] { startPosition, 0, itemId, entityId };
             FacilityEntity facilityEntity = Activator.CreateInstance(type, parameters) as FacilityEntity;
             presenter = new FacilityPresenter(this, facilityEntity);
 

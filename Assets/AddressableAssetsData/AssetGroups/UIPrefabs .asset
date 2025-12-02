@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: 'UIPrefabs '
   m_GUID: 5fabd6954ec50eb40919b75bc23ef7b0
   m_SerializeEntries:
+  - m_GUID: 2d86401ceecacef42a373d3418b666a3
+    m_Address: UI_EngineMergerDetailPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 474b41ca5073cfc41889fa608745ff64
     m_Address: UI_EngineDetailPopup
     m_ReadOnly: 0
@@ -77,6 +82,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5ce26aeb6a49bb4089f321536aa52f0
     m_Address: UI_Facility_Hello
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc06fee29646b6241a198102ed861f1e
+    m_Address: UI_Alert
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
