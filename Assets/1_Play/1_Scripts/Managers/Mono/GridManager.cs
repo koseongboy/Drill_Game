@@ -543,7 +543,7 @@ namespace DrillGame.Managers
                 case "Processor":
                     foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add(cellPos);
+                        if(cellPos.y == -6) synergyFormations.Add(cellPos);
                     }
                     break;
                 case "Laboratory":
