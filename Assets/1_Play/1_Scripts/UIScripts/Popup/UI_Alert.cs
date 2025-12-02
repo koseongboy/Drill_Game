@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -73,35 +74,37 @@ namespace DrillGame
         #region private methods
 
         
-        private void OpenAction()
+        public void OpenAction()
         {
-            DOTween.Kill(this.transform);
+            // 1. 초기 상태 리셋: 애니메이션 중단 및 초기 위치로 스냅 (Fresh Start 보장)
+            DOTween.Kill(transform); 
+            if (autoHideCoroutine != null) StopCoroutine(autoHideCoroutine);
+            
+            // 주의: blocksRaycasts는 애니메이션이 끝난 후 켜야 합니다.
+            canvasGroup.blocksRaycasts = false; 
             gameObject.SetActive(true);
             
-            // 1. 시퀀스 생성
-            Sequence sequence = DOTween.Sequence();
-            sequence.SetTarget(this.transform); 
-
-            rectTransform.anchoredPosition = startPosition - new Vector2(0, moveDistance);
+            // 리셋 위치
             canvasGroup.alpha = 0;
+            rectTransform.anchoredPosition = startPosition - new Vector2(0, moveDistance);
 
-            sequence.Append(canvasGroup.DOFade(1, moveTime));
-            sequence.Join(rectTransform.DOAnchorPos(startPosition, moveTime).SetEase(Ease.OutQuad));
+            // 2. 나타나기 Sequence 생성
+            Sequence appearSequence = DOTween.Sequence();
+            appearSequence.SetTarget(transform); 
 
-            // 1초 동안 대기
-            sequence.AppendInterval(stayTime);
+            appearSequence.Append(canvasGroup.DOFade(1, moveTime));
+            appearSequence.Join(rectTransform.DOAnchorPos(startPosition, moveTime).SetEase(Ease.OutQuad));
 
-            sequence.Append(canvasGroup.DOFade(0, moveTime));
-            sequence.Join(rectTransform.DOAnchorPos(startPosition + new Vector2(0, moveDistance), moveTime).SetEase(Ease.InQuad));
-
-            sequence.OnComplete(() =>
+            // 3. 나타나기 완료 시 처리: 상호작용 활성화 및 타이머 시작
+            appearSequence.OnComplete(() =>
             {
-                rectTransform.anchoredPosition = startPosition; 
-                canvasGroup.alpha = 0;
-                ui_text.text = "";
-                gameObject.SetActive(false); 
+                // ★ 상호작용 활성화: 이제 클릭을 감지합니다.
+                canvasGroup.blocksRaycasts = true; 
+                
+                // ★ 자동 사라짐 타이머 시작 (3초 대기)
+                autoHideCoroutine = StartCoroutine(AutoHideTimer());
             });
-            sequence.Play();
+            appearSequence.Play();
         }
         private IEnumerator AutoHideTimer()
         {
@@ -116,6 +119,7 @@ namespace DrillGame
         {
             // 클릭되었으므로 자동 사라짐 타이머 중단
             if (autoHideCoroutine != null) StopCoroutine(autoHideCoroutine);
+            autoHideCoroutine = null; // 코루틴 참조 해제
         
             HideAlert();
         }
@@ -123,22 +127,25 @@ namespace DrillGame
         // 알림창 사라지는 애니메이션 (클릭 또는 타이머 종료 시 호출)
         private void HideAlert()
         {
-            // 1. 사라지기 (Fade Out & Move Up) Sequence
+            DOTween.Kill(this.transform); // 중복 호출 방지
+            
+            // 상호작용 비활성화: 사라지는 동안 클릭을 막습니다.
+            canvasGroup.blocksRaycasts = false; 
+
+            // 1. 사라지기 Sequence
             Sequence disappearSequence = DOTween.Sequence();
             disappearSequence.SetTarget(this.transform);
 
-            // 투명도: 1 -> 0
             disappearSequence.Join(canvasGroup.DOFade(0, moveTime));
-            // 위치: startPosition -> 위로 moveDistance만큼 이동
             disappearSequence.Join(rectTransform.DOAnchorPos(startPosition + new Vector2(0, moveDistance), moveTime).SetEase(Ease.InQuad));
 
             // 2. 완료 시 처리
             disappearSequence.OnComplete(() =>
             {
-                // Raycast 차단 해제 및 오브젝트 비활성화로 상태 초기화
-                canvasGroup.blocksRaycasts = false; 
+                // 최종 상태 초기화 및 비활성화
                 rectTransform.anchoredPosition = startPosition; 
                 canvasGroup.alpha = 0;
+                ui_text.text = "";
                 gameObject.SetActive(false); 
             });
 
@@ -152,6 +159,7 @@ namespace DrillGame
         {
             OpenAction();
         }
+
         #endregion
 
     }

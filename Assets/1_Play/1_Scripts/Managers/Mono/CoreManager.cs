@@ -144,5 +144,15 @@ namespace DrillGame
 
         #region Unity event methods
         #endregion
+        
+        #region DEV
+
+        [ContextMenu("코어 레벨 업")]
+        public void CoreLevelUp()
+        {
+            SetCoreLevel(coreLevel + 1);
+            Debug.Log($"코어 레벨업 : 현재 {coreLevel}");
+        }
+        #endregion
     }
 }

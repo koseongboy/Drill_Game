@@ -1,4 +1,5 @@
 using DrillGame.Core.Facility;
+using DrillGame.Core.Managers;
 using DrillGame.UI;
 using UnityEngine;
 
@@ -44,19 +45,32 @@ namespace DrillGame
 
         public void TryUpgradeEngineMergerLevel()
         {
-            UILoader.Instance.ShowAlert("자원이 부족합니다.\n필요 자원 : 철 자재 4000개");
             
-            // // 1. 레벨업 가능한지 체크
-            // var coreLevel = CoreManager.Instance.GetCoreLevel();
-            // var targetEMLevel = engineMergerFacilityEntity.data.Level + 1;
-            //
-            // if (coreLevel < targetEMLevel)
-            // {
-            //     // 불가능
-            //     return;
-            // }
+            // 1. 레벨업 가능한지 체크
+            var coreLevel = CoreManager.Instance.GetCoreLevel();
+            var targetEMLevel = engineMergerFacilityEntity.data.Level + 1;
+
+            var upgradeItemId = engineMergerFacilityEntity.data.BuildResourceId;
+            var upgradeItemCount = engineMergerFacilityEntity.data.BuildResourceCount;
+            
+            if (coreLevel < targetEMLevel)
+            {
+                UILoader.Instance.ShowAlert($"코어 레벨이 부족합니다.\n필요 레벨 : {targetEMLevel}   현재 : {coreLevel}");
+                return;
+            }
+            if (!InventoryManager.Instance.HasItem(upgradeItemId, upgradeItemCount))
+            {
+                // 불가능
+                var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(upgradeItemId);
+                UILoader.Instance.ShowAlert($"자원이 부족합니다.\n필요 자원 : {itemData.DisplayName} {upgradeItemCount}개");
+                return;
+            }
+            
             // 2. FacilityComponent의 id값을 변경하기.
-            // engineMergerFacilityEntity.UpgradeLevel();
+            InventoryManager.Instance.TryRemoveItem(upgradeItemId, upgradeItemCount);
+            engineMergerFacilityEntity.UpgradeLevel();
+            UILoader.Instance.ShowAlert($"엔진 합성기가 업그레이드 되었습니다.");
+            CloseUI();
         }
         #endregion
 
