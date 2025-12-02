@@ -289,6 +289,7 @@ namespace DrillGame.Managers
             if (tilemapType == TilemapType.Facility)
             {
                 string tp = ScriptableObjectManager.Instance.GetData<Facility_Data_>(placingEntityId).Type;
+                Debug.Log("도비가 시너지 타일맵을 그립니다");
                 SetSynergyTile(tp);
             }
         }
@@ -525,8 +526,9 @@ namespace DrillGame.Managers
         {
 
             // Set preview tile
-            Vector3Int[] synergyPositions;
-            Vector3Int[] disablePositions;
+            //Vector3Int[] synergyPositions;
+
+            //Vector3Int[] disablePositions;
             List<Vector2Int> synergyFormations = new();
             TileBase[] synergyTiles;
             BoundsInt bounds = previewTilemap.cellBounds;
@@ -566,13 +568,10 @@ namespace DrillGame.Managers
                     break;
             }
 
-            CanPlaceTile(
-                FacilityOccupiedPositions,
-                new Vector2Int(0, 0),
-                synergyFormations,
-                out synergyPositions,
-                out disablePositions
-            );
+            
+            
+            Vector3Int[] synergyPositions = synergyFormations.Select(v => (Vector3Int)v).ToArray();
+
             synergyTiles = Enumerable.Repeat(synergyTile, synergyPositions.Length).ToArray();
             synergyTilemap.SetTiles(synergyPositions, synergyTiles);
             
