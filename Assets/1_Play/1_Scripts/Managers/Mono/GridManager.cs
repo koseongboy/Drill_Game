@@ -531,51 +531,47 @@ namespace DrillGame.Managers
             //Vector3Int[] disablePositions;
             List<Vector2Int> synergyFormations = new();
             TileBase[] synergyTiles;
-            BoundsInt bounds = previewTilemap.cellBounds;
             switch (type)
             {
                 case "Miner":
-                    foreach(var cellPos in bounds.allPositionsWithin)
+                    foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add((Vector2Int)cellPos);
+                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add(cellPos);
+
                     }
                     break;
                 case "Processor":
-                    foreach(var cellPos in bounds.allPositionsWithin)
+                    foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add((Vector2Int)cellPos);
+                        if(cellPos.x == -4 || cellPos.x == 2) synergyFormations.Add(cellPos);
                     }
                     break;
                 case "Laboratory":
-                    foreach(var cellPos in bounds.allPositionsWithin)
+                    foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.y < -1) synergyFormations.Add((Vector2Int)cellPos);
+                        if(cellPos.y < -1) synergyFormations.Add(cellPos);
                     }
                     break;
                 case "EngineMerger":
-                    foreach(var cellPos in bounds.allPositionsWithin)
+                    foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.y >= -1 && cellPos.y <= 1) synergyFormations.Add((Vector2Int)cellPos);
+                        if(cellPos.y >= -1 && cellPos.y <= 1) synergyFormations.Add(cellPos);
                     }
                     break;
                 case "ResourceConverter":
-                    foreach(var cellPos in bounds.allPositionsWithin)
+                    foreach(var cellPos in placeableAreaPositions)
                     {
-                        if(cellPos.y < -1) synergyFormations.Add((Vector2Int)cellPos);
+                        if(cellPos.y < -1) synergyFormations.Add(cellPos);
                     }
                     break;
                 default:
                     break;
             }
-
-            
-            
+            synergyFormations = synergyFormations.Except(FacilityOccupiedPositions).ToList();
             Vector3Int[] synergyPositions = synergyFormations.Select(v => (Vector3Int)v).ToArray();
-
+            
             synergyTiles = Enumerable.Repeat(synergyTile, synergyPositions.Length).ToArray();
             synergyTilemap.SetTiles(synergyPositions, synergyTiles);
-            
-
         }
 
         private void SetNullTile(Vector3Int cellPosition)
