@@ -24,6 +24,10 @@ namespace DrillGame.Core.Facility
 
         public event Action OnFacilityDeleted;
 
+        public string synergyText;
+        public List<Vector2Int> synergyAreas;
+        public int synergyCount = 0;
+
         protected int Level;
     private Vector2Int startPosition;
     #endregion
@@ -38,16 +42,15 @@ namespace DrillGame.Core.Facility
             this.position = startPosition;
             this.Level = data.Level;
             // for test
-            if (formations == null)
-            {
-                this.formations.Add(new Vector2Int(0, 0));
-            }
-            else
-            {
-                this.formations = data.GetCoordinates();
-            }
+
+            this.formations = data.GetCoordinates();
+            
             // register to BoardManager
             BoardManager.Instance.AddFacility(this);
+            foreach(var formation in formations)
+            {
+                if(synergyAreas.Contains(startPosition + formation)) synergyCount++;
+            }
             
         }
 
@@ -124,6 +127,7 @@ namespace DrillGame.Core.Facility
         {
             Debug.Log(message);
         }
+
         #endregion
 
         #region private methods

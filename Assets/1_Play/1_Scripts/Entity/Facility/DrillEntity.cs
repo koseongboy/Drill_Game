@@ -16,6 +16,7 @@ namespace DrillGame.Core.Facility
     public DrillEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 112001) : base(startPosition, level, itemId, entityId)
     {
       dc = DrillComponent.Instance;
+      synergyText = "드릴 작동 시설은 위치가 고정임.";
       Debug.Log("드릴시설과 드릴 연동 완료");
     }
     #endregion

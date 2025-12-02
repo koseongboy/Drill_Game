@@ -37,6 +37,8 @@ namespace DrillGame.Managers
         private TileBase unableTile;
         [SerializeField]
         private TileBase ableTile;
+        [SerializeField]
+        private TileBase synergyTile;
 
         [FormerlySerializedAs("GridBGImage")]
         [Header("Temp : 후일 프리팹 동적 로더 제작 해주세요")]
@@ -222,6 +224,7 @@ namespace DrillGame.Managers
             occupiedPositions.Add(cellPos2D);
 
             EnterBatchMode(TilemapType.Facility, 112000 + level);
+            Debug.Log(112000 + level);
             
             // Instantiate entity
             GameObject gameObject = Instantiate(entityObject, grid.CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);

@@ -11,6 +11,8 @@ namespace DrillGame.Core.Facility
     public LabEntity(Vector2Int startPosition, int level, int itemId = 1, int entityId = 110001) : base(startPosition, level, itemId, entityId)
     {
       Debug.Log("연구소 생성됨.");
+      
+      synergyText = $"연구소는 코어 아래쪽에 배치하면 시너지를 받습니다. 시너지 활성화됨 ({synergyCount}/{formations.Count})";
     }
     #endregion
 
