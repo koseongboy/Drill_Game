@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: synergy
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 833948776464918857, guid: 7fc04e28f975deb46b763230b8623ae0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.36078432}
   m_Transform:
     e00: 1
     e01: 0
