@@ -34,7 +34,6 @@ namespace DrillGame
         private List<GameObject> combinedProcessPieces;
 
         // private int selectedRandomEngineLevel;
-        private int selectedEngineItemId;
 
         private Action OnButtonPressed;
         #endregion
@@ -62,6 +61,12 @@ namespace DrillGame
 
         #region getters & setters
 
+        public void SetLevel(int level)
+        {
+            engineMergerLevel = level;
+            LoadProcessList();
+            UpdateProcessList();
+        }
         #endregion
 
         #region public methods
@@ -121,13 +126,24 @@ namespace DrillGame
             
             // 새 엔진 합성
             var newProcessPiece = Instantiate(ui_piece, ui_newParent);
-            newProcessPiece.GetComponent<UI_EngineMergePiece>().SetData_Level(engineMergerLevel);
+
+            var name = $"신규 엔진 Lv.{engineMergerLevel}";
+            var iconName = "engine_Test";
+            newProcessPiece.GetComponent<UI_ContentPiece>()
+                .SetData(name, iconName,
+                    () => { OpenDetail( 0, engineMergerLevel ); });
             newProcessPieces.Add(newProcessPiece);
 
             foreach (var itemId in ableEngineItemIds)
             {
                 var obj = Instantiate(ui_piece, ui_combineParent);
-                obj.GetComponent<UI_EngineMergePiece>().SetData_TargetItemId(itemId);
+                
+                var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(itemId);
+                var engineData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(itemData.EntityId);
+                
+                obj.GetComponent<UI_ContentPiece>()
+                    .SetData(engineData.DisplayName, engineData.Icon,
+                        () => { OpenDetail( 1, itemId ); });
                 combinedProcessPieces.Add(obj);
             }
             
@@ -190,7 +206,7 @@ namespace DrillGame
                 var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(targetItemId);
                 var engineData = ScriptableObjectManager.Instance.GetData<Engine_Data_>(itemData.EntityId);
 
-                selectedEngineItemId = targetItemId;
+                showingEngineItemId = targetItemId;
                 
                 ui_title.text = $"합성 : {engineData.DisplayName}";
                 ui_desc.text = $"낮은 레벨의 엔진 2개를 소모하여, {engineData.DisplayName} 하나를 생산합니다.";
@@ -200,7 +216,7 @@ namespace DrillGame
 
                 if (EngineMergerManager.Instance.GetCurrentType() == EngineMergerManager.MergeProcessingType.Combine)
                 {
-                    if (EngineMergerManager.Instance.GetTargetEngineItemId() == selectedEngineItemId)
+                    if (EngineMergerManager.Instance.GetTargetEngineItemId() == showingEngineItemId)
                     {
                         ui_selectButtonTxt.text = "취소";
                         OnButtonPressed = StopProcess;
@@ -273,8 +289,9 @@ namespace DrillGame
         private void RegisterEngineToCombine()
         {
             var inputEngineId = showingEngineItemId - 1;
+            Debug.Log(showingEngineItemId);
             
-            EngineMergerManager.Instance.RegisterEngineToCombine(showingEngineItemId, inputEngineId, inputEngineId);
+            EngineMergerManager.Instance.RegisterEngineToCombine(showingEngineItemId, inputEngineId);
         }
 
         private void StopProcess()
@@ -292,8 +309,6 @@ namespace DrillGame
 
             EngineMergerManager.Instance.OnProcessChanged += UpdateCurrentProcess;
             UpdateCurrentProcess();
-            LoadProcessList();
-            UpdateProcessList();
         }
 
         private void OnDisable()

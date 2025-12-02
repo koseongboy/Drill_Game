@@ -1,24 +1,25 @@
 ﻿using DrillGame.Core.Managers;
+using DrillGame.UI;
 using UnityEngine;
 
-namespace DrillGame._1_Play._1_Scripts.Managers.Mono
+namespace DrillGame.Managers
 {
-    public class ResourceMerger_SaveData
+    public class ResourceConverter_SaveData
     {
         public int inputItemId;
         public int outputItemId;
 
-        public ResourceMerger_SaveData( int inputItemId, int outputItemId )
+        public ResourceConverter_SaveData( int inputItemId, int outputItemId )
         {
             this.inputItemId = inputItemId;
             this.outputItemId = outputItemId;
         }
     }
 
-    public class ResourceMerger : MonoBehaviour
+    public class ResourceConverter : MonoBehaviour
     {
         #region Singleton & initialization
-        public static ResourceMerger Instance { get; private set; }
+        public static ResourceConverter Instance { get; private set; }
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -30,7 +31,13 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
                 Instance = this;
             }
 
-            LoadResourceMergerDataFromES3();
+            LoadResourceConverterDataFromES3();
+        }
+
+        private void Init()
+        {
+            outputItemId = 0;
+            inputItemId = 0;
         }
         #endregion
 
@@ -46,6 +53,12 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region getters & setters
+
+        public void SetOutputItemId(int outputItemId)
+        {
+            this.outputItemId = outputItemId;
+            this.inputItemId = outputItemId - 2;
+        }
         #endregion
 
         #region public methods
@@ -55,9 +68,15 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         // Facility에서 호출될 함수
         public void RunProcess()
         {
+            if (outputItemId == 0)
+            {
+                return;
+            }
             if (!InventoryManager.Instance.TryRemoveItem(inputItemId, inputCount))
             {
-                // TODO : 지금 자원이 부족해서 놀고있다는 걸 알려줘야겠지?
+                UILoader.Instance.ShowAlert("자원 합성기가 멈췄습니다. 재료 자원이 부족합니다!");
+                // TODO : 이슈 UI에 추가하기
+                Init();
                 return;
             }
             
@@ -66,16 +85,16 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #endregion
 
         #region private methods
-        private void LoadResourceMergerDataFromES3()
+        private void LoadResourceConverterDataFromES3()
         {
-            var data = ES3.Load(RESOURCE_MERGER_KEY, new ResourceMerger_SaveData(0, 0));
+            var data = ES3.Load(RESOURCE_MERGER_KEY, new ResourceConverter_SaveData(0, 0));
             inputItemId = data.inputItemId;
             outputItemId = data.outputItemId;
         }
         
-        private void SaveResourceMergerData()
+        private void SaveResourceConverterData()
         {
-            var data = new ResourceMerger_SaveData( inputItemId, outputItemId );
+            var data = new ResourceConverter_SaveData( inputItemId, outputItemId );
             ES3.Save(RESOURCE_MERGER_KEY, data);
         }
         #endregion
@@ -83,7 +102,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #region Unity event methods
         private void OnApplicationQuit()
         {
-            SaveResourceMergerData();
+            SaveResourceConverterData();
         }
         #endregion
 

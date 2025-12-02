@@ -117,11 +117,14 @@ namespace DrillGame
             foreach (var kvp_Type in facilityItemIds)
             {
                 var itemIdList = kvp_Type.Value;
-                var count = itemIdList.Count;
-                for (int i = 0; i < count; i++)
+                foreach (var itemId in itemIdList)
                 {
                     var buildPiece = Instantiate(ui_buildPiece, categoryObjectDict[kvp_Type.Key].transform);
-                    buildPiece.GetComponent<UI_BuildPiece>().SetData( itemIdList[i] );
+                    var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( itemId );
+                    
+                    buildPiece.GetComponent<UI_ContentPiece>()
+                        .SetData( itemData.DisplayName, itemData.ItemIcon,
+                            () => { OpenDetailWindow( itemId );});
                     buildPieces.Add(buildPiece);
                 }
             }

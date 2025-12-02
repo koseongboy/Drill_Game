@@ -1,5 +1,6 @@
 ﻿using System;
 using DrillGame.Core.Managers;
+using DrillGame.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -136,26 +137,24 @@ namespace DrillGame.Managers
         }
 
         // 엔진 조합 : 두 엔진을 합쳐서 높은 레벨의 엔진 제작
-        public void RegisterEngineToCombine(int targetEngineItemId, int inputEngineItemId1, int inputEngineItemId2)
+        public void RegisterEngineToCombine(int targetEngineItemId, int inputEngineItemId)
         {
+            Debug.Log(targetEngineItemId);
             currentType = MergeProcessingType.Combine;
             
-            if (!InventoryManager.Instance.TryRemoveItem(inputEngineItemId1, 1))
+            if (!InventoryManager.Instance.TryRemoveItem(inputEngineItemId, 2))
             {
-                Debug.LogWarning("인벤토리에 없는 아이템을 엔진합성기에 넣으려 합니다.");
-                return;
-            }
-            if (!InventoryManager.Instance.TryRemoveItem(inputEngineItemId2, 1))
-            {
-                Debug.LogWarning("인벤토리에 없는 아이템을 엔진합성기에 넣으려 합니다.");
-                InventoryManager.Instance.AddItem(inputEngineItemId1, 1);
+                var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(inputEngineItemId);
+                var haveCount = InventoryManager.Instance.GetItemCountById(inputEngineItemId);
+                
+                UILoader.Instance.ShowAlert($"재료 엔진이 부족합니다.\n필요 : {itemData.DisplayName} (2개),   보유 : {haveCount}개");
                 return;
             }
             
             this.targetEngineItemId = targetEngineItemId;
-            this.inputEngineItemId1 = inputEngineItemId1;
-            this.inputEngineItemId2 = inputEngineItemId2;
-            
+            inputEngineItemId2 = inputEngineItemId;
+            inputEngineItemId1 = inputEngineItemId;
+
             OnProcessChanged?.Invoke();
         }
 
@@ -182,7 +181,14 @@ namespace DrillGame.Managers
         {
             Debug.Log($"엔진 합성 끝! : {targetEngineItemId}");
             InventoryManager.Instance.AddItem(targetEngineItemId, 1);
-            Init();
+            if (currentType == MergeProcessingType.Create)
+            {
+                progress = 0;
+            }
+            else
+            {
+                Init();
+            }
         }
         
         private void LoadEngineMergerDataFromES3()

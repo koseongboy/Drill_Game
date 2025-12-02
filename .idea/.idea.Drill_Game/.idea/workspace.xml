@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_ResourceConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_ResourceConverter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/ResourceMergerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/ResourceConverterEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/ResourceMergerEntity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/ResourceConverterEntity.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/EngineMergerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceMerger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceMerger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceConverter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/UILoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_EngineMerger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_EngineMerger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_BuildPiece.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_BuildPiece.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_EngineMergePiece.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_EngineMergePiece.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_FacilityBuild.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/UI_BuildPiece.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/UI_BuildPiece.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/UI_EngineMergePiece.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/UI_EngineMergePiece.prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +42,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59bd7c40c082431db25e1e728ab6278946ae00/a0/f5975446/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Core/InventoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/ResourceMergerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/FullWindow/UI_FacilityBuild.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Alert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineDetailPopup.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,21 +68,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Crocobob",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Crocobob&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/캡스톤 빌드파일\Drill Game.exe" />
