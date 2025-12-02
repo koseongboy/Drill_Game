@@ -1,4 +1,5 @@
-﻿using DrillGame.Core.Managers;
+﻿using System;
+using DrillGame.Core.Managers;
 using DrillGame.UI;
 using UnityEngine;
 
@@ -48,16 +49,35 @@ namespace DrillGame.Managers
 
         [SerializeField] private int inputCount = 1; // TODO : CSV의 FacilityLevel에 따라 다른 값 사용하기.
         [SerializeField] private int outputCount = 1; // TODO
+        
+        public Action OnProcessChanged;
 
         private const string RESOURCE_MERGER_KEY = "ResourceMergerData";
         #endregion
 
         #region getters & setters
 
+        public int GetCurrentOutputItemId()
+        {
+            return outputItemId;
+        }
+
+        public int GetInputItemCount()
+        {
+            return inputCount;
+        }
+
+        public int GetOutputItemCount()
+        {
+            return outputCount;
+        }
+        
+
         public void SetOutputItemId(int outputItemId)
         {
             this.outputItemId = outputItemId;
             this.inputItemId = outputItemId - 2;
+            OnProcessChanged?.Invoke();
         }
         #endregion
 
@@ -68,6 +88,7 @@ namespace DrillGame.Managers
         // Facility에서 호출될 함수
         public void RunProcess()
         {
+            Debug.Log("RunProcess");
             if (outputItemId == 0)
             {
                 return;
@@ -77,9 +98,11 @@ namespace DrillGame.Managers
                 UILoader.Instance.ShowAlert("자원 합성기가 멈췄습니다. 재료 자원이 부족합니다!");
                 // TODO : 이슈 UI에 추가하기
                 Init();
+                OnProcessChanged?.Invoke();
                 return;
             }
             
+            Debug.Log($"RunProcess : {outputItemId}, {outputCount}");
             InventoryManager.Instance.AddItem(outputItemId, outputCount);
         }
         #endregion

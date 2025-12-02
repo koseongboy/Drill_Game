@@ -15,10 +15,10 @@ MonoBehaviour:
   Id: 113004
   Name: resource_merger4
   DisplayName: "\uC790\uC6D0 \uD569\uC131\uAE30 Lv.4"
-  Type: ResourceMerger
-  Icon: resourceMergerIcon
+  Type: ResourceConverter
+  Icon: resourceConverterIcon
   Level: 4
-  EntityClassName: ResourceMergerEntity
+  EntityClassName: ResourceConverterEntity
   Desc: "\uC789\uC5EC \uC790\uC6D0\uC744 \uC7AC\uD65C\uC6A9\uD558\uAE30 \uC704\uD55C
     \uC2DC\uC124\uC774\uB2E4."
   RequireResearchId: 0
