@@ -152,7 +152,7 @@ namespace DrillGame.Managers
         {
             return AreaSize;
         }
-        
+
         #endregion
 
         #region public methods

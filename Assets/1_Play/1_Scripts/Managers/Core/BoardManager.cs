@@ -66,6 +66,19 @@ namespace DrillGame.Core.Managers
             corePosition = position;
         }
 
+        public int GetCountOfEntity(string entityType)
+        {
+            int count = 0;
+            foreach (var facility in facilities)
+            {
+                if (facility.data.Type == entityType)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
         public int FailityCount
         {
             get { return facilities.Count; }
