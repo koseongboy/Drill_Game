@@ -23,10 +23,8 @@ namespace DrillGame.View.Engine
         #region Singleton & initialization
         private void Awake()
         {
-            Debug.Log("0");
             wirePrefab = Resources.Load<GameObject>("Prefabs/etc/Wire");
 
-            Debug.Log("1");
         }
         #endregion
 
@@ -36,8 +34,6 @@ namespace DrillGame.View.Engine
         #region public methods
         public void SetWire(Vector2 enginePos, Vector2 corePos)
         {
-            Debug.Log("2");
-            // test 직선 설치
             Debug.Log("도비가 와이어를 설치합니다.");
 
 

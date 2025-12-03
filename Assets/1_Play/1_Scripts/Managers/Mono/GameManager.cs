@@ -3,6 +3,7 @@ using DrillGame._1_Play._1_Scripts.Managers.Mono;
 using DrillGame._1_Play._1_Scripts.ScriptableObject;
 using DrillGame.Core.Engine;
 using DrillGame.Core.Managers;
+using DrillGame.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -125,14 +126,27 @@ namespace DrillGame.Managers
 
         public void StartBatch()
         {
-            if (tilemapType == TilemapType.Facility && BoardManager.Instance.FailityCount >= CoreManager.Instance.GetMaxFacilityCount())
+            //Debug.Log("현재 배치된 엔진 합성기 수" + BoardManager.Instance.GetCountOfEntity("EngineMerger"));
+            Debug.Log($"현재 배치된 엔진 개수: {BoardManager.Instance.EngineCount}, 현재 배치된 시설 개수: {BoardManager.Instance.FailityCount}");
+
+            if (BoardManager.Instance.GetCountOfEntity("EngineMerger") > 0)
             {
-                Debug.LogWarning("배치 모드 진입 실패: 시설 최대 개수에 도달했습니다.");
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 엔진 합성기는 하나만 배치할 수 있습니다.");
+                return;
+            }
+            else if (BoardManager.Instance.GetCountOfEntity("ResourceConverter") > 0)
+            {
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 자원 변환기는 하나만 배치할 수 있습니다.");
+                return;
+            }
+            else if (tilemapType == TilemapType.Facility && BoardManager.Instance.FailityCount >= CoreManager.Instance.GetMaxFacilityCount())
+            {
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 시설 최대 개수 {CoreManager.Instance.GetMaxFacilityCount()}에 도달했습니다.");
                 return;
             }
             else if (tilemapType == TilemapType.Engine && BoardManager.Instance.EngineCount >= CoreManager.Instance.GetMaxEngineCount())
             {
-                Debug.LogWarning("배치 모드 진입 실패: 엔진 최대 개수에 도달했습니다.");
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 엔진 최대 개수 {CoreManager.Instance.GetMaxEngineCount()}에 도달했습니다.");
                 return;
             }
 
