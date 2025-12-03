@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uCF54\uC5B4 Lv.6"
   Level: 6
   FacilityCount: 28
-  EngineCount: 13
+  EngineCount: 14
   FactoryLength: 37
   UpgradeRequiredDepth: 25
   UpgradeRequiredItemId: 1010

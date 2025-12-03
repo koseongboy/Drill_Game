@@ -15,26 +15,29 @@ namespace DrillGame
         {
             Debug.Log(entity.ToString());
             labFacilityEntity = (FacilityEntity)entity;
-            UpdateDetail();
+            if (labFacilityEntity.synergyCount > 0)
+            {
+                SetIsOnSynergy(true);
+            }
+            else
+            {
+                SetIsOnSynergy(false);
+            }
+
+            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(labFacilityEntity.GetFacilityId());
+            UpdateDetail(data.DisplayName, data.GetFacilityDesc() + "\n"+labFacilityEntity.synergyText, data.Icon);
         }
         #endregion
 
         #region public methods
         public override void MoveOnBoard()
         {
-            Debug.Log("MoveEngineOnBoard 진입.");
-            
             CloseUI();
-            
-            // 이거 어디있지
-            // labFacilityEntity.MoveEntity(); 
+            labFacilityEntity.MoveEntity(); 
         }
         
         public override void DeleteOnBoard()
         {
-            // TODO : 진짜로 철거할 거냐고 물어보기 (Confirm UI)
-            // Debug.Log("DeleteEngineOnBoard 진입.");
-            
             CloseUI();
             labFacilityEntity.DeleteEntity();
         }
@@ -46,21 +49,6 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected override void UpdateDetail()
-        {
-            var id = labFacilityEntity.GetFacilityId();
-            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
-
-            titleTxt.text = data.DisplayName;
-            descTxt.text = data.GetFacilityDesc();
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + data.Icon);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {data.Icon}");
-            }
-            iconImg.sprite = icon;
-        }
         #endregion
     }
 }

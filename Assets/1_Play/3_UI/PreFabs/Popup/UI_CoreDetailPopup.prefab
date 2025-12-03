@@ -281,6 +281,7 @@ MonoBehaviour:
   titleTxt: {fileID: 3942363625321592270}
   descTxt: {fileID: 1906528894630626145}
   iconImg: {fileID: 2941450145931552389}
+  onSynergyIcon: {fileID: 7971125518944096404}
   addressableName: UI_CoreDetailPopup
 --- !u!114 &1906528894630626145 stripped
 MonoBehaviour:
@@ -315,3 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &7971125518944096404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3180370419631264314, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4809231316471956142}
+  m_PrefabAsset: {fileID: 0}

@@ -109,6 +109,7 @@ namespace DrillGame
         {
             int nextCoreDataId = core_Data.GetId() + 1;
             Core_Data_ nextCoreData = ScriptableObjectManager.Instance.GetData<Core_Data_>(nextCoreDataId);
+            
             if (nextCoreData == null)
             {
                 UILoader.Instance.ShowAlert("최고 레벨 코어에 도달했습니다.");
@@ -119,15 +120,15 @@ namespace DrillGame
             int requiredDepth = core_Data.UpgradeRequiredDepth;
             if(GroundComponent.Instance.GetDepth() < requiredDepth)
             {
-                UILoader.Instance.ShowAlert("코어 업그레이드에 필요한 깊이에 도달하지 못했습니다.");
+                UILoader.Instance.ShowAlert($"코어 업그레이드에 필요한 깊이에 도달하지 못했습니다.\n 현재 깊이 : {GroundComponent.Instance.GetDepth()},  필요 깊이 : {requiredDepth}");
                 return false;
             }
 
 
 
             // 자원 체크
-            int requiredResourceId = core_Data.UpgradeRequiredItemId;
-            int requiredResourceCount = core_Data.UpgradeRequiredItemCount;
+            int requiredResourceId = nextCoreData.UpgradeRequiredItemId;
+            int requiredResourceCount = nextCoreData.UpgradeRequiredItemCount;
             if (!InventoryManager.Instance.HasItem(requiredResourceId, requiredResourceCount))
             {
                 var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(requiredResourceId);

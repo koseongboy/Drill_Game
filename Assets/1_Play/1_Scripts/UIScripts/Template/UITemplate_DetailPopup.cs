@@ -21,11 +21,21 @@ namespace DrillGame
         protected TextMeshProUGUI descTxt;
         [SerializeField]
         protected Image iconImg;
+        [SerializeField]
+        protected GameObject onSynergyIcon;
+
+        protected bool isOnSynergy = false;
         #endregion
 
         #region getters & setters
         public virtual void SetData(object entity)
         {
+        }
+
+        public void SetIsOnSynergy(bool isOnSynergy)
+        {
+            this.isOnSynergy = isOnSynergy;
+            onSynergyIcon.SetActive(this.isOnSynergy);
         }
         #endregion
 
@@ -55,8 +65,19 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected virtual void UpdateDetail()
+        protected virtual void UpdateDetail(string name, string desc, string iconName)
         {
+            titleTxt.text = name;
+            descTxt.text = desc;
+            
+            // Sprite
+            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + iconName);
+            if (icon == null)
+            {
+                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {iconName}");
+                return;
+            }
+            iconImg.sprite = icon;
         }
         
         protected void OpenAction()

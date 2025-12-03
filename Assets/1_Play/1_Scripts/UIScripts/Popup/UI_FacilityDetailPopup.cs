@@ -23,7 +23,24 @@ namespace DrillGame
         public override void SetData(object entity)
         {
             facilityEntity = (FacilityEntity)entity;
-            UpdateDetail();
+            if (facilityEntity.synergyCount > 0)
+            {
+                SetIsOnSynergy(true);
+            }
+            else
+            {
+                SetIsOnSynergy(false);
+            }
+            
+            var id = facilityEntity.GetFacilityId(); 
+            if (id == 0)
+            {
+                Debug.LogError("Facility에 지정된 Facility Id가 없습니다. UI를 업데이트할 수 없습니다.");
+                return;
+            }
+            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
+
+            UpdateDetail(data.DisplayName, data.GetFacilityDesc() + "\n"+facilityEntity.synergyText, data.Icon);
         }
         #endregion
 
@@ -45,27 +62,6 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected override void UpdateDetail()
-        {
-            var id = facilityEntity.GetFacilityId(); 
-            if (id == 0)
-            {
-                Debug.LogError("Facility에 지정된 Facility Id가 없습니다. UI를 업데이트할 수 없습니다.");
-                return;
-            }
-            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
-
-            titleTxt.text = data.DisplayName;
-            descTxt.text = data.GetFacilityDesc();
-            
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + data.Icon);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {data.Icon}");
-            }
-            iconImg.sprite = icon;
-        }
         #endregion
 
         #region Unity event methods

@@ -883,3 +883,9 @@ MonoBehaviour:
   titleTxt: {fileID: 450248358528017441}
   descTxt: {fileID: 3097585143939797646}
   iconImg: {fileID: 1755187767847974762}
+  onSynergyIcon: {fileID: 6779796256542933371}
+--- !u!1 &6779796256542933371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3180370419631264314, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 8229306656300454721}
+  m_PrefabAsset: {fileID: 0}

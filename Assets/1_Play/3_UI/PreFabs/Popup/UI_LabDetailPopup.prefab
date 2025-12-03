@@ -425,9 +425,37 @@ PrefabInstance:
       propertyPath: m_text
       value: "\uC774\uB3D9"
       objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6322329459222374735}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveOnBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_LabDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550342347936248473, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: UI_LabDetailPopup_MainCanvas Variant
+      value: UI_LabDetailPopup
       objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_IsActive
@@ -477,6 +505,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: LabDetailPopup_Button2
       objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6322329459222374735}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeleteOnBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_LabDetailPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350753480242919, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8878875597739699293, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -492,6 +548,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6322329459222374735}
   m_SourcePrefab: {fileID: 100100000, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+--- !u!1 &1491251655633248520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3180370419631264314, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 4076619065856340786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4876014254393335663 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8878875597739699293, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
@@ -551,3 +612,4 @@ MonoBehaviour:
   titleTxt: {fileID: 5519385384049149010}
   descTxt: {fileID: 6943289460913566461}
   iconImg: {fileID: 5979931779275429657}
+  onSynergyIcon: {fileID: 1491251655633248520}

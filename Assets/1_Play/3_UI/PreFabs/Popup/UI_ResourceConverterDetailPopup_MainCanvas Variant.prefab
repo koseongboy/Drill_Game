@@ -1286,6 +1286,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7909775431249502851}
   m_SourcePrefab: {fileID: 100100000, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+--- !u!1 &4202547239682826519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3180370419631264314, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 1616933523696907053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5672296866224222946 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6397516701046718927, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
@@ -1318,6 +1323,7 @@ MonoBehaviour:
   titleTxt: {fileID: 7096341278989206605}
   descTxt: {fileID: 5672296866224222946}
   iconImg: {fileID: 8943994160426538758}
+  onSynergyIcon: {fileID: 4202547239682826519}
 --- !u!114 &7096341278989206605 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8361993404112451424, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}

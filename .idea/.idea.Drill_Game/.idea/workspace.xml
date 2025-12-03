@@ -6,15 +6,69 @@
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Ground_Data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Ground_Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/GroundComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Components/GroundComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/MinerEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Entity/Facility/MinerEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Core_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Core_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Research_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Research_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Core_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Core_Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Core_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Core_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Research_Data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/0_Scenes/Play.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/CoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/ItemSlotPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/ItemSlotPoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_CoreDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_CoreDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_EngineMergerDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_FacilityDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_FacilityDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ItemDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ItemDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_LabDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_LabDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ResourceConverterDetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Popup/UI_ResourceConverterDetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UITemplate_DetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UITemplate_DetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_ResourceConverter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/FullWindow/UI_ResourceConverter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_CoreDetailPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_CoreDetailPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_EngineMergerDetailPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_EngineMergerDetailPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_FacilityDetailPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_FacilityDetailPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_ItemDetailPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_ItemDetailPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_LabDetailPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_LabDetailPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_ResourceConverterDetailPopup_MainCanvas Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Popup/UI_ResourceConverterDetailPopup_MainCanvas Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/Template_DetailPopup_MainCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/3_UI/PreFabs/Template/Template_DetailPopup_MainCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/BlueEngine_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/Core.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/GreenEngine_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/PurpleEngine_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/RedEngine_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Engine_Data_/YellowEngine_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_10.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_10.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_3.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_7.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_8.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Ground_Data_/Ground_9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Research_Data_/Iron_Tech.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Research_Data_/Iron_Tech.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +230,7 @@
       <workItem from="1764641395913" duration="7864000" />
       <workItem from="1764665142765" duration="9983000" />
       <workItem from="1764683063031" duration="2928000" />
+      <workItem from="1764728302046" duration="4419000" />
     </task>
     <servers />
   </component>
