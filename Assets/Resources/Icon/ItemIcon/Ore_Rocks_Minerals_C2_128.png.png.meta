@@ -1,9 +1,17 @@
 fileFormatVersion: 2
-guid: d7c818326ed1a5547908b61a70575908
+guid: c25ae5b3c71986749b6e645fddf47986
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278283
+  packageName: Mining and Blacksmithing - Mega Pack - 2D Pixel Crafting Resources
+    Bundle
+  packageVersion: 1.0
+  assetPath: Assets/WCE Assets/Pixel Ores/C2/Ore_Rocks_Minerals_C2_128.png.png
+  uploadId: 650038
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +28,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,9 +72,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,9 +85,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -87,9 +98,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -99,181 +111,40 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ingots_C2_128_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f305e0e04300c93469f6007ee1ae9e75
-      internalID: -645119753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7cfb9e25b0b8344aa832ffe2e329288
-      internalID: 779876406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f41abf614e235644974563b7e1cded8
-      internalID: -1777656985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56d0c679702ce3e489b0df8fad81305a
-      internalID: 481947812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69d65142c557a6b46b7f972f8b692d86
-      internalID: -425016124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 880a1df1671ccaf4e87c09c649a21973
-      internalID: 1485671292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40a8f55557a64fe4781b7a0ab1483b2b
-      internalID: 1581421017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85ef1818e14f9d448be302978ee40ad3
-      internalID: 1046122614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ingots_C2_128_8
+      name: Ore_Rocks_Minerals_C2_128.png_0
       rect:
         serializedVersion: 2
         x: 0
@@ -283,18 +154,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be2b8a0c01da0a6488decb802705cbde
-      internalID: 1506125005
+      spriteID: bf689ea275a2ba1489a3ce9bcb4d1549
+      internalID: 979851820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_9
+      name: Ore_Rocks_Minerals_C2_128.png_1
       rect:
         serializedVersion: 2
         x: 128
@@ -304,18 +176,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da9379702c76af44c9c3cd4ab301e4a5
-      internalID: 1026933324
+      spriteID: 116d3e1cbae06bb46a48f3a45f00e8d1
+      internalID: -1593753331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_10
+      name: Ore_Rocks_Minerals_C2_128.png_2
       rect:
         serializedVersion: 2
         x: 256
@@ -325,18 +198,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d313a693d818b499afb420b0891fcf
-      internalID: -1184125858
+      spriteID: cd8416998a3e3aa4bade15c19b678d24
+      internalID: -3926614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_11
+      name: Ore_Rocks_Minerals_C2_128.png_3
       rect:
         serializedVersion: 2
         x: 384
@@ -346,18 +220,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e273dd08d963abd4297966b22133f386
-      internalID: -803772885
+      spriteID: a405aa809b198554993582c729e9ab81
+      internalID: -1561790852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_12
+      name: Ore_Rocks_Minerals_C2_128.png_4
       rect:
         serializedVersion: 2
         x: 512
@@ -367,18 +242,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4377d4827eeaae243801eab3b2969d52
-      internalID: -1115575745
+      spriteID: c7398bcd3dcd473458286f045c9825a2
+      internalID: 1420121307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_13
+      name: Ore_Rocks_Minerals_C2_128.png_5
       rect:
         serializedVersion: 2
         x: 640
@@ -388,18 +264,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f4d01dfd2294f47ab78c1fb65a2e49
-      internalID: 1305621315
+      spriteID: 9b15c21bc5a45da41bc970b227fd73f1
+      internalID: -1086111178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_14
+      name: Ore_Rocks_Minerals_C2_128.png_6
       rect:
         serializedVersion: 2
         x: 768
@@ -409,18 +286,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4da7dd9b9724a438d5446a6b816cc1
-      internalID: -1892102960
+      spriteID: c9fb89a030bcbc743a8e518a27f0fd2d
+      internalID: 1836078706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_15
+      name: Ore_Rocks_Minerals_C2_128.png_7
       rect:
         serializedVersion: 2
         x: 896
@@ -430,18 +308,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a51e66e8d1a358f4bbee60127dc2332f
-      internalID: 302191567
+      spriteID: f7b9994416128b94ab1f60b512f32312
+      internalID: -788900687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_16
+      name: Ore_Rocks_Minerals_C2_128.png_8
       rect:
         serializedVersion: 2
         x: 0
@@ -451,18 +330,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f13f50f2f1d2b543a463bc87267b41c
-      internalID: 2109929469
+      spriteID: 9d9bdfafd8ffe2f44bde3ff8930dafcd
+      internalID: -1986802667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_17
+      name: Ore_Rocks_Minerals_C2_128.png_9
       rect:
         serializedVersion: 2
         x: 128
@@ -472,18 +352,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22ce490cb88f42c40a4660b450d9926f
-      internalID: -970480068
+      spriteID: 543c3feaceb98ce448eea69ca2d9669f
+      internalID: -1945548029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_18
+      name: Ore_Rocks_Minerals_C2_128.png_10
       rect:
         serializedVersion: 2
         x: 256
@@ -493,18 +374,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc0f4f71805445f4892c091f5cd84bd1
-      internalID: 2103826530
+      spriteID: cddc32373a987cf46bb4dbee80ba5261
+      internalID: 964761465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_19
+      name: Ore_Rocks_Minerals_C2_128.png_11
       rect:
         serializedVersion: 2
         x: 384
@@ -514,18 +396,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3303d110bb2399140820fd5e13e1aa92
-      internalID: 456574013
+      spriteID: 1a00ca73c558ef84ea5bcdfaf99bd8ce
+      internalID: -725436184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_20
+      name: Ore_Rocks_Minerals_C2_128.png_12
       rect:
         serializedVersion: 2
         x: 512
@@ -535,18 +418,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8330efcc8ea1fe8419866815fe185a91
-      internalID: -1145543678
+      spriteID: ae278d50fca0adb4bb8fdf9b4c2f6b98
+      internalID: -572828402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_21
+      name: Ore_Rocks_Minerals_C2_128.png_13
       rect:
         serializedVersion: 2
         x: 640
@@ -556,18 +440,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5784121b987d042a513d2fdd1d16fa
-      internalID: -86668615
+      spriteID: c2316a7724cab3147b0386ff9ef6a7e0
+      internalID: -1884985868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_22
+      name: Ore_Rocks_Minerals_C2_128.png_14
       rect:
         serializedVersion: 2
         x: 768
@@ -577,18 +462,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef5aa0eb7b6ce6418e77547d713baa2
-      internalID: 1512144088
+      spriteID: 6f6d1851401195041a94f959a82097ab
+      internalID: 317498237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_23
+      name: Ore_Rocks_Minerals_C2_128.png_15
       rect:
         serializedVersion: 2
         x: 896
@@ -598,18 +484,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8cb31a03fe9f8042847d5d8c9e17419
-      internalID: -382198452
+      spriteID: ccf1d5ac5e48f804e9ed0b6176a9eae1
+      internalID: 2028294104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_24
+      name: Ore_Rocks_Minerals_C2_128.png_16
       rect:
         serializedVersion: 2
         x: 0
@@ -619,18 +506,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f537636e241c96944a593fe66c2f978b
-      internalID: 177069283
+      spriteID: 386b53015cdb2fd45bb9820e42dea73d
+      internalID: -222500057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_25
+      name: Ore_Rocks_Minerals_C2_128.png_17
       rect:
         serializedVersion: 2
         x: 128
@@ -640,18 +528,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ab7ee684f2958141a170f9a8cd408c7
-      internalID: 714942405
+      spriteID: 5079da65ecd49924ab8fae6a838cb60f
+      internalID: -1421212643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_26
+      name: Ore_Rocks_Minerals_C2_128.png_18
       rect:
         serializedVersion: 2
         x: 256
@@ -661,18 +550,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90cc05879fdf0e340b8574665bcdfb3c
-      internalID: -346921335
+      spriteID: ca95526343d867a4c8e02efe8da2574a
+      internalID: 1519108044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_27
+      name: Ore_Rocks_Minerals_C2_128.png_19
       rect:
         serializedVersion: 2
         x: 384
@@ -682,18 +572,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eac12bdae1651f4409540e0c4f81d6fb
-      internalID: -767700564
+      spriteID: c74ad89bec72cd349b954c5a1f483f4b
+      internalID: 1389993910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_28
+      name: Ore_Rocks_Minerals_C2_128.png_20
       rect:
         serializedVersion: 2
         x: 512
@@ -703,18 +594,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93040976d25ea1640ad59583b65af517
-      internalID: 789133315
+      spriteID: 130ce4077b7b1a242abce53de9b95adc
+      internalID: 1229807230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_29
+      name: Ore_Rocks_Minerals_C2_128.png_21
       rect:
         serializedVersion: 2
         x: 640
@@ -724,18 +616,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfee0d00db8b9fe46b90c0c3c13b545f
-      internalID: -875533677
+      spriteID: aa656a59410ff2b4e998b1f381767048
+      internalID: -1527818952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_30
+      name: Ore_Rocks_Minerals_C2_128.png_22
       rect:
         serializedVersion: 2
         x: 768
@@ -745,18 +638,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce0dcecfe51f694da02dd50782465be
-      internalID: -1498046548
+      spriteID: 6df440bca336fb7488e38f1d5f2f2b7f
+      internalID: -1812701799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_31
+      name: Ore_Rocks_Minerals_C2_128.png_23
       rect:
         serializedVersion: 2
         x: 896
@@ -766,18 +660,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b250336339b1d84b8293a9428e5a8a1
-      internalID: -1994379080
+      spriteID: 35c18413c49ed964bbd45056f5c31785
+      internalID: -1364006933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_32
+      name: Ore_Rocks_Minerals_C2_128.png_24
       rect:
         serializedVersion: 2
         x: 0
@@ -787,18 +682,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e98aaff165da9e44acfc5b234b44aa1
-      internalID: -1571789640
+      spriteID: a98f18d9e5e30104fb42cf9b55cc24c7
+      internalID: 408633746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_33
+      name: Ore_Rocks_Minerals_C2_128.png_25
       rect:
         serializedVersion: 2
         x: 128
@@ -808,18 +704,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75b13246d1973fa4185eea395526e3e6
-      internalID: 1566721318
+      spriteID: fdf59d8da70c24647acfbac1fa0d683e
+      internalID: -406410587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_34
+      name: Ore_Rocks_Minerals_C2_128.png_26
       rect:
         serializedVersion: 2
         x: 256
@@ -829,18 +726,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94655ed1a13d4c4b94f5f43616268b0
-      internalID: -292891573
+      spriteID: 48d62705e91f3324bb4e82c906e3174e
+      internalID: 2146931749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_35
+      name: Ore_Rocks_Minerals_C2_128.png_27
       rect:
         serializedVersion: 2
         x: 384
@@ -850,18 +748,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706f40e7a9e9e3e4bb2250c8d746b5dc
-      internalID: 688108163
+      spriteID: 5370e5840ef63b94b9eba11d4cc54233
+      internalID: 819278602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_36
+      name: Ore_Rocks_Minerals_C2_128.png_28
       rect:
         serializedVersion: 2
         x: 512
@@ -871,18 +770,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01b0f86a8aa385d4697dab44237eefaf
-      internalID: -91482364
+      spriteID: 77a240f37306c834fa3665b5ba167b3b
+      internalID: 66770412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_37
+      name: Ore_Rocks_Minerals_C2_128.png_29
       rect:
         serializedVersion: 2
         x: 640
@@ -892,18 +792,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25095858277fadf41b8a4dc993c8b338
-      internalID: 634114956
+      spriteID: b5a67861e7511c74ab3b6688de640b84
+      internalID: -497890682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_38
+      name: Ore_Rocks_Minerals_C2_128.png_30
       rect:
         serializedVersion: 2
         x: 768
@@ -913,18 +814,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e3f2e6cdc6fc94fb78e093f2f9fdf0
-      internalID: -639798250
+      spriteID: 81046388b2a49ee4da1574cc3eae2b5f
+      internalID: 1166935537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_39
+      name: Ore_Rocks_Minerals_C2_128.png_31
       rect:
         serializedVersion: 2
         x: 896
@@ -934,18 +836,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4a53962ebd2e77419e7cf6b4556e3cd
-      internalID: 1310038076
+      spriteID: ec4a57bf97d1a6c43921f725bdf2d6c6
+      internalID: 1180482123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_40
+      name: Ore_Rocks_Minerals_C2_128.png_32
       rect:
         serializedVersion: 2
         x: 0
@@ -955,18 +858,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4444b9986433014697347147205437f
-      internalID: 1077121710
+      spriteID: 2a7e7a540ab2a9e45879bf4cb4130468
+      internalID: -376174688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_41
+      name: Ore_Rocks_Minerals_C2_128.png_33
       rect:
         serializedVersion: 2
         x: 128
@@ -976,18 +880,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a04fb5bd96610de47bda978c6454e955
-      internalID: 755313598
+      spriteID: 8ee28c81ee3a638449777dd1b71a398d
+      internalID: 446179657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_42
+      name: Ore_Rocks_Minerals_C2_128.png_34
       rect:
         serializedVersion: 2
         x: 256
@@ -997,18 +902,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8acc578d3c320dc4db86c28e49f47500
-      internalID: -1348615714
+      spriteID: 5e0cfb2e07072954082c85bd007a40c4
+      internalID: -2135290375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_43
+      name: Ore_Rocks_Minerals_C2_128.png_35
       rect:
         serializedVersion: 2
         x: 384
@@ -1018,18 +924,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a04254f7205952438b1cc045ee52d6a
-      internalID: -54336798
+      spriteID: 11868d06048d9e844851604c857dc4b2
+      internalID: -1090877567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_44
+      name: Ore_Rocks_Minerals_C2_128.png_36
       rect:
         serializedVersion: 2
         x: 512
@@ -1039,18 +946,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f35caef489fcda479f3dbbc52d42db0
-      internalID: 860318423
+      spriteID: 7a8fd5f80ddc6314382235d73681450b
+      internalID: -1357668513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_45
+      name: Ore_Rocks_Minerals_C2_128.png_37
       rect:
         serializedVersion: 2
         x: 640
@@ -1060,18 +968,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37158faea20a08a4dafba954b547743c
-      internalID: 161752767
+      spriteID: 51e68a3c9dc6f2b42aa6e4cf10583761
+      internalID: -866190461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_46
+      name: Ore_Rocks_Minerals_C2_128.png_38
       rect:
         serializedVersion: 2
         x: 768
@@ -1081,18 +990,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba5249b5ab7d78748823e5ebe2be36ce
-      internalID: -587424661
+      spriteID: 8999ba82d66d9b24b9e489ea7c54f846
+      internalID: -2050542971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_47
+      name: Ore_Rocks_Minerals_C2_128.png_39
       rect:
         serializedVersion: 2
         x: 896
@@ -1102,18 +1012,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd77d1bfd00f67f41a6d58e701ea617a
-      internalID: 1847952396
+      spriteID: 79ac8bd90b6f141438f0ff83ddf9637a
+      internalID: -1666129423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_48
+      name: Ore_Rocks_Minerals_C2_128.png_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1123,18 +1034,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32a415ab16a3da7438c2c72c6e82af16
-      internalID: -1966298641
+      spriteID: cb9d9e91cf2b26947b7c1138b39f72e3
+      internalID: -212329504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_49
+      name: Ore_Rocks_Minerals_C2_128.png_41
       rect:
         serializedVersion: 2
         x: 128
@@ -1144,18 +1056,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf2a46bf7e280e43b385d31b59d49cb
-      internalID: 985131739
+      spriteID: 634d869fa8a3f87488282ad44f3fba63
+      internalID: -2077404984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_50
+      name: Ore_Rocks_Minerals_C2_128.png_42
       rect:
         serializedVersion: 2
         x: 256
@@ -1165,18 +1078,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb87cd20c13b2224cace52982430a919
-      internalID: -400869746
+      spriteID: acb32e68127aa22458fe37d0b6befc63
+      internalID: 233111921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_51
+      name: Ore_Rocks_Minerals_C2_128.png_43
       rect:
         serializedVersion: 2
         x: 384
@@ -1186,18 +1100,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ef0c2cebe68d5c459926fd1b1621fd1
-      internalID: -430694477
+      spriteID: ebe721577720bc94581daf9de7644ea9
+      internalID: -279290682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_52
+      name: Ore_Rocks_Minerals_C2_128.png_44
       rect:
         serializedVersion: 2
         x: 512
@@ -1207,18 +1122,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb120100a7b26634bafff7f6ae90c38f
-      internalID: -1021758799
+      spriteID: 4cfc61e8b20a7544fa27ba6080f40cdd
+      internalID: -644582844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_53
+      name: Ore_Rocks_Minerals_C2_128.png_45
       rect:
         serializedVersion: 2
         x: 640
@@ -1228,18 +1144,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 181f79f6da10ab54fbefe29d61447e14
-      internalID: -1409457019
+      spriteID: 915c2f7ec69292944aadc40114ab6f09
+      internalID: -1086162372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_54
+      name: Ore_Rocks_Minerals_C2_128.png_46
       rect:
         serializedVersion: 2
         x: 768
@@ -1249,18 +1166,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7da6c4375a764f43abc273713c8660b
-      internalID: -1075409376
+      spriteID: caa269b30519eaf4ab757f497469737c
+      internalID: 1283727305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_55
+      name: Ore_Rocks_Minerals_C2_128.png_47
       rect:
         serializedVersion: 2
         x: 896
@@ -1270,18 +1188,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba6990c160465e9489d2c3ca23a01ce5
-      internalID: -361387749
+      spriteID: 7adc5cb2248845840925458cab990de7
+      internalID: 761813451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_56
+      name: Ore_Rocks_Minerals_C2_128.png_48
       rect:
         serializedVersion: 2
         x: 0
@@ -1291,18 +1210,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb7c02ddb64b4244db654cb7e7e68519
-      internalID: -550609665
+      spriteID: 3832205ef8333364e8014579501893f1
+      internalID: 1633466187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_57
+      name: Ore_Rocks_Minerals_C2_128.png_49
       rect:
         serializedVersion: 2
         x: 128
@@ -1312,18 +1232,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf67b2bd1563cf4abfda591a8017516
-      internalID: -744048595
+      spriteID: 8826df20e1304584c8a2b8ba11c30713
+      internalID: -1662966437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_58
+      name: Ore_Rocks_Minerals_C2_128.png_50
       rect:
         serializedVersion: 2
         x: 256
@@ -1333,18 +1254,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f360a202470cb74b85f01ba1d0f000f
-      internalID: -710508918
+      spriteID: 23e8de290d56a474994d77e63ce568b1
+      internalID: -1213938484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ingots_C2_128_59
+      name: Ore_Rocks_Minerals_C2_128.png_51
       rect:
         serializedVersion: 2
         x: 384
@@ -1354,17 +1276,41 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 643729db5b7eced48b7590aff9b064c6
-      internalID: -898742524
+      spriteID: 0e88619892cffd847a140e579b379040
+      internalID: -1815580461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ore_Rocks_Minerals_C2_128.png_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93011d6943988ec4bbc742c021f0a86b
+      internalID: 1410570236
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -1374,78 +1320,64 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      Ingots_C2_128_0: -645119753
-      Ingots_C2_128_1: 779876406
-      Ingots_C2_128_10: -1184125858
-      Ingots_C2_128_11: -803772885
-      Ingots_C2_128_12: -1115575745
-      Ingots_C2_128_13: 1305621315
-      Ingots_C2_128_14: -1892102960
-      Ingots_C2_128_15: 302191567
-      Ingots_C2_128_16: 2109929469
-      Ingots_C2_128_17: -970480068
-      Ingots_C2_128_18: 2103826530
-      Ingots_C2_128_19: 456574013
-      Ingots_C2_128_2: -1777656985
-      Ingots_C2_128_20: -1145543678
-      Ingots_C2_128_21: -86668615
-      Ingots_C2_128_22: 1512144088
-      Ingots_C2_128_23: -382198452
-      Ingots_C2_128_24: 177069283
-      Ingots_C2_128_25: 714942405
-      Ingots_C2_128_26: -346921335
-      Ingots_C2_128_27: -767700564
-      Ingots_C2_128_28: 789133315
-      Ingots_C2_128_29: -875533677
-      Ingots_C2_128_3: 481947812
-      Ingots_C2_128_30: -1498046548
-      Ingots_C2_128_31: -1994379080
-      Ingots_C2_128_32: -1571789640
-      Ingots_C2_128_33: 1566721318
-      Ingots_C2_128_34: -292891573
-      Ingots_C2_128_35: 688108163
-      Ingots_C2_128_36: -91482364
-      Ingots_C2_128_37: 634114956
-      Ingots_C2_128_38: -639798250
-      Ingots_C2_128_39: 1310038076
-      Ingots_C2_128_4: -425016124
-      Ingots_C2_128_40: 1077121710
-      Ingots_C2_128_41: 755313598
-      Ingots_C2_128_42: -1348615714
-      Ingots_C2_128_43: -54336798
-      Ingots_C2_128_44: 860318423
-      Ingots_C2_128_45: 161752767
-      Ingots_C2_128_46: -587424661
-      Ingots_C2_128_47: 1847952396
-      Ingots_C2_128_48: -1966298641
-      Ingots_C2_128_49: 985131739
-      Ingots_C2_128_5: 1485671292
-      Ingots_C2_128_50: -400869746
-      Ingots_C2_128_51: -430694477
-      Ingots_C2_128_52: -1021758799
-      Ingots_C2_128_53: -1409457019
-      Ingots_C2_128_54: -1075409376
-      Ingots_C2_128_55: -361387749
-      Ingots_C2_128_56: -550609665
-      Ingots_C2_128_57: -744048595
-      Ingots_C2_128_58: -710508918
-      Ingots_C2_128_59: -898742524
-      Ingots_C2_128_6: 1581421017
-      Ingots_C2_128_7: 1046122614
-      Ingots_C2_128_8: 1506125005
-      Ingots_C2_128_9: 1026933324
-  spritePackingTag: 
+      Ore_Rocks_Minerals_C2_128.png_0: 979851820
+      Ore_Rocks_Minerals_C2_128.png_1: -1593753331
+      Ore_Rocks_Minerals_C2_128.png_10: 964761465
+      Ore_Rocks_Minerals_C2_128.png_11: -725436184
+      Ore_Rocks_Minerals_C2_128.png_12: -572828402
+      Ore_Rocks_Minerals_C2_128.png_13: -1884985868
+      Ore_Rocks_Minerals_C2_128.png_14: 317498237
+      Ore_Rocks_Minerals_C2_128.png_15: 2028294104
+      Ore_Rocks_Minerals_C2_128.png_16: -222500057
+      Ore_Rocks_Minerals_C2_128.png_17: -1421212643
+      Ore_Rocks_Minerals_C2_128.png_18: 1519108044
+      Ore_Rocks_Minerals_C2_128.png_19: 1389993910
+      Ore_Rocks_Minerals_C2_128.png_2: -3926614
+      Ore_Rocks_Minerals_C2_128.png_20: 1229807230
+      Ore_Rocks_Minerals_C2_128.png_21: -1527818952
+      Ore_Rocks_Minerals_C2_128.png_22: -1812701799
+      Ore_Rocks_Minerals_C2_128.png_23: -1364006933
+      Ore_Rocks_Minerals_C2_128.png_24: 408633746
+      Ore_Rocks_Minerals_C2_128.png_25: -406410587
+      Ore_Rocks_Minerals_C2_128.png_26: 2146931749
+      Ore_Rocks_Minerals_C2_128.png_27: 819278602
+      Ore_Rocks_Minerals_C2_128.png_28: 66770412
+      Ore_Rocks_Minerals_C2_128.png_29: -497890682
+      Ore_Rocks_Minerals_C2_128.png_3: -1561790852
+      Ore_Rocks_Minerals_C2_128.png_30: 1166935537
+      Ore_Rocks_Minerals_C2_128.png_31: 1180482123
+      Ore_Rocks_Minerals_C2_128.png_32: -376174688
+      Ore_Rocks_Minerals_C2_128.png_33: 446179657
+      Ore_Rocks_Minerals_C2_128.png_34: -2135290375
+      Ore_Rocks_Minerals_C2_128.png_35: -1090877567
+      Ore_Rocks_Minerals_C2_128.png_36: -1357668513
+      Ore_Rocks_Minerals_C2_128.png_37: -866190461
+      Ore_Rocks_Minerals_C2_128.png_38: -2050542971
+      Ore_Rocks_Minerals_C2_128.png_39: -1666129423
+      Ore_Rocks_Minerals_C2_128.png_4: 1420121307
+      Ore_Rocks_Minerals_C2_128.png_40: -212329504
+      Ore_Rocks_Minerals_C2_128.png_41: -2077404984
+      Ore_Rocks_Minerals_C2_128.png_42: 233111921
+      Ore_Rocks_Minerals_C2_128.png_43: -279290682
+      Ore_Rocks_Minerals_C2_128.png_44: -644582844
+      Ore_Rocks_Minerals_C2_128.png_45: -1086162372
+      Ore_Rocks_Minerals_C2_128.png_46: 1283727305
+      Ore_Rocks_Minerals_C2_128.png_47: 761813451
+      Ore_Rocks_Minerals_C2_128.png_48: 1633466187
+      Ore_Rocks_Minerals_C2_128.png_49: -1662966437
+      Ore_Rocks_Minerals_C2_128.png_5: -1086111178
+      Ore_Rocks_Minerals_C2_128.png_50: -1213938484
+      Ore_Rocks_Minerals_C2_128.png_51: -1815580461
+      Ore_Rocks_Minerals_C2_128.png_52: 1410570236
+      Ore_Rocks_Minerals_C2_128.png_6: 1836078706
+      Ore_Rocks_Minerals_C2_128.png_7: -788900687
+      Ore_Rocks_Minerals_C2_128.png_8: -1986802667
+      Ore_Rocks_Minerals_C2_128.png_9: -1945548029
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 278283
-  packageName: Mining and Blacksmithing - Mega Pack - 2D Pixel Crafting Resources
-    Bundle
-  packageVersion: 1.0
-  assetPath: Assets/WCE Assets/Pixel Ingots/C2/Ingots_C2_128.png
-  uploadId: 650038
