@@ -3,12 +3,10 @@ using DrillGame.Core.Engine;
 using DrillGame.Core.Presenter;
 using DrillGame.Managers;
 using DrillGame.View.Helper;
-using Mono.Cecil.Cil;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.Progress;
 
 namespace DrillGame.View.Engine
 {
