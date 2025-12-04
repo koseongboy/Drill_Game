@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DrillGame.View.Ground;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -12,12 +13,20 @@ namespace DrillGame.View.Drill
         SpriteRenderer spriteRenderer;
         Drill_Data_ Currentdata;
         Sprite CurrentSprite;
+        public ParticleSystem particle;
 
         private const string ES3FILENAME = "DrillUserData.es3";
         private const string DRILL_LEVEL = "DrillLevel";
 
         private int drillLevel;
 
+        // 흔들림 애니메이션 설정
+        [Header("Wiggle 설정")]
+        [SerializeField] private float wiggleDuration = 0.5f;   // 전체 흔들림에 걸리는 시간
+        [SerializeField] private float wiggleMagnitude = 0.1f;  // 최대 좌우 이동 거리 (유닛)
+        [SerializeField] private int wiggleCycles = 3;          // 총 왕복 횟수 (예: 3이면 왼쪽-오른쪽-왼쪽-오른쪽 총 3번 왕복)
+
+        private Vector3 originalLocalPosition;
         #endregion
 
         #region Singleton & initialization
@@ -36,6 +45,7 @@ namespace DrillGame.View.Drill
 
         private void Awake()
         {
+            originalLocalPosition = transform.localPosition;
             Init();
         }
 
@@ -118,6 +128,12 @@ namespace DrillGame.View.Drill
                 Debug.LogWarning($"[ES3 Reset] 삭제할 세이브 파일 '{ES3FILENAME}'이 존재하지 않습니다. 이미 초기화된 상태일 수 있습니다.");
             }
         }
+
+        public void RunDrillAnimation()
+        {
+            StartCoroutine(DrillAnimation());
+            
+        }
         #endregion
 
         #region private methods
@@ -126,6 +142,68 @@ namespace DrillGame.View.Drill
             ES3File es3File = new ES3File(ES3FILENAME);
             es3File.Save(DRILL_LEVEL, level);
             es3File.Sync();
+        }
+        IEnumerator DrillAnimation()
+        {
+            
+            // 1. 초기 위치로 돌아가도록 보장합니다.
+            transform.localPosition = originalLocalPosition;
+        
+            // 2. 한 왕복(Wiggle) 사이클에 걸리는 시간 계산
+            // (전체 시간 / (왕복 횟수 * 2)) => 1회 이동(예: 왼쪽으로)에 걸리는 시간
+            float singleMoveDuration = wiggleDuration / (wiggleCycles * 2f);
+            float elapsedTime = 0f;
+            
+            // 3. 총 왕복 횟수만큼 반복합니다.
+            for (int i = 0; i < wiggleCycles * 2; i++)
+            {
+                elapsedTime = 0f;
+                particle.Play();
+                // 목표 위치 (홀수 번째 이동은 오른쪽, 짝수 번째 이동은 왼쪽)
+                // 시작이 0번(짝수)이므로 첫 이동은 Left(-Magnitude)입니다.
+                Vector3 targetPosition;
+                if (i % 2 == 0) // 0, 2, 4번째 (왼쪽/음수 방향으로 이동)
+                {
+                    targetPosition = originalLocalPosition + Vector3.left * wiggleMagnitude;
+                }
+                else // 1, 3, 5번째 (오른쪽/양수 방향으로 이동)
+                {
+                    targetPosition = originalLocalPosition + Vector3.right * wiggleMagnitude;
+                }
+                
+                // 현재 위치 (이전 목표 위치)
+                Vector3 startPosition = transform.localPosition;
+
+                // 4. 단일 이동 애니메이션 (Lerp를 사용한 부드러운 이동)
+                while (elapsedTime < singleMoveDuration)
+                {
+                    // 시간에 비례하여 위치를 보간(Lerp)합니다.
+                    transform.localPosition = Vector3.Lerp(startPosition, targetPosition, elapsedTime / singleMoveDuration);
+                    elapsedTime += Time.deltaTime;
+                    yield return null; // 다음 프레임까지 대기
+                }
+                
+                // 목표 위치에 정확히 도달하도록 보정
+                transform.localPosition = targetPosition;
+            }
+
+            // 5. 최종적으로 원래 위치로 부드럽게 복귀합니다.
+            elapsedTime = 0f;
+            Vector3 finalStartPosition = transform.localPosition;
+        
+            // 복귀 시간은 총 Wiggle 시간의 1/4 정도를 사용합니다.
+            float returnDuration = wiggleDuration * 0.25f; 
+
+            while (elapsedTime < returnDuration)
+            {
+                transform.localPosition = Vector3.Lerp(finalStartPosition, originalLocalPosition, elapsedTime / returnDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            // 최종 위치 보정
+            transform.localPosition = originalLocalPosition;
+            Debug.Log("Wiggle 애니메이션 종료.");
         }
         #endregion
 

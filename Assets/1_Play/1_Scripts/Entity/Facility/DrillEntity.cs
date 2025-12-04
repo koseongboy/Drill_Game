@@ -27,13 +27,13 @@ namespace DrillGame.Core.Facility
     #region public methods
     public override void Run(int intensity, bool isSynergyed = false)
     {
-            
+      for (int i = 0; i < intensity; i++)
+      {
+          GroundComponent.Instance.GiveDamage(dc.GetDrillDamage());
+      }
+      base.Run(intensity);
+      dc.RunDrillAnimation();
 
-            for (int i = 0; i < intensity; i++)
-            {
-                GroundComponent.Instance.GiveDamage(dc.GetDrillDamage());
-            }
-            base.Run(intensity);
     }
 
     public void levlUp(int toWhat) //몇까지??
@@ -46,6 +46,7 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region private methods
+    
     #endregion
 
     #region Unity event methods
