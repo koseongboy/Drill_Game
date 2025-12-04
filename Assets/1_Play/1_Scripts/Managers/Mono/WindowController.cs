@@ -62,7 +62,7 @@ namespace DrillGame.WindowControl
 
         // 💡 후킹 관련 DllImport
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+        private static extern IntPtr SetWindowsHookEx(int idHook, IntPtr lpfn, IntPtr hMod, uint dwThreadId);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -222,12 +222,17 @@ namespace DrillGame.WindowControl
 
             // 4. 전역 키 후킹 등록
             _proc = HookCallback;
+            IntPtr keyboardProcPtr = Marshal.GetFunctionPointerForDelegate(_proc); // 키보드 델리게이트 변환
+            _mouseProc = MouseHookCallback;
+            IntPtr mouseProcPtr = Marshal.GetFunctionPointerForDelegate(_mouseProc); // 마우스 델리게이트 변환
             using (var curProcess = System.Diagnostics.Process.GetCurrentProcess())
             using (var curModule = curProcess.MainModule)
             {
                 IntPtr hModule = GetModuleHandle(curModule.ModuleName);
-                hookId = SetWindowsHookEx(WH_KEYBOARD_LL, _proc, hModule, 0);
+                hookId = SetWindowsHookEx(WH_KEYBOARD_LL, keyboardProcPtr, hModule, 0);
+                mouseHookId = SetWindowsHookEx(WH_MOUSE_LL, mouseProcPtr, hModule, 0);
                 if (hookId == IntPtr.Zero) Debug.LogError("Failed to register keyboard hook.");
+                if (mouseHookId == IntPtr.Zero) Debug.LogError("Failed to register mouse hook.");
             }
         }
 
