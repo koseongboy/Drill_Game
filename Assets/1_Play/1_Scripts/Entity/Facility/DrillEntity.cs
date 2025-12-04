@@ -25,14 +25,15 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity)
+    public override void Run(int intensity, bool isSynergyed = false)
     {
-            base.Run(intensity);
+            
 
             for (int i = 0; i < intensity; i++)
             {
                 GroundComponent.Instance.GiveDamage(dc.GetDrillDamage());
             }
+            base.Run(intensity);
     }
     #endregion
 
