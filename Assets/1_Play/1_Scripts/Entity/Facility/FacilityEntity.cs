@@ -90,7 +90,7 @@ namespace DrillGame.Core.Facility
                 GameManager.Instance.BatchEntity(itemId);
             }
 
-            public virtual void Run(int intensity)
+            public virtual void Run(int intensity, bool isSynergyed = false)
             {
                 Debug.Log("Facility is running. with Intensity : "  + intensity);
 

@@ -97,7 +97,7 @@ namespace DrillGame.View.Drill
         {
             drillLevel++;
             Currentdata = Nextdata;
-            Nextdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 1 + 3000);
+            Nextdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 1 + 3000); //todo null체크
             LoadSprite(false);
             SaveDrillData(drillLevel);
             Debug.Log("드릴 레벨 업! 현재 레벨: " + drillLevel);
