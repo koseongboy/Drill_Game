@@ -1,3 +1,4 @@
+using System.Collections;
 using DrillGame.Core.Managers;
 using DrillGame.Managers;
 using DrillGame.UI;
@@ -22,11 +23,33 @@ namespace DrillGame
 
         private bool isEditing = false;
         private bool isInventoryOpen = false;
+        private bool isTryQuit = false;
         
         public void LinkAddressable(string address)
         {
             addressableName = address;
         }
+
+        public void TryQuitGame()
+        {
+            if (isTryQuit)
+            {
+                Debug.Log("Quit Game");
+                Application.Quit();
+            }
+            
+            isTryQuit = true;
+            UILoader.Instance.ShowAlert("게임을 종료하려면\n다시 한 번 버튼을 누르세요.");
+            StartCoroutine(StopQuit());
+        }
+
+        private IEnumerator StopQuit()
+        {
+            yield return new WaitForSeconds(3f);
+            isTryQuit = false;
+        }
+        
+        
 
         public void InventoryButtonPressed()
         {
