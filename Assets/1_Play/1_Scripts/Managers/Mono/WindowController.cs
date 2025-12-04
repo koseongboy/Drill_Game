@@ -81,6 +81,16 @@ namespace DrillGame.WindowControl
         private const int WM_KEYUP = 0x0101;
         private const int WM_SYSKEYUP = 0x0105; // Alt 키와 조합된 시스템 키 업
 
+        private const int WH_MOUSE_LL = 14; 
+
+        // 마우스 메시지 상수
+        private const int WM_LBUTTONDOWN = 0x0201; // 마우스 왼쪽 버튼 클릭
+        private const int WM_RBUTTONDOWN = 0x0204; // 마우스 오른쪽 버튼 클릭
+
+        private IntPtr mouseHookId = IntPtr.Zero;
+        private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
+        private LowLevelMouseProc _mouseProc;
+
         private IntPtr hookId = IntPtr.Zero;
         private LowLevelKeyboardProc _proc;
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -96,6 +106,23 @@ namespace DrillGame.WindowControl
         const uint SWP_NOMOVE = 0x0002;
         const uint SWP_NOSIZE = 0x0001;
         const uint SWP_NOZORDER = 0x0004;
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct POINT
+        {
+            public int x;
+            public int y;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        private struct MSLLHOOKSTRUCT
+        {
+            public POINT pt;
+            public uint mouseData;
+            public uint flags;
+            public uint time;
+            public IntPtr dwExtraInfo;
+        }
 
         // Window Handle은 Windows에서만 유효합니다.
         public IntPtr windowHandle;
@@ -114,6 +141,30 @@ namespace DrillGame.WindowControl
                 }
             }
             return CallNextHookEx(hookId, nCode, wParam, lParam);
+        }
+
+        // 💡 마우스 입력 이벤트 큐 (메시지 타입, X좌표, Y좌표 저장)
+
+        private IntPtr MouseHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+        {
+            if (nCode >= 0)
+            {
+                int msg = wParam.ToInt32();
+
+                // 💡 좌클릭(0x0201) 또는 우클릭(0x0204)만 처리
+                if (msg == WM_LBUTTONDOWN || msg == WM_RBUTTONDOWN) 
+                {
+                    
+                    // 큐에 메시지 타입, X좌표, Y좌표를 저장
+                    lock (queueLock) 
+                    {
+                        keyEventQueue.Enqueue(msg);
+                    }
+                }
+            }
+
+            // CallNextHookEx를 호출하여 메시지를 다른 프로그램으로 투과
+            return CallNextHookEx(mouseHookId, nCode, wParam, lParam);
         }
 
         /// <summary>

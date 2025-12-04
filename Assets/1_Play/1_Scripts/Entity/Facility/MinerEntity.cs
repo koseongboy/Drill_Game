@@ -29,9 +29,9 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity)
+    public override void Run(int intensity, bool isSynergyed = false)
     {
-      base.Run(intensity);
+      
       if (!gc.CanGetDropItem( data.OutputItemId ))
       {
         var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(data.OutputItemId);
@@ -42,13 +42,14 @@ namespace DrillGame.Core.Facility
         for (int i = 0; i < intensity; i++)
         {
           runCount++;
-          if(runCount % formCount < synergyCount) {
+          isSynergyed = runCount % formCount < synergyCount;
+          if(isSynergyed) {
             InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount );
           }
           InventoryManager.Instance.AddItem( data.OutputItemId, data.OutputItemCount ); //이렇게 인벤에 추가하는거 맞는 지 확인
         }
       }
-      
+      base.Run(intensity, isSynergyed);
     }
     #endregion
 

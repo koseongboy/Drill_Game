@@ -23,19 +23,18 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity)
+    public override void Run(int intensity, bool isSynergyed = false)
     {
-      base.Run(intensity);
-
       for (int i = 0; i < intensity; i++)
       {
         runCount++;
-        if(runCount % formCount < synergyCount) {
+        isSynergyed = runCount % formCount < synergyCount;
+        if(isSynergyed) {
           EngineMergerManager.Instance.RunEngineMergeProcess();
         }
         EngineMergerManager.Instance.RunEngineMergeProcess();
       }
-      
+      base.Run(intensity, isSynergyed);
     }
 
     public void UpgradeLevel()

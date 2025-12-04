@@ -25,13 +25,14 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity)
+    public override void Run(int intensity, bool isSynergyed = false)
     {
-      base.Run(intensity);
+      
       for (int i = 0; i < intensity; i++)
       {
         runCount++;
-        if(runCount % formCount < synergyCount) {
+        isSynergyed = runCount % formCount < synergyCount;
+        if(isSynergyed) {
           InventoryManager.Instance.TryRemoveItem(data.InputItemId, data.InputItemCount);
           InventoryManager.Instance.AddItem(data.OutputItemId, data.OutputItemCount);
           Debug.Log($"{data.InputItemId}아이디를 가진 자원을 ${data.InputItemCount}개 잃고, ${data.OutputItemId}를 ${data.OutputItemCount}개 얻음.");
@@ -40,6 +41,7 @@ namespace DrillGame.Core.Facility
         InventoryManager.Instance.AddItem(data.OutputItemId, data.OutputItemCount);
         Debug.Log($"{data.InputItemId}아이디를 가진 자원을 ${data.InputItemCount}개 잃고, ${data.OutputItemId}를 ${data.OutputItemCount}개 얻음.");
       }
+      base.Run(intensity, isSynergyed);
     }
     #endregion
 

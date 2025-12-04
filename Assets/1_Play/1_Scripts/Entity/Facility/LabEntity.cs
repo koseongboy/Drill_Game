@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 namespace DrillGame.Core.Facility
@@ -26,17 +27,19 @@ namespace DrillGame.Core.Facility
     #endregion
 
     #region public methods
-    public override void Run(int intensity) // todo: 레벨에 따른 연구 진척도 증가량 조절
+    public override void Run(int intensity, bool isSynergyed = false) // todo: 레벨에 따른 연구 진척도 증가량 조절
     {
-      base.Run(intensity);
+      
       for (int i = 0; i < intensity; i++)
       {
         runCount++;
-        if(runCount % formCount < synergyCount) {
+        isSynergyed = runCount % formCount < synergyCount;
+        if(isSynergyed) {
           ResearchManager.Instance.AddResearchProgress();
         }
         ResearchManager.Instance.AddResearchProgress();
       }
+      base.Run(intensity, isSynergyed);
     }
     #endregion
 
