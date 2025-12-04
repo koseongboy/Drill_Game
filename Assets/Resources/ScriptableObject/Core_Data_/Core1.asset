@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uCF54\uC5B4 Lv.1"
   Level: 1
   FacilityCount: 8
-  EngineCount: 3
+  EngineCount: 4
   FactoryLength: 12
   UpgradeRequiredDepth: 0
   UpgradeRequiredItemId: 0

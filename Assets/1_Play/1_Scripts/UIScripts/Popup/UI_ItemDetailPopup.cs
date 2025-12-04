@@ -21,7 +21,10 @@ namespace DrillGame
         public override void SetData(object entity)
         {
             showingItemId = (int)entity;
-            UpdateDetail();
+            SetIsOnSynergy(false);
+            
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( showingItemId );
+            UpdateDetail(itemData.DisplayName, "", itemData.ItemIcon);
         }
         #endregion
 
@@ -62,20 +65,6 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected override void UpdateDetail()
-        {
-            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( showingItemId );
-
-            titleTxt.text = itemData.DisplayName;
-            descTxt.text = "";
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + itemData.ItemIcon);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {itemData.ItemIcon}");
-            }
-            iconImg.sprite = icon;
-        }
         #endregion
 
         #region Unity event methods

@@ -15,7 +15,17 @@ namespace DrillGame
         public override void SetData(object entity)
         {
             engineMergerFacilityEntity = (EngineMergerEntity)entity;
-            UpdateDetail();
+            if (engineMergerFacilityEntity.synergyCount > 0)
+            {
+                SetIsOnSynergy(true);
+            }
+            else
+            {
+                SetIsOnSynergy(false);
+            }
+            
+            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(engineMergerFacilityEntity.GetFacilityId());
+            UpdateDetail(data.DisplayName, data.GetFacilityDesc() + "\n"+engineMergerFacilityEntity.synergyText, data.Icon);
         }
         #endregion
 
@@ -74,21 +84,6 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected override void UpdateDetail()
-        {
-            var id = engineMergerFacilityEntity.GetFacilityId();
-            var data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(id);
-
-            titleTxt.text = data.DisplayName;
-            descTxt.text = data.GetFacilityDesc();
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + data.Icon);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {data.Icon}");
-            }
-            iconImg.sprite = icon;
-        }
         #endregion
     }
 }

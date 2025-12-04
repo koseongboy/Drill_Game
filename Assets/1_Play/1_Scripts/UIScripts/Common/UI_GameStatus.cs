@@ -1,5 +1,6 @@
 using System;
 using DrillGame.Core.Ground;
+using DrillGame.UI;
 using DrillGame.UI.Interface;
 using DrillGame.View.Ground;
 using TMPro;
@@ -35,6 +36,16 @@ namespace DrillGame
         public void LinkAddressable(string address)
         {
             addressableName = address;
+        }
+
+
+        public void ShowDetail_DrillDamage()
+        {
+            UILoader.Instance.ShowAlert("현재 드릴의 틱 당 데미지입니다.");
+        }
+        public void ShowDetail_HP()
+        {
+            UILoader.Instance.ShowAlert("현재 남은 땅의 체력입니다.");
         }
         #endregion
 

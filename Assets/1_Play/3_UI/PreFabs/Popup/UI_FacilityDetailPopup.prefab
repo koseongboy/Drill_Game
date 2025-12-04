@@ -158,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511274930646804646, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
-      value: UI_FacilityDetailPopup_MainCanvas
+      value: UI_FacilityDetailPopup
       objectReference: {fileID: 0}
     - target: {fileID: 5722408328187180786, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
@@ -258,3 +258,9 @@ MonoBehaviour:
   titleTxt: {fileID: 863467925685913923}
   descTxt: {fileID: 2826264648007761900}
   iconImg: {fileID: 1558122352863107592}
+  onSynergyIcon: {fileID: 6040049727334247449}
+--- !u!1 &6040049727334247449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3180370419631264314, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
+  m_PrefabInstance: {fileID: 9218977505426013731}
+  m_PrefabAsset: {fileID: 0}

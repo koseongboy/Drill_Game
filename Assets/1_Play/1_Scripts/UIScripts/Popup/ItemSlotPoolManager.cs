@@ -11,7 +11,6 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
         #region Singleton & initialization
         public static ItemSlotPoolManager Instance { get; private set; }
         
-        // ⭐ ObjectPool 인스턴스
         private IObjectPool<GameObject> pool; 
 
         [SerializeField] private GameObject slotPrefab;
@@ -41,31 +40,25 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
                 maxSize: MaxPoolSize    // 최대 크기
             );
             
-            // 초기 풀 사이즈만큼 객체를 미리 생성 (Warm-up)
             PrewarmPool(DefaultPoolSize);
         }
         #endregion
 
-        // 풀에서 객체를 가져오는 메서드
         public GameObject Get()
         {
             return pool.Get();
         }
         
-        // 풀에 객체를 반환하는 메서드
         public void Return(GameObject slot)
         {
             if (slot == null)
             {
-                // UI_Inventory에서 발생했던 MissingReferenceException 방지 코드 유지
                 return;
             }
             
-            // ⭐ pool.Release() 호출로 단순화 (크기 체크 로직 불필요)
             pool.Release(slot);
         }
         
-        // --- ObjectPool이 요구하는 4가지 델리게이트 메서드 ---
         
         private GameObject CreatePooledItem()
         {
@@ -95,13 +88,11 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
             var items = new List<GameObject>();
             for (int i = 0; i < count; i++)
             {
-                // Get() 호출로 CreatePooledItem -> OnGetItem이 실행됨
                 items.Add(pool.Get());
             }
             
             foreach (var item in items)
             {
-                // Release() 호출로 OnReleaseItem이 실행되어 비활성화됨
                 pool.Release(item);
             }
         }

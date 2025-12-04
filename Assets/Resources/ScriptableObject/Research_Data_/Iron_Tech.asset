@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 30006
   Name: Iron_Tech
   DisplayName: "\uCCA0 \uD14C\uD06C"
-  Desc: "\uAD6C\uB9AC \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C \uB429\uB2C8\uB2E4."
+  Desc: "\uCCA0 \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C \uB429\uB2C8\uB2E4."
   ResearchAmount: 150
   InputItemPerTickId: 1004
   InputItemPerTickCount: 2
