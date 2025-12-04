@@ -35,7 +35,9 @@ namespace DrillGame.Managers
         #endregion
 
         #region public methods
+
         [MenuItem("Tools/Generate ScriptableObject from CSV")]
+        
         public static void GenerateScriptableObjects() {
             if (!Directory.Exists(csvFolderPath)) {
                 Debug.LogError("[CSVManger] CSV 폴더를 찾을 수 없습니다. : " + csvFolderPath);

@@ -10,9 +10,6 @@ namespace DrillGame
     public class UI_CoreDetailPopup : UITemplate_DetailPopup
     {
         #region Fields & Properties
-
-        [SerializeField]
-        private string addressableName;
         #endregion
 
         #region getters & setters

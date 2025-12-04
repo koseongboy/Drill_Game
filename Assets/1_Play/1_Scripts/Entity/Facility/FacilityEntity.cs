@@ -104,6 +104,10 @@ namespace DrillGame.Core.Facility
 
                 // 이벤트 호출 (presenter -> component)
                 OnFacilityActivated?.Invoke(intensity);
+                if(isSynergyed)
+                {
+                    Debug.Log("시너지 작용됨.");
+                }
             }
             
 
