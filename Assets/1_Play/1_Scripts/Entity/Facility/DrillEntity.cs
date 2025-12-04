@@ -35,6 +35,14 @@ namespace DrillGame.Core.Facility
             }
             base.Run(intensity);
     }
+
+    public void levlUp(int toWhat) //몇까지??
+    {
+      dc.levelUp(toWhat);
+      facilityId = 11200 + toWhat;
+      data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(facilityId);
+      this.Level = toWhat;
+    }
     #endregion
 
     #region private methods

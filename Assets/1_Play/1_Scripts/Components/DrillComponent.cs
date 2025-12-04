@@ -11,9 +11,7 @@ namespace DrillGame.View.Drill
         #region Fields & Properties
         SpriteRenderer spriteRenderer;
         Drill_Data_ Currentdata;
-        Drill_Data_ Nextdata;
         Sprite CurrentSprite;
-        Sprite NextSprite;
 
         private const string ES3FILENAME = "DrillUserData.es3";
         private const string DRILL_LEVEL = "DrillLevel";
@@ -47,17 +45,14 @@ namespace DrillGame.View.Drill
             spriteRenderer = GetComponent<SpriteRenderer>();
             ES3File es3File = new ES3File(ES3FILENAME);
             drillLevel = es3File.Load(DRILL_LEVEL, 1);
-            Currentdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 3000); //3001부터 레벨마다 드릴 id 값이 1씩 증가함.
-            Nextdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 1 + 3000);
-
-
+            Currentdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 3000);
             Debug.Log("드릴 컴포넌트 초기화. 현재 레벨: " + drillLevel);
             if(Currentdata != null)
             Debug.Log("드릴 데이터 로드 완료. 현재 드릴 ID: " + Currentdata.Id);
             else
             Debug.LogError("드릴 데이터 로드 실패!");
             //드릴 스프라이트 초기화
-            LoadSprite(true);
+            LoadSprite();
         }
         #endregion
 
@@ -74,35 +69,36 @@ namespace DrillGame.View.Drill
         #endregion
 
         #region public methods
-        public async void LoadSprite(bool isGameStart = true)
+        public async void LoadSprite()
         {
-            if(isGameStart) //첫 로딩은 current, next 모두 로드해야함
-            {
-                Debug.Log("드릴 스프라이트 로드 시작. 현재 드릴 어드레서블 주소: " + Currentdata.DrillSprite);
-                var currentHandle = Addressables.LoadAssetAsync<Sprite>(Currentdata.DrillSprite);
-                CurrentSprite = await currentHandle.Task;
-                spriteRenderer.sprite = CurrentSprite;
-                var nextHandle = Addressables.LoadAssetAsync<Sprite>(Nextdata.DrillSprite);
-                NextSprite = await nextHandle.Task;
-            } else // 첫 로딩이 아니기 때문에 current는 next로 교체, next는 새로 로드
-            {
-                spriteRenderer.sprite = NextSprite;
-                CurrentSprite = NextSprite;
-                var nextHandle = Addressables.LoadAssetAsync<Sprite>(Nextdata.DrillSprite);
-                NextSprite = await nextHandle.Task;
-            }
+
+            Debug.Log("드릴 스프라이트 로드 시작. 현재 드릴 어드레서블 주소: " + Currentdata.DrillSprite);
+            var currentHandle = Addressables.LoadAssetAsync<Sprite>(Currentdata.DrillSprite);
+            CurrentSprite = await currentHandle.Task;
+            spriteRenderer.sprite = CurrentSprite;
         }
 
-        public void levelUp()
+        public void levelUp(int toWhat)
         {
-            drillLevel++;
-            Currentdata = Nextdata;
-            Nextdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 1 + 3000); //todo null체크
-            LoadSprite(false);
+            try
+            {
+                Drill_Data_ temp = ScriptableObjectManager.Instance.GetData<Drill_Data_>(3000 + toWhat);
+                Currentdata = temp;
+            } catch
+            {
+                Debug.Log("그런 레벨은 존재하지 않습니다. 아무 행동도 취하지 않습니다.");
+                return;
+            }
+            drillLevel = toWhat;
+            LoadSprite();
             SaveDrillData(drillLevel);
             Debug.Log("드릴 레벨 업! 현재 레벨: " + drillLevel);
         }
 
+        public void oneLevelUp()
+        {
+            levelUp(drillLevel + 1);
+        }
         
 
         public void resetData()
