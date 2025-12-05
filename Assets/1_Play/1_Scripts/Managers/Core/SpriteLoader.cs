@@ -12,6 +12,7 @@ namespace DrillGame.Managers
     {
         #region Fields & Properties
         private Dictionary<string, Sprite> _spriteCache;
+        private Dictionary<string, Task<Sprite>> _loadingTasks;
         #endregion
 
         #region Singleton & initialization
@@ -31,6 +32,7 @@ namespace DrillGame.Managers
         private SpriteLoader()
         {
             _spriteCache = new Dictionary<string, Sprite>();
+            _loadingTasks = new Dictionary<string, Task<Sprite>>();
         }
         #endregion
 
@@ -45,14 +47,35 @@ namespace DrillGame.Managers
             {
                 return cachedSprite;
             }
-            Sprite icon = null;
+            if (_loadingTasks.TryGetValue(addressableName, out Task<Sprite> ongoingTask))
+            {
+                return await ongoingTask;
+            }
             
+            Task<Sprite> loadTask = InternalLoadSpriteAsync(addressableName);
+            _loadingTasks.Add(addressableName, loadTask);
+            
+            try
+            {
+                return await loadTask;
+            }
+            finally
+            {
+                _loadingTasks.Remove(addressableName);
+            }
+        }
+        #endregion
+
+        #region private methods
+        private async Task<Sprite> InternalLoadSpriteAsync(string addressableName)
+        {
             var handle = Addressables.LoadAssetAsync<Sprite>(addressableName);
             await handle.Task;
+
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
-                icon = handle.Result;
-                _spriteCache.Add(addressableName, icon);
+                Sprite icon = handle.Result;
+                _spriteCache.Add(addressableName, icon); 
                 return icon;
             }
             else
@@ -61,9 +84,6 @@ namespace DrillGame.Managers
                 return null;
             }
         }
-        #endregion
-
-        #region private methods
         #endregion
 
         #region Unity event methods

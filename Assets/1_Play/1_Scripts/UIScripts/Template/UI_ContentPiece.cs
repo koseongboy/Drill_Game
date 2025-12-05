@@ -18,10 +18,10 @@ namespace DrillGame
             OnButtonPressed?.Invoke();    
         }
         
-        public void SetData(string name, string iconName, Action OnButtonPressed)
+        public async void SetData(string name, string iconName, Action OnButtonPressed)
         {
             ui_name.text = name.ToString();
-            ui_icon.sprite = SpriteLoader.Instance.LoadSprite(iconName).Result;
+            ui_icon.sprite = await SpriteLoader.Instance.LoadSprite(iconName);
             
             this.OnButtonPressed = OnButtonPressed;
         }

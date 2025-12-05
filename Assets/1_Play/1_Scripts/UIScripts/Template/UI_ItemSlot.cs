@@ -12,7 +12,7 @@ namespace DrillGame
         [SerializeField] private Image Icon;
         [SerializeField] private TextMeshProUGUI Count;
 
-        public void SetItemData(Item_Data_ itemData, int count = 0)
+        public async void SetItemData(Item_Data_ itemData, int count = 0)
         {
             // Id
             itemId = itemData.GetId();
@@ -22,8 +22,7 @@ namespace DrillGame
                 : count.ToString();
             
             // Sprite
-            var icon = SpriteLoader.Instance.LoadSprite(itemData.ItemIcon);
-            Icon.sprite = icon.Result;
+            Icon.sprite = await SpriteLoader.Instance.LoadSprite(itemData.ItemIcon);
         }
 
         public void OnClick()

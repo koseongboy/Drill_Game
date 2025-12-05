@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uD751\uC694\uC11D \uAD11\uBB3C"
   ItemType: Resource
   EntityId: 0
-  ItemIcon: Ore_Rocks_Minerals_C3_128_50
+  ItemIcon: 'Ore_Rocks_Minerals_C3_128[Ore_Rocks_Minerals_C3_128.png_50]'

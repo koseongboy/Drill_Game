@@ -66,12 +66,12 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected virtual void UpdateDetail(string name, string desc, string iconName)
+        protected virtual async void UpdateDetail(string name, string desc, string iconName)
         {
             titleTxt.text = name;
             descTxt.text = desc;
             
-            iconImg.sprite = SpriteLoader.Instance.LoadSprite(iconName).Result;
+            iconImg.sprite = await SpriteLoader.Instance.LoadSprite(iconName);
         }
         
         protected void OpenAction()
