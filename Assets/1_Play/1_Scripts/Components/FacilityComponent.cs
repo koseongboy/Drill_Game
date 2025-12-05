@@ -31,6 +31,7 @@ namespace DrillGame.View.Facility
         private Facility_Data_ data;
         // graphic action 관련 임시 필드
         private SpriteRenderer spriteRenderer;
+        private BoxCollider2D boxCollider;
         private Color originalColor;
 
         private Color onMouseColor = Color.cyan;
@@ -65,6 +66,7 @@ namespace DrillGame.View.Facility
 
             //여기서부턴 그래픽
             spriteRenderer = GetComponent<SpriteRenderer>();
+            boxCollider = GetComponent<BoxCollider2D>();
             //pivot 설정
             pivot = GetPivot(data.GetLength());
             //스프라이트 가져오기
@@ -87,6 +89,11 @@ namespace DrillGame.View.Facility
             originalColor = spriteRenderer.material.color;
 
             runEffect = GetComponent<ParticleSystem>();
+
+            //Collider 크기 조절
+            Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+            boxCollider.size = spriteSize;
+            boxCollider.offset = spriteRenderer.sprite.bounds.center;
 
             // set debug position
             debugPosition = startPosition;
