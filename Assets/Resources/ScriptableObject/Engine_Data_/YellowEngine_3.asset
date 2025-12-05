@@ -16,14 +16,14 @@ MonoBehaviour:
   EngineId: 205
   DisplayName: "\uB178\uB791 \uC5D4\uC9C4 Lv.3"
   Icon: engine_test
-  Type: Yellow
+  Type: '#FFF3B7'
   Level: 3
   Coordinates:
   - 0,0
-  - 0,1
-  - 0,2
+  - 1,0
+  - 1,1
   Desc: "\uC5D4\uC9C4 \uC704\uCE58\uC758 \uC0C1\uBD80 \uC2DC\uC124\uC744 \uC791\uB3D9\uC2DC\uD0B5\uB2C8\uB2E4."
   ResourceItemId: 1006
   ResourceItemCount: 1000
-  Length: 1,3
-  MainCoordinate: 0,1
+  Length: 2,2
+  MainCoordinate: 1,0

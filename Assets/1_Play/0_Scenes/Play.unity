@@ -10682,6 +10682,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8665ec8eed15f04dae367a2129d7888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Drill.DrillComponent
+  particle: {fileID: 0}
+  wiggleDuration: 0.5
+  wiggleMagnitude: 0.1
+  wiggleCycles: 3
 --- !u!198 &1543279412
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -16182,7 +16186,7 @@ MonoBehaviour:
   batchMode: 0
   tilemapType: 1
   dataId: 111001
-  enginId: 201004
+  enginId: 202003
 --- !u!1 &1672351223
 GameObject:
   m_ObjectHideFlags: 0

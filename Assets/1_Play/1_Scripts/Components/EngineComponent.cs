@@ -37,7 +37,7 @@ namespace DrillGame.View.Engine
         private SpriteRenderer spriteRenderer;
         
         private Color originalColor;
-        private Color flashColor = Color.yellow;
+        private Color flashColor = Color.white;
         private float flashDuration = 0.15f;
 
         private Color onMouseColor = Color.cyan;
@@ -107,7 +107,7 @@ namespace DrillGame.View.Engine
                 int xOffset = formation.x * (int)NormalTile.rect.width;
                 int yOffset = formation.y * (int)NormalTile.rect.height;
                 Vector2 worldUnitPos = new Vector2(xOffset, yOffset);
-                tileCollider.offset = new Vector2(formation.x, formation.y);
+                tileCollider.offset = new Vector2(formation.x - data.GetMainCoordinate().x, formation.y - data.GetMainCoordinate().y);
                 if(formation == data.GetMainCoordinate())
                 {
                     // MainTile 그리기
@@ -126,20 +126,69 @@ namespace DrillGame.View.Engine
             Sprite combinedSprite = Sprite.Create(texture, new Rect(0, 0, finalWidth, finalHeight), GetPivot(data.GetMainCoordinate(), data.GetLength()), (int)NormalTile.rect.width);
 
             spriteRenderer.sprite = combinedSprite;
-
-            //색상 설정 
-            if(ColorUtility.TryParseHtmlString(data.Type, out originalColor))
+    
+            if (ColorUtility.TryParseHtmlString(data.Type, out originalColor))
             {
+                // 성공: data.Type이 유효한 Hex 코드 ("#RRGGBB" 또는 "#RRGGBBAA")인 경우
                 spriteRenderer.color = originalColor;
-                Debug.Log($"색상 '{data.Type}'이(가) 성공적으로 적용되었습니다.");
-            } else
+                Debug.Log($"색상 Hex Code '{data.Type}'이(가) 성공적으로 적용되었습니다.");
+            }
+            else
             {
-                Debug.LogWarning($"색상 '{data.Type}'을 찾을 수 없습니다.");
+                // 실패: data.Type이 유효한 Hex 코드가 아닌 경우
+                
+                // 2. data.Type을 색상 이름으로 간주하고 사용자 정의 색상 매핑 시도
+                
+                // 예: data.Type이 "STONE"일 때 회색을 적용하도록 설정
+                Color fallbackColor;
+                
+                if (TryGetDefinedColor(data.Type, out fallbackColor))
+                {
+                    originalColor = fallbackColor;
+                    spriteRenderer.color = originalColor;
+                    Debug.LogWarning($"Hex Code 변환 실패. 타입 이름 '{data.Type}'에 매핑된 색상 적용.");
+                }
+                else
+                {
+                    // 3. 모든 시도 실패 시 최종 기본 색상 적용
+                    originalColor = Color.white; // 최종 기본값 (흰색)
+                    spriteRenderer.color = originalColor;
+                    Debug.LogWarning($"색상 '{data.Type}'을 찾을 수 없습니다. 최종 기본 색상 (White) 적용.");
+                }
             }
 
 
             // set debug position
             debugPosition = startPosition;
+        }
+
+        private bool TryGetDefinedColor(string typeString, out Color resultColor)
+        {
+            // C# 7.0 이상의 switch 표현식 또는 Dictionary를 사용하면 더 깔끔합니다.
+            
+            // 대소문자 구분 없이 처리 (OrdinalIgnoreCase)
+            switch (typeString.ToUpper()) 
+            {
+                case "STONE":
+                    resultColor = Color.gray;
+                    return true;
+                case "COPPER":
+                    // 황동색 (Copper) 예시 Hex 코드를 Color로 변환
+                    if (ColorUtility.TryParseHtmlString("#B87333", out resultColor)) 
+                    {
+                        return true;
+                    }
+                    break;
+                case "IRON":
+                    // 철 색상 예시
+                    resultColor = new Color(0.7f, 0.7f, 0.7f); 
+                    return true;
+                
+                // 여기에 다른 타입과 색상 매핑을 추가할 수 있습니다.
+            }
+            
+            resultColor = Color.white; // 매핑된 색상이 없는 경우
+            return false;
         }
         #endregion
 
