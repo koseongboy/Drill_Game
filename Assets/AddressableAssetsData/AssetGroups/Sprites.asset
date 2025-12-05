@@ -14,7 +14,117 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Sprites
   m_GUID: bc35c61641249be45b7742a3268ad72a
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 0063c4e23a37c98419f68fe89b9bddf6
+    m_Address: AllView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01994312249ee334cbd524f18a08bacb
+    m_Address: Ore_Rocks_Minerals_C1_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02f0882fc8601b14291ce568e7b0baf3
+    m_Address: resourceMergerIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e5f3e0860278de479604dac96a43d26
+    m_Address: UpperView_Facility
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2107ddfe5d57d4741a59ed752285f02a
+    m_Address: ironIngot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 229d7624501caec4688d3aa2aee9b70f
+    m_Address: GridEdit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 331d5f8f9948a144ba98fcdbe231487e
+    m_Address: Ingots_C3_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 406c3a1f96aa5d74daa2b8535013d155
+    m_Address: PixelIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b155945e887ef94687e7d7392872225
+    m_Address: drillIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 673967a3a1d623544b39273549dd9a62
+    m_Address: Selected_Circle_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7443bce367d985d4fa38837b4bd90292
+    m_Address: engineMergerIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82679d1a9d15e0a40a21a4a00aa26457
+    m_Address: stone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88c20e381da6ead4fa546ccaed5b6c57
+    m_Address: Ore_Rocks_Minerals_C4_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b6eded22bab892498d88cafb6d7d2a3
+    m_Address: LowerView_Engine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a513dee23f3703e40975c42d9cf19782
+    m_Address: White-Circle-PNG
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b351307919745a14698efbcb37e160ae
+    m_Address: Ingots_C4_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c15339e86028c2f43b93ebd5b278dcd7
+    m_Address: engine_test
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c25ae5b3c71986749b6e645fddf47986
+    m_Address: Ore_Rocks_Minerals_C2_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7c818326ed1a5547908b61a70575908
+    m_Address: Ingots_C2_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df4f9108a9a6def4eb373a22d5b9a241
+    m_Address: Ingots_C1_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f01e0fa7976cb2c4ba8eda3d514957a7
+    m_Address: Ore_Rocks_Minerals_C3_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5031f71b6a00a9488abe25aeea97958
+    m_Address: labIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:

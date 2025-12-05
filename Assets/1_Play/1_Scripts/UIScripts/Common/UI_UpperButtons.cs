@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Threading.Tasks;
 using DrillGame.Core.Managers;
 using DrillGame.Managers;
 using DrillGame.UI;
@@ -123,14 +125,27 @@ namespace DrillGame
             UpdateTxt_ViewStateButton(next);
         }
 
-        private void UpdateIcon_ViewStateButton(GameViewManager.ViewState next)
+        private async Task UpdateIcon_ViewStateButton(GameViewManager.ViewState next)
         {
-            viewStateIcon.sprite = next switch
+            Sprite sprite = null;
+            sprite = await LoadIcon_ViewStateButton(next);
+            if (sprite != null)
             {
-                GameViewManager.ViewState.All => Resources.Load<Sprite>("UISprite/Button/AllView"),
-                GameViewManager.ViewState.FacilityOnly => Resources.Load<Sprite>("UISprite/Button/UpperView_Facility"),
-                GameViewManager.ViewState.EngineOnly => Resources.Load<Sprite>("UISprite/Button/LowerView_Engine")
+                viewStateIcon.sprite = sprite;
+            }
+        }
+
+        private async Task<Sprite> LoadIcon_ViewStateButton(GameViewManager.ViewState state)
+        {
+            string addressableName = state switch
+            {
+                GameViewManager.ViewState.All => "AllView",
+                GameViewManager.ViewState.FacilityOnly => "UpperView_Facility",
+                GameViewManager.ViewState.EngineOnly => "LowerView_Engine",
+                _ => throw new ArgumentOutOfRangeException(nameof(state), state, null)
             };
+            
+            return await SpriteLoader.Instance.LoadSprite(addressableName);
         }
 
         private void UpdateTxt_ViewStateButton( GameViewManager.ViewState viewState )
