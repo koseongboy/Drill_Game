@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using DrillGame.Core.Ground;
+using DrillGame.Managers;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -14,9 +15,9 @@ namespace DrillGame.View.Ground
         public GroundEntity GroundEntity { get; private set; }
         private SpriteRenderer spriteRenderer;
 
-        private const string ES3FILENAME = "GroundUserData.es3";
-        private const string GROUND_DEPTH = "GroundDepth";
-        private const string GROUND_HP = "GroundHP";
+        //private const string ES3FILENAME = "GroundUserData.es3";
+        //private const string GROUND_DEPTH = "GroundDepth";
+        //private const string GROUND_HP = "GroundHP";
         
         private Ground_Data_ CurrentGroundData;
         private AsyncOperationHandle CurrentGroundHandle;
@@ -77,9 +78,8 @@ namespace DrillGame.View.Ground
             GroundEntity = new GroundEntity();
             
             spriteRenderer = GetComponent<SpriteRenderer>();
-            ES3File es3File = new ES3File(ES3FILENAME);
-            currentDepth = es3File.Load(GROUND_DEPTH, 1);
-            int userHp = es3File.Load(GROUND_HP, ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
+            currentDepth = SaveManager.Instance.LoadGroundDepthData(1);
+            int userHp = SaveManager.Instance.LoadGroundHPData(ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);   
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(currentDepth) );
             
             //기존 데이터로 엔티티 및 땅 색(재질) 초기화
@@ -184,10 +184,8 @@ namespace DrillGame.View.Ground
         
         private void SaveCurrentGroundData(int depth, int hp)
         {
-            ES3File es3File = new ES3File(ES3FILENAME);
-            es3File.Save(GROUND_DEPTH, depth);
-            es3File.Save(GROUND_HP, hp);
-            es3File.Sync();
+            SaveManager.Instance.SaveGroundDepthData(depth);
+            SaveManager.Instance.SaveGroundHPData(hp);
         }
 
         #endregion
@@ -204,7 +202,7 @@ namespace DrillGame.View.Ground
         [ContextMenu("Reset Saved Depth & HP")]
         private void ResetSavedDepth_DEV()
         {
-            ES3.DeleteFile(ES3FILENAME);
+            SaveManager.Instance.SaveGroundDepthData(1);
             Init();
             Debug.Log("Ground UserData가 성공적으로 초기화되었습니다.");
         }
