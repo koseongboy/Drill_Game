@@ -117,7 +117,7 @@ namespace DrillGame.Managers
         private void SaveResourceConverterData()
         {
             var data = new ResourceConverter_SaveData( inputItemId, outputItemId );
-            SaveManager.Instance.SetResourceConverterData( data );
+            SaveManager.Instance.SaveResourceConverterData( data );
         }
         #endregion
 

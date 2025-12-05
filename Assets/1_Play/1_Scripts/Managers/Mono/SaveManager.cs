@@ -15,6 +15,8 @@ namespace DrillGame.Managers
             { "RESEARCH_SELECTED_ID_KEY", "ResearchId" },
             { "RESEARCH_PROGRESS_KEY", "ResearchProgressData" },
             { "ENGINE_MERGER_KEY", "EngineMergerData" },
+            { "RESOURCE_CONVERTER_KEY", "ResourceConverterData" },
+            { "DRILL_DATA_KEY", "DrillData" },
 
         };
 
@@ -121,16 +123,16 @@ namespace DrillGame.Managers
             Debug.Log("엔진 머저 매니저 데이터가 초기화되었습니다.");
         }
 
-        public void SetResourceConverterData(ResourceConverter_SaveData data)
+        public void SaveResourceConverterData(ResourceConverter_SaveData data)
         {
-            ES3.Save("ResourceConverterData", data);
+            ES3.Save(SaveKeys["RESOURCE_CONVERTER_KEY"], data);
         }
 
         public ResourceConverter_SaveData LoadResourceConverterData(ResourceConverter_SaveData defaultValue)
         {
-            if (ES3.KeyExists("ResourceConverterData"))
+            if (ES3.KeyExists(SaveKeys["RESOURCE_CONVERTER_KEY"]))
             {
-                return ES3.Load<ResourceConverter_SaveData>("ResourceConverterData");
+                return ES3.Load<ResourceConverter_SaveData>(SaveKeys["RESOURCE_CONVERTER_KEY"]);
             }
             Debug.LogWarning("No saved ResourceConverterData found.");
             return defaultValue;
@@ -138,15 +140,40 @@ namespace DrillGame.Managers
 
         public void DeleteResourceConverterData()
         {
-            ES3.DeleteKey("ResourceConverterData");
+            ES3.DeleteKey(SaveKeys["RESOURCE_CONVERTER_KEY"]);
         }
 
         [ContextMenu("리소스 컨버터 매니저 단독 초기화")]
         public void InitializeResourceConverterManagerData()
         {
             var defaultData = new ResourceConverter_SaveData(0, 0);
-            ES3.Save("ResourceConverterData", defaultData);
+            ES3.Save(SaveKeys["RESOURCE_CONVERTER_KEY"], defaultData);
             Debug.Log("리소스 컨버터 매니저 데이터가 초기화되었습니다.");
+        }
+
+        public void SaveDrillData(int drillLevel)
+        {
+            ES3.Save(SaveKeys["DRILL_DATA_KEY"], drillLevel);
+        }
+
+        public int LoadDrillData(int defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["DRILL_DATA_KEY"]))
+            {
+                return ES3.Load<int>(SaveKeys["DRILL_DATA_KEY"]);
+            }
+            Debug.LogWarning("No saved DrillData found.");
+            return defaultValue;
+        }
+        public void DeleteDrillData()
+        {
+            ES3.DeleteKey(SaveKeys["DRILL_DATA_KEY"]);
+        }
+        [ContextMenu("드릴 매니저 단독 초기화")]
+        public void InitializeDrillManagerData()
+        {
+            ES3.Save(SaveKeys["DRILL_DATA_KEY"], 1);
+            Debug.Log("드릴 매니저 데이터가 초기화되었습니다.");
         }
 
         [ContextMenu("리셋 데이터")]
