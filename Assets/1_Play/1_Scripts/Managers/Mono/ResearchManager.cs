@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using MiniJSON;
 using UnityEngine.InputSystem;
+using DrillGame.Managers;
 
 namespace DrillGame
 {
@@ -16,8 +17,6 @@ namespace DrillGame
         
         private Dictionary<int, float> researchProgresses;
         
-        private const string RESEARCH_SELECTED_ID_KEY = "ResearchId";
-        private const string RESEARCH_PROGRESS_KEY = "ResearchProgressData";
         public event Action<int, float, float> OnResearchProgressChanged;
 
         #region Singleton & initialization
@@ -68,13 +67,13 @@ namespace DrillGame
         public void SelectResearch(int researchId)
         {
             selectedResearchId = researchId;
-            SaveResearchId();
+            SaveManager.Instance.SaveResearchId(selectedResearchId);
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
         }
 
         public void UnSelectResearch() {
             selectedResearchId = 0;
-            SaveResearchId();
+            SaveManager.Instance.SaveResearchId(selectedResearchId);
             OnResearchProgressChanged?.Invoke( 0, 0f, 0f);
         }
         
@@ -109,19 +108,9 @@ namespace DrillGame
         
         #region private methods
 
-        private void SaveResearchId()
-        {
-            ES3.Save(RESEARCH_SELECTED_ID_KEY, selectedResearchId);
-        }
         
-        private void SaveResearchProgressData()
-        {
-            // TODO : 주기적으로 (10 코어틱?) 이거 호출해서 저장해줘야하지 않을까?
-            
-            ES3.Save(RESEARCH_PROGRESS_KEY, researchProgresses);
-            
-            // Debug.Log("연구 진척도를 저장했습니다.");
-        }
+        
+        
 
         [ContextMenu("Initialize Progress Dict")]
         private void InitializeProgressDict()
@@ -133,31 +122,35 @@ namespace DrillGame
                 researchProgresses.Add(researchData.Key, 0f);
             }
             
-            SaveResearchId();
-            SaveResearchProgressData();
+            SaveManager.Instance.SaveResearchId(selectedResearchId);
+            SaveManager.Instance.SaveResearchProgressData(researchProgresses);
         }
         
         private void LoadResearchKey()
         {
-            selectedResearchId = ES3.Load(RESEARCH_SELECTED_ID_KEY, 1);
+            selectedResearchId = SaveManager.Instance.LoadResearchId(1);
         }
         
         [ContextMenu("Load Progress Dict - ScriptableData 추가되면 실행")]
         private void LoadProgressDict()
         {
-            if (ES3.KeyExists(RESEARCH_PROGRESS_KEY))
-            {
-                researchProgresses = ES3.Load(RESEARCH_PROGRESS_KEY, new Dictionary<int, float>());
-            }
-            else
-            {
-                Debug.Log("[ResearchManager] Easy Save에 저장된 데이터가 없습니다. Dictionary를 새로 생성합니다.");
-                InitializeProgressDict(); 
-            }
+            researchProgresses = SaveManager.Instance.LoadResearchProgressData(new Dictionary<int, float>());
+
+            // legacy code
+
+            //if (ES3.KeyExists(RESEARCH_PROGRESS_KEY))
+            //{
+            //    researchProgresses = ES3.Load(RESEARCH_PROGRESS_KEY, new Dictionary<int, float>());
+            //}
+            //else
+            //{
+            //    Debug.Log("[ResearchManager] Easy Save에 저장된 데이터가 없습니다. Dictionary를 새로 생성합니다.");
+            //    InitializeProgressDict(); 
+            //}
         }
-        
+
         #endregion
-        
+
         #region Unity event methods
         private void Start()
         {
@@ -168,7 +161,7 @@ namespace DrillGame
         
         private void OnApplicationQuit()
         {
-            SaveResearchProgressData();
+            SaveManager.Instance.SaveResearchProgressData(researchProgresses);
         }
         #endregion
 
@@ -195,7 +188,8 @@ namespace DrillGame
         [ContextMenu("ES3 키 삭제")]
         public void DeleteResearchDataInES3()
         {
-            ES3.DeleteKey(RESEARCH_PROGRESS_KEY);
+            SaveManager.Instance.DeleteResearchId();
+            SaveManager.Instance.DeleteResearchProgressData();
         }
                 
         /// <summary>
@@ -212,7 +206,7 @@ namespace DrillGame
             }
             Debug.Log("모든 연구 진척도가 0%로 초기화되었습니다.");
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
-            SaveResearchProgressData();
+            SaveManager.Instance.SaveResearchProgressData(researchProgresses);
         }
 
         /// <summary>
