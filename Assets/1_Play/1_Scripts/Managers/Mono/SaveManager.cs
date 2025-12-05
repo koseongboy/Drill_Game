@@ -39,7 +39,16 @@ namespace DrillGame.Managers
         }
         private void Initialize()
         {
-            
+            if(IsFirstLaunch() == false)
+            {
+                Debug.Log("첫 실행 감지됨. 첫 실행 데이터 설정 중...");
+                SetFirstLaunchData();
+            }
+            else
+            {
+                Debug.Log("첫 실행 아님. 저장된 데이터 검사 중...");
+                CheckAllData();
+            }
         }
         #endregion
 
@@ -270,6 +279,17 @@ namespace DrillGame.Managers
             else
             {
                 return false;
+            }
+        }
+
+        private void CheckAllData()
+        {
+            foreach (var key in SaveKeys.Values)
+            {
+                if (!ES3.KeyExists(key))
+                {
+                    Debug.LogWarning($"No saved data found for key: {key}");
+                }
             }
         }
         #endregion
