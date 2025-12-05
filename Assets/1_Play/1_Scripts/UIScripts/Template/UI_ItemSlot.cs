@@ -22,15 +22,8 @@ namespace DrillGame
                 : count.ToString();
             
             // Sprite
-            var path = "Icon/ItemIcon/" + itemData.ItemIcon;
-            Sprite icon = Resources.Load<Sprite>(path);
-            if (icon == null)
-            {
-                Debug.LogError("Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : "+path);
-                return;
-            }
-            
-            Icon.sprite = icon;
+            var icon = SpriteLoader.Instance.LoadSprite(itemData.ItemIcon);
+            Icon.sprite = icon.Result;
         }
 
         public void OnClick()

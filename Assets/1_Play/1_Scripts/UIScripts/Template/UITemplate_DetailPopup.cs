@@ -1,5 +1,6 @@
 using DG.Tweening;
 using DrillGame.Core.Engine;
+using DrillGame.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
 using UnityEngine;
@@ -70,14 +71,7 @@ namespace DrillGame
             titleTxt.text = name;
             descTxt.text = desc;
             
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + iconName);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {iconName}");
-                return;
-            }
-            iconImg.sprite = icon;
+            iconImg.sprite = SpriteLoader.Instance.LoadSprite(iconName).Result;
         }
         
         protected void OpenAction()

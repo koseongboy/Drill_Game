@@ -5,49 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="739761cd-f12f-45be-b33a-f3bec6d455c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/SpriteLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/SpriteLoader.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Drill_Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/CSVData/Item_Data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/100_Data/XlsxFiles/Item_Data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_128.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_32.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C1/Ingots_C1_64.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_128.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_32.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C2/Ingots_C2_64.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_128.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_32.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C3/Ingots_C3_64.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_128.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_32.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ingots/C4/Ingots_C4_64.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C1/Ore_Rocks_Minerals_C1_128.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C1/Ore_Rocks_Minerals_C1_128.png.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C2/Ore_Rocks_Minerals_C2_128.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C2/Ore_Rocks_Minerals_C2_128.png.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C3/Ore_Rocks_Minerals_C3_128.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C3/Ore_Rocks_Minerals_C3_128.png.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C4/Ore_Rocks_Minerals_C4_128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3_ArtResource/WCE Assets/Pixel Ores/C4/Ore_Rocks_Minerals_C4_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/SpriteLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/Managers/Mono/SpriteLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_UpperButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Common/UI_UpperButtons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UITemplate_DetailPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UITemplate_DetailPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ContentPiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ContentPiece.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ItemSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ResourceItemPiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1_Play/1_Scripts/UIScripts/Template/UI_ResourceItemPiece.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetGroupSortSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetGroupSortSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Sprites.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Sprites.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C1_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C1_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C2_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C2_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C3_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C3_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C4_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ingots_C4_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C1_128.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C1_128.png.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C2_128.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C2_128.png.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C3_128.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C3_128.png.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C4_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Ore_Rocks_Minerals_C4_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Sprites.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/Sprites.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/drillIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/drillIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/engineMergerIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/engineMergerIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/engine_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/engine_test.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/ironIngot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/ironIngot.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/labIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/labIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/resourceMergerIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/resourceMergerIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Icon/ItemIcon/stone.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core5.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core6.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Core_Data_/Core7.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Copper_Material.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Copper_Material.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Copper_Resource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Copper_Resource.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Gold_Material.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Gold_Material.asset" afterDir="false" />
@@ -62,6 +72,20 @@
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Titanium_Resource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Titanium_Resource.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Tunstein_Material.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Tunstein_Material.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Tunstein_Resource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Item_Data_/Tunstein_Resource.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Research_Data_/Iron_Tech.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Research_Data_/Iron_Tech.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/AllView.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/AllView.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/GridEdit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/GridEdit.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/LowerView_Engine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/LowerView_Engine.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/Selected_Circle_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/Selected_Circle_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/UpperView_Facility.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/UpperView_Facility.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/White-Circle-PNG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UISprite/Button/White-Circle-PNG.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,21 +126,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Crocobob&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Crocobob",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Desktop/캡스톤 빌드파일\Drill Game.exe" />
@@ -225,6 +249,7 @@
       <workItem from="1764683063031" duration="2928000" />
       <workItem from="1764728302046" duration="5140000" />
       <workItem from="1764836429953" duration="3239000" />
+      <workItem from="1764905844252" duration="6649000" />
     </task>
     <servers />
   </component>

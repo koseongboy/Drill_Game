@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using DrillGame.Managers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,16 +18,7 @@ namespace DrillGame
             ui_name.text = itemData.DisplayName;                
             ui_count.text = count == 0 ? "" : count.ToString();
             
-            // Sprite
-            var path = "Icon/ItemIcon/" + itemData.ItemIcon;
-            Sprite icon = Resources.Load<Sprite>(path);
-            if (icon == null)
-            {
-                Debug.LogError("Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : "+path);
-                return;
-            }
-            
-            ui_icon.sprite = icon;
+            ui_icon.sprite = SpriteLoader.Instance.LoadSprite(itemData.ItemIcon).Result;
         }
     }
 }
