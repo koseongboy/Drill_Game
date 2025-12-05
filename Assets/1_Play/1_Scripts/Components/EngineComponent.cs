@@ -35,6 +35,7 @@ namespace DrillGame.View.Engine
 
         // for temp graphic action
         private SpriteRenderer spriteRenderer;
+        
         private Color originalColor;
         private Color flashColor = Color.yellow;
         private float flashDuration = 0.15f;
@@ -67,6 +68,8 @@ namespace DrillGame.View.Engine
 
         public void Initialize(Vector2Int startPosition, int itemId=0, int entityId=0)
         {
+            BoxCollider2D existingCollider = GetComponent<BoxCollider2D>();
+            if (existingCollider != null) Destroy(existingCollider);
             data = ScriptableObjectManager.Instance.GetData<Engine_Data_>(entityId);
             engineType = data.Type;
             formations = data.GetCoordinates();
@@ -99,8 +102,12 @@ namespace DrillGame.View.Engine
             texture.Apply();
             foreach(var formation in formations)
             {
+                BoxCollider2D tileCollider = gameObject.AddComponent<BoxCollider2D>();
+                tileCollider.size = new Vector2(1f, 1f);
                 int xOffset = formation.x * (int)NormalTile.rect.width;
                 int yOffset = formation.y * (int)NormalTile.rect.height;
+                Vector2 worldUnitPos = new Vector2(xOffset, yOffset);
+                tileCollider.offset = new Vector2(formation.x, formation.y);
                 if(formation == data.GetMainCoordinate())
                 {
                     // MainTile 그리기
