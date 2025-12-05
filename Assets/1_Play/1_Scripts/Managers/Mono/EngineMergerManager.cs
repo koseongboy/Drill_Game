@@ -43,7 +43,7 @@ namespace DrillGame.Managers
                 Instance = this;
             }
             
-            LoadEngineMergerDataFromES3();
+            LoadEngineMergerData();
         }
         #endregion
 
@@ -199,7 +199,7 @@ namespace DrillGame.Managers
             }
         }
         
-        private void LoadEngineMergerDataFromES3()
+        private void LoadEngineMergerData()
         {
             var data = SaveManager.Instance.LoadEngineMergerData(new EngineMergerData(0,0,0,0));
             currentType = data.type;
@@ -212,7 +212,7 @@ namespace DrillGame.Managers
         private void SaveEngineMergerData()
         {
             var data = new EngineMergerData(currentType, progress, targetEngineItemId, inputEngineItemId);
-            ES3.Save(SaveManager.Instance.SaveKeys["ENGINE_MERGER_KEY"], data);
+            SaveManager.Instance.SaveEngineMergerData(data);
         }
         #endregion
 

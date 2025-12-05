@@ -32,7 +32,7 @@ namespace DrillGame.Managers
                 Instance = this;
             }
 
-            LoadResourceConverterDataFromES3();
+            LoadResourceConverterData();
         }
 
         private void Init()
@@ -107,7 +107,7 @@ namespace DrillGame.Managers
         #endregion
 
         #region private methods
-        private void LoadResourceConverterDataFromES3()
+        private void LoadResourceConverterData()
         {
             var data = SaveManager.Instance.LoadResourceConverterData(new ResourceConverter_SaveData(0, 0));
             inputItemId = data.inputItemId;
