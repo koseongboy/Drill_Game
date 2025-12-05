@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DrillGame.Core.Managers;
 using DrillGame.UI;
 using UnityEngine;
@@ -52,7 +52,6 @@ namespace DrillGame.Managers
         
         public Action OnProcessChanged;
 
-        private const string RESOURCE_MERGER_KEY = "ResourceMergerData";
         #endregion
 
         #region getters & setters
@@ -110,7 +109,7 @@ namespace DrillGame.Managers
         #region private methods
         private void LoadResourceConverterDataFromES3()
         {
-            var data = ES3.Load(RESOURCE_MERGER_KEY, new ResourceConverter_SaveData(0, 0));
+            var data = SaveManager.Instance.LoadResourceConverterData(new ResourceConverter_SaveData(0, 0));
             inputItemId = data.inputItemId;
             outputItemId = data.outputItemId;
         }
@@ -118,7 +117,7 @@ namespace DrillGame.Managers
         private void SaveResourceConverterData()
         {
             var data = new ResourceConverter_SaveData( inputItemId, outputItemId );
-            ES3.Save(RESOURCE_MERGER_KEY, data);
+            SaveManager.Instance.SetResourceConverterData( data );
         }
         #endregion
 

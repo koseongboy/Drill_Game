@@ -66,9 +66,7 @@ namespace DrillGame.Managers
 
         public void SaveResearchProgressData(Dictionary<int, float> researchProgresses)
         {
-
             ES3.Save(SaveKeys["RESEARCH_PROGRESS_KEY"], researchProgresses);
-
         }
 
 
@@ -121,6 +119,34 @@ namespace DrillGame.Managers
             var defaultData = new EngineMergerData(0, 0, 0, 0);
             ES3.Save(SaveKeys["ENGINE_MERGER_KEY"], defaultData);
             Debug.Log("엔진 머저 매니저 데이터가 초기화되었습니다.");
+        }
+
+        public void SetResourceConverterData(ResourceConverter_SaveData data)
+        {
+            ES3.Save("ResourceConverterData", data);
+        }
+
+        public ResourceConverter_SaveData LoadResourceConverterData(ResourceConverter_SaveData defaultValue)
+        {
+            if (ES3.KeyExists("ResourceConverterData"))
+            {
+                return ES3.Load<ResourceConverter_SaveData>("ResourceConverterData");
+            }
+            Debug.LogWarning("No saved ResourceConverterData found.");
+            return defaultValue;
+        }
+
+        public void DeleteResourceConverterData()
+        {
+            ES3.DeleteKey("ResourceConverterData");
+        }
+
+        [ContextMenu("리소스 컨버터 매니저 단독 초기화")]
+        public void InitializeResourceConverterManagerData()
+        {
+            var defaultData = new ResourceConverter_SaveData(0, 0);
+            ES3.Save("ResourceConverterData", defaultData);
+            Debug.Log("리소스 컨버터 매니저 데이터가 초기화되었습니다.");
         }
 
         [ContextMenu("리셋 데이터")]
