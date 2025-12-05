@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uCCA0 \uC790\uC7AC"
   ItemType: Resource
   EntityId: 0
-  ItemIcon: Ingots_C4_128_7
+  ItemIcon: 'Ingots_C4_128[Ingots_C4_128_7]'

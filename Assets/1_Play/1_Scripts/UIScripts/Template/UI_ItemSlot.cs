@@ -12,7 +12,7 @@ namespace DrillGame
         [SerializeField] private Image Icon;
         [SerializeField] private TextMeshProUGUI Count;
 
-        public void SetItemData(Item_Data_ itemData, int count = 0)
+        public async void SetItemData(Item_Data_ itemData, int count = 0)
         {
             // Id
             itemId = itemData.GetId();
@@ -22,15 +22,7 @@ namespace DrillGame
                 : count.ToString();
             
             // Sprite
-            var path = "Icon/ItemIcon/" + itemData.ItemIcon;
-            Sprite icon = Resources.Load<Sprite>(path);
-            if (icon == null)
-            {
-                Debug.LogError("Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : "+path);
-                return;
-            }
-            
-            Icon.sprite = icon;
+            Icon.sprite = await SpriteLoader.Instance.LoadSprite(itemData.ItemIcon);
         }
 
         public void OnClick()

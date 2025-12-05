@@ -1,5 +1,6 @@
 using DG.Tweening;
 using DrillGame.Core.Engine;
+using DrillGame.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
 using UnityEngine;
@@ -65,19 +66,12 @@ namespace DrillGame
         #endregion
 
         #region private methods
-        protected virtual void UpdateDetail(string name, string desc, string iconName)
+        protected virtual async void UpdateDetail(string name, string desc, string iconName)
         {
             titleTxt.text = name;
             descTxt.text = desc;
             
-            // Sprite
-            Sprite icon = Resources.Load<Sprite>("Icon/ItemIcon/" + iconName);
-            if (icon == null)
-            {
-                Debug.LogError($"Error: Resources 폴더에서 스프라이트 자원을 찾을 수 없습니다. : {iconName}");
-                return;
-            }
-            iconImg.sprite = icon;
+            iconImg.sprite = await SpriteLoader.Instance.LoadSprite(iconName);
         }
         
         protected void OpenAction()
