@@ -16,15 +16,15 @@ MonoBehaviour:
   EngineId: 201
   DisplayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.4"
   Icon: engine_test
-  Type: Green
+  Type: '#B2EBF2'
   Level: 4
   Coordinates:
   - 0,0
   - 0,1
-  - 0,2
-  - 1,2
+  - 1,0
+  - 1,1
   Desc: "\uC5D4\uC9C4 \uC704\uCE58\uC758 \uC0C1\uBD80 \uC2DC\uC124\uC744 \uC791\uB3D9\uC2DC\uD0B5\uB2C8\uB2E4."
   ResourceItemId: 1008
   ResourceItemCount: 1000
-  Length: 2,3
-  MainCoordinate: 0,2
+  Length: 2,2
+  MainCoordinate: 0,0

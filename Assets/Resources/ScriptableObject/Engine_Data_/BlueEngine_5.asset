@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df4ec524dd02b9548a0ed11e72836a61, type: 3}
-  m_Name: GreenEngine_3
+  m_Name: BlueEngine_5
   m_EditorClassIdentifier: Assembly-CSharp::Engine_Data_
-  Id: 201003
-  EngineId: 201
-  DisplayName: "\uCD08\uB85D \uC5D4\uC9C4 Lv.3"
+  Id: 203005
+  EngineId: 203
+  DisplayName: "\uD30C\uB791 \uC5D4\uC9C4 Lv.5"
   Icon: engine_test
-  Type: '#B2EBF2'
-  Level: 3
+  Type: '#B3CCFF'
+  Level: 5
   Coordinates:
   - 0,0
   - 0,1
-  - 1,0
+  - 0,2
+  - 0,3
+  - 0,4
   Desc: "\uC5D4\uC9C4 \uC704\uCE58\uC758 \uC0C1\uBD80 \uC2DC\uC124\uC744 \uC791\uB3D9\uC2DC\uD0B5\uB2C8\uB2E4."
-  ResourceItemId: 1006
-  ResourceItemCount: 1000
-  Length: 2,2
-  MainCoordinate: 0,0
+  ResourceItemId: 0
+  ResourceItemCount: 0
+  Length: 1,5
+  MainCoordinate: 0,2
