@@ -1324,6 +1324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1301394347}
     m_Modifications:
+    - target: {fileID: 2238131080520458443, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2943109278563650212, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -1534,15 +1538,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.b
-      value: 0.33081168
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.g
-      value: 0.33081168
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.r
-      value: 0.3962264
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365942453335953496, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Name
@@ -10644,12 +10648,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6904583494883765526, guid: 39218a4aeecb2d0479b79e3564855f13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5daf3f3d618e84285c26af91518cd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9, y: 0.1}
+  m_Size: {x: 0.8, y: 0.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -10682,6 +10686,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8665ec8eed15f04dae367a2129d7888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Drill.DrillComponent
+  particle: {fileID: 0}
+  wiggleDuration: 0.5
+  wiggleMagnitude: 0.1
+  wiggleCycles: 3
 --- !u!198 &1543279412
 ParticleSystem:
   m_ObjectHideFlags: 0
