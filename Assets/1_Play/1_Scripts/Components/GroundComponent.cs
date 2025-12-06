@@ -193,10 +193,7 @@ namespace DrillGame.View.Ground
         #endregion
 
         #region Unity event methods
-        private void OnApplicationQuit()
-        {
-            SaveCurrentGroundData();
-        }
+        
         #endregion
         
         #region DEV

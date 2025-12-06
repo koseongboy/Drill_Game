@@ -218,10 +218,7 @@ namespace DrillGame.Managers
         #endregion
 
         #region Unity event methods
-        private void OnApplicationQuit()
-        {
-            SaveEngineMergerData();
-        }
+        
         #endregion
 
         #region DEV

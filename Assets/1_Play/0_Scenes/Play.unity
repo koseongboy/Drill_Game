@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3875601258468412749, guid: 832d0a7c8558d594abecd975b01b8148, type: 3}
+      - m_Target: {fileID: 8428938451878672540, guid: 832d0a7c8558d594abecd975b01b8148, type: 3}
         m_TargetAssemblyTypeName: DrillGame.UI_Inventory, Assembly-CSharp
         m_MethodName: AddItems_GameStart
         m_Mode: 1
@@ -4093,7 +4093,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.888889
+  orthographic size: 11.111112
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -22,6 +22,7 @@ namespace DrillGame.Managers
             { "DRILL_DATA_KEY", "DrillData" },
             { "GROUND_DEPTH_KEY", "GroundDepthData" },
             { "GROUND_HP_KEY", "GroundHPData" },
+            { "INVENTORY_KEY", "InventoryData" },
 
         };
 
@@ -240,6 +241,26 @@ namespace DrillGame.Managers
             Debug.Log("지면 HP 매니저 데이터가 초기화되었습니다.");
         }
 
+        public void SaveInventoryData(Dictionary<int, int> inventoryData)
+        {
+            ES3.Save(SaveKeys["INVENTORY_KEY"], inventoryData);
+        }
+
+        public Dictionary<int, int> LoadInventoryData(Dictionary<int, int> defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["INVENTORY_KEY"]))
+            {
+                var data = ES3.Load<Dictionary<int, int>>(SaveKeys["INVENTORY_KEY"]);
+                return data;
+            }
+            Debug.LogWarning("No saved InventoryData found.");
+            return defaultValue;
+        }
+        public void DeleteInventoryData()
+        {
+            ES3.DeleteKey(SaveKeys["INVENTORY_KEY"]);
+        }
+
         [ContextMenu("리셋 데이터")]
         public void ResetAllData()
         {
@@ -263,6 +284,7 @@ namespace DrillGame.Managers
             ES3.Save(SaveKeys["DRILL_DATA_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_DEPTH_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_HP_KEY"], ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
+            ES3.Save(SaveKeys["INVENTORY_KEY"], new Dictionary<int, int>());
 
             Debug.Log("첫 실행 데이터가 설정되었습니다.");
         }
@@ -302,6 +324,10 @@ namespace DrillGame.Managers
         #endregion
 
         #region Unity event methods
+        private void OnApplicationQuit()
+        {
+            RequestAllDataSave();
+        }
         #endregion
     }
 }
