@@ -84,6 +84,8 @@ namespace DrillGame.View.Ground
             
             //기존 데이터로 엔티티 및 땅 색(재질) 초기화
             setNewData(currentDepth, userHp);
+
+            SaveManager.OnRequestAllDataSave += SaveCurrentGroundData;
         }
 
         #endregion
@@ -182,10 +184,10 @@ namespace DrillGame.View.Ground
             NextGroundSprite = (Sprite)NextGroundHandle.Result;
         }
         
-        private void SaveCurrentGroundData(int depth, int hp)
+        private void SaveCurrentGroundData()
         {
-            SaveManager.Instance.SaveGroundDepthData(depth);
-            SaveManager.Instance.SaveGroundHPData(hp);
+            SaveManager.Instance.SaveGroundDepthData(GroundEntity.Depth);
+            SaveManager.Instance.SaveGroundHPData(GroundEntity.CurrentHp);
         }
 
         #endregion
@@ -193,7 +195,7 @@ namespace DrillGame.View.Ground
         #region Unity event methods
         private void OnApplicationQuit()
         {
-            SaveCurrentGroundData(GroundEntity.Depth, GroundEntity.CurrentHp);
+            SaveCurrentGroundData();
         }
         #endregion
         

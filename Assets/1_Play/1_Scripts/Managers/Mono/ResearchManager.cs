@@ -171,6 +171,10 @@ namespace DrillGame
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
         }
         
+        private void SaveData()
+        {
+            SaveManager.Instance.SaveResearchProgressData(researchProgresses);
+        }
         #endregion
 
         #region Unity event methods
@@ -179,11 +183,12 @@ namespace DrillGame
             LoadResearchKey();
             LoadProgressDict();
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId],GetResearchProgressRate( selectedResearchId ) );
+            SaveManager.OnRequestAllDataSave += SaveData;
         }
         
         private void OnApplicationQuit()
         {
-            SaveManager.Instance.SaveResearchProgressData(researchProgresses);
+            SaveData();
         }
         #endregion
 

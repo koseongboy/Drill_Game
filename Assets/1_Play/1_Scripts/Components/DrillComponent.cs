@@ -61,6 +61,9 @@ namespace DrillGame.View.Drill
             else
                 Debug.LogError("드릴 데이터 로드 실패!");
             
+            SaveManager.OnRequestAllDataSave += SaveDrillData;
+
+
             //드릴 스프라이트 초기화
             LoadSprite();
         }
@@ -101,7 +104,7 @@ namespace DrillGame.View.Drill
             }
             drillLevel = toWhat;
             LoadSprite();
-            SaveDrillData(drillLevel);
+            SaveDrillData();
             Debug.Log("드릴 레벨 업! 현재 레벨: " + drillLevel);
         }
 
@@ -124,9 +127,9 @@ namespace DrillGame.View.Drill
         #endregion
 
         #region private methods
-        private void SaveDrillData(int level)
+        private void SaveDrillData()
         {
-            SaveManager.Instance.SaveDrillData(level);
+            SaveManager.Instance.SaveDrillData(drillLevel);
         }
         IEnumerator DrillAnimation()
         {
