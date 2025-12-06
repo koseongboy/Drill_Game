@@ -42,7 +42,7 @@ namespace DrillGame
             
             var coreLevel = CoreManager.Instance.GetCoreLevel();
             UpdateDetail($"코어 Lv.{coreLevel}",
-                "공장의 모든 엔진을 가동하기 위한 코어이다.\n이곳에서 시설을 새로 지을 수 있다.",
+                "공장의 모든 엔진을 가동하기 위한 코어이다. 이곳에서 시설을 새로 지을 수 있다.",
                 "coreIcon");
         }
         

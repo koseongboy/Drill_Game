@@ -13,8 +13,25 @@ namespace DrillGame
 {
     public class UI_UpperButtons : MonoBehaviour, UI_IAddressable
     {
+        
+        #region Singleton & initialization
+        public static UI_UpperButtons Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
+        #endregion
+        
         [SerializeField]
         private string addressableName;
+        
         
         [SerializeField] private UI_Inventory ui_Inventory;
 
