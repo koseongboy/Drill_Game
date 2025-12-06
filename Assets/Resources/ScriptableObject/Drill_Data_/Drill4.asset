@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: Drill4
   DisplayName: "\uAE08 \uB4DC\uB9B4"
   Damage: 5
-  DrillSprite: copper_drill
+  DrillSprite: gold_drill
