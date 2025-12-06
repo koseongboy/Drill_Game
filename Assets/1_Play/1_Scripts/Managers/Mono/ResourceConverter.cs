@@ -32,6 +32,7 @@ namespace DrillGame.Managers
                 Instance = this;
             }
 
+            SaveManager.OnRequestAllDataSave += SaveResourceConverterData;
             LoadResourceConverterData();
         }
 

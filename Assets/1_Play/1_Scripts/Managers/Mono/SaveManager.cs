@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace DrillGame.Managers
         public static SaveManager Instance { get; private set; }
 
         private const string IS_FIRST_LAUNCH_KEY = "IsFirstLaunch";
+
+        public static event Action OnRequestAllDataSave;
 
         public Dictionary<string, string> SaveKeys = new Dictionary<string, string>()
         {
@@ -264,7 +267,11 @@ namespace DrillGame.Managers
             Debug.Log("첫 실행 데이터가 설정되었습니다.");
         }
 
-
+        public void RequestAllDataSave()
+        {
+            OnRequestAllDataSave?.Invoke();
+            Debug.Log("모든 매니저에 데이터 저장 요청이 전송되었습니다.");
+        }
 
 
         #endregion
