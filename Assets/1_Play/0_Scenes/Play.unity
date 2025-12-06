@@ -10874,7 +10874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8665ec8eed15f04dae367a2129d7888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Drill.DrillComponent
-  particle: {fileID: 0}
+  particle: {fileID: 1543279412}
   wiggleDuration: 0.5
   wiggleMagnitude: 0.1
   wiggleCycles: 3
@@ -11132,7 +11132,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11456,7 +11456,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 10
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11596,7 +11596,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.66
+      value: 0.22
       mode: 0
       spread: 0
       speed:
