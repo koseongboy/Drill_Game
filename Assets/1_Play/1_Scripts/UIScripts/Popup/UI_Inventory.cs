@@ -4,6 +4,7 @@ using System.Linq;
 using DrillGame._1_Play._1_Scripts.Managers.Mono;
 using DrillGame.Core.Managers;
 using DrillGame.Managers;
+using DrillGame.UI;
 using DrillGame.UI.Interface;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -25,6 +26,11 @@ namespace DrillGame
         public void LinkAddressable(string address)
         {
             addressableName = address;
+        }
+
+        public void CloseUI()
+        {
+            UI_UpperButtons.Instance.EditButtonPressed();
         }
         
         

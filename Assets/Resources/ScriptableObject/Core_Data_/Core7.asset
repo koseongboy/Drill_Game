@@ -16,8 +16,8 @@ MonoBehaviour:
   Name: Core7
   DisplayName: "\uCF54\uC5B4 Lv.7"
   Level: 7
-  FacilityCount: 32
-  EngineCount: 16
+  FacilityCount: 33
+  EngineCount: 17
   FactoryLength: 42
   UpgradeRequiredDepth: 30
   UpgradeRequiredItemId: 1012

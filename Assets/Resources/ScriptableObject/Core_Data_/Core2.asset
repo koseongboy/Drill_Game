@@ -16,8 +16,8 @@ MonoBehaviour:
   Name: Core2
   DisplayName: "\uCF54\uC5B4 Lv.2"
   Level: 2
-  FacilityCount: 12
-  EngineCount: 6
+  FacilityCount: 13
+  EngineCount: 7
   FactoryLength: 17
   UpgradeRequiredDepth: 5
   UpgradeRequiredItemId: 1002

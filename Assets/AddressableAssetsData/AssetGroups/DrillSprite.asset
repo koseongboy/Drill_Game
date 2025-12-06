@@ -15,18 +15,38 @@ MonoBehaviour:
   m_GroupName: DrillSprite
   m_GUID: 682d1ca0fdcce044b98333652f977d9f
   m_SerializeEntries:
-  - m_GUID: 39218a4aeecb2d0479b79e3564855f13
-    m_Address: stone_drill__
+  - m_GUID: 183fc1bc26710504e8e0172e80963548
+    m_Address: titanium_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5f3a34035b7582248ae5b3da2ba67946
+  - m_GUID: 3a46c0a6b80b39541af6c2608f0fe90d
     m_Address: copper_drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40bab449228c8234bb6377bc8fef8dbc
+    m_Address: iron_drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 537e6e8974b7a2a4db902e2f95283a26
+    m_Address: tunstein_drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96534894fc5a45743aaee99c663c5c1c
+    m_Address: obsidian_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af5daf3f3d618e84285c26af91518cd5
     m_Address: stone_drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec53eab3edf7cbd449dd5c936e88b221
+    m_Address: gold_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

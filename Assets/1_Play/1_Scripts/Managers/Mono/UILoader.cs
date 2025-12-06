@@ -258,6 +258,7 @@ namespace DrillGame.UI
                 if (uiInstance.TryGetComponent<UI_Alert>(out var uiAlert))
                 {
                     uiAlert.UpdateUI(text);
+                    uiAlert.OpenAction();
                 }
                 return;
             }

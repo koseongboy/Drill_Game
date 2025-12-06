@@ -16,8 +16,8 @@ MonoBehaviour:
   Name: Core6
   DisplayName: "\uCF54\uC5B4 Lv.6"
   Level: 6
-  FacilityCount: 28
-  EngineCount: 14
+  FacilityCount: 29
+  EngineCount: 15
   FactoryLength: 37
   UpgradeRequiredDepth: 25
   UpgradeRequiredItemId: 1010
