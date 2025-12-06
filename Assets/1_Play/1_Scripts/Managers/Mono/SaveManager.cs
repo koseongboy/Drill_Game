@@ -1,3 +1,4 @@
+using DrillGame.Core.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,6 +54,8 @@ namespace DrillGame.Managers
                 Debug.Log("첫 실행 아님. 저장된 데이터 검사 중...");
                 CheckAllData();
             }
+
+            //InventoryManager.Instance.CallInventoryManager();
         }
         #endregion
 

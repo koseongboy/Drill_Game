@@ -59,7 +59,7 @@ namespace DrillGame.Core.Managers
             instance.inventoryItems = SaveManager.Instance.LoadInventoryData(new Dictionary<int, int>());
             Debug.Log("InventoryManager initialized with " + instance.inventoryItems.Count + " items.");
 
-            instance.OnInventoryUpdated.Invoke();
+            //instance.OnInventoryUpdated?.Invoke();
 
             SaveManager.OnRequestAllDataSave += instance.SaveInventoryData;
         }
@@ -70,6 +70,12 @@ namespace DrillGame.Core.Managers
         #endregion
 
         #region public methods
+        public void CallInventoryManager()
+        {
+            Debug.Log("InventoryManager called. Lazy initialization ");
+            return;
+        }
+
         public void AddItem(Item_Data_ item, int count = 1)
         {
             AddItem(item.GetId(), count);
