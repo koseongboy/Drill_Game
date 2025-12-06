@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a46c0a6b80b39541af6c2608f0fe90d
+guid: 183fc1bc26710504e8e0172e80963548
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2367589503577256941
-    second: copper_drill_0
+      213: 6879087391837337497
+    second: titanium_drill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: copper_drill_0
+      name: titanium_drill_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de37aa60c1e5bd020800000000000000
-      internalID: 2367589503577256941
+      spriteID: 9973551398d677f50800000000000000
+      internalID: 6879087391837337497
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      copper_drill_0: 2367589503577256941
+      titanium_drill_0: 6879087391837337497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

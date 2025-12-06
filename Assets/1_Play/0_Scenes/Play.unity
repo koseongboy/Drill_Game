@@ -1329,6 +1329,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -46.600037
       objectReference: {fileID: 0}
+    - target: {fileID: 2238131080520458443, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2943109278563650212, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -1539,15 +1543,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.b
-      value: 0.33081168
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.g
-      value: 0.33081168
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6504118530486162410, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Color.r
-      value: 0.3962264
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365942453335953496, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_Name
@@ -7762,7 +7766,7 @@ Canvas:
   m_GameObject: {fileID: 1301394346}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 475047029}
   m_PlaneDistance: 0.4
   m_PixelPerfect: 0
@@ -10706,12 +10710,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6904583494883765526, guid: 39218a4aeecb2d0479b79e3564855f13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96534894fc5a45743aaee99c663c5c1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9, y: 0.1}
+  m_Size: {x: 0.8, y: 0.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -10726,8 +10730,8 @@ Transform:
   m_GameObject: {fileID: 1543279408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8, z: 0}
-  m_LocalScale: {x: 10, y: 18, z: 1}
+  m_LocalPosition: {x: 0, y: -8.1, z: 0}
+  m_LocalScale: {x: 10, y: 15.939715, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -16058,7 +16062,7 @@ Transform:
   m_GameObject: {fileID: 1583862333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.5292, z: 0}
+  m_LocalPosition: {x: 0, y: -10.5292, z: -1}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -29131,5 +29135,5 @@ SceneRoots:
   - {fileID: 1560264975}
   - {fileID: 146924362}
   - {fileID: 357322639}
-  - {fileID: 1583862336}
   - {fileID: 1543279410}
+  - {fileID: 1583862336}

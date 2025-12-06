@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a46c0a6b80b39541af6c2608f0fe90d
+guid: 39218a4aeecb2d0479b79e3564855f13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2367589503577256941
-    second: copper_drill_0
+      213: -6904583494883765526
+    second: stone_drill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: copper_drill_0
+      name: stone_drill_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 18
+        width: 90
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de37aa60c1e5bd020800000000000000
-      internalID: 2367589503577256941
+      spriteID: ae29d69b4edfd20a0800000000000000
+      internalID: -6904583494883765526
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      copper_drill_0: 2367589503577256941
+      stone_drill_0: -6904583494883765526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: Drill3
   DisplayName: "\uCCA0 \uB4DC\uB9B4"
   Damage: 3
-  DrillSprite: copper_drill
+  DrillSprite: iron_drill

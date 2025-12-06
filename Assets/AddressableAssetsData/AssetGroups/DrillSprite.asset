@@ -16,12 +16,17 @@ MonoBehaviour:
   m_GUID: 682d1ca0fdcce044b98333652f977d9f
   m_SerializeEntries:
   - m_GUID: 39218a4aeecb2d0479b79e3564855f13
-    m_Address: stone_drill
+    m_Address: stone_drill__
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5f3a34035b7582248ae5b3da2ba67946
     m_Address: copper_drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af5daf3f3d618e84285c26af91518cd5
+    m_Address: stone_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
