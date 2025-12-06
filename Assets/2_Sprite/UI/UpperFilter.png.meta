@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5f3a34035b7582248ae5b3da2ba67946
+guid: 90fd869d2056d934baf99bacf157d6af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2367589503577256941
-    second: copper_drill_0
+      213: -2415533602613428698
+    second: UpperFilter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: copper_drill_0
+      name: UpperFilter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 90
-        height: 10
+        width: 595
+        height: 842
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de37aa60c1e5bd020800000000000000
-      internalID: 2367589503577256941
+      spriteID: 62ef4398cfc4a7ed0800000000000000
+      internalID: -2415533602613428698
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      copper_drill_0: 2367589503577256941
+      UpperFilter_0: -2415533602613428698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1325,13 +1325,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1301394347}
     m_Modifications:
-    - target: {fileID: 2301650696322344706, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -46.600037
-      objectReference: {fileID: 0}
     - target: {fileID: 2238131080520458443, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301650696322344706, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -46.600037
       objectReference: {fileID: 0}
     - target: {fileID: 2943109278563650212, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_LocalScale.x
@@ -3967,7 +3967,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 8.888889
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

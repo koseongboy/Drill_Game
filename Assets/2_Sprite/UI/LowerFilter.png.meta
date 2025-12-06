@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 39218a4aeecb2d0479b79e3564855f13
+guid: ce0c6a1f463814d429b460808043de5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6904583494883765526
-    second: stone_drill_0
+      213: 2923789853425254903
+    second: LowerFilter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stone_drill_0
+      name: LowerFilter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 90
-        height: 10
+        width: 595
+        height: 842
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae29d69b4edfd20a0800000000000000
-      internalID: -6904583494883765526
+      spriteID: 7f1cd4b7163639820800000000000000
+      internalID: 2923789853425254903
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stone_drill_0: -6904583494883765526
+      LowerFilter_0: 2923789853425254903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

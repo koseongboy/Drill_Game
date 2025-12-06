@@ -22,6 +22,9 @@ namespace DrillGame
         
         [SerializeField] private Image viewStateIcon;
         [SerializeField] private TextMeshProUGUI viewStateTxt;
+        
+        [SerializeField] private GameObject upperFilter;
+        [SerializeField] private GameObject lowerFilter;
 
         private bool isEditing = false;
         private bool isInventoryOpen = false;
@@ -123,6 +126,26 @@ namespace DrillGame
         {
             UpdateIcon_ViewStateButton(next);
             UpdateTxt_ViewStateButton(next);
+            UpdateUI_ViewFilter(next);
+        }
+
+        private void UpdateUI_ViewFilter(GameViewManager.ViewState next)
+        {
+            switch (next)
+            {
+                case GameViewManager.ViewState.FacilityOnly:
+                    upperFilter.SetActive(true);
+                    lowerFilter.SetActive(false);
+                    break;
+                case GameViewManager.ViewState.EngineOnly:
+                    upperFilter.SetActive(false);
+                    lowerFilter.SetActive(true);
+                    break;
+                case GameViewManager.ViewState.All:
+                    upperFilter.SetActive(false);
+                    lowerFilter.SetActive(false);
+                    break;
+            }
         }
 
         private async Task UpdateIcon_ViewStateButton(GameViewManager.ViewState next)

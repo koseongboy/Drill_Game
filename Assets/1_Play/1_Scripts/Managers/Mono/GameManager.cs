@@ -141,12 +141,12 @@ namespace DrillGame.Managers
             }
             else if (tilemapType == TilemapType.Facility && BoardManager.Instance.FailityCount >= CoreManager.Instance.GetMaxFacilityCount())
             {
-                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 시설 최대 개수 {CoreManager.Instance.GetMaxFacilityCount()}에 도달했습니다.");
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 시설 최대 개수 {CoreManager.Instance.GetMaxFacilityCount()-1}에 도달했습니다.");
                 return;
             }
             else if (tilemapType == TilemapType.Engine && BoardManager.Instance.EngineCount >= CoreManager.Instance.GetMaxEngineCount())
             {
-                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 엔진 최대 개수 {CoreManager.Instance.GetMaxEngineCount()}에 도달했습니다.");
+                UILoader.Instance.ShowAlert($"배치 모드 진입 실패: 엔진 최대 개수 {CoreManager.Instance.GetMaxEngineCount()-1}에 도달했습니다.");
                 return;
             }
 

@@ -106,10 +106,7 @@ namespace DrillGame
             }
             
             researchProgresses[selectedResearchId] += progressValue;
-            if (IsResearchDone(selectedResearchId)) {
-                OnResearchComplete();
-            }
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
+            CheckCompleteResearch();
         }
 
 
@@ -157,20 +154,23 @@ namespace DrillGame
             //    InitializeProgressDict(); 
             //}
         }
-
-        private void OnResearchComplete()
+        
+        private void CheckCompleteResearch()
         {
-            researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
+            if (IsResearchDone(selectedResearchId)) {
+                researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
 
-            if (selectedResearchId % 5 == 0) // 드릴 연구라면
-            {
-                var level = (selectedResearchId-30000) / 5 + 1;
-                DrillComponent.Instance.levelUp( level );   
+                if (selectedResearchId % 5 == 0) // 드릴 연구라면
+                {
+                    var level = (selectedResearchId-30000) / 5 + 1;
+                    DrillComponent.Instance.levelUp( level );   
+                }
+                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+                UnSelectResearch();
             }
-            Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
-            UnSelectResearch();
+            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
         }
-
+        
         #endregion
 
         #region Unity event methods
@@ -199,12 +199,7 @@ namespace DrillGame
             }
             
             researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
-            if (IsResearchDone(selectedResearchId)) {
-                researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
-                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
-                return;
-            }
-            OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
+            CheckCompleteResearch();
         }
 
         [ContextMenu("ES3 키 삭제")]

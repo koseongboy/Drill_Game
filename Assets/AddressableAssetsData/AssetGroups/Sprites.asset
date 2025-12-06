@@ -35,11 +35,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 183fc1bc26710504e8e0172e80963548
-    m_Address: titanium_drill
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2107ddfe5d57d4741a59ed752285f02a
     m_Address: ironIngot
     m_ReadOnly: 0
@@ -55,28 +50,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a46c0a6b80b39541af6c2608f0fe90d
-    m_Address: copper_drill
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 406c3a1f96aa5d74daa2b8535013d155
     m_Address: PixelIcon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 40bab449228c8234bb6377bc8fef8dbc
-    m_Address: iron_drill
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b155945e887ef94687e7d7392872225
     m_Address: drillIcon
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 537e6e8974b7a2a4db902e2f95283a26
-    m_Address: tunstein_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -102,11 +82,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b6eded22bab892498d88cafb6d7d2a3
     m_Address: LowerView_Engine
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 96534894fc5a45743aaee99c663c5c1c
-    m_Address: obsidian_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -137,11 +112,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df4f9108a9a6def4eb373a22d5b9a241
     m_Address: Ingots_C1_128
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ec53eab3edf7cbd449dd5c936e88b221
-    m_Address: gold_drill
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
