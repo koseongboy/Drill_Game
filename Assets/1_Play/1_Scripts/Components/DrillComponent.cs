@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DrillGame.Managers;
 using DrillGame.View.Ground;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,9 +15,6 @@ namespace DrillGame.View.Drill
         Drill_Data_ Currentdata;
         Sprite CurrentSprite;
         public ParticleSystem particle;
-
-        private const string ES3FILENAME = "DrillUserData.es3";
-        private const string DRILL_LEVEL = "DrillLevel";
 
         private int drillLevel;
 
@@ -53,14 +51,16 @@ namespace DrillGame.View.Drill
         {
             
             spriteRenderer = GetComponent<SpriteRenderer>();
-            ES3File es3File = new ES3File(ES3FILENAME);
-            drillLevel = es3File.Load(DRILL_LEVEL, 1);
+
+            drillLevel = SaveManager.Instance.LoadDrillData(1);
             Currentdata = ScriptableObjectManager.Instance.GetData<Drill_Data_>(drillLevel + 3000);
             Debug.Log("드릴 컴포넌트 초기화. 현재 레벨: " + drillLevel);
+
             if(Currentdata != null)
-            Debug.Log("드릴 데이터 로드 완료. 현재 드릴 ID: " + Currentdata.Id);
+                Debug.Log("드릴 데이터 로드 완료. 현재 드릴 ID: " + Currentdata.Id);
             else
-            Debug.LogError("드릴 데이터 로드 실패!");
+                Debug.LogError("드릴 데이터 로드 실패!");
+            
             //드릴 스프라이트 초기화
             LoadSprite();
         }
@@ -113,20 +113,7 @@ namespace DrillGame.View.Drill
 
         public void resetData()
         {
-            if (ES3.FileExists(ES3FILENAME))
-            {
-                // 2. 파일이 존재하면 ES3.DeleteFile()로 삭제합니다.
-                ES3.DeleteFile(ES3FILENAME);
-
-                Debug.Log($"[ES3 Reset] 세이브 파일 '{ES3FILENAME}'이 성공적으로 삭제되었습니다.");
-                
-                // 3. (선택 사항) 삭제 후 초기 상태로 게임을 재시작하거나 로드할 수 있습니다.
-                // SceneManager.LoadScene(0);
-            }
-            else
-            {
-                Debug.LogWarning($"[ES3 Reset] 삭제할 세이브 파일 '{ES3FILENAME}'이 존재하지 않습니다. 이미 초기화된 상태일 수 있습니다.");
-            }
+            SaveManager.Instance.DeleteDrillData();
         }
 
         public void RunDrillAnimation()
@@ -139,9 +126,7 @@ namespace DrillGame.View.Drill
         #region private methods
         private void SaveDrillData(int level)
         {
-            ES3File es3File = new ES3File(ES3FILENAME);
-            es3File.Save(DRILL_LEVEL, level);
-            es3File.Sync();
+            SaveManager.Instance.SaveDrillData(level);
         }
         IEnumerator DrillAnimation()
         {

@@ -144,9 +144,9 @@ namespace DrillGame
             }
             // legacy code
 
-            //if (ES3.KeyExists(RESEARCH_PROGRESS_KEY))
+            //if (ES2.KeyExists(RESEARCH_PROGRESS_KEY))
             //{
-            //    researchProgresses = ES3.Load(RESEARCH_PROGRESS_KEY, new Dictionary<int, float>());
+            //    researchProgresses = ES2.Load(RESEARCH_PROGRESS_KEY, new Dictionary<int, float>());
             //}
             //else
             //{
@@ -202,8 +202,8 @@ namespace DrillGame
             CheckCompleteResearch();
         }
 
-        [ContextMenu("ES3 키 삭제")]
-        public void DeleteResearchDataInES3()
+        [ContextMenu("데이터 키 삭제")]
+        public void DeleteResearchData()
         {
             SaveManager.Instance.DeleteResearchId();
             SaveManager.Instance.DeleteResearchProgressData();

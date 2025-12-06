@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DrillGame.Core.Managers;
 using DrillGame.UI;
 using UnityEngine;
@@ -43,7 +43,7 @@ namespace DrillGame.Managers
                 Instance = this;
             }
             
-            LoadEngineMergerDataFromES3();
+            LoadEngineMergerData();
         }
         #endregion
 
@@ -67,7 +67,6 @@ namespace DrillGame.Managers
 
         public Action OnProcessChanged;
         
-        private const string ENGINE_MERGER_KEY = "EngineMergerData";
         #endregion
 
         #region getters & setters
@@ -200,9 +199,9 @@ namespace DrillGame.Managers
             }
         }
         
-        private void LoadEngineMergerDataFromES3()
+        private void LoadEngineMergerData()
         {
-            var data = ES3.Load(ENGINE_MERGER_KEY, new EngineMergerData(0,0,0,0));
+            var data = SaveManager.Instance.LoadEngineMergerData(new EngineMergerData(0,0,0,0));
             currentType = data.type;
             progress = data.progress;
             targetEngineItemId = data.targetEngineItemId;
@@ -212,8 +211,8 @@ namespace DrillGame.Managers
         
         private void SaveEngineMergerData()
         {
-            var data = new EngineMergerData( currentType, progress, targetEngineItemId, inputEngineItemId);
-            ES3.Save(ENGINE_MERGER_KEY, data);
+            var data = new EngineMergerData(currentType, progress, targetEngineItemId, inputEngineItemId);
+            SaveManager.Instance.SaveEngineMergerData(data);
         }
         #endregion
 
