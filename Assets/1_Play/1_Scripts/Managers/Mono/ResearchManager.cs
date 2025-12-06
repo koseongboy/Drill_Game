@@ -186,10 +186,7 @@ namespace DrillGame
             SaveManager.OnRequestAllDataSave += SaveData;
         }
         
-        private void OnApplicationQuit()
-        {
-            SaveData();
-        }
+        
         #endregion
 
         #region DEV

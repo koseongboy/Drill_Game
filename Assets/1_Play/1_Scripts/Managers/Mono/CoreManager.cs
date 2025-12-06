@@ -45,7 +45,13 @@ namespace DrillGame
                 Instance = this;
             }
 
+        }
+
+        private void Start()
+        {
+            // 이러면 안됨.
             Initialize();
+            
         }
 
         private void Initialize()

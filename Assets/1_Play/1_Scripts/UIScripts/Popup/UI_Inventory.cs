@@ -115,8 +115,14 @@ namespace DrillGame
         // 보이는 UI를 변경하기만 함.
         private void UpdateUI_ItemSlotPieces()
         {
+            Debug.Log($"Updating UI with {showingItems.Count} items.");
             foreach (var itemData in showingItems)
             {
+                if(ItemSlotPoolManager.Instance == null)
+                {
+                    Debug.LogError("ItemSlotPoolManager Instance is null!");
+                    continue;
+                }
                 var slotObject = ItemSlotPoolManager.Instance.Get();
                 if (slotObject == null)
                 {

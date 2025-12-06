@@ -1,3 +1,4 @@
+using DrillGame.Managers;
 using NUnit.Compatibility;
 using NUnit.Framework;
 using System;
@@ -47,11 +48,21 @@ namespace DrillGame.Core.Managers
                 {
                     Debug.Log("Creating new InventoryManager instance.");
                     instance = new InventoryManager();
+                    Initialize();
                 }
                 return instance;
             }
         }
 
+        private static void Initialize()
+        {
+            instance.inventoryItems = SaveManager.Instance.LoadInventoryData(new Dictionary<int, int>());
+            Debug.Log("InventoryManager initialized with " + instance.inventoryItems.Count + " items.");
+
+            //instance.OnInventoryUpdated?.Invoke();
+
+            SaveManager.OnRequestAllDataSave += instance.SaveInventoryData;
+        }
 
         #endregion
 
@@ -59,6 +70,12 @@ namespace DrillGame.Core.Managers
         #endregion
 
         #region public methods
+        public void CallInventoryManager()
+        {
+            Debug.Log("InventoryManager called. Lazy initialization ");
+            return;
+        }
+
         public void AddItem(Item_Data_ item, int count = 1)
         {
             AddItem(item.GetId(), count);
@@ -176,9 +193,15 @@ namespace DrillGame.Core.Managers
         #endregion
 
         #region private methods
+        private void SaveInventoryData()
+        {
+            SaveManager.Instance.SaveInventoryData(inventoryItems);
+        }
+
         #endregion
 
         #region Unity event methods
+        
         #endregion
 
     }
