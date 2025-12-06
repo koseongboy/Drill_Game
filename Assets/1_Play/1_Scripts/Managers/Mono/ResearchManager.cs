@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DrillGame.Core.Managers;
 using UnityEngine;
 using MiniJSON;
 using UnityEngine.InputSystem;
 using DrillGame.Managers;
+using DrillGame.UI;
+using DrillGame.View.Drill;
 
 namespace DrillGame
 {
@@ -82,7 +85,7 @@ namespace DrillGame
         {
             if (selectedResearchId == 0)
             {
-                // TODO : 놀고있다고 알려주기?
+                UILoader.Instance.ShowAlert("선택된 연구가 없습니다! 연구소가 놀고 있습니다!");
                 return;
             }
             if (!researchProgresses.ContainsKey(selectedResearchId))
@@ -91,14 +94,20 @@ namespace DrillGame
                 return;
             }
             
-            // TODO : Input 재료 부족하면 연구 진척 안 하기
+            // Input 재료 부족하면 연구 진척 안 하기
+            var researchData = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId);
+            var inputItemId = researchData.InputItemPerTickId;
+            var inputCount = researchData.InputItemPerTickCount;
+
+            if (!InventoryManager.Instance.TryRemoveItem(inputItemId, inputCount))
+            {
+                UILoader.Instance.ShowAlert("자원이 부족해 연구를 진척시키지 못했습니다.");
+                return;
+            }
             
             researchProgresses[selectedResearchId] += progressValue;
             if (IsResearchDone(selectedResearchId)) {
-                researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
-                Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
-                UnSelectResearch();
-                return;
+                OnResearchComplete();
             }
             OnResearchProgressChanged?.Invoke( selectedResearchId, researchProgresses[selectedResearchId], GetResearchProgressRate( selectedResearchId ) );
         }
@@ -106,12 +115,7 @@ namespace DrillGame
 
         #endregion
         
-        #region private methods
-
-        
-        
-        
-
+        #region private method
         [ContextMenu("Initialize Progress Dict")]
         private void InitializeProgressDict()
         {
@@ -124,6 +128,7 @@ namespace DrillGame
             
             SaveManager.Instance.SaveResearchId(selectedResearchId);
             SaveManager.Instance.SaveResearchProgressData(researchProgresses);
+            Debug.Log("InitializeProgressDict Done.");
         }
         
         private void LoadResearchKey()
@@ -134,8 +139,12 @@ namespace DrillGame
         [ContextMenu("Load Progress Dict - ScriptableData 추가되면 실행")]
         private void LoadProgressDict()
         {
-            researchProgresses = SaveManager.Instance.LoadResearchProgressData(new Dictionary<int, float>());
+            researchProgresses = SaveManager.Instance.LoadResearchProgressData(null);
 
+            if (researchProgresses == null)
+            {
+                InitializeProgressDict();
+            }
             // legacy code
 
             //if (ES3.KeyExists(RESEARCH_PROGRESS_KEY))
@@ -147,6 +156,19 @@ namespace DrillGame
             //    Debug.Log("[ResearchManager] Easy Save에 저장된 데이터가 없습니다. Dictionary를 새로 생성합니다.");
             //    InitializeProgressDict(); 
             //}
+        }
+
+        private void OnResearchComplete()
+        {
+            researchProgresses[selectedResearchId] = ScriptableObjectManager.Instance.GetData<Research_Data_>(selectedResearchId).ResearchAmount;
+
+            if (selectedResearchId % 5 == 0) // 드릴 연구라면
+            {
+                var level = (selectedResearchId-30000) / 5 + 1;
+                DrillComponent.Instance.levelUp( level );   
+            }
+            Debug.Log($"완료된 연구입니다. : {selectedResearchId}");
+            UnSelectResearch();
         }
 
         #endregion

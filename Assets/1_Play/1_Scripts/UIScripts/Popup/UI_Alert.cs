@@ -77,8 +77,12 @@ namespace DrillGame
         public void OpenAction()
         {
             // 1. 초기 상태 리셋: 애니메이션 중단 및 초기 위치로 스냅 (Fresh Start 보장)
-            DOTween.Kill(transform); 
-            if (autoHideCoroutine != null) StopCoroutine(autoHideCoroutine);
+            DOTween.Kill(rectTransform);
+            if (autoHideCoroutine != null)
+            {
+                StopCoroutine(autoHideCoroutine);
+                autoHideCoroutine = null;
+            }
             
             // 주의: blocksRaycasts는 애니메이션이 끝난 후 켜야 합니다.
             canvasGroup.blocksRaycasts = false; 
@@ -87,10 +91,11 @@ namespace DrillGame
             // 리셋 위치
             canvasGroup.alpha = 0;
             rectTransform.anchoredPosition = startPosition - new Vector2(0, moveDistance);
-
+            Debug.Log("UI 리셋 위치: " + rectTransform.anchoredPosition);
+            
             // 2. 나타나기 Sequence 생성
             Sequence appearSequence = DOTween.Sequence();
-            appearSequence.SetTarget(transform); 
+            appearSequence.SetTarget(rectTransform); 
 
             appearSequence.Append(canvasGroup.DOFade(1, moveTime));
             appearSequence.Join(rectTransform.DOAnchorPos(startPosition, moveTime).SetEase(Ease.OutQuad));
@@ -127,14 +132,14 @@ namespace DrillGame
         // 알림창 사라지는 애니메이션 (클릭 또는 타이머 종료 시 호출)
         private void HideAlert()
         {
-            DOTween.Kill(this.transform); // 중복 호출 방지
+            DOTween.Kill(rectTransform); // 중복 호출 방지
             
             // 상호작용 비활성화: 사라지는 동안 클릭을 막습니다.
             canvasGroup.blocksRaycasts = false; 
 
             // 1. 사라지기 Sequence
             Sequence disappearSequence = DOTween.Sequence();
-            disappearSequence.SetTarget(this.transform);
+            disappearSequence.SetTarget(rectTransform);
 
             disappearSequence.Join(canvasGroup.DOFade(0, moveTime));
             disappearSequence.Join(rectTransform.DOAnchorPos(startPosition + new Vector2(0, moveDistance), moveTime).SetEase(Ease.InQuad));
