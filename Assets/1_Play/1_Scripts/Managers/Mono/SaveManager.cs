@@ -24,6 +24,8 @@ namespace DrillGame.Managers
             { "GROUND_DEPTH_KEY", "GroundDepthData" },
             { "GROUND_HP_KEY", "GroundHPData" },
             { "INVENTORY_KEY", "InventoryData" },
+            { "PLAY_TIME_KEY", "DailyPlayTimeData" },
+            { "INPUT_COUNT_KEY", "DailyInputCountData" },
 
         };
 
@@ -263,6 +265,83 @@ namespace DrillGame.Managers
         {
             ES3.DeleteKey(SaveKeys["INVENTORY_KEY"]);
         }
+        
+        
+        
+        
+        public void SaveInputCountData(int inputCount)
+        {
+            string todayKey = DateTime.Today.ToString("yyyy-MM-dd"); // '2025-12-07' 형식
+
+            Dictionary<string, int> dailyData = LoadAllInputCountData(new Dictionary<string, int>());
+            dailyData[todayKey] = inputCount;
+            ES3.Save(SaveKeys["INPUT_COUNT_KEY"], dailyData);
+        }
+        
+        public Dictionary<string, int> LoadAllInputCountData(Dictionary<string, int> defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["INPUT_COUNT_KEY"]))
+            {
+                return ES3.Load<Dictionary<string, int>>(SaveKeys["INPUT_COUNT_KEY"]);
+            }
+        
+            Debug.LogWarning("No saved InputCount found.");
+            return defaultValue;
+        }
+        
+        public int LoadTodayInputCount()
+        {
+            string todayKey = DateTime.Today.ToString("yyyy-MM-dd");
+            Dictionary<string, int> dailyData = LoadAllInputCountData(new Dictionary<string, int>());
+
+            dailyData.TryGetValue(todayKey, out int todayTime);
+            return todayTime; // 저장된 시간이 없으면 0.0f 반환
+        }
+        
+        public void DeleteInputCountData()
+        {
+            ES3.DeleteKey(SaveKeys["INPUT_COUNT_KEY"]);
+        }
+        
+        
+        
+        
+        public void SaveDailyPlayTimeData(int sessionPlayTime)
+        {
+            string todayKey = DateTime.Today.ToString("yyyy-MM-dd"); // '2025-12-07' 형식
+
+            Dictionary<string, int> dailyData = LoadAllDailyPlayTimeData(new Dictionary<string, int>());
+            dailyData[todayKey] = sessionPlayTime;
+            ES3.Save(SaveKeys["PLAY_TIME_KEY"], dailyData);
+        }
+        
+        public Dictionary<string, int> LoadAllDailyPlayTimeData(Dictionary<string, int> defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["PLAY_TIME_KEY"]))
+            {
+                return ES3.Load<Dictionary<string, int>>(SaveKeys["PLAY_TIME_KEY"]);
+            }
+        
+            Debug.LogWarning("No saved DailyPlayTimeData found.");
+            return defaultValue;
+        }
+        
+        public float LoadTodayPlayTime()
+        {
+            string todayKey = DateTime.Today.ToString("yyyy-MM-dd");
+            Dictionary<string, int> dailyData = LoadAllDailyPlayTimeData(new Dictionary<string, int>());
+
+            dailyData.TryGetValue(todayKey, out int todayTime);
+            return todayTime; // 저장된 시간이 없으면 0.0f 반환
+        }
+        
+        public void DeleteDailyPlayTimeData()
+        {
+            ES3.DeleteKey(SaveKeys["PLAY_TIME_KEY"]);
+        }
+        
+        
+        
 
         [ContextMenu("리셋 데이터")]
         public void ResetAllData()
@@ -288,6 +367,7 @@ namespace DrillGame.Managers
             ES3.Save(SaveKeys["GROUND_DEPTH_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_HP_KEY"], ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
             ES3.Save(SaveKeys["INVENTORY_KEY"], new Dictionary<int, int>());
+            ES3.Save(SaveKeys["PLAY_TIME_KEY"], new Dictionary<string, int>());
 
             Debug.Log("첫 실행 데이터가 설정되었습니다.");
         }
@@ -331,6 +411,17 @@ namespace DrillGame.Managers
         {
             RequestAllDataSave();
         }
+        #endregion
+
+        #region DEV
+
+        [ContextMenu("Test playTime Data Save")]
+        public void SavePlayTimeData()
+        {
+            
+        }
+        
+
         #endregion
     }
 }

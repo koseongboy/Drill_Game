@@ -1,0 +1,134 @@
+#RootContainer {
+    flex-grow: 1;
+    align-items: center; /* 수직 중앙 */
+    justify-content: center; /* 수평 중앙 */
+}
+
+#Calendar_Root {
+    /* 중앙 정렬 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* 전체 디자인 */
+    width: 80%;
+    height: 60%;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* 내부 레이아웃 설정 (세로 스택) */
+    flex-direction: column;
+    padding: 10px;
+}
+
+#Calender_Header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3f51b5;
+    height: 150px;
+    border-radius: 8px 8px 0 0; /* 상단 모서리만 둥글게 */
+    padding: 0 10px;
+    margin: 10px;
+}
+
+#Calendar_Weekdays {
+    flex-direction: row;
+    -unity-text-align: middle-center;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: gray;
+}
+
+#Calendar_Weekdays Label {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+    color: #777777;
+    font-size: 14px;
+}
+
+/* 토요일 (6번째 자식) - 파란색 */
+.saturday-label {
+    color: #2196F3; /* 밝은 파란색 */
+    -unity-font-style: bold;
+}
+
+/* 일요일 Label - 빨간색 */
+.sunday-label {
+    color: #F44336; /* 밝은 빨간색 */
+    -unity-font-style: bold;
+}
+
+
+#Calendar_DateGrid {
+    flex-grow: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#MonthYear_Label {
+    color: white;
+    font-size: 20px;
+    -unity-font-style: bold;
+}
+
+.day-cell {
+    /* 1. 크기 및 배치 설정 (7열 그리드 핵심) */
+    width: 14.285%; /* 100% / 7일 = 약 14.285% */
+    height: 16.6667%;
+    
+    flex-direction: column;
+
+    /* 2. 셀 내부 정렬 */
+    align-items: flex-start;     /* 수직 가운데 정렬 */
+    justify-content: flex-start; /* 수평 가운데 정렬 */
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    /* 3. 시각적 스타일 */
+    font-size: 30px;
+    border-width: 0px;
+    border-color: #333333;
+    border-style: solid;
+    border-radius: 4px; /* 약간 둥근 모서리 */
+    margin: 0px; /* 셀 간의 간격 */
+
+    /* 4. 마우스 오버 시 스타일 변경 준비 */
+    transition-duration: 0.1s; /* 부드러운 전환 효과를 위해 */
+}
+
+.day-number-label {
+    font-size: 36px; /* 날짜 숫자는 크게 */
+    -unity-font-definition: url("project://database/Assets/4_Fonts/Galmuri11.ttf?fileID=12800000&guid=13b14e2bdbd06d642b823383185d9795&type=3#Galmuri11");
+    -unity-font-style: bold;
+    color: #333;
+}
+
+.play-time-label {
+    -unity-font-definition: url("project://database/Assets/4_Fonts/Galmuri11.ttf?fileID=12800000&guid=13b14e2bdbd06d642b823383185d9795&type=3#Galmuri11");
+    font-size: 30px; /* 플레이 시간은 작게 */
+    height: 30;
+    color: #4CAF50; /* 녹색으로 표시 */
+}
+
+.input-count-label {
+    -unity-font-definition: url("project://database/Assets/4_Fonts/Galmuri11.ttf?fileID=12800000&guid=13b14e2bdbd06d642b823383185d9795&type=3#Galmuri11");
+    font-size: 30px; /* 플레이 시간은 작게 */
+    height: 30;
+    color: #4CAF50; /* 녹색으로 표시 */
+}
+
+/* 현재 날짜 셀에 할당된 클래스 */
+.today-cell {
+    background-color: #4CAF50; /* 눈에 띄는 파란색 배경 */
+    color: white; /* 텍스트 색상을 흰색으로 변경 */
+    border-color: #0d47a1;
+}
+
+/* 마우스를 올렸을 때 스타일 */
+.day-cell:hover {
+    background-color: #cccccc;
+    --unity-cursor: link; /* 마우스 커서를 포인터로 변경하여 클릭 가능함을 나타냄 */ /* 웹의 cursor 대신 --unity-cursor 사용 */
+}

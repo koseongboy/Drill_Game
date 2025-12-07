@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f35ff3e8a11c894e87206ef1d700881
+    m_Address: UI_Calendar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d86401ceecacef42a373d3418b666a3
     m_Address: UI_EngineMergerDetailPopup
     m_ReadOnly: 0

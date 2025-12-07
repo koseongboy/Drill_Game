@@ -72,11 +72,6 @@ namespace DrillGame
             GroundComponent.Instance.OnHpChanged += OnChangeGroundHp;
         }
 
-        private void OnDisable()
-        {
-            GroundComponent.Instance.OnHpChanged -= OnChangeGroundHp;
-        }
-
         #endregion
     }
 }
