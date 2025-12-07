@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 203001
   EngineId: 203
   DisplayName: "\uD30C\uB791 \uC5D4\uC9C4 Lv.1"
-  Icon: engine_test
+  Icon: blueEngine
   Type: '#B3CCFF'
   Level: 1
   Coordinates:

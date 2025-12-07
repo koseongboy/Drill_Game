@@ -136,11 +136,11 @@ namespace DrillGame
         [ContextMenu("Load Progress Dict - ScriptableData 추가되면 실행")]
         private void LoadProgressDict()
         {
-            researchProgresses = SaveManager.Instance.LoadResearchProgressData(null);
+            researchProgresses = SaveManager.Instance.LoadResearchProgressData(new Dictionary<int, float>());
 
-            if (researchProgresses == null)
+            if (researchProgresses.Keys.Count == 0)
             {
-                InitializeProgressDict();
+                 InitializeProgressDict();
             }
             // legacy code
 
