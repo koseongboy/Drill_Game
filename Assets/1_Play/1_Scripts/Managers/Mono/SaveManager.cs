@@ -11,6 +11,9 @@ namespace DrillGame.Managers
         [SerializeField]
         private List<BatchData> initBatchData;
 
+        [SerializeField]
+        private List<Vector2Int> initInventoryData;
+
         public static SaveManager Instance { get; private set; }
 
         private const string IS_FIRST_LAUNCH_KEY = "IsFirstLaunch";
@@ -423,7 +426,15 @@ namespace DrillGame.Managers
             ES3.Save(SaveKeys["DRILL_DATA_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_DEPTH_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_HP_KEY"], ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
-            ES3.Save(SaveKeys["INVENTORY_KEY"], new Dictionary<int, int>());
+
+            Dictionary<int, int> initInventoryData = new Dictionary<int, int>();
+            foreach (var item in this.initInventoryData)
+            {
+                initInventoryData[item.x] = item.y;
+                Debug.Log($"인벤토리 초기 아이템 설정: ItemID {item.x}, Count {item.y}");
+            }
+            ES3.Save(SaveKeys["INVENTORY_KEY"], initInventoryData);
+
             ES3.Save(SaveKeys["PLAY_TIME_KEY"], new Dictionary<string, int>());
             ES3.Save(SaveKeys["CORE_LEVEL_KEY"], 1);
             ES3.Save(SaveKeys["ENTITY_BATCH_KEY"], initBatchData);
