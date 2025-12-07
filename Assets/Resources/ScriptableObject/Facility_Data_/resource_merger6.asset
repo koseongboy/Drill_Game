@@ -32,4 +32,6 @@ MonoBehaviour:
   Coordinates:
   - 0,0
   - 0,1
-  Length: 1,2
+  - 1,0
+  - 1,1
+  Length: 2,2
