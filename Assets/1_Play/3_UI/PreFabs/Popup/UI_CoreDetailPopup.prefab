@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 7669616095706981419, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1623732885877815003, guid: 00a3ee1e0377258498ee615b66cb5ec7, type: 3}
     - target: {fileID: 8585156695818591271, guid: c51ebbf646f4f5949bd75577a73c6a57, type: 3}
       propertyPath: m_Name
       value: CoreDetailPopup_Button2
