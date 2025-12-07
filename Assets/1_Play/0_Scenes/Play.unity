@@ -570,8 +570,6 @@ MonoBehaviour:
   awakeUIList:
   - UI_GameStatus
   - UI_UpperButtons
-  readyUIList:
-  - UI_Inventory
 --- !u!1 &92083204
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4099,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 8.888889
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4370,6 +4368,7 @@ GameObject:
   - component: {fileID: 504104042}
   - component: {fileID: 504104041}
   - component: {fileID: 504104040}
+  - component: {fileID: 504104044}
   m_Layer: 0
   m_Name: Managers_ForUI
   m_TagString: Untagged
@@ -4450,6 +4449,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResearchManager
   selectedResearchId: 0
   progressValue: 1
+--- !u!114 &504104044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504104038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f3ab56c8d4db3a436af58de75a086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame._1_Play._1_Scripts.Managers.Mono.ItemSlotPoolManager
+  slotPrefab: {fileID: 8674952265119646972, guid: da264eac977244643aef38e10bc41bac, type: 3}
+  slotObjectParent: {fileID: 504104039}
 --- !u!1 &574233532
 GameObject:
   m_ObjectHideFlags: 0

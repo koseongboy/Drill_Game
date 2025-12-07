@@ -118,17 +118,13 @@ namespace DrillGame
             Debug.Log($"Updating UI with {showingItems.Count} items.");
             foreach (var itemData in showingItems)
             {
-                if(ItemSlotPoolManager.Instance == null)
-                {
-                    Debug.LogError("ItemSlotPoolManager Instance is null!");
-                    continue;
-                }
                 var slotObject = ItemSlotPoolManager.Instance.Get();
                 if (slotObject == null)
                 {
                     continue;
                 }
 
+                slotObject.transform.SetParent(inventoryContent);
                 UI_ItemSlot uiItemSlot = slotObject.GetComponent<UI_ItemSlot>();
                 uiItemSlot.SetItemData(itemData);
                 activeSlotObjects.Add(slotObject);

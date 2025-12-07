@@ -456,7 +456,6 @@ GameObject:
   - component: {fileID: 7573946246813423117}
   - component: {fileID: 5654300477195519150}
   - component: {fileID: 8428938451878672540}
-  - component: {fileID: 3468288221220727006}
   m_Layer: 0
   m_Name: UI_Inventory
   m_TagString: Untagged
@@ -539,20 +538,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.UI_Inventory
   addressableName: UI_Inventory
   inventoryContent: {fileID: 7540410290641015475}
---- !u!114 &3468288221220727006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473116312420107174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171f3ab56c8d4db3a436af58de75a086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrillGame._1_Play._1_Scripts.Managers.Mono.ItemSlotPoolManager
-  slotPrefab: {fileID: 8674952265119646972, guid: da264eac977244643aef38e10bc41bac, type: 3}
-  slotObjectParent: {fileID: 7540410290641015475}
 --- !u!1 &8672768128617968251
 GameObject:
   m_ObjectHideFlags: 0
