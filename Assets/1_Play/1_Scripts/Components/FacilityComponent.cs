@@ -97,6 +97,7 @@ namespace DrillGame.View.Facility
 
             // set debug position
             debugPosition = startPosition;
+            transform.localScale = new Vector3(0.8f, 0.8f, 1f);
         }
         #endregion
 
