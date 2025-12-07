@@ -59,9 +59,12 @@ namespace DrillGame
 
         private void Initialize()
         {
-            int tempCoreDataId = CORE_DATA_START_ID + 1;
-            core_Data = ScriptableObjectManager.Instance.GetData<Core_Data_>(tempCoreDataId);
+            int coreLevel = SaveManager.Instance.LoadCoreLevelData(1);
+            int coreDataId = CORE_DATA_START_ID + coreLevel;
+            core_Data = ScriptableObjectManager.Instance.GetData<Core_Data_>(coreDataId);
             SetCoreLevel( core_Data.Level );
+
+            SaveManager.OnRequestAllDataSave += SaveCoreLevel;
         }
         #endregion
 
@@ -166,11 +169,16 @@ namespace DrillGame
         {
             factoryTileMap.color = color;
         }
+
+        private void SaveCoreLevel()
+        {
+            SaveManager.Instance.SaveCoreLevelData(coreLevel);
+        }
         #endregion
 
         #region Unity event methods
         #endregion
-        
+
         #region DEV
 
         [ContextMenu("코어 레벨 업")]
