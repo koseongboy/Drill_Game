@@ -70,7 +70,7 @@ public class Facility_Data_ : ScriptableObject, ICSVData
         var str = Desc;
         if (OutputItemId != 0)
         {
-            str += "\n틱마다 ";
+            str += "틱마다 ";
             if (InputItemId != 0)
             {
                 var inputItemData = ScriptableObjectManager.Instance.GetData<Item_Data_>(InputItemId);

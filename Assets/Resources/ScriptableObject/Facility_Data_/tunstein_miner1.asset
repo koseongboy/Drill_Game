@@ -16,10 +16,10 @@ MonoBehaviour:
   Name: tunstein_miner1
   DisplayName: "\uD145\uC2A4\uD150 \uCC44\uAD74 \uC2DC\uC124 Lv.1"
   Type: Miner
-  Icon: engine_test
+  Icon: tunstein_miner
   Level: 1
   EntityClassName: MinerEntity
-  Desc: "\uD145\uC2A4\uD150 \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30021
   RequireCoreLevel: 0
   BuildResourceId: 1010

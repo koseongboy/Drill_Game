@@ -16,10 +16,10 @@ MonoBehaviour:
   Name: titanium_miner3
   DisplayName: "\uD2F0\uD0C0\uB284 \uCC44\uAD74 \uC2DC\uC124 Lv.3"
   Type: Miner
-  Icon: engine_test
+  Icon: titanium_miner
   Level: 3
   EntityClassName: MinerEntity
-  Desc: "\uD2F0\uD0C0\uB284 \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30028
   RequireCoreLevel: 0
   BuildResourceId: 1012

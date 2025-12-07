@@ -16,11 +16,10 @@ MonoBehaviour:
   Name: titanium_processor2
   DisplayName: "\uD2F0\uD0C0\uB284 \uAC00\uACF5 \uC2DC\uC124 Lv.2"
   Type: Processor
-  Icon: engine_test
+  Icon: titanium_processor
   Level: 2
   EntityClassName: ProcessEntity
-  Desc: "\uD2F0\uD0C0\uB284 \uAD11\uC11D\uC744 \uD2F0\uD0C0\uB284 \uC790\uC7AC\uB85C
-    \uAC00\uACF5\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30027
   RequireCoreLevel: 0
   BuildResourceId: 1012

@@ -16,11 +16,10 @@ MonoBehaviour:
   Name: obsidian_processor3
   DisplayName: "\uD751\uC694\uC11D \uAC00\uACF5 \uC2DC\uC124 Lv.3"
   Type: Processor
-  Icon: engine_test
+  Icon: obsidian_processor
   Level: 3
   EntityClassName: ProcessEntity
-  Desc: "\uD751\uC694\uC11D \uAD11\uC11D\uC744 \uD751\uC694\uC11D \uC790\uC7AC\uB85C
-    \uAC00\uACF5\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30018
   RequireCoreLevel: 0
   BuildResourceId: 1010

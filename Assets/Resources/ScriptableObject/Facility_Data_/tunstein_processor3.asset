@@ -16,11 +16,10 @@ MonoBehaviour:
   Name: tunstein_processor3
   DisplayName: "\uD145\uC2A4\uD150 \uAC00\uACF5 \uC2DC\uC124 Lv.3"
   Type: Processor
-  Icon: engine_test
+  Icon: tunstein_processor
   Level: 3
   EntityClassName: ProcessEntity
-  Desc: "\uD145\uC2A4\uD150 \uAD11\uC11D\uC744 \uD145\uC2A4\uD150 \uC790\uC7AC\uB85C
-    \uAC00\uACF5\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30023
   RequireCoreLevel: 0
   BuildResourceId: 1012
