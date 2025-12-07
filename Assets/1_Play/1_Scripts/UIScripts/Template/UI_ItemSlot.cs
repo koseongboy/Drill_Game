@@ -17,9 +17,8 @@ namespace DrillGame
             // Id
             itemId = itemData.GetId();
             
-            Count.text = count == 0
-                ? "" 
-                : count.ToString();
+            var levelStrArr = itemData.DisplayName.Split(' ');
+            Count.text = levelStrArr[levelStrArr.Length - 1];
             
             // Sprite
             Icon.sprite = await SpriteLoader.Instance.LoadSprite(itemData.ItemIcon);
