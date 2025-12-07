@@ -24,6 +24,7 @@ namespace DrillGame.Managers
             { "GROUND_DEPTH_KEY", "GroundDepthData" },
             { "GROUND_HP_KEY", "GroundHPData" },
             { "INVENTORY_KEY", "InventoryData" },
+            { "CORE_LEVEL_KEY", "CoreLevelData" },
 
         };
 
@@ -264,6 +265,31 @@ namespace DrillGame.Managers
             ES3.DeleteKey(SaveKeys["INVENTORY_KEY"]);
         }
 
+        public void SaveCoreLevelData(int coreLevel)
+        {
+            ES3.Save(SaveKeys["CORE_LEVEL_KEY"], coreLevel);
+        }
+        public int LoadCoreLevelData(int defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["CORE_LEVEL_KEY"]))
+            {
+                return ES3.Load<int>(SaveKeys["CORE_LEVEL_KEY"]);
+            }
+            Debug.LogWarning("No saved CoreLevelData found.");
+            return defaultValue;
+        }
+        public void DeleteCoreLevelData()
+        {
+            ES3.DeleteKey(SaveKeys["CORE_LEVEL_KEY"]);
+        }
+
+        [ContextMenu("코어 레벨 매니저 단독 초기화")]
+        public void InitializeCoreLevelManagerData()
+        {
+            ES3.Save(SaveKeys["CORE_LEVEL_KEY"], 1);
+            Debug.Log("코어 레벨 매니저 데이터가 초기화되었습니다.");
+        }
+
         [ContextMenu("리셋 데이터")]
         public void ResetAllData()
         {
@@ -288,6 +314,7 @@ namespace DrillGame.Managers
             ES3.Save(SaveKeys["GROUND_DEPTH_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_HP_KEY"], ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
             ES3.Save(SaveKeys["INVENTORY_KEY"], new Dictionary<int, int>());
+            ES3.Save(SaveKeys["CORE_LEVEL_KEY"], 1);
 
             Debug.Log("첫 실행 데이터가 설정되었습니다.");
         }
