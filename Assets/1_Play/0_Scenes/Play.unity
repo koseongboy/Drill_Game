@@ -570,6 +570,8 @@ MonoBehaviour:
   awakeUIList:
   - UI_GameStatus
   - UI_UpperButtons
+  readyUIList:
+  - UI_Inventory
 --- !u!1 &92083204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2301650696322344706, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -46.600037
+      value: -46.600098
       objectReference: {fileID: 0}
     - target: {fileID: 2425506054684135268, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_fontSize
