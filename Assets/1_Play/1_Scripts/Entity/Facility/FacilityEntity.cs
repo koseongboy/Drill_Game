@@ -37,103 +37,115 @@ namespace DrillGame.Core.Facility
 
         #region Singleton & initialization
         public FacilityEntity(Vector2Int startPosition, int level, int itemId, int entityId)
-            {
-                this.facilityId = entityId;
-                this.itemId = itemId;
+        {
+            this.facilityId = entityId;
+            this.itemId = itemId;
 
-                data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
-                this.position = startPosition;
-                this.Level = data.Level;
-                this.formations = data.GetCoordinates();
-                
-                // register to BoardManager
-                BoardManager.Instance.AddFacility(this);
-                formCount = formations.Count;
-            }
+            data = ScriptableObjectManager.Instance.GetData<Facility_Data_>(entityId);
+            this.position = startPosition;
+            this.Level = data.Level;
+            this.formations = data.GetCoordinates();
+
+            // register to BoardManager
+            BoardManager.Instance.AddFacility(this);
+            formCount = formations.Count;
+        }
 
         public FacilityEntity(Vector2Int startPosition, int level)
         {
-        this.startPosition = startPosition;
-        Level = level;
+            this.startPosition = startPosition;
+            Level = level;
         }
         #endregion
 
         #region getters & setters
         public List<Vector2Int> GetFormationPositions()
+        {
+            List<Vector2Int> absolutePositions = new List<Vector2Int>();
+            foreach (var formation in formations)
             {
-                List<Vector2Int> absolutePositions = new List<Vector2Int>();
-                foreach (var formation in formations)
-                {
-                    absolutePositions.Add(new Vector2Int(position.x + formation.x, position.y + formation.y));
-                }
-                return absolutePositions;
+                absolutePositions.Add(new Vector2Int(position.x + formation.x, position.y + formation.y));
             }
+            return absolutePositions;
+        }
 
-            public List<Vector2Int> GetFormations()
+        public Vector2Int GetPosition()
+        {
+            return position;
+        }
+        public List<Vector2Int> GetFormations()
+        {
+            return formations;
+        }
+
+        public int GetFacilityId()
+        {
+            return facilityId;
+        }
+        public int GetFacilityItemId()
+        {
+            return itemId;
+        }
+        public bool IsDrill()
+        {
+            return data.Type == "Drill";
+        }
+        #endregion
+
+        #region public methods
+
+        public void MoveEntity()
+        {
+            // delete 코드 사용후 다시 집어드는 판정입니다.
+            OnFacilityDeleted?.Invoke();
+            BoardManager.Instance.RemoveFacility(this);
+            GameManager.Instance.BatchEntity(itemId);
+        }
+
+        public virtual void Run(int intensity, bool isSynergyed = false)
+        {
+            Debug.Log("Facility is running. with Intensity : " + intensity);
+
+            // 시설 고유의 액션 실행
+            //for (int i = 0; i < intensity; i++)
+            //{
+            //    Logger("Hello from Facility! Intensity: " + intensity);
+            //}
+
+            //시설 고유 액션 실행은 상속으로 넘어갔습니다.
+
+            // 이벤트 호출 (presenter -> component)
+            OnFacilityActivated?.Invoke(intensity);
+            if (isSynergyed)
             {
-                return formations;
+                Debug.Log("시너지 작용됨.");
             }
+        }
 
-            public int GetFacilityId()
-            {
-                return facilityId;
-            }
-            #endregion
 
-            #region public methods
+        public void DeleteEntity()
+        {
+            // presentor에게 알림
+            OnFacilityDeleted?.Invoke();
 
-            public void MoveEntity()
-            {
-                // delete 코드 사용후 다시 집어드는 판정입니다.
-                OnFacilityDeleted?.Invoke();
-                BoardManager.Instance.RemoveFacility(this);
-                GameManager.Instance.BatchEntity(itemId);
-            }
+            // BoardManager에서 제거
+            BoardManager.Instance.RemoveFacility(this);
 
-            public virtual void Run(int intensity, bool isSynergyed = false)
-            {
-                Debug.Log("Facility is running. with Intensity : "  + intensity);
+            // 인벤토리에 아이템 추가
+            InventoryManager.Instance.AddItem(itemId);
+        }
 
-                // 시설 고유의 액션 실행
-                //for (int i = 0; i < intensity; i++)
-                //{
-                //    Logger("Hello from Facility! Intensity: " + intensity);
-                //}
+        // 여기서 부터 model 관련 메서드 추가 가능
+        public void Logger(string message)
+        {
+            Debug.Log(message);
+        }
+        #endregion
 
-                //시설 고유 액션 실행은 상속으로 넘어갔습니다.
+        #region private methods
+        #endregion
 
-                // 이벤트 호출 (presenter -> component)
-                OnFacilityActivated?.Invoke(intensity);
-                if(isSynergyed)
-                {
-                    Debug.Log("시너지 작용됨.");
-                }
-            }
-            
-
-            public void DeleteEntity()
-            {
-                // presentor에게 알림
-                OnFacilityDeleted?.Invoke();
-
-                // BoardManager에서 제거
-                BoardManager.Instance.RemoveFacility(this);
-                
-                // 인벤토리에 아이템 추가
-                InventoryManager.Instance.AddItem(itemId);
-            }
-
-            // 여기서 부터 model 관련 메서드 추가 가능
-            public void Logger(string message)
-            {
-                Debug.Log(message);
-            }
-            #endregion
-
-            #region private methods
-            #endregion
-
-            #region Unity event methods
-            #endregion
+        #region Unity event methods
+        #endregion
     }
 }

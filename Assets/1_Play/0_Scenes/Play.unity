@@ -2828,12 +2828,6 @@ MonoBehaviour:
   AreaSize: {x: 7, y: 12}
   mouseWorldPosition: {x: 0, y: 0, z: 0}
   facilityObject: {fileID: 2858953249066847510, guid: 1ebc7c74fadafc0478840e5c9fe34ed3, type: 3}
-  facilityBatchDatas:
-  - EntityID: 101011
-    batchPosition: {x: 1, y: 2}
-  engineBatchDatas:
-  - EntityID: 201001
-    batchPosition: {x: 2, y: -3}
 --- !u!1 &357708413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,7 +4094,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.888889
+  orthographic size: 11.111112
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4356,6 +4350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb92c8e3b66c6a4eb7b052671bb84d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.SaveManager
+  initBatchData:
+  - EntityItemID: 1102
+    batchPosition: {x: 1, y: -2}
+  - EntityItemID: 1201
+    batchPosition: {x: 1, y: -2}
 --- !u!1 &504104038
 GameObject:
   m_ObjectHideFlags: 0

@@ -110,8 +110,9 @@ namespace DrillGame.Managers
             // 코어 배치
             CoreBatch();
             DrillBatch();
-            FacilityBatch();
-            EngineBatch();
+
+            List<BatchData> batchDatas = SaveManager.Instance.LoadEntityBatchData(new List<BatchData>());
+            EntityBatch(batchDatas);
         }
 
         private void InitPlaceableArea()
