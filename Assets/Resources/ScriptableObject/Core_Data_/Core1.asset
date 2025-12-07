@@ -19,6 +19,10 @@ MonoBehaviour:
   FacilityCount: 9
   EngineCount: 5
   FactoryLength: 12
+  Color:
+  - 180
+  - 180
+  - 180
   UpgradeRequiredDepth: 0
   UpgradeRequiredItemId: 0
   UpgradeRequiredItemCount: 0

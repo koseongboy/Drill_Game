@@ -132,7 +132,7 @@ namespace DrillGame.View.Ground
             // Debug.Log("새 땅이 생성되었습니다. 깊이: " + depth);
             currentDepth = depth;
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
-            
+            GroundColorManager.Instance.ChangeTilemapColor( CurrentGroundData.GetColor() );
             GroundEntity.SetInformation(depth, CurrentGroundData.HP, CurrentGroundData.HP, CurrentGroundData.DropItems);
             OnDepthChanged?.Invoke( GroundEntity.Depth );
             OnHpChanged?.Invoke( GroundEntity.CurrentHp );
@@ -150,6 +150,7 @@ namespace DrillGame.View.Ground
             // Debug.Log("<<게임 시작>> \n 새 땅이 생성되었습니다. 깊이: " + depth);
             currentDepth = depth;
             CurrentGroundData = ScriptableObjectManager.Instance.GetData<Ground_Data_>( getGroundDataKey_ByDepth(depth) );
+            GroundColorManager.Instance.ChangeTilemapColor( CurrentGroundData.GetColor() );
             GroundEntity.SetInformation(depth, hp, CurrentGroundData.HP, CurrentGroundData.DropItems);
             OnDepthChanged?.Invoke( GroundEntity.Depth );
             OnHpChanged?.Invoke( GroundEntity.CurrentHp );
