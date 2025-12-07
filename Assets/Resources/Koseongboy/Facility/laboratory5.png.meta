@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a638f7e203b58d349906c66e9f1c1e18
+guid: 2c9befdd70c5c9e4a90b428a98c9ee02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5539949887420703128
-    second: laboratory5_0
+      213: 379236846148694018
+    second: laboratory1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: laboratory5_0
+      name: laboratory1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 808
-        height: 808
+        width: 66
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86ed2d6ede42e13b0800000000000000
-      internalID: -5539949887420703128
+      spriteID: 200be6cf6e1534500800000000000000
+      internalID: 379236846148694018
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      laboratory5_0: -5539949887420703128
+      laboratory1_0: 379236846148694018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
