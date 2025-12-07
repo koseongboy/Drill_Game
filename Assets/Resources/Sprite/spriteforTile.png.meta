@@ -1,0 +1,2300 @@
+fileFormatVersion: 2
+guid: 1520b4f6836f95142aee3cab7d76a90a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1265566608919453746
+    second: industrial-sprite-sheet-DeadEnd-LMZ_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf92cbdfddcf6ee0800000000000000
+      internalID: -1265566608919453746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4741838164791f47a9cebf011318ebd
+      internalID: 1187038647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737fa3a1faba6b44b9b089ebb2abaed7
+      internalID: 1664363624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d7caab9346abb4f81e13ab2bfada71
+      internalID: 15705071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc92892ec4f00f4a917f52e72ed27f4
+      internalID: -110298447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829f46eb9c1ed3b499b222899c817946
+      internalID: -410630643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445af133e5e3881468e2a271733d73ca
+      internalID: -1186931101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a60c1e40dd70f4eae38c1e1c043cd6
+      internalID: -1717670048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c16489bbfb794848b1f1dd9845b1b3e
+      internalID: 883119485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c1a316fc7636f40aed969478cfa7ad
+      internalID: -668864339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566a3f1323fda65448c6cc34c6fc345d
+      internalID: 144500027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2babf28ee2970a4799c77bc90581961
+      internalID: 397728778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eaeb41c7a13a7d4aa6b7374961e8709
+      internalID: 1129938716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9862ae793603b904797d1228489b905f
+      internalID: -1874892047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8b968e68a052f489afe11b6538f109
+      internalID: -1986056994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6286d3fb470f85745b2dec988e42662a
+      internalID: -551541421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc52cd3ea15f4034eb894dc157e721ac
+      internalID: -1881802747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf2d95f9b015e14386762111bf6aee5
+      internalID: 673047926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_18
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 240
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2248a1808abd4242a40344c10740267
+      internalID: 1664788940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfb4af345d468d49b4b9a7da3472b4f
+      internalID: -1223973360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbe8690c1e07124397128c8ded2b174
+      internalID: 1871306239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791c9319c7a499643a4ad2882f319781
+      internalID: 622443866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7c77f68e8db97419c35b26538e2e65
+      internalID: 961520086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a32ec18c04b99146aeacb48b7d74891
+      internalID: 2058471420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e02a333e57b6a46ad81d65d054f24a
+      internalID: -1502673001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_25
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2ea10afe0bff8419754c3206297c2f
+      internalID: -1030250833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703eb89cd09926343b95052a27803888
+      internalID: -1779629189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd76f9cc655ce841bb40b9f7a3e68d2
+      internalID: 1681172957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e32b33c7adabde42bb1ad321363766a
+      internalID: 2042098305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_29
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4410ba3c5463ec543a8734f2b8b230a7
+      internalID: 40551245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b83f6e7adf3fc43a663909f89eacf8
+      internalID: -1298468072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb05b61a87d18d42a83b2c2440ad387
+      internalID: 471764373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548dd14f83ca4d249ba51f893b491b47
+      internalID: 1084192415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97273b79210557e4fba1373c1217332d
+      internalID: -2049851195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b10b9d6d2967d489a93b450d7c4692
+      internalID: -1818412298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_42
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a070bc7f93da541bb92a37788fe5c7
+      internalID: 662613421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_44
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa10ae3d61507945b0b757f461a04c7
+      internalID: 739534031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bf7fcc57c412944832f5911a9a87c9
+      internalID: 1925176033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_46
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78203ce64bba6f4f95fed60cf065c25
+      internalID: -1424374358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_53
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea0293e7e1c3dd41943b8a04273f17b
+      internalID: -125367213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_54
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9dceba32302e6941b48bb685ced5d09
+      internalID: 1443979480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4772736ff99d9441bd23a06a5621343
+      internalID: -1303642729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_58
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56538fe542adf24b8d8f26b755a5f04
+      internalID: -1259690223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_59
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576a3e134906ea84fa0b5a91ef50c94f
+      internalID: -263353400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ab23c3a6c31154e9b40993295bf80d
+      internalID: 2061513063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_61
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448cd4d6518b38245abbe49760d07f16
+      internalID: -1347581138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_62
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d92fdb386c77ab4db7a4e6230fef1df
+      internalID: 544906833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa87fdecd8cc57544be70760abd13e04
+      internalID: 1942035584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_90
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0d3fd149c54f7459d67c19bfd3207b
+      internalID: -1051363460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_93
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e6454d5aa0c1e458ead7da7a8c5580
+      internalID: 1998415417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_96
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde23a0f29ab5d54195ba397162564b6
+      internalID: 2022546637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03ad445c4ccb07478848e31ef58c6e4
+      internalID: 201547294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_100
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e7989944261ba48b85795df0272668
+      internalID: 1356106275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_101
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd8138c4ac52e44eb1b90bacaf0f724
+      internalID: -1507608506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_102
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ef1c62c1579fb4aa2ceaa96e4e7261
+      internalID: 1063097818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_103
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1c670e883b94543a7a65bd40354022
+      internalID: -1453902839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_104
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3eeb57ba980df47a775294e30c7139
+      internalID: -1075948459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_105
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1584415b6ec3af4a97783a319103caa
+      internalID: 1559563750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_106
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a356b2cfdba7da942b660547d0d1aac0
+      internalID: -1620301072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_107
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ec8129759cc034e9e67bd3074a41f8
+      internalID: -1622675949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_108
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae844ac2016ff6b41bf5f229ca9d690b
+      internalID: -1254944621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_109
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e6288d7e8500f48847302fee94925d
+      internalID: 1938375640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5a304419c1eff4791a0aaaca0c7fa0
+      internalID: -1930600971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_111
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ab8eb5fe9f0554b8d63decefbdefff
+      internalID: 1961133440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_112
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388b1f08d9486ba46a869cec7beba60a
+      internalID: 1758273907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_113
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6324486a946d04eaca80dcb8b67a70
+      internalID: 1530372113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_114
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa67ff3286b38f4faf33df28bf4a541
+      internalID: -2079596729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_115
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530a7c6814994b942ab944ee6631aeb3
+      internalID: 1399285132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_116
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0f8f938e779d94893a686521f5af8a
+      internalID: 1857444904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_117
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a674dc65a037bbe49acfd4474fa80dbf
+      internalID: 1168335641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_118
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6c9ad439d1bf84f8dd1ea4637e06af
+      internalID: -54556972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae23a5d608eb6348a95b27104b361bf
+      internalID: -259386674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_120
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9f9b501bb9d8a4589fa9104d7bd9cc
+      internalID: -255115034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_121
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a3706b7a097d843b14071635c8f38d
+      internalID: 711252034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_122
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2885cb59ead8bb149b2b0279fe00cc1a
+      internalID: -1066094058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_123
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63d975698f007b48b87ea20c28ac25f
+      internalID: 109268862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_124
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608ea207836b353469e53e9cbc1652d8
+      internalID: 1187243395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_125
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fab7789a317a240a3abfbc53db6da9
+      internalID: -1278875561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7398c5a52e5c04eb7d34406b2932fd
+      internalID: -886350495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_128
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8673dde97fe9790408d6866f75431c23
+      internalID: -147022656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_130
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f848a9e4608bb464994414ab7e7ff019
+      internalID: -1664792353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_132
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880bab1a450012347a990c0560d8d627
+      internalID: -2030314583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_134
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc358fcad3aca05429560aa0bb988c2f
+      internalID: -1137028193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_136
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ba50ea1c12eef4a97308acabe52622
+      internalID: 94163655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_138
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3fc7988f3851145854e63fa649524d
+      internalID: -242947797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_140
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adbe77180534694781dbc0058b5bd20
+      internalID: 661707818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_142
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ab824a98354044e8ba9cdf81ddc3c6
+      internalID: -1282656467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_144
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177da1ef8ca108d478b2feff33e01192
+      internalID: 1952696525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_146
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf2df841fad61940a04ad519e218814
+      internalID: 1927858603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_148
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75adb557ea6952242938c76b89484f37
+      internalID: 1998494063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_150
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2b35304e36c5b4e971e0e969856e5f
+      internalID: -618102792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: industrial-sprite-sheet-DeadEnd-LMZ_152
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b696e8d520818c246b3ef07b64b46633
+      internalID: -1080219403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d7da8696aa289c447bd0e9cd78ac77f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      industrial-sprite-sheet-DeadEnd-LMZ_0: -1265566608919453746
+      industrial-sprite-sheet-DeadEnd-LMZ_1: 1187038647
+      industrial-sprite-sheet-DeadEnd-LMZ_10: 144500027
+      industrial-sprite-sheet-DeadEnd-LMZ_100: 1356106275
+      industrial-sprite-sheet-DeadEnd-LMZ_101: -1507608506
+      industrial-sprite-sheet-DeadEnd-LMZ_102: 1063097818
+      industrial-sprite-sheet-DeadEnd-LMZ_103: -1453902839
+      industrial-sprite-sheet-DeadEnd-LMZ_104: -1075948459
+      industrial-sprite-sheet-DeadEnd-LMZ_105: 1559563750
+      industrial-sprite-sheet-DeadEnd-LMZ_106: -1620301072
+      industrial-sprite-sheet-DeadEnd-LMZ_107: -1622675949
+      industrial-sprite-sheet-DeadEnd-LMZ_108: -1254944621
+      industrial-sprite-sheet-DeadEnd-LMZ_109: 1938375640
+      industrial-sprite-sheet-DeadEnd-LMZ_11: 397728778
+      industrial-sprite-sheet-DeadEnd-LMZ_110: -1930600971
+      industrial-sprite-sheet-DeadEnd-LMZ_111: 1961133440
+      industrial-sprite-sheet-DeadEnd-LMZ_112: 1758273907
+      industrial-sprite-sheet-DeadEnd-LMZ_113: 1530372113
+      industrial-sprite-sheet-DeadEnd-LMZ_114: -2079596729
+      industrial-sprite-sheet-DeadEnd-LMZ_115: 1399285132
+      industrial-sprite-sheet-DeadEnd-LMZ_116: 1857444904
+      industrial-sprite-sheet-DeadEnd-LMZ_117: 1168335641
+      industrial-sprite-sheet-DeadEnd-LMZ_118: -54556972
+      industrial-sprite-sheet-DeadEnd-LMZ_119: -259386674
+      industrial-sprite-sheet-DeadEnd-LMZ_12: 1129938716
+      industrial-sprite-sheet-DeadEnd-LMZ_120: -255115034
+      industrial-sprite-sheet-DeadEnd-LMZ_121: 711252034
+      industrial-sprite-sheet-DeadEnd-LMZ_122: -1066094058
+      industrial-sprite-sheet-DeadEnd-LMZ_123: 109268862
+      industrial-sprite-sheet-DeadEnd-LMZ_124: 1187243395
+      industrial-sprite-sheet-DeadEnd-LMZ_125: -1278875561
+      industrial-sprite-sheet-DeadEnd-LMZ_126: -886350495
+      industrial-sprite-sheet-DeadEnd-LMZ_127: -1972691187
+      industrial-sprite-sheet-DeadEnd-LMZ_128: -147022656
+      industrial-sprite-sheet-DeadEnd-LMZ_129: -1549349579
+      industrial-sprite-sheet-DeadEnd-LMZ_13: -1874892047
+      industrial-sprite-sheet-DeadEnd-LMZ_130: -1664792353
+      industrial-sprite-sheet-DeadEnd-LMZ_131: -1860600882
+      industrial-sprite-sheet-DeadEnd-LMZ_132: -2030314583
+      industrial-sprite-sheet-DeadEnd-LMZ_133: 1773381442
+      industrial-sprite-sheet-DeadEnd-LMZ_134: -1137028193
+      industrial-sprite-sheet-DeadEnd-LMZ_135: -1311084819
+      industrial-sprite-sheet-DeadEnd-LMZ_136: 94163655
+      industrial-sprite-sheet-DeadEnd-LMZ_137: -1693016311
+      industrial-sprite-sheet-DeadEnd-LMZ_138: -242947797
+      industrial-sprite-sheet-DeadEnd-LMZ_139: 164332979
+      industrial-sprite-sheet-DeadEnd-LMZ_14: -1986056994
+      industrial-sprite-sheet-DeadEnd-LMZ_140: 661707818
+      industrial-sprite-sheet-DeadEnd-LMZ_141: 1355991455
+      industrial-sprite-sheet-DeadEnd-LMZ_142: -1282656467
+      industrial-sprite-sheet-DeadEnd-LMZ_143: -1123939576
+      industrial-sprite-sheet-DeadEnd-LMZ_144: 1952696525
+      industrial-sprite-sheet-DeadEnd-LMZ_145: -1330115006
+      industrial-sprite-sheet-DeadEnd-LMZ_146: 1927858603
+      industrial-sprite-sheet-DeadEnd-LMZ_147: 1155217641
+      industrial-sprite-sheet-DeadEnd-LMZ_148: 1998494063
+      industrial-sprite-sheet-DeadEnd-LMZ_149: 1359178302
+      industrial-sprite-sheet-DeadEnd-LMZ_15: -551541421
+      industrial-sprite-sheet-DeadEnd-LMZ_150: -618102792
+      industrial-sprite-sheet-DeadEnd-LMZ_151: -1561029179
+      industrial-sprite-sheet-DeadEnd-LMZ_152: -1080219403
+      industrial-sprite-sheet-DeadEnd-LMZ_153: 413163624
+      industrial-sprite-sheet-DeadEnd-LMZ_16: -1881802747
+      industrial-sprite-sheet-DeadEnd-LMZ_17: 673047926
+      industrial-sprite-sheet-DeadEnd-LMZ_18: 1664788940
+      industrial-sprite-sheet-DeadEnd-LMZ_19: -1223973360
+      industrial-sprite-sheet-DeadEnd-LMZ_2: 1664363624
+      industrial-sprite-sheet-DeadEnd-LMZ_20: 1871306239
+      industrial-sprite-sheet-DeadEnd-LMZ_21: 622443866
+      industrial-sprite-sheet-DeadEnd-LMZ_22: 961520086
+      industrial-sprite-sheet-DeadEnd-LMZ_23: 2058471420
+      industrial-sprite-sheet-DeadEnd-LMZ_24: -1502673001
+      industrial-sprite-sheet-DeadEnd-LMZ_25: -1030250833
+      industrial-sprite-sheet-DeadEnd-LMZ_26: -1779629189
+      industrial-sprite-sheet-DeadEnd-LMZ_27: 1681172957
+      industrial-sprite-sheet-DeadEnd-LMZ_28: 2042098305
+      industrial-sprite-sheet-DeadEnd-LMZ_29: 40551245
+      industrial-sprite-sheet-DeadEnd-LMZ_3: 15705071
+      industrial-sprite-sheet-DeadEnd-LMZ_30: -1238954863
+      industrial-sprite-sheet-DeadEnd-LMZ_31: 1105819387
+      industrial-sprite-sheet-DeadEnd-LMZ_32: -1298468072
+      industrial-sprite-sheet-DeadEnd-LMZ_33: -1372037193
+      industrial-sprite-sheet-DeadEnd-LMZ_34: 623089387
+      industrial-sprite-sheet-DeadEnd-LMZ_35: 471764373
+      industrial-sprite-sheet-DeadEnd-LMZ_36: 1084192415
+      industrial-sprite-sheet-DeadEnd-LMZ_37: 268519076
+      industrial-sprite-sheet-DeadEnd-LMZ_38: -815212532
+      industrial-sprite-sheet-DeadEnd-LMZ_39: -2049851195
+      industrial-sprite-sheet-DeadEnd-LMZ_4: -110298447
+      industrial-sprite-sheet-DeadEnd-LMZ_40: -983830052
+      industrial-sprite-sheet-DeadEnd-LMZ_41: -1818412298
+      industrial-sprite-sheet-DeadEnd-LMZ_42: 662613421
+      industrial-sprite-sheet-DeadEnd-LMZ_43: 2131659277
+      industrial-sprite-sheet-DeadEnd-LMZ_44: 739534031
+      industrial-sprite-sheet-DeadEnd-LMZ_45: 1925176033
+      industrial-sprite-sheet-DeadEnd-LMZ_46: -1424374358
+      industrial-sprite-sheet-DeadEnd-LMZ_47: -1362163571
+      industrial-sprite-sheet-DeadEnd-LMZ_48: 630113093
+      industrial-sprite-sheet-DeadEnd-LMZ_49: -1608356756
+      industrial-sprite-sheet-DeadEnd-LMZ_5: -410630643
+      industrial-sprite-sheet-DeadEnd-LMZ_50: -1539047010
+      industrial-sprite-sheet-DeadEnd-LMZ_51: 1640277274
+      industrial-sprite-sheet-DeadEnd-LMZ_52: -1911186934
+      industrial-sprite-sheet-DeadEnd-LMZ_53: -125367213
+      industrial-sprite-sheet-DeadEnd-LMZ_54: 1443979480
+      industrial-sprite-sheet-DeadEnd-LMZ_55: 115658417
+      industrial-sprite-sheet-DeadEnd-LMZ_56: -1303642729
+      industrial-sprite-sheet-DeadEnd-LMZ_57: -1861377758
+      industrial-sprite-sheet-DeadEnd-LMZ_58: -1259690223
+      industrial-sprite-sheet-DeadEnd-LMZ_59: -263353400
+      industrial-sprite-sheet-DeadEnd-LMZ_6: -1186931101
+      industrial-sprite-sheet-DeadEnd-LMZ_60: 2061513063
+      industrial-sprite-sheet-DeadEnd-LMZ_61: -1347581138
+      industrial-sprite-sheet-DeadEnd-LMZ_62: 544906833
+      industrial-sprite-sheet-DeadEnd-LMZ_63: 527627470
+      industrial-sprite-sheet-DeadEnd-LMZ_64: 1495752651
+      industrial-sprite-sheet-DeadEnd-LMZ_65: 1357589403
+      industrial-sprite-sheet-DeadEnd-LMZ_66: 297571423
+      industrial-sprite-sheet-DeadEnd-LMZ_67: 303649374
+      industrial-sprite-sheet-DeadEnd-LMZ_68: -992445905
+      industrial-sprite-sheet-DeadEnd-LMZ_69: -1459735794
+      industrial-sprite-sheet-DeadEnd-LMZ_7: -1717670048
+      industrial-sprite-sheet-DeadEnd-LMZ_70: -485499938
+      industrial-sprite-sheet-DeadEnd-LMZ_71: -805148963
+      industrial-sprite-sheet-DeadEnd-LMZ_72: 1634089009
+      industrial-sprite-sheet-DeadEnd-LMZ_73: -260246241
+      industrial-sprite-sheet-DeadEnd-LMZ_74: -181307652
+      industrial-sprite-sheet-DeadEnd-LMZ_75: -1413067761
+      industrial-sprite-sheet-DeadEnd-LMZ_76: 148323349
+      industrial-sprite-sheet-DeadEnd-LMZ_77: 1796279682
+      industrial-sprite-sheet-DeadEnd-LMZ_78: 1501209842
+      industrial-sprite-sheet-DeadEnd-LMZ_79: 1463529219
+      industrial-sprite-sheet-DeadEnd-LMZ_8: 883119485
+      industrial-sprite-sheet-DeadEnd-LMZ_80: 1002005351
+      industrial-sprite-sheet-DeadEnd-LMZ_81: 775660273
+      industrial-sprite-sheet-DeadEnd-LMZ_82: 687744966
+      industrial-sprite-sheet-DeadEnd-LMZ_83: 1086522919
+      industrial-sprite-sheet-DeadEnd-LMZ_84: -974913203
+      industrial-sprite-sheet-DeadEnd-LMZ_85: -1149075859
+      industrial-sprite-sheet-DeadEnd-LMZ_86: -1480864845
+      industrial-sprite-sheet-DeadEnd-LMZ_87: 1942035584
+      industrial-sprite-sheet-DeadEnd-LMZ_88: 2079517647
+      industrial-sprite-sheet-DeadEnd-LMZ_89: 1832563126
+      industrial-sprite-sheet-DeadEnd-LMZ_9: -668864339
+      industrial-sprite-sheet-DeadEnd-LMZ_90: -1051363460
+      industrial-sprite-sheet-DeadEnd-LMZ_91: 703271263
+      industrial-sprite-sheet-DeadEnd-LMZ_92: 2130909552
+      industrial-sprite-sheet-DeadEnd-LMZ_93: 1998415417
+      industrial-sprite-sheet-DeadEnd-LMZ_94: 1063996250
+      industrial-sprite-sheet-DeadEnd-LMZ_95: -1393679930
+      industrial-sprite-sheet-DeadEnd-LMZ_96: 2022546637
+      industrial-sprite-sheet-DeadEnd-LMZ_97: 640013682
+      industrial-sprite-sheet-DeadEnd-LMZ_98: -1789305743
+      industrial-sprite-sheet-DeadEnd-LMZ_99: 201547294
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
