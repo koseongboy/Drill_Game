@@ -19,7 +19,7 @@ namespace DrillGame.Managers
         Facility,
     }
 
-    public class GridManager : MonoBehaviour
+    public partial class GridManager : MonoBehaviour
     {
         #region Fields & Properties
         [FormerlySerializedAs("BackGroundTilemap")] [FormerlySerializedAs("BackGroundTileamp")] [SerializeField]
@@ -110,7 +110,8 @@ namespace DrillGame.Managers
             // 코어 배치
             CoreBatch();
             DrillBatch();
-
+            FacilityBatch();
+            EngineBatch();
         }
 
         private void InitPlaceableArea()
@@ -294,7 +295,12 @@ namespace DrillGame.Managers
             }
         }
 
-        
+        public void SetEntityObject(int entityId)
+        {
+            
+        }
+
+
         public void ExitBatchMode()
         {
             //ClearAllPreviewTile();
