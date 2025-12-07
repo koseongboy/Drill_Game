@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uBE68\uAC15 \uC5D4\uC9C4 Lv.5"
   ItemType: Engine
   EntityId: 202005
-  ItemIcon: engine_test
+  ItemIcon: redEngine

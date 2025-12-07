@@ -28,7 +28,7 @@ namespace DrillGame
 
         public void SetData(int researchId, string name)
         {
-            this.researchID = researchId + transform.GetSiblingIndex();
+            this.researchID = researchId + transform.GetSiblingIndex()-1;
             ui_nameText.text = name + "\n"+ text;
         }
 

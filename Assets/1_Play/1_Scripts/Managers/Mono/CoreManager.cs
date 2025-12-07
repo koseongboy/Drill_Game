@@ -6,6 +6,7 @@ using DrillGame.Core.Managers;
 using DrillGame.Managers;
 using DrillGame.UI;
 using DrillGame.View.Ground;
+using UnityEngine.Tilemaps;
 
 namespace DrillGame
 {
@@ -26,6 +27,8 @@ namespace DrillGame
 
         private Core_Data_ core_Data;
         private const int CORE_DATA_START_ID = 2000;
+        
+        [SerializeField] private Tilemap factoryTileMap;
 
 
         public event Action<int> OnCoreLevelChanged;
@@ -69,6 +72,10 @@ namespace DrillGame
             coreLevel = level;
             
             OnCoreLevelChanged?.Invoke(coreLevel);
+            
+            var drillDataId = 2000 + level;
+            var coreData = ScriptableObjectManager.Instance.GetData<Core_Data_>( drillDataId );
+            ChangeFactoryColor( coreData.GetColor() );
             
             int newLength = 4 + level * 8;
             GameManager.Instance.ExpandFactory( newLength );
@@ -154,6 +161,11 @@ namespace DrillGame
         #endregion
 
         #region private methods
+
+        private void ChangeFactoryColor( Color color )
+        {
+            factoryTileMap.color = color;
+        }
         #endregion
 
         #region Unity event methods

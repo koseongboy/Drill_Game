@@ -20,5 +20,8 @@ MonoBehaviour:
   DropItems:
   - 1011
   - 1013
-  - 1015
+  Color:
+  - 88
+  - 218
+  - 175
   SpriteAddressable: Ground1

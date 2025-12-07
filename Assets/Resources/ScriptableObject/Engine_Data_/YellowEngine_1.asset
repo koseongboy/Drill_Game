@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 205001
   EngineId: 205
   DisplayName: "\uB178\uB791 \uC5D4\uC9C4 Lv.1"
-  Icon: engine_test
+  Icon: yellowEngine
   Type: '#FFF3B7'
   Level: 1
   Coordinates:

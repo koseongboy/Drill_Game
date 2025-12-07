@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: GroundSprite
   m_GUID: 2707b8e79877c4649be8d4042c0ce1b3
-  m_SerializeEntries:
-  - m_GUID: 7ba0b39f9edacca4f9634945419925d3
-    m_Address: Ground1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3ccdd4d375399384a92814e43f466027, type: 2}
   m_SchemaSet:

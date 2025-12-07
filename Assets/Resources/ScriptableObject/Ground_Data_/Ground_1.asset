@@ -19,4 +19,8 @@ MonoBehaviour:
   HP: 5
   DropItems:
   - 1001
+  Color:
+  - 168
+  - 159
+  - 151
   SpriteAddressable: Ground1

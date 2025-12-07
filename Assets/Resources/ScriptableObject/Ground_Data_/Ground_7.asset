@@ -21,4 +21,8 @@ MonoBehaviour:
   - 1009
   - 1011
   - 1013
+  Color:
+  - 163
+  - 88
+  - 218
   SpriteAddressable: Ground1

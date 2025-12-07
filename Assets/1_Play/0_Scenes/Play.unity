@@ -570,8 +570,6 @@ MonoBehaviour:
   awakeUIList:
   - UI_GameStatus
   - UI_UpperButtons
-  readyUIList:
-  - UI_Inventory
 --- !u!1 &92083204
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.CoreManager
   coreLevel: 0
+  factoryTileMap: {fileID: 1920675428}
 --- !u!1 &146924361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,7 +4100,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 8.888889
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4370,6 +4369,8 @@ GameObject:
   - component: {fileID: 504104042}
   - component: {fileID: 504104041}
   - component: {fileID: 504104040}
+  - component: {fileID: 504104044}
+  - component: {fileID: 504104045}
   m_Layer: 0
   m_Name: Managers_ForUI
   m_TagString: Untagged
@@ -4450,6 +4451,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.ResearchManager
   selectedResearchId: 0
   progressValue: 1
+--- !u!114 &504104044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504104038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171f3ab56c8d4db3a436af58de75a086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame._1_Play._1_Scripts.Managers.Mono.ItemSlotPoolManager
+  slotPrefab: {fileID: 8674952265119646972, guid: da264eac977244643aef38e10bc41bac, type: 3}
+  slotObjectParent: {fileID: 504104039}
+--- !u!114 &504104045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504104038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89390ae0b2cf4d749bec34a7d343b62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrillGame.Managers.GroundColorManager
+  backgroundBaseTilemap: {fileID: 1966600774}
+  backgroundTilemap: {fileID: 1405028144}
+  ground: {fileID: 1583862335}
+  groundParticleSystem: {fileID: 1543279412}
 --- !u!1 &574233532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,6 +6638,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039032886}
   m_CullTransparentMesh: 1
+--- !u!21 &1052486690
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprite-Lit-Default (Instance)
+  m_Shader: {fileID: 4800000, guid: e260cfa7296ee7642b167f1eb5be5023, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EnableExternalAlpha: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1055666029
 GameObject:
   m_ObjectHideFlags: 0
@@ -16154,7 +16235,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 1052486690}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16176,7 +16257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7465855713940309216, guid: 7ba0b39f9edacca4f9634945419925d3, type: 3}
+  m_Sprite: {fileID: 2887890100549261210, guid: 2c792d31abf6277439008f89b374fcd0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

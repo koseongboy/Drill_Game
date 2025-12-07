@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c792d31abf6277439008f89b374fcd0
+    m_Address: Ground1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a46c0a6b80b39541af6c2608f0fe90d
     m_Address: copper_drill
     m_ReadOnly: 0

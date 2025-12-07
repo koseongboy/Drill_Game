@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11960302e69a8e04e95267fb162dd1fa
+    m_Address: blueEngine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2107ddfe5d57d4741a59ed752285f02a
     m_Address: ironIngot
     m_ReadOnly: 0
@@ -55,6 +60,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44674a8304ab5e0438df5415bb074e27
+    m_Address: redEngine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b155945e887ef94687e7d7392872225
     m_Address: drillIcon
     m_ReadOnly: 0
@@ -62,6 +72,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 673967a3a1d623544b39273549dd9a62
     m_Address: Selected_Circle_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e0faf56c4f7c4d498d4ac27c502f86f
+    m_Address: coreIcon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -80,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ac73039b87f96341a1c2d79707e08c9
+    m_Address: greenEngine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b6eded22bab892498d88cafb6d7d2a3
     m_Address: LowerView_Engine
     m_ReadOnly: 0
@@ -90,18 +110,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab714b0ea72e9164293d2587a57b6d9e
+    m_Address: yellowEngine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b351307919745a14698efbcb37e160ae
     m_Address: Ingots_C4_128
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c15339e86028c2f43b93ebd5b278dcd7
-    m_Address: engine_test
+    m_Address: engine_Test
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c25ae5b3c71986749b6e645fddf47986
     m_Address: Ore_Rocks_Minerals_C2_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5ba4b8a6c37ab34889b82554ca2dfe1
+    m_Address: purpleEngine
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -112,6 +142,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df4f9108a9a6def4eb373a22d5b9a241
     m_Address: Ingots_C1_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e08e09fa0db18ca4d947041c30163887
+    m_Address: engine_test
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

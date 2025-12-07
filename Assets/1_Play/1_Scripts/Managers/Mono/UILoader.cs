@@ -23,9 +23,6 @@ namespace DrillGame.UI
         [SerializeField]
         private List<string> awakeUIList = new List<string>();
 
-        [SerializeField]
-        private List<string> readyUIList = new List<string>();
-
         private Dictionary<string, AsyncOperationHandle<GameObject>> loadUIHandles = new();
         private Dictionary<string, GameObject> loadedUIs = new();
 
@@ -362,15 +359,6 @@ namespace DrillGame.UI
             }
         }
 
-        private void ReadyUIOnSceneStart()
-        {
-            foreach (var uiName in readyUIList)
-            {
-                LoadUI(uiName, instance => { instance.SetActive(false); });
-            }
-        }   
-
-
         #endregion
 
         #region Unity event methods
@@ -378,7 +366,6 @@ namespace DrillGame.UI
         private void Start()
         {
             ShowUIOnSceneStart();
-            ReadyUIOnSceneStart();
         }
 
         #endregion
