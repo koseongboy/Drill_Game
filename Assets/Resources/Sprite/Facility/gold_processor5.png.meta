@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a3b03f21fa2d5542a4984c57de20499
+guid: 367455091bb288f4c9418cd342e76383
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3113904168814765103
-    second: stone_processor_0
+      213: -1337963486124297374
+    second: gold_processor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stone_processor_0
+      name: gold_processor_0
       rect:
         serializedVersion: 2
         x: 8
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1db103918a039c4d0800000000000000
-      internalID: -3113904168814765103
+      spriteID: 2633e175c499e6de0800000000000000
+      internalID: -1337963486124297374
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stone_processor_0: -3113904168814765103
+      gold_processor_0: -1337963486124297374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

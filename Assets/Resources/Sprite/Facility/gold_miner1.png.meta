@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a3b03f21fa2d5542a4984c57de20499
+guid: 0db58bed2a273584aabbc79f3726e6cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3113904168814765103
-    second: stone_processor_0
+      213: -9073297091963350363
+    second: gold_miner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stone_processor_0
+      name: gold_miner_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 6
-        width: 43
-        height: 46
+        x: 1
+        y: 0
+        width: 58
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1db103918a039c4d0800000000000000
-      internalID: -3113904168814765103
+      spriteID: 5a290f30e5c251280800000000000000
+      internalID: -9073297091963350363
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stone_processor_0: -3113904168814765103
+      gold_miner_0: -9073297091963350363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

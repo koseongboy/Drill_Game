@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b298e9a5caa133a49aa38e4374b0bef9
+guid: 3b17210a29635ae46a60ec0822874c61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5258614569060956063
-    second: stone_miner1_0
+      213: 2578497062797663168
+    second: stone_miner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stone_miner1_0
+      name: stone_miner_0
       rect:
         serializedVersion: 2
         x: 1
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1688d6829e5a507b0800000000000000
-      internalID: -5258614569060956063
+      spriteID: 0cb517aca69a8c320800000000000000
+      internalID: 2578497062797663168
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stone_miner1_0: -5258614569060956063
+      stone_miner_0: 2578497062797663168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
