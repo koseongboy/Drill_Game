@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1080e01cdfe794c4a828f42be808dc3f
+    m_Address: iron_processor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 11960302e69a8e04e95267fb162dd1fa
     m_Address: blueEngine
     m_ReadOnly: 0
@@ -55,6 +60,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bd137a1ca46ec741a52c2a5dfd45250
+    m_Address: laboratory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 406c3a1f96aa5d74daa2b8535013d155
     m_Address: PixelIcon
     m_ReadOnly: 0
@@ -65,8 +75,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 457d42e74514de6448f0efadadc0171e
+    m_Address: copper_processor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b155945e887ef94687e7d7392872225
     m_Address: drillIcon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 62c7ae2d839e1e6499913b5123d10409
+    m_Address: titanium_processor
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -80,13 +100,38 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6eb0da42df300a4448b8ea10cca92567
+    m_Address: stone_miner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fad139b436fc8c40b14f158294fcc7b
+    m_Address: gold_processor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7443bce367d985d4fa38837b4bd90292
     m_Address: engineMergerIcon
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77bd2c815b6274947aa3072d03a59c9c
+    m_Address: resource_merger
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a69d6d82b8aae547bb9450badbe8da2
+    m_Address: tunstein_miner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 82679d1a9d15e0a40a21a4a00aa26457
     m_Address: stone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85c0f5b3f8ccba74f8a1d4f0b6c61950
+    m_Address: copper_miner
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -105,6 +150,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c31bc08d9fd83c42967feb37957dedd
+    m_Address: engine_merger
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a513dee23f3703e40975c42d9cf19782
     m_Address: White-Circle-PNG
     m_ReadOnly: 0
@@ -115,8 +165,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae7462fc892b1be4ab0ebe8447df1269
+    m_Address: obsidian_miner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b351307919745a14698efbcb37e160ae
     m_Address: Ingots_C4_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5a3e55dd85534e40aaeb2ec2ba745f1
+    m_Address: gold_miner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf0094665fb802a4895183ff6fd2d4b5
+    m_Address: drill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c12efda41508a2649a14ce73ba081ea0
+    m_Address: obsidian_processor
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -130,13 +200,33 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c83cef1213417a540be6840b1f8f9dfa
+    m_Address: tunstein_processor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c899be81525d9ed4f847cca0d7ab300d
+    m_Address: stone_processor
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5ba4b8a6c37ab34889b82554ca2dfe1
     m_Address: purpleEngine
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d632c08d6572f03479b66e4f7e3e8ce8
+    m_Address: titanium_miner
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7c818326ed1a5547908b61a70575908
     m_Address: Ingots_C2_128
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd72c124be7b0e643944c396ea8e0036
+    m_Address: iron_miner
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

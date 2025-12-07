@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: drill3
   DisplayName: "\uCCA0 \uB4DC\uB9B4"
   Type: Drill
-  Icon: drillIcon
+  Icon: drill
   Level: 3
   EntityClassName: DrillEntity
   Desc: "\uAC70\uB300 \uCCA0 \uB4DC\uB9B4\uC744 \uC791\uB3D9\uD558\uAE30 \uC704\uD55C

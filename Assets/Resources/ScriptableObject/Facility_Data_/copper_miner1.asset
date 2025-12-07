@@ -16,10 +16,10 @@ MonoBehaviour:
   Name: copper_miner1
   DisplayName: "\uAD6C\uB9AC \uCC44\uAD74 \uC2DC\uC124 Lv.1"
   Type: Miner
-  Icon: engine_test
+  Icon: copper_miner
   Level: 1
   EntityClassName: MinerEntity
-  Desc: "\uAD6C\uB9AC \uAD11\uC11D\uC744 \uC0DD\uC0B0\uD560 \uC218 \uC788\uB2E4."
+  Desc: 
   RequireResearchId: 30001
   RequireCoreLevel: 0
   BuildResourceId: 1002

@@ -442,15 +442,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.050980393}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73c006212353af446a1d3043fcc39301, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: dde633ea11330e045b33639a9500b4eb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1400,9 +1400,33 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2358339357311755315}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DetailWindowSelectButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_ResourceConverter, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4008681317327431120, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
       propertyPath: m_Name
       value: UI_FullWindow_Detail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2358339357311755315}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseDetailWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_ResourceConverter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6481623768961915409, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
       propertyPath: m_Pivot.x

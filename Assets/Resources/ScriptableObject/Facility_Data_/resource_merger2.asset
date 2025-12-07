@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: resource_merger2
   DisplayName: "\uC790\uC6D0 \uD569\uC131\uAE30 Lv.2"
   Type: ResourceConverter
-  Icon: resourceConverterIcon
+  Icon: resource_merger
   Level: 2
   EntityClassName: ResourceConverterEntity
   Desc: "\uC789\uC5EC \uC790\uC6D0\uC744 \uC7AC\uD65C\uC6A9\uD558\uAE30 \uC704\uD55C

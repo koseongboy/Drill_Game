@@ -2889,9 +2889,33 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8664178286952671130}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677403404605005982, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_FacilityBuild, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4008681317327431120, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
       propertyPath: m_Name
       value: UI_FullWindow_Detail
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8664178286952671130}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseDetailWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265881365437755122, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DrillGame.UI_FacilityBuild, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6481623768961915409, guid: 8e3ca91617b294e479a3169c789c56fc, type: 3}
       propertyPath: m_Pivot.x

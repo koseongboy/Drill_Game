@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DrillGame.View.Helper;
 using UnityEngine.Serialization;
 using DrillGame.Managers;
@@ -69,22 +70,8 @@ namespace DrillGame.View.Facility
             boxCollider = GetComponent<BoxCollider2D>();
             //pivot 설정
             pivot = GetPivot(data.GetLength());
-            //스프라이트 가져오기
-            string spritePath = "Sprite/Facility/" + data.Name;
-            Sprite originSprite = Resources.Load<Sprite>(spritePath);
-            if(originSprite != null)
-            {
-                Texture2D texture = originSprite.texture;
-                Rect rect = new Rect(0, 0, texture.width, texture.height);
-                float pixelsPerUnit = texture.width / data.GetLength().x; // 가로 길이를 기준으로 픽셀 퍼 유닛 설정
-                Sprite facilitySprite = Sprite.Create(texture, rect, pivot, pixelsPerUnit);
-                spriteRenderer.sprite = facilitySprite;
-            }
-            else
-            {
-                Debug.LogError("Facility sprite load failed at path: " + spritePath);
-            }
-            
+            //스프라이트 적용하기 - 동시성
+            ChangeIcon();
 
             originalColor = spriteRenderer.material.color;
 
@@ -163,6 +150,24 @@ namespace DrillGame.View.Facility
             }
 
             return new Vector2(newx, newy);
+        }
+
+        private async void ChangeIcon()
+        {
+            try
+            {
+                var originSprite = await SpriteLoader.Instance.LoadSprite(data.Icon);
+                
+                Texture2D texture = originSprite.texture;
+                Rect rect = new Rect(0, 0, texture.width, texture.height);
+                float pixelsPerUnit = texture.width / data.GetLength().x; // 가로 길이를 기준으로 픽셀 퍼 유닛 설정
+                Sprite facilitySprite = Sprite.Create(texture, rect, pivot, pixelsPerUnit);
+                spriteRenderer.sprite = facilitySprite;
+            }
+            catch
+            {
+                Debug.LogError("Facility sprite load failed : " + data.Icon);
+            }
         }
         #endregion
 
