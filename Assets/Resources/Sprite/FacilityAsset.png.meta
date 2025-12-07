@@ -1,0 +1,2717 @@
+fileFormatVersion: 2
+guid: 9c374de974a8c554caa0a9febeff2136
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3965450564563015397
+    second: FacilityAsset_0
+  - first:
+      213: -2283119838615693533
+    second: FacilityAsset_1
+  - first:
+      213: -586154656613187257
+    second: FacilityAsset_2
+  - first:
+      213: -3140762010223261244
+    second: FacilityAsset_3
+  - first:
+      213: -5563787412271514450
+    second: FacilityAsset_4
+  - first:
+      213: 1106102928268546743
+    second: FacilityAsset_5
+  - first:
+      213: 4656185481358505520
+    second: FacilityAsset_6
+  - first:
+      213: 1006068788476238026
+    second: FacilityAsset_7
+  - first:
+      213: 2870045660919847052
+    second: FacilityAsset_8
+  - first:
+      213: -3625624687423150075
+    second: FacilityAsset_9
+  - first:
+      213: 8307221597254698173
+    second: FacilityAsset_10
+  - first:
+      213: 8265951738667266809
+    second: FacilityAsset_11
+  - first:
+      213: 1281526548330845754
+    second: FacilityAsset_12
+  - first:
+      213: 8663718726460064471
+    second: FacilityAsset_13
+  - first:
+      213: -5376276614586435134
+    second: FacilityAsset_14
+  - first:
+      213: -2518546494732146264
+    second: FacilityAsset_15
+  - first:
+      213: 2911524886657173980
+    second: FacilityAsset_16
+  - first:
+      213: -6440469660059397651
+    second: FacilityAsset_17
+  - first:
+      213: -7914671771624485631
+    second: FacilityAsset_18
+  - first:
+      213: 2363028244968323775
+    second: FacilityAsset_19
+  - first:
+      213: -4979739283008120276
+    second: FacilityAsset_20
+  - first:
+      213: -5276666111088802550
+    second: FacilityAsset_21
+  - first:
+      213: -1604448243754555441
+    second: FacilityAsset_22
+  - first:
+      213: -2563825702205106202
+    second: FacilityAsset_23
+  - first:
+      213: -1064333753133258109
+    second: FacilityAsset_24
+  - first:
+      213: 4907264064369847014
+    second: FacilityAsset_25
+  - first:
+      213: 6470504024258146016
+    second: FacilityAsset_26
+  - first:
+      213: -4910391547974062342
+    second: FacilityAsset_27
+  - first:
+      213: -5744513060797685871
+    second: FacilityAsset_28
+  - first:
+      213: 6970432230704906693
+    second: FacilityAsset_29
+  - first:
+      213: -7664953263540132878
+    second: FacilityAsset_30
+  - first:
+      213: -1511253943254751275
+    second: FacilityAsset_31
+  - first:
+      213: -2630428891169740314
+    second: FacilityAsset_32
+  - first:
+      213: -1152668108714460996
+    second: FacilityAsset_33
+  - first:
+      213: 2502597228983775928
+    second: FacilityAsset_34
+  - first:
+      213: 2006617344107159255
+    second: FacilityAsset_35
+  - first:
+      213: 6470582369041666815
+    second: FacilityAsset_36
+  - first:
+      213: 131026812378954175
+    second: FacilityAsset_37
+  - first:
+      213: 4880144791300423279
+    second: FacilityAsset_38
+  - first:
+      213: 5506995217922344890
+    second: FacilityAsset_39
+  - first:
+      213: -6805909252834769685
+    second: FacilityAsset_40
+  - first:
+      213: -3747607865399202098
+    second: FacilityAsset_41
+  - first:
+      213: -7239167602882890560
+    second: FacilityAsset_42
+  - first:
+      213: -7316177822850225515
+    second: FacilityAsset_43
+  - first:
+      213: -6578554814399045273
+    second: FacilityAsset_44
+  - first:
+      213: 8317464787660916954
+    second: FacilityAsset_45
+  - first:
+      213: 3993140802169613264
+    second: FacilityAsset_46
+  - first:
+      213: 3343707445789510765
+    second: FacilityAsset_47
+  - first:
+      213: 5482492624223345145
+    second: FacilityAsset_48
+  - first:
+      213: -2635002334805908334
+    second: FacilityAsset_49
+  - first:
+      213: -3040533052672077406
+    second: FacilityAsset_50
+  - first:
+      213: 2815834270177046745
+    second: FacilityAsset_51
+  - first:
+      213: 8044434047481029654
+    second: FacilityAsset_52
+  - first:
+      213: 3033420237923800046
+    second: FacilityAsset_53
+  - first:
+      213: -4429568709491645496
+    second: FacilityAsset_54
+  - first:
+      213: 8700118942701583576
+    second: FacilityAsset_55
+  - first:
+      213: -9098577531831948437
+    second: FacilityAsset_56
+  - first:
+      213: 1659734430437324247
+    second: FacilityAsset_57
+  - first:
+      213: -3981480443289338869
+    second: FacilityAsset_58
+  - first:
+      213: -2798385283252138404
+    second: FacilityAsset_59
+  - first:
+      213: -8860079843252968930
+    second: FacilityAsset_60
+  - first:
+      213: 7363738326431557338
+    second: FacilityAsset_61
+  - first:
+      213: 1623732885877815003
+    second: FacilityAsset_62
+  - first:
+      213: -798298166635890894
+    second: FacilityAsset_63
+  - first:
+      213: -2764721742902249616
+    second: FacilityAsset_64
+  - first:
+      213: 8445074847256900981
+    second: FacilityAsset_65
+  - first:
+      213: 1415917895375363251
+    second: FacilityAsset_66
+  - first:
+      213: 7547709765653908282
+    second: FacilityAsset_67
+  - first:
+      213: 96625336654523266
+    second: FacilityAsset_68
+  - first:
+      213: 3333113673987804750
+    second: FacilityAsset_69
+  - first:
+      213: 6495805062267478110
+    second: FacilityAsset_70
+  - first:
+      213: 2385044201358208304
+    second: FacilityAsset_71
+  - first:
+      213: -3718580149713858675
+    second: FacilityAsset_72
+  - first:
+      213: -6760110157035612675
+    second: FacilityAsset_73
+  - first:
+      213: 4424473615495005271
+    second: FacilityAsset_74
+  - first:
+      213: 8171558428773945586
+    second: FacilityAsset_75
+  - first:
+      213: 7406272713609228645
+    second: FacilityAsset_76
+  - first:
+      213: 2933365483959960223
+    second: FacilityAsset_77
+  - first:
+      213: 6454764425047069261
+    second: FacilityAsset_78
+  - first:
+      213: 2675344389764619171
+    second: FacilityAsset_79
+  - first:
+      213: -6626095436055490278
+    second: FacilityAsset_80
+  - first:
+      213: 6824929814790612727
+    second: FacilityAsset_81
+  - first:
+      213: -7097903974041531709
+    second: FacilityAsset_82
+  - first:
+      213: -5535466618945922911
+    second: FacilityAsset_83
+  - first:
+      213: 709655068509718557
+    second: FacilityAsset_84
+  - first:
+      213: -8530318467832578052
+    second: FacilityAsset_85
+  - first:
+      213: -1759757543629982861
+    second: FacilityAsset_86
+  - first:
+      213: -5169188697175249499
+    second: FacilityAsset_87
+  - first:
+      213: -9019617206938399140
+    second: FacilityAsset_88
+  - first:
+      213: -544696265125786349
+    second: FacilityAsset_89
+  - first:
+      213: 2316488881369772655
+    second: FacilityAsset_90
+  - first:
+      213: -21696842259834944
+    second: FacilityAsset_91
+  - first:
+      213: 3877402101127631355
+    second: FacilityAsset_92
+  - first:
+      213: -3935437711672982777
+    second: FacilityAsset_93
+  - first:
+      213: 5872729792812025828
+    second: FacilityAsset_94
+  - first:
+      213: -5634854118687472150
+    second: FacilityAsset_95
+  - first:
+      213: -7874164590966075986
+    second: FacilityAsset_96
+  - first:
+      213: 8507190665487179656
+    second: FacilityAsset_97
+  - first:
+      213: -1514409226173988186
+    second: FacilityAsset_98
+  - first:
+      213: 8141499645014403956
+    second: FacilityAsset_99
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 56
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FacilityAsset_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 783
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e69623574c180730800000000000000
+      internalID: 3965450564563015397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 783
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3271aaf6a9ab050e0800000000000000
+      internalID: -2283119838615693533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 783
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7414125027f8dd7f0800000000000000
+      internalID: -586154656613187257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 783
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9c9989795c964d0800000000000000
+      internalID: -3140762010223261244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 783
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac34c5a3d479c2b0800000000000000
+      internalID: -5563787412271514450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 783
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2577cb0caa95f00800000000000000
+      internalID: 1106102928268546743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 783
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03674b896081e9040800000000000000
+      internalID: 4656185481358505520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 783
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8dbb49b3646fd00800000000000000
+      internalID: 1006068788476238026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_8
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 719
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88574c825374d720800000000000000
+      internalID: 2870045660919847052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 719
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508a1416e813fadc0800000000000000
+      internalID: -3625624687423150075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 719
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4c1d6770e294370800000000000000
+      internalID: 8307221597254698173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 719
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2f8c9bf4f86b270800000000000000
+      internalID: 8265951738667266809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_12
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 719
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a361e7b1b95e8c110800000000000000
+      internalID: 1281526548330845754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_13
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 719
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d24d848746bb3870800000000000000
+      internalID: 8663718726460064471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_14
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 707
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9f55d57e0a365b0800000000000000
+      internalID: -5376276614586435134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_15
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 706
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a96f2f8e435c0dd0800000000000000
+      internalID: -2518546494732146264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 642
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd909ef5570d76820800000000000000
+      internalID: 2911524886657173980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 655
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de19a7d97fade96a0800000000000000
+      internalID: -6440469660059397651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_18
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 655
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10dc28a15ff692290800000000000000
+      internalID: -7914671771624485631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_19
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 655
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba3d8f3ba92bc020800000000000000
+      internalID: 2363028244968323775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_20
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 655
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a1e32818964eab0800000000000000
+      internalID: -4979739283008120276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 648
+        width: 58
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05c532012485c6b0800000000000000
+      internalID: -5276666111088802550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_22
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 647
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc7a282b2dadbb9e0800000000000000
+      internalID: -1604448243754555441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_23
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 651
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e75c0a8b167b6cd0800000000000000
+      internalID: -2563825702205106202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_24
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 587
+        width: 56
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38aa802371aba31f0800000000000000
+      internalID: -1064333753133258109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_25
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 582
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eaedcfaaaa1a1440800000000000000
+      internalID: 4907264064369847014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 583
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee64abb029dbc950800000000000000
+      internalID: 6470504024258146016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_27
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 583
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afeecea47e8cadbb0800000000000000
+      internalID: -4910391547974062342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_28
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 583
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19fdf839ec36740b0800000000000000
+      internalID: -5744513060797685871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_29
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 581
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c18912de23fbb060800000000000000
+      internalID: 6970432230704906693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_30
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 581
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f328b21e9d90a590800000000000000
+      internalID: -7664953263540132878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_31
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 582
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d764eaab82f60be0800000000000000
+      internalID: -1511253943254751275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_32
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 518
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e927ee2cd6de7bd0800000000000000
+      internalID: -2630428891169740314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_33
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 517
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb837245676e000f0800000000000000
+      internalID: -1152668108714460996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 517
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b27471abe20bb220800000000000000
+      internalID: 2502597228983775928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_35
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 519
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de15abc7dfe8db10800000000000000
+      internalID: 2006617344107159255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_36
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 519
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff252acc1602cc950800000000000000
+      internalID: 6470582369041666815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_37
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 522
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb936ef013081d100800000000000000
+      internalID: 131026812378954175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_38
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 521
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e3fe1e4d1c9b340800000000000000
+      internalID: 4880144791300423279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 524
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7490039f6cc6c40800000000000000
+      internalID: 5506995217922344890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_40
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 458
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be44d33089d8c81a0800000000000000
+      internalID: -6805909252834769685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_41
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 458
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eceab698082ddfbc0800000000000000
+      internalID: -3747607865399202098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_42
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 459
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c436a08b6f498b90800000000000000
+      internalID: -7239167602882890560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_43
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 459
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59aeb6b6807b77a90800000000000000
+      internalID: -7316177822850225515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_44
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 463
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7612f40404744b4a0800000000000000
+      internalID: -6578554814399045273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_45
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 463
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad8495418229d6370800000000000000
+      internalID: 8317464787660916954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_46
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 460
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db207b276c7a6730800000000000000
+      internalID: 3993140802169613264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_47
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 463
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ccc1bc43c376e20800000000000000
+      internalID: 3343707445789510765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_48
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 396
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f918868ef9b51c40800000000000000
+      internalID: 5482492624223345145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_49
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 396
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294a19b56579e6bd0800000000000000
+      internalID: -2635002334805908334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_50
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 398
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a195ab4c4bddc5d0800000000000000
+      internalID: -3040533052672077406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_51
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 397
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0364c895ad31720800000000000000
+      internalID: 2815834270177046745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_52
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 388
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6142a2b152293af60800000000000000
+      internalID: 8044434047481029654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_53
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 388
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3dde772afd81a20800000000000000
+      internalID: 3033420237923800046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_54
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 388
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3a0924ab20782c0800000000000000
+      internalID: -4429568709491645496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_55
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 388
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcff5b45180db870800000000000000
+      internalID: 8700118942701583576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_56
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 327
+        width: 58
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b6ecde0fb5bb180800000000000000
+      internalID: -9098577531831948437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_57
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 327
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5b3bbbbaf880710800000000000000
+      internalID: 1659734430437324247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_58
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 326
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cf291b1a0feb8c0800000000000000
+      internalID: -3981480443289338869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_59
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 326
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e431f49632a29d0800000000000000
+      internalID: -2798385283252138404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_60
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 325
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12ee45435caa0580800000000000000
+      internalID: -8860079843252968930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_61
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 325
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6e1ed3ef0413660800000000000000
+      internalID: 7363738326431557338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_62
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 326
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6fdd0f478a88610800000000000000
+      internalID: 1623732885877815003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_63
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 326
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23772d80c00ebe4f0800000000000000
+      internalID: -798298166635890894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_64
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 261
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0773383193cb1a9d0800000000000000
+      internalID: -2764721742902249616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_65
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 261
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575755464dee23570800000000000000
+      internalID: 8445074847256900981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_66
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 260
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc97f0f2d956a310800000000000000
+      internalID: 1415917895375363251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_67
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 260
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b4c89da0adeb860800000000000000
+      internalID: 7547709765653908282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_68
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 260
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b68935b38475100800000000000000
+      internalID: 96625336654523266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_69
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 261
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e4a061a39914e20800000000000000
+      internalID: 3333113673987804750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_70
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 261
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5023a2b94cb52a50800000000000000
+      internalID: 6495805062267478110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_71
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 263
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03daf8b8011691120800000000000000
+      internalID: 2385044201358208304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_72
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 200
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f8c734e03f46cc0800000000000000
+      internalID: -3718580149713858675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_73
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 201
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5d167f0a34f22a0800000000000000
+      internalID: -6760110157035612675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_74
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 200
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7540ba9bf43e66d30800000000000000
+      internalID: 4424473615495005271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_75
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 202
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f09b60a815376170800000000000000
+      internalID: 8171558428773945586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_76
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 203
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561b85cfacd58c660800000000000000
+      internalID: 7406272713609228645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_77
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 196
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9243d3bd5865b820800000000000000
+      internalID: 2933365483959960223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_78
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 198
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4252c7bb0ee39950800000000000000
+      internalID: 6454764425047069261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_79
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 199
+        width: 50
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab11c34c8bb02520800000000000000
+      internalID: 2675344389764619171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 135
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a115316be416b04a0800000000000000
+      internalID: -6626095436055490278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_81
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 133
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6219ba18507be50800000000000000
+      internalID: 6824929814790612727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_82
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 133
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cacb6121fd2f7d90800000000000000
+      internalID: -7097903974041531709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_83
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 133
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a812bf20721e23b0800000000000000
+      internalID: -5535466618945922911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_84
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 131
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18c39f568339d900800000000000000
+      internalID: 709655068509718557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_85
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 131
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff72ef8c883e9980800000000000000
+      internalID: -8530318467832578052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_86
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 133
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 373fe1176d51497e0800000000000000
+      internalID: -1759757543629982861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_87
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 133
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ada7e7744a5348b0800000000000000
+      internalID: -5169188697175249499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_88
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 77
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e8f6230f1e3d280800000000000000
+      internalID: -9019617206938399140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_89
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 78
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d02bef1a9d078f0800000000000000
+      internalID: -544696265125786349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_90
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 72
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62ff244d52d52020800000000000000
+      internalID: 2316488881369772655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_91
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 72
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7da5046dae2bff0800000000000000
+      internalID: -21696842259834944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_92
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 73
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1d019eaac4fc530800000000000000
+      internalID: 3877402101127631355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_93
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 77
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7034e0880448269c0800000000000000
+      internalID: -3935437711672982777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_94
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 77
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e70a6aa1a0208150800000000000000
+      internalID: 5872729792812025828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_95
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 75
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae58c76a80afcc1b0800000000000000
+      internalID: -5634854118687472150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_96
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead028c060959b290800000000000000
+      internalID: -7874164590966075986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_97
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 4
+        width: 54
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fd1e456dc9f0670800000000000000
+      internalID: 8507190665487179656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_98
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 4
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2435d15dcbbfae0800000000000000
+      internalID: -1514409226173988186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FacilityAsset_99
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 4
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b6d08aaca6cf070800000000000000
+      internalID: 8141499645014403956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FacilityAsset_0: 3965450564563015397
+      FacilityAsset_1: -2283119838615693533
+      FacilityAsset_10: 8307221597254698173
+      FacilityAsset_11: 8265951738667266809
+      FacilityAsset_12: 1281526548330845754
+      FacilityAsset_13: 8663718726460064471
+      FacilityAsset_14: -5376276614586435134
+      FacilityAsset_15: -2518546494732146264
+      FacilityAsset_16: 2911524886657173980
+      FacilityAsset_17: -6440469660059397651
+      FacilityAsset_18: -7914671771624485631
+      FacilityAsset_19: 2363028244968323775
+      FacilityAsset_2: -586154656613187257
+      FacilityAsset_20: -4979739283008120276
+      FacilityAsset_21: -5276666111088802550
+      FacilityAsset_22: -1604448243754555441
+      FacilityAsset_23: -2563825702205106202
+      FacilityAsset_24: -1064333753133258109
+      FacilityAsset_25: 4907264064369847014
+      FacilityAsset_26: 6470504024258146016
+      FacilityAsset_27: -4910391547974062342
+      FacilityAsset_28: -5744513060797685871
+      FacilityAsset_29: 6970432230704906693
+      FacilityAsset_3: -3140762010223261244
+      FacilityAsset_30: -7664953263540132878
+      FacilityAsset_31: -1511253943254751275
+      FacilityAsset_32: -2630428891169740314
+      FacilityAsset_33: -1152668108714460996
+      FacilityAsset_34: 2502597228983775928
+      FacilityAsset_35: 2006617344107159255
+      FacilityAsset_36: 6470582369041666815
+      FacilityAsset_37: 131026812378954175
+      FacilityAsset_38: 4880144791300423279
+      FacilityAsset_39: 5506995217922344890
+      FacilityAsset_4: -5563787412271514450
+      FacilityAsset_40: -6805909252834769685
+      FacilityAsset_41: -3747607865399202098
+      FacilityAsset_42: -7239167602882890560
+      FacilityAsset_43: -7316177822850225515
+      FacilityAsset_44: -6578554814399045273
+      FacilityAsset_45: 8317464787660916954
+      FacilityAsset_46: 3993140802169613264
+      FacilityAsset_47: 3343707445789510765
+      FacilityAsset_48: 5482492624223345145
+      FacilityAsset_49: -2635002334805908334
+      FacilityAsset_5: 1106102928268546743
+      FacilityAsset_50: -3040533052672077406
+      FacilityAsset_51: 2815834270177046745
+      FacilityAsset_52: 8044434047481029654
+      FacilityAsset_53: 3033420237923800046
+      FacilityAsset_54: -4429568709491645496
+      FacilityAsset_55: 8700118942701583576
+      FacilityAsset_56: -9098577531831948437
+      FacilityAsset_57: 1659734430437324247
+      FacilityAsset_58: -3981480443289338869
+      FacilityAsset_59: -2798385283252138404
+      FacilityAsset_6: 4656185481358505520
+      FacilityAsset_60: -8860079843252968930
+      FacilityAsset_61: 7363738326431557338
+      FacilityAsset_62: 1623732885877815003
+      FacilityAsset_63: -798298166635890894
+      FacilityAsset_64: -2764721742902249616
+      FacilityAsset_65: 8445074847256900981
+      FacilityAsset_66: 1415917895375363251
+      FacilityAsset_67: 7547709765653908282
+      FacilityAsset_68: 96625336654523266
+      FacilityAsset_69: 3333113673987804750
+      FacilityAsset_7: 1006068788476238026
+      FacilityAsset_70: 6495805062267478110
+      FacilityAsset_71: 2385044201358208304
+      FacilityAsset_72: -3718580149713858675
+      FacilityAsset_73: -6760110157035612675
+      FacilityAsset_74: 4424473615495005271
+      FacilityAsset_75: 8171558428773945586
+      FacilityAsset_76: 7406272713609228645
+      FacilityAsset_77: 2933365483959960223
+      FacilityAsset_78: 6454764425047069261
+      FacilityAsset_79: 2675344389764619171
+      FacilityAsset_8: 2870045660919847052
+      FacilityAsset_80: -6626095436055490278
+      FacilityAsset_81: 6824929814790612727
+      FacilityAsset_82: -7097903974041531709
+      FacilityAsset_83: -5535466618945922911
+      FacilityAsset_84: 709655068509718557
+      FacilityAsset_85: -8530318467832578052
+      FacilityAsset_86: -1759757543629982861
+      FacilityAsset_87: -5169188697175249499
+      FacilityAsset_88: -9019617206938399140
+      FacilityAsset_89: -544696265125786349
+      FacilityAsset_9: -3625624687423150075
+      FacilityAsset_90: 2316488881369772655
+      FacilityAsset_91: -21696842259834944
+      FacilityAsset_92: 3877402101127631355
+      FacilityAsset_93: -3935437711672982777
+      FacilityAsset_94: 5872729792812025828
+      FacilityAsset_95: -5634854118687472150
+      FacilityAsset_96: -7874164590966075986
+      FacilityAsset_97: 8507190665487179656
+      FacilityAsset_98: -1514409226173988186
+      FacilityAsset_99: 8141499645014403956
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
