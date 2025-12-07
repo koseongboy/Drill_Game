@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using DrillGame.Core.Ground;
 using DrillGame.Core.Managers;
+using DrillGame.Managers;
 using DrillGame.UI;
 using DrillGame.UI.Interface;
 using DrillGame.View.Ground;
@@ -147,10 +149,21 @@ namespace DrillGame
         {
             while (true)
             {
-                totalPlayTime = Time.time;
+                totalPlayTime += 1;
                 UpdateTime();
                 yield return new WaitForSeconds(1f); // 1초 대기
             }
+        }
+
+        private void SavePlayTime()
+        {
+            SaveManager.Instance.SaveDailyPlayTimeData((int)totalPlayTime);
+        }
+        
+        private void LoadPlayTime()
+        {
+            var savedTodayPlayTime = SaveManager.Instance.LoadTodayPlayTime();
+            totalPlayTime = savedTodayPlayTime;
         }
         #endregion
 
@@ -164,25 +177,40 @@ namespace DrillGame
             InputCountManager.Instance.OnTickCountChanged += OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged += OnResearchProgressRateChanged; 
             CoreManager.Instance.OnCoreLevelChanged += OnLevelChanged;
+            SaveManager.OnRequestAllDataSave += SavePlayTime;
         }
 
         private void OnDisable()
         {
+            return;
             // 여기서 NullReferenceException 발생할텐데, 무시해도 됨. (아마도)
             GroundComponent.Instance.OnDepthChanged -= OnDepthChanged;
             InputCountManager.Instance.OnInputCountChanged -= OnInputCountChanged;
             InputCountManager.Instance.OnTickCountChanged -= OnTickCountChanged;
             ResearchManager.Instance.OnResearchProgressChanged -= OnResearchProgressRateChanged;
             CoreManager.Instance.OnCoreLevelChanged -= OnLevelChanged;
+            SaveManager.OnRequestAllDataSave -= SavePlayTime;
         }
         
         private void Start()
         {
+            LoadPlayTime();
+            
             // PlayTime 타이머
             StartCoroutine(UpdatePlayTimeTxt());
         }
+
         #endregion
 
+        #region DEV
+
+        [ContextMenu("SetInputCount 5")]
+        public void SetInputCount_5()
+        {
+            InputCountManager.Instance.SetInputCount();
+        }
+
+        #endregion
 
     }
 }

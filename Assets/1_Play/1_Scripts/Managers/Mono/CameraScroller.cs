@@ -8,7 +8,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
     {
         #region Fields & Properties
         [SerializeField]
-        private float minCamOffset = 3f;
+        private float minCamOffset = 1f;
         [SerializeField]
         private float maxCamOffset = 3f;
         [SerializeField]

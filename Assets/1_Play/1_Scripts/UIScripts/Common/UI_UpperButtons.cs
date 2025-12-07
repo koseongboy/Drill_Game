@@ -46,6 +46,7 @@ namespace DrillGame
         private bool isEditing = false;
         private bool isInventoryOpen = false;
         private bool isTryQuit = false;
+        private bool isCalendarOpen = false;
         
         public void LinkAddressable(string address)
         {
@@ -70,9 +71,21 @@ namespace DrillGame
             yield return new WaitForSeconds(3f);
             isTryQuit = false;
         }
-        
-        
 
+        public void ToggleCalendar()
+        {
+            if (isCalendarOpen)
+            {
+                UILoader.Instance.HideUI("UI_Calendar");
+            }
+            else
+            {
+                UILoader.Instance.ShowUI("UI_Calendar");
+            }
+            isCalendarOpen = !isCalendarOpen;
+        }
+        
+            
         public void InventoryButtonPressed()
         {
             if (isInventoryOpen)

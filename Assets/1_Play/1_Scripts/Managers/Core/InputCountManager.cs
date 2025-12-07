@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DrillGame.Core.Managers;
+using DrillGame.Managers;
 using UnityEngine;
 
 namespace DrillGame
@@ -36,6 +37,8 @@ namespace DrillGame
         {
             inputCount = 0;
             tickCount = 0;
+            LoadInputCount();
+            SaveManager.OnRequestAllDataSave += SaveInputCount;
         }
         
         #endregion
@@ -72,9 +75,25 @@ namespace DrillGame
         #endregion
 
         #region private methods
+        private void SaveInputCount()
+        {
+            SaveManager.Instance.SaveInputCountData(inputCount);
+        }
+        
+        private void LoadInputCount()
+        {
+            var savedTodayInputCount = SaveManager.Instance.LoadTodayInputCount();
+            inputCount = savedTodayInputCount;
+            Debug.Log(inputCount);
+            OnInputCountChanged?.Invoke(inputCount);
+        }
         #endregion
-
-        #region Unity event methods
+        
+        #region DEV
+        public void SetInputCount()
+        {
+            inputCount = 5;
+        }
         #endregion
     }
 }
