@@ -53,6 +53,7 @@ namespace DrillGame.Core.Managers
             corePosition = Vector2Int.left;
             tickCount = TICK_INTERVAL - 1;
 
+            SaveManager.OnRequestAllDataSave += SaveEntityData;
             // for test
             //AddEngine(new EngineEntity(new Vector2Int(0, 2)));
             //List<Vector2Int> formation = new List<Vector2Int>() { new Vector2Int(0, 0), new Vector2Int(-1, 0), new Vector2Int(0, -1) };
@@ -182,6 +183,34 @@ namespace DrillGame.Core.Managers
                 facility.Key.Run(facility.Value);
             }
             ScheduledFacilities.Clear();
+        }
+
+        private void SaveEntityData()
+        {
+            
+            List<BatchData> batchDatas = new List<BatchData>();
+            foreach (var engine in engines)
+            {
+                if(engine.IsCore()) continue; // 코어는 저장하지 않음.
+                BatchData data = new BatchData()
+                {
+                    EntityItemID = engine.GetEngineItemId(),
+                    batchPosition = engine.GetPosition()
+                };
+                batchDatas.Add(data);
+            }
+            foreach (var facility in facilities)
+            {
+                if(facility.IsDrill()) continue; // 드릴은 저장하지 않음.
+                BatchData data = new BatchData()
+                {
+                    EntityItemID = facility.GetFacilityItemId(),
+                    batchPosition = facility.GetPosition()
+                };
+                batchDatas.Add(data);
+            }
+            Debug.Log($"Save Entity Data : total {batchDatas.Count} entities");
+            SaveManager.Instance.SaveEntityBatchData(batchDatas);
         }
 
         // 코어가 활성화 되면 모든 엔진에 명령을 내립니다.

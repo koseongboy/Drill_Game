@@ -8,6 +8,12 @@ namespace DrillGame.Managers
     public class SaveManager : MonoBehaviour
     {
         #region Fields & Properties
+        [SerializeField]
+        private List<BatchData> initBatchData;
+
+        [SerializeField]
+        private List<Vector2Int> initInventoryData;
+
         public static SaveManager Instance { get; private set; }
 
         private const string IS_FIRST_LAUNCH_KEY = "IsFirstLaunch";
@@ -27,6 +33,7 @@ namespace DrillGame.Managers
             { "PLAY_TIME_KEY", "DailyPlayTimeData" },
             { "INPUT_COUNT_KEY", "DailyInputCountData" },
             { "CORE_LEVEL_KEY", "CoreLevelData" },
+            { "ENTITY_BATCH_KEY", "EntityBatchData" }
 
         };
 
@@ -369,6 +376,33 @@ namespace DrillGame.Managers
             Debug.Log("코어 레벨 매니저 데이터가 초기화되었습니다.");
         }
 
+        public void SaveEntityBatchData(List<BatchData> data)
+        {
+            ES3.Save(SaveKeys["ENTITY_BATCH_KEY"], data);
+        }
+        public List<BatchData> LoadEntityBatchData(List<BatchData> defaultValue)
+        {
+            if (ES3.KeyExists(SaveKeys["ENTITY_BATCH_KEY"]))
+            {
+                return ES3.Load<List<BatchData>>(SaveKeys["ENTITY_BATCH_KEY"]);
+            }
+            Debug.LogWarning("No saved EntityBatchData found.");
+            return defaultValue;
+        }
+        public void DeleteEntityBatchData()
+        {
+            ES3.DeleteKey(SaveKeys["ENTITY_BATCH_KEY"]);
+        }
+        [ContextMenu("엔티티 배치 매니저 단독 초기화")]
+        public void InitializeEntityBatchManagerData()
+        {
+            ES3.Save(SaveKeys["ENTITY_BATCH_KEY"], new List<BatchData>());
+            Debug.Log("엔티티 배치 매니저 데이터가 초기화되었습니다.");
+        }
+
+
+
+
         [ContextMenu("리셋 데이터")]
         public void ResetAllData()
         {
@@ -392,9 +426,18 @@ namespace DrillGame.Managers
             ES3.Save(SaveKeys["DRILL_DATA_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_DEPTH_KEY"], 1);
             ES3.Save(SaveKeys["GROUND_HP_KEY"], ScriptableObjectManager.Instance.GetData<Ground_Data_>(5001).HP);
-            ES3.Save(SaveKeys["INVENTORY_KEY"], new Dictionary<int, int>());
+
+            Dictionary<int, int> initInventoryData = new Dictionary<int, int>();
+            foreach (var item in this.initInventoryData)
+            {
+                initInventoryData[item.x] = item.y;
+                Debug.Log($"인벤토리 초기 아이템 설정: ItemID {item.x}, Count {item.y}");
+            }
+            ES3.Save(SaveKeys["INVENTORY_KEY"], initInventoryData);
+
             ES3.Save(SaveKeys["PLAY_TIME_KEY"], new Dictionary<string, int>());
             ES3.Save(SaveKeys["CORE_LEVEL_KEY"], 1);
+            ES3.Save(SaveKeys["ENTITY_BATCH_KEY"], initBatchData);
 
             Debug.Log("첫 실행 데이터가 설정되었습니다.");
         }

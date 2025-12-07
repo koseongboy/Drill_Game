@@ -15,10 +15,10 @@ namespace DrillGame.Core.Engine
         #region Fields & Properties
 
         [ReadOnly]    
-        private int itemId; // Ã¶°ÅÇÒ ¶§ ÀÎº¥Åä¸®¿¡ ³Ö±â À§ÇÑ ItemId°ª
+        private int itemId; // ì² ê±°í•  ë•Œ ì¸ë²¤í† ë¦¬ì— ë„£ê¸° ìœ„í•œ ItemIdê°’
         
         [ReadOnly]    
-        private int engineId; // UI Ç¥½Ã¿ë Data Id°ª
+        private int engineId; // UI í‘œì‹œìš© Data Idê°’
         
         private bool isRunning = true; // ?????? ???????? false?? ????
         private List<int> scheduleList = new List<int>(); // ???? ? ???? ??????? ?????
@@ -73,8 +73,17 @@ namespace DrillGame.Core.Engine
         {
             return engineId;
         }
-        
-        
+        public bool IsCore()
+        {
+            if (engineId == 210001) return true;
+            return false;
+        }
+
+        public Vector2Int GetPosition()
+        {
+            return position;
+        }
+
         public List<Vector2Int> GetFormationPositions()
         {
             List<Vector2Int> absolutePositions = new List<Vector2Int>();
@@ -89,17 +98,17 @@ namespace DrillGame.Core.Engine
         #region public methods
         public void DeleteEntity()
         {
-            // presentor È£Ãâ
+            // presentor í˜¸ì¶œ
             OnEngineDeleted?.Invoke();
-            // BoardManager ¿¡¼­ Á¦°Å
+            // BoardManager ì—ì„œ ì œê±°
             BoardManager.Instance.RemoveEngine(this);
-            // ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛ Ãß°¡
+            // ì¸ë²¤í† ë¦¬ì— ì•„ì´í…œ ì¶”ê°€
             InventoryManager.Instance.AddItem(itemId);
         }
 
         public void MoveEntity()
         {
-            // delete ÄÚµå »ç¿ëÈÄ ´Ù½Ã Áı¾îµå´Â ÆÇÁ¤ÀÔ´Ï´Ù.
+            // delete ì½”ë“œ ì‚¬ìš©í›„ ë‹¤ì‹œ ì§‘ì–´ë“œëŠ” íŒì •ì…ë‹ˆë‹¤.
             OnEngineDeleted?.Invoke();
             BoardManager.Instance.RemoveEngine(this);
             GameManager.Instance.BatchEntity(itemId);
@@ -107,8 +116,8 @@ namespace DrillGame.Core.Engine
 
         public void Tick()
         {
-            if (!isRunning) return;  // ½ÇÇà ÁßÀÌ ¾Æ´Ï¶ó¸é ¹«½Ã
-            //if (engineId == 210001) Debug.Log("Àú´Â ÄÚ¾î¿¡¿ä");
+            if (!isRunning) return;  // ì‹¤í–‰ ì¤‘ì´ ì•„ë‹ˆë¼ë©´ ë¬´ì‹œ
+            //if (engineId == 210001) Debug.Log("ì €ëŠ” ì½”ì–´ì—ìš”");
             ScheduleTick();
         }
 
@@ -120,7 +129,7 @@ namespace DrillGame.Core.Engine
 
         public void ScheduleEngineRun(Vector2Int corePosition)
         {
-            // ¸ÇÇØÆ° °Å¸® °è»ê
+            // ë§¨í•´íŠ¼ ê±°ë¦¬ ê³„ì‚°
             int distance = Mathf.Abs(corePosition.x - position.x) + Mathf.Abs(corePosition.y - position.y);
 
             scheduleList.Add(distance);

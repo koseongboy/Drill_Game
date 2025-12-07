@@ -8,27 +8,20 @@ namespace DrillGame.Managers
 {
     public partial class GridManager : MonoBehaviour
     {
-        [SerializeField]
-        private BatchData[] facilityBatchDatas;
-        [SerializeField]
-        private BatchData[] engineBatchDatas;
-        public void FacilityBatch()
+        public void EntityBatch(List<BatchData> batchDatas)
         {
-            foreach (BatchData data in facilityBatchDatas)
+            foreach (BatchData data in batchDatas)
             {
-                Batch(data.batchPosition, data.EntityID, true);
+                int entityId = ScriptableObjectManager.Instance.GetData<Item_Data_>(data.EntityItemID).EntityId;
+                
+                bool isFacility = entityId < 200000;
+
+                Batch(data.batchPosition, data.EntityItemID, entityId, isFacility);
             }
         }
 
-        public void EngineBatch()
-        {
-            foreach (BatchData data in engineBatchDatas)
-            {
-                Batch(data.batchPosition, data.EntityID, false);
-            }
-        }
 
-        private void Batch(Vector2Int pos, int id, bool isFacility)
+        private void Batch(Vector2Int pos, int itemId, int entityId, bool isFacility)
         {
             // update Action 전환
 
@@ -37,13 +30,13 @@ namespace DrillGame.Managers
             HashSet<Vector2Int> occupiedPositions = isFacility ? FacilityOccupiedPositions : EngineOccupiedPositions;
             occupiedPositions.Add(cellPos2D);
 
-            EnterBatchMode(isFacility ? TilemapType.Facility : TilemapType.Engine, id);
+            EnterBatchMode(isFacility ? TilemapType.Facility : TilemapType.Engine, entityId);
 
             // Instantiate entity
             GameObject gameObject = Instantiate(entityObject, grid.CellToWorld(cellPosition) + new Vector3(0.5f, 0.5f, 0), Quaternion.identity, entityParent);
             if (gameObject.TryGetComponent<IDrillGameObjectInit>(out var init))
             {
-                init.Initialize(cellPos2D, 0, id); // Updated to use id instead of level
+                init.Initialize(cellPos2D, itemId, entityId); // Updated to use id instead of level
                 // set sorting layer in parent
                 gameObject.GetComponent<SpriteRenderer>().sortingLayerID = entityParent.GetComponent<Tilemap>().GetComponent<TilemapRenderer>().sortingLayerID;
             }
@@ -60,7 +53,7 @@ namespace DrillGame.Managers
     [System.Serializable]
     public class BatchData
     {
-        public int EntityID;
+        public int EntityItemID;
         public Vector2Int batchPosition;
     }
 }
