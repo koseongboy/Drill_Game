@@ -167,4 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4044c21e45d236f46a4416a4fcdf2aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Engine.WireComponent
-  wirePrefab: {fileID: 0}
+  wirePrefab: {fileID: 16389908550174584, guid: b02da0648e410374e964384a62773a8c, type: 3}
+  wireWidthPrefab: {fileID: 16389908550174584, guid: 62d0b5474a6007744a3b0150a048487b, type: 3}
+  setColor: {r: 0.7519288, g: 0, b: 1, a: 0}
