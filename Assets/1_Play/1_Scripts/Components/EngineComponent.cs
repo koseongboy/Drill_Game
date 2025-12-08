@@ -88,7 +88,7 @@ namespace DrillGame.View.Engine
 
             if(entityId != CORE_ENTITY_ID)
             {
-                wireComponent = this.gameObject.AddComponent<WireComponent>();
+                wireComponent = this.gameObject.GetComponent<WireComponent>();
                 wireComponent.SetWire(transform.position, CoreManager.Instance.GetCoreWorldPosition());
             }
 
