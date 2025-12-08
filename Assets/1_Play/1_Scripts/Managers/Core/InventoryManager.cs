@@ -98,6 +98,40 @@ namespace DrillGame.Core.Managers
 
         public bool TryRemoveItem(int itemId, int count = 1)
         {
+            // 연구 진척에 따른 감산 로직
+            // 구리
+            if (itemId == 1004 && ResearchManager.Instance.IsResearchDone(30004)) 
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+            // 철
+            else if (itemId == 1006 && ResearchManager.Instance.IsResearchDone(30009))
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+            // 금
+            else if (itemId == 1008 && ResearchManager.Instance.IsResearchDone(30014))
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+            // 흑요석
+            else if (itemId == 1010 && ResearchManager.Instance.IsResearchDone(30019))
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+            // 텅스텐
+            else if (itemId == 1012 && ResearchManager.Instance.IsResearchDone(30024))
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+            // 티타늄
+            else if (itemId == 1014 && ResearchManager.Instance.IsResearchDone(30029))
+            {
+                count = Mathf.CeilToInt(count * 0.7f); // 30% 감소
+            }
+
+
+            // 실제 아이템 제거 로직
             if (inventoryItems.TryGetValue(itemId, out int currentCount) && currentCount >= count)
             {
                 inventoryItems[itemId] = currentCount - count;
