@@ -244,6 +244,11 @@ namespace DrillGame.WindowControl
                 UnhookWindowsHookEx(hookId);
                 Debug.Log("Global Keyboard Hook unregistered.");
             }
+            if (mouseHookId != IntPtr.Zero)
+            {
+                UnhookWindowsHookEx(mouseHookId);
+                Debug.Log("Global Mouse Hook unregistered.");
+            }
         }
 #endif
 // ------------------------------------------------------------------------------------------
