@@ -14,7 +14,7 @@ public class Facility_Data_ : ScriptableObject, ICSVData
         Processor = 1,
         Laboratory = 2,
         EngineMerger = 3,
-        ResourceMerger = 4,
+        ResourceConverter = 4,
         Drill = 5
     }
     
