@@ -4094,7 +4094,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.111112
+  orthographic size: 8.888889
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4356,10 +4356,12 @@ MonoBehaviour:
   - EntityItemID: 1201
     batchPosition: {x: 1, y: -2}
   initInventoryData:
-  - {x: 1005, y: 50}
-  - {x: 1002, y: 50}
-  - {x: 1003, y: 50}
-  - {x: 1004, y: 50}
+  - {x: 1001, y: 10000}
+  - {x: 1002, y: 10000}
+  - {x: 1111, y: 1}
+  - {x: 1121, y: 1}
+  - {x: 1131, y: 1}
+  - {x: 1141, y: 1}
 --- !u!1 &504104038
 GameObject:
   m_ObjectHideFlags: 0
