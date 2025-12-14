@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using DrillGame.View.Helper;
 using UnityEngine.Serialization;
 using DrillGame.Managers;
+using System.Runtime.CompilerServices;
 
 namespace DrillGame.View.Facility
 {
@@ -39,7 +40,9 @@ namespace DrillGame.View.Facility
 
         // graphic action 관련
         private ParticleSystem runEffect;
-
+        private Color originColor;
+        [SerializeField]
+        private List<Color> randomColorList;
         #endregion
 
         #region Singleton & initialization
@@ -78,6 +81,8 @@ namespace DrillGame.View.Facility
             runEffect = GetComponent<ParticleSystem>();
             var shapes = runEffect.shape;
             shapes.position = shapes.position + new Vector3((0.5f - pivot.x) * data.GetLength().x, (0.5f - pivot.y) * data.GetLength().y, 0);
+            var main = runEffect.main;
+            originalColor = main.startColor.color;
 
             //Collider 크기 조절
             Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
@@ -94,16 +99,32 @@ namespace DrillGame.View.Facility
         #endregion
 
         #region public methods
-        public void RunFacilityComponent(int intensity)
+        public void RunFacilityComponent(int intensity, bool isSynergyed)
         {
+            
+
             // 임시 그래픽 액션 실행
             TempGraphicAction(intensity);
             // 이펙트 재생
             Debug.Log("Facility run effect play");
             if (runEffect != null)
             {
-                runEffect.Play();
+                if (isSynergyed)
+                {
+                    var main = runEffect.main;
+                    main.startColor = randomColorList[UnityEngine.Random.Range(0, randomColorList.Count)];
+
+                    runEffect.Emit(40);
+                }
+                else
+                {
+                    var main = runEffect.main;
+                    main.startColor = originalColor;
+
+                    runEffect.Emit(10);
+                }
             }
+            
         }
 
         public void DeleteFacilityComponent()

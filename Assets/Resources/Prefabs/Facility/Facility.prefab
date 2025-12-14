@@ -107,6 +107,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
   debugPosition: {x: 0, y: 0}
+  randomColorList:
+  - {r: 0.8396226, g: 0.82342225, b: 0.58219117, a: 1}
+  - {r: 0.8396226, g: 0.45545566, b: 0.45545566, a: 1}
+  - {r: 0.373042, g: 0.9528302, b: 0.61589783, a: 1}
+  - {r: 0.38065147, g: 0.48879898, b: 0.8867924, a: 1}
+  - {r: 0.7650456, g: 0.46907264, b: 0.7830189, a: 1}
 --- !u!61 &8654675133225399025
 BoxCollider2D:
   m_ObjectHideFlags: 0

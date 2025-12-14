@@ -20,7 +20,7 @@ namespace DrillGame.Core.Facility
         protected Vector2Int position; // 시설의 위치 (중점)
         protected List<Vector2Int> formations = new List<Vector2Int>(); // 시설의 형태 (중점 기준 상대 좌표 리스트) , 0,0 필수
 
-        public event Action<int> OnFacilityActivated;
+        public event Action<int, bool> OnFacilityActivated;
 
         public event Action OnFacilityDeleted;
 
@@ -115,7 +115,7 @@ namespace DrillGame.Core.Facility
             //시설 고유 액션 실행은 상속으로 넘어갔습니다.
 
             // 이벤트 호출 (presenter -> component)
-            OnFacilityActivated?.Invoke(intensity);
+            OnFacilityActivated?.Invoke(intensity, isSynergyed);
             if (isSynergyed)
             {
                 Debug.Log("시너지 작용됨.");
