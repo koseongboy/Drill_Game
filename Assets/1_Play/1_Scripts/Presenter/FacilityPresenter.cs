@@ -43,9 +43,9 @@ namespace DrillGame.Core.Presenter
         #endregion
 
         #region private methods
-        private void OnFacilityEntityActivated(int intensity)
+        private void OnFacilityEntityActivated(int intensity, bool isSynergyed)
         {
-            facilityComponent.RunFacilityComponent(intensity);
+            facilityComponent.RunFacilityComponent(intensity, isSynergyed);
         }
 
         private void OnFacilityEntityDeleted()
