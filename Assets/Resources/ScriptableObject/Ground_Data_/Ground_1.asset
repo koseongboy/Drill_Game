@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Ground_1
   StartDepth: 0
   EndDepth: 5
-  HP: 5
+  HP: 6400
   DropItems:
   - 1001
   Color:

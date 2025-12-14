@@ -1381,6 +1381,10 @@ PrefabInstance:
       value: -46.600098
       objectReference: {fileID: 0}
     - target: {fileID: 2425506054684135268, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
+      propertyPath: m_text
+      value: 0.0%
+      objectReference: {fileID: 0}
+    - target: {fileID: 2425506054684135268, guid: 85f0fbd1f9b80df4281ff5e2cca6e91e, type: 3}
       propertyPath: m_fontSize
       value: 60
       objectReference: {fileID: 0}
@@ -4352,16 +4356,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.SaveManager
   initBatchData:
   - EntityItemID: 1102
-    batchPosition: {x: 1, y: -2}
+    batchPosition: {x: 2, y: -2}
   - EntityItemID: 1201
-    batchPosition: {x: 1, y: -2}
+    batchPosition: {x: 2, y: -2}
+  - EntityItemID: 1201
+    batchPosition: {x: 2, y: -1}
+  - EntityItemID: 1102
+    batchPosition: {x: -4, y: -6}
+  - EntityItemID: 1131
+    batchPosition: {x: -1, y: -6}
+  - EntityItemID: 1202
+    batchPosition: {x: -4, y: -5}
+  - EntityItemID: 1202
+    batchPosition: {x: -4, y: -6}
+  - EntityItemID: 1301
+    batchPosition: {x: -4, y: 2}
+  - EntityItemID: 1401
+    batchPosition: {x: -4, y: 0}
   initInventoryData:
-  - {x: 1001, y: 10000}
-  - {x: 1002, y: 10000}
-  - {x: 1111, y: 1}
-  - {x: 1121, y: 1}
-  - {x: 1131, y: 1}
-  - {x: 1141, y: 1}
+  - {x: 1001, y: 100}
+  - {x: 1002, y: 500}
 --- !u!1 &504104038
 GameObject:
   m_ObjectHideFlags: 0
