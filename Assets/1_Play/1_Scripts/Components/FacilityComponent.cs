@@ -76,6 +76,8 @@ namespace DrillGame.View.Facility
             originalColor = spriteRenderer.material.color;
 
             runEffect = GetComponent<ParticleSystem>();
+            var shapes = runEffect.shape;
+            shapes.position = shapes.position + new Vector3((0.5f - pivot.x) * data.GetLength().x, (0.5f - pivot.y) * data.GetLength().y, 0);
 
             //Collider 크기 조절
             Vector2 spriteSize = spriteRenderer.sprite.bounds.size;

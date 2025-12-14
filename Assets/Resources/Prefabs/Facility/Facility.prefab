@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrillGame.View.Facility.FacilityComponent
   debugPosition: {x: 0, y: 0}
-  pivot: {x: 0, y: 0}
 --- !u!61 &8654675133225399025
 BoxCollider2D:
   m_ObjectHideFlags: 0
