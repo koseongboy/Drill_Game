@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uAE08 \uD14C\uD06C Lv.3"
   Desc: "Lv.3\uC758 \uAE08 \uC2DC\uC124\uC744 \uC124\uCE58\uD560 \uC218 \uC788\uAC8C
     \uB429\uB2C8\uB2E4."
-  ResearchAmount: 400
+  ResearchAmount: 50000
   InputItemPerTickId: 1008
   InputItemPerTickCount: 2
   RequireResearchId: 30011

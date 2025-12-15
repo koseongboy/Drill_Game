@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uC5D4\uC9C4 \uD569\uC131\uAE30 Lv.3"
   ItemType: Facility
   EntityId: 111003
-  ItemIcon: engineMergerIcon
+  ItemIcon: engine_merger

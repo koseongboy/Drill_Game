@@ -23,7 +23,7 @@ MonoBehaviour:
   RequireResearchId: 0
   RequireCoreLevel: 0
   BuildResourceId: 1002
-  BuildResourceCount: 10000
+  BuildResourceCount: 100
   InputItemId: 0
   InputItemCount: 0
   OutputItemId: 1001

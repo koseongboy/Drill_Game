@@ -212,36 +212,33 @@ namespace DrillGame
             ui_descTxt.text = facilityData.GetFacilityDesc();
 
             var inputItemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( facilityData.BuildResourceId );
-            ui_inputItemTxt.text = $"필요 자원 : {inputItemData.DisplayName} {facilityData.BuildResourceId}개";
+            ui_inputItemTxt.text = $"필요 자원 : {inputItemData.DisplayName} {facilityData.BuildResourceCount}개";
 
-            // DEV
-            ui_selectButtonTxt.text = "설치";
-            OnSelectButtonPressed = BuildFacility;
             facilityItemId = itemId;
             buildResourceItemId = facilityData.BuildResourceId;
             buildResourceItemCount = facilityData.BuildResourceCount;
             
             // ############ 보유 자원 체크 ############
-            // if (InventoryManager.Instance.IsContainsItem(facilityData.BuildResourceId, inputItemCount))
-            // {
-            //     ui_selectButtonTxt.text = "설치";
-            //     OnSelectButtonPressed = BuildFacility;
-            // }
-            // else
-            // {
-            //     ui_selectButtonTxt.text = "자원 부족";
-            //     OnSelectButtonPressed = CantBuildFacility;
-            // }
+            if (InventoryManager.Instance.IsContainsItem(facilityData.BuildResourceId, facilityData.BuildResourceCount))
+            {
+                ui_selectButtonTxt.text = "설치";
+                OnSelectButtonPressed = BuildFacility;
+            }
+            else
+            {
+                ui_selectButtonTxt.text = "자원 부족";
+                OnSelectButtonPressed = CantBuildFacility;
+            }
         } 
 
         private void BuildFacility( int facilityItemId , int resourceId, int resourceCount )
         {
             // 1. 자원을 소모해주고...
-            // if (!InventoryManager.Instance.TryRemoveItem(resourceCount, resourceCount))
-            // {
-            //     Debug.LogWarning("아이템이 부족합니다. 엥? 근데 어떻게 정상적으로 여기까지 진입했어요?");
-            //     return;
-            // }
+            if (!InventoryManager.Instance.TryRemoveItem(resourceId, resourceCount))
+            {
+                Debug.LogWarning("아이템이 부족합니다. 엥? 근데 어떻게 정상적으로 여기까지 진입했어요?");
+                return;
+            }
             
             // 2. 배치모드 진입해서...
             GameManager.Instance.BatchEntity( facilityItemId );
@@ -250,9 +247,10 @@ namespace DrillGame
             CloseUI();
         }
 
-        private void CantBuildFacility( int facilityItemId )
+        private void CantBuildFacility( int facilityItemId, int inputId, int inputCount )
         {
-            // TODO : 설치할 수 없다는 Alert창 띄우기
+            var itemData = ScriptableObjectManager.Instance.GetData<Item_Data_>( inputId );
+            UILoader.Instance.ShowAlert($"자원이 부족합니다!\n필요 자원 : {itemData.DisplayName} {inputCount}개");
         }
         
         

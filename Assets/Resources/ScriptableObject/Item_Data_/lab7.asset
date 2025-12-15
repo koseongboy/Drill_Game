@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uC5F0\uAD6C\uC18C Lv.7"
   ItemType: Facility
   EntityId: 110007
-  ItemIcon: labIcon
+  ItemIcon: laboratory

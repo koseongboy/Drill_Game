@@ -74,7 +74,7 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
             dict.Add(Facility_Data_.FacilityType.Miner, new List<int>());
             dict.Add(Facility_Data_.FacilityType.Processor, new List<int>());
             dict.Add(Facility_Data_.FacilityType.Laboratory, new List<int>());
-            dict.Add(Facility_Data_.FacilityType.ResourceMerger, new List<int>());
+            dict.Add(Facility_Data_.FacilityType.ResourceConverter, new List<int>());
             dict.Add(Facility_Data_.FacilityType.EngineMerger, new List<int>());
             
             foreach (var itemId in facilityItemIds)
@@ -97,6 +97,8 @@ namespace DrillGame._1_Play._1_Scripts.Managers.Mono
                 }
                 
                 dict[facilityData.GetFacilityType_Enum()].Add(itemId);
+                
+                Debug.Log($"{facilityData.GetFacilityType_Enum()}, {itemId}");
             }
 
             return dict;
