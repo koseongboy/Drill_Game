@@ -20,7 +20,7 @@ namespace DrillGame.View.Engine
         [SerializeField]
         Color setColor;
 
-
+        private Color originColor;
         #endregion
 
         #region Singleton & initialization
@@ -93,11 +93,14 @@ namespace DrillGame.View.Engine
                 wire.transform.position = new Vector2(corePos.x, currentY);
                 wire.transform.rotation = Quaternion.Euler(0, 0, 90); // 세로 방향으로 회전
             }
+
+            originColor = wireList[0].GetComponentInChildren<SpriteRenderer>().color;
         }
 
         public void ActivateWire(int index)
         {
             // 와이어 활성화 애니메이션 (예: 색상 변경)
+            wireList[index].GetComponentInChildren<SpriteRenderer>().color = originColor; // Reset color before activation
             wireList[index].GetComponentInChildren<SpriteRenderer>().DOColor(setColor, 0.2f).SetLoops(2, LoopType.Yoyo);
         }
         #endregion
