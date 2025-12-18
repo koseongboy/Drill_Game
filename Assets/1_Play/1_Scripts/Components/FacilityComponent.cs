@@ -40,7 +40,7 @@ namespace DrillGame.View.Facility
 
         // graphic action 관련
         private ParticleSystem runEffect;
-        private Color originColor;
+        private Color effectOriginColor;
         [SerializeField]
         private List<Color> randomColorList;
         #endregion
@@ -82,7 +82,7 @@ namespace DrillGame.View.Facility
             var shapes = runEffect.shape;
             shapes.position = shapes.position + new Vector3((0.5f - pivot.x) * data.GetLength().x, (0.5f - pivot.y) * data.GetLength().y, 0);
             var main = runEffect.main;
-            originalColor = main.startColor.color;
+            effectOriginColor = main.startColor.color;
 
             //Collider 크기 조절
             Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
@@ -119,7 +119,7 @@ namespace DrillGame.View.Facility
                 else
                 {
                     var main = runEffect.main;
-                    main.startColor = originalColor;
+                    main.startColor = effectOriginColor;
 
                     runEffect.Emit(10);
                 }
