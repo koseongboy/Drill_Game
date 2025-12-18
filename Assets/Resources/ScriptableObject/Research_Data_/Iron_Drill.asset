@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Iron_Drill
   DisplayName: "\uCCA0 \uB4DC\uB9B4"
   Desc: "\uCCA0 \uB4DC\uB9B4\uB85C \uC5C5\uADF8\uB808\uC774\uB4DC \uD569\uB2C8\uB2E4."
-  ResearchAmount: 200
+  ResearchAmount: 20000
   InputItemPerTickId: 1006
   InputItemPerTickCount: 2
   RequireResearchId: 30006

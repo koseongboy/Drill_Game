@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Copper_Drill
   DisplayName: "\uAD6C\uB9AC \uB4DC\uB9B4"
   Desc: "\uAD6C\uB9AC \uB4DC\uB9B4\uB85C \uC5C5\uADF8\uB808\uC774\uB4DC \uD569\uB2C8\uB2E4."
-  ResearchAmount: 100
+  ResearchAmount: 10000
   InputItemPerTickId: 1004
   InputItemPerTickCount: 2
   RequireResearchId: 30001

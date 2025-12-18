@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Ground_2
   StartDepth: 6
   EndDepth: 10
-  HP: 20
+  HP: 25840
   DropItems:
   - 1001
   - 1003

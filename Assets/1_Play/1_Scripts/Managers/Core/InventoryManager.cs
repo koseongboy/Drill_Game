@@ -217,7 +217,7 @@ namespace DrillGame.Core.Managers
 
         public bool IsContainsItem( int itemId, int count )
         {
-            return count == GetItemCountById(itemId);
+            return count <= GetItemCountById(itemId);
         }
 
         public bool HasItem(int itemId, int requiredCount = 1)

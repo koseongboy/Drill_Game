@@ -17,4 +17,4 @@ MonoBehaviour:
   DisplayName: "\uD145\uC2A4\uD150 \uAC00\uACF5 \uC2DC\uC124 Lv.1"
   ItemType: Facility
   EntityId: 106021
-  ItemIcon: engine_test
+  ItemIcon: tunstein_processor

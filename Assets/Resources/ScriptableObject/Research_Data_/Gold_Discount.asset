@@ -17,7 +17,7 @@ MonoBehaviour:
   DisplayName: "\uAE08 \uD6A8\uC728 \uC99D\uAC00"
   Desc: "\uAE08 \uC790\uC6D0\uC744 \uC18C\uBAA8\uD560 \uB54C \uC18C\uBAA8\uB7C9\uC774
     \uAC10\uC18C\uD569\uB2C8\uB2E4."
-  ResearchAmount: 400
+  ResearchAmount: 50000
   InputItemPerTickId: 1008
   InputItemPerTickCount: 2
   RequireResearchId: 30011

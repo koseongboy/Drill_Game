@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ground_Data_
   Id: 5008
   Name: Ground_8
-  StartDepth: 42
+  StartDepth: 36
   EndDepth: 40
-  HP: 30000
+  HP: 1632960
   DropItems:
   - 1011
   - 1013
