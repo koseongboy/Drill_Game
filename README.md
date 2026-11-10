@@ -11,7 +11,7 @@
 * **참여 인원:** 3인 (담당 역할: 클라이언트 개발 및 핵심 기획)
 * **개발 환경:** Unity 3D, C#, Windows API, Addressables, DOTween
 
----
+
 
 ## 🚀 주요 기능 (Features)
 
@@ -48,7 +48,7 @@
 <img width="207" alt="캘린더" src="https://github.com/user-attachments/assets/0277be3c-f595-4d0c-bc71-4425eb4d6ca6" />
 
 
----
+
 
 ## 🛠 기술 스택 (Tech Stack)
 Client
