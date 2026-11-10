@@ -32,6 +32,8 @@
 
 ### 3. 엔진 합성 및 강화 시스템
 자원을 소모하여 코어(Core)를 중심으로 연구소를 짓거나, 하위 레벨의 엔진 2개를 합성하여 상위 레벨의 엔진(초록, 파랑, 보라 등)을 개발하여 공장의 생산 효율을 극대화할 수 있습니다.
+
+
 <img width="400" alt="엔진 합성" src="https://github.com/user-attachments/assets/38b6a9b4-046c-46d5-8561-50ad6384a240" />
 <img width="400" alt="연구" src="https://github.com/user-attachments/assets/52eb8e4c-d595-4a59-bf32-018c650c0343" />
 
