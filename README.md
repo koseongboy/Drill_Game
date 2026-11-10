@@ -17,6 +17,8 @@
 
 ### 1. 즉각적인 성취 피드백: 타이핑 = 공장 가동
 사용자의 키보드 입력(Windows API Key Hooking)을 감지하여 게임 내 동력으로 치환합니다. 게임이 백그라운드에 있어도 타이핑을 치면 각 시설이 즉각적으로 작동하여 긍정적인 피드백을 제공합니다.
+
+
 <img width="400" alt="키입력을동력으로" src="https://github.com/user-attachments/assets/88916ce7-c622-4caf-a3fe-170c1b492f54" />
 
 
@@ -24,7 +26,6 @@
 복잡성을 덜어낸 상부/하부 그리드 시스템을 통해, 수집한 자원으로 채굴 시설과 가공 시설을 직관적으로 건설하고 철거할 수 있습니다.
 
 <img width="400" alt="건설" src="https://github.com/user-attachments/assets/dd8348f8-ff81-42c2-88fd-9c45d21b9513" />
-
 <img width="400" alt="철거" src="https://github.com/user-attachments/assets/e7aa0292-575c-4137-b20b-66584c465bd5" />
 
 
